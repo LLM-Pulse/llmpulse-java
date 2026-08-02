@@ -1,0 +1,41 @@
+
+
+# ApiErrorError
+
+
+## Properties
+
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**code** | [**CodeEnum**](#CodeEnum) |  |  [optional] |
+|**message** | **String** |  |  [optional] |
+|**meta** | **Object** |  |  [optional] |
+
+
+
+## Enum: CodeEnum
+
+| Name | Value |
+|---- | -----|
+| ERR_MISSING_AUTH | &quot;ERR_MISSING_AUTH&quot; |
+| ERR_INVALID_API_KEY | &quot;ERR_INVALID_API_KEY&quot; |
+| ERR_REVOKED_API_KEY | &quot;ERR_REVOKED_API_KEY&quot; |
+| ERR_INSUFFICIENT_SCOPE | &quot;ERR_INSUFFICIENT_SCOPE&quot; |
+| ERR_INSUFFICIENT_PERMISSION | &quot;ERR_INSUFFICIENT_PERMISSION&quot; |
+| ERR_PLAN_REQUIRED | &quot;ERR_PLAN_REQUIRED&quot; |
+| ERR_ACCOUNT_INACTIVE | &quot;ERR_ACCOUNT_INACTIVE&quot; |
+| ERR_DRAFT_NOT_FOUND | &quot;ERR_DRAFT_NOT_FOUND&quot; |
+| ERR_DRAFT_STATE | &quot;ERR_DRAFT_STATE&quot; |
+| ERR_PROJECT_NOT_FOUND | &quot;ERR_PROJECT_NOT_FOUND&quot; |
+| ERR_NOT_FOUND | &quot;ERR_NOT_FOUND&quot; |
+| ERR_SEARCH_CONSOLE_NOT_CONNECTED | &quot;ERR_SEARCH_CONSOLE_NOT_CONNECTED&quot; |
+| ERR_AI_TRAFFIC_NOT_CONNECTED | &quot;ERR_AI_TRAFFIC_NOT_CONNECTED&quot; |
+| ERR_AGENT_TRAFFIC_NOT_CONNECTED | &quot;ERR_AGENT_TRAFFIC_NOT_CONNECTED&quot; |
+| ERR_INVALID_PARAM | &quot;ERR_INVALID_PARAM&quot; |
+| ERR_INVALID_RANGE | &quot;ERR_INVALID_RANGE&quot; |
+| ERR_LIMIT_REACHED | &quot;ERR_LIMIT_REACHED&quot; |
+| ERR_QUOTA_EXCEEDED | &quot;ERR_QUOTA_EXCEEDED&quot; |
+| ERR_RATE_LIMITED | &quot;ERR_RATE_LIMITED&quot; |
+
+
+
