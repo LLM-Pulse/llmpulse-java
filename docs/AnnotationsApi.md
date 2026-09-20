@@ -21,7 +21,7 @@ All URIs are relative to *https://api.llmpulse.ai/api/v1*
 
 Create a timeline annotation
 
-Marks a date in the project timeseries with a title + description. Requires the **Growth** plan or above. Requires a &#x60;read_write&#x60; scope API key.
+Marks a date in the project timeseries with a title + description. Available on every plan. Requires a &#x60;read_write&#x60; scope API key.
 
 ### Example
 
@@ -83,7 +83,7 @@ null (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **201** | Created |  -  |
-| **403** | Insufficient scope or plan required |  -  |
+| **403** | API key lacks write permission |  -  |
 | **422** | Invalid parameters |  -  |
 
 ## createAnnotationWithHttpInfo
@@ -92,7 +92,7 @@ null (empty response body)
 
 Create a timeline annotation
 
-Marks a date in the project timeseries with a title + description. Requires the **Growth** plan or above. Requires a &#x60;read_write&#x60; scope API key.
+Marks a date in the project timeseries with a title + description. Available on every plan. Requires a &#x60;read_write&#x60; scope API key.
 
 ### Example
 
@@ -157,7 +157,7 @@ ApiResponse<Void>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **201** | Created |  -  |
-| **403** | Insufficient scope or plan required |  -  |
+| **403** | API key lacks write permission |  -  |
 | **422** | Invalid parameters |  -  |
 
 
@@ -167,7 +167,7 @@ ApiResponse<Void>
 
 Delete a timeline annotation
 
-Deletes an annotation. Same ownership rule as PATCH. Requires the **Growth** plan or above and a &#x60;read_write&#x60; scope API key.
+Deletes an annotation. Same ownership rule as PATCH. Available on every plan and requires a &#x60;read_write&#x60; scope API key.
 
 ### Example
 
@@ -240,7 +240,7 @@ null (empty response body)
 
 Delete a timeline annotation
 
-Deletes an annotation. Same ownership rule as PATCH. Requires the **Growth** plan or above and a &#x60;read_write&#x60; scope API key.
+Deletes an annotation. Same ownership rule as PATCH. Available on every plan and requires a &#x60;read_write&#x60; scope API key.
 
 ### Example
 
@@ -317,7 +317,7 @@ ApiResponse<Void>
 
 List timeline annotations
 
-Lists the project timeline annotations (user-created + system), newest first. The category field tells them apart; editable says whether the requesting user may modify the row. Requires the **Growth** plan or above.
+Lists project timeline annotations, newest first. Rows can come from manual notes, project automations, GEO tests, or platform events. The origin field distinguishes them; editable says whether the requesting user may modify the row. Available on every plan.
 
 ### Example
 
@@ -389,7 +389,7 @@ null (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Paginated annotations |  -  |
-| **403** | Endpoint requires a higher plan tier |  -  |
+| **403** | API key belongs to a team member whose permission matrix does not grant this feature |  -  |
 
 ## listAnnotationsWithHttpInfo
 
@@ -397,7 +397,7 @@ null (empty response body)
 
 List timeline annotations
 
-Lists the project timeline annotations (user-created + system), newest first. The category field tells them apart; editable says whether the requesting user may modify the row. Requires the **Growth** plan or above.
+Lists project timeline annotations, newest first. Rows can come from manual notes, project automations, GEO tests, or platform events. The origin field distinguishes them; editable says whether the requesting user may modify the row. Available on every plan.
 
 ### Example
 
@@ -472,7 +472,7 @@ ApiResponse<Void>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Paginated annotations |  -  |
-| **403** | Endpoint requires a higher plan tier |  -  |
+| **403** | API key belongs to a team member whose permission matrix does not grant this feature |  -  |
 
 
 ## updateAnnotation
@@ -481,7 +481,7 @@ ApiResponse<Void>
 
 Update a timeline annotation
 
-Updates title, description, annotation_date, color and/or annotation_category_id. Only user-created annotations belonging to the requesting user can be updated (system annotations never). Requires the **Growth** plan or above and a &#x60;read_write&#x60; scope API key.
+Updates title, description, annotation_date, color and/or annotation_category_id. Only user-created annotations belonging to the requesting user can be updated (system annotations never). Available on every plan and requires a &#x60;read_write&#x60; scope API key.
 
 ### Example
 
@@ -555,7 +555,7 @@ null (empty response body)
 
 Update a timeline annotation
 
-Updates title, description, annotation_date, color and/or annotation_category_id. Only user-created annotations belonging to the requesting user can be updated (system annotations never). Requires the **Growth** plan or above and a &#x60;read_write&#x60; scope API key.
+Updates title, description, annotation_date, color and/or annotation_category_id. Only user-created annotations belonging to the requesting user can be updated (system annotations never). Available on every plan and requires a &#x60;read_write&#x60; scope API key.
 
 ### Example
 

@@ -1,25 +1,25 @@
-# CollectionsApi
+# TechnicalGeoReportsApi
 
 All URIs are relative to *https://api.llmpulse.ai/api/v1*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**createCollection**](CollectionsApi.md#createCollection) | **POST** /collections | Create a tag |
-| [**createCollectionWithHttpInfo**](CollectionsApi.md#createCollectionWithHttpInfo) | **POST** /collections | Create a tag |
-| [**deleteCollection**](CollectionsApi.md#deleteCollection) | **DELETE** /collections/{id} | Delete a tag |
-| [**deleteCollectionWithHttpInfo**](CollectionsApi.md#deleteCollectionWithHttpInfo) | **DELETE** /collections/{id} | Delete a tag |
-| [**updateCollection**](CollectionsApi.md#updateCollection) | **PATCH** /collections/{id} | Update a tag |
-| [**updateCollectionWithHttpInfo**](CollectionsApi.md#updateCollectionWithHttpInfo) | **PATCH** /collections/{id} | Update a tag |
+| [**createTechnicalGeoReports**](TechnicalGeoReportsApi.md#createTechnicalGeoReports) | **POST** /technical_geo_reports | Run technical GEO analysis |
+| [**createTechnicalGeoReportsWithHttpInfo**](TechnicalGeoReportsApi.md#createTechnicalGeoReportsWithHttpInfo) | **POST** /technical_geo_reports | Run technical GEO analysis |
+| [**getTechnicalGeoReport**](TechnicalGeoReportsApi.md#getTechnicalGeoReport) | **GET** /technical_geo_reports/{id} | Get a technical GEO report |
+| [**getTechnicalGeoReportWithHttpInfo**](TechnicalGeoReportsApi.md#getTechnicalGeoReportWithHttpInfo) | **GET** /technical_geo_reports/{id} | Get a technical GEO report |
+| [**listTechnicalGeoReports**](TechnicalGeoReportsApi.md#listTechnicalGeoReports) | **GET** /technical_geo_reports | List technical GEO reports |
+| [**listTechnicalGeoReportsWithHttpInfo**](TechnicalGeoReportsApi.md#listTechnicalGeoReportsWithHttpInfo) | **GET** /technical_geo_reports | List technical GEO reports |
 
 
 
-## createCollection
+## createTechnicalGeoReports
 
-> void createCollection(createCollectionRequest)
+> void createTechnicalGeoReports(createTechnicalGeoReportsRequest)
 
-Create a tag
+Run technical GEO analysis
 
-Creates a tag (Collection) in a project. Optional &#x60;prompt_ids&#x60; attaches existing prompts in the same call. Tag name must be unique per project (case-insensitive). Requires a &#x60;read_write&#x60; scope API key.
+Launches the full technical GEO analysis bundle (crawlability, schema, content readiness, discoverability, site structure, robots.txt, agent readiness, llms.txt, AI visibility) for a URL + country. Each report runs in a background job. Requires a &#x60;read_write&#x60; scope API key.
 
 ### Example
 
@@ -30,7 +30,7 @@ import ai.llmpulse.sdk.ApiException;
 import ai.llmpulse.sdk.Configuration;
 import ai.llmpulse.sdk.auth.*;
 import ai.llmpulse.sdk.models.*;
-import ai.llmpulse.sdk.api.CollectionsApi;
+import ai.llmpulse.sdk.api.TechnicalGeoReportsApi;
 
 public class Example {
     public static void main(String[] args) {
@@ -41,12 +41,12 @@ public class Example {
         HttpBearerAuth BearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("BearerAuth");
         BearerAuth.setBearerToken("BEARER TOKEN");
 
-        CollectionsApi apiInstance = new CollectionsApi(defaultClient);
-        CreateCollectionRequest createCollectionRequest = new CreateCollectionRequest(); // CreateCollectionRequest | 
+        TechnicalGeoReportsApi apiInstance = new TechnicalGeoReportsApi(defaultClient);
+        CreateTechnicalGeoReportsRequest createTechnicalGeoReportsRequest = new CreateTechnicalGeoReportsRequest(); // CreateTechnicalGeoReportsRequest | 
         try {
-            apiInstance.createCollection(createCollectionRequest);
+            apiInstance.createTechnicalGeoReports(createTechnicalGeoReportsRequest);
         } catch (ApiException e) {
-            System.err.println("Exception when calling CollectionsApi#createCollection");
+            System.err.println("Exception when calling TechnicalGeoReportsApi#createTechnicalGeoReports");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -61,7 +61,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **createCollectionRequest** | [**CreateCollectionRequest**](CreateCollectionRequest.md)|  | |
+| **createTechnicalGeoReportsRequest** | [**CreateTechnicalGeoReportsRequest**](CreateTechnicalGeoReportsRequest.md)|  | |
 
 ### Return type
 
@@ -84,13 +84,13 @@ null (empty response body)
 | **403** | API key lacks write permission |  -  |
 | **422** | Invalid parameters |  -  |
 
-## createCollectionWithHttpInfo
+## createTechnicalGeoReportsWithHttpInfo
 
-> ApiResponse<Void> createCollectionWithHttpInfo(createCollectionRequest)
+> ApiResponse<Void> createTechnicalGeoReportsWithHttpInfo(createTechnicalGeoReportsRequest)
 
-Create a tag
+Run technical GEO analysis
 
-Creates a tag (Collection) in a project. Optional &#x60;prompt_ids&#x60; attaches existing prompts in the same call. Tag name must be unique per project (case-insensitive). Requires a &#x60;read_write&#x60; scope API key.
+Launches the full technical GEO analysis bundle (crawlability, schema, content readiness, discoverability, site structure, robots.txt, agent readiness, llms.txt, AI visibility) for a URL + country. Each report runs in a background job. Requires a &#x60;read_write&#x60; scope API key.
 
 ### Example
 
@@ -102,7 +102,7 @@ import ai.llmpulse.sdk.ApiResponse;
 import ai.llmpulse.sdk.Configuration;
 import ai.llmpulse.sdk.auth.*;
 import ai.llmpulse.sdk.models.*;
-import ai.llmpulse.sdk.api.CollectionsApi;
+import ai.llmpulse.sdk.api.TechnicalGeoReportsApi;
 
 public class Example {
     public static void main(String[] args) {
@@ -113,14 +113,14 @@ public class Example {
         HttpBearerAuth BearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("BearerAuth");
         BearerAuth.setBearerToken("BEARER TOKEN");
 
-        CollectionsApi apiInstance = new CollectionsApi(defaultClient);
-        CreateCollectionRequest createCollectionRequest = new CreateCollectionRequest(); // CreateCollectionRequest | 
+        TechnicalGeoReportsApi apiInstance = new TechnicalGeoReportsApi(defaultClient);
+        CreateTechnicalGeoReportsRequest createTechnicalGeoReportsRequest = new CreateTechnicalGeoReportsRequest(); // CreateTechnicalGeoReportsRequest | 
         try {
-            ApiResponse<Void> response = apiInstance.createCollectionWithHttpInfo(createCollectionRequest);
+            ApiResponse<Void> response = apiInstance.createTechnicalGeoReportsWithHttpInfo(createTechnicalGeoReportsRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
         } catch (ApiException e) {
-            System.err.println("Exception when calling CollectionsApi#createCollection");
+            System.err.println("Exception when calling TechnicalGeoReportsApi#createTechnicalGeoReports");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -135,7 +135,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **createCollectionRequest** | [**CreateCollectionRequest**](CreateCollectionRequest.md)|  | |
+| **createTechnicalGeoReportsRequest** | [**CreateTechnicalGeoReportsRequest**](CreateTechnicalGeoReportsRequest.md)|  | |
 
 ### Return type
 
@@ -159,13 +159,13 @@ ApiResponse<Void>
 | **422** | Invalid parameters |  -  |
 
 
-## deleteCollection
+## getTechnicalGeoReport
 
-> void deleteCollection(projectId, id)
+> void getTechnicalGeoReport(projectId, reportType, id)
 
-Delete a tag
+Get a technical GEO report
 
-Deletes a tag/collection. The prompts inside it are NOT deleted; only the grouping disappears. Requires a &#x60;read_write&#x60; scope API key.
+Returns the current status and the full result_data once the report is completed. While it is running, result_data is null and poll_after_seconds tells clients when to check again.
 
 ### Example
 
@@ -176,7 +176,7 @@ import ai.llmpulse.sdk.ApiException;
 import ai.llmpulse.sdk.Configuration;
 import ai.llmpulse.sdk.auth.*;
 import ai.llmpulse.sdk.models.*;
-import ai.llmpulse.sdk.api.CollectionsApi;
+import ai.llmpulse.sdk.api.TechnicalGeoReportsApi;
 
 public class Example {
     public static void main(String[] args) {
@@ -187,13 +187,14 @@ public class Example {
         HttpBearerAuth BearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("BearerAuth");
         BearerAuth.setBearerToken("BEARER TOKEN");
 
-        CollectionsApi apiInstance = new CollectionsApi(defaultClient);
+        TechnicalGeoReportsApi apiInstance = new TechnicalGeoReportsApi(defaultClient);
         Integer projectId = 56; // Integer | Project ID
-        Integer id = 56; // Integer | 
+        String reportType = "crawlability"; // String | 
+        Integer id = 56; // Integer | Report id returned by POST /technical_geo_reports or GET /technical_geo_reports
         try {
-            apiInstance.deleteCollection(projectId, id);
+            apiInstance.getTechnicalGeoReport(projectId, reportType, id);
         } catch (ApiException e) {
-            System.err.println("Exception when calling CollectionsApi#deleteCollection");
+            System.err.println("Exception when calling TechnicalGeoReportsApi#getTechnicalGeoReport");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -209,7 +210,8 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **projectId** | **Integer**| Project ID | |
-| **id** | **Integer**|  | |
+| **reportType** | **String**|  | [enum: crawlability, schema, content_readiness, discoverability, site_structure, robots_txt, agent_readiness, llms_txt, ai_visibility] |
+| **id** | **Integer**| Report id returned by POST /technical_geo_reports or GET /technical_geo_reports | |
 
 ### Return type
 
@@ -228,168 +230,17 @@ null (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Deleted |  -  |
-| **403** | API key lacks write permission |  -  |
-| **404** | Resource not found |  -  |
-
-## deleteCollectionWithHttpInfo
-
-> ApiResponse<Void> deleteCollectionWithHttpInfo(projectId, id)
-
-Delete a tag
-
-Deletes a tag/collection. The prompts inside it are NOT deleted; only the grouping disappears. Requires a &#x60;read_write&#x60; scope API key.
-
-### Example
-
-```java
-// Import classes:
-import ai.llmpulse.sdk.ApiClient;
-import ai.llmpulse.sdk.ApiException;
-import ai.llmpulse.sdk.ApiResponse;
-import ai.llmpulse.sdk.Configuration;
-import ai.llmpulse.sdk.auth.*;
-import ai.llmpulse.sdk.models.*;
-import ai.llmpulse.sdk.api.CollectionsApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://api.llmpulse.ai/api/v1");
-        
-        // Configure HTTP bearer authorization: BearerAuth
-        HttpBearerAuth BearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("BearerAuth");
-        BearerAuth.setBearerToken("BEARER TOKEN");
-
-        CollectionsApi apiInstance = new CollectionsApi(defaultClient);
-        Integer projectId = 56; // Integer | Project ID
-        Integer id = 56; // Integer | 
-        try {
-            ApiResponse<Void> response = apiInstance.deleteCollectionWithHttpInfo(projectId, id);
-            System.out.println("Status code: " + response.getStatusCode());
-            System.out.println("Response headers: " + response.getHeaders());
-        } catch (ApiException e) {
-            System.err.println("Exception when calling CollectionsApi#deleteCollection");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            System.err.println("Reason: " + e.getResponseBody());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **projectId** | **Integer**| Project ID | |
-| **id** | **Integer**|  | |
-
-### Return type
-
-
-ApiResponse<Void>
-
-### Authorization
-
-[BearerAuth](../README.md#BearerAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Deleted |  -  |
-| **403** | API key lacks write permission |  -  |
-| **404** | Resource not found |  -  |
-
-
-## updateCollection
-
-> void updateCollection(id, updateCollectionRequest)
-
-Update a tag
-
-Renames a tag/collection or changes its description. Prompt membership is managed via POST /prompts/assign_tags, not here. Requires a &#x60;read_write&#x60; scope API key.
-
-### Example
-
-```java
-// Import classes:
-import ai.llmpulse.sdk.ApiClient;
-import ai.llmpulse.sdk.ApiException;
-import ai.llmpulse.sdk.Configuration;
-import ai.llmpulse.sdk.auth.*;
-import ai.llmpulse.sdk.models.*;
-import ai.llmpulse.sdk.api.CollectionsApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://api.llmpulse.ai/api/v1");
-        
-        // Configure HTTP bearer authorization: BearerAuth
-        HttpBearerAuth BearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("BearerAuth");
-        BearerAuth.setBearerToken("BEARER TOKEN");
-
-        CollectionsApi apiInstance = new CollectionsApi(defaultClient);
-        Integer id = 56; // Integer | 
-        UpdateCollectionRequest updateCollectionRequest = new UpdateCollectionRequest(); // UpdateCollectionRequest | 
-        try {
-            apiInstance.updateCollection(id, updateCollectionRequest);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling CollectionsApi#updateCollection");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **id** | **Integer**|  | |
-| **updateCollectionRequest** | [**UpdateCollectionRequest**](UpdateCollectionRequest.md)|  | |
-
-### Return type
-
-
-null (empty response body)
-
-### Authorization
-
-[BearerAuth](../README.md#BearerAuth)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Updated |  -  |
-| **403** | API key lacks write permission |  -  |
+| **200** | Report status and completed result data |  -  |
 | **404** | Resource not found |  -  |
 | **422** | Invalid parameters |  -  |
 
-## updateCollectionWithHttpInfo
+## getTechnicalGeoReportWithHttpInfo
 
-> ApiResponse<Void> updateCollectionWithHttpInfo(id, updateCollectionRequest)
+> ApiResponse<Void> getTechnicalGeoReportWithHttpInfo(projectId, reportType, id)
 
-Update a tag
+Get a technical GEO report
 
-Renames a tag/collection or changes its description. Prompt membership is managed via POST /prompts/assign_tags, not here. Requires a &#x60;read_write&#x60; scope API key.
+Returns the current status and the full result_data once the report is completed. While it is running, result_data is null and poll_after_seconds tells clients when to check again.
 
 ### Example
 
@@ -401,7 +252,7 @@ import ai.llmpulse.sdk.ApiResponse;
 import ai.llmpulse.sdk.Configuration;
 import ai.llmpulse.sdk.auth.*;
 import ai.llmpulse.sdk.models.*;
-import ai.llmpulse.sdk.api.CollectionsApi;
+import ai.llmpulse.sdk.api.TechnicalGeoReportsApi;
 
 public class Example {
     public static void main(String[] args) {
@@ -412,15 +263,16 @@ public class Example {
         HttpBearerAuth BearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("BearerAuth");
         BearerAuth.setBearerToken("BEARER TOKEN");
 
-        CollectionsApi apiInstance = new CollectionsApi(defaultClient);
-        Integer id = 56; // Integer | 
-        UpdateCollectionRequest updateCollectionRequest = new UpdateCollectionRequest(); // UpdateCollectionRequest | 
+        TechnicalGeoReportsApi apiInstance = new TechnicalGeoReportsApi(defaultClient);
+        Integer projectId = 56; // Integer | Project ID
+        String reportType = "crawlability"; // String | 
+        Integer id = 56; // Integer | Report id returned by POST /technical_geo_reports or GET /technical_geo_reports
         try {
-            ApiResponse<Void> response = apiInstance.updateCollectionWithHttpInfo(id, updateCollectionRequest);
+            ApiResponse<Void> response = apiInstance.getTechnicalGeoReportWithHttpInfo(projectId, reportType, id);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
         } catch (ApiException e) {
-            System.err.println("Exception when calling CollectionsApi#updateCollection");
+            System.err.println("Exception when calling TechnicalGeoReportsApi#getTechnicalGeoReport");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -435,8 +287,9 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **Integer**|  | |
-| **updateCollectionRequest** | [**UpdateCollectionRequest**](UpdateCollectionRequest.md)|  | |
+| **projectId** | **Integer**| Project ID | |
+| **reportType** | **String**|  | [enum: crawlability, schema, content_readiness, discoverability, site_structure, robots_txt, agent_readiness, llms_txt, ai_visibility] |
+| **id** | **Integer**| Report id returned by POST /technical_geo_reports or GET /technical_geo_reports | |
 
 ### Return type
 
@@ -449,14 +302,177 @@ ApiResponse<Void>
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Updated |  -  |
-| **403** | API key lacks write permission |  -  |
+| **200** | Report status and completed result data |  -  |
 | **404** | Resource not found |  -  |
+| **422** | Invalid parameters |  -  |
+
+
+## listTechnicalGeoReports
+
+> void listTechnicalGeoReports(projectId, reportType, status, batchId, page, perPage)
+
+List technical GEO reports
+
+Lists reports of one technical GEO type for a project, newest first. Use agent_readiness for the AI/Agent Readiness report.
+
+### Example
+
+```java
+// Import classes:
+import ai.llmpulse.sdk.ApiClient;
+import ai.llmpulse.sdk.ApiException;
+import ai.llmpulse.sdk.Configuration;
+import ai.llmpulse.sdk.auth.*;
+import ai.llmpulse.sdk.models.*;
+import ai.llmpulse.sdk.api.TechnicalGeoReportsApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.llmpulse.ai/api/v1");
+        
+        // Configure HTTP bearer authorization: BearerAuth
+        HttpBearerAuth BearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("BearerAuth");
+        BearerAuth.setBearerToken("BEARER TOKEN");
+
+        TechnicalGeoReportsApi apiInstance = new TechnicalGeoReportsApi(defaultClient);
+        Integer projectId = 56; // Integer | Project ID
+        String reportType = "crawlability"; // String | 
+        String status = "status_example"; // String | Optional status filter; valid values depend on report_type
+        Integer batchId = 56; // Integer | Optional batch id returned when the report bundle was created
+        Integer page = 1; // Integer | 
+        Integer perPage = 20; // Integer | 
+        try {
+            apiInstance.listTechnicalGeoReports(projectId, reportType, status, batchId, page, perPage);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling TechnicalGeoReportsApi#listTechnicalGeoReports");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **projectId** | **Integer**| Project ID | |
+| **reportType** | **String**|  | [enum: crawlability, schema, content_readiness, discoverability, site_structure, robots_txt, agent_readiness, llms_txt, ai_visibility] |
+| **status** | **String**| Optional status filter; valid values depend on report_type | [optional] |
+| **batchId** | **Integer**| Optional batch id returned when the report bundle was created | [optional] |
+| **page** | **Integer**|  | [optional] [default to 1] |
+| **perPage** | **Integer**|  | [optional] [default to 20] |
+
+### Return type
+
+
+null (empty response body)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Paginated technical GEO report summaries |  -  |
+| **422** | Invalid parameters |  -  |
+
+## listTechnicalGeoReportsWithHttpInfo
+
+> ApiResponse<Void> listTechnicalGeoReportsWithHttpInfo(projectId, reportType, status, batchId, page, perPage)
+
+List technical GEO reports
+
+Lists reports of one technical GEO type for a project, newest first. Use agent_readiness for the AI/Agent Readiness report.
+
+### Example
+
+```java
+// Import classes:
+import ai.llmpulse.sdk.ApiClient;
+import ai.llmpulse.sdk.ApiException;
+import ai.llmpulse.sdk.ApiResponse;
+import ai.llmpulse.sdk.Configuration;
+import ai.llmpulse.sdk.auth.*;
+import ai.llmpulse.sdk.models.*;
+import ai.llmpulse.sdk.api.TechnicalGeoReportsApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.llmpulse.ai/api/v1");
+        
+        // Configure HTTP bearer authorization: BearerAuth
+        HttpBearerAuth BearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("BearerAuth");
+        BearerAuth.setBearerToken("BEARER TOKEN");
+
+        TechnicalGeoReportsApi apiInstance = new TechnicalGeoReportsApi(defaultClient);
+        Integer projectId = 56; // Integer | Project ID
+        String reportType = "crawlability"; // String | 
+        String status = "status_example"; // String | Optional status filter; valid values depend on report_type
+        Integer batchId = 56; // Integer | Optional batch id returned when the report bundle was created
+        Integer page = 1; // Integer | 
+        Integer perPage = 20; // Integer | 
+        try {
+            ApiResponse<Void> response = apiInstance.listTechnicalGeoReportsWithHttpInfo(projectId, reportType, status, batchId, page, perPage);
+            System.out.println("Status code: " + response.getStatusCode());
+            System.out.println("Response headers: " + response.getHeaders());
+        } catch (ApiException e) {
+            System.err.println("Exception when calling TechnicalGeoReportsApi#listTechnicalGeoReports");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            System.err.println("Reason: " + e.getResponseBody());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **projectId** | **Integer**| Project ID | |
+| **reportType** | **String**|  | [enum: crawlability, schema, content_readiness, discoverability, site_structure, robots_txt, agent_readiness, llms_txt, ai_visibility] |
+| **status** | **String**| Optional status filter; valid values depend on report_type | [optional] |
+| **batchId** | **Integer**| Optional batch id returned when the report bundle was created | [optional] |
+| **page** | **Integer**|  | [optional] [default to 1] |
+| **perPage** | **Integer**|  | [optional] [default to 20] |
+
+### Return type
+
+
+ApiResponse<Void>
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Paginated technical GEO report summaries |  -  |
 | **422** | Invalid parameters |  -  |
 

@@ -45,12 +45,12 @@ public class Example {
         Integer projectId = 56; // Integer | Project ID
         Integer range = 56; // Integer | Number of days to look back (alternative to from/to)
         OffsetDateTime from = OffsetDateTime.now(); // OffsetDateTime | 
-        OffsetDateTime to = OffsetDateTime.now(); // OffsetDateTime | 
+        OffsetDateTime to = OffsetDateTime.now(); // OffsetDateTime | End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier.
         String granularity = "day"; // String | 
-        Integer collectionId = 56; // Integer | 
-        String countryCode = "countryCode_example"; // String | ISO country code (e.g. US, GB, DE)
-        String languageCode = "languageCode_example"; // String | ISO language code (e.g. en, es, de)
-        String promptType = "informational"; // String | Filter by prompt type (search intent)
+        GetTimeseriesCollectionIdParameter collectionId = new GetTimeseriesCollectionIdParameter(); // GetTimeseriesCollectionIdParameter | One collection/tag ID or a comma-separated list of IDs
+        String countryCode = "countryCode_example"; // String | One ISO country code or a comma-separated list (e.g. US,GB,DE)
+        String languageCode = "languageCode_example"; // String | One ISO language code or a comma-separated list (e.g. en,es,de)
+        String promptType = "promptType_example"; // String | One prompt type or a comma-separated list: informational, navigational, commercial, transactional
         String brandKind = "brand"; // String | Filter by brand kind: brand (own brand/products), brand_other (competitors/other brands), non_brand (generic, no brand named). For fair 1:1 brand-vs-competitor comparisons (visibility, share of voice), use non_brand: brand-focused prompts skew results toward the brand they name. The in-app Overview page applies non_brand by default.
         String competitors = "competitors_example"; // String | Comma-separated competitor IDs (unknown IDs return ERR_INVALID_PARAM)
         try {
@@ -74,12 +74,12 @@ public class Example {
 | **projectId** | **Integer**| Project ID | |
 | **range** | **Integer**| Number of days to look back (alternative to from/to) | [optional] |
 | **from** | **OffsetDateTime**|  | [optional] |
-| **to** | **OffsetDateTime**|  | [optional] |
+| **to** | **OffsetDateTime**| End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. | [optional] |
 | **granularity** | **String**|  | [optional] [enum: day, week, month] |
-| **collectionId** | **Integer**|  | [optional] |
-| **countryCode** | **String**| ISO country code (e.g. US, GB, DE) | [optional] |
-| **languageCode** | **String**| ISO language code (e.g. en, es, de) | [optional] |
-| **promptType** | **String**| Filter by prompt type (search intent) | [optional] [enum: informational, navigational, commercial, transactional] |
+| **collectionId** | [**GetTimeseriesCollectionIdParameter**](.md)| One collection/tag ID or a comma-separated list of IDs | [optional] |
+| **countryCode** | **String**| One ISO country code or a comma-separated list (e.g. US,GB,DE) | [optional] |
+| **languageCode** | **String**| One ISO language code or a comma-separated list (e.g. en,es,de) | [optional] |
+| **promptType** | **String**| One prompt type or a comma-separated list: informational, navigational, commercial, transactional | [optional] |
 | **brandKind** | **String**| Filter by brand kind: brand (own brand/products), brand_other (competitors/other brands), non_brand (generic, no brand named). For fair 1:1 brand-vs-competitor comparisons (visibility, share of voice), use non_brand: brand-focused prompts skew results toward the brand they name. The in-app Overview page applies non_brand by default. | [optional] [enum: brand, brand_other, non_brand] |
 | **competitors** | **String**| Comma-separated competitor IDs (unknown IDs return ERR_INVALID_PARAM) | [optional] |
 
@@ -135,12 +135,12 @@ public class Example {
         Integer projectId = 56; // Integer | Project ID
         Integer range = 56; // Integer | Number of days to look back (alternative to from/to)
         OffsetDateTime from = OffsetDateTime.now(); // OffsetDateTime | 
-        OffsetDateTime to = OffsetDateTime.now(); // OffsetDateTime | 
+        OffsetDateTime to = OffsetDateTime.now(); // OffsetDateTime | End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier.
         String granularity = "day"; // String | 
-        Integer collectionId = 56; // Integer | 
-        String countryCode = "countryCode_example"; // String | ISO country code (e.g. US, GB, DE)
-        String languageCode = "languageCode_example"; // String | ISO language code (e.g. en, es, de)
-        String promptType = "informational"; // String | Filter by prompt type (search intent)
+        GetTimeseriesCollectionIdParameter collectionId = new GetTimeseriesCollectionIdParameter(); // GetTimeseriesCollectionIdParameter | One collection/tag ID or a comma-separated list of IDs
+        String countryCode = "countryCode_example"; // String | One ISO country code or a comma-separated list (e.g. US,GB,DE)
+        String languageCode = "languageCode_example"; // String | One ISO language code or a comma-separated list (e.g. en,es,de)
+        String promptType = "promptType_example"; // String | One prompt type or a comma-separated list: informational, navigational, commercial, transactional
         String brandKind = "brand"; // String | Filter by brand kind: brand (own brand/products), brand_other (competitors/other brands), non_brand (generic, no brand named). For fair 1:1 brand-vs-competitor comparisons (visibility, share of voice), use non_brand: brand-focused prompts skew results toward the brand they name. The in-app Overview page applies non_brand by default.
         String competitors = "competitors_example"; // String | Comma-separated competitor IDs (unknown IDs return ERR_INVALID_PARAM)
         try {
@@ -166,12 +166,12 @@ public class Example {
 | **projectId** | **Integer**| Project ID | |
 | **range** | **Integer**| Number of days to look back (alternative to from/to) | [optional] |
 | **from** | **OffsetDateTime**|  | [optional] |
-| **to** | **OffsetDateTime**|  | [optional] |
+| **to** | **OffsetDateTime**| End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. | [optional] |
 | **granularity** | **String**|  | [optional] [enum: day, week, month] |
-| **collectionId** | **Integer**|  | [optional] |
-| **countryCode** | **String**| ISO country code (e.g. US, GB, DE) | [optional] |
-| **languageCode** | **String**| ISO language code (e.g. en, es, de) | [optional] |
-| **promptType** | **String**| Filter by prompt type (search intent) | [optional] [enum: informational, navigational, commercial, transactional] |
+| **collectionId** | [**GetTimeseriesCollectionIdParameter**](.md)| One collection/tag ID or a comma-separated list of IDs | [optional] |
+| **countryCode** | **String**| One ISO country code or a comma-separated list (e.g. US,GB,DE) | [optional] |
+| **languageCode** | **String**| One ISO language code or a comma-separated list (e.g. en,es,de) | [optional] |
+| **promptType** | **String**| One prompt type or a comma-separated list: informational, navigational, commercial, transactional | [optional] |
 | **brandKind** | **String**| Filter by brand kind: brand (own brand/products), brand_other (competitors/other brands), non_brand (generic, no brand named). For fair 1:1 brand-vs-competitor comparisons (visibility, share of voice), use non_brand: brand-focused prompts skew results toward the brand they name. The in-app Overview page applies non_brand by default. | [optional] [enum: brand, brand_other, non_brand] |
 | **competitors** | **String**| Comma-separated competitor IDs (unknown IDs return ERR_INVALID_PARAM) | [optional] |
 
@@ -225,12 +225,12 @@ public class Example {
         Integer projectId = 56; // Integer | Project ID
         Integer range = 56; // Integer | Number of days to look back (alternative to from/to)
         OffsetDateTime from = OffsetDateTime.now(); // OffsetDateTime | 
-        OffsetDateTime to = OffsetDateTime.now(); // OffsetDateTime | 
+        OffsetDateTime to = OffsetDateTime.now(); // OffsetDateTime | End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier.
         String granularity = "day"; // String | 
-        Integer collectionId = 56; // Integer | 
-        String countryCode = "countryCode_example"; // String | ISO country code (e.g. US, GB, DE)
-        String languageCode = "languageCode_example"; // String | ISO language code (e.g. en, es, de)
-        String promptType = "informational"; // String | Filter by prompt type (search intent)
+        GetTimeseriesCollectionIdParameter collectionId = new GetTimeseriesCollectionIdParameter(); // GetTimeseriesCollectionIdParameter | One collection/tag ID or a comma-separated list of IDs
+        String countryCode = "countryCode_example"; // String | One ISO country code or a comma-separated list (e.g. US,GB,DE)
+        String languageCode = "languageCode_example"; // String | One ISO language code or a comma-separated list (e.g. en,es,de)
+        String promptType = "promptType_example"; // String | One prompt type or a comma-separated list: informational, navigational, commercial, transactional
         String brandKind = "brand"; // String | Filter by brand kind: brand (own brand/products), brand_other (competitors/other brands), non_brand (generic, no brand named). For fair 1:1 brand-vs-competitor comparisons (visibility, share of voice), use non_brand: brand-focused prompts skew results toward the brand they name. The in-app Overview page applies non_brand by default.
         String model = "chatgpt"; // String | Filter by AI model. Models the API key's user has not enabled are silently dropped.
         Integer brand1 = 56; // Integer | Competitor ID for the first comparison brand (omit to compare project brand)
@@ -256,14 +256,14 @@ public class Example {
 | **projectId** | **Integer**| Project ID | |
 | **range** | **Integer**| Number of days to look back (alternative to from/to) | [optional] |
 | **from** | **OffsetDateTime**|  | [optional] |
-| **to** | **OffsetDateTime**|  | [optional] |
+| **to** | **OffsetDateTime**| End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. | [optional] |
 | **granularity** | **String**|  | [optional] [enum: day, week, month] |
-| **collectionId** | **Integer**|  | [optional] |
-| **countryCode** | **String**| ISO country code (e.g. US, GB, DE) | [optional] |
-| **languageCode** | **String**| ISO language code (e.g. en, es, de) | [optional] |
-| **promptType** | **String**| Filter by prompt type (search intent) | [optional] [enum: informational, navigational, commercial, transactional] |
+| **collectionId** | [**GetTimeseriesCollectionIdParameter**](.md)| One collection/tag ID or a comma-separated list of IDs | [optional] |
+| **countryCode** | **String**| One ISO country code or a comma-separated list (e.g. US,GB,DE) | [optional] |
+| **languageCode** | **String**| One ISO language code or a comma-separated list (e.g. en,es,de) | [optional] |
+| **promptType** | **String**| One prompt type or a comma-separated list: informational, navigational, commercial, transactional | [optional] |
 | **brandKind** | **String**| Filter by brand kind: brand (own brand/products), brand_other (competitors/other brands), non_brand (generic, no brand named). For fair 1:1 brand-vs-competitor comparisons (visibility, share of voice), use non_brand: brand-focused prompts skew results toward the brand they name. The in-app Overview page applies non_brand by default. | [optional] [enum: brand, brand_other, non_brand] |
-| **model** | **String**| Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. | [optional] [enum: chatgpt, perplexity, gemini, ai_overview, ai_mode, copilot, claude, grok, deepseek, meta_ai, amazon_rufus] |
+| **model** | **String**| Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. | [optional] [enum: chatgpt, perplexity, gemini, ai_overview, ai_mode, copilot, claude, grok, deepseek, meta_ai, amazon_rufus, naver_ai, baidu_ai] |
 | **brand1** | **Integer**| Competitor ID for the first comparison brand (omit to compare project brand) | [optional] |
 | **brand2** | **Integer**|  | [optional] |
 
@@ -317,12 +317,12 @@ public class Example {
         Integer projectId = 56; // Integer | Project ID
         Integer range = 56; // Integer | Number of days to look back (alternative to from/to)
         OffsetDateTime from = OffsetDateTime.now(); // OffsetDateTime | 
-        OffsetDateTime to = OffsetDateTime.now(); // OffsetDateTime | 
+        OffsetDateTime to = OffsetDateTime.now(); // OffsetDateTime | End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier.
         String granularity = "day"; // String | 
-        Integer collectionId = 56; // Integer | 
-        String countryCode = "countryCode_example"; // String | ISO country code (e.g. US, GB, DE)
-        String languageCode = "languageCode_example"; // String | ISO language code (e.g. en, es, de)
-        String promptType = "informational"; // String | Filter by prompt type (search intent)
+        GetTimeseriesCollectionIdParameter collectionId = new GetTimeseriesCollectionIdParameter(); // GetTimeseriesCollectionIdParameter | One collection/tag ID or a comma-separated list of IDs
+        String countryCode = "countryCode_example"; // String | One ISO country code or a comma-separated list (e.g. US,GB,DE)
+        String languageCode = "languageCode_example"; // String | One ISO language code or a comma-separated list (e.g. en,es,de)
+        String promptType = "promptType_example"; // String | One prompt type or a comma-separated list: informational, navigational, commercial, transactional
         String brandKind = "brand"; // String | Filter by brand kind: brand (own brand/products), brand_other (competitors/other brands), non_brand (generic, no brand named). For fair 1:1 brand-vs-competitor comparisons (visibility, share of voice), use non_brand: brand-focused prompts skew results toward the brand they name. The in-app Overview page applies non_brand by default.
         String model = "chatgpt"; // String | Filter by AI model. Models the API key's user has not enabled are silently dropped.
         Integer brand1 = 56; // Integer | Competitor ID for the first comparison brand (omit to compare project brand)
@@ -350,14 +350,14 @@ public class Example {
 | **projectId** | **Integer**| Project ID | |
 | **range** | **Integer**| Number of days to look back (alternative to from/to) | [optional] |
 | **from** | **OffsetDateTime**|  | [optional] |
-| **to** | **OffsetDateTime**|  | [optional] |
+| **to** | **OffsetDateTime**| End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. | [optional] |
 | **granularity** | **String**|  | [optional] [enum: day, week, month] |
-| **collectionId** | **Integer**|  | [optional] |
-| **countryCode** | **String**| ISO country code (e.g. US, GB, DE) | [optional] |
-| **languageCode** | **String**| ISO language code (e.g. en, es, de) | [optional] |
-| **promptType** | **String**| Filter by prompt type (search intent) | [optional] [enum: informational, navigational, commercial, transactional] |
+| **collectionId** | [**GetTimeseriesCollectionIdParameter**](.md)| One collection/tag ID or a comma-separated list of IDs | [optional] |
+| **countryCode** | **String**| One ISO country code or a comma-separated list (e.g. US,GB,DE) | [optional] |
+| **languageCode** | **String**| One ISO language code or a comma-separated list (e.g. en,es,de) | [optional] |
+| **promptType** | **String**| One prompt type or a comma-separated list: informational, navigational, commercial, transactional | [optional] |
 | **brandKind** | **String**| Filter by brand kind: brand (own brand/products), brand_other (competitors/other brands), non_brand (generic, no brand named). For fair 1:1 brand-vs-competitor comparisons (visibility, share of voice), use non_brand: brand-focused prompts skew results toward the brand they name. The in-app Overview page applies non_brand by default. | [optional] [enum: brand, brand_other, non_brand] |
-| **model** | **String**| Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. | [optional] [enum: chatgpt, perplexity, gemini, ai_overview, ai_mode, copilot, claude, grok, deepseek, meta_ai, amazon_rufus] |
+| **model** | **String**| Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. | [optional] [enum: chatgpt, perplexity, gemini, ai_overview, ai_mode, copilot, claude, grok, deepseek, meta_ai, amazon_rufus, naver_ai, baidu_ai] |
 | **brand1** | **Integer**| Competitor ID for the first comparison brand (omit to compare project brand) | [optional] |
 | **brand2** | **Integer**|  | [optional] |
 
@@ -411,12 +411,12 @@ public class Example {
         Integer projectId = 56; // Integer | Project ID
         Integer range = 56; // Integer | Number of days to look back (alternative to from/to)
         OffsetDateTime from = OffsetDateTime.now(); // OffsetDateTime | 
-        OffsetDateTime to = OffsetDateTime.now(); // OffsetDateTime | 
+        OffsetDateTime to = OffsetDateTime.now(); // OffsetDateTime | End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier.
         String granularity = "day"; // String | 
-        Integer collectionId = 56; // Integer | 
-        String countryCode = "countryCode_example"; // String | ISO country code (e.g. US, GB, DE)
-        String languageCode = "languageCode_example"; // String | ISO language code (e.g. en, es, de)
-        String promptType = "informational"; // String | Filter by prompt type (search intent)
+        GetTimeseriesCollectionIdParameter collectionId = new GetTimeseriesCollectionIdParameter(); // GetTimeseriesCollectionIdParameter | One collection/tag ID or a comma-separated list of IDs
+        String countryCode = "countryCode_example"; // String | One ISO country code or a comma-separated list (e.g. US,GB,DE)
+        String languageCode = "languageCode_example"; // String | One ISO language code or a comma-separated list (e.g. en,es,de)
+        String promptType = "promptType_example"; // String | One prompt type or a comma-separated list: informational, navigational, commercial, transactional
         String brandKind = "brand"; // String | Filter by brand kind: brand (own brand/products), brand_other (competitors/other brands), non_brand (generic, no brand named). For fair 1:1 brand-vs-competitor comparisons (visibility, share of voice), use non_brand: brand-focused prompts skew results toward the brand they name. The in-app Overview page applies non_brand by default.
         Integer page = 1; // Integer | 
         Integer perPage = 20; // Integer | 
@@ -441,12 +441,12 @@ public class Example {
 | **projectId** | **Integer**| Project ID | |
 | **range** | **Integer**| Number of days to look back (alternative to from/to) | [optional] |
 | **from** | **OffsetDateTime**|  | [optional] |
-| **to** | **OffsetDateTime**|  | [optional] |
+| **to** | **OffsetDateTime**| End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. | [optional] |
 | **granularity** | **String**|  | [optional] [enum: day, week, month] |
-| **collectionId** | **Integer**|  | [optional] |
-| **countryCode** | **String**| ISO country code (e.g. US, GB, DE) | [optional] |
-| **languageCode** | **String**| ISO language code (e.g. en, es, de) | [optional] |
-| **promptType** | **String**| Filter by prompt type (search intent) | [optional] [enum: informational, navigational, commercial, transactional] |
+| **collectionId** | [**GetTimeseriesCollectionIdParameter**](.md)| One collection/tag ID or a comma-separated list of IDs | [optional] |
+| **countryCode** | **String**| One ISO country code or a comma-separated list (e.g. US,GB,DE) | [optional] |
+| **languageCode** | **String**| One ISO language code or a comma-separated list (e.g. en,es,de) | [optional] |
+| **promptType** | **String**| One prompt type or a comma-separated list: informational, navigational, commercial, transactional | [optional] |
 | **brandKind** | **String**| Filter by brand kind: brand (own brand/products), brand_other (competitors/other brands), non_brand (generic, no brand named). For fair 1:1 brand-vs-competitor comparisons (visibility, share of voice), use non_brand: brand-focused prompts skew results toward the brand they name. The in-app Overview page applies non_brand by default. | [optional] [enum: brand, brand_other, non_brand] |
 | **page** | **Integer**|  | [optional] [default to 1] |
 | **perPage** | **Integer**|  | [optional] [default to 20] |
@@ -501,12 +501,12 @@ public class Example {
         Integer projectId = 56; // Integer | Project ID
         Integer range = 56; // Integer | Number of days to look back (alternative to from/to)
         OffsetDateTime from = OffsetDateTime.now(); // OffsetDateTime | 
-        OffsetDateTime to = OffsetDateTime.now(); // OffsetDateTime | 
+        OffsetDateTime to = OffsetDateTime.now(); // OffsetDateTime | End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier.
         String granularity = "day"; // String | 
-        Integer collectionId = 56; // Integer | 
-        String countryCode = "countryCode_example"; // String | ISO country code (e.g. US, GB, DE)
-        String languageCode = "languageCode_example"; // String | ISO language code (e.g. en, es, de)
-        String promptType = "informational"; // String | Filter by prompt type (search intent)
+        GetTimeseriesCollectionIdParameter collectionId = new GetTimeseriesCollectionIdParameter(); // GetTimeseriesCollectionIdParameter | One collection/tag ID or a comma-separated list of IDs
+        String countryCode = "countryCode_example"; // String | One ISO country code or a comma-separated list (e.g. US,GB,DE)
+        String languageCode = "languageCode_example"; // String | One ISO language code or a comma-separated list (e.g. en,es,de)
+        String promptType = "promptType_example"; // String | One prompt type or a comma-separated list: informational, navigational, commercial, transactional
         String brandKind = "brand"; // String | Filter by brand kind: brand (own brand/products), brand_other (competitors/other brands), non_brand (generic, no brand named). For fair 1:1 brand-vs-competitor comparisons (visibility, share of voice), use non_brand: brand-focused prompts skew results toward the brand they name. The in-app Overview page applies non_brand by default.
         Integer page = 1; // Integer | 
         Integer perPage = 20; // Integer | 
@@ -533,12 +533,12 @@ public class Example {
 | **projectId** | **Integer**| Project ID | |
 | **range** | **Integer**| Number of days to look back (alternative to from/to) | [optional] |
 | **from** | **OffsetDateTime**|  | [optional] |
-| **to** | **OffsetDateTime**|  | [optional] |
+| **to** | **OffsetDateTime**| End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. | [optional] |
 | **granularity** | **String**|  | [optional] [enum: day, week, month] |
-| **collectionId** | **Integer**|  | [optional] |
-| **countryCode** | **String**| ISO country code (e.g. US, GB, DE) | [optional] |
-| **languageCode** | **String**| ISO language code (e.g. en, es, de) | [optional] |
-| **promptType** | **String**| Filter by prompt type (search intent) | [optional] [enum: informational, navigational, commercial, transactional] |
+| **collectionId** | [**GetTimeseriesCollectionIdParameter**](.md)| One collection/tag ID or a comma-separated list of IDs | [optional] |
+| **countryCode** | **String**| One ISO country code or a comma-separated list (e.g. US,GB,DE) | [optional] |
+| **languageCode** | **String**| One ISO language code or a comma-separated list (e.g. en,es,de) | [optional] |
+| **promptType** | **String**| One prompt type or a comma-separated list: informational, navigational, commercial, transactional | [optional] |
 | **brandKind** | **String**| Filter by brand kind: brand (own brand/products), brand_other (competitors/other brands), non_brand (generic, no brand named). For fair 1:1 brand-vs-competitor comparisons (visibility, share of voice), use non_brand: brand-focused prompts skew results toward the brand they name. The in-app Overview page applies non_brand by default. | [optional] [enum: brand, brand_other, non_brand] |
 | **page** | **Integer**|  | [optional] [default to 1] |
 | **perPage** | **Integer**|  | [optional] [default to 20] |

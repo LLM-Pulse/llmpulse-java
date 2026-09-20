@@ -2,7 +2,7 @@
 
 LLM Pulse API
 
-- API version: 1.22.0
+- API version: 1.46.0
 
 - Generator version: 7.24.0
 
@@ -43,7 +43,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>ai.llmpulse</groupId>
   <artifactId>llmpulse-java</artifactId>
-  <version>1.22.0</version>
+  <version>1.46.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -53,7 +53,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "ai.llmpulse:llmpulse-java:1.22.0"
+compile "ai.llmpulse:llmpulse-java:1.46.0"
 ```
 
 ### Others
@@ -66,7 +66,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-- `target/llmpulse-java-1.22.0.jar`
+- `target/llmpulse-java-1.46.0.jar`
 - `target/lib/*.jar`
 
 ## Getting Started
@@ -77,30 +77,20 @@ Please follow the [installation](#installation) instruction and execute the foll
 
 import ai.llmpulse.sdk.*;
 import ai.llmpulse.sdk.model.*;
-import ai.llmpulse.sdk.api.AiModelInsightsApi;
+import ai.llmpulse.sdk.api.AccountApi;
 
-public class AiModelInsightsApiExample {
+public class AccountApiExample {
 
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
         // Configure clients using the `defaultClient` object, such as
         // overriding the host and port, timeout, etc.
-        AiModelInsightsApi apiInstance = new AiModelInsightsApi(defaultClient);
-        Integer projectId = 56; // Integer | Project ID
-        Integer range = 56; // Integer | Number of days to look back (alternative to from/to)
-        OffsetDateTime from = OffsetDateTime.now(); // OffsetDateTime | 
-        OffsetDateTime to = OffsetDateTime.now(); // OffsetDateTime | 
-        String granularity = "day"; // String | 
-        Integer collectionId = 56; // Integer | 
-        String countryCode = "countryCode_example"; // String | ISO country code (e.g. US, GB, DE)
-        String languageCode = "languageCode_example"; // String | ISO language code (e.g. en, es, de)
-        String promptType = "informational"; // String | Filter by prompt type (search intent)
-        String brandKind = "brand"; // String | Filter by brand kind: brand (own brand/products), brand_other (competitors/other brands), non_brand (generic, no brand named). For fair 1:1 brand-vs-competitor comparisons (visibility, share of voice), use non_brand: brand-focused prompts skew results toward the brand they name. The in-app Overview page applies non_brand by default.
-        String competitors = "competitors_example"; // String | Comma-separated competitor IDs (unknown IDs return ERR_INVALID_PARAM)
+        AccountApi apiInstance = new AccountApi(defaultClient);
         try {
-            apiInstance.getAiModelInsightsSummary(projectId, range, from, to, granularity, collectionId, countryCode, languageCode, promptType, brandKind, competitors);
+            GetAccount200Response result = apiInstance.getAccount();
+            System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling AiModelInsightsApi#getAiModelInsightsSummary");
+            System.err.println("Exception when calling AccountApi#getAccount");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -117,6 +107,14 @@ All URIs are relative to *https://api.llmpulse.ai/api/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*AccountApi* | [**getAccount**](docs/AccountApi.md#getAccount) | **GET** /account | Account plan, quota usage and rate limits
+*AccountApi* | [**getAccountWithHttpInfo**](docs/AccountApi.md#getAccountWithHttpInfo) | **GET** /account | Account plan, quota usage and rate limits
+*AiAgentTrafficApi* | [**getAgentTraffic**](docs/AiAgentTrafficApi.md#getAgentTraffic) | **GET** /metrics/agent_traffic | AI bot crawler traffic (Scale plan or above, Beta)
+*AiAgentTrafficApi* | [**getAgentTrafficWithHttpInfo**](docs/AiAgentTrafficApi.md#getAgentTrafficWithHttpInfo) | **GET** /metrics/agent_traffic | AI bot crawler traffic (Scale plan or above, Beta)
+*AiAgentTrafficApi* | [**getAiTraffic**](docs/AiAgentTrafficApi.md#getAiTraffic) | **GET** /metrics/ai_traffic | AI referral traffic (Scale plan or above)
+*AiAgentTrafficApi* | [**getAiTrafficWithHttpInfo**](docs/AiAgentTrafficApi.md#getAiTrafficWithHttpInfo) | **GET** /metrics/ai_traffic | AI referral traffic (Scale plan or above)
+*AiAgentTrafficApi* | [**listAgentBots**](docs/AiAgentTrafficApi.md#listAgentBots) | **GET** /dimensions/agent_bots | AI bot catalog (Scale plan or above)
+*AiAgentTrafficApi* | [**listAgentBotsWithHttpInfo**](docs/AiAgentTrafficApi.md#listAgentBotsWithHttpInfo) | **GET** /dimensions/agent_bots | AI bot catalog (Scale plan or above)
 *AiModelInsightsApi* | [**getAiModelInsightsSummary**](docs/AiModelInsightsApi.md#getAiModelInsightsSummary) | **GET** /reports/ai_model_insights/summary | AI Model Insights summary
 *AiModelInsightsApi* | [**getAiModelInsightsSummaryWithHttpInfo**](docs/AiModelInsightsApi.md#getAiModelInsightsSummaryWithHttpInfo) | **GET** /reports/ai_model_insights/summary | AI Model Insights summary
 *AiModelInsightsApi* | [**getAiModelPositionDistribution**](docs/AiModelInsightsApi.md#getAiModelPositionDistribution) | **GET** /reports/ai_model_insights/position_distribution | Position distribution comparison
@@ -135,78 +133,52 @@ Class | Method | HTTP request | Description
 *AnswersApi* | [**getAnswerWithHttpInfo**](docs/AnswersApi.md#getAnswerWithHttpInfo) | **GET** /answers/{id} | Get one AI response
 *AnswersApi* | [**listAnswers**](docs/AnswersApi.md#listAnswers) | **GET** /answers | List AI responses
 *AnswersApi* | [**listAnswersWithHttpInfo**](docs/AnswersApi.md#listAnswersWithHttpInfo) | **GET** /answers | List AI responses
-*CitationIntelligenceApi* | [**getCitedUrlContent**](docs/CitationIntelligenceApi.md#getCitedUrlContent) | **GET** /citation_intelligence/urls/{url_sha256}/content | Cited URL cached content
-*CitationIntelligenceApi* | [**getCitedUrlContentWithHttpInfo**](docs/CitationIntelligenceApi.md#getCitedUrlContentWithHttpInfo) | **GET** /citation_intelligence/urls/{url_sha256}/content | Cited URL cached content
-*CitationIntelligenceApi* | [**getCitedUrlDetail**](docs/CitationIntelligenceApi.md#getCitedUrlDetail) | **GET** /citation_intelligence/urls/{url_sha256} | Cited URL detail
-*CitationIntelligenceApi* | [**getCitedUrlDetailWithHttpInfo**](docs/CitationIntelligenceApi.md#getCitedUrlDetailWithHttpInfo) | **GET** /citation_intelligence/urls/{url_sha256} | Cited URL detail
-*CitationIntelligenceApi* | [**getMentionsByCitingDomain**](docs/CitationIntelligenceApi.md#getMentionsByCitingDomain) | **GET** /citation_intelligence/mentions_by_domain | Mention share by citing domain
-*CitationIntelligenceApi* | [**getMentionsByCitingDomainWithHttpInfo**](docs/CitationIntelligenceApi.md#getMentionsByCitingDomainWithHttpInfo) | **GET** /citation_intelligence/mentions_by_domain | Mention share by citing domain
-*CitationIntelligenceApi* | [**listCitationGroups**](docs/CitationIntelligenceApi.md#listCitationGroups) | **GET** /citation_intelligence/groups | Grouped citation intelligence
-*CitationIntelligenceApi* | [**listCitationGroupsWithHttpInfo**](docs/CitationIntelligenceApi.md#listCitationGroupsWithHttpInfo) | **GET** /citation_intelligence/groups | Grouped citation intelligence
-*CitationIntelligenceApi* | [**listCitedUrlOccurrences**](docs/CitationIntelligenceApi.md#listCitedUrlOccurrences) | **GET** /citation_intelligence/urls/{url_sha256}/occurrences | Cited URL occurrences
-*CitationIntelligenceApi* | [**listCitedUrlOccurrencesWithHttpInfo**](docs/CitationIntelligenceApi.md#listCitedUrlOccurrencesWithHttpInfo) | **GET** /citation_intelligence/urls/{url_sha256}/occurrences | Cited URL occurrences
-*CollectionsApi* | [**createCollection**](docs/CollectionsApi.md#createCollection) | **POST** /collections | Create a tag
-*CollectionsApi* | [**createCollectionWithHttpInfo**](docs/CollectionsApi.md#createCollectionWithHttpInfo) | **POST** /collections | Create a tag
-*CollectionsApi* | [**deleteCollection**](docs/CollectionsApi.md#deleteCollection) | **DELETE** /collections/{id} | Delete a tag
-*CollectionsApi* | [**deleteCollectionWithHttpInfo**](docs/CollectionsApi.md#deleteCollectionWithHttpInfo) | **DELETE** /collections/{id} | Delete a tag
-*CollectionsApi* | [**updateCollection**](docs/CollectionsApi.md#updateCollection) | **PATCH** /collections/{id} | Update a tag
-*CollectionsApi* | [**updateCollectionWithHttpInfo**](docs/CollectionsApi.md#updateCollectionWithHttpInfo) | **PATCH** /collections/{id} | Update a tag
+*CollectionsTagsApi* | [**assignPromptTags**](docs/CollectionsTagsApi.md#assignPromptTags) | **POST** /prompts/assign_tags | Bulk-attach tags to prompts
+*CollectionsTagsApi* | [**assignPromptTagsWithHttpInfo**](docs/CollectionsTagsApi.md#assignPromptTagsWithHttpInfo) | **POST** /prompts/assign_tags | Bulk-attach tags to prompts
+*CollectionsTagsApi* | [**createCollection**](docs/CollectionsTagsApi.md#createCollection) | **POST** /collections | Create a tag
+*CollectionsTagsApi* | [**createCollectionWithHttpInfo**](docs/CollectionsTagsApi.md#createCollectionWithHttpInfo) | **POST** /collections | Create a tag
+*CollectionsTagsApi* | [**deleteCollection**](docs/CollectionsTagsApi.md#deleteCollection) | **DELETE** /collections/{id} | Delete a tag
+*CollectionsTagsApi* | [**deleteCollectionWithHttpInfo**](docs/CollectionsTagsApi.md#deleteCollectionWithHttpInfo) | **DELETE** /collections/{id} | Delete a tag
+*CollectionsTagsApi* | [**listCollections**](docs/CollectionsTagsApi.md#listCollections) | **GET** /dimensions/collections | List tags/collections
+*CollectionsTagsApi* | [**listCollectionsWithHttpInfo**](docs/CollectionsTagsApi.md#listCollectionsWithHttpInfo) | **GET** /dimensions/collections | List tags/collections
+*CollectionsTagsApi* | [**listTags**](docs/CollectionsTagsApi.md#listTags) | **GET** /dimensions/tags | List tags (alias for /collections)
+*CollectionsTagsApi* | [**listTagsWithHttpInfo**](docs/CollectionsTagsApi.md#listTagsWithHttpInfo) | **GET** /dimensions/tags | List tags (alias for /collections)
+*CollectionsTagsApi* | [**updateCollection**](docs/CollectionsTagsApi.md#updateCollection) | **PATCH** /collections/{id} | Update a tag
+*CollectionsTagsApi* | [**updateCollectionWithHttpInfo**](docs/CollectionsTagsApi.md#updateCollectionWithHttpInfo) | **PATCH** /collections/{id} | Update a tag
 *CompetitorsApi* | [**createCompetitor**](docs/CompetitorsApi.md#createCompetitor) | **POST** /competitors | Add a competitor
 *CompetitorsApi* | [**createCompetitorWithHttpInfo**](docs/CompetitorsApi.md#createCompetitorWithHttpInfo) | **POST** /competitors | Add a competitor
 *CompetitorsApi* | [**deleteCompetitor**](docs/CompetitorsApi.md#deleteCompetitor) | **DELETE** /competitors/{id} | Delete a competitor
 *CompetitorsApi* | [**deleteCompetitorWithHttpInfo**](docs/CompetitorsApi.md#deleteCompetitorWithHttpInfo) | **DELETE** /competitors/{id} | Delete a competitor
+*CompetitorsApi* | [**getCompetitorDetails**](docs/CompetitorsApi.md#getCompetitorDetails) | **GET** /dimensions/competitors/{id} | Competitor details
+*CompetitorsApi* | [**getCompetitorDetailsWithHttpInfo**](docs/CompetitorsApi.md#getCompetitorDetailsWithHttpInfo) | **GET** /dimensions/competitors/{id} | Competitor details
+*CompetitorsApi* | [**listCompetitors**](docs/CompetitorsApi.md#listCompetitors) | **GET** /dimensions/competitors | List competitors
+*CompetitorsApi* | [**listCompetitorsWithHttpInfo**](docs/CompetitorsApi.md#listCompetitorsWithHttpInfo) | **GET** /dimensions/competitors | List competitors
 *CompetitorsApi* | [**updateCompetitor**](docs/CompetitorsApi.md#updateCompetitor) | **PATCH** /competitors/{id} | Update a competitor
 *CompetitorsApi* | [**updateCompetitorWithHttpInfo**](docs/CompetitorsApi.md#updateCompetitorWithHttpInfo) | **PATCH** /competitors/{id} | Update a competitor
-*DimensionsApi* | [**getCompetitorDetails**](docs/DimensionsApi.md#getCompetitorDetails) | **GET** /dimensions/competitors/{id} | Competitor details
-*DimensionsApi* | [**getCompetitorDetailsWithHttpInfo**](docs/DimensionsApi.md#getCompetitorDetailsWithHttpInfo) | **GET** /dimensions/competitors/{id} | Competitor details
-*DimensionsApi* | [**getProjectDetails**](docs/DimensionsApi.md#getProjectDetails) | **GET** /dimensions/projects/{id} | Project details
-*DimensionsApi* | [**getProjectDetailsWithHttpInfo**](docs/DimensionsApi.md#getProjectDetailsWithHttpInfo) | **GET** /dimensions/projects/{id} | Project details
-*DimensionsApi* | [**listAgentBots**](docs/DimensionsApi.md#listAgentBots) | **GET** /dimensions/agent_bots | AI bot catalog (Scale+)
-*DimensionsApi* | [**listAgentBotsWithHttpInfo**](docs/DimensionsApi.md#listAgentBotsWithHttpInfo) | **GET** /dimensions/agent_bots | AI bot catalog (Scale+)
-*DimensionsApi* | [**listAllCitations**](docs/DimensionsApi.md#listAllCitations) | **GET** /dimensions/all_citations | List all citations (brand + competitor)
-*DimensionsApi* | [**listAllCitationsWithHttpInfo**](docs/DimensionsApi.md#listAllCitationsWithHttpInfo) | **GET** /dimensions/all_citations | List all citations (brand + competitor)
-*DimensionsApi* | [**listAllMentions**](docs/DimensionsApi.md#listAllMentions) | **GET** /dimensions/all_mentions | List all mentions (brand + competitor)
-*DimensionsApi* | [**listAllMentionsWithHttpInfo**](docs/DimensionsApi.md#listAllMentionsWithHttpInfo) | **GET** /dimensions/all_mentions | List all mentions (brand + competitor)
-*DimensionsApi* | [**listCitations**](docs/DimensionsApi.md#listCitations) | **GET** /dimensions/citations | List brand citations
-*DimensionsApi* | [**listCitationsWithHttpInfo**](docs/DimensionsApi.md#listCitationsWithHttpInfo) | **GET** /dimensions/citations | List brand citations
-*DimensionsApi* | [**listCollections**](docs/DimensionsApi.md#listCollections) | **GET** /dimensions/collections | List tags/collections
-*DimensionsApi* | [**listCollectionsWithHttpInfo**](docs/DimensionsApi.md#listCollectionsWithHttpInfo) | **GET** /dimensions/collections | List tags/collections
-*DimensionsApi* | [**listCompetitorCitations**](docs/DimensionsApi.md#listCompetitorCitations) | **GET** /dimensions/competitor_citations | List competitor citations
-*DimensionsApi* | [**listCompetitorCitationsWithHttpInfo**](docs/DimensionsApi.md#listCompetitorCitationsWithHttpInfo) | **GET** /dimensions/competitor_citations | List competitor citations
-*DimensionsApi* | [**listCompetitorMentions**](docs/DimensionsApi.md#listCompetitorMentions) | **GET** /dimensions/competitor_mentions | List competitor mentions
-*DimensionsApi* | [**listCompetitorMentionsWithHttpInfo**](docs/DimensionsApi.md#listCompetitorMentionsWithHttpInfo) | **GET** /dimensions/competitor_mentions | List competitor mentions
-*DimensionsApi* | [**listCompetitors**](docs/DimensionsApi.md#listCompetitors) | **GET** /dimensions/competitors | List competitors
-*DimensionsApi* | [**listCompetitorsWithHttpInfo**](docs/DimensionsApi.md#listCompetitorsWithHttpInfo) | **GET** /dimensions/competitors | List competitors
-*DimensionsApi* | [**listLocales**](docs/DimensionsApi.md#listLocales) | **GET** /dimensions/locales | List locales with data
-*DimensionsApi* | [**listLocalesWithHttpInfo**](docs/DimensionsApi.md#listLocalesWithHttpInfo) | **GET** /dimensions/locales | List locales with data
-*DimensionsApi* | [**listMentions**](docs/DimensionsApi.md#listMentions) | **GET** /dimensions/mentions | List brand mentions
-*DimensionsApi* | [**listMentionsWithHttpInfo**](docs/DimensionsApi.md#listMentionsWithHttpInfo) | **GET** /dimensions/mentions | List brand mentions
-*DimensionsApi* | [**listModels**](docs/DimensionsApi.md#listModels) | **GET** /dimensions/models | List models with data
-*DimensionsApi* | [**listModelsWithHttpInfo**](docs/DimensionsApi.md#listModelsWithHttpInfo) | **GET** /dimensions/models | List models with data
-*DimensionsApi* | [**listProjects**](docs/DimensionsApi.md#listProjects) | **GET** /dimensions/projects | List projects
-*DimensionsApi* | [**listProjectsWithHttpInfo**](docs/DimensionsApi.md#listProjectsWithHttpInfo) | **GET** /dimensions/projects | List projects
-*DimensionsApi* | [**listPromptExecutions**](docs/DimensionsApi.md#listPromptExecutions) | **GET** /dimensions/prompt_executions | List prompt executions
-*DimensionsApi* | [**listPromptExecutionsWithHttpInfo**](docs/DimensionsApi.md#listPromptExecutionsWithHttpInfo) | **GET** /dimensions/prompt_executions | List prompt executions
-*DimensionsApi* | [**listPrompts**](docs/DimensionsApi.md#listPrompts) | **GET** /dimensions/prompts | List prompts
-*DimensionsApi* | [**listPromptsWithHttpInfo**](docs/DimensionsApi.md#listPromptsWithHttpInfo) | **GET** /dimensions/prompts | List prompts
-*DimensionsApi* | [**listSentimentCategories**](docs/DimensionsApi.md#listSentimentCategories) | **GET** /dimensions/sentiments | List sentiment categories
-*DimensionsApi* | [**listSentimentCategoriesWithHttpInfo**](docs/DimensionsApi.md#listSentimentCategoriesWithHttpInfo) | **GET** /dimensions/sentiments | List sentiment categories
-*DimensionsApi* | [**listSources**](docs/DimensionsApi.md#listSources) | **GET** /dimensions/sources | List source URLs
-*DimensionsApi* | [**listSourcesWithHttpInfo**](docs/DimensionsApi.md#listSourcesWithHttpInfo) | **GET** /dimensions/sources | List source URLs
-*DimensionsApi* | [**listTags**](docs/DimensionsApi.md#listTags) | **GET** /dimensions/tags | List tags (alias for /collections)
-*DimensionsApi* | [**listTagsWithHttpInfo**](docs/DimensionsApi.md#listTagsWithHttpInfo) | **GET** /dimensions/tags | List tags (alias for /collections)
 *GeoWriterApi* | [**createIntelligenceTask**](docs/GeoWriterApi.md#createIntelligenceTask) | **POST** /intelligence_tasks | Create a GEO Writer task
 *GeoWriterApi* | [**createIntelligenceTaskWithHttpInfo**](docs/GeoWriterApi.md#createIntelligenceTaskWithHttpInfo) | **POST** /intelligence_tasks | Create a GEO Writer task
 *GeoWriterApi* | [**getIntelligenceTask**](docs/GeoWriterApi.md#getIntelligenceTask) | **GET** /intelligence_tasks/{id} | Get a GEO Writer task
 *GeoWriterApi* | [**getIntelligenceTaskWithHttpInfo**](docs/GeoWriterApi.md#getIntelligenceTaskWithHttpInfo) | **GET** /intelligence_tasks/{id} | Get a GEO Writer task
 *GeoWriterApi* | [**listIntelligenceTasks**](docs/GeoWriterApi.md#listIntelligenceTasks) | **GET** /intelligence_tasks | List GEO Writer tasks
 *GeoWriterApi* | [**listIntelligenceTasksWithHttpInfo**](docs/GeoWriterApi.md#listIntelligenceTasksWithHttpInfo) | **GET** /intelligence_tasks | List GEO Writer tasks
+*GeoWriterApi* | [**revertIntelligenceTaskContent**](docs/GeoWriterApi.md#revertIntelligenceTaskContent) | **POST** /intelligence_tasks/{id}/revert | Revert GEO Writer task content
+*GeoWriterApi* | [**revertIntelligenceTaskContentWithHttpInfo**](docs/GeoWriterApi.md#revertIntelligenceTaskContentWithHttpInfo) | **POST** /intelligence_tasks/{id}/revert | Revert GEO Writer task content
+*GeoWriterApi* | [**updateIntelligenceTaskContent**](docs/GeoWriterApi.md#updateIntelligenceTaskContent) | **PATCH** /intelligence_tasks/{id} | Edit GEO Writer task content
+*GeoWriterApi* | [**updateIntelligenceTaskContentWithHttpInfo**](docs/GeoWriterApi.md#updateIntelligenceTaskContentWithHttpInfo) | **PATCH** /intelligence_tasks/{id} | Edit GEO Writer task content
 *HealthApi* | [**ping**](docs/HealthApi.md#ping) | **GET** /ping | Health check
 *HealthApi* | [**pingWithHttpInfo**](docs/HealthApi.md#pingWithHttpInfo) | **GET** /ping | Health check
-*MetricsApi* | [**getAgentTraffic**](docs/MetricsApi.md#getAgentTraffic) | **GET** /metrics/agent_traffic | AI bot crawler traffic (Scale+, Beta)
-*MetricsApi* | [**getAgentTrafficWithHttpInfo**](docs/MetricsApi.md#getAgentTrafficWithHttpInfo) | **GET** /metrics/agent_traffic | AI bot crawler traffic (Scale+, Beta)
-*MetricsApi* | [**getAiTraffic**](docs/MetricsApi.md#getAiTraffic) | **GET** /metrics/ai_traffic | AI referral traffic (Scale+)
-*MetricsApi* | [**getAiTrafficWithHttpInfo**](docs/MetricsApi.md#getAiTrafficWithHttpInfo) | **GET** /metrics/ai_traffic | AI referral traffic (Scale+)
+*MentionsCitationsApi* | [**listAllCitations**](docs/MentionsCitationsApi.md#listAllCitations) | **GET** /dimensions/all_citations | List all citations (brand + competitor)
+*MentionsCitationsApi* | [**listAllCitationsWithHttpInfo**](docs/MentionsCitationsApi.md#listAllCitationsWithHttpInfo) | **GET** /dimensions/all_citations | List all citations (brand + competitor)
+*MentionsCitationsApi* | [**listAllMentions**](docs/MentionsCitationsApi.md#listAllMentions) | **GET** /dimensions/all_mentions | List all mentions (brand + competitor)
+*MentionsCitationsApi* | [**listAllMentionsWithHttpInfo**](docs/MentionsCitationsApi.md#listAllMentionsWithHttpInfo) | **GET** /dimensions/all_mentions | List all mentions (brand + competitor)
+*MentionsCitationsApi* | [**listCitations**](docs/MentionsCitationsApi.md#listCitations) | **GET** /dimensions/citations | List brand citations
+*MentionsCitationsApi* | [**listCitationsWithHttpInfo**](docs/MentionsCitationsApi.md#listCitationsWithHttpInfo) | **GET** /dimensions/citations | List brand citations
+*MentionsCitationsApi* | [**listCompetitorCitations**](docs/MentionsCitationsApi.md#listCompetitorCitations) | **GET** /dimensions/competitor_citations | List competitor citations
+*MentionsCitationsApi* | [**listCompetitorCitationsWithHttpInfo**](docs/MentionsCitationsApi.md#listCompetitorCitationsWithHttpInfo) | **GET** /dimensions/competitor_citations | List competitor citations
+*MentionsCitationsApi* | [**listCompetitorMentions**](docs/MentionsCitationsApi.md#listCompetitorMentions) | **GET** /dimensions/competitor_mentions | List competitor mentions
+*MentionsCitationsApi* | [**listCompetitorMentionsWithHttpInfo**](docs/MentionsCitationsApi.md#listCompetitorMentionsWithHttpInfo) | **GET** /dimensions/competitor_mentions | List competitor mentions
+*MentionsCitationsApi* | [**listMentions**](docs/MentionsCitationsApi.md#listMentions) | **GET** /dimensions/mentions | List brand mentions
+*MentionsCitationsApi* | [**listMentionsWithHttpInfo**](docs/MentionsCitationsApi.md#listMentionsWithHttpInfo) | **GET** /dimensions/mentions | List brand mentions
 *MetricsApi* | [**getPromptSummary**](docs/MetricsApi.md#getPromptSummary) | **GET** /metrics/prompt_summary | Per-prompt metrics summary
 *MetricsApi* | [**getPromptSummaryWithHttpInfo**](docs/MetricsApi.md#getPromptSummaryWithHttpInfo) | **GET** /metrics/prompt_summary | Per-prompt metrics summary
 *MetricsApi* | [**getShareOfVoice**](docs/MetricsApi.md#getShareOfVoice) | **GET** /metrics/sov | Share of Voice
@@ -217,30 +189,56 @@ Class | Method | HTTP request | Description
 *MetricsApi* | [**getTimeseriesWithHttpInfo**](docs/MetricsApi.md#getTimeseriesWithHttpInfo) | **GET** /metrics/timeseries | Time-series metrics
 *MetricsApi* | [**getTopSources**](docs/MetricsApi.md#getTopSources) | **GET** /metrics/top_sources | Top cited sources
 *MetricsApi* | [**getTopSourcesWithHttpInfo**](docs/MetricsApi.md#getTopSourcesWithHttpInfo) | **GET** /metrics/top_sources | Top cited sources
+*OwnedMediaCommunitiesApi* | [**listOwnedMedia**](docs/OwnedMediaCommunitiesApi.md#listOwnedMedia) | **GET** /dimensions/owned_media | List owned-media citations
+*OwnedMediaCommunitiesApi* | [**listOwnedMediaWithHttpInfo**](docs/OwnedMediaCommunitiesApi.md#listOwnedMediaWithHttpInfo) | **GET** /dimensions/owned_media | List owned-media citations
+*OwnedMediaCommunitiesApi* | [**listRedditCitations**](docs/OwnedMediaCommunitiesApi.md#listRedditCitations) | **GET** /dimensions/reddit | List cited Reddit content
+*OwnedMediaCommunitiesApi* | [**listRedditCitationsWithHttpInfo**](docs/OwnedMediaCommunitiesApi.md#listRedditCitationsWithHttpInfo) | **GET** /dimensions/reddit | List cited Reddit content
 *ProjectsApi* | [**createProject**](docs/ProjectsApi.md#createProject) | **POST** /projects | Create a project (fast mode)
 *ProjectsApi* | [**createProjectWithHttpInfo**](docs/ProjectsApi.md#createProjectWithHttpInfo) | **POST** /projects | Create a project (fast mode)
 *ProjectsApi* | [**createProjectDraft**](docs/ProjectsApi.md#createProjectDraft) | **POST** /project_drafts | Start a project draft (wizard step 1)
 *ProjectsApi* | [**createProjectDraftWithHttpInfo**](docs/ProjectsApi.md#createProjectDraftWithHttpInfo) | **POST** /project_drafts | Start a project draft (wizard step 1)
 *ProjectsApi* | [**finalizeProjectDraft**](docs/ProjectsApi.md#finalizeProjectDraft) | **POST** /project_drafts/{id}/finalize | Finalize a draft into a real project
 *ProjectsApi* | [**finalizeProjectDraftWithHttpInfo**](docs/ProjectsApi.md#finalizeProjectDraftWithHttpInfo) | **POST** /project_drafts/{id}/finalize | Finalize a draft into a real project
+*ProjectsApi* | [**getProjectDetails**](docs/ProjectsApi.md#getProjectDetails) | **GET** /dimensions/projects/{id} | Project details
+*ProjectsApi* | [**getProjectDetailsWithHttpInfo**](docs/ProjectsApi.md#getProjectDetailsWithHttpInfo) | **GET** /dimensions/projects/{id} | Project details
 *ProjectsApi* | [**getProjectDraft**](docs/ProjectsApi.md#getProjectDraft) | **GET** /project_drafts/{id} | Read a project draft
 *ProjectsApi* | [**getProjectDraftWithHttpInfo**](docs/ProjectsApi.md#getProjectDraftWithHttpInfo) | **GET** /project_drafts/{id} | Read a project draft
+*ProjectsApi* | [**listLocales**](docs/ProjectsApi.md#listLocales) | **GET** /dimensions/locales | List locales with data
+*ProjectsApi* | [**listLocalesWithHttpInfo**](docs/ProjectsApi.md#listLocalesWithHttpInfo) | **GET** /dimensions/locales | List locales with data
+*ProjectsApi* | [**listModels**](docs/ProjectsApi.md#listModels) | **GET** /dimensions/models | List models with data
+*ProjectsApi* | [**listModelsWithHttpInfo**](docs/ProjectsApi.md#listModelsWithHttpInfo) | **GET** /dimensions/models | List models with data
+*ProjectsApi* | [**listProjects**](docs/ProjectsApi.md#listProjects) | **GET** /dimensions/projects | List projects
+*ProjectsApi* | [**listProjectsWithHttpInfo**](docs/ProjectsApi.md#listProjectsWithHttpInfo) | **GET** /dimensions/projects | List projects
+*ProjectsApi* | [**updateProject**](docs/ProjectsApi.md#updateProject) | **PATCH** /projects/{id} | Update a project profile (Brand Book)
+*ProjectsApi* | [**updateProjectWithHttpInfo**](docs/ProjectsApi.md#updateProjectWithHttpInfo) | **PATCH** /projects/{id} | Update a project profile (Brand Book)
 *ProjectsApi* | [**updateProjectDraft**](docs/ProjectsApi.md#updateProjectDraft) | **PATCH** /project_drafts/{id} | Submit a wizard step
 *ProjectsApi* | [**updateProjectDraftWithHttpInfo**](docs/ProjectsApi.md#updateProjectDraftWithHttpInfo) | **PATCH** /project_drafts/{id} | Submit a wizard step
-*PromptsApi* | [**assignPromptTags**](docs/PromptsApi.md#assignPromptTags) | **POST** /prompts/assign_tags | Bulk-attach tags to prompts
-*PromptsApi* | [**assignPromptTagsWithHttpInfo**](docs/PromptsApi.md#assignPromptTagsWithHttpInfo) | **POST** /prompts/assign_tags | Bulk-attach tags to prompts
 *PromptsApi* | [**createPrompts**](docs/PromptsApi.md#createPrompts) | **POST** /prompts | Bulk-create prompts
 *PromptsApi* | [**createPromptsWithHttpInfo**](docs/PromptsApi.md#createPromptsWithHttpInfo) | **POST** /prompts | Bulk-create prompts
 *PromptsApi* | [**deletePrompt**](docs/PromptsApi.md#deletePrompt) | **DELETE** /prompts/{id} | Delete a prompt
 *PromptsApi* | [**deletePromptWithHttpInfo**](docs/PromptsApi.md#deletePromptWithHttpInfo) | **DELETE** /prompts/{id} | Delete a prompt
+*PromptsApi* | [**listPromptExecutions**](docs/PromptsApi.md#listPromptExecutions) | **GET** /dimensions/prompt_executions | List prompt executions
+*PromptsApi* | [**listPromptExecutionsWithHttpInfo**](docs/PromptsApi.md#listPromptExecutionsWithHttpInfo) | **GET** /dimensions/prompt_executions | List prompt executions
+*PromptsApi* | [**listPrompts**](docs/PromptsApi.md#listPrompts) | **GET** /dimensions/prompts | List prompts
+*PromptsApi* | [**listPromptsWithHttpInfo**](docs/PromptsApi.md#listPromptsWithHttpInfo) | **GET** /dimensions/prompts | List prompts
+*PromptsApi* | [**listQueryFanOuts**](docs/PromptsApi.md#listQueryFanOuts) | **GET** /dimensions/query_fan_outs | List query fan-out
+*PromptsApi* | [**listQueryFanOutsWithHttpInfo**](docs/PromptsApi.md#listQueryFanOutsWithHttpInfo) | **GET** /dimensions/query_fan_outs | List query fan-out
 *RecommendationsApi* | [**getRecommendation**](docs/RecommendationsApi.md#getRecommendation) | **GET** /recommendations/{id} | Get recommendation run with items
 *RecommendationsApi* | [**getRecommendationWithHttpInfo**](docs/RecommendationsApi.md#getRecommendationWithHttpInfo) | **GET** /recommendations/{id} | Get recommendation run with items
 *RecommendationsApi* | [**launchRecommendations**](docs/RecommendationsApi.md#launchRecommendations) | **POST** /recommendations | Launch a recommendations generation
 *RecommendationsApi* | [**launchRecommendationsWithHttpInfo**](docs/RecommendationsApi.md#launchRecommendationsWithHttpInfo) | **POST** /recommendations | Launch a recommendations generation
 *RecommendationsApi* | [**listRecommendations**](docs/RecommendationsApi.md#listRecommendations) | **GET** /recommendations | List recommendation runs
 *RecommendationsApi* | [**listRecommendationsWithHttpInfo**](docs/RecommendationsApi.md#listRecommendationsWithHttpInfo) | **GET** /recommendations | List recommendation runs
-*ReportsApi* | [**createTechnicalGeoReports**](docs/ReportsApi.md#createTechnicalGeoReports) | **POST** /technical_geo_reports | Run technical GEO analysis
-*ReportsApi* | [**createTechnicalGeoReportsWithHttpInfo**](docs/ReportsApi.md#createTechnicalGeoReportsWithHttpInfo) | **POST** /technical_geo_reports | Run technical GEO analysis
+*ReputationStudiesApi* | [**getReputationReport**](docs/ReputationStudiesApi.md#getReputationReport) | **GET** /reputation/reports/{id} | Get reputation report scores
+*ReputationStudiesApi* | [**getReputationReportWithHttpInfo**](docs/ReputationStudiesApi.md#getReputationReportWithHttpInfo) | **GET** /reputation/reports/{id} | Get reputation report scores
+*ReputationStudiesApi* | [**getStudy**](docs/ReputationStudiesApi.md#getStudy) | **GET** /studies/{id} | Get a custom AI study
+*ReputationStudiesApi* | [**getStudyWithHttpInfo**](docs/ReputationStudiesApi.md#getStudyWithHttpInfo) | **GET** /studies/{id} | Get a custom AI study
+*ReputationStudiesApi* | [**getStudyReport**](docs/ReputationStudiesApi.md#getStudyReport) | **GET** /studies/{id}/reports/{report_id} | Get custom study report scores
+*ReputationStudiesApi* | [**getStudyReportWithHttpInfo**](docs/ReputationStudiesApi.md#getStudyReportWithHttpInfo) | **GET** /studies/{id}/reports/{report_id} | Get custom study report scores
+*ReputationStudiesApi* | [**listReputationReports**](docs/ReputationStudiesApi.md#listReputationReports) | **GET** /reputation/reports | List reputation reports
+*ReputationStudiesApi* | [**listReputationReportsWithHttpInfo**](docs/ReputationStudiesApi.md#listReputationReportsWithHttpInfo) | **GET** /reputation/reports | List reputation reports
+*ReputationStudiesApi* | [**listStudies**](docs/ReputationStudiesApi.md#listStudies) | **GET** /studies | List custom AI studies
+*ReputationStudiesApi* | [**listStudiesWithHttpInfo**](docs/ReputationStudiesApi.md#listStudiesWithHttpInfo) | **GET** /studies | List custom AI studies
 *SearchConsoleApi* | [**getSearchConsolePages**](docs/SearchConsoleApi.md#getSearchConsolePages) | **GET** /search_console/pages | Top Search Console pages (Growth+)
 *SearchConsoleApi* | [**getSearchConsolePagesWithHttpInfo**](docs/SearchConsoleApi.md#getSearchConsolePagesWithHttpInfo) | **GET** /search_console/pages | Top Search Console pages (Growth+)
 *SearchConsoleApi* | [**getSearchConsoleQueries**](docs/SearchConsoleApi.md#getSearchConsoleQueries) | **GET** /search_console/queries | Top Search Console queries (Growth+)
@@ -249,8 +247,32 @@ Class | Method | HTTP request | Description
 *SearchConsoleApi* | [**getSearchConsoleSummaryWithHttpInfo**](docs/SearchConsoleApi.md#getSearchConsoleSummaryWithHttpInfo) | **GET** /search_console/summary | Search Console summary (Growth+)
 *SearchConsoleApi* | [**getSearchConsoleTimeseries**](docs/SearchConsoleApi.md#getSearchConsoleTimeseries) | **GET** /search_console/timeseries | Search Console time series (Growth+)
 *SearchConsoleApi* | [**getSearchConsoleTimeseriesWithHttpInfo**](docs/SearchConsoleApi.md#getSearchConsoleTimeseriesWithHttpInfo) | **GET** /search_console/timeseries | Search Console time series (Growth+)
+*SentimentsApi* | [**listSentimentCategories**](docs/SentimentsApi.md#listSentimentCategories) | **GET** /dimensions/sentiments | List sentiment categories
+*SentimentsApi* | [**listSentimentCategoriesWithHttpInfo**](docs/SentimentsApi.md#listSentimentCategoriesWithHttpInfo) | **GET** /dimensions/sentiments | List sentiment categories
 *SentimentsApi* | [**listSentimentRecords**](docs/SentimentsApi.md#listSentimentRecords) | **GET** /sentiments | List sentiment records
 *SentimentsApi* | [**listSentimentRecordsWithHttpInfo**](docs/SentimentsApi.md#listSentimentRecordsWithHttpInfo) | **GET** /sentiments | List sentiment records
+*ShoppingAdsApi* | [**listAds**](docs/ShoppingAdsApi.md#listAds) | **GET** /dimensions/ads | List AI ad placements
+*ShoppingAdsApi* | [**listAdsWithHttpInfo**](docs/ShoppingAdsApi.md#listAdsWithHttpInfo) | **GET** /dimensions/ads | List AI ad placements
+*ShoppingAdsApi* | [**listShopping**](docs/ShoppingAdsApi.md#listShopping) | **GET** /dimensions/shopping | List shopping results
+*ShoppingAdsApi* | [**listShoppingWithHttpInfo**](docs/ShoppingAdsApi.md#listShoppingWithHttpInfo) | **GET** /dimensions/shopping | List shopping results
+*SourcesCitationIntelligenceApi* | [**getCitedUrlContent**](docs/SourcesCitationIntelligenceApi.md#getCitedUrlContent) | **GET** /citation_intelligence/urls/{url_sha256}/content | Cited URL cached content
+*SourcesCitationIntelligenceApi* | [**getCitedUrlContentWithHttpInfo**](docs/SourcesCitationIntelligenceApi.md#getCitedUrlContentWithHttpInfo) | **GET** /citation_intelligence/urls/{url_sha256}/content | Cited URL cached content
+*SourcesCitationIntelligenceApi* | [**getCitedUrlDetail**](docs/SourcesCitationIntelligenceApi.md#getCitedUrlDetail) | **GET** /citation_intelligence/urls/{url_sha256} | Cited URL detail
+*SourcesCitationIntelligenceApi* | [**getCitedUrlDetailWithHttpInfo**](docs/SourcesCitationIntelligenceApi.md#getCitedUrlDetailWithHttpInfo) | **GET** /citation_intelligence/urls/{url_sha256} | Cited URL detail
+*SourcesCitationIntelligenceApi* | [**getMentionsByCitingDomain**](docs/SourcesCitationIntelligenceApi.md#getMentionsByCitingDomain) | **GET** /citation_intelligence/mentions_by_domain | Mention share by citing domain
+*SourcesCitationIntelligenceApi* | [**getMentionsByCitingDomainWithHttpInfo**](docs/SourcesCitationIntelligenceApi.md#getMentionsByCitingDomainWithHttpInfo) | **GET** /citation_intelligence/mentions_by_domain | Mention share by citing domain
+*SourcesCitationIntelligenceApi* | [**listCitationGroups**](docs/SourcesCitationIntelligenceApi.md#listCitationGroups) | **GET** /citation_intelligence/groups | Grouped citation intelligence
+*SourcesCitationIntelligenceApi* | [**listCitationGroupsWithHttpInfo**](docs/SourcesCitationIntelligenceApi.md#listCitationGroupsWithHttpInfo) | **GET** /citation_intelligence/groups | Grouped citation intelligence
+*SourcesCitationIntelligenceApi* | [**listCitedUrlOccurrences**](docs/SourcesCitationIntelligenceApi.md#listCitedUrlOccurrences) | **GET** /citation_intelligence/urls/{url_sha256}/occurrences | Cited URL occurrences
+*SourcesCitationIntelligenceApi* | [**listCitedUrlOccurrencesWithHttpInfo**](docs/SourcesCitationIntelligenceApi.md#listCitedUrlOccurrencesWithHttpInfo) | **GET** /citation_intelligence/urls/{url_sha256}/occurrences | Cited URL occurrences
+*SourcesCitationIntelligenceApi* | [**listSources**](docs/SourcesCitationIntelligenceApi.md#listSources) | **GET** /dimensions/sources | List source URLs
+*SourcesCitationIntelligenceApi* | [**listSourcesWithHttpInfo**](docs/SourcesCitationIntelligenceApi.md#listSourcesWithHttpInfo) | **GET** /dimensions/sources | List source URLs
+*TechnicalGeoReportsApi* | [**createTechnicalGeoReports**](docs/TechnicalGeoReportsApi.md#createTechnicalGeoReports) | **POST** /technical_geo_reports | Run technical GEO analysis
+*TechnicalGeoReportsApi* | [**createTechnicalGeoReportsWithHttpInfo**](docs/TechnicalGeoReportsApi.md#createTechnicalGeoReportsWithHttpInfo) | **POST** /technical_geo_reports | Run technical GEO analysis
+*TechnicalGeoReportsApi* | [**getTechnicalGeoReport**](docs/TechnicalGeoReportsApi.md#getTechnicalGeoReport) | **GET** /technical_geo_reports/{id} | Get a technical GEO report
+*TechnicalGeoReportsApi* | [**getTechnicalGeoReportWithHttpInfo**](docs/TechnicalGeoReportsApi.md#getTechnicalGeoReportWithHttpInfo) | **GET** /technical_geo_reports/{id} | Get a technical GEO report
+*TechnicalGeoReportsApi* | [**listTechnicalGeoReports**](docs/TechnicalGeoReportsApi.md#listTechnicalGeoReports) | **GET** /technical_geo_reports | List technical GEO reports
+*TechnicalGeoReportsApi* | [**listTechnicalGeoReportsWithHttpInfo**](docs/TechnicalGeoReportsApi.md#listTechnicalGeoReportsWithHttpInfo) | **GET** /technical_geo_reports | List technical GEO reports
 *WebhooksApi* | [**createWebhook**](docs/WebhooksApi.md#createWebhook) | **POST** /webhooks | Create a webhook subscription
 *WebhooksApi* | [**createWebhookWithHttpInfo**](docs/WebhooksApi.md#createWebhookWithHttpInfo) | **POST** /webhooks | Create a webhook subscription
 *WebhooksApi* | [**deleteWebhook**](docs/WebhooksApi.md#deleteWebhook) | **DELETE** /webhooks/{id} | Delete a webhook subscription
@@ -263,6 +285,8 @@ Class | Method | HTTP request | Description
 
 ## Documentation for Models
 
+ - [AccountCapacity](docs/AccountCapacity.md)
+ - [AccountQuota](docs/AccountQuota.md)
  - [Actor](docs/Actor.md)
  - [AgentBot](docs/AgentBot.md)
  - [AgentBotsResponse](docs/AgentBotsResponse.md)
@@ -283,8 +307,15 @@ Class | Method | HTTP request | Description
  - [CreateWebhookRequest](docs/CreateWebhookRequest.md)
  - [DeleteWebhook200Response](docs/DeleteWebhook200Response.md)
  - [FinalizeProjectDraftRequest](docs/FinalizeProjectDraftRequest.md)
+ - [GetAccount200Response](docs/GetAccount200Response.md)
+ - [GetAccount200ResponseLimits](docs/GetAccount200ResponseLimits.md)
+ - [GetAccount200ResponseRateLimits](docs/GetAccount200ResponseRateLimits.md)
+ - [GetAccount200ResponseSubscription](docs/GetAccount200ResponseSubscription.md)
+ - [GetTimeseriesCollectionIdParameter](docs/GetTimeseriesCollectionIdParameter.md)
  - [IntelligenceTask](docs/IntelligenceTask.md)
  - [IntelligenceTaskCreateRequest](docs/IntelligenceTaskCreateRequest.md)
+ - [IntelligenceTaskUpdateRequest](docs/IntelligenceTaskUpdateRequest.md)
+ - [IntelligenceTaskUpdateResponse](docs/IntelligenceTaskUpdateResponse.md)
  - [LaunchRecommendationsRequest](docs/LaunchRecommendationsRequest.md)
  - [ListCompetitors200Response](docs/ListCompetitors200Response.md)
  - [ListProjects200Response](docs/ListProjects200Response.md)
@@ -309,6 +340,7 @@ Class | Method | HTTP request | Description
  - [PromptsCreateResponseDataInner](docs/PromptsCreateResponseDataInner.md)
  - [SampleWebhookPayloads200Response](docs/SampleWebhookPayloads200Response.md)
  - [SampleWebhookPayloads200ResponseDataInner](docs/SampleWebhookPayloads200ResponseDataInner.md)
+ - [SearchConsoleFiltersInner](docs/SearchConsoleFiltersInner.md)
  - [SovResponse](docs/SovResponse.md)
  - [SovResponseBreakdownInner](docs/SovResponseBreakdownInner.md)
  - [SovResponseCurrentInner](docs/SovResponseCurrentInner.md)
@@ -326,6 +358,7 @@ Class | Method | HTTP request | Description
  - [UpdateCollectionRequest](docs/UpdateCollectionRequest.md)
  - [UpdateCompetitorRequest](docs/UpdateCompetitorRequest.md)
  - [UpdateProjectDraftRequest](docs/UpdateProjectDraftRequest.md)
+ - [UpdateProjectRequest](docs/UpdateProjectRequest.md)
 
 
 <a id="documentation-for-authorization"></a>

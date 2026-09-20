@@ -15,9 +15,11 @@
 |**matchingNames** | **List&lt;String&gt;** |  |  [optional] |
 |**industry** | **String** |  |  [optional] |
 |**businessModel** | **String** |  |  [optional] |
-|**primaryProducts** | **String** |  |  [optional] |
+|**businessModelOther** | **String** | Set only when business_model is OTHER |  [optional] |
+|**primaryProducts** | **List&lt;String&gt;** |  |  [optional] |
 |**targetAudience** | **String** |  |  [optional] |
 |**brandVoice** | **String** |  |  [optional] |
+|**goals** | **String** |  |  [optional] |
 |**countryCode** | **String** |  |  [optional] |
 |**languageCode** | **String** |  |  [optional] |
 |**paused** | **Boolean** |  |  [optional] |

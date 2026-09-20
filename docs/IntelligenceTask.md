@@ -25,6 +25,8 @@
 |**estimatedTime** | **String** |  |  [optional] |
 |**createdAt** | **OffsetDateTime** |  |  [optional] |
 |**processedAt** | **OffsetDateTime** |  |  [optional] |
+|**manuallyEditedAt** | **OffsetDateTime** | When the content was last edited by hand; null while the output is as generated |  [optional] |
+|**editedByUserId** | **Integer** | User behind the last manual edit; null for an unedited task or an edit made from an embedded portal |  [optional] |
 |**requestId** | **String** |  |  [optional] |
 
 

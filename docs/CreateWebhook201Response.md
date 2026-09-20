@@ -30,6 +30,7 @@
 | SENTIMENT_NEGATIVE_DETECTED | &quot;sentiment.negative_detected&quot; |
 | RECOMMENDATION_COMPLETED | &quot;recommendation.completed&quot; |
 | INTELLIGENCE_TASK_COMPLETED | &quot;intelligence_task.completed&quot; |
+| INTELLIGENCE_TASK_UPDATED | &quot;intelligence_task.updated&quot; |
 
 
 
