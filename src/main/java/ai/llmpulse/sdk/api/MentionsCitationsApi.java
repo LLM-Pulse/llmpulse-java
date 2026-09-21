@@ -18,7 +18,6 @@ import ai.llmpulse.sdk.ApiResponse;
 import ai.llmpulse.sdk.Configuration;
 import ai.llmpulse.sdk.Pair;
 
-import ai.llmpulse.sdk.model.GetTimeseriesCollectionIdParameter;
 import java.time.OffsetDateTime;
 
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -171,14 +170,14 @@ public class MentionsCitationsApi {
    * @param page  (optional, default to 1)
    * @param perPage  (optional, default to 20)
    * @param model Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param prompt Filter by prompt ID (optional)
    * @param from  (optional)
    * @param to End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. (optional)
    * @param output Rectangular output for BI tools (Tableau, Excel, Sheets, ELT). Omit for the default nested JSON. &#39;flat&#39; returns the same metadata plus &#39;columns&#39; and &#39;rows&#39;; &#39;csv&#39; returns those rows as text/csv. Errors are always returned as JSON. (optional)
    * @throws ApiException if fails to make API call
    */
-  public void listAllCitations(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable String competitors, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output) throws ApiException {
+  public void listAllCitations(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable String competitors, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output) throws ApiException {
     listAllCitations(projectId, competitors, page, perPage, model, collectionId, prompt, from, to, output, null);
   }
 
@@ -190,7 +189,7 @@ public class MentionsCitationsApi {
    * @param page  (optional, default to 1)
    * @param perPage  (optional, default to 20)
    * @param model Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param prompt Filter by prompt ID (optional)
    * @param from  (optional)
    * @param to End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. (optional)
@@ -198,7 +197,7 @@ public class MentionsCitationsApi {
    * @param headers Optional headers to include in the request
    * @throws ApiException if fails to make API call
    */
-  public void listAllCitations(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable String competitors, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output, Map<String, String> headers) throws ApiException {
+  public void listAllCitations(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable String competitors, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output, Map<String, String> headers) throws ApiException {
     listAllCitationsWithHttpInfo(projectId, competitors, page, perPage, model, collectionId, prompt, from, to, output, headers);
   }
 
@@ -210,7 +209,7 @@ public class MentionsCitationsApi {
    * @param page  (optional, default to 1)
    * @param perPage  (optional, default to 20)
    * @param model Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param prompt Filter by prompt ID (optional)
    * @param from  (optional)
    * @param to End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. (optional)
@@ -218,7 +217,7 @@ public class MentionsCitationsApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> listAllCitationsWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable String competitors, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output) throws ApiException {
+  public ApiResponse<Void> listAllCitationsWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable String competitors, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output) throws ApiException {
     return listAllCitationsWithHttpInfo(projectId, competitors, page, perPage, model, collectionId, prompt, from, to, output, null);
   }
 
@@ -230,7 +229,7 @@ public class MentionsCitationsApi {
    * @param page  (optional, default to 1)
    * @param perPage  (optional, default to 20)
    * @param model Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param prompt Filter by prompt ID (optional)
    * @param from  (optional)
    * @param to End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. (optional)
@@ -239,7 +238,7 @@ public class MentionsCitationsApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> listAllCitationsWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable String competitors, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output, Map<String, String> headers) throws ApiException {
+  public ApiResponse<Void> listAllCitationsWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable String competitors, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output, Map<String, String> headers) throws ApiException {
     HttpRequest.Builder localVarRequestBuilder = listAllCitationsRequestBuilder(projectId, competitors, page, perPage, model, collectionId, prompt, from, to, output, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
@@ -276,7 +275,7 @@ public class MentionsCitationsApi {
     }
   }
 
-  private HttpRequest.Builder listAllCitationsRequestBuilder(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable String competitors, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder listAllCitationsRequestBuilder(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable String competitors, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'projectId' is set
     if (projectId == null) {
       throw new ApiException(400, "Missing the required parameter 'projectId' when calling listAllCitations");
@@ -300,7 +299,7 @@ public class MentionsCitationsApi {
     localVarQueryParameterBaseName = "model";
     localVarQueryParams.addAll(ApiClient.parameterToPairs("model", model));
     localVarQueryParameterBaseName = "collection_id";
-    localVarQueryStringJoiner.add(collectionId.toUrlQueryString());
+    localVarQueryParams.addAll(ApiClient.parameterToPairs("collection_id", collectionId));
     localVarQueryParameterBaseName = "prompt";
     localVarQueryParams.addAll(ApiClient.parameterToPairs("prompt", prompt));
     localVarQueryParameterBaseName = "from";
@@ -343,14 +342,14 @@ public class MentionsCitationsApi {
    * @param page  (optional, default to 1)
    * @param perPage  (optional, default to 20)
    * @param model Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param prompt Filter by prompt ID (optional)
    * @param from  (optional)
    * @param to End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. (optional)
    * @param output Rectangular output for BI tools (Tableau, Excel, Sheets, ELT). Omit for the default nested JSON. &#39;flat&#39; returns the same metadata plus &#39;columns&#39; and &#39;rows&#39;; &#39;csv&#39; returns those rows as text/csv. Errors are always returned as JSON. (optional)
    * @throws ApiException if fails to make API call
    */
-  public void listAllMentions(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable String competitors, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output) throws ApiException {
+  public void listAllMentions(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable String competitors, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output) throws ApiException {
     listAllMentions(projectId, competitors, page, perPage, model, collectionId, prompt, from, to, output, null);
   }
 
@@ -362,7 +361,7 @@ public class MentionsCitationsApi {
    * @param page  (optional, default to 1)
    * @param perPage  (optional, default to 20)
    * @param model Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param prompt Filter by prompt ID (optional)
    * @param from  (optional)
    * @param to End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. (optional)
@@ -370,7 +369,7 @@ public class MentionsCitationsApi {
    * @param headers Optional headers to include in the request
    * @throws ApiException if fails to make API call
    */
-  public void listAllMentions(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable String competitors, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output, Map<String, String> headers) throws ApiException {
+  public void listAllMentions(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable String competitors, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output, Map<String, String> headers) throws ApiException {
     listAllMentionsWithHttpInfo(projectId, competitors, page, perPage, model, collectionId, prompt, from, to, output, headers);
   }
 
@@ -382,7 +381,7 @@ public class MentionsCitationsApi {
    * @param page  (optional, default to 1)
    * @param perPage  (optional, default to 20)
    * @param model Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param prompt Filter by prompt ID (optional)
    * @param from  (optional)
    * @param to End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. (optional)
@@ -390,7 +389,7 @@ public class MentionsCitationsApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> listAllMentionsWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable String competitors, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output) throws ApiException {
+  public ApiResponse<Void> listAllMentionsWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable String competitors, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output) throws ApiException {
     return listAllMentionsWithHttpInfo(projectId, competitors, page, perPage, model, collectionId, prompt, from, to, output, null);
   }
 
@@ -402,7 +401,7 @@ public class MentionsCitationsApi {
    * @param page  (optional, default to 1)
    * @param perPage  (optional, default to 20)
    * @param model Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param prompt Filter by prompt ID (optional)
    * @param from  (optional)
    * @param to End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. (optional)
@@ -411,7 +410,7 @@ public class MentionsCitationsApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> listAllMentionsWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable String competitors, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output, Map<String, String> headers) throws ApiException {
+  public ApiResponse<Void> listAllMentionsWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable String competitors, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output, Map<String, String> headers) throws ApiException {
     HttpRequest.Builder localVarRequestBuilder = listAllMentionsRequestBuilder(projectId, competitors, page, perPage, model, collectionId, prompt, from, to, output, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
@@ -448,7 +447,7 @@ public class MentionsCitationsApi {
     }
   }
 
-  private HttpRequest.Builder listAllMentionsRequestBuilder(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable String competitors, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder listAllMentionsRequestBuilder(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable String competitors, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'projectId' is set
     if (projectId == null) {
       throw new ApiException(400, "Missing the required parameter 'projectId' when calling listAllMentions");
@@ -472,7 +471,7 @@ public class MentionsCitationsApi {
     localVarQueryParameterBaseName = "model";
     localVarQueryParams.addAll(ApiClient.parameterToPairs("model", model));
     localVarQueryParameterBaseName = "collection_id";
-    localVarQueryStringJoiner.add(collectionId.toUrlQueryString());
+    localVarQueryParams.addAll(ApiClient.parameterToPairs("collection_id", collectionId));
     localVarQueryParameterBaseName = "prompt";
     localVarQueryParams.addAll(ApiClient.parameterToPairs("prompt", prompt));
     localVarQueryParameterBaseName = "from";
@@ -514,7 +513,7 @@ public class MentionsCitationsApi {
    * @param page  (optional, default to 1)
    * @param perPage  (optional, default to 20)
    * @param model Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param countryCode One ISO country code or a comma-separated list (e.g. US,GB,DE) (optional)
    * @param languageCode One ISO language code or a comma-separated list (e.g. en,es,de) (optional)
    * @param prompt Filter by prompt ID (optional)
@@ -523,7 +522,7 @@ public class MentionsCitationsApi {
    * @param output Rectangular output for BI tools (Tableau, Excel, Sheets, ELT). Omit for the default nested JSON. &#39;flat&#39; returns the same metadata plus &#39;columns&#39; and &#39;rows&#39;; &#39;csv&#39; returns those rows as text/csv. Errors are always returned as JSON. (optional)
    * @throws ApiException if fails to make API call
    */
-  public void listCitations(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output) throws ApiException {
+  public void listCitations(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output) throws ApiException {
     listCitations(projectId, page, perPage, model, collectionId, countryCode, languageCode, prompt, from, to, output, null);
   }
 
@@ -534,7 +533,7 @@ public class MentionsCitationsApi {
    * @param page  (optional, default to 1)
    * @param perPage  (optional, default to 20)
    * @param model Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param countryCode One ISO country code or a comma-separated list (e.g. US,GB,DE) (optional)
    * @param languageCode One ISO language code or a comma-separated list (e.g. en,es,de) (optional)
    * @param prompt Filter by prompt ID (optional)
@@ -544,7 +543,7 @@ public class MentionsCitationsApi {
    * @param headers Optional headers to include in the request
    * @throws ApiException if fails to make API call
    */
-  public void listCitations(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output, Map<String, String> headers) throws ApiException {
+  public void listCitations(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output, Map<String, String> headers) throws ApiException {
     listCitationsWithHttpInfo(projectId, page, perPage, model, collectionId, countryCode, languageCode, prompt, from, to, output, headers);
   }
 
@@ -555,7 +554,7 @@ public class MentionsCitationsApi {
    * @param page  (optional, default to 1)
    * @param perPage  (optional, default to 20)
    * @param model Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param countryCode One ISO country code or a comma-separated list (e.g. US,GB,DE) (optional)
    * @param languageCode One ISO language code or a comma-separated list (e.g. en,es,de) (optional)
    * @param prompt Filter by prompt ID (optional)
@@ -565,7 +564,7 @@ public class MentionsCitationsApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> listCitationsWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output) throws ApiException {
+  public ApiResponse<Void> listCitationsWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output) throws ApiException {
     return listCitationsWithHttpInfo(projectId, page, perPage, model, collectionId, countryCode, languageCode, prompt, from, to, output, null);
   }
 
@@ -576,7 +575,7 @@ public class MentionsCitationsApi {
    * @param page  (optional, default to 1)
    * @param perPage  (optional, default to 20)
    * @param model Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param countryCode One ISO country code or a comma-separated list (e.g. US,GB,DE) (optional)
    * @param languageCode One ISO language code or a comma-separated list (e.g. en,es,de) (optional)
    * @param prompt Filter by prompt ID (optional)
@@ -587,7 +586,7 @@ public class MentionsCitationsApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> listCitationsWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output, Map<String, String> headers) throws ApiException {
+  public ApiResponse<Void> listCitationsWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output, Map<String, String> headers) throws ApiException {
     HttpRequest.Builder localVarRequestBuilder = listCitationsRequestBuilder(projectId, page, perPage, model, collectionId, countryCode, languageCode, prompt, from, to, output, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
@@ -624,7 +623,7 @@ public class MentionsCitationsApi {
     }
   }
 
-  private HttpRequest.Builder listCitationsRequestBuilder(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder listCitationsRequestBuilder(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'projectId' is set
     if (projectId == null) {
       throw new ApiException(400, "Missing the required parameter 'projectId' when calling listCitations");
@@ -646,7 +645,7 @@ public class MentionsCitationsApi {
     localVarQueryParameterBaseName = "model";
     localVarQueryParams.addAll(ApiClient.parameterToPairs("model", model));
     localVarQueryParameterBaseName = "collection_id";
-    localVarQueryStringJoiner.add(collectionId.toUrlQueryString());
+    localVarQueryParams.addAll(ApiClient.parameterToPairs("collection_id", collectionId));
     localVarQueryParameterBaseName = "country_code";
     localVarQueryParams.addAll(ApiClient.parameterToPairs("country_code", countryCode));
     localVarQueryParameterBaseName = "language_code";
@@ -693,14 +692,14 @@ public class MentionsCitationsApi {
    * @param page  (optional, default to 1)
    * @param perPage  (optional, default to 20)
    * @param model Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param prompt Filter by prompt ID (optional)
    * @param from  (optional)
    * @param to End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. (optional)
    * @param output Rectangular output for BI tools (Tableau, Excel, Sheets, ELT). Omit for the default nested JSON. &#39;flat&#39; returns the same metadata plus &#39;columns&#39; and &#39;rows&#39;; &#39;csv&#39; returns those rows as text/csv. Errors are always returned as JSON. (optional)
    * @throws ApiException if fails to make API call
    */
-  public void listCompetitorCitations(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable String competitors, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output) throws ApiException {
+  public void listCompetitorCitations(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable String competitors, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output) throws ApiException {
     listCompetitorCitations(projectId, competitors, page, perPage, model, collectionId, prompt, from, to, output, null);
   }
 
@@ -712,7 +711,7 @@ public class MentionsCitationsApi {
    * @param page  (optional, default to 1)
    * @param perPage  (optional, default to 20)
    * @param model Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param prompt Filter by prompt ID (optional)
    * @param from  (optional)
    * @param to End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. (optional)
@@ -720,7 +719,7 @@ public class MentionsCitationsApi {
    * @param headers Optional headers to include in the request
    * @throws ApiException if fails to make API call
    */
-  public void listCompetitorCitations(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable String competitors, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output, Map<String, String> headers) throws ApiException {
+  public void listCompetitorCitations(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable String competitors, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output, Map<String, String> headers) throws ApiException {
     listCompetitorCitationsWithHttpInfo(projectId, competitors, page, perPage, model, collectionId, prompt, from, to, output, headers);
   }
 
@@ -732,7 +731,7 @@ public class MentionsCitationsApi {
    * @param page  (optional, default to 1)
    * @param perPage  (optional, default to 20)
    * @param model Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param prompt Filter by prompt ID (optional)
    * @param from  (optional)
    * @param to End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. (optional)
@@ -740,7 +739,7 @@ public class MentionsCitationsApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> listCompetitorCitationsWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable String competitors, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output) throws ApiException {
+  public ApiResponse<Void> listCompetitorCitationsWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable String competitors, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output) throws ApiException {
     return listCompetitorCitationsWithHttpInfo(projectId, competitors, page, perPage, model, collectionId, prompt, from, to, output, null);
   }
 
@@ -752,7 +751,7 @@ public class MentionsCitationsApi {
    * @param page  (optional, default to 1)
    * @param perPage  (optional, default to 20)
    * @param model Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param prompt Filter by prompt ID (optional)
    * @param from  (optional)
    * @param to End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. (optional)
@@ -761,7 +760,7 @@ public class MentionsCitationsApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> listCompetitorCitationsWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable String competitors, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output, Map<String, String> headers) throws ApiException {
+  public ApiResponse<Void> listCompetitorCitationsWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable String competitors, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output, Map<String, String> headers) throws ApiException {
     HttpRequest.Builder localVarRequestBuilder = listCompetitorCitationsRequestBuilder(projectId, competitors, page, perPage, model, collectionId, prompt, from, to, output, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
@@ -798,7 +797,7 @@ public class MentionsCitationsApi {
     }
   }
 
-  private HttpRequest.Builder listCompetitorCitationsRequestBuilder(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable String competitors, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder listCompetitorCitationsRequestBuilder(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable String competitors, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'projectId' is set
     if (projectId == null) {
       throw new ApiException(400, "Missing the required parameter 'projectId' when calling listCompetitorCitations");
@@ -822,7 +821,7 @@ public class MentionsCitationsApi {
     localVarQueryParameterBaseName = "model";
     localVarQueryParams.addAll(ApiClient.parameterToPairs("model", model));
     localVarQueryParameterBaseName = "collection_id";
-    localVarQueryStringJoiner.add(collectionId.toUrlQueryString());
+    localVarQueryParams.addAll(ApiClient.parameterToPairs("collection_id", collectionId));
     localVarQueryParameterBaseName = "prompt";
     localVarQueryParams.addAll(ApiClient.parameterToPairs("prompt", prompt));
     localVarQueryParameterBaseName = "from";
@@ -865,14 +864,14 @@ public class MentionsCitationsApi {
    * @param page  (optional, default to 1)
    * @param perPage  (optional, default to 20)
    * @param model Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param prompt Filter by prompt ID (optional)
    * @param from  (optional)
    * @param to End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. (optional)
    * @param output Rectangular output for BI tools (Tableau, Excel, Sheets, ELT). Omit for the default nested JSON. &#39;flat&#39; returns the same metadata plus &#39;columns&#39; and &#39;rows&#39;; &#39;csv&#39; returns those rows as text/csv. Errors are always returned as JSON. (optional)
    * @throws ApiException if fails to make API call
    */
-  public void listCompetitorMentions(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable String competitors, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output) throws ApiException {
+  public void listCompetitorMentions(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable String competitors, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output) throws ApiException {
     listCompetitorMentions(projectId, competitors, page, perPage, model, collectionId, prompt, from, to, output, null);
   }
 
@@ -884,7 +883,7 @@ public class MentionsCitationsApi {
    * @param page  (optional, default to 1)
    * @param perPage  (optional, default to 20)
    * @param model Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param prompt Filter by prompt ID (optional)
    * @param from  (optional)
    * @param to End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. (optional)
@@ -892,7 +891,7 @@ public class MentionsCitationsApi {
    * @param headers Optional headers to include in the request
    * @throws ApiException if fails to make API call
    */
-  public void listCompetitorMentions(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable String competitors, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output, Map<String, String> headers) throws ApiException {
+  public void listCompetitorMentions(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable String competitors, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output, Map<String, String> headers) throws ApiException {
     listCompetitorMentionsWithHttpInfo(projectId, competitors, page, perPage, model, collectionId, prompt, from, to, output, headers);
   }
 
@@ -904,7 +903,7 @@ public class MentionsCitationsApi {
    * @param page  (optional, default to 1)
    * @param perPage  (optional, default to 20)
    * @param model Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param prompt Filter by prompt ID (optional)
    * @param from  (optional)
    * @param to End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. (optional)
@@ -912,7 +911,7 @@ public class MentionsCitationsApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> listCompetitorMentionsWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable String competitors, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output) throws ApiException {
+  public ApiResponse<Void> listCompetitorMentionsWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable String competitors, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output) throws ApiException {
     return listCompetitorMentionsWithHttpInfo(projectId, competitors, page, perPage, model, collectionId, prompt, from, to, output, null);
   }
 
@@ -924,7 +923,7 @@ public class MentionsCitationsApi {
    * @param page  (optional, default to 1)
    * @param perPage  (optional, default to 20)
    * @param model Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param prompt Filter by prompt ID (optional)
    * @param from  (optional)
    * @param to End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. (optional)
@@ -933,7 +932,7 @@ public class MentionsCitationsApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> listCompetitorMentionsWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable String competitors, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output, Map<String, String> headers) throws ApiException {
+  public ApiResponse<Void> listCompetitorMentionsWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable String competitors, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output, Map<String, String> headers) throws ApiException {
     HttpRequest.Builder localVarRequestBuilder = listCompetitorMentionsRequestBuilder(projectId, competitors, page, perPage, model, collectionId, prompt, from, to, output, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
@@ -970,7 +969,7 @@ public class MentionsCitationsApi {
     }
   }
 
-  private HttpRequest.Builder listCompetitorMentionsRequestBuilder(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable String competitors, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder listCompetitorMentionsRequestBuilder(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable String competitors, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'projectId' is set
     if (projectId == null) {
       throw new ApiException(400, "Missing the required parameter 'projectId' when calling listCompetitorMentions");
@@ -994,7 +993,7 @@ public class MentionsCitationsApi {
     localVarQueryParameterBaseName = "model";
     localVarQueryParams.addAll(ApiClient.parameterToPairs("model", model));
     localVarQueryParameterBaseName = "collection_id";
-    localVarQueryStringJoiner.add(collectionId.toUrlQueryString());
+    localVarQueryParams.addAll(ApiClient.parameterToPairs("collection_id", collectionId));
     localVarQueryParameterBaseName = "prompt";
     localVarQueryParams.addAll(ApiClient.parameterToPairs("prompt", prompt));
     localVarQueryParameterBaseName = "from";
@@ -1036,7 +1035,7 @@ public class MentionsCitationsApi {
    * @param page  (optional, default to 1)
    * @param perPage  (optional, default to 20)
    * @param model Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param countryCode One ISO country code or a comma-separated list (e.g. US,GB,DE) (optional)
    * @param languageCode One ISO language code or a comma-separated list (e.g. en,es,de) (optional)
    * @param prompt Filter by prompt ID (optional)
@@ -1045,7 +1044,7 @@ public class MentionsCitationsApi {
    * @param output Rectangular output for BI tools (Tableau, Excel, Sheets, ELT). Omit for the default nested JSON. &#39;flat&#39; returns the same metadata plus &#39;columns&#39; and &#39;rows&#39;; &#39;csv&#39; returns those rows as text/csv. Errors are always returned as JSON. (optional)
    * @throws ApiException if fails to make API call
    */
-  public void listMentions(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output) throws ApiException {
+  public void listMentions(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output) throws ApiException {
     listMentions(projectId, page, perPage, model, collectionId, countryCode, languageCode, prompt, from, to, output, null);
   }
 
@@ -1056,7 +1055,7 @@ public class MentionsCitationsApi {
    * @param page  (optional, default to 1)
    * @param perPage  (optional, default to 20)
    * @param model Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param countryCode One ISO country code or a comma-separated list (e.g. US,GB,DE) (optional)
    * @param languageCode One ISO language code or a comma-separated list (e.g. en,es,de) (optional)
    * @param prompt Filter by prompt ID (optional)
@@ -1066,7 +1065,7 @@ public class MentionsCitationsApi {
    * @param headers Optional headers to include in the request
    * @throws ApiException if fails to make API call
    */
-  public void listMentions(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output, Map<String, String> headers) throws ApiException {
+  public void listMentions(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output, Map<String, String> headers) throws ApiException {
     listMentionsWithHttpInfo(projectId, page, perPage, model, collectionId, countryCode, languageCode, prompt, from, to, output, headers);
   }
 
@@ -1077,7 +1076,7 @@ public class MentionsCitationsApi {
    * @param page  (optional, default to 1)
    * @param perPage  (optional, default to 20)
    * @param model Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param countryCode One ISO country code or a comma-separated list (e.g. US,GB,DE) (optional)
    * @param languageCode One ISO language code or a comma-separated list (e.g. en,es,de) (optional)
    * @param prompt Filter by prompt ID (optional)
@@ -1087,7 +1086,7 @@ public class MentionsCitationsApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> listMentionsWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output) throws ApiException {
+  public ApiResponse<Void> listMentionsWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output) throws ApiException {
     return listMentionsWithHttpInfo(projectId, page, perPage, model, collectionId, countryCode, languageCode, prompt, from, to, output, null);
   }
 
@@ -1098,7 +1097,7 @@ public class MentionsCitationsApi {
    * @param page  (optional, default to 1)
    * @param perPage  (optional, default to 20)
    * @param model Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param countryCode One ISO country code or a comma-separated list (e.g. US,GB,DE) (optional)
    * @param languageCode One ISO language code or a comma-separated list (e.g. en,es,de) (optional)
    * @param prompt Filter by prompt ID (optional)
@@ -1109,7 +1108,7 @@ public class MentionsCitationsApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> listMentionsWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output, Map<String, String> headers) throws ApiException {
+  public ApiResponse<Void> listMentionsWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output, Map<String, String> headers) throws ApiException {
     HttpRequest.Builder localVarRequestBuilder = listMentionsRequestBuilder(projectId, page, perPage, model, collectionId, countryCode, languageCode, prompt, from, to, output, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
@@ -1146,7 +1145,7 @@ public class MentionsCitationsApi {
     }
   }
 
-  private HttpRequest.Builder listMentionsRequestBuilder(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder listMentionsRequestBuilder(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'projectId' is set
     if (projectId == null) {
       throw new ApiException(400, "Missing the required parameter 'projectId' when calling listMentions");
@@ -1168,7 +1167,7 @@ public class MentionsCitationsApi {
     localVarQueryParameterBaseName = "model";
     localVarQueryParams.addAll(ApiClient.parameterToPairs("model", model));
     localVarQueryParameterBaseName = "collection_id";
-    localVarQueryStringJoiner.add(collectionId.toUrlQueryString());
+    localVarQueryParams.addAll(ApiClient.parameterToPairs("collection_id", collectionId));
     localVarQueryParameterBaseName = "country_code";
     localVarQueryParams.addAll(ApiClient.parameterToPairs("country_code", countryCode));
     localVarQueryParameterBaseName = "language_code";

@@ -20,7 +20,6 @@ import ai.llmpulse.sdk.Pair;
 
 import ai.llmpulse.sdk.model.AnswerDetails;
 import ai.llmpulse.sdk.model.ApiError;
-import ai.llmpulse.sdk.model.GetTimeseriesCollectionIdParameter;
 import java.time.OffsetDateTime;
 
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -317,7 +316,7 @@ public class AnswersApi {
    * Successful prompt-execution responses with truncated content (max 10,000 chars). Pass &#x60;query&#x60; for case-insensitive full-text search inside response texts: &#x60;total&#x60; becomes the exact count of matching responses and each item returns &#x60;snippet&#x60; + &#x60;match_count&#x60; instead of &#x60;response&#x60;/&#x60;response_truncated&#x60;.
    * @param projectId Project ID (required)
    * @param model Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param countryCode One ISO country code or a comma-separated list (e.g. US,GB,DE) (optional)
    * @param languageCode One ISO language code or a comma-separated list (e.g. en,es,de) (optional)
    * @param prompt Filter by prompt ID (optional)
@@ -332,7 +331,7 @@ public class AnswersApi {
    * @param noResult Filter sentinel non-answers (provider returned nothing after retries; excluded from platform metrics). false &#x3D; only real answers, true &#x3D; only sentinels, omit &#x3D; both. Every item carries its own no_result flag. (optional)
    * @throws ApiException if fails to make API call
    */
-  public void listAnswers(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable String mentionFilter, @javax.annotation.Nullable String citationFilter, @javax.annotation.Nullable String competitors, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String query, @javax.annotation.Nullable Boolean noResult) throws ApiException {
+  public void listAnswers(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable String mentionFilter, @javax.annotation.Nullable String citationFilter, @javax.annotation.Nullable String competitors, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String query, @javax.annotation.Nullable Boolean noResult) throws ApiException {
     listAnswers(projectId, model, collectionId, countryCode, languageCode, prompt, mentionFilter, citationFilter, competitors, from, to, page, perPage, query, noResult, null);
   }
 
@@ -341,7 +340,7 @@ public class AnswersApi {
    * Successful prompt-execution responses with truncated content (max 10,000 chars). Pass &#x60;query&#x60; for case-insensitive full-text search inside response texts: &#x60;total&#x60; becomes the exact count of matching responses and each item returns &#x60;snippet&#x60; + &#x60;match_count&#x60; instead of &#x60;response&#x60;/&#x60;response_truncated&#x60;.
    * @param projectId Project ID (required)
    * @param model Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param countryCode One ISO country code or a comma-separated list (e.g. US,GB,DE) (optional)
    * @param languageCode One ISO language code or a comma-separated list (e.g. en,es,de) (optional)
    * @param prompt Filter by prompt ID (optional)
@@ -357,7 +356,7 @@ public class AnswersApi {
    * @param headers Optional headers to include in the request
    * @throws ApiException if fails to make API call
    */
-  public void listAnswers(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable String mentionFilter, @javax.annotation.Nullable String citationFilter, @javax.annotation.Nullable String competitors, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String query, @javax.annotation.Nullable Boolean noResult, Map<String, String> headers) throws ApiException {
+  public void listAnswers(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable String mentionFilter, @javax.annotation.Nullable String citationFilter, @javax.annotation.Nullable String competitors, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String query, @javax.annotation.Nullable Boolean noResult, Map<String, String> headers) throws ApiException {
     listAnswersWithHttpInfo(projectId, model, collectionId, countryCode, languageCode, prompt, mentionFilter, citationFilter, competitors, from, to, page, perPage, query, noResult, headers);
   }
 
@@ -366,7 +365,7 @@ public class AnswersApi {
    * Successful prompt-execution responses with truncated content (max 10,000 chars). Pass &#x60;query&#x60; for case-insensitive full-text search inside response texts: &#x60;total&#x60; becomes the exact count of matching responses and each item returns &#x60;snippet&#x60; + &#x60;match_count&#x60; instead of &#x60;response&#x60;/&#x60;response_truncated&#x60;.
    * @param projectId Project ID (required)
    * @param model Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param countryCode One ISO country code or a comma-separated list (e.g. US,GB,DE) (optional)
    * @param languageCode One ISO language code or a comma-separated list (e.g. en,es,de) (optional)
    * @param prompt Filter by prompt ID (optional)
@@ -382,7 +381,7 @@ public class AnswersApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> listAnswersWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable String mentionFilter, @javax.annotation.Nullable String citationFilter, @javax.annotation.Nullable String competitors, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String query, @javax.annotation.Nullable Boolean noResult) throws ApiException {
+  public ApiResponse<Void> listAnswersWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable String mentionFilter, @javax.annotation.Nullable String citationFilter, @javax.annotation.Nullable String competitors, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String query, @javax.annotation.Nullable Boolean noResult) throws ApiException {
     return listAnswersWithHttpInfo(projectId, model, collectionId, countryCode, languageCode, prompt, mentionFilter, citationFilter, competitors, from, to, page, perPage, query, noResult, null);
   }
 
@@ -391,7 +390,7 @@ public class AnswersApi {
    * Successful prompt-execution responses with truncated content (max 10,000 chars). Pass &#x60;query&#x60; for case-insensitive full-text search inside response texts: &#x60;total&#x60; becomes the exact count of matching responses and each item returns &#x60;snippet&#x60; + &#x60;match_count&#x60; instead of &#x60;response&#x60;/&#x60;response_truncated&#x60;.
    * @param projectId Project ID (required)
    * @param model Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param countryCode One ISO country code or a comma-separated list (e.g. US,GB,DE) (optional)
    * @param languageCode One ISO language code or a comma-separated list (e.g. en,es,de) (optional)
    * @param prompt Filter by prompt ID (optional)
@@ -408,7 +407,7 @@ public class AnswersApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> listAnswersWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable String mentionFilter, @javax.annotation.Nullable String citationFilter, @javax.annotation.Nullable String competitors, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String query, @javax.annotation.Nullable Boolean noResult, Map<String, String> headers) throws ApiException {
+  public ApiResponse<Void> listAnswersWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable String mentionFilter, @javax.annotation.Nullable String citationFilter, @javax.annotation.Nullable String competitors, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String query, @javax.annotation.Nullable Boolean noResult, Map<String, String> headers) throws ApiException {
     HttpRequest.Builder localVarRequestBuilder = listAnswersRequestBuilder(projectId, model, collectionId, countryCode, languageCode, prompt, mentionFilter, citationFilter, competitors, from, to, page, perPage, query, noResult, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
@@ -445,7 +444,7 @@ public class AnswersApi {
     }
   }
 
-  private HttpRequest.Builder listAnswersRequestBuilder(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable String mentionFilter, @javax.annotation.Nullable String citationFilter, @javax.annotation.Nullable String competitors, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String query, @javax.annotation.Nullable Boolean noResult, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder listAnswersRequestBuilder(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable String mentionFilter, @javax.annotation.Nullable String citationFilter, @javax.annotation.Nullable String competitors, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String query, @javax.annotation.Nullable Boolean noResult, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'projectId' is set
     if (projectId == null) {
       throw new ApiException(400, "Missing the required parameter 'projectId' when calling listAnswers");
@@ -463,7 +462,7 @@ public class AnswersApi {
     localVarQueryParameterBaseName = "model";
     localVarQueryParams.addAll(ApiClient.parameterToPairs("model", model));
     localVarQueryParameterBaseName = "collection_id";
-    localVarQueryStringJoiner.add(collectionId.toUrlQueryString());
+    localVarQueryParams.addAll(ApiClient.parameterToPairs("collection_id", collectionId));
     localVarQueryParameterBaseName = "country_code";
     localVarQueryParams.addAll(ApiClient.parameterToPairs("country_code", countryCode));
     localVarQueryParameterBaseName = "language_code";

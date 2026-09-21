@@ -18,7 +18,6 @@ import ai.llmpulse.sdk.ApiResponse;
 import ai.llmpulse.sdk.Configuration;
 import ai.llmpulse.sdk.Pair;
 
-import ai.llmpulse.sdk.model.GetTimeseriesCollectionIdParameter;
 import java.time.OffsetDateTime;
 
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -171,7 +170,7 @@ public class AiModelInsightsApi {
    * @param from  (optional)
    * @param to End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. (optional)
    * @param granularity  (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param countryCode One ISO country code or a comma-separated list (e.g. US,GB,DE) (optional)
    * @param languageCode One ISO language code or a comma-separated list (e.g. en,es,de) (optional)
    * @param promptType One prompt type or a comma-separated list: informational, navigational, commercial, transactional (optional)
@@ -179,7 +178,7 @@ public class AiModelInsightsApi {
    * @param competitors Comma-separated competitor IDs (unknown IDs return ERR_INVALID_PARAM) (optional)
    * @throws ApiException if fails to make API call
    */
-  public void getAiModelInsightsSummary(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String granularity, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable String competitors) throws ApiException {
+  public void getAiModelInsightsSummary(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String granularity, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable String competitors) throws ApiException {
     getAiModelInsightsSummary(projectId, range, from, to, granularity, collectionId, countryCode, languageCode, promptType, brandKind, competitors, null);
   }
 
@@ -191,7 +190,7 @@ public class AiModelInsightsApi {
    * @param from  (optional)
    * @param to End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. (optional)
    * @param granularity  (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param countryCode One ISO country code or a comma-separated list (e.g. US,GB,DE) (optional)
    * @param languageCode One ISO language code or a comma-separated list (e.g. en,es,de) (optional)
    * @param promptType One prompt type or a comma-separated list: informational, navigational, commercial, transactional (optional)
@@ -200,7 +199,7 @@ public class AiModelInsightsApi {
    * @param headers Optional headers to include in the request
    * @throws ApiException if fails to make API call
    */
-  public void getAiModelInsightsSummary(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String granularity, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable String competitors, Map<String, String> headers) throws ApiException {
+  public void getAiModelInsightsSummary(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String granularity, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable String competitors, Map<String, String> headers) throws ApiException {
     getAiModelInsightsSummaryWithHttpInfo(projectId, range, from, to, granularity, collectionId, countryCode, languageCode, promptType, brandKind, competitors, headers);
   }
 
@@ -212,7 +211,7 @@ public class AiModelInsightsApi {
    * @param from  (optional)
    * @param to End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. (optional)
    * @param granularity  (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param countryCode One ISO country code or a comma-separated list (e.g. US,GB,DE) (optional)
    * @param languageCode One ISO language code or a comma-separated list (e.g. en,es,de) (optional)
    * @param promptType One prompt type or a comma-separated list: informational, navigational, commercial, transactional (optional)
@@ -221,7 +220,7 @@ public class AiModelInsightsApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> getAiModelInsightsSummaryWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String granularity, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable String competitors) throws ApiException {
+  public ApiResponse<Void> getAiModelInsightsSummaryWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String granularity, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable String competitors) throws ApiException {
     return getAiModelInsightsSummaryWithHttpInfo(projectId, range, from, to, granularity, collectionId, countryCode, languageCode, promptType, brandKind, competitors, null);
   }
 
@@ -233,7 +232,7 @@ public class AiModelInsightsApi {
    * @param from  (optional)
    * @param to End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. (optional)
    * @param granularity  (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param countryCode One ISO country code or a comma-separated list (e.g. US,GB,DE) (optional)
    * @param languageCode One ISO language code or a comma-separated list (e.g. en,es,de) (optional)
    * @param promptType One prompt type or a comma-separated list: informational, navigational, commercial, transactional (optional)
@@ -243,7 +242,7 @@ public class AiModelInsightsApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> getAiModelInsightsSummaryWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String granularity, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable String competitors, Map<String, String> headers) throws ApiException {
+  public ApiResponse<Void> getAiModelInsightsSummaryWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String granularity, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable String competitors, Map<String, String> headers) throws ApiException {
     HttpRequest.Builder localVarRequestBuilder = getAiModelInsightsSummaryRequestBuilder(projectId, range, from, to, granularity, collectionId, countryCode, languageCode, promptType, brandKind, competitors, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
@@ -280,7 +279,7 @@ public class AiModelInsightsApi {
     }
   }
 
-  private HttpRequest.Builder getAiModelInsightsSummaryRequestBuilder(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String granularity, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable String competitors, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder getAiModelInsightsSummaryRequestBuilder(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String granularity, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable String competitors, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'projectId' is set
     if (projectId == null) {
       throw new ApiException(400, "Missing the required parameter 'projectId' when calling getAiModelInsightsSummary");
@@ -304,7 +303,7 @@ public class AiModelInsightsApi {
     localVarQueryParameterBaseName = "granularity";
     localVarQueryParams.addAll(ApiClient.parameterToPairs("granularity", granularity));
     localVarQueryParameterBaseName = "collection_id";
-    localVarQueryStringJoiner.add(collectionId.toUrlQueryString());
+    localVarQueryParams.addAll(ApiClient.parameterToPairs("collection_id", collectionId));
     localVarQueryParameterBaseName = "country_code";
     localVarQueryParams.addAll(ApiClient.parameterToPairs("country_code", countryCode));
     localVarQueryParameterBaseName = "language_code";
@@ -349,7 +348,7 @@ public class AiModelInsightsApi {
    * @param from  (optional)
    * @param to End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. (optional)
    * @param granularity  (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param countryCode One ISO country code or a comma-separated list (e.g. US,GB,DE) (optional)
    * @param languageCode One ISO language code or a comma-separated list (e.g. en,es,de) (optional)
    * @param promptType One prompt type or a comma-separated list: informational, navigational, commercial, transactional (optional)
@@ -359,7 +358,7 @@ public class AiModelInsightsApi {
    * @param brand2  (optional)
    * @throws ApiException if fails to make API call
    */
-  public void getAiModelPositionDistribution(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String granularity, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable String model, @javax.annotation.Nullable Integer brand1, @javax.annotation.Nullable Integer brand2) throws ApiException {
+  public void getAiModelPositionDistribution(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String granularity, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable String model, @javax.annotation.Nullable Integer brand1, @javax.annotation.Nullable Integer brand2) throws ApiException {
     getAiModelPositionDistribution(projectId, range, from, to, granularity, collectionId, countryCode, languageCode, promptType, brandKind, model, brand1, brand2, null);
   }
 
@@ -371,7 +370,7 @@ public class AiModelInsightsApi {
    * @param from  (optional)
    * @param to End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. (optional)
    * @param granularity  (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param countryCode One ISO country code or a comma-separated list (e.g. US,GB,DE) (optional)
    * @param languageCode One ISO language code or a comma-separated list (e.g. en,es,de) (optional)
    * @param promptType One prompt type or a comma-separated list: informational, navigational, commercial, transactional (optional)
@@ -382,7 +381,7 @@ public class AiModelInsightsApi {
    * @param headers Optional headers to include in the request
    * @throws ApiException if fails to make API call
    */
-  public void getAiModelPositionDistribution(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String granularity, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable String model, @javax.annotation.Nullable Integer brand1, @javax.annotation.Nullable Integer brand2, Map<String, String> headers) throws ApiException {
+  public void getAiModelPositionDistribution(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String granularity, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable String model, @javax.annotation.Nullable Integer brand1, @javax.annotation.Nullable Integer brand2, Map<String, String> headers) throws ApiException {
     getAiModelPositionDistributionWithHttpInfo(projectId, range, from, to, granularity, collectionId, countryCode, languageCode, promptType, brandKind, model, brand1, brand2, headers);
   }
 
@@ -394,7 +393,7 @@ public class AiModelInsightsApi {
    * @param from  (optional)
    * @param to End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. (optional)
    * @param granularity  (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param countryCode One ISO country code or a comma-separated list (e.g. US,GB,DE) (optional)
    * @param languageCode One ISO language code or a comma-separated list (e.g. en,es,de) (optional)
    * @param promptType One prompt type or a comma-separated list: informational, navigational, commercial, transactional (optional)
@@ -405,7 +404,7 @@ public class AiModelInsightsApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> getAiModelPositionDistributionWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String granularity, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable String model, @javax.annotation.Nullable Integer brand1, @javax.annotation.Nullable Integer brand2) throws ApiException {
+  public ApiResponse<Void> getAiModelPositionDistributionWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String granularity, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable String model, @javax.annotation.Nullable Integer brand1, @javax.annotation.Nullable Integer brand2) throws ApiException {
     return getAiModelPositionDistributionWithHttpInfo(projectId, range, from, to, granularity, collectionId, countryCode, languageCode, promptType, brandKind, model, brand1, brand2, null);
   }
 
@@ -417,7 +416,7 @@ public class AiModelInsightsApi {
    * @param from  (optional)
    * @param to End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. (optional)
    * @param granularity  (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param countryCode One ISO country code or a comma-separated list (e.g. US,GB,DE) (optional)
    * @param languageCode One ISO language code or a comma-separated list (e.g. en,es,de) (optional)
    * @param promptType One prompt type or a comma-separated list: informational, navigational, commercial, transactional (optional)
@@ -429,7 +428,7 @@ public class AiModelInsightsApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> getAiModelPositionDistributionWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String granularity, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable String model, @javax.annotation.Nullable Integer brand1, @javax.annotation.Nullable Integer brand2, Map<String, String> headers) throws ApiException {
+  public ApiResponse<Void> getAiModelPositionDistributionWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String granularity, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable String model, @javax.annotation.Nullable Integer brand1, @javax.annotation.Nullable Integer brand2, Map<String, String> headers) throws ApiException {
     HttpRequest.Builder localVarRequestBuilder = getAiModelPositionDistributionRequestBuilder(projectId, range, from, to, granularity, collectionId, countryCode, languageCode, promptType, brandKind, model, brand1, brand2, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
@@ -466,7 +465,7 @@ public class AiModelInsightsApi {
     }
   }
 
-  private HttpRequest.Builder getAiModelPositionDistributionRequestBuilder(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String granularity, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable String model, @javax.annotation.Nullable Integer brand1, @javax.annotation.Nullable Integer brand2, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder getAiModelPositionDistributionRequestBuilder(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String granularity, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable String model, @javax.annotation.Nullable Integer brand1, @javax.annotation.Nullable Integer brand2, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'projectId' is set
     if (projectId == null) {
       throw new ApiException(400, "Missing the required parameter 'projectId' when calling getAiModelPositionDistribution");
@@ -490,7 +489,7 @@ public class AiModelInsightsApi {
     localVarQueryParameterBaseName = "granularity";
     localVarQueryParams.addAll(ApiClient.parameterToPairs("granularity", granularity));
     localVarQueryParameterBaseName = "collection_id";
-    localVarQueryStringJoiner.add(collectionId.toUrlQueryString());
+    localVarQueryParams.addAll(ApiClient.parameterToPairs("collection_id", collectionId));
     localVarQueryParameterBaseName = "country_code";
     localVarQueryParams.addAll(ApiClient.parameterToPairs("country_code", countryCode));
     localVarQueryParameterBaseName = "language_code";
@@ -539,7 +538,7 @@ public class AiModelInsightsApi {
    * @param from  (optional)
    * @param to End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. (optional)
    * @param granularity  (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param countryCode One ISO country code or a comma-separated list (e.g. US,GB,DE) (optional)
    * @param languageCode One ISO language code or a comma-separated list (e.g. en,es,de) (optional)
    * @param promptType One prompt type or a comma-separated list: informational, navigational, commercial, transactional (optional)
@@ -548,7 +547,7 @@ public class AiModelInsightsApi {
    * @param perPage  (optional, default to 20)
    * @throws ApiException if fails to make API call
    */
-  public void getAiOverviewResults(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String granularity, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage) throws ApiException {
+  public void getAiOverviewResults(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String granularity, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage) throws ApiException {
     getAiOverviewResults(projectId, range, from, to, granularity, collectionId, countryCode, languageCode, promptType, brandKind, page, perPage, null);
   }
 
@@ -560,7 +559,7 @@ public class AiModelInsightsApi {
    * @param from  (optional)
    * @param to End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. (optional)
    * @param granularity  (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param countryCode One ISO country code or a comma-separated list (e.g. US,GB,DE) (optional)
    * @param languageCode One ISO language code or a comma-separated list (e.g. en,es,de) (optional)
    * @param promptType One prompt type or a comma-separated list: informational, navigational, commercial, transactional (optional)
@@ -570,7 +569,7 @@ public class AiModelInsightsApi {
    * @param headers Optional headers to include in the request
    * @throws ApiException if fails to make API call
    */
-  public void getAiOverviewResults(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String granularity, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, Map<String, String> headers) throws ApiException {
+  public void getAiOverviewResults(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String granularity, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, Map<String, String> headers) throws ApiException {
     getAiOverviewResultsWithHttpInfo(projectId, range, from, to, granularity, collectionId, countryCode, languageCode, promptType, brandKind, page, perPage, headers);
   }
 
@@ -582,7 +581,7 @@ public class AiModelInsightsApi {
    * @param from  (optional)
    * @param to End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. (optional)
    * @param granularity  (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param countryCode One ISO country code or a comma-separated list (e.g. US,GB,DE) (optional)
    * @param languageCode One ISO language code or a comma-separated list (e.g. en,es,de) (optional)
    * @param promptType One prompt type or a comma-separated list: informational, navigational, commercial, transactional (optional)
@@ -592,7 +591,7 @@ public class AiModelInsightsApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> getAiOverviewResultsWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String granularity, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage) throws ApiException {
+  public ApiResponse<Void> getAiOverviewResultsWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String granularity, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage) throws ApiException {
     return getAiOverviewResultsWithHttpInfo(projectId, range, from, to, granularity, collectionId, countryCode, languageCode, promptType, brandKind, page, perPage, null);
   }
 
@@ -604,7 +603,7 @@ public class AiModelInsightsApi {
    * @param from  (optional)
    * @param to End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. (optional)
    * @param granularity  (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param countryCode One ISO country code or a comma-separated list (e.g. US,GB,DE) (optional)
    * @param languageCode One ISO language code or a comma-separated list (e.g. en,es,de) (optional)
    * @param promptType One prompt type or a comma-separated list: informational, navigational, commercial, transactional (optional)
@@ -615,7 +614,7 @@ public class AiModelInsightsApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> getAiOverviewResultsWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String granularity, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, Map<String, String> headers) throws ApiException {
+  public ApiResponse<Void> getAiOverviewResultsWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String granularity, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, Map<String, String> headers) throws ApiException {
     HttpRequest.Builder localVarRequestBuilder = getAiOverviewResultsRequestBuilder(projectId, range, from, to, granularity, collectionId, countryCode, languageCode, promptType, brandKind, page, perPage, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
@@ -652,7 +651,7 @@ public class AiModelInsightsApi {
     }
   }
 
-  private HttpRequest.Builder getAiOverviewResultsRequestBuilder(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String granularity, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder getAiOverviewResultsRequestBuilder(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String granularity, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'projectId' is set
     if (projectId == null) {
       throw new ApiException(400, "Missing the required parameter 'projectId' when calling getAiOverviewResults");
@@ -676,7 +675,7 @@ public class AiModelInsightsApi {
     localVarQueryParameterBaseName = "granularity";
     localVarQueryParams.addAll(ApiClient.parameterToPairs("granularity", granularity));
     localVarQueryParameterBaseName = "collection_id";
-    localVarQueryStringJoiner.add(collectionId.toUrlQueryString());
+    localVarQueryParams.addAll(ApiClient.parameterToPairs("collection_id", collectionId));
     localVarQueryParameterBaseName = "country_code";
     localVarQueryParams.addAll(ApiClient.parameterToPairs("country_code", countryCode));
     localVarQueryParameterBaseName = "language_code";

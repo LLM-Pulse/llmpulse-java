@@ -40,7 +40,6 @@ docs/GetAccount200Response.md
 docs/GetAccount200ResponseLimits.md
 docs/GetAccount200ResponseRateLimits.md
 docs/GetAccount200ResponseSubscription.md
-docs/GetTimeseriesCollectionIdParameter.md
 docs/HealthApi.md
 docs/IntelligenceTask.md
 docs/IntelligenceTaskCreateRequest.md
@@ -171,7 +170,6 @@ src/main/java/ai/llmpulse/sdk/model/GetAccount200Response.java
 src/main/java/ai/llmpulse/sdk/model/GetAccount200ResponseLimits.java
 src/main/java/ai/llmpulse/sdk/model/GetAccount200ResponseRateLimits.java
 src/main/java/ai/llmpulse/sdk/model/GetAccount200ResponseSubscription.java
-src/main/java/ai/llmpulse/sdk/model/GetTimeseriesCollectionIdParameter.java
 src/main/java/ai/llmpulse/sdk/model/IntelligenceTask.java
 src/main/java/ai/llmpulse/sdk/model/IntelligenceTaskCreateRequest.java
 src/main/java/ai/llmpulse/sdk/model/IntelligenceTaskUpdateRequest.java

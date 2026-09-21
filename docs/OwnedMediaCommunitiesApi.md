@@ -48,7 +48,7 @@ public class Example {
         String store = "google_play"; // String | provider=mobile_apps only
         Boolean owned = true; // Boolean | Return only rows belonging to the account's own connected profile
         String model = "chatgpt"; // String | Filter by AI model. Models the API key's user has not enabled are silently dropped.
-        GetTimeseriesCollectionIdParameter collectionId = new GetTimeseriesCollectionIdParameter(); // GetTimeseriesCollectionIdParameter | One collection/tag ID or a comma-separated list of IDs
+        String collectionId = "12,34"; // String | One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize.
         String countryCode = "countryCode_example"; // String | One ISO country code or a comma-separated list (e.g. US,GB,DE)
         String languageCode = "languageCode_example"; // String | One ISO language code or a comma-separated list (e.g. en,es,de)
         String brandKind = "brand"; // String | Filter by brand kind: brand (own brand/products), brand_other (competitors/other brands), non_brand (generic, no brand named). For fair 1:1 brand-vs-competitor comparisons (visibility, share of voice), use non_brand: brand-focused prompts skew results toward the brand they name. The in-app Overview page applies non_brand by default.
@@ -82,7 +82,7 @@ public class Example {
 | **store** | **String**| provider&#x3D;mobile_apps only | [optional] [default to google_play] [enum: google_play, app_store] |
 | **owned** | **Boolean**| Return only rows belonging to the account&#39;s own connected profile | [optional] |
 | **model** | **String**| Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. | [optional] [enum: chatgpt, perplexity, gemini, ai_overview, ai_mode, copilot, claude, grok, deepseek, meta_ai, amazon_rufus, naver_ai, baidu_ai] |
-| **collectionId** | [**GetTimeseriesCollectionIdParameter**](.md)| One collection/tag ID or a comma-separated list of IDs | [optional] |
+| **collectionId** | **String**| One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. | [optional] |
 | **countryCode** | **String**| One ISO country code or a comma-separated list (e.g. US,GB,DE) | [optional] |
 | **languageCode** | **String**| One ISO language code or a comma-separated list (e.g. en,es,de) | [optional] |
 | **brandKind** | **String**| Filter by brand kind: brand (own brand/products), brand_other (competitors/other brands), non_brand (generic, no brand named). For fair 1:1 brand-vs-competitor comparisons (visibility, share of voice), use non_brand: brand-focused prompts skew results toward the brand they name. The in-app Overview page applies non_brand by default. | [optional] [enum: brand, brand_other, non_brand] |
@@ -149,7 +149,7 @@ public class Example {
         String store = "google_play"; // String | provider=mobile_apps only
         Boolean owned = true; // Boolean | Return only rows belonging to the account's own connected profile
         String model = "chatgpt"; // String | Filter by AI model. Models the API key's user has not enabled are silently dropped.
-        GetTimeseriesCollectionIdParameter collectionId = new GetTimeseriesCollectionIdParameter(); // GetTimeseriesCollectionIdParameter | One collection/tag ID or a comma-separated list of IDs
+        String collectionId = "12,34"; // String | One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize.
         String countryCode = "countryCode_example"; // String | One ISO country code or a comma-separated list (e.g. US,GB,DE)
         String languageCode = "languageCode_example"; // String | One ISO language code or a comma-separated list (e.g. en,es,de)
         String brandKind = "brand"; // String | Filter by brand kind: brand (own brand/products), brand_other (competitors/other brands), non_brand (generic, no brand named). For fair 1:1 brand-vs-competitor comparisons (visibility, share of voice), use non_brand: brand-focused prompts skew results toward the brand they name. The in-app Overview page applies non_brand by default.
@@ -185,7 +185,7 @@ public class Example {
 | **store** | **String**| provider&#x3D;mobile_apps only | [optional] [default to google_play] [enum: google_play, app_store] |
 | **owned** | **Boolean**| Return only rows belonging to the account&#39;s own connected profile | [optional] |
 | **model** | **String**| Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. | [optional] [enum: chatgpt, perplexity, gemini, ai_overview, ai_mode, copilot, claude, grok, deepseek, meta_ai, amazon_rufus, naver_ai, baidu_ai] |
-| **collectionId** | [**GetTimeseriesCollectionIdParameter**](.md)| One collection/tag ID or a comma-separated list of IDs | [optional] |
+| **collectionId** | **String**| One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. | [optional] |
 | **countryCode** | **String**| One ISO country code or a comma-separated list (e.g. US,GB,DE) | [optional] |
 | **languageCode** | **String**| One ISO language code or a comma-separated list (e.g. en,es,de) | [optional] |
 | **brandKind** | **String**| Filter by brand kind: brand (own brand/products), brand_other (competitors/other brands), non_brand (generic, no brand named). For fair 1:1 brand-vs-competitor comparisons (visibility, share of voice), use non_brand: brand-focused prompts skew results toward the brand they name. The in-app Overview page applies non_brand by default. | [optional] [enum: brand, brand_other, non_brand] |
@@ -256,7 +256,7 @@ public class Example {
         String order = "citations"; // String | Sort field; the allowed set depends on view
         String direction = "asc"; // String | 
         String model = "chatgpt"; // String | Filter by AI model. Models the API key's user has not enabled are silently dropped.
-        GetTimeseriesCollectionIdParameter collectionId = new GetTimeseriesCollectionIdParameter(); // GetTimeseriesCollectionIdParameter | One collection/tag ID or a comma-separated list of IDs
+        String collectionId = "12,34"; // String | One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize.
         String countryCode = "countryCode_example"; // String | One ISO country code or a comma-separated list (e.g. US,GB,DE)
         String languageCode = "languageCode_example"; // String | One ISO language code or a comma-separated list (e.g. en,es,de)
         String brandKind = "brand"; // String | Filter by brand kind: brand (own brand/products), brand_other (competitors/other brands), non_brand (generic, no brand named). For fair 1:1 brand-vs-competitor comparisons (visibility, share of voice), use non_brand: brand-focused prompts skew results toward the brand they name. The in-app Overview page applies non_brand by default.
@@ -294,7 +294,7 @@ public class Example {
 | **order** | **String**| Sort field; the allowed set depends on view | [optional] [enum: citations, subreddit, unique_authors, positive_pct, negative_pct, author, avg_position, upvotes, comments, sentiment] |
 | **direction** | **String**|  | [optional] [default to desc] [enum: asc, desc] |
 | **model** | **String**| Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. | [optional] [enum: chatgpt, perplexity, gemini, ai_overview, ai_mode, copilot, claude, grok, deepseek, meta_ai, amazon_rufus, naver_ai, baidu_ai] |
-| **collectionId** | [**GetTimeseriesCollectionIdParameter**](.md)| One collection/tag ID or a comma-separated list of IDs | [optional] |
+| **collectionId** | **String**| One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. | [optional] |
 | **countryCode** | **String**| One ISO country code or a comma-separated list (e.g. US,GB,DE) | [optional] |
 | **languageCode** | **String**| One ISO language code or a comma-separated list (e.g. en,es,de) | [optional] |
 | **brandKind** | **String**| Filter by brand kind: brand (own brand/products), brand_other (competitors/other brands), non_brand (generic, no brand named). For fair 1:1 brand-vs-competitor comparisons (visibility, share of voice), use non_brand: brand-focused prompts skew results toward the brand they name. The in-app Overview page applies non_brand by default. | [optional] [enum: brand, brand_other, non_brand] |
@@ -365,7 +365,7 @@ public class Example {
         String order = "citations"; // String | Sort field; the allowed set depends on view
         String direction = "asc"; // String | 
         String model = "chatgpt"; // String | Filter by AI model. Models the API key's user has not enabled are silently dropped.
-        GetTimeseriesCollectionIdParameter collectionId = new GetTimeseriesCollectionIdParameter(); // GetTimeseriesCollectionIdParameter | One collection/tag ID or a comma-separated list of IDs
+        String collectionId = "12,34"; // String | One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize.
         String countryCode = "countryCode_example"; // String | One ISO country code or a comma-separated list (e.g. US,GB,DE)
         String languageCode = "languageCode_example"; // String | One ISO language code or a comma-separated list (e.g. en,es,de)
         String brandKind = "brand"; // String | Filter by brand kind: brand (own brand/products), brand_other (competitors/other brands), non_brand (generic, no brand named). For fair 1:1 brand-vs-competitor comparisons (visibility, share of voice), use non_brand: brand-focused prompts skew results toward the brand they name. The in-app Overview page applies non_brand by default.
@@ -405,7 +405,7 @@ public class Example {
 | **order** | **String**| Sort field; the allowed set depends on view | [optional] [enum: citations, subreddit, unique_authors, positive_pct, negative_pct, author, avg_position, upvotes, comments, sentiment] |
 | **direction** | **String**|  | [optional] [default to desc] [enum: asc, desc] |
 | **model** | **String**| Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. | [optional] [enum: chatgpt, perplexity, gemini, ai_overview, ai_mode, copilot, claude, grok, deepseek, meta_ai, amazon_rufus, naver_ai, baidu_ai] |
-| **collectionId** | [**GetTimeseriesCollectionIdParameter**](.md)| One collection/tag ID or a comma-separated list of IDs | [optional] |
+| **collectionId** | **String**| One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. | [optional] |
 | **countryCode** | **String**| One ISO country code or a comma-separated list (e.g. US,GB,DE) | [optional] |
 | **languageCode** | **String**| One ISO language code or a comma-separated list (e.g. en,es,de) | [optional] |
 | **brandKind** | **String**| Filter by brand kind: brand (own brand/products), brand_other (competitors/other brands), non_brand (generic, no brand named). For fair 1:1 brand-vs-competitor comparisons (visibility, share of voice), use non_brand: brand-focused prompts skew results toward the brand they name. The in-app Overview page applies non_brand by default. | [optional] [enum: brand, brand_other, non_brand] |

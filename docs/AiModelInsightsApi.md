@@ -47,7 +47,7 @@ public class Example {
         OffsetDateTime from = OffsetDateTime.now(); // OffsetDateTime | 
         OffsetDateTime to = OffsetDateTime.now(); // OffsetDateTime | End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier.
         String granularity = "day"; // String | 
-        GetTimeseriesCollectionIdParameter collectionId = new GetTimeseriesCollectionIdParameter(); // GetTimeseriesCollectionIdParameter | One collection/tag ID or a comma-separated list of IDs
+        String collectionId = "12,34"; // String | One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize.
         String countryCode = "countryCode_example"; // String | One ISO country code or a comma-separated list (e.g. US,GB,DE)
         String languageCode = "languageCode_example"; // String | One ISO language code or a comma-separated list (e.g. en,es,de)
         String promptType = "promptType_example"; // String | One prompt type or a comma-separated list: informational, navigational, commercial, transactional
@@ -76,7 +76,7 @@ public class Example {
 | **from** | **OffsetDateTime**|  | [optional] |
 | **to** | **OffsetDateTime**| End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. | [optional] |
 | **granularity** | **String**|  | [optional] [enum: day, week, month] |
-| **collectionId** | [**GetTimeseriesCollectionIdParameter**](.md)| One collection/tag ID or a comma-separated list of IDs | [optional] |
+| **collectionId** | **String**| One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. | [optional] |
 | **countryCode** | **String**| One ISO country code or a comma-separated list (e.g. US,GB,DE) | [optional] |
 | **languageCode** | **String**| One ISO language code or a comma-separated list (e.g. en,es,de) | [optional] |
 | **promptType** | **String**| One prompt type or a comma-separated list: informational, navigational, commercial, transactional | [optional] |
@@ -137,7 +137,7 @@ public class Example {
         OffsetDateTime from = OffsetDateTime.now(); // OffsetDateTime | 
         OffsetDateTime to = OffsetDateTime.now(); // OffsetDateTime | End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier.
         String granularity = "day"; // String | 
-        GetTimeseriesCollectionIdParameter collectionId = new GetTimeseriesCollectionIdParameter(); // GetTimeseriesCollectionIdParameter | One collection/tag ID or a comma-separated list of IDs
+        String collectionId = "12,34"; // String | One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize.
         String countryCode = "countryCode_example"; // String | One ISO country code or a comma-separated list (e.g. US,GB,DE)
         String languageCode = "languageCode_example"; // String | One ISO language code or a comma-separated list (e.g. en,es,de)
         String promptType = "promptType_example"; // String | One prompt type or a comma-separated list: informational, navigational, commercial, transactional
@@ -168,7 +168,7 @@ public class Example {
 | **from** | **OffsetDateTime**|  | [optional] |
 | **to** | **OffsetDateTime**| End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. | [optional] |
 | **granularity** | **String**|  | [optional] [enum: day, week, month] |
-| **collectionId** | [**GetTimeseriesCollectionIdParameter**](.md)| One collection/tag ID or a comma-separated list of IDs | [optional] |
+| **collectionId** | **String**| One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. | [optional] |
 | **countryCode** | **String**| One ISO country code or a comma-separated list (e.g. US,GB,DE) | [optional] |
 | **languageCode** | **String**| One ISO language code or a comma-separated list (e.g. en,es,de) | [optional] |
 | **promptType** | **String**| One prompt type or a comma-separated list: informational, navigational, commercial, transactional | [optional] |
@@ -227,7 +227,7 @@ public class Example {
         OffsetDateTime from = OffsetDateTime.now(); // OffsetDateTime | 
         OffsetDateTime to = OffsetDateTime.now(); // OffsetDateTime | End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier.
         String granularity = "day"; // String | 
-        GetTimeseriesCollectionIdParameter collectionId = new GetTimeseriesCollectionIdParameter(); // GetTimeseriesCollectionIdParameter | One collection/tag ID or a comma-separated list of IDs
+        String collectionId = "12,34"; // String | One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize.
         String countryCode = "countryCode_example"; // String | One ISO country code or a comma-separated list (e.g. US,GB,DE)
         String languageCode = "languageCode_example"; // String | One ISO language code or a comma-separated list (e.g. en,es,de)
         String promptType = "promptType_example"; // String | One prompt type or a comma-separated list: informational, navigational, commercial, transactional
@@ -258,7 +258,7 @@ public class Example {
 | **from** | **OffsetDateTime**|  | [optional] |
 | **to** | **OffsetDateTime**| End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. | [optional] |
 | **granularity** | **String**|  | [optional] [enum: day, week, month] |
-| **collectionId** | [**GetTimeseriesCollectionIdParameter**](.md)| One collection/tag ID or a comma-separated list of IDs | [optional] |
+| **collectionId** | **String**| One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. | [optional] |
 | **countryCode** | **String**| One ISO country code or a comma-separated list (e.g. US,GB,DE) | [optional] |
 | **languageCode** | **String**| One ISO language code or a comma-separated list (e.g. en,es,de) | [optional] |
 | **promptType** | **String**| One prompt type or a comma-separated list: informational, navigational, commercial, transactional | [optional] |
@@ -319,7 +319,7 @@ public class Example {
         OffsetDateTime from = OffsetDateTime.now(); // OffsetDateTime | 
         OffsetDateTime to = OffsetDateTime.now(); // OffsetDateTime | End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier.
         String granularity = "day"; // String | 
-        GetTimeseriesCollectionIdParameter collectionId = new GetTimeseriesCollectionIdParameter(); // GetTimeseriesCollectionIdParameter | One collection/tag ID or a comma-separated list of IDs
+        String collectionId = "12,34"; // String | One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize.
         String countryCode = "countryCode_example"; // String | One ISO country code or a comma-separated list (e.g. US,GB,DE)
         String languageCode = "languageCode_example"; // String | One ISO language code or a comma-separated list (e.g. en,es,de)
         String promptType = "promptType_example"; // String | One prompt type or a comma-separated list: informational, navigational, commercial, transactional
@@ -352,7 +352,7 @@ public class Example {
 | **from** | **OffsetDateTime**|  | [optional] |
 | **to** | **OffsetDateTime**| End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. | [optional] |
 | **granularity** | **String**|  | [optional] [enum: day, week, month] |
-| **collectionId** | [**GetTimeseriesCollectionIdParameter**](.md)| One collection/tag ID or a comma-separated list of IDs | [optional] |
+| **collectionId** | **String**| One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. | [optional] |
 | **countryCode** | **String**| One ISO country code or a comma-separated list (e.g. US,GB,DE) | [optional] |
 | **languageCode** | **String**| One ISO language code or a comma-separated list (e.g. en,es,de) | [optional] |
 | **promptType** | **String**| One prompt type or a comma-separated list: informational, navigational, commercial, transactional | [optional] |
@@ -413,7 +413,7 @@ public class Example {
         OffsetDateTime from = OffsetDateTime.now(); // OffsetDateTime | 
         OffsetDateTime to = OffsetDateTime.now(); // OffsetDateTime | End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier.
         String granularity = "day"; // String | 
-        GetTimeseriesCollectionIdParameter collectionId = new GetTimeseriesCollectionIdParameter(); // GetTimeseriesCollectionIdParameter | One collection/tag ID or a comma-separated list of IDs
+        String collectionId = "12,34"; // String | One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize.
         String countryCode = "countryCode_example"; // String | One ISO country code or a comma-separated list (e.g. US,GB,DE)
         String languageCode = "languageCode_example"; // String | One ISO language code or a comma-separated list (e.g. en,es,de)
         String promptType = "promptType_example"; // String | One prompt type or a comma-separated list: informational, navigational, commercial, transactional
@@ -443,7 +443,7 @@ public class Example {
 | **from** | **OffsetDateTime**|  | [optional] |
 | **to** | **OffsetDateTime**| End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. | [optional] |
 | **granularity** | **String**|  | [optional] [enum: day, week, month] |
-| **collectionId** | [**GetTimeseriesCollectionIdParameter**](.md)| One collection/tag ID or a comma-separated list of IDs | [optional] |
+| **collectionId** | **String**| One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. | [optional] |
 | **countryCode** | **String**| One ISO country code or a comma-separated list (e.g. US,GB,DE) | [optional] |
 | **languageCode** | **String**| One ISO language code or a comma-separated list (e.g. en,es,de) | [optional] |
 | **promptType** | **String**| One prompt type or a comma-separated list: informational, navigational, commercial, transactional | [optional] |
@@ -503,7 +503,7 @@ public class Example {
         OffsetDateTime from = OffsetDateTime.now(); // OffsetDateTime | 
         OffsetDateTime to = OffsetDateTime.now(); // OffsetDateTime | End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier.
         String granularity = "day"; // String | 
-        GetTimeseriesCollectionIdParameter collectionId = new GetTimeseriesCollectionIdParameter(); // GetTimeseriesCollectionIdParameter | One collection/tag ID or a comma-separated list of IDs
+        String collectionId = "12,34"; // String | One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize.
         String countryCode = "countryCode_example"; // String | One ISO country code or a comma-separated list (e.g. US,GB,DE)
         String languageCode = "languageCode_example"; // String | One ISO language code or a comma-separated list (e.g. en,es,de)
         String promptType = "promptType_example"; // String | One prompt type or a comma-separated list: informational, navigational, commercial, transactional
@@ -535,7 +535,7 @@ public class Example {
 | **from** | **OffsetDateTime**|  | [optional] |
 | **to** | **OffsetDateTime**| End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. | [optional] |
 | **granularity** | **String**|  | [optional] [enum: day, week, month] |
-| **collectionId** | [**GetTimeseriesCollectionIdParameter**](.md)| One collection/tag ID or a comma-separated list of IDs | [optional] |
+| **collectionId** | **String**| One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. | [optional] |
 | **countryCode** | **String**| One ISO country code or a comma-separated list (e.g. US,GB,DE) | [optional] |
 | **languageCode** | **String**| One ISO language code or a comma-separated list (e.g. en,es,de) | [optional] |
 | **promptType** | **String**| One prompt type or a comma-separated list: informational, navigational, commercial, transactional | [optional] |

@@ -19,7 +19,6 @@ import ai.llmpulse.sdk.Configuration;
 import ai.llmpulse.sdk.Pair;
 
 import ai.llmpulse.sdk.model.ApiError;
-import ai.llmpulse.sdk.model.GetTimeseriesCollectionIdParameter;
 import java.time.OffsetDateTime;
 
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -175,7 +174,7 @@ public class OwnedMediaCommunitiesApi {
    * @param store provider&#x3D;mobile_apps only (optional, default to google_play)
    * @param owned Return only rows belonging to the account&#39;s own connected profile (optional)
    * @param model Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param countryCode One ISO country code or a comma-separated list (e.g. US,GB,DE) (optional)
    * @param languageCode One ISO language code or a comma-separated list (e.g. en,es,de) (optional)
    * @param brandKind Filter by brand kind: brand (own brand/products), brand_other (competitors/other brands), non_brand (generic, no brand named). For fair 1:1 brand-vs-competitor comparisons (visibility, share of voice), use non_brand: brand-focused prompts skew results toward the brand they name. The in-app Overview page applies non_brand by default. (optional)
@@ -185,7 +184,7 @@ public class OwnedMediaCommunitiesApi {
    * @param output Rectangular output for BI tools (Tableau, Excel, Sheets, ELT). Omit for the default nested JSON. &#39;flat&#39; returns the same metadata plus &#39;columns&#39; and &#39;rows&#39;; &#39;csv&#39; returns those rows as text/csv. Errors are always returned as JSON. (optional)
    * @throws ApiException if fails to make API call
    */
-  public void listOwnedMedia(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nonnull String provider, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String view, @javax.annotation.Nullable String store, @javax.annotation.Nullable Boolean owned, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output) throws ApiException {
+  public void listOwnedMedia(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nonnull String provider, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String view, @javax.annotation.Nullable String store, @javax.annotation.Nullable Boolean owned, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output) throws ApiException {
     listOwnedMedia(projectId, provider, page, perPage, view, store, owned, model, collectionId, countryCode, languageCode, brandKind, range, from, to, output, null);
   }
 
@@ -200,7 +199,7 @@ public class OwnedMediaCommunitiesApi {
    * @param store provider&#x3D;mobile_apps only (optional, default to google_play)
    * @param owned Return only rows belonging to the account&#39;s own connected profile (optional)
    * @param model Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param countryCode One ISO country code or a comma-separated list (e.g. US,GB,DE) (optional)
    * @param languageCode One ISO language code or a comma-separated list (e.g. en,es,de) (optional)
    * @param brandKind Filter by brand kind: brand (own brand/products), brand_other (competitors/other brands), non_brand (generic, no brand named). For fair 1:1 brand-vs-competitor comparisons (visibility, share of voice), use non_brand: brand-focused prompts skew results toward the brand they name. The in-app Overview page applies non_brand by default. (optional)
@@ -211,7 +210,7 @@ public class OwnedMediaCommunitiesApi {
    * @param headers Optional headers to include in the request
    * @throws ApiException if fails to make API call
    */
-  public void listOwnedMedia(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nonnull String provider, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String view, @javax.annotation.Nullable String store, @javax.annotation.Nullable Boolean owned, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output, Map<String, String> headers) throws ApiException {
+  public void listOwnedMedia(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nonnull String provider, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String view, @javax.annotation.Nullable String store, @javax.annotation.Nullable Boolean owned, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output, Map<String, String> headers) throws ApiException {
     listOwnedMediaWithHttpInfo(projectId, provider, page, perPage, view, store, owned, model, collectionId, countryCode, languageCode, brandKind, range, from, to, output, headers);
   }
 
@@ -226,7 +225,7 @@ public class OwnedMediaCommunitiesApi {
    * @param store provider&#x3D;mobile_apps only (optional, default to google_play)
    * @param owned Return only rows belonging to the account&#39;s own connected profile (optional)
    * @param model Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param countryCode One ISO country code or a comma-separated list (e.g. US,GB,DE) (optional)
    * @param languageCode One ISO language code or a comma-separated list (e.g. en,es,de) (optional)
    * @param brandKind Filter by brand kind: brand (own brand/products), brand_other (competitors/other brands), non_brand (generic, no brand named). For fair 1:1 brand-vs-competitor comparisons (visibility, share of voice), use non_brand: brand-focused prompts skew results toward the brand they name. The in-app Overview page applies non_brand by default. (optional)
@@ -237,7 +236,7 @@ public class OwnedMediaCommunitiesApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> listOwnedMediaWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nonnull String provider, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String view, @javax.annotation.Nullable String store, @javax.annotation.Nullable Boolean owned, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output) throws ApiException {
+  public ApiResponse<Void> listOwnedMediaWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nonnull String provider, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String view, @javax.annotation.Nullable String store, @javax.annotation.Nullable Boolean owned, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output) throws ApiException {
     return listOwnedMediaWithHttpInfo(projectId, provider, page, perPage, view, store, owned, model, collectionId, countryCode, languageCode, brandKind, range, from, to, output, null);
   }
 
@@ -252,7 +251,7 @@ public class OwnedMediaCommunitiesApi {
    * @param store provider&#x3D;mobile_apps only (optional, default to google_play)
    * @param owned Return only rows belonging to the account&#39;s own connected profile (optional)
    * @param model Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param countryCode One ISO country code or a comma-separated list (e.g. US,GB,DE) (optional)
    * @param languageCode One ISO language code or a comma-separated list (e.g. en,es,de) (optional)
    * @param brandKind Filter by brand kind: brand (own brand/products), brand_other (competitors/other brands), non_brand (generic, no brand named). For fair 1:1 brand-vs-competitor comparisons (visibility, share of voice), use non_brand: brand-focused prompts skew results toward the brand they name. The in-app Overview page applies non_brand by default. (optional)
@@ -264,7 +263,7 @@ public class OwnedMediaCommunitiesApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> listOwnedMediaWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nonnull String provider, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String view, @javax.annotation.Nullable String store, @javax.annotation.Nullable Boolean owned, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output, Map<String, String> headers) throws ApiException {
+  public ApiResponse<Void> listOwnedMediaWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nonnull String provider, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String view, @javax.annotation.Nullable String store, @javax.annotation.Nullable Boolean owned, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output, Map<String, String> headers) throws ApiException {
     HttpRequest.Builder localVarRequestBuilder = listOwnedMediaRequestBuilder(projectId, provider, page, perPage, view, store, owned, model, collectionId, countryCode, languageCode, brandKind, range, from, to, output, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
@@ -301,7 +300,7 @@ public class OwnedMediaCommunitiesApi {
     }
   }
 
-  private HttpRequest.Builder listOwnedMediaRequestBuilder(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nonnull String provider, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String view, @javax.annotation.Nullable String store, @javax.annotation.Nullable Boolean owned, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder listOwnedMediaRequestBuilder(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nonnull String provider, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String view, @javax.annotation.Nullable String store, @javax.annotation.Nullable Boolean owned, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'projectId' is set
     if (projectId == null) {
       throw new ApiException(400, "Missing the required parameter 'projectId' when calling listOwnedMedia");
@@ -335,7 +334,7 @@ public class OwnedMediaCommunitiesApi {
     localVarQueryParameterBaseName = "model";
     localVarQueryParams.addAll(ApiClient.parameterToPairs("model", model));
     localVarQueryParameterBaseName = "collection_id";
-    localVarQueryStringJoiner.add(collectionId.toUrlQueryString());
+    localVarQueryParams.addAll(ApiClient.parameterToPairs("collection_id", collectionId));
     localVarQueryParameterBaseName = "country_code";
     localVarQueryParams.addAll(ApiClient.parameterToPairs("country_code", countryCode));
     localVarQueryParameterBaseName = "language_code";
@@ -391,7 +390,7 @@ public class OwnedMediaCommunitiesApi {
    * @param order Sort field; the allowed set depends on view (optional)
    * @param direction  (optional, default to desc)
    * @param model Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param countryCode One ISO country code or a comma-separated list (e.g. US,GB,DE) (optional)
    * @param languageCode One ISO language code or a comma-separated list (e.g. en,es,de) (optional)
    * @param brandKind Filter by brand kind: brand (own brand/products), brand_other (competitors/other brands), non_brand (generic, no brand named). For fair 1:1 brand-vs-competitor comparisons (visibility, share of voice), use non_brand: brand-focused prompts skew results toward the brand they name. The in-app Overview page applies non_brand by default. (optional)
@@ -401,7 +400,7 @@ public class OwnedMediaCommunitiesApi {
    * @param output Rectangular output for BI tools (Tableau, Excel, Sheets, ELT). Omit for the default nested JSON. &#39;flat&#39; returns the same metadata plus &#39;columns&#39; and &#39;rows&#39;; &#39;csv&#39; returns those rows as text/csv. Errors are always returned as JSON. (optional)
    * @throws ApiException if fails to make API call
    */
-  public void listRedditCitations(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String view, @javax.annotation.Nullable String subreddit, @javax.annotation.Nullable String author, @javax.annotation.Nullable String status, @javax.annotation.Nullable Boolean owned, @javax.annotation.Nullable String brand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String direction, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output) throws ApiException {
+  public void listRedditCitations(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String view, @javax.annotation.Nullable String subreddit, @javax.annotation.Nullable String author, @javax.annotation.Nullable String status, @javax.annotation.Nullable Boolean owned, @javax.annotation.Nullable String brand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String direction, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output) throws ApiException {
     listRedditCitations(projectId, page, perPage, view, subreddit, author, status, owned, brand, order, direction, model, collectionId, countryCode, languageCode, brandKind, range, from, to, output, null);
   }
 
@@ -420,7 +419,7 @@ public class OwnedMediaCommunitiesApi {
    * @param order Sort field; the allowed set depends on view (optional)
    * @param direction  (optional, default to desc)
    * @param model Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param countryCode One ISO country code or a comma-separated list (e.g. US,GB,DE) (optional)
    * @param languageCode One ISO language code or a comma-separated list (e.g. en,es,de) (optional)
    * @param brandKind Filter by brand kind: brand (own brand/products), brand_other (competitors/other brands), non_brand (generic, no brand named). For fair 1:1 brand-vs-competitor comparisons (visibility, share of voice), use non_brand: brand-focused prompts skew results toward the brand they name. The in-app Overview page applies non_brand by default. (optional)
@@ -431,7 +430,7 @@ public class OwnedMediaCommunitiesApi {
    * @param headers Optional headers to include in the request
    * @throws ApiException if fails to make API call
    */
-  public void listRedditCitations(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String view, @javax.annotation.Nullable String subreddit, @javax.annotation.Nullable String author, @javax.annotation.Nullable String status, @javax.annotation.Nullable Boolean owned, @javax.annotation.Nullable String brand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String direction, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output, Map<String, String> headers) throws ApiException {
+  public void listRedditCitations(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String view, @javax.annotation.Nullable String subreddit, @javax.annotation.Nullable String author, @javax.annotation.Nullable String status, @javax.annotation.Nullable Boolean owned, @javax.annotation.Nullable String brand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String direction, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output, Map<String, String> headers) throws ApiException {
     listRedditCitationsWithHttpInfo(projectId, page, perPage, view, subreddit, author, status, owned, brand, order, direction, model, collectionId, countryCode, languageCode, brandKind, range, from, to, output, headers);
   }
 
@@ -450,7 +449,7 @@ public class OwnedMediaCommunitiesApi {
    * @param order Sort field; the allowed set depends on view (optional)
    * @param direction  (optional, default to desc)
    * @param model Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param countryCode One ISO country code or a comma-separated list (e.g. US,GB,DE) (optional)
    * @param languageCode One ISO language code or a comma-separated list (e.g. en,es,de) (optional)
    * @param brandKind Filter by brand kind: brand (own brand/products), brand_other (competitors/other brands), non_brand (generic, no brand named). For fair 1:1 brand-vs-competitor comparisons (visibility, share of voice), use non_brand: brand-focused prompts skew results toward the brand they name. The in-app Overview page applies non_brand by default. (optional)
@@ -461,7 +460,7 @@ public class OwnedMediaCommunitiesApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> listRedditCitationsWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String view, @javax.annotation.Nullable String subreddit, @javax.annotation.Nullable String author, @javax.annotation.Nullable String status, @javax.annotation.Nullable Boolean owned, @javax.annotation.Nullable String brand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String direction, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output) throws ApiException {
+  public ApiResponse<Void> listRedditCitationsWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String view, @javax.annotation.Nullable String subreddit, @javax.annotation.Nullable String author, @javax.annotation.Nullable String status, @javax.annotation.Nullable Boolean owned, @javax.annotation.Nullable String brand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String direction, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output) throws ApiException {
     return listRedditCitationsWithHttpInfo(projectId, page, perPage, view, subreddit, author, status, owned, brand, order, direction, model, collectionId, countryCode, languageCode, brandKind, range, from, to, output, null);
   }
 
@@ -480,7 +479,7 @@ public class OwnedMediaCommunitiesApi {
    * @param order Sort field; the allowed set depends on view (optional)
    * @param direction  (optional, default to desc)
    * @param model Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param countryCode One ISO country code or a comma-separated list (e.g. US,GB,DE) (optional)
    * @param languageCode One ISO language code or a comma-separated list (e.g. en,es,de) (optional)
    * @param brandKind Filter by brand kind: brand (own brand/products), brand_other (competitors/other brands), non_brand (generic, no brand named). For fair 1:1 brand-vs-competitor comparisons (visibility, share of voice), use non_brand: brand-focused prompts skew results toward the brand they name. The in-app Overview page applies non_brand by default. (optional)
@@ -492,7 +491,7 @@ public class OwnedMediaCommunitiesApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> listRedditCitationsWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String view, @javax.annotation.Nullable String subreddit, @javax.annotation.Nullable String author, @javax.annotation.Nullable String status, @javax.annotation.Nullable Boolean owned, @javax.annotation.Nullable String brand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String direction, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output, Map<String, String> headers) throws ApiException {
+  public ApiResponse<Void> listRedditCitationsWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String view, @javax.annotation.Nullable String subreddit, @javax.annotation.Nullable String author, @javax.annotation.Nullable String status, @javax.annotation.Nullable Boolean owned, @javax.annotation.Nullable String brand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String direction, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output, Map<String, String> headers) throws ApiException {
     HttpRequest.Builder localVarRequestBuilder = listRedditCitationsRequestBuilder(projectId, page, perPage, view, subreddit, author, status, owned, brand, order, direction, model, collectionId, countryCode, languageCode, brandKind, range, from, to, output, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
@@ -529,7 +528,7 @@ public class OwnedMediaCommunitiesApi {
     }
   }
 
-  private HttpRequest.Builder listRedditCitationsRequestBuilder(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String view, @javax.annotation.Nullable String subreddit, @javax.annotation.Nullable String author, @javax.annotation.Nullable String status, @javax.annotation.Nullable Boolean owned, @javax.annotation.Nullable String brand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String direction, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder listRedditCitationsRequestBuilder(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String view, @javax.annotation.Nullable String subreddit, @javax.annotation.Nullable String author, @javax.annotation.Nullable String status, @javax.annotation.Nullable Boolean owned, @javax.annotation.Nullable String brand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String direction, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'projectId' is set
     if (projectId == null) {
       throw new ApiException(400, "Missing the required parameter 'projectId' when calling listRedditCitations");
@@ -567,7 +566,7 @@ public class OwnedMediaCommunitiesApi {
     localVarQueryParameterBaseName = "model";
     localVarQueryParams.addAll(ApiClient.parameterToPairs("model", model));
     localVarQueryParameterBaseName = "collection_id";
-    localVarQueryStringJoiner.add(collectionId.toUrlQueryString());
+    localVarQueryParams.addAll(ApiClient.parameterToPairs("collection_id", collectionId));
     localVarQueryParameterBaseName = "country_code";
     localVarQueryParams.addAll(ApiClient.parameterToPairs("country_code", countryCode));
     localVarQueryParameterBaseName = "language_code";

@@ -347,7 +347,7 @@ public class Example {
         Integer projectId = 56; // Integer | Project ID
         List<String> domains = Arrays.asList(); // List<String> | Source domains to analyze, e.g. domains[]=gmac.com&domains[]=educaweb.com
         String model = "chatgpt"; // String | Filter by AI model. Models the API key's user has not enabled are silently dropped.
-        GetTimeseriesCollectionIdParameter collectionId = new GetTimeseriesCollectionIdParameter(); // GetTimeseriesCollectionIdParameter | One collection/tag ID or a comma-separated list of IDs
+        String collectionId = "12,34"; // String | One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize.
         String countryCode = "countryCode_example"; // String | One ISO country code or a comma-separated list (e.g. US,GB,DE)
         String languageCode = "languageCode_example"; // String | One ISO language code or a comma-separated list (e.g. en,es,de)
         Integer prompt = 56; // Integer | Filter by prompt ID
@@ -375,7 +375,7 @@ public class Example {
 | **projectId** | **Integer**| Project ID | |
 | **domains** | [**List&lt;String&gt;**](String.md)| Source domains to analyze, e.g. domains[]&#x3D;gmac.com&amp;domains[]&#x3D;educaweb.com | |
 | **model** | **String**| Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. | [optional] [enum: chatgpt, perplexity, gemini, ai_overview, ai_mode, copilot, claude, grok, deepseek, meta_ai, amazon_rufus, naver_ai, baidu_ai] |
-| **collectionId** | [**GetTimeseriesCollectionIdParameter**](.md)| One collection/tag ID or a comma-separated list of IDs | [optional] |
+| **collectionId** | **String**| One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. | [optional] |
 | **countryCode** | **String**| One ISO country code or a comma-separated list (e.g. US,GB,DE) | [optional] |
 | **languageCode** | **String**| One ISO language code or a comma-separated list (e.g. en,es,de) | [optional] |
 | **prompt** | **Integer**| Filter by prompt ID | [optional] |
@@ -436,7 +436,7 @@ public class Example {
         Integer projectId = 56; // Integer | Project ID
         List<String> domains = Arrays.asList(); // List<String> | Source domains to analyze, e.g. domains[]=gmac.com&domains[]=educaweb.com
         String model = "chatgpt"; // String | Filter by AI model. Models the API key's user has not enabled are silently dropped.
-        GetTimeseriesCollectionIdParameter collectionId = new GetTimeseriesCollectionIdParameter(); // GetTimeseriesCollectionIdParameter | One collection/tag ID or a comma-separated list of IDs
+        String collectionId = "12,34"; // String | One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize.
         String countryCode = "countryCode_example"; // String | One ISO country code or a comma-separated list (e.g. US,GB,DE)
         String languageCode = "languageCode_example"; // String | One ISO language code or a comma-separated list (e.g. en,es,de)
         Integer prompt = 56; // Integer | Filter by prompt ID
@@ -466,7 +466,7 @@ public class Example {
 | **projectId** | **Integer**| Project ID | |
 | **domains** | [**List&lt;String&gt;**](String.md)| Source domains to analyze, e.g. domains[]&#x3D;gmac.com&amp;domains[]&#x3D;educaweb.com | |
 | **model** | **String**| Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. | [optional] [enum: chatgpt, perplexity, gemini, ai_overview, ai_mode, copilot, claude, grok, deepseek, meta_ai, amazon_rufus, naver_ai, baidu_ai] |
-| **collectionId** | [**GetTimeseriesCollectionIdParameter**](.md)| One collection/tag ID or a comma-separated list of IDs | [optional] |
+| **collectionId** | **String**| One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. | [optional] |
 | **countryCode** | **String**| One ISO country code or a comma-separated list (e.g. US,GB,DE) | [optional] |
 | **languageCode** | **String**| One ISO language code or a comma-separated list (e.g. en,es,de) | [optional] |
 | **prompt** | **Integer**| Filter by prompt ID | [optional] |
@@ -531,7 +531,7 @@ public class Example {
         String order = "group_key"; // String | 
         String direction = "asc"; // String | 
         String model = "chatgpt"; // String | Filter by AI model. Models the API key's user has not enabled are silently dropped.
-        GetTimeseriesCollectionIdParameter collectionId = new GetTimeseriesCollectionIdParameter(); // GetTimeseriesCollectionIdParameter | One collection/tag ID or a comma-separated list of IDs
+        String collectionId = "12,34"; // String | One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize.
         String countryCode = "countryCode_example"; // String | One ISO country code or a comma-separated list (e.g. US,GB,DE)
         String languageCode = "languageCode_example"; // String | One ISO language code or a comma-separated list (e.g. en,es,de)
         Integer prompt = 56; // Integer | Filter by prompt ID
@@ -566,7 +566,7 @@ public class Example {
 | **order** | **String**|  | [optional] [enum: group_key, total_responses, total_citations, citation_rate, avg_citation_position, first_seen_at, last_seen_at] |
 | **direction** | **String**|  | [optional] [enum: asc, desc] |
 | **model** | **String**| Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. | [optional] [enum: chatgpt, perplexity, gemini, ai_overview, ai_mode, copilot, claude, grok, deepseek, meta_ai, amazon_rufus, naver_ai, baidu_ai] |
-| **collectionId** | [**GetTimeseriesCollectionIdParameter**](.md)| One collection/tag ID or a comma-separated list of IDs | [optional] |
+| **collectionId** | **String**| One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. | [optional] |
 | **countryCode** | **String**| One ISO country code or a comma-separated list (e.g. US,GB,DE) | [optional] |
 | **languageCode** | **String**| One ISO language code or a comma-separated list (e.g. en,es,de) | [optional] |
 | **prompt** | **Integer**| Filter by prompt ID | [optional] |
@@ -634,7 +634,7 @@ public class Example {
         String order = "group_key"; // String | 
         String direction = "asc"; // String | 
         String model = "chatgpt"; // String | Filter by AI model. Models the API key's user has not enabled are silently dropped.
-        GetTimeseriesCollectionIdParameter collectionId = new GetTimeseriesCollectionIdParameter(); // GetTimeseriesCollectionIdParameter | One collection/tag ID or a comma-separated list of IDs
+        String collectionId = "12,34"; // String | One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize.
         String countryCode = "countryCode_example"; // String | One ISO country code or a comma-separated list (e.g. US,GB,DE)
         String languageCode = "languageCode_example"; // String | One ISO language code or a comma-separated list (e.g. en,es,de)
         Integer prompt = 56; // Integer | Filter by prompt ID
@@ -671,7 +671,7 @@ public class Example {
 | **order** | **String**|  | [optional] [enum: group_key, total_responses, total_citations, citation_rate, avg_citation_position, first_seen_at, last_seen_at] |
 | **direction** | **String**|  | [optional] [enum: asc, desc] |
 | **model** | **String**| Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. | [optional] [enum: chatgpt, perplexity, gemini, ai_overview, ai_mode, copilot, claude, grok, deepseek, meta_ai, amazon_rufus, naver_ai, baidu_ai] |
-| **collectionId** | [**GetTimeseriesCollectionIdParameter**](.md)| One collection/tag ID or a comma-separated list of IDs | [optional] |
+| **collectionId** | **String**| One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. | [optional] |
 | **countryCode** | **String**| One ISO country code or a comma-separated list (e.g. US,GB,DE) | [optional] |
 | **languageCode** | **String**| One ISO language code or a comma-separated list (e.g. en,es,de) | [optional] |
 | **prompt** | **Integer**| Filter by prompt ID | [optional] |
@@ -886,7 +886,7 @@ public class Example {
         Integer page = 1; // Integer | 
         Integer perPage = 20; // Integer | 
         String model = "chatgpt"; // String | Filter by AI model. Models the API key's user has not enabled are silently dropped.
-        GetTimeseriesCollectionIdParameter collectionId = new GetTimeseriesCollectionIdParameter(); // GetTimeseriesCollectionIdParameter | One collection/tag ID or a comma-separated list of IDs
+        String collectionId = "12,34"; // String | One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize.
         String countryCode = "countryCode_example"; // String | One ISO country code or a comma-separated list (e.g. US,GB,DE)
         String languageCode = "languageCode_example"; // String | One ISO language code or a comma-separated list (e.g. en,es,de)
         Integer prompt = 56; // Integer | Filter by prompt ID
@@ -918,7 +918,7 @@ public class Example {
 | **page** | **Integer**|  | [optional] [default to 1] |
 | **perPage** | **Integer**|  | [optional] [default to 20] |
 | **model** | **String**| Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. | [optional] [enum: chatgpt, perplexity, gemini, ai_overview, ai_mode, copilot, claude, grok, deepseek, meta_ai, amazon_rufus, naver_ai, baidu_ai] |
-| **collectionId** | [**GetTimeseriesCollectionIdParameter**](.md)| One collection/tag ID or a comma-separated list of IDs | [optional] |
+| **collectionId** | **String**| One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. | [optional] |
 | **countryCode** | **String**| One ISO country code or a comma-separated list (e.g. US,GB,DE) | [optional] |
 | **languageCode** | **String**| One ISO language code or a comma-separated list (e.g. en,es,de) | [optional] |
 | **prompt** | **Integer**| Filter by prompt ID | [optional] |
@@ -980,7 +980,7 @@ public class Example {
         Integer page = 1; // Integer | 
         Integer perPage = 20; // Integer | 
         String model = "chatgpt"; // String | Filter by AI model. Models the API key's user has not enabled are silently dropped.
-        GetTimeseriesCollectionIdParameter collectionId = new GetTimeseriesCollectionIdParameter(); // GetTimeseriesCollectionIdParameter | One collection/tag ID or a comma-separated list of IDs
+        String collectionId = "12,34"; // String | One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize.
         String countryCode = "countryCode_example"; // String | One ISO country code or a comma-separated list (e.g. US,GB,DE)
         String languageCode = "languageCode_example"; // String | One ISO language code or a comma-separated list (e.g. en,es,de)
         Integer prompt = 56; // Integer | Filter by prompt ID
@@ -1014,7 +1014,7 @@ public class Example {
 | **page** | **Integer**|  | [optional] [default to 1] |
 | **perPage** | **Integer**|  | [optional] [default to 20] |
 | **model** | **String**| Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. | [optional] [enum: chatgpt, perplexity, gemini, ai_overview, ai_mode, copilot, claude, grok, deepseek, meta_ai, amazon_rufus, naver_ai, baidu_ai] |
-| **collectionId** | [**GetTimeseriesCollectionIdParameter**](.md)| One collection/tag ID or a comma-separated list of IDs | [optional] |
+| **collectionId** | **String**| One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. | [optional] |
 | **countryCode** | **String**| One ISO country code or a comma-separated list (e.g. US,GB,DE) | [optional] |
 | **languageCode** | **String**| One ISO language code or a comma-separated list (e.g. en,es,de) | [optional] |
 | **prompt** | **Integer**| Filter by prompt ID | [optional] |

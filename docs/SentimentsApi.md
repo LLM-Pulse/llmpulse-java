@@ -189,7 +189,7 @@ public class Example {
         Boolean brandOnly = true; // Boolean | 
         String analysis = "analysis_example"; // String | One sentiment level or a comma-separated list: very_positive, positive, neutral, negative, very_negative
         String model = "chatgpt"; // String | Filter by AI model. Models the API key's user has not enabled are silently dropped.
-        GetTimeseriesCollectionIdParameter collectionId = new GetTimeseriesCollectionIdParameter(); // GetTimeseriesCollectionIdParameter | One collection/tag ID or a comma-separated list of IDs
+        String collectionId = "12,34"; // String | One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize.
         String countryCode = "countryCode_example"; // String | One ISO country code or a comma-separated list (e.g. US,GB,DE)
         String languageCode = "languageCode_example"; // String | One ISO language code or a comma-separated list (e.g. en,es,de)
         OffsetDateTime from = OffsetDateTime.now(); // OffsetDateTime | 
@@ -219,7 +219,7 @@ public class Example {
 | **brandOnly** | **Boolean**|  | [optional] |
 | **analysis** | **String**| One sentiment level or a comma-separated list: very_positive, positive, neutral, negative, very_negative | [optional] |
 | **model** | **String**| Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. | [optional] [enum: chatgpt, perplexity, gemini, ai_overview, ai_mode, copilot, claude, grok, deepseek, meta_ai, amazon_rufus, naver_ai, baidu_ai] |
-| **collectionId** | [**GetTimeseriesCollectionIdParameter**](.md)| One collection/tag ID or a comma-separated list of IDs | [optional] |
+| **collectionId** | **String**| One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. | [optional] |
 | **countryCode** | **String**| One ISO country code or a comma-separated list (e.g. US,GB,DE) | [optional] |
 | **languageCode** | **String**| One ISO language code or a comma-separated list (e.g. en,es,de) | [optional] |
 | **from** | **OffsetDateTime**|  | [optional] |
@@ -280,7 +280,7 @@ public class Example {
         Boolean brandOnly = true; // Boolean | 
         String analysis = "analysis_example"; // String | One sentiment level or a comma-separated list: very_positive, positive, neutral, negative, very_negative
         String model = "chatgpt"; // String | Filter by AI model. Models the API key's user has not enabled are silently dropped.
-        GetTimeseriesCollectionIdParameter collectionId = new GetTimeseriesCollectionIdParameter(); // GetTimeseriesCollectionIdParameter | One collection/tag ID or a comma-separated list of IDs
+        String collectionId = "12,34"; // String | One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize.
         String countryCode = "countryCode_example"; // String | One ISO country code or a comma-separated list (e.g. US,GB,DE)
         String languageCode = "languageCode_example"; // String | One ISO language code or a comma-separated list (e.g. en,es,de)
         OffsetDateTime from = OffsetDateTime.now(); // OffsetDateTime | 
@@ -312,7 +312,7 @@ public class Example {
 | **brandOnly** | **Boolean**|  | [optional] |
 | **analysis** | **String**| One sentiment level or a comma-separated list: very_positive, positive, neutral, negative, very_negative | [optional] |
 | **model** | **String**| Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. | [optional] [enum: chatgpt, perplexity, gemini, ai_overview, ai_mode, copilot, claude, grok, deepseek, meta_ai, amazon_rufus, naver_ai, baidu_ai] |
-| **collectionId** | [**GetTimeseriesCollectionIdParameter**](.md)| One collection/tag ID or a comma-separated list of IDs | [optional] |
+| **collectionId** | **String**| One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. | [optional] |
 | **countryCode** | **String**| One ISO country code or a comma-separated list (e.g. US,GB,DE) | [optional] |
 | **languageCode** | **String**| One ISO language code or a comma-separated list (e.g. en,es,de) | [optional] |
 | **from** | **OffsetDateTime**|  | [optional] |

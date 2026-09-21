@@ -19,7 +19,6 @@ import ai.llmpulse.sdk.Configuration;
 import ai.llmpulse.sdk.Pair;
 
 import ai.llmpulse.sdk.model.ApiError;
-import ai.llmpulse.sdk.model.GetTimeseriesCollectionIdParameter;
 import java.time.OffsetDateTime;
 
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -424,7 +423,7 @@ public class SourcesCitationIntelligenceApi {
    * @param projectId Project ID (required)
    * @param domains Source domains to analyze, e.g. domains[]&#x3D;gmac.com&amp;domains[]&#x3D;educaweb.com (required)
    * @param model Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param countryCode One ISO country code or a comma-separated list (e.g. US,GB,DE) (optional)
    * @param languageCode One ISO language code or a comma-separated list (e.g. en,es,de) (optional)
    * @param prompt Filter by prompt ID (optional)
@@ -433,7 +432,7 @@ public class SourcesCitationIntelligenceApi {
    * @param to End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. (optional)
    * @throws ApiException if fails to make API call
    */
-  public void getMentionsByCitingDomain(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nonnull List<String> domains, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to) throws ApiException {
+  public void getMentionsByCitingDomain(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nonnull List<String> domains, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to) throws ApiException {
     getMentionsByCitingDomain(projectId, domains, model, collectionId, countryCode, languageCode, prompt, brandKind, from, to, null);
   }
 
@@ -443,7 +442,7 @@ public class SourcesCitationIntelligenceApi {
    * @param projectId Project ID (required)
    * @param domains Source domains to analyze, e.g. domains[]&#x3D;gmac.com&amp;domains[]&#x3D;educaweb.com (required)
    * @param model Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param countryCode One ISO country code or a comma-separated list (e.g. US,GB,DE) (optional)
    * @param languageCode One ISO language code or a comma-separated list (e.g. en,es,de) (optional)
    * @param prompt Filter by prompt ID (optional)
@@ -453,7 +452,7 @@ public class SourcesCitationIntelligenceApi {
    * @param headers Optional headers to include in the request
    * @throws ApiException if fails to make API call
    */
-  public void getMentionsByCitingDomain(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nonnull List<String> domains, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, Map<String, String> headers) throws ApiException {
+  public void getMentionsByCitingDomain(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nonnull List<String> domains, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, Map<String, String> headers) throws ApiException {
     getMentionsByCitingDomainWithHttpInfo(projectId, domains, model, collectionId, countryCode, languageCode, prompt, brandKind, from, to, headers);
   }
 
@@ -463,7 +462,7 @@ public class SourcesCitationIntelligenceApi {
    * @param projectId Project ID (required)
    * @param domains Source domains to analyze, e.g. domains[]&#x3D;gmac.com&amp;domains[]&#x3D;educaweb.com (required)
    * @param model Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param countryCode One ISO country code or a comma-separated list (e.g. US,GB,DE) (optional)
    * @param languageCode One ISO language code or a comma-separated list (e.g. en,es,de) (optional)
    * @param prompt Filter by prompt ID (optional)
@@ -473,7 +472,7 @@ public class SourcesCitationIntelligenceApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> getMentionsByCitingDomainWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nonnull List<String> domains, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to) throws ApiException {
+  public ApiResponse<Void> getMentionsByCitingDomainWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nonnull List<String> domains, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to) throws ApiException {
     return getMentionsByCitingDomainWithHttpInfo(projectId, domains, model, collectionId, countryCode, languageCode, prompt, brandKind, from, to, null);
   }
 
@@ -483,7 +482,7 @@ public class SourcesCitationIntelligenceApi {
    * @param projectId Project ID (required)
    * @param domains Source domains to analyze, e.g. domains[]&#x3D;gmac.com&amp;domains[]&#x3D;educaweb.com (required)
    * @param model Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param countryCode One ISO country code or a comma-separated list (e.g. US,GB,DE) (optional)
    * @param languageCode One ISO language code or a comma-separated list (e.g. en,es,de) (optional)
    * @param prompt Filter by prompt ID (optional)
@@ -494,7 +493,7 @@ public class SourcesCitationIntelligenceApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> getMentionsByCitingDomainWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nonnull List<String> domains, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, Map<String, String> headers) throws ApiException {
+  public ApiResponse<Void> getMentionsByCitingDomainWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nonnull List<String> domains, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, Map<String, String> headers) throws ApiException {
     HttpRequest.Builder localVarRequestBuilder = getMentionsByCitingDomainRequestBuilder(projectId, domains, model, collectionId, countryCode, languageCode, prompt, brandKind, from, to, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
@@ -531,7 +530,7 @@ public class SourcesCitationIntelligenceApi {
     }
   }
 
-  private HttpRequest.Builder getMentionsByCitingDomainRequestBuilder(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nonnull List<String> domains, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder getMentionsByCitingDomainRequestBuilder(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nonnull List<String> domains, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'projectId' is set
     if (projectId == null) {
       throw new ApiException(400, "Missing the required parameter 'projectId' when calling getMentionsByCitingDomain");
@@ -555,7 +554,7 @@ public class SourcesCitationIntelligenceApi {
     localVarQueryParameterBaseName = "model";
     localVarQueryParams.addAll(ApiClient.parameterToPairs("model", model));
     localVarQueryParameterBaseName = "collection_id";
-    localVarQueryStringJoiner.add(collectionId.toUrlQueryString());
+    localVarQueryParams.addAll(ApiClient.parameterToPairs("collection_id", collectionId));
     localVarQueryParameterBaseName = "country_code";
     localVarQueryParams.addAll(ApiClient.parameterToPairs("country_code", countryCode));
     localVarQueryParameterBaseName = "language_code";
@@ -604,7 +603,7 @@ public class SourcesCitationIntelligenceApi {
    * @param order  (optional)
    * @param direction  (optional)
    * @param model Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param countryCode One ISO country code or a comma-separated list (e.g. US,GB,DE) (optional)
    * @param languageCode One ISO language code or a comma-separated list (e.g. en,es,de) (optional)
    * @param prompt Filter by prompt ID (optional)
@@ -616,7 +615,7 @@ public class SourcesCitationIntelligenceApi {
    * @param contentGap  (optional)
    * @throws ApiException if fails to make API call
    */
-  public void listCitationGroups(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable String view, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String order, @javax.annotation.Nullable String direction, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String query, @javax.annotation.Nullable String sourceType, @javax.annotation.Nullable String sentiment, @javax.annotation.Nullable String contentGap) throws ApiException {
+  public void listCitationGroups(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable String view, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String order, @javax.annotation.Nullable String direction, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String query, @javax.annotation.Nullable String sourceType, @javax.annotation.Nullable String sentiment, @javax.annotation.Nullable String contentGap) throws ApiException {
     listCitationGroups(projectId, view, page, perPage, order, direction, model, collectionId, countryCode, languageCode, prompt, from, to, query, sourceType, sentiment, contentGap, null);
   }
 
@@ -630,7 +629,7 @@ public class SourcesCitationIntelligenceApi {
    * @param order  (optional)
    * @param direction  (optional)
    * @param model Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param countryCode One ISO country code or a comma-separated list (e.g. US,GB,DE) (optional)
    * @param languageCode One ISO language code or a comma-separated list (e.g. en,es,de) (optional)
    * @param prompt Filter by prompt ID (optional)
@@ -643,7 +642,7 @@ public class SourcesCitationIntelligenceApi {
    * @param headers Optional headers to include in the request
    * @throws ApiException if fails to make API call
    */
-  public void listCitationGroups(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable String view, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String order, @javax.annotation.Nullable String direction, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String query, @javax.annotation.Nullable String sourceType, @javax.annotation.Nullable String sentiment, @javax.annotation.Nullable String contentGap, Map<String, String> headers) throws ApiException {
+  public void listCitationGroups(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable String view, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String order, @javax.annotation.Nullable String direction, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String query, @javax.annotation.Nullable String sourceType, @javax.annotation.Nullable String sentiment, @javax.annotation.Nullable String contentGap, Map<String, String> headers) throws ApiException {
     listCitationGroupsWithHttpInfo(projectId, view, page, perPage, order, direction, model, collectionId, countryCode, languageCode, prompt, from, to, query, sourceType, sentiment, contentGap, headers);
   }
 
@@ -657,7 +656,7 @@ public class SourcesCitationIntelligenceApi {
    * @param order  (optional)
    * @param direction  (optional)
    * @param model Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param countryCode One ISO country code or a comma-separated list (e.g. US,GB,DE) (optional)
    * @param languageCode One ISO language code or a comma-separated list (e.g. en,es,de) (optional)
    * @param prompt Filter by prompt ID (optional)
@@ -670,7 +669,7 @@ public class SourcesCitationIntelligenceApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> listCitationGroupsWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable String view, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String order, @javax.annotation.Nullable String direction, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String query, @javax.annotation.Nullable String sourceType, @javax.annotation.Nullable String sentiment, @javax.annotation.Nullable String contentGap) throws ApiException {
+  public ApiResponse<Void> listCitationGroupsWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable String view, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String order, @javax.annotation.Nullable String direction, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String query, @javax.annotation.Nullable String sourceType, @javax.annotation.Nullable String sentiment, @javax.annotation.Nullable String contentGap) throws ApiException {
     return listCitationGroupsWithHttpInfo(projectId, view, page, perPage, order, direction, model, collectionId, countryCode, languageCode, prompt, from, to, query, sourceType, sentiment, contentGap, null);
   }
 
@@ -684,7 +683,7 @@ public class SourcesCitationIntelligenceApi {
    * @param order  (optional)
    * @param direction  (optional)
    * @param model Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param countryCode One ISO country code or a comma-separated list (e.g. US,GB,DE) (optional)
    * @param languageCode One ISO language code or a comma-separated list (e.g. en,es,de) (optional)
    * @param prompt Filter by prompt ID (optional)
@@ -698,7 +697,7 @@ public class SourcesCitationIntelligenceApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> listCitationGroupsWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable String view, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String order, @javax.annotation.Nullable String direction, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String query, @javax.annotation.Nullable String sourceType, @javax.annotation.Nullable String sentiment, @javax.annotation.Nullable String contentGap, Map<String, String> headers) throws ApiException {
+  public ApiResponse<Void> listCitationGroupsWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable String view, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String order, @javax.annotation.Nullable String direction, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String query, @javax.annotation.Nullable String sourceType, @javax.annotation.Nullable String sentiment, @javax.annotation.Nullable String contentGap, Map<String, String> headers) throws ApiException {
     HttpRequest.Builder localVarRequestBuilder = listCitationGroupsRequestBuilder(projectId, view, page, perPage, order, direction, model, collectionId, countryCode, languageCode, prompt, from, to, query, sourceType, sentiment, contentGap, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
@@ -735,7 +734,7 @@ public class SourcesCitationIntelligenceApi {
     }
   }
 
-  private HttpRequest.Builder listCitationGroupsRequestBuilder(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable String view, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String order, @javax.annotation.Nullable String direction, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String query, @javax.annotation.Nullable String sourceType, @javax.annotation.Nullable String sentiment, @javax.annotation.Nullable String contentGap, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder listCitationGroupsRequestBuilder(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable String view, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String order, @javax.annotation.Nullable String direction, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String query, @javax.annotation.Nullable String sourceType, @javax.annotation.Nullable String sentiment, @javax.annotation.Nullable String contentGap, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'projectId' is set
     if (projectId == null) {
       throw new ApiException(400, "Missing the required parameter 'projectId' when calling listCitationGroups");
@@ -763,7 +762,7 @@ public class SourcesCitationIntelligenceApi {
     localVarQueryParameterBaseName = "model";
     localVarQueryParams.addAll(ApiClient.parameterToPairs("model", model));
     localVarQueryParameterBaseName = "collection_id";
-    localVarQueryStringJoiner.add(collectionId.toUrlQueryString());
+    localVarQueryParams.addAll(ApiClient.parameterToPairs("collection_id", collectionId));
     localVarQueryParameterBaseName = "country_code";
     localVarQueryParams.addAll(ApiClient.parameterToPairs("country_code", countryCode));
     localVarQueryParameterBaseName = "language_code";
@@ -954,7 +953,7 @@ public class SourcesCitationIntelligenceApi {
    * @param page  (optional, default to 1)
    * @param perPage  (optional, default to 20)
    * @param model Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param countryCode One ISO country code or a comma-separated list (e.g. US,GB,DE) (optional)
    * @param languageCode One ISO language code or a comma-separated list (e.g. en,es,de) (optional)
    * @param prompt Filter by prompt ID (optional)
@@ -966,7 +965,7 @@ public class SourcesCitationIntelligenceApi {
    * @param output Rectangular output for BI tools (Tableau, Excel, Sheets, ELT). Omit for the default nested JSON. &#39;flat&#39; returns the same metadata plus &#39;columns&#39; and &#39;rows&#39;; &#39;csv&#39; returns those rows as text/csv. Errors are always returned as JSON. (optional)
    * @throws ApiException if fails to make API call
    */
-  public void listSources(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String sourceType, @javax.annotation.Nullable String mentionFilter, @javax.annotation.Nullable String competitors, @javax.annotation.Nullable String output) throws ApiException {
+  public void listSources(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String sourceType, @javax.annotation.Nullable String mentionFilter, @javax.annotation.Nullable String competitors, @javax.annotation.Nullable String output) throws ApiException {
     listSources(projectId, page, perPage, model, collectionId, countryCode, languageCode, prompt, from, to, sourceType, mentionFilter, competitors, output, null);
   }
 
@@ -977,7 +976,7 @@ public class SourcesCitationIntelligenceApi {
    * @param page  (optional, default to 1)
    * @param perPage  (optional, default to 20)
    * @param model Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param countryCode One ISO country code or a comma-separated list (e.g. US,GB,DE) (optional)
    * @param languageCode One ISO language code or a comma-separated list (e.g. en,es,de) (optional)
    * @param prompt Filter by prompt ID (optional)
@@ -990,7 +989,7 @@ public class SourcesCitationIntelligenceApi {
    * @param headers Optional headers to include in the request
    * @throws ApiException if fails to make API call
    */
-  public void listSources(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String sourceType, @javax.annotation.Nullable String mentionFilter, @javax.annotation.Nullable String competitors, @javax.annotation.Nullable String output, Map<String, String> headers) throws ApiException {
+  public void listSources(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String sourceType, @javax.annotation.Nullable String mentionFilter, @javax.annotation.Nullable String competitors, @javax.annotation.Nullable String output, Map<String, String> headers) throws ApiException {
     listSourcesWithHttpInfo(projectId, page, perPage, model, collectionId, countryCode, languageCode, prompt, from, to, sourceType, mentionFilter, competitors, output, headers);
   }
 
@@ -1001,7 +1000,7 @@ public class SourcesCitationIntelligenceApi {
    * @param page  (optional, default to 1)
    * @param perPage  (optional, default to 20)
    * @param model Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param countryCode One ISO country code or a comma-separated list (e.g. US,GB,DE) (optional)
    * @param languageCode One ISO language code or a comma-separated list (e.g. en,es,de) (optional)
    * @param prompt Filter by prompt ID (optional)
@@ -1014,7 +1013,7 @@ public class SourcesCitationIntelligenceApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> listSourcesWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String sourceType, @javax.annotation.Nullable String mentionFilter, @javax.annotation.Nullable String competitors, @javax.annotation.Nullable String output) throws ApiException {
+  public ApiResponse<Void> listSourcesWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String sourceType, @javax.annotation.Nullable String mentionFilter, @javax.annotation.Nullable String competitors, @javax.annotation.Nullable String output) throws ApiException {
     return listSourcesWithHttpInfo(projectId, page, perPage, model, collectionId, countryCode, languageCode, prompt, from, to, sourceType, mentionFilter, competitors, output, null);
   }
 
@@ -1025,7 +1024,7 @@ public class SourcesCitationIntelligenceApi {
    * @param page  (optional, default to 1)
    * @param perPage  (optional, default to 20)
    * @param model Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param countryCode One ISO country code or a comma-separated list (e.g. US,GB,DE) (optional)
    * @param languageCode One ISO language code or a comma-separated list (e.g. en,es,de) (optional)
    * @param prompt Filter by prompt ID (optional)
@@ -1039,7 +1038,7 @@ public class SourcesCitationIntelligenceApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> listSourcesWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String sourceType, @javax.annotation.Nullable String mentionFilter, @javax.annotation.Nullable String competitors, @javax.annotation.Nullable String output, Map<String, String> headers) throws ApiException {
+  public ApiResponse<Void> listSourcesWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String sourceType, @javax.annotation.Nullable String mentionFilter, @javax.annotation.Nullable String competitors, @javax.annotation.Nullable String output, Map<String, String> headers) throws ApiException {
     HttpRequest.Builder localVarRequestBuilder = listSourcesRequestBuilder(projectId, page, perPage, model, collectionId, countryCode, languageCode, prompt, from, to, sourceType, mentionFilter, competitors, output, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
@@ -1076,7 +1075,7 @@ public class SourcesCitationIntelligenceApi {
     }
   }
 
-  private HttpRequest.Builder listSourcesRequestBuilder(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String sourceType, @javax.annotation.Nullable String mentionFilter, @javax.annotation.Nullable String competitors, @javax.annotation.Nullable String output, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder listSourcesRequestBuilder(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String sourceType, @javax.annotation.Nullable String mentionFilter, @javax.annotation.Nullable String competitors, @javax.annotation.Nullable String output, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'projectId' is set
     if (projectId == null) {
       throw new ApiException(400, "Missing the required parameter 'projectId' when calling listSources");
@@ -1098,7 +1097,7 @@ public class SourcesCitationIntelligenceApi {
     localVarQueryParameterBaseName = "model";
     localVarQueryParams.addAll(ApiClient.parameterToPairs("model", model));
     localVarQueryParameterBaseName = "collection_id";
-    localVarQueryStringJoiner.add(collectionId.toUrlQueryString());
+    localVarQueryParams.addAll(ApiClient.parameterToPairs("collection_id", collectionId));
     localVarQueryParameterBaseName = "country_code";
     localVarQueryParams.addAll(ApiClient.parameterToPairs("country_code", countryCode));
     localVarQueryParameterBaseName = "language_code";

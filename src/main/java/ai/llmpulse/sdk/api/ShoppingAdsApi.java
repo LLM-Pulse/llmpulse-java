@@ -19,7 +19,6 @@ import ai.llmpulse.sdk.Configuration;
 import ai.llmpulse.sdk.Pair;
 
 import ai.llmpulse.sdk.model.ApiError;
-import ai.llmpulse.sdk.model.GetTimeseriesCollectionIdParameter;
 import java.time.OffsetDateTime;
 
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -176,7 +175,7 @@ public class ShoppingAdsApi {
    * @param direction Sort direction for view&#x3D;advertisers. Defaults to desc, except avg_position and domain which default to asc. (optional)
    * @param query Case-insensitive substring filter on the ad title, domain or snippet (optional)
    * @param model Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param countryCode One ISO country code or a comma-separated list (e.g. US,GB,DE) (optional)
    * @param languageCode One ISO language code or a comma-separated list (e.g. en,es,de) (optional)
    * @param prompt Filter by prompt ID (optional)
@@ -188,7 +187,7 @@ public class ShoppingAdsApi {
    * @param output Rectangular output for BI tools (Tableau, Excel, Sheets, ELT). Omit for the default nested JSON. &#39;flat&#39; returns the same metadata plus &#39;columns&#39; and &#39;rows&#39;; &#39;csv&#39; returns those rows as text/csv. Errors are always returned as JSON. (optional)
    * @throws ApiException if fails to make API call
    */
-  public void listAds(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String view, @javax.annotation.Nullable Boolean owned, @javax.annotation.Nullable String order, @javax.annotation.Nullable String direction, @javax.annotation.Nullable String query, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output) throws ApiException {
+  public void listAds(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String view, @javax.annotation.Nullable Boolean owned, @javax.annotation.Nullable String order, @javax.annotation.Nullable String direction, @javax.annotation.Nullable String query, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output) throws ApiException {
     listAds(projectId, page, perPage, view, owned, order, direction, query, model, collectionId, countryCode, languageCode, prompt, promptType, brandKind, range, from, to, output, null);
   }
 
@@ -204,7 +203,7 @@ public class ShoppingAdsApi {
    * @param direction Sort direction for view&#x3D;advertisers. Defaults to desc, except avg_position and domain which default to asc. (optional)
    * @param query Case-insensitive substring filter on the ad title, domain or snippet (optional)
    * @param model Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param countryCode One ISO country code or a comma-separated list (e.g. US,GB,DE) (optional)
    * @param languageCode One ISO language code or a comma-separated list (e.g. en,es,de) (optional)
    * @param prompt Filter by prompt ID (optional)
@@ -217,7 +216,7 @@ public class ShoppingAdsApi {
    * @param headers Optional headers to include in the request
    * @throws ApiException if fails to make API call
    */
-  public void listAds(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String view, @javax.annotation.Nullable Boolean owned, @javax.annotation.Nullable String order, @javax.annotation.Nullable String direction, @javax.annotation.Nullable String query, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output, Map<String, String> headers) throws ApiException {
+  public void listAds(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String view, @javax.annotation.Nullable Boolean owned, @javax.annotation.Nullable String order, @javax.annotation.Nullable String direction, @javax.annotation.Nullable String query, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output, Map<String, String> headers) throws ApiException {
     listAdsWithHttpInfo(projectId, page, perPage, view, owned, order, direction, query, model, collectionId, countryCode, languageCode, prompt, promptType, brandKind, range, from, to, output, headers);
   }
 
@@ -233,7 +232,7 @@ public class ShoppingAdsApi {
    * @param direction Sort direction for view&#x3D;advertisers. Defaults to desc, except avg_position and domain which default to asc. (optional)
    * @param query Case-insensitive substring filter on the ad title, domain or snippet (optional)
    * @param model Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param countryCode One ISO country code or a comma-separated list (e.g. US,GB,DE) (optional)
    * @param languageCode One ISO language code or a comma-separated list (e.g. en,es,de) (optional)
    * @param prompt Filter by prompt ID (optional)
@@ -246,7 +245,7 @@ public class ShoppingAdsApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> listAdsWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String view, @javax.annotation.Nullable Boolean owned, @javax.annotation.Nullable String order, @javax.annotation.Nullable String direction, @javax.annotation.Nullable String query, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output) throws ApiException {
+  public ApiResponse<Void> listAdsWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String view, @javax.annotation.Nullable Boolean owned, @javax.annotation.Nullable String order, @javax.annotation.Nullable String direction, @javax.annotation.Nullable String query, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output) throws ApiException {
     return listAdsWithHttpInfo(projectId, page, perPage, view, owned, order, direction, query, model, collectionId, countryCode, languageCode, prompt, promptType, brandKind, range, from, to, output, null);
   }
 
@@ -262,7 +261,7 @@ public class ShoppingAdsApi {
    * @param direction Sort direction for view&#x3D;advertisers. Defaults to desc, except avg_position and domain which default to asc. (optional)
    * @param query Case-insensitive substring filter on the ad title, domain or snippet (optional)
    * @param model Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param countryCode One ISO country code or a comma-separated list (e.g. US,GB,DE) (optional)
    * @param languageCode One ISO language code or a comma-separated list (e.g. en,es,de) (optional)
    * @param prompt Filter by prompt ID (optional)
@@ -276,7 +275,7 @@ public class ShoppingAdsApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> listAdsWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String view, @javax.annotation.Nullable Boolean owned, @javax.annotation.Nullable String order, @javax.annotation.Nullable String direction, @javax.annotation.Nullable String query, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output, Map<String, String> headers) throws ApiException {
+  public ApiResponse<Void> listAdsWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String view, @javax.annotation.Nullable Boolean owned, @javax.annotation.Nullable String order, @javax.annotation.Nullable String direction, @javax.annotation.Nullable String query, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output, Map<String, String> headers) throws ApiException {
     HttpRequest.Builder localVarRequestBuilder = listAdsRequestBuilder(projectId, page, perPage, view, owned, order, direction, query, model, collectionId, countryCode, languageCode, prompt, promptType, brandKind, range, from, to, output, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
@@ -313,7 +312,7 @@ public class ShoppingAdsApi {
     }
   }
 
-  private HttpRequest.Builder listAdsRequestBuilder(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String view, @javax.annotation.Nullable Boolean owned, @javax.annotation.Nullable String order, @javax.annotation.Nullable String direction, @javax.annotation.Nullable String query, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder listAdsRequestBuilder(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String view, @javax.annotation.Nullable Boolean owned, @javax.annotation.Nullable String order, @javax.annotation.Nullable String direction, @javax.annotation.Nullable String query, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'projectId' is set
     if (projectId == null) {
       throw new ApiException(400, "Missing the required parameter 'projectId' when calling listAds");
@@ -345,7 +344,7 @@ public class ShoppingAdsApi {
     localVarQueryParameterBaseName = "model";
     localVarQueryParams.addAll(ApiClient.parameterToPairs("model", model));
     localVarQueryParameterBaseName = "collection_id";
-    localVarQueryStringJoiner.add(collectionId.toUrlQueryString());
+    localVarQueryParams.addAll(ApiClient.parameterToPairs("collection_id", collectionId));
     localVarQueryParameterBaseName = "country_code";
     localVarQueryParams.addAll(ApiClient.parameterToPairs("country_code", countryCode));
     localVarQueryParameterBaseName = "language_code";
@@ -402,7 +401,7 @@ public class ShoppingAdsApi {
    * @param direction  (optional, default to desc)
    * @param query Case-insensitive substring filter on the product title (optional)
    * @param model Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param countryCode One ISO country code or a comma-separated list (e.g. US,GB,DE) (optional)
    * @param languageCode One ISO language code or a comma-separated list (e.g. en,es,de) (optional)
    * @param prompt Filter by prompt ID (optional)
@@ -414,7 +413,7 @@ public class ShoppingAdsApi {
    * @param output Rectangular output for BI tools (Tableau, Excel, Sheets, ELT). Omit for the default nested JSON. &#39;flat&#39; returns the same metadata plus &#39;columns&#39; and &#39;rows&#39;; &#39;csv&#39; returns those rows as text/csv. Errors are always returned as JSON. (optional)
    * @throws ApiException if fails to make API call
    */
-  public void listShopping(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String view, @javax.annotation.Nullable Boolean owned, @javax.annotation.Nullable String order, @javax.annotation.Nullable String direction, @javax.annotation.Nullable String query, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output) throws ApiException {
+  public void listShopping(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String view, @javax.annotation.Nullable Boolean owned, @javax.annotation.Nullable String order, @javax.annotation.Nullable String direction, @javax.annotation.Nullable String query, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output) throws ApiException {
     listShopping(projectId, page, perPage, view, owned, order, direction, query, model, collectionId, countryCode, languageCode, prompt, promptType, brandKind, range, from, to, output, null);
   }
 
@@ -430,7 +429,7 @@ public class ShoppingAdsApi {
    * @param direction  (optional, default to desc)
    * @param query Case-insensitive substring filter on the product title (optional)
    * @param model Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param countryCode One ISO country code or a comma-separated list (e.g. US,GB,DE) (optional)
    * @param languageCode One ISO language code or a comma-separated list (e.g. en,es,de) (optional)
    * @param prompt Filter by prompt ID (optional)
@@ -443,7 +442,7 @@ public class ShoppingAdsApi {
    * @param headers Optional headers to include in the request
    * @throws ApiException if fails to make API call
    */
-  public void listShopping(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String view, @javax.annotation.Nullable Boolean owned, @javax.annotation.Nullable String order, @javax.annotation.Nullable String direction, @javax.annotation.Nullable String query, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output, Map<String, String> headers) throws ApiException {
+  public void listShopping(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String view, @javax.annotation.Nullable Boolean owned, @javax.annotation.Nullable String order, @javax.annotation.Nullable String direction, @javax.annotation.Nullable String query, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output, Map<String, String> headers) throws ApiException {
     listShoppingWithHttpInfo(projectId, page, perPage, view, owned, order, direction, query, model, collectionId, countryCode, languageCode, prompt, promptType, brandKind, range, from, to, output, headers);
   }
 
@@ -459,7 +458,7 @@ public class ShoppingAdsApi {
    * @param direction  (optional, default to desc)
    * @param query Case-insensitive substring filter on the product title (optional)
    * @param model Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param countryCode One ISO country code or a comma-separated list (e.g. US,GB,DE) (optional)
    * @param languageCode One ISO language code or a comma-separated list (e.g. en,es,de) (optional)
    * @param prompt Filter by prompt ID (optional)
@@ -472,7 +471,7 @@ public class ShoppingAdsApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> listShoppingWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String view, @javax.annotation.Nullable Boolean owned, @javax.annotation.Nullable String order, @javax.annotation.Nullable String direction, @javax.annotation.Nullable String query, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output) throws ApiException {
+  public ApiResponse<Void> listShoppingWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String view, @javax.annotation.Nullable Boolean owned, @javax.annotation.Nullable String order, @javax.annotation.Nullable String direction, @javax.annotation.Nullable String query, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output) throws ApiException {
     return listShoppingWithHttpInfo(projectId, page, perPage, view, owned, order, direction, query, model, collectionId, countryCode, languageCode, prompt, promptType, brandKind, range, from, to, output, null);
   }
 
@@ -488,7 +487,7 @@ public class ShoppingAdsApi {
    * @param direction  (optional, default to desc)
    * @param query Case-insensitive substring filter on the product title (optional)
    * @param model Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param countryCode One ISO country code or a comma-separated list (e.g. US,GB,DE) (optional)
    * @param languageCode One ISO language code or a comma-separated list (e.g. en,es,de) (optional)
    * @param prompt Filter by prompt ID (optional)
@@ -502,7 +501,7 @@ public class ShoppingAdsApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> listShoppingWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String view, @javax.annotation.Nullable Boolean owned, @javax.annotation.Nullable String order, @javax.annotation.Nullable String direction, @javax.annotation.Nullable String query, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output, Map<String, String> headers) throws ApiException {
+  public ApiResponse<Void> listShoppingWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String view, @javax.annotation.Nullable Boolean owned, @javax.annotation.Nullable String order, @javax.annotation.Nullable String direction, @javax.annotation.Nullable String query, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output, Map<String, String> headers) throws ApiException {
     HttpRequest.Builder localVarRequestBuilder = listShoppingRequestBuilder(projectId, page, perPage, view, owned, order, direction, query, model, collectionId, countryCode, languageCode, prompt, promptType, brandKind, range, from, to, output, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
@@ -539,7 +538,7 @@ public class ShoppingAdsApi {
     }
   }
 
-  private HttpRequest.Builder listShoppingRequestBuilder(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String view, @javax.annotation.Nullable Boolean owned, @javax.annotation.Nullable String order, @javax.annotation.Nullable String direction, @javax.annotation.Nullable String query, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder listShoppingRequestBuilder(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String view, @javax.annotation.Nullable Boolean owned, @javax.annotation.Nullable String order, @javax.annotation.Nullable String direction, @javax.annotation.Nullable String query, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String output, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'projectId' is set
     if (projectId == null) {
       throw new ApiException(400, "Missing the required parameter 'projectId' when calling listShopping");
@@ -571,7 +570,7 @@ public class ShoppingAdsApi {
     localVarQueryParameterBaseName = "model";
     localVarQueryParams.addAll(ApiClient.parameterToPairs("model", model));
     localVarQueryParameterBaseName = "collection_id";
-    localVarQueryStringJoiner.add(collectionId.toUrlQueryString());
+    localVarQueryParams.addAll(ApiClient.parameterToPairs("collection_id", collectionId));
     localVarQueryParameterBaseName = "country_code";
     localVarQueryParams.addAll(ApiClient.parameterToPairs("country_code", countryCode));
     localVarQueryParameterBaseName = "language_code";

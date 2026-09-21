@@ -19,7 +19,6 @@ import ai.llmpulse.sdk.Configuration;
 import ai.llmpulse.sdk.Pair;
 
 import ai.llmpulse.sdk.model.ApiError;
-import ai.llmpulse.sdk.model.GetTimeseriesCollectionIdParameter;
 import java.time.OffsetDateTime;
 
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -296,7 +295,7 @@ public class SentimentsApi {
    * @param brandOnly  (optional)
    * @param analysis One sentiment level or a comma-separated list: very_positive, positive, neutral, negative, very_negative (optional)
    * @param model Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param countryCode One ISO country code or a comma-separated list (e.g. US,GB,DE) (optional)
    * @param languageCode One ISO language code or a comma-separated list (e.g. en,es,de) (optional)
    * @param from  (optional)
@@ -305,7 +304,7 @@ public class SentimentsApi {
    * @param perPage  (optional, default to 20)
    * @throws ApiException if fails to make API call
    */
-  public void listSentimentRecords(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer competitorId, @javax.annotation.Nullable Boolean brandOnly, @javax.annotation.Nullable String analysis, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage) throws ApiException {
+  public void listSentimentRecords(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer competitorId, @javax.annotation.Nullable Boolean brandOnly, @javax.annotation.Nullable String analysis, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage) throws ApiException {
     listSentimentRecords(projectId, competitorId, brandOnly, analysis, model, collectionId, countryCode, languageCode, from, to, page, perPage, null);
   }
 
@@ -317,7 +316,7 @@ public class SentimentsApi {
    * @param brandOnly  (optional)
    * @param analysis One sentiment level or a comma-separated list: very_positive, positive, neutral, negative, very_negative (optional)
    * @param model Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param countryCode One ISO country code or a comma-separated list (e.g. US,GB,DE) (optional)
    * @param languageCode One ISO language code or a comma-separated list (e.g. en,es,de) (optional)
    * @param from  (optional)
@@ -327,7 +326,7 @@ public class SentimentsApi {
    * @param headers Optional headers to include in the request
    * @throws ApiException if fails to make API call
    */
-  public void listSentimentRecords(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer competitorId, @javax.annotation.Nullable Boolean brandOnly, @javax.annotation.Nullable String analysis, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, Map<String, String> headers) throws ApiException {
+  public void listSentimentRecords(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer competitorId, @javax.annotation.Nullable Boolean brandOnly, @javax.annotation.Nullable String analysis, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, Map<String, String> headers) throws ApiException {
     listSentimentRecordsWithHttpInfo(projectId, competitorId, brandOnly, analysis, model, collectionId, countryCode, languageCode, from, to, page, perPage, headers);
   }
 
@@ -339,7 +338,7 @@ public class SentimentsApi {
    * @param brandOnly  (optional)
    * @param analysis One sentiment level or a comma-separated list: very_positive, positive, neutral, negative, very_negative (optional)
    * @param model Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param countryCode One ISO country code or a comma-separated list (e.g. US,GB,DE) (optional)
    * @param languageCode One ISO language code or a comma-separated list (e.g. en,es,de) (optional)
    * @param from  (optional)
@@ -349,7 +348,7 @@ public class SentimentsApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> listSentimentRecordsWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer competitorId, @javax.annotation.Nullable Boolean brandOnly, @javax.annotation.Nullable String analysis, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage) throws ApiException {
+  public ApiResponse<Void> listSentimentRecordsWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer competitorId, @javax.annotation.Nullable Boolean brandOnly, @javax.annotation.Nullable String analysis, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage) throws ApiException {
     return listSentimentRecordsWithHttpInfo(projectId, competitorId, brandOnly, analysis, model, collectionId, countryCode, languageCode, from, to, page, perPage, null);
   }
 
@@ -361,7 +360,7 @@ public class SentimentsApi {
    * @param brandOnly  (optional)
    * @param analysis One sentiment level or a comma-separated list: very_positive, positive, neutral, negative, very_negative (optional)
    * @param model Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param countryCode One ISO country code or a comma-separated list (e.g. US,GB,DE) (optional)
    * @param languageCode One ISO language code or a comma-separated list (e.g. en,es,de) (optional)
    * @param from  (optional)
@@ -372,7 +371,7 @@ public class SentimentsApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> listSentimentRecordsWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer competitorId, @javax.annotation.Nullable Boolean brandOnly, @javax.annotation.Nullable String analysis, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, Map<String, String> headers) throws ApiException {
+  public ApiResponse<Void> listSentimentRecordsWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer competitorId, @javax.annotation.Nullable Boolean brandOnly, @javax.annotation.Nullable String analysis, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, Map<String, String> headers) throws ApiException {
     HttpRequest.Builder localVarRequestBuilder = listSentimentRecordsRequestBuilder(projectId, competitorId, brandOnly, analysis, model, collectionId, countryCode, languageCode, from, to, page, perPage, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
@@ -409,7 +408,7 @@ public class SentimentsApi {
     }
   }
 
-  private HttpRequest.Builder listSentimentRecordsRequestBuilder(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer competitorId, @javax.annotation.Nullable Boolean brandOnly, @javax.annotation.Nullable String analysis, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder listSentimentRecordsRequestBuilder(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer competitorId, @javax.annotation.Nullable Boolean brandOnly, @javax.annotation.Nullable String analysis, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'projectId' is set
     if (projectId == null) {
       throw new ApiException(400, "Missing the required parameter 'projectId' when calling listSentimentRecords");
@@ -433,7 +432,7 @@ public class SentimentsApi {
     localVarQueryParameterBaseName = "model";
     localVarQueryParams.addAll(ApiClient.parameterToPairs("model", model));
     localVarQueryParameterBaseName = "collection_id";
-    localVarQueryStringJoiner.add(collectionId.toUrlQueryString());
+    localVarQueryParams.addAll(ApiClient.parameterToPairs("collection_id", collectionId));
     localVarQueryParameterBaseName = "country_code";
     localVarQueryParams.addAll(ApiClient.parameterToPairs("country_code", countryCode));
     localVarQueryParameterBaseName = "language_code";

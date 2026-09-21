@@ -19,7 +19,6 @@ import ai.llmpulse.sdk.Configuration;
 import ai.llmpulse.sdk.Pair;
 
 import ai.llmpulse.sdk.model.ApiError;
-import ai.llmpulse.sdk.model.GetTimeseriesCollectionIdParameter;
 import java.time.OffsetDateTime;
 import ai.llmpulse.sdk.model.PromptSummaryResponse;
 import ai.llmpulse.sdk.model.SovResponse;
@@ -178,7 +177,7 @@ public class MetricsApi {
    * @param to End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. (optional)
    * @param breakdown Add per-(prompt, model) rows to the output (optional)
    * @param model Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param countryCode One ISO country code or a comma-separated list (e.g. US,GB,DE) (optional)
    * @param languageCode One ISO language code or a comma-separated list (e.g. en,es,de) (optional)
    * @param prompt Filter by prompt ID (optional)
@@ -192,7 +191,7 @@ public class MetricsApi {
    * @return PromptSummaryResponse
    * @throws ApiException if fails to make API call
    */
-  public PromptSummaryResponse getPromptSummary(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String breakdown, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String sortDir, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String output) throws ApiException {
+  public PromptSummaryResponse getPromptSummary(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String breakdown, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String sortDir, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String output) throws ApiException {
     return getPromptSummary(projectId, range, from, to, breakdown, model, collectionId, countryCode, languageCode, prompt, promptType, brandKind, sort, sortDir, page, perPage, output, null);
   }
 
@@ -205,7 +204,7 @@ public class MetricsApi {
    * @param to End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. (optional)
    * @param breakdown Add per-(prompt, model) rows to the output (optional)
    * @param model Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param countryCode One ISO country code or a comma-separated list (e.g. US,GB,DE) (optional)
    * @param languageCode One ISO language code or a comma-separated list (e.g. en,es,de) (optional)
    * @param prompt Filter by prompt ID (optional)
@@ -220,7 +219,7 @@ public class MetricsApi {
    * @return PromptSummaryResponse
    * @throws ApiException if fails to make API call
    */
-  public PromptSummaryResponse getPromptSummary(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String breakdown, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String sortDir, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String output, Map<String, String> headers) throws ApiException {
+  public PromptSummaryResponse getPromptSummary(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String breakdown, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String sortDir, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String output, Map<String, String> headers) throws ApiException {
     ApiResponse<PromptSummaryResponse> localVarResponse = getPromptSummaryWithHttpInfo(projectId, range, from, to, breakdown, model, collectionId, countryCode, languageCode, prompt, promptType, brandKind, sort, sortDir, page, perPage, output, headers);
     return localVarResponse.getData();
   }
@@ -234,7 +233,7 @@ public class MetricsApi {
    * @param to End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. (optional)
    * @param breakdown Add per-(prompt, model) rows to the output (optional)
    * @param model Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param countryCode One ISO country code or a comma-separated list (e.g. US,GB,DE) (optional)
    * @param languageCode One ISO language code or a comma-separated list (e.g. en,es,de) (optional)
    * @param prompt Filter by prompt ID (optional)
@@ -248,7 +247,7 @@ public class MetricsApi {
    * @return ApiResponse&lt;PromptSummaryResponse&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<PromptSummaryResponse> getPromptSummaryWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String breakdown, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String sortDir, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String output) throws ApiException {
+  public ApiResponse<PromptSummaryResponse> getPromptSummaryWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String breakdown, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String sortDir, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String output) throws ApiException {
     return getPromptSummaryWithHttpInfo(projectId, range, from, to, breakdown, model, collectionId, countryCode, languageCode, prompt, promptType, brandKind, sort, sortDir, page, perPage, output, null);
   }
 
@@ -261,7 +260,7 @@ public class MetricsApi {
    * @param to End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. (optional)
    * @param breakdown Add per-(prompt, model) rows to the output (optional)
    * @param model Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param countryCode One ISO country code or a comma-separated list (e.g. US,GB,DE) (optional)
    * @param languageCode One ISO language code or a comma-separated list (e.g. en,es,de) (optional)
    * @param prompt Filter by prompt ID (optional)
@@ -276,7 +275,7 @@ public class MetricsApi {
    * @return ApiResponse&lt;PromptSummaryResponse&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<PromptSummaryResponse> getPromptSummaryWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String breakdown, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String sortDir, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String output, Map<String, String> headers) throws ApiException {
+  public ApiResponse<PromptSummaryResponse> getPromptSummaryWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String breakdown, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String sortDir, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String output, Map<String, String> headers) throws ApiException {
     HttpRequest.Builder localVarRequestBuilder = getPromptSummaryRequestBuilder(projectId, range, from, to, breakdown, model, collectionId, countryCode, languageCode, prompt, promptType, brandKind, sort, sortDir, page, perPage, output, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
@@ -324,7 +323,7 @@ public class MetricsApi {
     }
   }
 
-  private HttpRequest.Builder getPromptSummaryRequestBuilder(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String breakdown, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String sortDir, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String output, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder getPromptSummaryRequestBuilder(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String breakdown, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String sortDir, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String output, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'projectId' is set
     if (projectId == null) {
       throw new ApiException(400, "Missing the required parameter 'projectId' when calling getPromptSummary");
@@ -350,7 +349,7 @@ public class MetricsApi {
     localVarQueryParameterBaseName = "model";
     localVarQueryParams.addAll(ApiClient.parameterToPairs("model", model));
     localVarQueryParameterBaseName = "collection_id";
-    localVarQueryStringJoiner.add(collectionId.toUrlQueryString());
+    localVarQueryParams.addAll(ApiClient.parameterToPairs("collection_id", collectionId));
     localVarQueryParameterBaseName = "country_code";
     localVarQueryParams.addAll(ApiClient.parameterToPairs("country_code", countryCode));
     localVarQueryParameterBaseName = "language_code";
@@ -407,7 +406,7 @@ public class MetricsApi {
    * @param granularity  (optional)
    * @param competitors Comma-separated competitor IDs (unknown IDs return ERR_INVALID_PARAM) (optional)
    * @param model Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param prompt Filter by prompt ID (optional)
    * @param promptType One prompt type or a comma-separated list: informational, navigational, commercial, transactional (optional)
    * @param brandKind Filter by brand kind: brand (own brand/products), brand_other (competitors/other brands), non_brand (generic, no brand named). For fair 1:1 brand-vs-competitor comparisons (visibility, share of voice), use non_brand: brand-focused prompts skew results toward the brand they name. The in-app Overview page applies non_brand by default. (optional)
@@ -416,7 +415,7 @@ public class MetricsApi {
    * @return SovResponse
    * @throws ApiException if fails to make API call
    */
-  public SovResponse getShareOfVoice(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String granularity, @javax.annotation.Nullable String competitors, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable String output, @javax.annotation.Nullable String view) throws ApiException {
+  public SovResponse getShareOfVoice(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String granularity, @javax.annotation.Nullable String competitors, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable String output, @javax.annotation.Nullable String view) throws ApiException {
     return getShareOfVoice(projectId, range, from, to, granularity, competitors, model, collectionId, prompt, promptType, brandKind, output, view, null);
   }
 
@@ -430,7 +429,7 @@ public class MetricsApi {
    * @param granularity  (optional)
    * @param competitors Comma-separated competitor IDs (unknown IDs return ERR_INVALID_PARAM) (optional)
    * @param model Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param prompt Filter by prompt ID (optional)
    * @param promptType One prompt type or a comma-separated list: informational, navigational, commercial, transactional (optional)
    * @param brandKind Filter by brand kind: brand (own brand/products), brand_other (competitors/other brands), non_brand (generic, no brand named). For fair 1:1 brand-vs-competitor comparisons (visibility, share of voice), use non_brand: brand-focused prompts skew results toward the brand they name. The in-app Overview page applies non_brand by default. (optional)
@@ -440,7 +439,7 @@ public class MetricsApi {
    * @return SovResponse
    * @throws ApiException if fails to make API call
    */
-  public SovResponse getShareOfVoice(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String granularity, @javax.annotation.Nullable String competitors, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable String output, @javax.annotation.Nullable String view, Map<String, String> headers) throws ApiException {
+  public SovResponse getShareOfVoice(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String granularity, @javax.annotation.Nullable String competitors, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable String output, @javax.annotation.Nullable String view, Map<String, String> headers) throws ApiException {
     ApiResponse<SovResponse> localVarResponse = getShareOfVoiceWithHttpInfo(projectId, range, from, to, granularity, competitors, model, collectionId, prompt, promptType, brandKind, output, view, headers);
     return localVarResponse.getData();
   }
@@ -455,7 +454,7 @@ public class MetricsApi {
    * @param granularity  (optional)
    * @param competitors Comma-separated competitor IDs (unknown IDs return ERR_INVALID_PARAM) (optional)
    * @param model Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param prompt Filter by prompt ID (optional)
    * @param promptType One prompt type or a comma-separated list: informational, navigational, commercial, transactional (optional)
    * @param brandKind Filter by brand kind: brand (own brand/products), brand_other (competitors/other brands), non_brand (generic, no brand named). For fair 1:1 brand-vs-competitor comparisons (visibility, share of voice), use non_brand: brand-focused prompts skew results toward the brand they name. The in-app Overview page applies non_brand by default. (optional)
@@ -464,7 +463,7 @@ public class MetricsApi {
    * @return ApiResponse&lt;SovResponse&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<SovResponse> getShareOfVoiceWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String granularity, @javax.annotation.Nullable String competitors, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable String output, @javax.annotation.Nullable String view) throws ApiException {
+  public ApiResponse<SovResponse> getShareOfVoiceWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String granularity, @javax.annotation.Nullable String competitors, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable String output, @javax.annotation.Nullable String view) throws ApiException {
     return getShareOfVoiceWithHttpInfo(projectId, range, from, to, granularity, competitors, model, collectionId, prompt, promptType, brandKind, output, view, null);
   }
 
@@ -478,7 +477,7 @@ public class MetricsApi {
    * @param granularity  (optional)
    * @param competitors Comma-separated competitor IDs (unknown IDs return ERR_INVALID_PARAM) (optional)
    * @param model Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param prompt Filter by prompt ID (optional)
    * @param promptType One prompt type or a comma-separated list: informational, navigational, commercial, transactional (optional)
    * @param brandKind Filter by brand kind: brand (own brand/products), brand_other (competitors/other brands), non_brand (generic, no brand named). For fair 1:1 brand-vs-competitor comparisons (visibility, share of voice), use non_brand: brand-focused prompts skew results toward the brand they name. The in-app Overview page applies non_brand by default. (optional)
@@ -488,7 +487,7 @@ public class MetricsApi {
    * @return ApiResponse&lt;SovResponse&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<SovResponse> getShareOfVoiceWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String granularity, @javax.annotation.Nullable String competitors, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable String output, @javax.annotation.Nullable String view, Map<String, String> headers) throws ApiException {
+  public ApiResponse<SovResponse> getShareOfVoiceWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String granularity, @javax.annotation.Nullable String competitors, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable String output, @javax.annotation.Nullable String view, Map<String, String> headers) throws ApiException {
     HttpRequest.Builder localVarRequestBuilder = getShareOfVoiceRequestBuilder(projectId, range, from, to, granularity, competitors, model, collectionId, prompt, promptType, brandKind, output, view, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
@@ -536,7 +535,7 @@ public class MetricsApi {
     }
   }
 
-  private HttpRequest.Builder getShareOfVoiceRequestBuilder(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String granularity, @javax.annotation.Nullable String competitors, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable String output, @javax.annotation.Nullable String view, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder getShareOfVoiceRequestBuilder(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String granularity, @javax.annotation.Nullable String competitors, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable String output, @javax.annotation.Nullable String view, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'projectId' is set
     if (projectId == null) {
       throw new ApiException(400, "Missing the required parameter 'projectId' when calling getShareOfVoice");
@@ -564,7 +563,7 @@ public class MetricsApi {
     localVarQueryParameterBaseName = "model";
     localVarQueryParams.addAll(ApiClient.parameterToPairs("model", model));
     localVarQueryParameterBaseName = "collection_id";
-    localVarQueryStringJoiner.add(collectionId.toUrlQueryString());
+    localVarQueryParams.addAll(ApiClient.parameterToPairs("collection_id", collectionId));
     localVarQueryParameterBaseName = "prompt";
     localVarQueryParams.addAll(ApiClient.parameterToPairs("prompt", prompt));
     localVarQueryParameterBaseName = "prompt_type";
@@ -612,7 +611,7 @@ public class MetricsApi {
    * @param to End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. (optional)
    * @param competitors Comma-separated competitor IDs (unknown IDs return ERR_INVALID_PARAM) (optional)
    * @param model Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param prompt Filter by prompt ID (optional)
    * @param promptType One prompt type or a comma-separated list: informational, navigational, commercial, transactional (optional)
    * @param brandKind Filter by brand kind: brand (own brand/products), brand_other (competitors/other brands), non_brand (generic, no brand named). For fair 1:1 brand-vs-competitor comparisons (visibility, share of voice), use non_brand: brand-focused prompts skew results toward the brand they name. The in-app Overview page applies non_brand by default. (optional)
@@ -620,7 +619,7 @@ public class MetricsApi {
    * @return SummaryResponse
    * @throws ApiException if fails to make API call
    */
-  public SummaryResponse getSummary(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable String metrics, @javax.annotation.Nullable String granularity, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String competitors, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable String output) throws ApiException {
+  public SummaryResponse getSummary(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable String metrics, @javax.annotation.Nullable String granularity, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String competitors, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable String output) throws ApiException {
     return getSummary(projectId, metrics, granularity, range, from, to, competitors, model, collectionId, prompt, promptType, brandKind, output, null);
   }
 
@@ -635,7 +634,7 @@ public class MetricsApi {
    * @param to End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. (optional)
    * @param competitors Comma-separated competitor IDs (unknown IDs return ERR_INVALID_PARAM) (optional)
    * @param model Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param prompt Filter by prompt ID (optional)
    * @param promptType One prompt type or a comma-separated list: informational, navigational, commercial, transactional (optional)
    * @param brandKind Filter by brand kind: brand (own brand/products), brand_other (competitors/other brands), non_brand (generic, no brand named). For fair 1:1 brand-vs-competitor comparisons (visibility, share of voice), use non_brand: brand-focused prompts skew results toward the brand they name. The in-app Overview page applies non_brand by default. (optional)
@@ -644,7 +643,7 @@ public class MetricsApi {
    * @return SummaryResponse
    * @throws ApiException if fails to make API call
    */
-  public SummaryResponse getSummary(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable String metrics, @javax.annotation.Nullable String granularity, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String competitors, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable String output, Map<String, String> headers) throws ApiException {
+  public SummaryResponse getSummary(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable String metrics, @javax.annotation.Nullable String granularity, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String competitors, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable String output, Map<String, String> headers) throws ApiException {
     ApiResponse<SummaryResponse> localVarResponse = getSummaryWithHttpInfo(projectId, metrics, granularity, range, from, to, competitors, model, collectionId, prompt, promptType, brandKind, output, headers);
     return localVarResponse.getData();
   }
@@ -660,7 +659,7 @@ public class MetricsApi {
    * @param to End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. (optional)
    * @param competitors Comma-separated competitor IDs (unknown IDs return ERR_INVALID_PARAM) (optional)
    * @param model Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param prompt Filter by prompt ID (optional)
    * @param promptType One prompt type or a comma-separated list: informational, navigational, commercial, transactional (optional)
    * @param brandKind Filter by brand kind: brand (own brand/products), brand_other (competitors/other brands), non_brand (generic, no brand named). For fair 1:1 brand-vs-competitor comparisons (visibility, share of voice), use non_brand: brand-focused prompts skew results toward the brand they name. The in-app Overview page applies non_brand by default. (optional)
@@ -668,7 +667,7 @@ public class MetricsApi {
    * @return ApiResponse&lt;SummaryResponse&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<SummaryResponse> getSummaryWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable String metrics, @javax.annotation.Nullable String granularity, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String competitors, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable String output) throws ApiException {
+  public ApiResponse<SummaryResponse> getSummaryWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable String metrics, @javax.annotation.Nullable String granularity, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String competitors, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable String output) throws ApiException {
     return getSummaryWithHttpInfo(projectId, metrics, granularity, range, from, to, competitors, model, collectionId, prompt, promptType, brandKind, output, null);
   }
 
@@ -683,7 +682,7 @@ public class MetricsApi {
    * @param to End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. (optional)
    * @param competitors Comma-separated competitor IDs (unknown IDs return ERR_INVALID_PARAM) (optional)
    * @param model Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param prompt Filter by prompt ID (optional)
    * @param promptType One prompt type or a comma-separated list: informational, navigational, commercial, transactional (optional)
    * @param brandKind Filter by brand kind: brand (own brand/products), brand_other (competitors/other brands), non_brand (generic, no brand named). For fair 1:1 brand-vs-competitor comparisons (visibility, share of voice), use non_brand: brand-focused prompts skew results toward the brand they name. The in-app Overview page applies non_brand by default. (optional)
@@ -692,7 +691,7 @@ public class MetricsApi {
    * @return ApiResponse&lt;SummaryResponse&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<SummaryResponse> getSummaryWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable String metrics, @javax.annotation.Nullable String granularity, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String competitors, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable String output, Map<String, String> headers) throws ApiException {
+  public ApiResponse<SummaryResponse> getSummaryWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable String metrics, @javax.annotation.Nullable String granularity, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String competitors, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable String output, Map<String, String> headers) throws ApiException {
     HttpRequest.Builder localVarRequestBuilder = getSummaryRequestBuilder(projectId, metrics, granularity, range, from, to, competitors, model, collectionId, prompt, promptType, brandKind, output, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
@@ -740,7 +739,7 @@ public class MetricsApi {
     }
   }
 
-  private HttpRequest.Builder getSummaryRequestBuilder(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable String metrics, @javax.annotation.Nullable String granularity, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String competitors, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable String output, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder getSummaryRequestBuilder(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable String metrics, @javax.annotation.Nullable String granularity, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String competitors, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable String output, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'projectId' is set
     if (projectId == null) {
       throw new ApiException(400, "Missing the required parameter 'projectId' when calling getSummary");
@@ -770,7 +769,7 @@ public class MetricsApi {
     localVarQueryParameterBaseName = "model";
     localVarQueryParams.addAll(ApiClient.parameterToPairs("model", model));
     localVarQueryParameterBaseName = "collection_id";
-    localVarQueryStringJoiner.add(collectionId.toUrlQueryString());
+    localVarQueryParams.addAll(ApiClient.parameterToPairs("collection_id", collectionId));
     localVarQueryParameterBaseName = "prompt";
     localVarQueryParams.addAll(ApiClient.parameterToPairs("prompt", prompt));
     localVarQueryParameterBaseName = "prompt_type";
@@ -816,7 +815,7 @@ public class MetricsApi {
    * @param to End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. (optional)
    * @param competitors Comma-separated competitor IDs (unknown IDs return ERR_INVALID_PARAM) (optional)
    * @param model Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param countryCode One ISO country code or a comma-separated list (e.g. US,GB,DE) (optional)
    * @param languageCode One ISO language code or a comma-separated list (e.g. en,es,de) (optional)
    * @param prompt Filter by prompt ID (optional)
@@ -827,7 +826,7 @@ public class MetricsApi {
    * @return TimeseriesResponse
    * @throws ApiException if fails to make API call
    */
-  public TimeseriesResponse getTimeseries(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable String metrics, @javax.annotation.Nullable String granularity, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String competitors, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable Boolean includeProject, @javax.annotation.Nullable String output) throws ApiException {
+  public TimeseriesResponse getTimeseries(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable String metrics, @javax.annotation.Nullable String granularity, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String competitors, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable Boolean includeProject, @javax.annotation.Nullable String output) throws ApiException {
     return getTimeseries(projectId, metrics, granularity, range, from, to, competitors, model, collectionId, countryCode, languageCode, prompt, promptType, brandKind, includeProject, output, null);
   }
 
@@ -842,7 +841,7 @@ public class MetricsApi {
    * @param to End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. (optional)
    * @param competitors Comma-separated competitor IDs (unknown IDs return ERR_INVALID_PARAM) (optional)
    * @param model Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param countryCode One ISO country code or a comma-separated list (e.g. US,GB,DE) (optional)
    * @param languageCode One ISO language code or a comma-separated list (e.g. en,es,de) (optional)
    * @param prompt Filter by prompt ID (optional)
@@ -854,7 +853,7 @@ public class MetricsApi {
    * @return TimeseriesResponse
    * @throws ApiException if fails to make API call
    */
-  public TimeseriesResponse getTimeseries(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable String metrics, @javax.annotation.Nullable String granularity, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String competitors, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable Boolean includeProject, @javax.annotation.Nullable String output, Map<String, String> headers) throws ApiException {
+  public TimeseriesResponse getTimeseries(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable String metrics, @javax.annotation.Nullable String granularity, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String competitors, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable Boolean includeProject, @javax.annotation.Nullable String output, Map<String, String> headers) throws ApiException {
     ApiResponse<TimeseriesResponse> localVarResponse = getTimeseriesWithHttpInfo(projectId, metrics, granularity, range, from, to, competitors, model, collectionId, countryCode, languageCode, prompt, promptType, brandKind, includeProject, output, headers);
     return localVarResponse.getData();
   }
@@ -870,7 +869,7 @@ public class MetricsApi {
    * @param to End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. (optional)
    * @param competitors Comma-separated competitor IDs (unknown IDs return ERR_INVALID_PARAM) (optional)
    * @param model Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param countryCode One ISO country code or a comma-separated list (e.g. US,GB,DE) (optional)
    * @param languageCode One ISO language code or a comma-separated list (e.g. en,es,de) (optional)
    * @param prompt Filter by prompt ID (optional)
@@ -881,7 +880,7 @@ public class MetricsApi {
    * @return ApiResponse&lt;TimeseriesResponse&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<TimeseriesResponse> getTimeseriesWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable String metrics, @javax.annotation.Nullable String granularity, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String competitors, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable Boolean includeProject, @javax.annotation.Nullable String output) throws ApiException {
+  public ApiResponse<TimeseriesResponse> getTimeseriesWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable String metrics, @javax.annotation.Nullable String granularity, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String competitors, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable Boolean includeProject, @javax.annotation.Nullable String output) throws ApiException {
     return getTimeseriesWithHttpInfo(projectId, metrics, granularity, range, from, to, competitors, model, collectionId, countryCode, languageCode, prompt, promptType, brandKind, includeProject, output, null);
   }
 
@@ -896,7 +895,7 @@ public class MetricsApi {
    * @param to End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. (optional)
    * @param competitors Comma-separated competitor IDs (unknown IDs return ERR_INVALID_PARAM) (optional)
    * @param model Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param countryCode One ISO country code or a comma-separated list (e.g. US,GB,DE) (optional)
    * @param languageCode One ISO language code or a comma-separated list (e.g. en,es,de) (optional)
    * @param prompt Filter by prompt ID (optional)
@@ -908,7 +907,7 @@ public class MetricsApi {
    * @return ApiResponse&lt;TimeseriesResponse&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<TimeseriesResponse> getTimeseriesWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable String metrics, @javax.annotation.Nullable String granularity, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String competitors, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable Boolean includeProject, @javax.annotation.Nullable String output, Map<String, String> headers) throws ApiException {
+  public ApiResponse<TimeseriesResponse> getTimeseriesWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable String metrics, @javax.annotation.Nullable String granularity, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String competitors, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable Boolean includeProject, @javax.annotation.Nullable String output, Map<String, String> headers) throws ApiException {
     HttpRequest.Builder localVarRequestBuilder = getTimeseriesRequestBuilder(projectId, metrics, granularity, range, from, to, competitors, model, collectionId, countryCode, languageCode, prompt, promptType, brandKind, includeProject, output, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
@@ -956,7 +955,7 @@ public class MetricsApi {
     }
   }
 
-  private HttpRequest.Builder getTimeseriesRequestBuilder(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable String metrics, @javax.annotation.Nullable String granularity, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String competitors, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable Boolean includeProject, @javax.annotation.Nullable String output, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder getTimeseriesRequestBuilder(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable String metrics, @javax.annotation.Nullable String granularity, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String competitors, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable Boolean includeProject, @javax.annotation.Nullable String output, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'projectId' is set
     if (projectId == null) {
       throw new ApiException(400, "Missing the required parameter 'projectId' when calling getTimeseries");
@@ -986,7 +985,7 @@ public class MetricsApi {
     localVarQueryParameterBaseName = "model";
     localVarQueryParams.addAll(ApiClient.parameterToPairs("model", model));
     localVarQueryParameterBaseName = "collection_id";
-    localVarQueryStringJoiner.add(collectionId.toUrlQueryString());
+    localVarQueryParams.addAll(ApiClient.parameterToPairs("collection_id", collectionId));
     localVarQueryParameterBaseName = "country_code";
     localVarQueryParams.addAll(ApiClient.parameterToPairs("country_code", countryCode));
     localVarQueryParameterBaseName = "language_code";
@@ -1035,7 +1034,7 @@ public class MetricsApi {
    * @param from  (optional)
    * @param to End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. (optional)
    * @param model Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param countryCode One ISO country code or a comma-separated list (e.g. US,GB,DE) (optional)
    * @param languageCode One ISO language code or a comma-separated list (e.g. en,es,de) (optional)
    * @param prompt Filter by prompt ID (optional)
@@ -1049,7 +1048,7 @@ public class MetricsApi {
    * @return TopSourcesResponse
    * @throws ApiException if fails to make API call
    */
-  public TopSourcesResponse getTopSources(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String query, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String output) throws ApiException {
+  public TopSourcesResponse getTopSources(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String query, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String output) throws ApiException {
     return getTopSources(projectId, range, from, to, model, collectionId, countryCode, languageCode, prompt, promptType, brandKind, sort, query, page, perPage, output, null);
   }
 
@@ -1061,7 +1060,7 @@ public class MetricsApi {
    * @param from  (optional)
    * @param to End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. (optional)
    * @param model Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param countryCode One ISO country code or a comma-separated list (e.g. US,GB,DE) (optional)
    * @param languageCode One ISO language code or a comma-separated list (e.g. en,es,de) (optional)
    * @param prompt Filter by prompt ID (optional)
@@ -1076,7 +1075,7 @@ public class MetricsApi {
    * @return TopSourcesResponse
    * @throws ApiException if fails to make API call
    */
-  public TopSourcesResponse getTopSources(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String query, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String output, Map<String, String> headers) throws ApiException {
+  public TopSourcesResponse getTopSources(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String query, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String output, Map<String, String> headers) throws ApiException {
     ApiResponse<TopSourcesResponse> localVarResponse = getTopSourcesWithHttpInfo(projectId, range, from, to, model, collectionId, countryCode, languageCode, prompt, promptType, brandKind, sort, query, page, perPage, output, headers);
     return localVarResponse.getData();
   }
@@ -1089,7 +1088,7 @@ public class MetricsApi {
    * @param from  (optional)
    * @param to End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. (optional)
    * @param model Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param countryCode One ISO country code or a comma-separated list (e.g. US,GB,DE) (optional)
    * @param languageCode One ISO language code or a comma-separated list (e.g. en,es,de) (optional)
    * @param prompt Filter by prompt ID (optional)
@@ -1103,7 +1102,7 @@ public class MetricsApi {
    * @return ApiResponse&lt;TopSourcesResponse&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<TopSourcesResponse> getTopSourcesWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String query, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String output) throws ApiException {
+  public ApiResponse<TopSourcesResponse> getTopSourcesWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String query, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String output) throws ApiException {
     return getTopSourcesWithHttpInfo(projectId, range, from, to, model, collectionId, countryCode, languageCode, prompt, promptType, brandKind, sort, query, page, perPage, output, null);
   }
 
@@ -1115,7 +1114,7 @@ public class MetricsApi {
    * @param from  (optional)
    * @param to End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. (optional)
    * @param model Filter by AI model. Models the API key&#39;s user has not enabled are silently dropped. (optional)
-   * @param collectionId One collection/tag ID or a comma-separated list of IDs (optional)
+   * @param collectionId One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. (optional)
    * @param countryCode One ISO country code or a comma-separated list (e.g. US,GB,DE) (optional)
    * @param languageCode One ISO language code or a comma-separated list (e.g. en,es,de) (optional)
    * @param prompt Filter by prompt ID (optional)
@@ -1130,7 +1129,7 @@ public class MetricsApi {
    * @return ApiResponse&lt;TopSourcesResponse&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<TopSourcesResponse> getTopSourcesWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String query, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String output, Map<String, String> headers) throws ApiException {
+  public ApiResponse<TopSourcesResponse> getTopSourcesWithHttpInfo(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String query, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String output, Map<String, String> headers) throws ApiException {
     HttpRequest.Builder localVarRequestBuilder = getTopSourcesRequestBuilder(projectId, range, from, to, model, collectionId, countryCode, languageCode, prompt, promptType, brandKind, sort, query, page, perPage, output, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
@@ -1178,7 +1177,7 @@ public class MetricsApi {
     }
   }
 
-  private HttpRequest.Builder getTopSourcesRequestBuilder(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String model, @javax.annotation.Nullable GetTimeseriesCollectionIdParameter collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String query, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String output, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder getTopSourcesRequestBuilder(@javax.annotation.Nonnull Integer projectId, @javax.annotation.Nullable Integer range, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String model, @javax.annotation.Nullable String collectionId, @javax.annotation.Nullable String countryCode, @javax.annotation.Nullable String languageCode, @javax.annotation.Nullable Integer prompt, @javax.annotation.Nullable String promptType, @javax.annotation.Nullable String brandKind, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String query, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String output, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'projectId' is set
     if (projectId == null) {
       throw new ApiException(400, "Missing the required parameter 'projectId' when calling getTopSources");
@@ -1202,7 +1201,7 @@ public class MetricsApi {
     localVarQueryParameterBaseName = "model";
     localVarQueryParams.addAll(ApiClient.parameterToPairs("model", model));
     localVarQueryParameterBaseName = "collection_id";
-    localVarQueryStringJoiner.add(collectionId.toUrlQueryString());
+    localVarQueryParams.addAll(ApiClient.parameterToPairs("collection_id", collectionId));
     localVarQueryParameterBaseName = "country_code";
     localVarQueryParams.addAll(ApiClient.parameterToPairs("country_code", countryCode));
     localVarQueryParameterBaseName = "language_code";
