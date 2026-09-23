@@ -2,7 +2,7 @@
 
 LLM Pulse API
 
-- API version: 1.46.0
+- API version: 1.47.0
 
 - Generator version: 7.24.0
 
@@ -43,7 +43,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>ai.llmpulse</groupId>
   <artifactId>llmpulse-java</artifactId>
-  <version>1.46.0</version>
+  <version>1.47.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -53,7 +53,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "ai.llmpulse:llmpulse-java:1.46.0"
+compile "ai.llmpulse:llmpulse-java:1.47.0"
 ```
 
 ### Others
@@ -66,7 +66,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-- `target/llmpulse-java-1.46.0.jar`
+- `target/llmpulse-java-1.47.0.jar`
 - `target/lib/*.jar`
 
 ## Getting Started
