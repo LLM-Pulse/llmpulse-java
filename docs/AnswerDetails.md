@@ -27,6 +27,7 @@
 |**brandEntities** | **List&lt;Object&gt;** |  |  [optional] |
 |**localBusinesses** | **List&lt;Object&gt;** |  |  [optional] |
 |**locale** | [**AnswerDetailsLocale**](AnswerDetailsLocale.md) |  |  [optional] |
+|**appUrl** | **URI** | Opens this answer in the app. The link names its project, so it opens there for any user with access to that project |  [optional] |
 
 
 

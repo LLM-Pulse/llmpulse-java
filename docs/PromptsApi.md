@@ -406,7 +406,7 @@ null (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Paginated executions |  -  |
+| **200** | Paginated executions. Every row carries app_url, the link that opens the answer in the app |  -  |
 
 ## listPromptExecutionsWithHttpInfo
 
@@ -502,7 +502,7 @@ ApiResponse<Void>
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Paginated executions |  -  |
+| **200** | Paginated executions. Every row carries app_url, the link that opens the answer in the app |  -  |
 
 
 ## listPrompts
@@ -592,7 +592,7 @@ null (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Paginated prompts |  -  |
+| **200** | Paginated prompts. Every row carries app_url, the link that opens the prompt in the app |  -  |
 
 ## listPromptsWithHttpInfo
 
@@ -684,7 +684,7 @@ ApiResponse<Void>
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Paginated prompts |  -  |
+| **200** | Paginated prompts. Every row carries app_url, the link that opens the prompt in the app |  -  |
 
 
 ## listQueryFanOuts
