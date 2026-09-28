@@ -20,7 +20,7 @@
 |**userInstructions** | **String** |  |  [optional] |
 |**outputLanguageCode** | **String** |  |  [optional] |
 |**wordCount** | **Integer** |  |  [optional] |
-|**resultData** | **Object** | Only present when status&#x3D;&#39;completed&#39; |  [optional] |
+|**resultData** | **Object** | The generated content once status is completed; null before that |  [optional] |
 |**errorMessage** | **String** |  |  [optional] |
 |**estimatedTime** | **String** |  |  [optional] |
 |**createdAt** | **OffsetDateTime** |  |  [optional] |

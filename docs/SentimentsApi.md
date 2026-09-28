@@ -4,10 +4,10 @@ All URIs are relative to *https://api.llmpulse.ai/api/v1*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**listSentimentCategories**](SentimentsApi.md#listSentimentCategories) | **GET** /dimensions/sentiments | List sentiment categories |
-| [**listSentimentCategoriesWithHttpInfo**](SentimentsApi.md#listSentimentCategoriesWithHttpInfo) | **GET** /dimensions/sentiments | List sentiment categories |
-| [**listSentimentRecords**](SentimentsApi.md#listSentimentRecords) | **GET** /sentiments | List sentiment records |
-| [**listSentimentRecordsWithHttpInfo**](SentimentsApi.md#listSentimentRecordsWithHttpInfo) | **GET** /sentiments | List sentiment records |
+| [**listSentimentCategories**](SentimentsApi.md#listSentimentCategories) | **GET** /dimensions/sentiments | List sentiment categories (Growth plan or above) |
+| [**listSentimentCategoriesWithHttpInfo**](SentimentsApi.md#listSentimentCategoriesWithHttpInfo) | **GET** /dimensions/sentiments | List sentiment categories (Growth plan or above) |
+| [**listSentimentRecords**](SentimentsApi.md#listSentimentRecords) | **GET** /sentiments | List sentiment records (Growth plan or above) |
+| [**listSentimentRecordsWithHttpInfo**](SentimentsApi.md#listSentimentRecordsWithHttpInfo) | **GET** /sentiments | List sentiment records (Growth plan or above) |
 
 
 
@@ -15,9 +15,9 @@ All URIs are relative to *https://api.llmpulse.ai/api/v1*
 
 > void listSentimentCategories(projectId, output)
 
-List sentiment categories
+List sentiment categories (Growth plan or above)
 
-Sentiment metric keys + labels + colors. For records, use /sentiments.
+Sentiment metric keys + labels + colors. For records, use /sentiments. Requires the Growth plan; lower tiers receive ERR_PLAN_REQUIRED.
 
 ### Example
 
@@ -75,20 +75,21 @@ null (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Sentiment buckets |  -  |
+| **403** | Endpoint requires the Growth plan or above |  -  |
 
 ## listSentimentCategoriesWithHttpInfo
 
 > ApiResponse<Void> listSentimentCategoriesWithHttpInfo(projectId, output)
 
-List sentiment categories
+List sentiment categories (Growth plan or above)
 
-Sentiment metric keys + labels + colors. For records, use /sentiments.
+Sentiment metric keys + labels + colors. For records, use /sentiments. Requires the Growth plan; lower tiers receive ERR_PLAN_REQUIRED.
 
 ### Example
 
@@ -149,19 +150,22 @@ ApiResponse<Void>
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Sentiment buckets |  -  |
+| **403** | Endpoint requires the Growth plan or above |  -  |
 
 
 ## listSentimentRecords
 
 > void listSentimentRecords(projectId, competitorId, brandOnly, analysis, model, collectionId, countryCode, languageCode, from, to, page, perPage)
 
-List sentiment records
+List sentiment records (Growth plan or above)
+
+Requires the Growth plan; lower tiers receive ERR_PLAN_REQUIRED.
 
 ### Example
 
@@ -245,13 +249,16 @@ null (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Paginated sentiments |  -  |
+| **403** | Endpoint requires the Growth plan or above |  -  |
 | **422** | Invalid parameters |  -  |
 
 ## listSentimentRecordsWithHttpInfo
 
 > ApiResponse<Void> listSentimentRecordsWithHttpInfo(projectId, competitorId, brandOnly, analysis, model, collectionId, countryCode, languageCode, from, to, page, perPage)
 
-List sentiment records
+List sentiment records (Growth plan or above)
+
+Requires the Growth plan; lower tiers receive ERR_PLAN_REQUIRED.
 
 ### Example
 
@@ -338,5 +345,6 @@ ApiResponse<Void>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Paginated sentiments |  -  |
+| **403** | Endpoint requires the Growth plan or above |  -  |
 | **422** | Invalid parameters |  -  |
 

@@ -14,8 +14,8 @@
 |**response** | **String** |  |  [optional] |
 |**responseTruncated** | **Boolean** |  |  [optional] |
 |**executedAt** | **OffsetDateTime** |  |  [optional] |
-|**durationMs** | **Integer** |  |  [optional] |
-|**success** | **Boolean** |  |  [optional] |
+|**durationMs** | **BigDecimal** | Milliseconds, rounded to one decimal place |  [optional] |
+|**success** | **Boolean** | Null while the answer is still pending |  [optional] |
 |**fanOutQueries** | **List&lt;String&gt;** |  |  [optional] |
 |**mentions** | **List&lt;Object&gt;** |  |  [optional] |
 |**citations** | **List&lt;Object&gt;** |  |  [optional] |

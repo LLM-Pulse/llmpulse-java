@@ -2,7 +2,7 @@
 
 LLM Pulse API
 
-- API version: 1.50.0
+- API version: 1.51.0
 
 - Generator version: 7.24.0
 
@@ -43,7 +43,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>ai.llmpulse</groupId>
   <artifactId>llmpulse-java</artifactId>
-  <version>1.50.0</version>
+  <version>1.51.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -53,7 +53,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "ai.llmpulse:llmpulse-java:1.50.0"
+compile "ai.llmpulse:llmpulse-java:1.51.0"
 ```
 
 ### Others
@@ -66,7 +66,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-- `target/llmpulse-java-1.50.0.jar`
+- `target/llmpulse-java-1.51.0.jar`
 - `target/lib/*.jar`
 
 ## Getting Started
@@ -247,10 +247,10 @@ Class | Method | HTTP request | Description
 *SearchConsoleApi* | [**getSearchConsoleSummaryWithHttpInfo**](docs/SearchConsoleApi.md#getSearchConsoleSummaryWithHttpInfo) | **GET** /search_console/summary | Search Console summary (Growth+)
 *SearchConsoleApi* | [**getSearchConsoleTimeseries**](docs/SearchConsoleApi.md#getSearchConsoleTimeseries) | **GET** /search_console/timeseries | Search Console time series (Growth+)
 *SearchConsoleApi* | [**getSearchConsoleTimeseriesWithHttpInfo**](docs/SearchConsoleApi.md#getSearchConsoleTimeseriesWithHttpInfo) | **GET** /search_console/timeseries | Search Console time series (Growth+)
-*SentimentsApi* | [**listSentimentCategories**](docs/SentimentsApi.md#listSentimentCategories) | **GET** /dimensions/sentiments | List sentiment categories
-*SentimentsApi* | [**listSentimentCategoriesWithHttpInfo**](docs/SentimentsApi.md#listSentimentCategoriesWithHttpInfo) | **GET** /dimensions/sentiments | List sentiment categories
-*SentimentsApi* | [**listSentimentRecords**](docs/SentimentsApi.md#listSentimentRecords) | **GET** /sentiments | List sentiment records
-*SentimentsApi* | [**listSentimentRecordsWithHttpInfo**](docs/SentimentsApi.md#listSentimentRecordsWithHttpInfo) | **GET** /sentiments | List sentiment records
+*SentimentsApi* | [**listSentimentCategories**](docs/SentimentsApi.md#listSentimentCategories) | **GET** /dimensions/sentiments | List sentiment categories (Growth plan or above)
+*SentimentsApi* | [**listSentimentCategoriesWithHttpInfo**](docs/SentimentsApi.md#listSentimentCategoriesWithHttpInfo) | **GET** /dimensions/sentiments | List sentiment categories (Growth plan or above)
+*SentimentsApi* | [**listSentimentRecords**](docs/SentimentsApi.md#listSentimentRecords) | **GET** /sentiments | List sentiment records (Growth plan or above)
+*SentimentsApi* | [**listSentimentRecordsWithHttpInfo**](docs/SentimentsApi.md#listSentimentRecordsWithHttpInfo) | **GET** /sentiments | List sentiment records (Growth plan or above)
 *ShoppingAdsApi* | [**listAds**](docs/ShoppingAdsApi.md#listAds) | **GET** /dimensions/ads | List AI ad placements
 *ShoppingAdsApi* | [**listAdsWithHttpInfo**](docs/ShoppingAdsApi.md#listAdsWithHttpInfo) | **GET** /dimensions/ads | List AI ad placements
 *ShoppingAdsApi* | [**listShopping**](docs/ShoppingAdsApi.md#listShopping) | **GET** /dimensions/shopping | List shopping results
