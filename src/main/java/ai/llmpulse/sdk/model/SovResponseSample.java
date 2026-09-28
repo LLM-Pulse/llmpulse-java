@@ -36,17 +36,17 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 import ai.llmpulse.sdk.ApiClient;
 /**
- * SovResponsePeriodsInner
+ * The period the current shares were computed on (the last one with mentions), same shape as a periods item; null when the window has no mentions.
  */
 @JsonPropertyOrder({
-  SovResponsePeriodsInner.JSON_PROPERTY_DATE,
-  SovResponsePeriodsInner.JSON_PROPERTY_MENTIONS,
-  SovResponsePeriodsInner.JSON_PROPERTY_PARTIAL,
-  SovResponsePeriodsInner.JSON_PROPERTY_CONFIDENCE,
-  SovResponsePeriodsInner.JSON_PROPERTY_MARGIN_OF_ERROR
+  SovResponseSample.JSON_PROPERTY_DATE,
+  SovResponseSample.JSON_PROPERTY_MENTIONS,
+  SovResponseSample.JSON_PROPERTY_PARTIAL,
+  SovResponseSample.JSON_PROPERTY_CONFIDENCE,
+  SovResponseSample.JSON_PROPERTY_MARGIN_OF_ERROR
 })
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
-public class SovResponsePeriodsInner {
+public class SovResponseSample {
   public static final String JSON_PROPERTY_DATE = "date";
   @javax.annotation.Nullable
   private LocalDate date;
@@ -66,10 +66,10 @@ public class SovResponsePeriodsInner {
   public static final String JSON_PROPERTY_MARGIN_OF_ERROR = "margin_of_error";
   private JsonNullable<BigDecimal> marginOfError = JsonNullable.<BigDecimal>undefined();
 
-  public SovResponsePeriodsInner() { 
+  public SovResponseSample() { 
   }
 
-  public SovResponsePeriodsInner date(@javax.annotation.Nullable LocalDate date) {
+  public SovResponseSample date(@javax.annotation.Nullable LocalDate date) {
     this.date = date;
     return this;
   }
@@ -93,7 +93,7 @@ public class SovResponsePeriodsInner {
   }
 
 
-  public SovResponsePeriodsInner mentions(@javax.annotation.Nullable Integer mentions) {
+  public SovResponseSample mentions(@javax.annotation.Nullable Integer mentions) {
     this.mentions = mentions;
     return this;
   }
@@ -117,7 +117,7 @@ public class SovResponsePeriodsInner {
   }
 
 
-  public SovResponsePeriodsInner partial(@javax.annotation.Nullable Boolean partial) {
+  public SovResponseSample partial(@javax.annotation.Nullable Boolean partial) {
     this.partial = partial;
     return this;
   }
@@ -141,13 +141,13 @@ public class SovResponsePeriodsInner {
   }
 
 
-  public SovResponsePeriodsInner confidence(@javax.annotation.Nullable String confidence) {
+  public SovResponseSample confidence(@javax.annotation.Nullable String confidence) {
     this.confidence = confidence;
     return this;
   }
 
   /**
-   * How far the shares of this period can be trusted, from its mentions: none (0), low (under 30), medium (under 100) or high (100 or more).
+   * Get confidence
    * @return confidence
    */
   @javax.annotation.Nullable
@@ -165,13 +165,13 @@ public class SovResponsePeriodsInner {
   }
 
 
-  public SovResponsePeriodsInner marginOfError(@javax.annotation.Nullable BigDecimal marginOfError) {
+  public SovResponseSample marginOfError(@javax.annotation.Nullable BigDecimal marginOfError) {
     this.marginOfError = JsonNullable.<BigDecimal>of(marginOfError);
     return this;
   }
 
   /**
-   * Worst-case 95% margin of a share in percentage points, 98 / sqrt(mentions); mentions within one answer are not independent, so the real margin is at least this wide. null with no mentions.
+   * Get marginOfError
    * @return marginOfError
    */
   @javax.annotation.Nullable
@@ -198,7 +198,7 @@ public class SovResponsePeriodsInner {
 
 
   /**
-   * Return true if this SovResponse_periods_inner object is equal to o.
+   * Return true if this SovResponse_sample object is equal to o.
    */
   @Override
   public boolean equals(Object o) {
@@ -208,12 +208,12 @@ public class SovResponsePeriodsInner {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    SovResponsePeriodsInner sovResponsePeriodsInner = (SovResponsePeriodsInner) o;
-    return Objects.equals(this.date, sovResponsePeriodsInner.date) &&
-        Objects.equals(this.mentions, sovResponsePeriodsInner.mentions) &&
-        Objects.equals(this.partial, sovResponsePeriodsInner.partial) &&
-        Objects.equals(this.confidence, sovResponsePeriodsInner.confidence) &&
-        equalsNullable(this.marginOfError, sovResponsePeriodsInner.marginOfError);
+    SovResponseSample sovResponseSample = (SovResponseSample) o;
+    return Objects.equals(this.date, sovResponseSample.date) &&
+        Objects.equals(this.mentions, sovResponseSample.mentions) &&
+        Objects.equals(this.partial, sovResponseSample.partial) &&
+        Objects.equals(this.confidence, sovResponseSample.confidence) &&
+        equalsNullable(this.marginOfError, sovResponseSample.marginOfError);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -235,7 +235,7 @@ public class SovResponsePeriodsInner {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class SovResponsePeriodsInner {\n");
+    sb.append("class SovResponseSample {\n");
     sb.append("    date: ").append(toIndentedString(date)).append("\n");
     sb.append("    mentions: ").append(toIndentedString(mentions)).append("\n");
     sb.append("    partial: ").append(toIndentedString(partial)).append("\n");

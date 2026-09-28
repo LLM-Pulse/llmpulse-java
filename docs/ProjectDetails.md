@@ -13,7 +13,7 @@
 |**url** | **URI** |  |  [optional] |
 |**description** | **String** |  |  [optional] |
 |**matchingNames** | **List&lt;String&gt;** |  |  [optional] |
-|**industry** | **String** |  |  [optional] |
+|**industry** | **Object** | Industry as stored: one key as a string (e.g. SAAS), or an array of key strings when the project was created with a list or the in-app multi-select. Deliberately untyped so generated clients decode either shape |  [optional] |
 |**businessModel** | **String** |  |  [optional] |
 |**businessModelOther** | **String** | Set only when business_model is OTHER |  [optional] |
 |**primaryProducts** | **List&lt;String&gt;** |  |  [optional] |

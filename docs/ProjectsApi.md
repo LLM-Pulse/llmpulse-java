@@ -33,7 +33,7 @@ All URIs are relative to *https://api.llmpulse.ai/api/v1*
 
 Create a project (fast mode)
 
-Create a complete project in one call: project fields, prompts (queued for execution and categorization), competitors, weekly email subscription. Idempotent via &#x60;external_identifier&#x60; (embed-enabled accounts only; replay returns 200 with the existing project). Requires a &#x60;read_write&#x60; scope API key.
+Create a complete project in one call: project fields, prompts (queued for execution and categorization), collections tagging those prompts, competitors, weekly email subscription. The response lists same_domain_projects so an accidental duplicate is visible; it never blocks the create. Idempotent via &#x60;external_identifier&#x60; (embed-enabled accounts only; replay returns 200 with the existing project). Requires a &#x60;read_write&#x60; scope API key.
 
 ### Example
 
@@ -106,7 +106,7 @@ public class Example {
 
 Create a project (fast mode)
 
-Create a complete project in one call: project fields, prompts (queued for execution and categorization), competitors, weekly email subscription. Idempotent via &#x60;external_identifier&#x60; (embed-enabled accounts only; replay returns 200 with the existing project). Requires a &#x60;read_write&#x60; scope API key.
+Create a complete project in one call: project fields, prompts (queued for execution and categorization), collections tagging those prompts, competitors, weekly email subscription. The response lists same_domain_projects so an accidental duplicate is visible; it never blocks the create. Idempotent via &#x60;external_identifier&#x60; (embed-enabled accounts only; replay returns 200 with the existing project). Requires a &#x60;read_write&#x60; scope API key.
 
 ### Example
 
@@ -1193,7 +1193,7 @@ ApiResponse<[**ListProjects200Response**](ListProjects200Response.md)>
 
 Update a project profile (Brand Book)
 
-Updates the project profile, the same fields as Project Settings: brand_name, description, industry, business_model (plus business_model_other when it is OTHER), target_audience, brand_voice, goals, primary_products, matching_names. Send only the fields to change; unknown fields are rejected. All seven Brand Book fields feed every GEO Writer task and prompt suggestions; only industry, description, and target_audience help Recommendations. A matching_names change re-runs mention/citation matching over the project history in the background (rematching&#x3D;true); further edits are rejected while that runs. Requires a &#x60;read_write&#x60; scope API key.
+Updates the project name and profile, the same fields as Project Settings: name, brand_name, description, industry, business_model (plus business_model_other when it is OTHER), target_audience, brand_voice, goals, primary_products, matching_names. Send only the fields to change; unknown fields are rejected. All seven Brand Book fields feed every GEO Writer task and prompt suggestions; only industry, description, and target_audience help Recommendations. A matching_names change re-runs mention/citation matching over the project history in the background (rematching&#x3D;true); further edits are rejected while that runs. Requires a &#x60;read_write&#x60; scope API key.
 
 ### Example
 
@@ -1267,7 +1267,7 @@ null (empty response body)
 
 Update a project profile (Brand Book)
 
-Updates the project profile, the same fields as Project Settings: brand_name, description, industry, business_model (plus business_model_other when it is OTHER), target_audience, brand_voice, goals, primary_products, matching_names. Send only the fields to change; unknown fields are rejected. All seven Brand Book fields feed every GEO Writer task and prompt suggestions; only industry, description, and target_audience help Recommendations. A matching_names change re-runs mention/citation matching over the project history in the background (rematching&#x3D;true); further edits are rejected while that runs. Requires a &#x60;read_write&#x60; scope API key.
+Updates the project name and profile, the same fields as Project Settings: name, brand_name, description, industry, business_model (plus business_model_other when it is OTHER), target_audience, brand_voice, goals, primary_products, matching_names. Send only the fields to change; unknown fields are rejected. All seven Brand Book fields feed every GEO Writer task and prompt suggestions; only industry, description, and target_audience help Recommendations. A matching_names change re-runs mention/citation matching over the project history in the background (rematching&#x3D;true); further edits are rejected while that runs. Requires a &#x60;read_write&#x60; scope API key.
 
 ### Example
 

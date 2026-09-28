@@ -30,15 +30,15 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 import ai.llmpulse.sdk.ApiClient;
 /**
- * Project
+ * ProjectCreateResponseCollectionsInner
  */
 @JsonPropertyOrder({
-  Project.JSON_PROPERTY_ID,
-  Project.JSON_PROPERTY_NAME,
-  Project.JSON_PROPERTY_BRAND_NAME
+  ProjectCreateResponseCollectionsInner.JSON_PROPERTY_ID,
+  ProjectCreateResponseCollectionsInner.JSON_PROPERTY_NAME,
+  ProjectCreateResponseCollectionsInner.JSON_PROPERTY_PROMPTS_ATTACHED
 })
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
-public class Project {
+public class ProjectCreateResponseCollectionsInner {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nullable
   private Integer id;
@@ -47,14 +47,14 @@ public class Project {
   @javax.annotation.Nullable
   private String name;
 
-  public static final String JSON_PROPERTY_BRAND_NAME = "brand_name";
+  public static final String JSON_PROPERTY_PROMPTS_ATTACHED = "prompts_attached";
   @javax.annotation.Nullable
-  private String brandName;
+  private Integer promptsAttached;
 
-  public Project() { 
+  public ProjectCreateResponseCollectionsInner() { 
   }
 
-  public Project id(@javax.annotation.Nullable Integer id) {
+  public ProjectCreateResponseCollectionsInner id(@javax.annotation.Nullable Integer id) {
     this.id = id;
     return this;
   }
@@ -78,13 +78,13 @@ public class Project {
   }
 
 
-  public Project name(@javax.annotation.Nullable String name) {
+  public ProjectCreateResponseCollectionsInner name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
 
   /**
-   * Internal project label (sidebar, settings, admin)
+   * Get name
    * @return name
    */
   @javax.annotation.Nullable
@@ -102,32 +102,32 @@ public class Project {
   }
 
 
-  public Project brandName(@javax.annotation.Nullable String brandName) {
-    this.brandName = brandName;
+  public ProjectCreateResponseCollectionsInner promptsAttached(@javax.annotation.Nullable Integer promptsAttached) {
+    this.promptsAttached = promptsAttached;
     return this;
   }
 
   /**
-   * LLM-facing brand label (used in prompts and customer-facing charts). Defaults to &#x60;name&#x60; when not set.
-   * @return brandName
+   * Get promptsAttached
+   * @return promptsAttached
    */
   @javax.annotation.Nullable
-  @JsonProperty(value = JSON_PROPERTY_BRAND_NAME, required = false)
+  @JsonProperty(value = JSON_PROPERTY_PROMPTS_ATTACHED, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public String getBrandName() {
-    return brandName;
+  public Integer getPromptsAttached() {
+    return promptsAttached;
   }
 
 
-  @JsonProperty(value = JSON_PROPERTY_BRAND_NAME, required = false)
+  @JsonProperty(value = JSON_PROPERTY_PROMPTS_ATTACHED, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setBrandName(@javax.annotation.Nullable String brandName) {
-    this.brandName = brandName;
+  public void setPromptsAttached(@javax.annotation.Nullable Integer promptsAttached) {
+    this.promptsAttached = promptsAttached;
   }
 
 
   /**
-   * Return true if this Project object is equal to o.
+   * Return true if this ProjectCreateResponse_collections_inner object is equal to o.
    */
   @Override
   public boolean equals(Object o) {
@@ -137,24 +137,24 @@ public class Project {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Project project = (Project) o;
-    return Objects.equals(this.id, project.id) &&
-        Objects.equals(this.name, project.name) &&
-        Objects.equals(this.brandName, project.brandName);
+    ProjectCreateResponseCollectionsInner projectCreateResponseCollectionsInner = (ProjectCreateResponseCollectionsInner) o;
+    return Objects.equals(this.id, projectCreateResponseCollectionsInner.id) &&
+        Objects.equals(this.name, projectCreateResponseCollectionsInner.name) &&
+        Objects.equals(this.promptsAttached, projectCreateResponseCollectionsInner.promptsAttached);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, brandName);
+    return Objects.hash(id, name, promptsAttached);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Project {\n");
+    sb.append("class ProjectCreateResponseCollectionsInner {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    brandName: ").append(toIndentedString(brandName)).append("\n");
+    sb.append("    promptsAttached: ").append(toIndentedString(promptsAttached)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -209,9 +209,9 @@ public class Project {
       joiner.add(String.format(java.util.Locale.ROOT, "%sname%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getName()))));
     }
 
-    // add `brand_name` to the URL query string
-    if (getBrandName() != null) {
-      joiner.add(String.format(java.util.Locale.ROOT, "%sbrand_name%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getBrandName()))));
+    // add `prompts_attached` to the URL query string
+    if (getPromptsAttached() != null) {
+      joiner.add(String.format(java.util.Locale.ROOT, "%sprompts_attached%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPromptsAttached()))));
     }
 
     return joiner.toString();

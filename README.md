@@ -2,7 +2,7 @@
 
 LLM Pulse API
 
-- API version: 1.49.0
+- API version: 1.50.0
 
 - Generator version: 7.24.0
 
@@ -43,7 +43,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>ai.llmpulse</groupId>
   <artifactId>llmpulse-java</artifactId>
-  <version>1.49.0</version>
+  <version>1.50.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -53,7 +53,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "ai.llmpulse:llmpulse-java:1.49.0"
+compile "ai.llmpulse:llmpulse-java:1.50.0"
 ```
 
 ### Others
@@ -66,7 +66,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-- `target/llmpulse-java-1.49.0.jar`
+- `target/llmpulse-java-1.50.0.jar`
 - `target/lib/*.jar`
 
 ## Getting Started
@@ -323,13 +323,16 @@ Class | Method | HTTP request | Description
  - [Ping200Response](docs/Ping200Response.md)
  - [Project](docs/Project.md)
  - [ProjectCreateRequest](docs/ProjectCreateRequest.md)
+ - [ProjectCreateRequestCollectionsInner](docs/ProjectCreateRequestCollectionsInner.md)
  - [ProjectCreateRequestCompetitorsInner](docs/ProjectCreateRequestCompetitorsInner.md)
  - [ProjectCreateRequestOwnedMedia](docs/ProjectCreateRequestOwnedMedia.md)
  - [ProjectCreateResponse](docs/ProjectCreateResponse.md)
+ - [ProjectCreateResponseCollectionsInner](docs/ProjectCreateResponseCollectionsInner.md)
  - [ProjectCreateResponseCompetitors](docs/ProjectCreateResponseCompetitors.md)
  - [ProjectCreateResponseEmailSubscription](docs/ProjectCreateResponseEmailSubscription.md)
  - [ProjectCreateResponseLimits](docs/ProjectCreateResponseLimits.md)
  - [ProjectCreateResponsePrompts](docs/ProjectCreateResponsePrompts.md)
+ - [ProjectCreateResponseSameDomainProjectsInner](docs/ProjectCreateResponseSameDomainProjectsInner.md)
  - [ProjectDetails](docs/ProjectDetails.md)
  - [ProjectDetailsAllOfStats](docs/ProjectDetailsAllOfStats.md)
  - [PromptSummaryResponse](docs/PromptSummaryResponse.md)
@@ -345,6 +348,7 @@ Class | Method | HTTP request | Description
  - [SovResponseCurrentInner](docs/SovResponseCurrentInner.md)
  - [SovResponseOverTimeInner](docs/SovResponseOverTimeInner.md)
  - [SovResponsePeriodsInner](docs/SovResponsePeriodsInner.md)
+ - [SovResponseSample](docs/SovResponseSample.md)
  - [SummaryResponse](docs/SummaryResponse.md)
  - [SummaryResponseAllOfPositionDistribution](docs/SummaryResponseAllOfPositionDistribution.md)
  - [SummaryResponseAllOfSummaryValueInner](docs/SummaryResponseAllOfSummaryValueInner.md)

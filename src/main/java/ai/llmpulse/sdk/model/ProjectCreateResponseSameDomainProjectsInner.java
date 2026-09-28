@@ -30,14 +30,24 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 import ai.llmpulse.sdk.ApiClient;
 /**
- * AnswerDetailsLocale
+ * ProjectCreateResponseSameDomainProjectsInner
  */
 @JsonPropertyOrder({
-  AnswerDetailsLocale.JSON_PROPERTY_COUNTRY_CODE,
-  AnswerDetailsLocale.JSON_PROPERTY_LANGUAGE_CODE
+  ProjectCreateResponseSameDomainProjectsInner.JSON_PROPERTY_ID,
+  ProjectCreateResponseSameDomainProjectsInner.JSON_PROPERTY_NAME,
+  ProjectCreateResponseSameDomainProjectsInner.JSON_PROPERTY_COUNTRY_CODE,
+  ProjectCreateResponseSameDomainProjectsInner.JSON_PROPERTY_LANGUAGE_CODE
 })
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
-public class AnswerDetailsLocale {
+public class ProjectCreateResponseSameDomainProjectsInner {
+  public static final String JSON_PROPERTY_ID = "id";
+  @javax.annotation.Nullable
+  private Integer id;
+
+  public static final String JSON_PROPERTY_NAME = "name";
+  @javax.annotation.Nullable
+  private String name;
+
   public static final String JSON_PROPERTY_COUNTRY_CODE = "country_code";
   @javax.annotation.Nullable
   private String countryCode;
@@ -46,10 +56,58 @@ public class AnswerDetailsLocale {
   @javax.annotation.Nullable
   private String languageCode;
 
-  public AnswerDetailsLocale() { 
+  public ProjectCreateResponseSameDomainProjectsInner() { 
   }
 
-  public AnswerDetailsLocale countryCode(@javax.annotation.Nullable String countryCode) {
+  public ProjectCreateResponseSameDomainProjectsInner id(@javax.annotation.Nullable Integer id) {
+    this.id = id;
+    return this;
+  }
+
+  /**
+   * Get id
+   * @return id
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(value = JSON_PROPERTY_ID, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public Integer getId() {
+    return id;
+  }
+
+
+  @JsonProperty(value = JSON_PROPERTY_ID, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setId(@javax.annotation.Nullable Integer id) {
+    this.id = id;
+  }
+
+
+  public ProjectCreateResponseSameDomainProjectsInner name(@javax.annotation.Nullable String name) {
+    this.name = name;
+    return this;
+  }
+
+  /**
+   * Get name
+   * @return name
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(value = JSON_PROPERTY_NAME, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public String getName() {
+    return name;
+  }
+
+
+  @JsonProperty(value = JSON_PROPERTY_NAME, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setName(@javax.annotation.Nullable String name) {
+    this.name = name;
+  }
+
+
+  public ProjectCreateResponseSameDomainProjectsInner countryCode(@javax.annotation.Nullable String countryCode) {
     this.countryCode = countryCode;
     return this;
   }
@@ -73,7 +131,7 @@ public class AnswerDetailsLocale {
   }
 
 
-  public AnswerDetailsLocale languageCode(@javax.annotation.Nullable String languageCode) {
+  public ProjectCreateResponseSameDomainProjectsInner languageCode(@javax.annotation.Nullable String languageCode) {
     this.languageCode = languageCode;
     return this;
   }
@@ -98,7 +156,7 @@ public class AnswerDetailsLocale {
 
 
   /**
-   * Return true if this AnswerDetails_locale object is equal to o.
+   * Return true if this ProjectCreateResponse_same_domain_projects_inner object is equal to o.
    */
   @Override
   public boolean equals(Object o) {
@@ -108,20 +166,24 @@ public class AnswerDetailsLocale {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    AnswerDetailsLocale answerDetailsLocale = (AnswerDetailsLocale) o;
-    return Objects.equals(this.countryCode, answerDetailsLocale.countryCode) &&
-        Objects.equals(this.languageCode, answerDetailsLocale.languageCode);
+    ProjectCreateResponseSameDomainProjectsInner projectCreateResponseSameDomainProjectsInner = (ProjectCreateResponseSameDomainProjectsInner) o;
+    return Objects.equals(this.id, projectCreateResponseSameDomainProjectsInner.id) &&
+        Objects.equals(this.name, projectCreateResponseSameDomainProjectsInner.name) &&
+        Objects.equals(this.countryCode, projectCreateResponseSameDomainProjectsInner.countryCode) &&
+        Objects.equals(this.languageCode, projectCreateResponseSameDomainProjectsInner.languageCode);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(countryCode, languageCode);
+    return Objects.hash(id, name, countryCode, languageCode);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class AnswerDetailsLocale {\n");
+    sb.append("class ProjectCreateResponseSameDomainProjectsInner {\n");
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    countryCode: ").append(toIndentedString(countryCode)).append("\n");
     sb.append("    languageCode: ").append(toIndentedString(languageCode)).append("\n");
     sb.append("}");
@@ -167,6 +229,16 @@ public class AnswerDetailsLocale {
     }
 
     StringJoiner joiner = new StringJoiner("&");
+
+    // add `id` to the URL query string
+    if (getId() != null) {
+      joiner.add(String.format(java.util.Locale.ROOT, "%sid%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getId()))));
+    }
+
+    // add `name` to the URL query string
+    if (getName() != null) {
+      joiner.add(String.format(java.util.Locale.ROOT, "%sname%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getName()))));
+    }
 
     // add `country_code` to the URL query string
     if (getCountryCode() != null) {
