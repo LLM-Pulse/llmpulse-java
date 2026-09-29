@@ -2,7 +2,7 @@
 
 LLM Pulse API
 
-- API version: 1.51.0
+- API version: 1.52.0
 
 - Generator version: 7.24.0
 
@@ -43,7 +43,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>ai.llmpulse</groupId>
   <artifactId>llmpulse-java</artifactId>
-  <version>1.51.0</version>
+  <version>1.52.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -53,7 +53,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "ai.llmpulse:llmpulse-java:1.51.0"
+compile "ai.llmpulse:llmpulse-java:1.52.0"
 ```
 
 ### Others
@@ -66,7 +66,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-- `target/llmpulse-java-1.51.0.jar`
+- `target/llmpulse-java-1.52.0.jar`
 - `target/lib/*.jar`
 
 ## Getting Started
@@ -273,6 +273,10 @@ Class | Method | HTTP request | Description
 *TechnicalGeoReportsApi* | [**getTechnicalGeoReportWithHttpInfo**](docs/TechnicalGeoReportsApi.md#getTechnicalGeoReportWithHttpInfo) | **GET** /technical_geo_reports/{id} | Get a technical GEO report
 *TechnicalGeoReportsApi* | [**listTechnicalGeoReports**](docs/TechnicalGeoReportsApi.md#listTechnicalGeoReports) | **GET** /technical_geo_reports | List technical GEO reports
 *TechnicalGeoReportsApi* | [**listTechnicalGeoReportsWithHttpInfo**](docs/TechnicalGeoReportsApi.md#listTechnicalGeoReportsWithHttpInfo) | **GET** /technical_geo_reports | List technical GEO reports
+*TechnicalGeoReportsApi* | [**revertTechnicalGeoReportContent**](docs/TechnicalGeoReportsApi.md#revertTechnicalGeoReportContent) | **POST** /technical_geo_reports/{id}/revert_content | Revert llms.txt report content
+*TechnicalGeoReportsApi* | [**revertTechnicalGeoReportContentWithHttpInfo**](docs/TechnicalGeoReportsApi.md#revertTechnicalGeoReportContentWithHttpInfo) | **POST** /technical_geo_reports/{id}/revert_content | Revert llms.txt report content
+*TechnicalGeoReportsApi* | [**updateTechnicalGeoReportContent**](docs/TechnicalGeoReportsApi.md#updateTechnicalGeoReportContent) | **PATCH** /technical_geo_reports/{id}/content | Edit llms.txt report content
+*TechnicalGeoReportsApi* | [**updateTechnicalGeoReportContentWithHttpInfo**](docs/TechnicalGeoReportsApi.md#updateTechnicalGeoReportContentWithHttpInfo) | **PATCH** /technical_geo_reports/{id}/content | Edit llms.txt report content
 *WebhooksApi* | [**createWebhook**](docs/WebhooksApi.md#createWebhook) | **POST** /webhooks | Create a webhook subscription
 *WebhooksApi* | [**createWebhookWithHttpInfo**](docs/WebhooksApi.md#createWebhookWithHttpInfo) | **POST** /webhooks | Create a webhook subscription
 *WebhooksApi* | [**deleteWebhook**](docs/WebhooksApi.md#deleteWebhook) | **DELETE** /webhooks/{id} | Delete a webhook subscription
@@ -320,6 +324,8 @@ Class | Method | HTTP request | Description
  - [ListProjects200Response](docs/ListProjects200Response.md)
  - [ListWebhooks200Response](docs/ListWebhooks200Response.md)
  - [ListWebhooks200ResponseDataInner](docs/ListWebhooks200ResponseDataInner.md)
+ - [LlmsTxtTechnicalGeoReport](docs/LlmsTxtTechnicalGeoReport.md)
+ - [LlmsTxtTechnicalGeoReportResultData](docs/LlmsTxtTechnicalGeoReportResultData.md)
  - [Ping200Response](docs/Ping200Response.md)
  - [Project](docs/Project.md)
  - [ProjectCreateRequest](docs/ProjectCreateRequest.md)
@@ -352,6 +358,10 @@ Class | Method | HTTP request | Description
  - [SummaryResponse](docs/SummaryResponse.md)
  - [SummaryResponseAllOfPositionDistribution](docs/SummaryResponseAllOfPositionDistribution.md)
  - [SummaryResponseAllOfSummaryValueInner](docs/SummaryResponseAllOfSummaryValueInner.md)
+ - [TechnicalGeoReportContentRevertRequest](docs/TechnicalGeoReportContentRevertRequest.md)
+ - [TechnicalGeoReportContentUpdateRequest](docs/TechnicalGeoReportContentUpdateRequest.md)
+ - [TechnicalGeoReportContentUpdateRequestEdits](docs/TechnicalGeoReportContentUpdateRequestEdits.md)
+ - [TechnicalGeoReportContentUpdateResponse](docs/TechnicalGeoReportContentUpdateResponse.md)
  - [TimeseriesPoint](docs/TimeseriesPoint.md)
  - [TimeseriesResponse](docs/TimeseriesResponse.md)
  - [TimeseriesSeries](docs/TimeseriesSeries.md)

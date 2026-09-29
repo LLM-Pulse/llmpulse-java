@@ -50,6 +50,8 @@ docs/ListCompetitors200Response.md
 docs/ListProjects200Response.md
 docs/ListWebhooks200Response.md
 docs/ListWebhooks200ResponseDataInner.md
+docs/LlmsTxtTechnicalGeoReport.md
+docs/LlmsTxtTechnicalGeoReportResultData.md
 docs/MentionsCitationsApi.md
 docs/MetricsApi.md
 docs/OwnedMediaCommunitiesApi.md
@@ -93,6 +95,10 @@ docs/SovResponseSample.md
 docs/SummaryResponse.md
 docs/SummaryResponseAllOfPositionDistribution.md
 docs/SummaryResponseAllOfSummaryValueInner.md
+docs/TechnicalGeoReportContentRevertRequest.md
+docs/TechnicalGeoReportContentUpdateRequest.md
+docs/TechnicalGeoReportContentUpdateRequestEdits.md
+docs/TechnicalGeoReportContentUpdateResponse.md
 docs/TechnicalGeoReportsApi.md
 docs/TimeseriesPoint.md
 docs/TimeseriesResponse.md
@@ -183,6 +189,8 @@ src/main/java/ai/llmpulse/sdk/model/ListCompetitors200Response.java
 src/main/java/ai/llmpulse/sdk/model/ListProjects200Response.java
 src/main/java/ai/llmpulse/sdk/model/ListWebhooks200Response.java
 src/main/java/ai/llmpulse/sdk/model/ListWebhooks200ResponseDataInner.java
+src/main/java/ai/llmpulse/sdk/model/LlmsTxtTechnicalGeoReport.java
+src/main/java/ai/llmpulse/sdk/model/LlmsTxtTechnicalGeoReportResultData.java
 src/main/java/ai/llmpulse/sdk/model/Ping200Response.java
 src/main/java/ai/llmpulse/sdk/model/Project.java
 src/main/java/ai/llmpulse/sdk/model/ProjectCreateRequest.java
@@ -215,6 +223,10 @@ src/main/java/ai/llmpulse/sdk/model/SovResponseSample.java
 src/main/java/ai/llmpulse/sdk/model/SummaryResponse.java
 src/main/java/ai/llmpulse/sdk/model/SummaryResponseAllOfPositionDistribution.java
 src/main/java/ai/llmpulse/sdk/model/SummaryResponseAllOfSummaryValueInner.java
+src/main/java/ai/llmpulse/sdk/model/TechnicalGeoReportContentRevertRequest.java
+src/main/java/ai/llmpulse/sdk/model/TechnicalGeoReportContentUpdateRequest.java
+src/main/java/ai/llmpulse/sdk/model/TechnicalGeoReportContentUpdateRequestEdits.java
+src/main/java/ai/llmpulse/sdk/model/TechnicalGeoReportContentUpdateResponse.java
 src/main/java/ai/llmpulse/sdk/model/TimeseriesPoint.java
 src/main/java/ai/llmpulse/sdk/model/TimeseriesResponse.java
 src/main/java/ai/llmpulse/sdk/model/TimeseriesSeries.java
