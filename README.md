@@ -2,7 +2,7 @@
 
 LLM Pulse API
 
-- API version: 1.52.0
+- API version: 1.53.0
 
 - Generator version: 7.24.0
 
@@ -43,7 +43,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>ai.llmpulse</groupId>
   <artifactId>llmpulse-java</artifactId>
-  <version>1.52.0</version>
+  <version>1.53.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -53,7 +53,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "ai.llmpulse:llmpulse-java:1.52.0"
+compile "ai.llmpulse:llmpulse-java:1.53.0"
 ```
 
 ### Others
@@ -66,7 +66,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-- `target/llmpulse-java-1.52.0.jar`
+- `target/llmpulse-java-1.53.0.jar`
 - `target/lib/*.jar`
 
 ## Getting Started
@@ -253,6 +253,8 @@ Class | Method | HTTP request | Description
 *SentimentsApi* | [**listSentimentRecordsWithHttpInfo**](docs/SentimentsApi.md#listSentimentRecordsWithHttpInfo) | **GET** /sentiments | List sentiment records (Growth plan or above)
 *ShoppingAdsApi* | [**listAds**](docs/ShoppingAdsApi.md#listAds) | **GET** /dimensions/ads | List AI ad placements
 *ShoppingAdsApi* | [**listAdsWithHttpInfo**](docs/ShoppingAdsApi.md#listAdsWithHttpInfo) | **GET** /dimensions/ads | List AI ad placements
+*ShoppingAdsApi* | [**listLocalBusinesses**](docs/ShoppingAdsApi.md#listLocalBusinesses) | **GET** /dimensions/local_businesses | List local businesses
+*ShoppingAdsApi* | [**listLocalBusinessesWithHttpInfo**](docs/ShoppingAdsApi.md#listLocalBusinessesWithHttpInfo) | **GET** /dimensions/local_businesses | List local businesses
 *ShoppingAdsApi* | [**listShopping**](docs/ShoppingAdsApi.md#listShopping) | **GET** /dimensions/shopping | List shopping results
 *ShoppingAdsApi* | [**listShoppingWithHttpInfo**](docs/ShoppingAdsApi.md#listShoppingWithHttpInfo) | **GET** /dimensions/shopping | List shopping results
 *SourcesCitationIntelligenceApi* | [**getCitedUrlContent**](docs/SourcesCitationIntelligenceApi.md#getCitedUrlContent) | **GET** /citation_intelligence/urls/{url_sha256}/content | Cited URL cached content
@@ -326,6 +328,9 @@ Class | Method | HTTP request | Description
  - [ListWebhooks200ResponseDataInner](docs/ListWebhooks200ResponseDataInner.md)
  - [LlmsTxtTechnicalGeoReport](docs/LlmsTxtTechnicalGeoReport.md)
  - [LlmsTxtTechnicalGeoReportResultData](docs/LlmsTxtTechnicalGeoReportResultData.md)
+ - [LocalBusiness](docs/LocalBusiness.md)
+ - [LocalBusinessesResponse](docs/LocalBusinessesResponse.md)
+ - [LocalBusinessesTotals](docs/LocalBusinessesTotals.md)
  - [Ping200Response](docs/Ping200Response.md)
  - [Project](docs/Project.md)
  - [ProjectCreateRequest](docs/ProjectCreateRequest.md)

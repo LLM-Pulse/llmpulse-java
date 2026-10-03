@@ -19,7 +19,8 @@ import java.util.StringJoiner;
 import java.util.Objects;
 import java.util.Map;
 import java.util.HashMap;
-import ai.llmpulse.sdk.model.ListWebhooks200ResponseDataInner;
+import ai.llmpulse.sdk.model.LocalBusiness;
+import ai.llmpulse.sdk.model.LocalBusinessesTotals;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -33,17 +34,23 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 import ai.llmpulse.sdk.ApiClient;
 /**
- * ListWebhooks200Response
+ * LocalBusinessesResponse
  */
 @JsonPropertyOrder({
-  ListWebhooks200Response.JSON_PROPERTY_PAGE,
-  ListWebhooks200Response.JSON_PROPERTY_PER_PAGE,
-  ListWebhooks200Response.JSON_PROPERTY_TOTAL,
-  ListWebhooks200Response.JSON_PROPERTY_DATA,
-  ListWebhooks200Response.JSON_PROPERTY_REQUEST_ID
+  LocalBusinessesResponse.JSON_PROPERTY_PROJECT_ID,
+  LocalBusinessesResponse.JSON_PROPERTY_PAGE,
+  LocalBusinessesResponse.JSON_PROPERTY_PER_PAGE,
+  LocalBusinessesResponse.JSON_PROPERTY_TOTAL,
+  LocalBusinessesResponse.JSON_PROPERTY_TOTALS,
+  LocalBusinessesResponse.JSON_PROPERTY_DATA,
+  LocalBusinessesResponse.JSON_PROPERTY_REQUEST_ID
 })
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
-public class ListWebhooks200Response {
+public class LocalBusinessesResponse {
+  public static final String JSON_PROPERTY_PROJECT_ID = "project_id";
+  @javax.annotation.Nullable
+  private Integer projectId;
+
   public static final String JSON_PROPERTY_PAGE = "page";
   @javax.annotation.Nullable
   private Integer page;
@@ -56,18 +63,46 @@ public class ListWebhooks200Response {
   @javax.annotation.Nullable
   private Integer total;
 
+  public static final String JSON_PROPERTY_TOTALS = "totals";
+  @javax.annotation.Nullable
+  private LocalBusinessesTotals totals;
+
   public static final String JSON_PROPERTY_DATA = "data";
   @javax.annotation.Nullable
-  private List<ListWebhooks200ResponseDataInner> data = new ArrayList<>();
+  private List<LocalBusiness> data = new ArrayList<>();
 
   public static final String JSON_PROPERTY_REQUEST_ID = "request_id";
   @javax.annotation.Nullable
   private String requestId;
 
-  public ListWebhooks200Response() { 
+  public LocalBusinessesResponse() { 
   }
 
-  public ListWebhooks200Response page(@javax.annotation.Nullable Integer page) {
+  public LocalBusinessesResponse projectId(@javax.annotation.Nullable Integer projectId) {
+    this.projectId = projectId;
+    return this;
+  }
+
+  /**
+   * Get projectId
+   * @return projectId
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(value = JSON_PROPERTY_PROJECT_ID, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public Integer getProjectId() {
+    return projectId;
+  }
+
+
+  @JsonProperty(value = JSON_PROPERTY_PROJECT_ID, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setProjectId(@javax.annotation.Nullable Integer projectId) {
+    this.projectId = projectId;
+  }
+
+
+  public LocalBusinessesResponse page(@javax.annotation.Nullable Integer page) {
     this.page = page;
     return this;
   }
@@ -91,7 +126,7 @@ public class ListWebhooks200Response {
   }
 
 
-  public ListWebhooks200Response perPage(@javax.annotation.Nullable Integer perPage) {
+  public LocalBusinessesResponse perPage(@javax.annotation.Nullable Integer perPage) {
     this.perPage = perPage;
     return this;
   }
@@ -115,7 +150,7 @@ public class ListWebhooks200Response {
   }
 
 
-  public ListWebhooks200Response total(@javax.annotation.Nullable Integer total) {
+  public LocalBusinessesResponse total(@javax.annotation.Nullable Integer total) {
     this.total = total;
     return this;
   }
@@ -139,12 +174,36 @@ public class ListWebhooks200Response {
   }
 
 
-  public ListWebhooks200Response data(@javax.annotation.Nullable List<ListWebhooks200ResponseDataInner> data) {
+  public LocalBusinessesResponse totals(@javax.annotation.Nullable LocalBusinessesTotals totals) {
+    this.totals = totals;
+    return this;
+  }
+
+  /**
+   * Get totals
+   * @return totals
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(value = JSON_PROPERTY_TOTALS, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public LocalBusinessesTotals getTotals() {
+    return totals;
+  }
+
+
+  @JsonProperty(value = JSON_PROPERTY_TOTALS, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setTotals(@javax.annotation.Nullable LocalBusinessesTotals totals) {
+    this.totals = totals;
+  }
+
+
+  public LocalBusinessesResponse data(@javax.annotation.Nullable List<LocalBusiness> data) {
     this.data = data;
     return this;
   }
 
-  public ListWebhooks200Response addDataItem(ListWebhooks200ResponseDataInner dataItem) {
+  public LocalBusinessesResponse addDataItem(LocalBusiness dataItem) {
     if (this.data == null) {
       this.data = new ArrayList<>();
     }
@@ -159,19 +218,19 @@ public class ListWebhooks200Response {
   @javax.annotation.Nullable
   @JsonProperty(value = JSON_PROPERTY_DATA, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public List<ListWebhooks200ResponseDataInner> getData() {
+  public List<LocalBusiness> getData() {
     return data;
   }
 
 
   @JsonProperty(value = JSON_PROPERTY_DATA, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setData(@javax.annotation.Nullable List<ListWebhooks200ResponseDataInner> data) {
+  public void setData(@javax.annotation.Nullable List<LocalBusiness> data) {
     this.data = data;
   }
 
 
-  public ListWebhooks200Response requestId(@javax.annotation.Nullable String requestId) {
+  public LocalBusinessesResponse requestId(@javax.annotation.Nullable String requestId) {
     this.requestId = requestId;
     return this;
   }
@@ -196,7 +255,7 @@ public class ListWebhooks200Response {
 
 
   /**
-   * Return true if this listWebhooks_200_response object is equal to o.
+   * Return true if this LocalBusinessesResponse object is equal to o.
    */
   @Override
   public boolean equals(Object o) {
@@ -206,26 +265,30 @@ public class ListWebhooks200Response {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ListWebhooks200Response listWebhooks200Response = (ListWebhooks200Response) o;
-    return Objects.equals(this.page, listWebhooks200Response.page) &&
-        Objects.equals(this.perPage, listWebhooks200Response.perPage) &&
-        Objects.equals(this.total, listWebhooks200Response.total) &&
-        Objects.equals(this.data, listWebhooks200Response.data) &&
-        Objects.equals(this.requestId, listWebhooks200Response.requestId);
+    LocalBusinessesResponse localBusinessesResponse = (LocalBusinessesResponse) o;
+    return Objects.equals(this.projectId, localBusinessesResponse.projectId) &&
+        Objects.equals(this.page, localBusinessesResponse.page) &&
+        Objects.equals(this.perPage, localBusinessesResponse.perPage) &&
+        Objects.equals(this.total, localBusinessesResponse.total) &&
+        Objects.equals(this.totals, localBusinessesResponse.totals) &&
+        Objects.equals(this.data, localBusinessesResponse.data) &&
+        Objects.equals(this.requestId, localBusinessesResponse.requestId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(page, perPage, total, data, requestId);
+    return Objects.hash(projectId, page, perPage, total, totals, data, requestId);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ListWebhooks200Response {\n");
+    sb.append("class LocalBusinessesResponse {\n");
+    sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
     sb.append("    page: ").append(toIndentedString(page)).append("\n");
     sb.append("    perPage: ").append(toIndentedString(perPage)).append("\n");
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
+    sb.append("    totals: ").append(toIndentedString(totals)).append("\n");
     sb.append("    data: ").append(toIndentedString(data)).append("\n");
     sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
     sb.append("}");
@@ -272,6 +335,11 @@ public class ListWebhooks200Response {
 
     StringJoiner joiner = new StringJoiner("&");
 
+    // add `project_id` to the URL query string
+    if (getProjectId() != null) {
+      joiner.add(String.format(java.util.Locale.ROOT, "%sproject_id%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getProjectId()))));
+    }
+
     // add `page` to the URL query string
     if (getPage() != null) {
       joiner.add(String.format(java.util.Locale.ROOT, "%spage%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPage()))));
@@ -285,6 +353,11 @@ public class ListWebhooks200Response {
     // add `total` to the URL query string
     if (getTotal() != null) {
       joiner.add(String.format(java.util.Locale.ROOT, "%stotal%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getTotal()))));
+    }
+
+    // add `totals` to the URL query string
+    if (getTotals() != null) {
+      joiner.add(getTotals().toUrlQueryString(prefix + "totals" + suffix));
     }
 
     // add `data` to the URL query string
