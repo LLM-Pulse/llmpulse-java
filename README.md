@@ -2,7 +2,7 @@
 
 LLM Pulse API
 
-- API version: 1.53.0
+- API version: 1.55.0
 
 - Generator version: 7.24.0
 
@@ -43,7 +43,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>ai.llmpulse</groupId>
   <artifactId>llmpulse-java</artifactId>
-  <version>1.53.0</version>
+  <version>1.55.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -53,7 +53,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "ai.llmpulse:llmpulse-java:1.53.0"
+compile "ai.llmpulse:llmpulse-java:1.55.0"
 ```
 
 ### Others
@@ -66,7 +66,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-- `target/llmpulse-java-1.53.0.jar`
+- `target/llmpulse-java-1.55.0.jar`
 - `target/lib/*.jar`
 
 ## Getting Started
@@ -269,6 +269,20 @@ Class | Method | HTTP request | Description
 *SourcesCitationIntelligenceApi* | [**listCitedUrlOccurrencesWithHttpInfo**](docs/SourcesCitationIntelligenceApi.md#listCitedUrlOccurrencesWithHttpInfo) | **GET** /citation_intelligence/urls/{url_sha256}/occurrences | Cited URL occurrences
 *SourcesCitationIntelligenceApi* | [**listSources**](docs/SourcesCitationIntelligenceApi.md#listSources) | **GET** /dimensions/sources | List source URLs
 *SourcesCitationIntelligenceApi* | [**listSourcesWithHttpInfo**](docs/SourcesCitationIntelligenceApi.md#listSourcesWithHttpInfo) | **GET** /dimensions/sources | List source URLs
+*StoreIntegrationsApi* | [**acceptCatalogPromptSuggestions**](docs/StoreIntegrationsApi.md#acceptCatalogPromptSuggestions) | **POST** /catalog_prompt_suggestions/accept | Accept catalog prompt suggestions
+*StoreIntegrationsApi* | [**acceptCatalogPromptSuggestionsWithHttpInfo**](docs/StoreIntegrationsApi.md#acceptCatalogPromptSuggestionsWithHttpInfo) | **POST** /catalog_prompt_suggestions/accept | Accept catalog prompt suggestions
+*StoreIntegrationsApi* | [**createCatalogPromptSuggestions**](docs/StoreIntegrationsApi.md#createCatalogPromptSuggestions) | **POST** /catalog_prompt_suggestions | Suggest buyer prompts from catalog products
+*StoreIntegrationsApi* | [**createCatalogPromptSuggestionsWithHttpInfo**](docs/StoreIntegrationsApi.md#createCatalogPromptSuggestionsWithHttpInfo) | **POST** /catalog_prompt_suggestions | Suggest buyer prompts from catalog products
+*StoreIntegrationsApi* | [**getStoreConnection**](docs/StoreIntegrationsApi.md#getStoreConnection) | **GET** /store_connection | Match a store to a project
+*StoreIntegrationsApi* | [**getStoreConnectionWithHttpInfo**](docs/StoreIntegrationsApi.md#getStoreConnectionWithHttpInfo) | **GET** /store_connection | Match a store to a project
+*StoreIntegrationsApi* | [**listAiOrders**](docs/StoreIntegrationsApi.md#listAiOrders) | **GET** /ai_orders | Read AI-referred store orders
+*StoreIntegrationsApi* | [**listAiOrdersWithHttpInfo**](docs/StoreIntegrationsApi.md#listAiOrdersWithHttpInfo) | **GET** /ai_orders | Read AI-referred store orders
+*StoreIntegrationsApi* | [**listCatalogPromptSuggestions**](docs/StoreIntegrationsApi.md#listCatalogPromptSuggestions) | **GET** /catalog_prompt_suggestions | List catalog prompt suggestions
+*StoreIntegrationsApi* | [**listCatalogPromptSuggestionsWithHttpInfo**](docs/StoreIntegrationsApi.md#listCatalogPromptSuggestionsWithHttpInfo) | **GET** /catalog_prompt_suggestions | List catalog prompt suggestions
+*StoreIntegrationsApi* | [**rejectCatalogPromptSuggestions**](docs/StoreIntegrationsApi.md#rejectCatalogPromptSuggestions) | **POST** /catalog_prompt_suggestions/reject | Reject catalog prompt suggestions
+*StoreIntegrationsApi* | [**rejectCatalogPromptSuggestionsWithHttpInfo**](docs/StoreIntegrationsApi.md#rejectCatalogPromptSuggestionsWithHttpInfo) | **POST** /catalog_prompt_suggestions/reject | Reject catalog prompt suggestions
+*StoreIntegrationsApi* | [**replaceAiOrders**](docs/StoreIntegrationsApi.md#replaceAiOrders) | **PUT** /ai_orders | Replace AI-referred store orders for a window
+*StoreIntegrationsApi* | [**replaceAiOrdersWithHttpInfo**](docs/StoreIntegrationsApi.md#replaceAiOrdersWithHttpInfo) | **PUT** /ai_orders | Replace AI-referred store orders for a window
 *TechnicalGeoReportsApi* | [**createTechnicalGeoReports**](docs/TechnicalGeoReportsApi.md#createTechnicalGeoReports) | **POST** /technical_geo_reports | Run technical GEO analysis
 *TechnicalGeoReportsApi* | [**createTechnicalGeoReportsWithHttpInfo**](docs/TechnicalGeoReportsApi.md#createTechnicalGeoReportsWithHttpInfo) | **POST** /technical_geo_reports | Run technical GEO analysis
 *TechnicalGeoReportsApi* | [**getTechnicalGeoReport**](docs/TechnicalGeoReportsApi.md#getTechnicalGeoReport) | **GET** /technical_geo_reports/{id} | Get a technical GEO report
@@ -297,11 +311,29 @@ Class | Method | HTTP request | Description
  - [AgentBot](docs/AgentBot.md)
  - [AgentBotsResponse](docs/AgentBotsResponse.md)
  - [AgentTrafficResponse](docs/AgentTrafficResponse.md)
+ - [AiOrdersResponse](docs/AiOrdersResponse.md)
+ - [AiOrdersResponseBySourceInner](docs/AiOrdersResponseBySourceInner.md)
+ - [AiOrdersResponseSeriesInner](docs/AiOrdersResponseSeriesInner.md)
+ - [AiOrdersResponseTotals](docs/AiOrdersResponseTotals.md)
+ - [AiOrdersUpdateRequest](docs/AiOrdersUpdateRequest.md)
+ - [AiOrdersUpdateRequestDaysInner](docs/AiOrdersUpdateRequestDaysInner.md)
+ - [AiOrdersUpdateResponse](docs/AiOrdersUpdateResponse.md)
  - [AnswerDetails](docs/AnswerDetails.md)
  - [AnswerDetailsLocale](docs/AnswerDetailsLocale.md)
  - [ApiError](docs/ApiError.md)
  - [ApiErrorError](docs/ApiErrorError.md)
  - [AssignPromptTagsRequest](docs/AssignPromptTagsRequest.md)
+ - [CatalogProduct](docs/CatalogProduct.md)
+ - [CatalogPromptSuggestion](docs/CatalogPromptSuggestion.md)
+ - [CatalogPromptSuggestionIdsRequest](docs/CatalogPromptSuggestionIdsRequest.md)
+ - [CatalogPromptSuggestionProduct](docs/CatalogPromptSuggestionProduct.md)
+ - [CatalogPromptSuggestionsAcceptResponse](docs/CatalogPromptSuggestionsAcceptResponse.md)
+ - [CatalogPromptSuggestionsAcceptResponseAcceptedInner](docs/CatalogPromptSuggestionsAcceptResponseAcceptedInner.md)
+ - [CatalogPromptSuggestionsAcceptResponseSkippedInner](docs/CatalogPromptSuggestionsAcceptResponseSkippedInner.md)
+ - [CatalogPromptSuggestionsCreateRequest](docs/CatalogPromptSuggestionsCreateRequest.md)
+ - [CatalogPromptSuggestionsCreateResponse](docs/CatalogPromptSuggestionsCreateResponse.md)
+ - [CatalogPromptSuggestionsRejectResponse](docs/CatalogPromptSuggestionsRejectResponse.md)
+ - [CatalogPromptSuggestionsResponse](docs/CatalogPromptSuggestionsResponse.md)
  - [Competitor](docs/Competitor.md)
  - [CompetitorDetails](docs/CompetitorDetails.md)
  - [CreateAnnotationRequest](docs/CreateAnnotationRequest.md)
@@ -319,6 +351,8 @@ Class | Method | HTTP request | Description
  - [GetAccount200ResponseSubscription](docs/GetAccount200ResponseSubscription.md)
  - [IntelligenceTask](docs/IntelligenceTask.md)
  - [IntelligenceTaskCreateRequest](docs/IntelligenceTaskCreateRequest.md)
+ - [IntelligenceTaskProduct](docs/IntelligenceTaskProduct.md)
+ - [IntelligenceTaskProductImagesInner](docs/IntelligenceTaskProductImagesInner.md)
  - [IntelligenceTaskUpdateRequest](docs/IntelligenceTaskUpdateRequest.md)
  - [IntelligenceTaskUpdateResponse](docs/IntelligenceTaskUpdateResponse.md)
  - [LaunchRecommendationsRequest](docs/LaunchRecommendationsRequest.md)
@@ -360,6 +394,10 @@ Class | Method | HTTP request | Description
  - [SovResponseOverTimeInner](docs/SovResponseOverTimeInner.md)
  - [SovResponsePeriodsInner](docs/SovResponsePeriodsInner.md)
  - [SovResponseSample](docs/SovResponseSample.md)
+ - [StoreConnectionResponse](docs/StoreConnectionResponse.md)
+ - [StoreConnectionResponseAccount](docs/StoreConnectionResponseAccount.md)
+ - [StoreConnectionResponseCandidatesInner](docs/StoreConnectionResponseCandidatesInner.md)
+ - [StoreConnectionResponseProject](docs/StoreConnectionResponseProject.md)
  - [SummaryResponse](docs/SummaryResponse.md)
  - [SummaryResponseAllOfPositionDistribution](docs/SummaryResponseAllOfPositionDistribution.md)
  - [SummaryResponseAllOfSummaryValueInner](docs/SummaryResponseAllOfSummaryValueInner.md)

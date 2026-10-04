@@ -97,7 +97,7 @@ public class Example {
 |-------------|-------------|------------------|
 | **201** | Created |  -  |
 | **200** | Idempotent replay (existing external_identifier) |  -  |
-| **403** | API key lacks write permission |  -  |
+| **403** | Writes with a read-only key answer ERR_INSUFFICIENT_SCOPE, and a key limited to some projects ERR_KEY_PROJECT_SCOPED, with the same status: this operation acts on the whole account |  -  |
 | **422** | Invalid parameters |  -  |
 
 ## createProjectWithHttpInfo
@@ -173,7 +173,7 @@ ApiResponse<[**ProjectCreateResponse**](ProjectCreateResponse.md)>
 |-------------|-------------|------------------|
 | **201** | Created |  -  |
 | **200** | Idempotent replay (existing external_identifier) |  -  |
-| **403** | API key lacks write permission |  -  |
+| **403** | Writes with a read-only key answer ERR_INSUFFICIENT_SCOPE, and a key limited to some projects ERR_KEY_PROJECT_SCOPED, with the same status: this operation acts on the whole account |  -  |
 | **422** | Invalid parameters |  -  |
 
 
@@ -246,7 +246,7 @@ null (empty response body)
 |-------------|-------------|------------------|
 | **201** | Draft created; envelope with draft state, suggestions and limits |  -  |
 | **422** | Invalid parameters |  -  |
-| **403** | API key lacks write permission |  -  |
+| **403** | Writes with a read-only key answer ERR_INSUFFICIENT_SCOPE, and a key limited to some projects ERR_KEY_PROJECT_SCOPED, with the same status: this operation acts on the whole account |  -  |
 
 ## createProjectDraftWithHttpInfo
 
@@ -320,7 +320,7 @@ ApiResponse<Void>
 |-------------|-------------|------------------|
 | **201** | Draft created; envelope with draft state, suggestions and limits |  -  |
 | **422** | Invalid parameters |  -  |
-| **403** | API key lacks write permission |  -  |
+| **403** | Writes with a read-only key answer ERR_INSUFFICIENT_SCOPE, and a key limited to some projects ERR_KEY_PROJECT_SCOPED, with the same status: this operation acts on the whole account |  -  |
 
 
 ## finalizeProjectDraft
@@ -394,7 +394,7 @@ null (empty response body)
 |-------------|-------------|------------------|
 | **201** | Project created |  -  |
 | **200** | Idempotent replay |  -  |
-| **403** | API key lacks write permission |  -  |
+| **403** | Writes with a read-only key answer ERR_INSUFFICIENT_SCOPE, and a key limited to some projects ERR_KEY_PROJECT_SCOPED, with the same status: this operation acts on the whole account |  -  |
 | **404** | Resource not found |  -  |
 | **422** | Invalid parameters |  -  |
 
@@ -472,7 +472,7 @@ ApiResponse<Void>
 |-------------|-------------|------------------|
 | **201** | Project created |  -  |
 | **200** | Idempotent replay |  -  |
-| **403** | API key lacks write permission |  -  |
+| **403** | Writes with a read-only key answer ERR_INSUFFICIENT_SCOPE, and a key limited to some projects ERR_KEY_PROJECT_SCOPED, with the same status: this operation acts on the whole account |  -  |
 | **404** | Resource not found |  -  |
 | **422** | Invalid parameters |  -  |
 
@@ -691,6 +691,7 @@ null (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Draft envelope |  -  |
+| **403** | Writes with a read-only key answer ERR_INSUFFICIENT_SCOPE, and a key limited to some projects ERR_KEY_PROJECT_SCOPED, with the same status: this operation acts on the whole account |  -  |
 | **404** | Resource not found |  -  |
 
 ## getProjectDraftWithHttpInfo
@@ -764,6 +765,7 @@ ApiResponse<Void>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Draft envelope |  -  |
+| **403** | Writes with a read-only key answer ERR_INSUFFICIENT_SCOPE, and a key limited to some projects ERR_KEY_PROJECT_SCOPED, with the same status: this operation acts on the whole account |  -  |
 | **404** | Resource not found |  -  |
 
 
@@ -1409,7 +1411,7 @@ null (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Draft envelope with next-step suggestions |  -  |
-| **403** | API key lacks write permission |  -  |
+| **403** | Writes with a read-only key answer ERR_INSUFFICIENT_SCOPE, and a key limited to some projects ERR_KEY_PROJECT_SCOPED, with the same status: this operation acts on the whole account |  -  |
 | **404** | Resource not found |  -  |
 | **422** | Invalid parameters |  -  |
 
@@ -1486,7 +1488,7 @@ ApiResponse<Void>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Draft envelope with next-step suggestions |  -  |
-| **403** | API key lacks write permission |  -  |
+| **403** | Writes with a read-only key answer ERR_INSUFFICIENT_SCOPE, and a key limited to some projects ERR_KEY_PROJECT_SCOPED, with the same status: this operation acts on the whole account |  -  |
 | **404** | Resource not found |  -  |
 | **422** | Invalid parameters |  -  |
 

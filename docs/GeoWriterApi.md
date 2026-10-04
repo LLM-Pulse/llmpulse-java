@@ -23,6 +23,8 @@ All URIs are relative to *https://api.llmpulse.ai/api/v1*
 
 Create a GEO Writer task
 
+Creates a GEO Writer task, processed asynchronously: poll GET /intelligence_tasks/{id} until status is completed. Prompt-based mode takes prompt_id; agentic mode takes custom_topic and/or user_instructions. task_type product_listing is API-only and serves store apps: send a product object (title required) and optionally prompt_ids, and the completed result_data holds ready-to-apply product page copy. Edit and revert it with PATCH /intelligence_tasks/{id} and POST /intelligence_tasks/{id}/revert. Requires a &#x60;read_write&#x60; scope API key.
+
 ### Example
 
 ```java
@@ -92,6 +94,8 @@ public class Example {
 > ApiResponse<IntelligenceTask> createIntelligenceTaskWithHttpInfo(intelligenceTaskCreateRequest)
 
 Create a GEO Writer task
+
+Creates a GEO Writer task, processed asynchronously: poll GET /intelligence_tasks/{id} until status is completed. Prompt-based mode takes prompt_id; agentic mode takes custom_topic and/or user_instructions. task_type product_listing is API-only and serves store apps: send a product object (title required) and optionally prompt_ids, and the completed result_data holds ready-to-apply product page copy. Edit and revert it with PATCH /intelligence_tasks/{id} and POST /intelligence_tasks/{id}/revert. Requires a &#x60;read_write&#x60; scope API key.
 
 ### Example
 
@@ -356,7 +360,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **projectId** | **Integer**| Project ID | |
-| **taskType** | **String**|  | [optional] [enum: brief, create, update, pr_insights, custom] |
+| **taskType** | **String**|  | [optional] [enum: brief, create, update, pr_insights, custom, product_listing] |
 | **status** | **String**|  | [optional] |
 | **page** | **Integer**|  | [optional] [default to 1] |
 | **perPage** | **Integer**|  | [optional] [default to 20] |
@@ -434,7 +438,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **projectId** | **Integer**| Project ID | |
-| **taskType** | **String**|  | [optional] [enum: brief, create, update, pr_insights, custom] |
+| **taskType** | **String**|  | [optional] [enum: brief, create, update, pr_insights, custom, product_listing] |
 | **status** | **String**|  | [optional] |
 | **page** | **Integer**|  | [optional] [default to 1] |
 | **perPage** | **Integer**|  | [optional] [default to 20] |
