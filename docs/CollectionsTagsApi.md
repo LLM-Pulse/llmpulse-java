@@ -21,7 +21,7 @@ All URIs are relative to *https://api.llmpulse.ai/api/v1*
 
 ## assignPromptTags
 
-> void assignPromptTags(assignPromptTagsRequest)
+> PromptTagsAssignResponse assignPromptTags(assignPromptTagsRequest)
 
 Bulk-attach tags to prompts
 
@@ -50,7 +50,8 @@ public class Example {
         CollectionsTagsApi apiInstance = new CollectionsTagsApi(defaultClient);
         AssignPromptTagsRequest assignPromptTagsRequest = new AssignPromptTagsRequest(); // AssignPromptTagsRequest | 
         try {
-            apiInstance.assignPromptTags(assignPromptTagsRequest);
+            PromptTagsAssignResponse result = apiInstance.assignPromptTags(assignPromptTagsRequest);
+            System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling CollectionsTagsApi#assignPromptTags");
             System.err.println("Status code: " + e.getCode());
@@ -71,8 +72,8 @@ public class Example {
 
 ### Return type
 
+[**PromptTagsAssignResponse**](PromptTagsAssignResponse.md)
 
-null (empty response body)
 
 ### Authorization
 
@@ -92,7 +93,7 @@ null (empty response body)
 
 ## assignPromptTagsWithHttpInfo
 
-> ApiResponse<Void> assignPromptTagsWithHttpInfo(assignPromptTagsRequest)
+> ApiResponse<PromptTagsAssignResponse> assignPromptTagsWithHttpInfo(assignPromptTagsRequest)
 
 Bulk-attach tags to prompts
 
@@ -122,9 +123,10 @@ public class Example {
         CollectionsTagsApi apiInstance = new CollectionsTagsApi(defaultClient);
         AssignPromptTagsRequest assignPromptTagsRequest = new AssignPromptTagsRequest(); // AssignPromptTagsRequest | 
         try {
-            ApiResponse<Void> response = apiInstance.assignPromptTagsWithHttpInfo(assignPromptTagsRequest);
+            ApiResponse<PromptTagsAssignResponse> response = apiInstance.assignPromptTagsWithHttpInfo(assignPromptTagsRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
+            System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
             System.err.println("Exception when calling CollectionsTagsApi#assignPromptTags");
             System.err.println("Status code: " + e.getCode());
@@ -145,8 +147,8 @@ public class Example {
 
 ### Return type
 
+ApiResponse<[**PromptTagsAssignResponse**](PromptTagsAssignResponse.md)>
 
-ApiResponse<Void>
 
 ### Authorization
 
@@ -167,7 +169,7 @@ ApiResponse<Void>
 
 ## createCollection
 
-> void createCollection(createCollectionRequest)
+> CollectionCreateResponse createCollection(createCollectionRequest)
 
 Create a tag
 
@@ -196,7 +198,8 @@ public class Example {
         CollectionsTagsApi apiInstance = new CollectionsTagsApi(defaultClient);
         CreateCollectionRequest createCollectionRequest = new CreateCollectionRequest(); // CreateCollectionRequest | 
         try {
-            apiInstance.createCollection(createCollectionRequest);
+            CollectionCreateResponse result = apiInstance.createCollection(createCollectionRequest);
+            System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling CollectionsTagsApi#createCollection");
             System.err.println("Status code: " + e.getCode());
@@ -217,8 +220,8 @@ public class Example {
 
 ### Return type
 
+[**CollectionCreateResponse**](CollectionCreateResponse.md)
 
-null (empty response body)
 
 ### Authorization
 
@@ -238,7 +241,7 @@ null (empty response body)
 
 ## createCollectionWithHttpInfo
 
-> ApiResponse<Void> createCollectionWithHttpInfo(createCollectionRequest)
+> ApiResponse<CollectionCreateResponse> createCollectionWithHttpInfo(createCollectionRequest)
 
 Create a tag
 
@@ -268,9 +271,10 @@ public class Example {
         CollectionsTagsApi apiInstance = new CollectionsTagsApi(defaultClient);
         CreateCollectionRequest createCollectionRequest = new CreateCollectionRequest(); // CreateCollectionRequest | 
         try {
-            ApiResponse<Void> response = apiInstance.createCollectionWithHttpInfo(createCollectionRequest);
+            ApiResponse<CollectionCreateResponse> response = apiInstance.createCollectionWithHttpInfo(createCollectionRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
+            System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
             System.err.println("Exception when calling CollectionsTagsApi#createCollection");
             System.err.println("Status code: " + e.getCode());
@@ -291,8 +295,8 @@ public class Example {
 
 ### Return type
 
+ApiResponse<[**CollectionCreateResponse**](CollectionCreateResponse.md)>
 
-ApiResponse<Void>
 
 ### Authorization
 
@@ -463,7 +467,7 @@ ApiResponse<Void>
 
 ## listCollections
 
-> void listCollections(projectId, output)
+> CollectionsResponse listCollections(projectId, output)
 
 List tags/collections
 
@@ -491,7 +495,8 @@ public class Example {
         Integer projectId = 56; // Integer | Project ID
         String output = "flat"; // String | Rectangular output for BI tools (Tableau, Excel, Sheets, ELT). Omit for the default nested JSON. 'flat' returns the same metadata plus 'columns' and 'rows'; 'csv' returns those rows as text/csv. Errors are always returned as JSON.
         try {
-            apiInstance.listCollections(projectId, output);
+            CollectionsResponse result = apiInstance.listCollections(projectId, output);
+            System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling CollectionsTagsApi#listCollections");
             System.err.println("Status code: " + e.getCode());
@@ -513,8 +518,8 @@ public class Example {
 
 ### Return type
 
+[**CollectionsResponse**](CollectionsResponse.md)
 
-null (empty response body)
 
 ### Authorization
 
@@ -523,7 +528,7 @@ null (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -532,7 +537,7 @@ null (empty response body)
 
 ## listCollectionsWithHttpInfo
 
-> ApiResponse<Void> listCollectionsWithHttpInfo(projectId, output)
+> ApiResponse<CollectionsResponse> listCollectionsWithHttpInfo(projectId, output)
 
 List tags/collections
 
@@ -561,9 +566,10 @@ public class Example {
         Integer projectId = 56; // Integer | Project ID
         String output = "flat"; // String | Rectangular output for BI tools (Tableau, Excel, Sheets, ELT). Omit for the default nested JSON. 'flat' returns the same metadata plus 'columns' and 'rows'; 'csv' returns those rows as text/csv. Errors are always returned as JSON.
         try {
-            ApiResponse<Void> response = apiInstance.listCollectionsWithHttpInfo(projectId, output);
+            ApiResponse<CollectionsResponse> response = apiInstance.listCollectionsWithHttpInfo(projectId, output);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
+            System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
             System.err.println("Exception when calling CollectionsTagsApi#listCollections");
             System.err.println("Status code: " + e.getCode());
@@ -585,8 +591,8 @@ public class Example {
 
 ### Return type
 
+ApiResponse<[**CollectionsResponse**](CollectionsResponse.md)>
 
-ApiResponse<Void>
 
 ### Authorization
 
@@ -595,7 +601,7 @@ ApiResponse<Void>
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -605,7 +611,7 @@ ApiResponse<Void>
 
 ## listTags
 
-> void listTags(projectId, output)
+> CollectionsResponse listTags(projectId, output)
 
 List tags (alias for /collections)
 
@@ -633,7 +639,8 @@ public class Example {
         Integer projectId = 56; // Integer | Project ID
         String output = "flat"; // String | Rectangular output for BI tools (Tableau, Excel, Sheets, ELT). Omit for the default nested JSON. 'flat' returns the same metadata plus 'columns' and 'rows'; 'csv' returns those rows as text/csv. Errors are always returned as JSON.
         try {
-            apiInstance.listTags(projectId, output);
+            CollectionsResponse result = apiInstance.listTags(projectId, output);
+            System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling CollectionsTagsApi#listTags");
             System.err.println("Status code: " + e.getCode());
@@ -655,8 +662,8 @@ public class Example {
 
 ### Return type
 
+[**CollectionsResponse**](CollectionsResponse.md)
 
-null (empty response body)
 
 ### Authorization
 
@@ -665,7 +672,7 @@ null (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -674,7 +681,7 @@ null (empty response body)
 
 ## listTagsWithHttpInfo
 
-> ApiResponse<Void> listTagsWithHttpInfo(projectId, output)
+> ApiResponse<CollectionsResponse> listTagsWithHttpInfo(projectId, output)
 
 List tags (alias for /collections)
 
@@ -703,9 +710,10 @@ public class Example {
         Integer projectId = 56; // Integer | Project ID
         String output = "flat"; // String | Rectangular output for BI tools (Tableau, Excel, Sheets, ELT). Omit for the default nested JSON. 'flat' returns the same metadata plus 'columns' and 'rows'; 'csv' returns those rows as text/csv. Errors are always returned as JSON.
         try {
-            ApiResponse<Void> response = apiInstance.listTagsWithHttpInfo(projectId, output);
+            ApiResponse<CollectionsResponse> response = apiInstance.listTagsWithHttpInfo(projectId, output);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
+            System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
             System.err.println("Exception when calling CollectionsTagsApi#listTags");
             System.err.println("Status code: " + e.getCode());
@@ -727,8 +735,8 @@ public class Example {
 
 ### Return type
 
+ApiResponse<[**CollectionsResponse**](CollectionsResponse.md)>
 
-ApiResponse<Void>
 
 ### Authorization
 
@@ -737,7 +745,7 @@ ApiResponse<Void>
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |

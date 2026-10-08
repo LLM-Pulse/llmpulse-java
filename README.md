@@ -2,7 +2,7 @@
 
 LLM Pulse API
 
-- API version: 1.55.0
+- API version: 1.56.0
 
 - Generator version: 7.24.0
 
@@ -43,7 +43,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>ai.llmpulse</groupId>
   <artifactId>llmpulse-java</artifactId>
-  <version>1.55.0</version>
+  <version>1.56.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -53,7 +53,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "ai.llmpulse:llmpulse-java:1.55.0"
+compile "ai.llmpulse:llmpulse-java:1.56.0"
 ```
 
 ### Others
@@ -66,7 +66,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-- `target/llmpulse-java-1.55.0.jar`
+- `target/llmpulse-java-1.56.0.jar`
 - `target/lib/*.jar`
 
 ## Getting Started
@@ -155,6 +155,32 @@ Class | Method | HTTP request | Description
 *CompetitorsApi* | [**listCompetitorsWithHttpInfo**](docs/CompetitorsApi.md#listCompetitorsWithHttpInfo) | **GET** /dimensions/competitors | List competitors
 *CompetitorsApi* | [**updateCompetitor**](docs/CompetitorsApi.md#updateCompetitor) | **PATCH** /competitors/{id} | Update a competitor
 *CompetitorsApi* | [**updateCompetitorWithHttpInfo**](docs/CompetitorsApi.md#updateCompetitorWithHttpInfo) | **PATCH** /competitors/{id} | Update a competitor
+*GeoAuditsApi* | [**compareGeoAuditRuns**](docs/GeoAuditsApi.md#compareGeoAuditRuns) | **GET** /geo_audits/{id}/comparison | Compare two GEO audit runs
+*GeoAuditsApi* | [**compareGeoAuditRunsWithHttpInfo**](docs/GeoAuditsApi.md#compareGeoAuditRunsWithHttpInfo) | **GET** /geo_audits/{id}/comparison | Compare two GEO audit runs
+*GeoAuditsApi* | [**createGeoAudits**](docs/GeoAuditsApi.md#createGeoAudits) | **POST** /geo_audits | Create GEO audits
+*GeoAuditsApi* | [**createGeoAuditsWithHttpInfo**](docs/GeoAuditsApi.md#createGeoAuditsWithHttpInfo) | **POST** /geo_audits | Create GEO audits
+*GeoAuditsApi* | [**deleteGeoAudit**](docs/GeoAuditsApi.md#deleteGeoAudit) | **DELETE** /geo_audits/{id} | Delete (archive) a GEO audit
+*GeoAuditsApi* | [**deleteGeoAuditWithHttpInfo**](docs/GeoAuditsApi.md#deleteGeoAuditWithHttpInfo) | **DELETE** /geo_audits/{id} | Delete (archive) a GEO audit
+*GeoAuditsApi* | [**getGeoAudit**](docs/GeoAuditsApi.md#getGeoAudit) | **GET** /geo_audits/{id} | Get a GEO audit
+*GeoAuditsApi* | [**getGeoAuditWithHttpInfo**](docs/GeoAuditsApi.md#getGeoAuditWithHttpInfo) | **GET** /geo_audits/{id} | Get a GEO audit
+*GeoAuditsApi* | [**getGeoAuditRun**](docs/GeoAuditsApi.md#getGeoAuditRun) | **GET** /geo_audits/{geo_audit_id}/runs/{sequence} | Get a GEO audit run
+*GeoAuditsApi* | [**getGeoAuditRunWithHttpInfo**](docs/GeoAuditsApi.md#getGeoAuditRunWithHttpInfo) | **GET** /geo_audits/{geo_audit_id}/runs/{sequence} | Get a GEO audit run
+*GeoAuditsApi* | [**listGeoAlerts**](docs/GeoAuditsApi.md#listGeoAlerts) | **GET** /geo_alerts | List GEO audit alerts
+*GeoAuditsApi* | [**listGeoAlertsWithHttpInfo**](docs/GeoAuditsApi.md#listGeoAlertsWithHttpInfo) | **GET** /geo_alerts | List GEO audit alerts
+*GeoAuditsApi* | [**listGeoAuditFindings**](docs/GeoAuditsApi.md#listGeoAuditFindings) | **GET** /geo_audits/{geo_audit_id}/runs/{sequence}/findings | List the findings of a GEO audit run
+*GeoAuditsApi* | [**listGeoAuditFindingsWithHttpInfo**](docs/GeoAuditsApi.md#listGeoAuditFindingsWithHttpInfo) | **GET** /geo_audits/{geo_audit_id}/runs/{sequence}/findings | List the findings of a GEO audit run
+*GeoAuditsApi* | [**listGeoAuditIssues**](docs/GeoAuditsApi.md#listGeoAuditIssues) | **GET** /geo_audits/{geo_audit_id}/issues | List the issues of a GEO audit
+*GeoAuditsApi* | [**listGeoAuditIssuesWithHttpInfo**](docs/GeoAuditsApi.md#listGeoAuditIssuesWithHttpInfo) | **GET** /geo_audits/{geo_audit_id}/issues | List the issues of a GEO audit
+*GeoAuditsApi* | [**listGeoAuditRuns**](docs/GeoAuditsApi.md#listGeoAuditRuns) | **GET** /geo_audits/{geo_audit_id}/runs | List the runs of a GEO audit
+*GeoAuditsApi* | [**listGeoAuditRunsWithHttpInfo**](docs/GeoAuditsApi.md#listGeoAuditRunsWithHttpInfo) | **GET** /geo_audits/{geo_audit_id}/runs | List the runs of a GEO audit
+*GeoAuditsApi* | [**listGeoAudits**](docs/GeoAuditsApi.md#listGeoAudits) | **GET** /geo_audits | List GEO audits
+*GeoAuditsApi* | [**listGeoAuditsWithHttpInfo**](docs/GeoAuditsApi.md#listGeoAuditsWithHttpInfo) | **GET** /geo_audits | List GEO audits
+*GeoAuditsApi* | [**runGeoAudit**](docs/GeoAuditsApi.md#runGeoAudit) | **POST** /geo_audits/{geo_audit_id}/runs | Run a GEO audit now
+*GeoAuditsApi* | [**runGeoAuditWithHttpInfo**](docs/GeoAuditsApi.md#runGeoAuditWithHttpInfo) | **POST** /geo_audits/{geo_audit_id}/runs | Run a GEO audit now
+*GeoAuditsApi* | [**updateGeoAudit**](docs/GeoAuditsApi.md#updateGeoAudit) | **PATCH** /geo_audits/{id} | Update a GEO audit
+*GeoAuditsApi* | [**updateGeoAuditWithHttpInfo**](docs/GeoAuditsApi.md#updateGeoAuditWithHttpInfo) | **PATCH** /geo_audits/{id} | Update a GEO audit
+*GeoAuditsApi* | [**updateGeoAuditIssue**](docs/GeoAuditsApi.md#updateGeoAuditIssue) | **PATCH** /geo_audits/{geo_audit_id}/issues/{id} | Accept or reopen a GEO audit issue
+*GeoAuditsApi* | [**updateGeoAuditIssueWithHttpInfo**](docs/GeoAuditsApi.md#updateGeoAuditIssueWithHttpInfo) | **PATCH** /geo_audits/{geo_audit_id}/issues/{id} | Accept or reopen a GEO audit issue
 *GeoWriterApi* | [**createIntelligenceTask**](docs/GeoWriterApi.md#createIntelligenceTask) | **POST** /intelligence_tasks | Create a GEO Writer task
 *GeoWriterApi* | [**createIntelligenceTaskWithHttpInfo**](docs/GeoWriterApi.md#createIntelligenceTaskWithHttpInfo) | **POST** /intelligence_tasks | Create a GEO Writer task
 *GeoWriterApi* | [**getIntelligenceTask**](docs/GeoWriterApi.md#getIntelligenceTask) | **GET** /intelligence_tasks/{id} | Get a GEO Writer task
@@ -318,6 +344,8 @@ Class | Method | HTTP request | Description
  - [AiOrdersUpdateRequest](docs/AiOrdersUpdateRequest.md)
  - [AiOrdersUpdateRequestDaysInner](docs/AiOrdersUpdateRequestDaysInner.md)
  - [AiOrdersUpdateResponse](docs/AiOrdersUpdateResponse.md)
+ - [AnnotationCreateResponse](docs/AnnotationCreateResponse.md)
+ - [AnnotationCreateResponseAnnotation](docs/AnnotationCreateResponseAnnotation.md)
  - [AnswerDetails](docs/AnswerDetails.md)
  - [AnswerDetailsLocale](docs/AnswerDetailsLocale.md)
  - [ApiError](docs/ApiError.md)
@@ -334,8 +362,18 @@ Class | Method | HTTP request | Description
  - [CatalogPromptSuggestionsCreateResponse](docs/CatalogPromptSuggestionsCreateResponse.md)
  - [CatalogPromptSuggestionsRejectResponse](docs/CatalogPromptSuggestionsRejectResponse.md)
  - [CatalogPromptSuggestionsResponse](docs/CatalogPromptSuggestionsResponse.md)
+ - [CitationMatchMode](docs/CitationMatchMode.md)
+ - [CitationRecord](docs/CitationRecord.md)
+ - [CitationsResponse](docs/CitationsResponse.md)
+ - [CollectionCreateResponse](docs/CollectionCreateResponse.md)
+ - [CollectionCreateResponseCollection](docs/CollectionCreateResponseCollection.md)
+ - [CollectionsResponse](docs/CollectionsResponse.md)
  - [Competitor](docs/Competitor.md)
+ - [CompetitorCreateResponse](docs/CompetitorCreateResponse.md)
+ - [CompetitorCreateResponseCompetitor](docs/CompetitorCreateResponseCompetitor.md)
  - [CompetitorDetails](docs/CompetitorDetails.md)
+ - [CompetitorMentionRecord](docs/CompetitorMentionRecord.md)
+ - [CompetitorMentionsResponse](docs/CompetitorMentionsResponse.md)
  - [CreateAnnotationRequest](docs/CreateAnnotationRequest.md)
  - [CreateCollectionRequest](docs/CreateCollectionRequest.md)
  - [CreateCompetitorRequest](docs/CreateCompetitorRequest.md)
@@ -345,6 +383,29 @@ Class | Method | HTTP request | Description
  - [CreateWebhookRequest](docs/CreateWebhookRequest.md)
  - [DeleteWebhook200Response](docs/DeleteWebhook200Response.md)
  - [FinalizeProjectDraftRequest](docs/FinalizeProjectDraftRequest.md)
+ - [GeoAlert](docs/GeoAlert.md)
+ - [GeoAlertEventsInner](docs/GeoAlertEventsInner.md)
+ - [GeoAlertList](docs/GeoAlertList.md)
+ - [GeoAudit](docs/GeoAudit.md)
+ - [GeoAuditArchived](docs/GeoAuditArchived.md)
+ - [GeoAuditComparison](docs/GeoAuditComparison.md)
+ - [GeoAuditComparisonChangesInner](docs/GeoAuditComparisonChangesInner.md)
+ - [GeoAuditCreateRequest](docs/GeoAuditCreateRequest.md)
+ - [GeoAuditCreateResponse](docs/GeoAuditCreateResponse.md)
+ - [GeoAuditFinding](docs/GeoAuditFinding.md)
+ - [GeoAuditFindingList](docs/GeoAuditFindingList.md)
+ - [GeoAuditIssue](docs/GeoAuditIssue.md)
+ - [GeoAuditIssueList](docs/GeoAuditIssueList.md)
+ - [GeoAuditIssueResponse](docs/GeoAuditIssueResponse.md)
+ - [GeoAuditIssueUpdateRequest](docs/GeoAuditIssueUpdateRequest.md)
+ - [GeoAuditList](docs/GeoAuditList.md)
+ - [GeoAuditResponse](docs/GeoAuditResponse.md)
+ - [GeoAuditRun](docs/GeoAuditRun.md)
+ - [GeoAuditRunDetail](docs/GeoAuditRunDetail.md)
+ - [GeoAuditRunList](docs/GeoAuditRunList.md)
+ - [GeoAuditRunResponse](docs/GeoAuditRunResponse.md)
+ - [GeoAuditSchedule](docs/GeoAuditSchedule.md)
+ - [GeoAuditUpdateRequest](docs/GeoAuditUpdateRequest.md)
  - [GetAccount200Response](docs/GetAccount200Response.md)
  - [GetAccount200ResponseLimits](docs/GetAccount200ResponseLimits.md)
  - [GetAccount200ResponseRateLimits](docs/GetAccount200ResponseRateLimits.md)
@@ -353,8 +414,10 @@ Class | Method | HTTP request | Description
  - [IntelligenceTaskCreateRequest](docs/IntelligenceTaskCreateRequest.md)
  - [IntelligenceTaskProduct](docs/IntelligenceTaskProduct.md)
  - [IntelligenceTaskProductImagesInner](docs/IntelligenceTaskProductImagesInner.md)
+ - [IntelligenceTaskSummary](docs/IntelligenceTaskSummary.md)
  - [IntelligenceTaskUpdateRequest](docs/IntelligenceTaskUpdateRequest.md)
  - [IntelligenceTaskUpdateResponse](docs/IntelligenceTaskUpdateResponse.md)
+ - [IntelligenceTasksResponse](docs/IntelligenceTasksResponse.md)
  - [LaunchRecommendationsRequest](docs/LaunchRecommendationsRequest.md)
  - [ListCompetitors200Response](docs/ListCompetitors200Response.md)
  - [ListProjects200Response](docs/ListProjects200Response.md)
@@ -365,6 +428,12 @@ Class | Method | HTTP request | Description
  - [LocalBusiness](docs/LocalBusiness.md)
  - [LocalBusinessesResponse](docs/LocalBusinessesResponse.md)
  - [LocalBusinessesTotals](docs/LocalBusinessesTotals.md)
+ - [LocalesResponse](docs/LocalesResponse.md)
+ - [MentionRecord](docs/MentionRecord.md)
+ - [MentionsResponse](docs/MentionsResponse.md)
+ - [MetricsFiltersEcho](docs/MetricsFiltersEcho.md)
+ - [ModelsResponse](docs/ModelsResponse.md)
+ - [PaginatedEnvelope](docs/PaginatedEnvelope.md)
  - [Ping200Response](docs/Ping200Response.md)
  - [Project](docs/Project.md)
  - [ProjectCreateRequest](docs/ProjectCreateRequest.md)
@@ -379,18 +448,31 @@ Class | Method | HTTP request | Description
  - [ProjectCreateResponsePrompts](docs/ProjectCreateResponsePrompts.md)
  - [ProjectCreateResponseSameDomainProjectsInner](docs/ProjectCreateResponseSameDomainProjectsInner.md)
  - [ProjectDetails](docs/ProjectDetails.md)
+ - [ProjectDetailsAllOfDataCoverage](docs/ProjectDetailsAllOfDataCoverage.md)
  - [ProjectDetailsAllOfStats](docs/ProjectDetailsAllOfStats.md)
+ - [ProjectDetailsAllOfStatsPromptsByBrandKind](docs/ProjectDetailsAllOfStatsPromptsByBrandKind.md)
+ - [PromptExecutionRecord](docs/PromptExecutionRecord.md)
+ - [PromptExecutionsResponse](docs/PromptExecutionsResponse.md)
+ - [PromptRecord](docs/PromptRecord.md)
  - [PromptSummaryResponse](docs/PromptSummaryResponse.md)
  - [PromptSummaryRow](docs/PromptSummaryRow.md)
+ - [PromptTagsAssignResponse](docs/PromptTagsAssignResponse.md)
  - [PromptsCreateRequest](docs/PromptsCreateRequest.md)
  - [PromptsCreateResponse](docs/PromptsCreateResponse.md)
  - [PromptsCreateResponseDataInner](docs/PromptsCreateResponseDataInner.md)
+ - [PromptsResponse](docs/PromptsResponse.md)
+ - [RecommendationSummary](docs/RecommendationSummary.md)
+ - [RecommendationSummarySummary](docs/RecommendationSummarySummary.md)
+ - [RecommendationsResponse](docs/RecommendationsResponse.md)
  - [SampleWebhookPayloads200Response](docs/SampleWebhookPayloads200Response.md)
  - [SampleWebhookPayloads200ResponseDataInner](docs/SampleWebhookPayloads200ResponseDataInner.md)
  - [SearchConsoleFiltersInner](docs/SearchConsoleFiltersInner.md)
+ - [SentimentRecord](docs/SentimentRecord.md)
+ - [SentimentsResponse](docs/SentimentsResponse.md)
  - [SovResponse](docs/SovResponse.md)
  - [SovResponseBreakdownInner](docs/SovResponseBreakdownInner.md)
  - [SovResponseCurrentInner](docs/SovResponseCurrentInner.md)
+ - [SovResponseOthersInner](docs/SovResponseOthersInner.md)
  - [SovResponseOverTimeInner](docs/SovResponseOverTimeInner.md)
  - [SovResponsePeriodsInner](docs/SovResponsePeriodsInner.md)
  - [SovResponseSample](docs/SovResponseSample.md)
@@ -401,6 +483,7 @@ Class | Method | HTTP request | Description
  - [SummaryResponse](docs/SummaryResponse.md)
  - [SummaryResponseAllOfPositionDistribution](docs/SummaryResponseAllOfPositionDistribution.md)
  - [SummaryResponseAllOfSummaryValueInner](docs/SummaryResponseAllOfSummaryValueInner.md)
+ - [TagRef](docs/TagRef.md)
  - [TechnicalGeoReportContentRevertRequest](docs/TechnicalGeoReportContentRevertRequest.md)
  - [TechnicalGeoReportContentUpdateRequest](docs/TechnicalGeoReportContentUpdateRequest.md)
  - [TechnicalGeoReportContentUpdateRequestEdits](docs/TechnicalGeoReportContentUpdateRequestEdits.md)

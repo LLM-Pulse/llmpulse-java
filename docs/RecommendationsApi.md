@@ -313,7 +313,7 @@ ApiResponse<Void>
 
 ## listRecommendations
 
-> void listRecommendations(projectId, recommendationType, status, page, perPage)
+> RecommendationsResponse listRecommendations(projectId, recommendationType, status, page, perPage)
 
 List recommendation runs
 
@@ -344,7 +344,8 @@ public class Example {
         Integer page = 1; // Integer | 
         Integer perPage = 20; // Integer | 
         try {
-            apiInstance.listRecommendations(projectId, recommendationType, status, page, perPage);
+            RecommendationsResponse result = apiInstance.listRecommendations(projectId, recommendationType, status, page, perPage);
+            System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling RecommendationsApi#listRecommendations");
             System.err.println("Status code: " + e.getCode());
@@ -369,8 +370,8 @@ public class Example {
 
 ### Return type
 
+[**RecommendationsResponse**](RecommendationsResponse.md)
 
-null (empty response body)
 
 ### Authorization
 
@@ -379,7 +380,7 @@ null (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -388,7 +389,7 @@ null (empty response body)
 
 ## listRecommendationsWithHttpInfo
 
-> ApiResponse<Void> listRecommendationsWithHttpInfo(projectId, recommendationType, status, page, perPage)
+> ApiResponse<RecommendationsResponse> listRecommendationsWithHttpInfo(projectId, recommendationType, status, page, perPage)
 
 List recommendation runs
 
@@ -420,9 +421,10 @@ public class Example {
         Integer page = 1; // Integer | 
         Integer perPage = 20; // Integer | 
         try {
-            ApiResponse<Void> response = apiInstance.listRecommendationsWithHttpInfo(projectId, recommendationType, status, page, perPage);
+            ApiResponse<RecommendationsResponse> response = apiInstance.listRecommendationsWithHttpInfo(projectId, recommendationType, status, page, perPage);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
+            System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
             System.err.println("Exception when calling RecommendationsApi#listRecommendations");
             System.err.println("Status code: " + e.getCode());
@@ -447,8 +449,8 @@ public class Example {
 
 ### Return type
 
+ApiResponse<[**RecommendationsResponse**](RecommendationsResponse.md)>
 
-ApiResponse<Void>
 
 ### Authorization
 
@@ -457,7 +459,7 @@ ApiResponse<Void>
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |

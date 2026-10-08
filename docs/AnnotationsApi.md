@@ -17,7 +17,7 @@ All URIs are relative to *https://api.llmpulse.ai/api/v1*
 
 ## createAnnotation
 
-> void createAnnotation(createAnnotationRequest)
+> AnnotationCreateResponse createAnnotation(createAnnotationRequest)
 
 Create a timeline annotation
 
@@ -46,7 +46,8 @@ public class Example {
         AnnotationsApi apiInstance = new AnnotationsApi(defaultClient);
         CreateAnnotationRequest createAnnotationRequest = new CreateAnnotationRequest(); // CreateAnnotationRequest | 
         try {
-            apiInstance.createAnnotation(createAnnotationRequest);
+            AnnotationCreateResponse result = apiInstance.createAnnotation(createAnnotationRequest);
+            System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling AnnotationsApi#createAnnotation");
             System.err.println("Status code: " + e.getCode());
@@ -67,8 +68,8 @@ public class Example {
 
 ### Return type
 
+[**AnnotationCreateResponse**](AnnotationCreateResponse.md)
 
-null (empty response body)
 
 ### Authorization
 
@@ -88,7 +89,7 @@ null (empty response body)
 
 ## createAnnotationWithHttpInfo
 
-> ApiResponse<Void> createAnnotationWithHttpInfo(createAnnotationRequest)
+> ApiResponse<AnnotationCreateResponse> createAnnotationWithHttpInfo(createAnnotationRequest)
 
 Create a timeline annotation
 
@@ -118,9 +119,10 @@ public class Example {
         AnnotationsApi apiInstance = new AnnotationsApi(defaultClient);
         CreateAnnotationRequest createAnnotationRequest = new CreateAnnotationRequest(); // CreateAnnotationRequest | 
         try {
-            ApiResponse<Void> response = apiInstance.createAnnotationWithHttpInfo(createAnnotationRequest);
+            ApiResponse<AnnotationCreateResponse> response = apiInstance.createAnnotationWithHttpInfo(createAnnotationRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
+            System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
             System.err.println("Exception when calling AnnotationsApi#createAnnotation");
             System.err.println("Status code: " + e.getCode());
@@ -141,8 +143,8 @@ public class Example {
 
 ### Return type
 
+ApiResponse<[**AnnotationCreateResponse**](AnnotationCreateResponse.md)>
 
-ApiResponse<Void>
 
 ### Authorization
 

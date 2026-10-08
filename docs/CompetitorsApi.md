@@ -19,7 +19,7 @@ All URIs are relative to *https://api.llmpulse.ai/api/v1*
 
 ## createCompetitor
 
-> void createCompetitor(createCompetitorRequest)
+> CompetitorCreateResponse createCompetitor(createCompetitorRequest)
 
 Add a competitor
 
@@ -48,7 +48,8 @@ public class Example {
         CompetitorsApi apiInstance = new CompetitorsApi(defaultClient);
         CreateCompetitorRequest createCompetitorRequest = new CreateCompetitorRequest(); // CreateCompetitorRequest | 
         try {
-            apiInstance.createCompetitor(createCompetitorRequest);
+            CompetitorCreateResponse result = apiInstance.createCompetitor(createCompetitorRequest);
+            System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling CompetitorsApi#createCompetitor");
             System.err.println("Status code: " + e.getCode());
@@ -69,8 +70,8 @@ public class Example {
 
 ### Return type
 
+[**CompetitorCreateResponse**](CompetitorCreateResponse.md)
 
-null (empty response body)
 
 ### Authorization
 
@@ -90,7 +91,7 @@ null (empty response body)
 
 ## createCompetitorWithHttpInfo
 
-> ApiResponse<Void> createCompetitorWithHttpInfo(createCompetitorRequest)
+> ApiResponse<CompetitorCreateResponse> createCompetitorWithHttpInfo(createCompetitorRequest)
 
 Add a competitor
 
@@ -120,9 +121,10 @@ public class Example {
         CompetitorsApi apiInstance = new CompetitorsApi(defaultClient);
         CreateCompetitorRequest createCompetitorRequest = new CreateCompetitorRequest(); // CreateCompetitorRequest | 
         try {
-            ApiResponse<Void> response = apiInstance.createCompetitorWithHttpInfo(createCompetitorRequest);
+            ApiResponse<CompetitorCreateResponse> response = apiInstance.createCompetitorWithHttpInfo(createCompetitorRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
+            System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
             System.err.println("Exception when calling CompetitorsApi#createCompetitor");
             System.err.println("Status code: " + e.getCode());
@@ -143,8 +145,8 @@ public class Example {
 
 ### Return type
 
+ApiResponse<[**CompetitorCreateResponse**](CompetitorCreateResponse.md)>
 
-ApiResponse<Void>
 
 ### Authorization
 

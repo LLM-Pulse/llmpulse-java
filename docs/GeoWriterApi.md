@@ -311,7 +311,7 @@ ApiResponse<[**IntelligenceTask**](IntelligenceTask.md)>
 
 ## listIntelligenceTasks
 
-> void listIntelligenceTasks(projectId, taskType, status, page, perPage)
+> IntelligenceTasksResponse listIntelligenceTasks(projectId, taskType, status, page, perPage)
 
 List GEO Writer tasks
 
@@ -342,7 +342,8 @@ public class Example {
         Integer page = 1; // Integer | 
         Integer perPage = 20; // Integer | 
         try {
-            apiInstance.listIntelligenceTasks(projectId, taskType, status, page, perPage);
+            IntelligenceTasksResponse result = apiInstance.listIntelligenceTasks(projectId, taskType, status, page, perPage);
+            System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling GeoWriterApi#listIntelligenceTasks");
             System.err.println("Status code: " + e.getCode());
@@ -367,8 +368,8 @@ public class Example {
 
 ### Return type
 
+[**IntelligenceTasksResponse**](IntelligenceTasksResponse.md)
 
-null (empty response body)
 
 ### Authorization
 
@@ -377,7 +378,7 @@ null (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -386,7 +387,7 @@ null (empty response body)
 
 ## listIntelligenceTasksWithHttpInfo
 
-> ApiResponse<Void> listIntelligenceTasksWithHttpInfo(projectId, taskType, status, page, perPage)
+> ApiResponse<IntelligenceTasksResponse> listIntelligenceTasksWithHttpInfo(projectId, taskType, status, page, perPage)
 
 List GEO Writer tasks
 
@@ -418,9 +419,10 @@ public class Example {
         Integer page = 1; // Integer | 
         Integer perPage = 20; // Integer | 
         try {
-            ApiResponse<Void> response = apiInstance.listIntelligenceTasksWithHttpInfo(projectId, taskType, status, page, perPage);
+            ApiResponse<IntelligenceTasksResponse> response = apiInstance.listIntelligenceTasksWithHttpInfo(projectId, taskType, status, page, perPage);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
+            System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
             System.err.println("Exception when calling GeoWriterApi#listIntelligenceTasks");
             System.err.println("Status code: " + e.getCode());
@@ -445,8 +447,8 @@ public class Example {
 
 ### Return type
 
+ApiResponse<[**IntelligenceTasksResponse**](IntelligenceTasksResponse.md)>
 
-ApiResponse<Void>
 
 ### Authorization
 
@@ -455,7 +457,7 @@ ApiResponse<Void>
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |

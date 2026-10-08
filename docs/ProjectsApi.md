@@ -771,7 +771,7 @@ ApiResponse<Void>
 
 ## listLocales
 
-> void listLocales(projectId)
+> LocalesResponse listLocales(projectId)
 
 List locales with data
 
@@ -798,7 +798,8 @@ public class Example {
         ProjectsApi apiInstance = new ProjectsApi(defaultClient);
         Integer projectId = 56; // Integer | Project ID
         try {
-            apiInstance.listLocales(projectId);
+            LocalesResponse result = apiInstance.listLocales(projectId);
+            System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ProjectsApi#listLocales");
             System.err.println("Status code: " + e.getCode());
@@ -819,8 +820,8 @@ public class Example {
 
 ### Return type
 
+[**LocalesResponse**](LocalesResponse.md)
 
-null (empty response body)
 
 ### Authorization
 
@@ -829,7 +830,7 @@ null (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -838,7 +839,7 @@ null (empty response body)
 
 ## listLocalesWithHttpInfo
 
-> ApiResponse<Void> listLocalesWithHttpInfo(projectId)
+> ApiResponse<LocalesResponse> listLocalesWithHttpInfo(projectId)
 
 List locales with data
 
@@ -866,9 +867,10 @@ public class Example {
         ProjectsApi apiInstance = new ProjectsApi(defaultClient);
         Integer projectId = 56; // Integer | Project ID
         try {
-            ApiResponse<Void> response = apiInstance.listLocalesWithHttpInfo(projectId);
+            ApiResponse<LocalesResponse> response = apiInstance.listLocalesWithHttpInfo(projectId);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
+            System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
             System.err.println("Exception when calling ProjectsApi#listLocales");
             System.err.println("Status code: " + e.getCode());
@@ -889,8 +891,8 @@ public class Example {
 
 ### Return type
 
+ApiResponse<[**LocalesResponse**](LocalesResponse.md)>
 
-ApiResponse<Void>
 
 ### Authorization
 
@@ -899,7 +901,7 @@ ApiResponse<Void>
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -909,7 +911,7 @@ ApiResponse<Void>
 
 ## listModels
 
-> void listModels(projectId)
+> ModelsResponse listModels(projectId)
 
 List models with data
 
@@ -936,7 +938,8 @@ public class Example {
         ProjectsApi apiInstance = new ProjectsApi(defaultClient);
         Integer projectId = 56; // Integer | Project ID
         try {
-            apiInstance.listModels(projectId);
+            ModelsResponse result = apiInstance.listModels(projectId);
+            System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ProjectsApi#listModels");
             System.err.println("Status code: " + e.getCode());
@@ -957,8 +960,8 @@ public class Example {
 
 ### Return type
 
+[**ModelsResponse**](ModelsResponse.md)
 
-null (empty response body)
 
 ### Authorization
 
@@ -967,7 +970,7 @@ null (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -976,7 +979,7 @@ null (empty response body)
 
 ## listModelsWithHttpInfo
 
-> ApiResponse<Void> listModelsWithHttpInfo(projectId)
+> ApiResponse<ModelsResponse> listModelsWithHttpInfo(projectId)
 
 List models with data
 
@@ -1004,9 +1007,10 @@ public class Example {
         ProjectsApi apiInstance = new ProjectsApi(defaultClient);
         Integer projectId = 56; // Integer | Project ID
         try {
-            ApiResponse<Void> response = apiInstance.listModelsWithHttpInfo(projectId);
+            ApiResponse<ModelsResponse> response = apiInstance.listModelsWithHttpInfo(projectId);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
+            System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
             System.err.println("Exception when calling ProjectsApi#listModels");
             System.err.println("Status code: " + e.getCode());
@@ -1027,8 +1031,8 @@ public class Example {
 
 ### Return type
 
+ApiResponse<[**ModelsResponse**](ModelsResponse.md)>
 
-ApiResponse<Void>
 
 ### Authorization
 
@@ -1037,7 +1041,7 @@ ApiResponse<Void>
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |

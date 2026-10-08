@@ -10,8 +10,8 @@
 |**projectId** | **Integer** |  |  [optional] |
 |**from** | **OffsetDateTime** |  |  [optional] |
 |**to** | **OffsetDateTime** |  |  [optional] |
-|**granularity** | **String** |  |  [optional] |
-|**filters** | **Object** |  |  [optional] |
+|**granularity** | **String** | day, week or month |  [optional] |
+|**filters** | [**MetricsFiltersEcho**](MetricsFiltersEcho.md) |  |  [optional] |
 |**series** | **Map&lt;String, List&lt;TimeseriesSeries&gt;&gt;** |  |  [optional] |
 |**requestId** | **String** |  |  [optional] |
 |**summary** | **Map&lt;String, List&lt;SummaryResponseAllOfSummaryValueInner&gt;&gt;** |  |  [optional] |

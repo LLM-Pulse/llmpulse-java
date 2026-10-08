@@ -10,7 +10,7 @@
 |**projectId** | **Integer** |  |  [optional] |
 |**from** | **OffsetDateTime** |  |  [optional] |
 |**to** | **OffsetDateTime** |  |  [optional] |
-|**filters** | **Object** |  |  [optional] |
+|**filters** | [**MetricsFiltersEcho**](MetricsFiltersEcho.md) |  |  [optional] |
 |**breakdown** | **String** |  |  [optional] |
 |**sort** | **String** |  |  [optional] |
 |**sortDir** | **String** |  |  [optional] |
