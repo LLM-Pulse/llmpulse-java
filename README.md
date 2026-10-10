@@ -2,7 +2,7 @@
 
 LLM Pulse API
 
-- API version: 1.56.0
+- API version: 1.57.0
 
 - Generator version: 7.24.0
 
@@ -43,7 +43,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>ai.llmpulse</groupId>
   <artifactId>llmpulse-java</artifactId>
-  <version>1.56.0</version>
+  <version>1.57.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -53,7 +53,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "ai.llmpulse:llmpulse-java:1.56.0"
+compile "ai.llmpulse:llmpulse-java:1.57.0"
 ```
 
 ### Others
@@ -66,7 +66,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-- `target/llmpulse-java-1.56.0.jar`
+- `target/llmpulse-java-1.57.0.jar`
 - `target/lib/*.jar`
 
 ## Getting Started
@@ -113,8 +113,12 @@ Class | Method | HTTP request | Description
 *AiAgentTrafficApi* | [**getAgentTrafficWithHttpInfo**](docs/AiAgentTrafficApi.md#getAgentTrafficWithHttpInfo) | **GET** /metrics/agent_traffic | AI bot crawler traffic (Scale plan or above, Beta)
 *AiAgentTrafficApi* | [**getAiTraffic**](docs/AiAgentTrafficApi.md#getAiTraffic) | **GET** /metrics/ai_traffic | AI referral traffic (Scale plan or above)
 *AiAgentTrafficApi* | [**getAiTrafficWithHttpInfo**](docs/AiAgentTrafficApi.md#getAiTrafficWithHttpInfo) | **GET** /metrics/ai_traffic | AI referral traffic (Scale plan or above)
+*AiAgentTrafficApi* | [**getWebAnalyticsSchema**](docs/AiAgentTrafficApi.md#getWebAnalyticsSchema) | **GET** /web_analytics/schema | Web analytics query format (Growth+)
+*AiAgentTrafficApi* | [**getWebAnalyticsSchemaWithHttpInfo**](docs/AiAgentTrafficApi.md#getWebAnalyticsSchemaWithHttpInfo) | **GET** /web_analytics/schema | Web analytics query format (Growth+)
 *AiAgentTrafficApi* | [**listAgentBots**](docs/AiAgentTrafficApi.md#listAgentBots) | **GET** /dimensions/agent_bots | AI bot catalog (Scale plan or above)
 *AiAgentTrafficApi* | [**listAgentBotsWithHttpInfo**](docs/AiAgentTrafficApi.md#listAgentBotsWithHttpInfo) | **GET** /dimensions/agent_bots | AI bot catalog (Scale plan or above)
+*AiAgentTrafficApi* | [**queryWebAnalytics**](docs/AiAgentTrafficApi.md#queryWebAnalytics) | **POST** /web_analytics/query | Live web analytics query (Growth+)
+*AiAgentTrafficApi* | [**queryWebAnalyticsWithHttpInfo**](docs/AiAgentTrafficApi.md#queryWebAnalyticsWithHttpInfo) | **POST** /web_analytics/query | Live web analytics query (Growth+)
 *AiModelInsightsApi* | [**getAiModelInsightsSummary**](docs/AiModelInsightsApi.md#getAiModelInsightsSummary) | **GET** /reports/ai_model_insights/summary | AI Model Insights summary
 *AiModelInsightsApi* | [**getAiModelInsightsSummaryWithHttpInfo**](docs/AiModelInsightsApi.md#getAiModelInsightsSummaryWithHttpInfo) | **GET** /reports/ai_model_insights/summary | AI Model Insights summary
 *AiModelInsightsApi* | [**getAiModelPositionDistribution**](docs/AiModelInsightsApi.md#getAiModelPositionDistribution) | **GET** /reports/ai_model_insights/position_distribution | Position distribution comparison
@@ -461,6 +465,7 @@ Class | Method | HTTP request | Description
  - [PromptsCreateResponse](docs/PromptsCreateResponse.md)
  - [PromptsCreateResponseDataInner](docs/PromptsCreateResponseDataInner.md)
  - [PromptsResponse](docs/PromptsResponse.md)
+ - [QueryWebAnalyticsRequest](docs/QueryWebAnalyticsRequest.md)
  - [RecommendationSummary](docs/RecommendationSummary.md)
  - [RecommendationSummarySummary](docs/RecommendationSummarySummary.md)
  - [RecommendationsResponse](docs/RecommendationsResponse.md)
@@ -498,6 +503,9 @@ Class | Method | HTTP request | Description
  - [UpdateCompetitorRequest](docs/UpdateCompetitorRequest.md)
  - [UpdateProjectDraftRequest](docs/UpdateProjectDraftRequest.md)
  - [UpdateProjectRequest](docs/UpdateProjectRequest.md)
+ - [WebAnalyticsQueryResponse](docs/WebAnalyticsQueryResponse.md)
+ - [WebAnalyticsQueryResponseColumnsInner](docs/WebAnalyticsQueryResponseColumnsInner.md)
+ - [WebAnalyticsSchemaResponse](docs/WebAnalyticsSchemaResponse.md)
 
 
 <a id="documentation-for-authorization"></a>

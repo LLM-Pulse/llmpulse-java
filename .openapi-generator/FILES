@@ -151,6 +151,7 @@ docs/PromptsCreateRequest.md
 docs/PromptsCreateResponse.md
 docs/PromptsCreateResponseDataInner.md
 docs/PromptsResponse.md
+docs/QueryWebAnalyticsRequest.md
 docs/RecommendationSummary.md
 docs/RecommendationSummarySummary.md
 docs/RecommendationsApi.md
@@ -196,6 +197,9 @@ docs/UpdateCollectionRequest.md
 docs/UpdateCompetitorRequest.md
 docs/UpdateProjectDraftRequest.md
 docs/UpdateProjectRequest.md
+docs/WebAnalyticsQueryResponse.md
+docs/WebAnalyticsQueryResponseColumnsInner.md
+docs/WebAnalyticsSchemaResponse.md
 docs/WebhooksApi.md
 git_push.sh
 gradle.properties
@@ -372,6 +376,7 @@ src/main/java/ai/llmpulse/sdk/model/PromptsCreateRequest.java
 src/main/java/ai/llmpulse/sdk/model/PromptsCreateResponse.java
 src/main/java/ai/llmpulse/sdk/model/PromptsCreateResponseDataInner.java
 src/main/java/ai/llmpulse/sdk/model/PromptsResponse.java
+src/main/java/ai/llmpulse/sdk/model/QueryWebAnalyticsRequest.java
 src/main/java/ai/llmpulse/sdk/model/RecommendationSummary.java
 src/main/java/ai/llmpulse/sdk/model/RecommendationSummarySummary.java
 src/main/java/ai/llmpulse/sdk/model/RecommendationsResponse.java
@@ -409,3 +414,6 @@ src/main/java/ai/llmpulse/sdk/model/UpdateCollectionRequest.java
 src/main/java/ai/llmpulse/sdk/model/UpdateCompetitorRequest.java
 src/main/java/ai/llmpulse/sdk/model/UpdateProjectDraftRequest.java
 src/main/java/ai/llmpulse/sdk/model/UpdateProjectRequest.java
+src/main/java/ai/llmpulse/sdk/model/WebAnalyticsQueryResponse.java
+src/main/java/ai/llmpulse/sdk/model/WebAnalyticsQueryResponseColumnsInner.java
+src/main/java/ai/llmpulse/sdk/model/WebAnalyticsSchemaResponse.java
