@@ -28,6 +28,7 @@
 |**createdAt** | **OffsetDateTime** |  |  [optional] |
 |**stats** | [**ProjectDetailsAllOfStats**](ProjectDetailsAllOfStats.md) |  |  [optional] |
 |**dataCoverage** | [**ProjectDetailsAllOfDataCoverage**](ProjectDetailsAllOfDataCoverage.md) |  |  [optional] |
+|**searchConsole** | [**ProjectDetailsAllOfSearchConsole**](ProjectDetailsAllOfSearchConsole.md) |  |  [optional] |
 |**requestId** | **String** |  |  [optional] |
 
 
