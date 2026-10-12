@@ -483,7 +483,7 @@ ApiResponse<Void>
 
 Project details
 
-Detailed info for one project: matching_names, industry, business model, primary products, target audience, brand voice, locale, app store IDs, stats (incl. prompts_by_brand_kind counts) and data_coverage (models, countries and languages with data).
+Detailed info for one project: matching_names, additional_owned_domains, industry, business model, primary products, target audience, brand voice, locale, app store IDs, stats (incl. prompts_by_brand_kind counts) and data_coverage (models, countries and languages with data).
 
 ### Example
 
@@ -554,7 +554,7 @@ public class Example {
 
 Project details
 
-Detailed info for one project: matching_names, industry, business model, primary products, target audience, brand voice, locale, app store IDs, stats (incl. prompts_by_brand_kind counts) and data_coverage (models, countries and languages with data).
+Detailed info for one project: matching_names, additional_owned_domains, industry, business model, primary products, target audience, brand voice, locale, app store IDs, stats (incl. prompts_by_brand_kind counts) and data_coverage (models, countries and languages with data).
 
 ### Example
 
@@ -1195,11 +1195,11 @@ ApiResponse<[**ListProjects200Response**](ListProjects200Response.md)>
 
 ## updateProject
 
-> void updateProject(id, updateProjectRequest)
+> ProjectUpdateResponse updateProject(id, updateProjectRequest)
 
 Update a project profile (Brand Book)
 
-Updates the project name and profile, the same fields as Project Settings: name, brand_name, description, industry, business_model (plus business_model_other when it is OTHER), target_audience, brand_voice, goals, primary_products, matching_names. Send only the fields to change; unknown fields are rejected. All seven Brand Book fields feed every GEO Writer task and prompt suggestions; only industry, description, and target_audience help Recommendations. A matching_names change re-runs mention/citation matching over the project history in the background (rematching&#x3D;true); further edits are rejected while that runs. Requires a &#x60;read_write&#x60; scope API key.
+Updates the project name and profile, the same fields as Project Settings: name, brand_name, description, industry, business_model (plus business_model_other when it is OTHER), target_audience, brand_voice, goals, primary_products, matching_names, and the additional owned domains (additional_owned_domains). Send only the fields to change; unknown fields are rejected, and a request is applied whole or not at all. All seven Brand Book fields feed every GEO Writer task and prompt suggestions; only industry, description, and target_audience help Recommendations. A matching_names change re-runs mention/citation matching over the project history in the background, and an additional_owned_domains change reprocesses the past answers that cite an added or removed domain (rematching&#x3D;true); further edits are rejected while that runs. Only the account owner can send additional_owned_domains: a team member key gets ERR_INSUFFICIENT_PERMISSION and nothing is applied. Requires a &#x60;read_write&#x60; scope API key.
 
 ### Example
 
@@ -1225,7 +1225,8 @@ public class Example {
         Integer id = 56; // Integer | 
         UpdateProjectRequest updateProjectRequest = new UpdateProjectRequest(); // UpdateProjectRequest | 
         try {
-            apiInstance.updateProject(id, updateProjectRequest);
+            ProjectUpdateResponse result = apiInstance.updateProject(id, updateProjectRequest);
+            System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ProjectsApi#updateProject");
             System.err.println("Status code: " + e.getCode());
@@ -1247,8 +1248,8 @@ public class Example {
 
 ### Return type
 
+[**ProjectUpdateResponse**](ProjectUpdateResponse.md)
 
-null (empty response body)
 
 ### Authorization
 
@@ -1262,18 +1263,18 @@ null (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Updated: { project, updated_fields, rematching, note, request_id } |  -  |
-| **403** | API key lacks write permission |  -  |
+| **200** | Updated |  -  |
+| **403** | A write with a read-only key answers ERR_INSUFFICIENT_SCOPE. A team member whose permissions do not grant Projects update, or who sends additional_owned_domains, answers ERR_INSUFFICIENT_PERMISSION, with the same status |  -  |
 | **404** | Resource not found |  -  |
 | **422** | Invalid parameters |  -  |
 
 ## updateProjectWithHttpInfo
 
-> ApiResponse<Void> updateProjectWithHttpInfo(id, updateProjectRequest)
+> ApiResponse<ProjectUpdateResponse> updateProjectWithHttpInfo(id, updateProjectRequest)
 
 Update a project profile (Brand Book)
 
-Updates the project name and profile, the same fields as Project Settings: name, brand_name, description, industry, business_model (plus business_model_other when it is OTHER), target_audience, brand_voice, goals, primary_products, matching_names. Send only the fields to change; unknown fields are rejected. All seven Brand Book fields feed every GEO Writer task and prompt suggestions; only industry, description, and target_audience help Recommendations. A matching_names change re-runs mention/citation matching over the project history in the background (rematching&#x3D;true); further edits are rejected while that runs. Requires a &#x60;read_write&#x60; scope API key.
+Updates the project name and profile, the same fields as Project Settings: name, brand_name, description, industry, business_model (plus business_model_other when it is OTHER), target_audience, brand_voice, goals, primary_products, matching_names, and the additional owned domains (additional_owned_domains). Send only the fields to change; unknown fields are rejected, and a request is applied whole or not at all. All seven Brand Book fields feed every GEO Writer task and prompt suggestions; only industry, description, and target_audience help Recommendations. A matching_names change re-runs mention/citation matching over the project history in the background, and an additional_owned_domains change reprocesses the past answers that cite an added or removed domain (rematching&#x3D;true); further edits are rejected while that runs. Only the account owner can send additional_owned_domains: a team member key gets ERR_INSUFFICIENT_PERMISSION and nothing is applied. Requires a &#x60;read_write&#x60; scope API key.
 
 ### Example
 
@@ -1300,9 +1301,10 @@ public class Example {
         Integer id = 56; // Integer | 
         UpdateProjectRequest updateProjectRequest = new UpdateProjectRequest(); // UpdateProjectRequest | 
         try {
-            ApiResponse<Void> response = apiInstance.updateProjectWithHttpInfo(id, updateProjectRequest);
+            ApiResponse<ProjectUpdateResponse> response = apiInstance.updateProjectWithHttpInfo(id, updateProjectRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
+            System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
             System.err.println("Exception when calling ProjectsApi#updateProject");
             System.err.println("Status code: " + e.getCode());
@@ -1324,8 +1326,8 @@ public class Example {
 
 ### Return type
 
+ApiResponse<[**ProjectUpdateResponse**](ProjectUpdateResponse.md)>
 
-ApiResponse<Void>
 
 ### Authorization
 
@@ -1339,8 +1341,8 @@ ApiResponse<Void>
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Updated: { project, updated_fields, rematching, note, request_id } |  -  |
-| **403** | API key lacks write permission |  -  |
+| **200** | Updated |  -  |
+| **403** | A write with a read-only key answers ERR_INSUFFICIENT_SCOPE. A team member whose permissions do not grant Projects update, or who sends additional_owned_domains, answers ERR_INSUFFICIENT_PERMISSION, with the same status |  -  |
 | **404** | Resource not found |  -  |
 | **422** | Invalid parameters |  -  |
 

@@ -11,7 +11,7 @@
 |**projectId** | **Integer** |  |  [optional] |
 |**eventType** | [**EventTypeEnum**](#EventTypeEnum) |  |  [optional] |
 |**targetUrl** | **String** |  |  [optional] |
-|**disabled** | **Boolean** |  |  [optional] |
+|**disabled** | **Boolean** | True when the subscription receives no more events, including when the API key or OAuth connection that created it was revoked. Creating it again with the same project, event and URL replaces it with a new subscription and secret. |  [optional] |
 |**failureCount** | **Integer** |  |  [optional] |
 |**lastDeliveredAt** | **OffsetDateTime** |  |  [optional] |
 |**createdAt** | **OffsetDateTime** |  |  [optional] |

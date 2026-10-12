@@ -540,7 +540,7 @@ public class Example {
         BearerAuth.setBearerToken("BEARER TOKEN");
 
         AiAgentTrafficApi apiInstance = new AiAgentTrafficApi(defaultClient);
-        Integer projectId = 56; // Integer | Project ID
+        Integer projectId = 56; // Integer | Accepted for compatibility and ignored. The catalog is the same for every project, so any value returns the same list and the project is not checked.
         String output = "flat"; // String | Rectangular output for BI tools (Tableau, Excel, Sheets, ELT). Omit for the default nested JSON. 'flat' returns the same metadata plus 'columns' and 'rows'; 'csv' returns those rows as text/csv. Errors are always returned as JSON.
         try {
             AgentBotsResponse result = apiInstance.listAgentBots(projectId, output);
@@ -561,7 +561,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **projectId** | **Integer**| Project ID | |
+| **projectId** | **Integer**| Accepted for compatibility and ignored. The catalog is the same for every project, so any value returns the same list and the project is not checked. | |
 | **output** | **String**| Rectangular output for BI tools (Tableau, Excel, Sheets, ELT). Omit for the default nested JSON. &#39;flat&#39; returns the same metadata plus &#39;columns&#39; and &#39;rows&#39;; &#39;csv&#39; returns those rows as text/csv. Errors are always returned as JSON. | [optional] [enum: flat, csv] |
 
 ### Return type
@@ -614,7 +614,7 @@ public class Example {
         BearerAuth.setBearerToken("BEARER TOKEN");
 
         AiAgentTrafficApi apiInstance = new AiAgentTrafficApi(defaultClient);
-        Integer projectId = 56; // Integer | Project ID
+        Integer projectId = 56; // Integer | Accepted for compatibility and ignored. The catalog is the same for every project, so any value returns the same list and the project is not checked.
         String output = "flat"; // String | Rectangular output for BI tools (Tableau, Excel, Sheets, ELT). Omit for the default nested JSON. 'flat' returns the same metadata plus 'columns' and 'rows'; 'csv' returns those rows as text/csv. Errors are always returned as JSON.
         try {
             ApiResponse<AgentBotsResponse> response = apiInstance.listAgentBotsWithHttpInfo(projectId, output);
@@ -637,7 +637,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **projectId** | **Integer**| Project ID | |
+| **projectId** | **Integer**| Accepted for compatibility and ignored. The catalog is the same for every project, so any value returns the same list and the project is not checked. | |
 | **output** | **String**| Rectangular output for BI tools (Tableau, Excel, Sheets, ELT). Omit for the default nested JSON. &#39;flat&#39; returns the same metadata plus &#39;columns&#39; and &#39;rows&#39;; &#39;csv&#39; returns those rows as text/csv. Errors are always returned as JSON. | [optional] [enum: flat, csv] |
 
 ### Return type

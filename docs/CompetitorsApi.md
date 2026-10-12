@@ -171,7 +171,7 @@ ApiResponse<[**CompetitorCreateResponse**](CompetitorCreateResponse.md)>
 
 Delete a competitor
 
-Deletes a competitor (irreversible). It disappears immediately and frees a competitor slot; its tracked data is purged by a background job. Requires a &#x60;read_write&#x60; scope API key.
+Deletes a competitor (irreversible). It disappears immediately and frees a competitor slot; a background job then deletes its mentions, citations, sentiment and share of voice history. Its ads, shopping products, local businesses and brand entities are kept and move to the project or another competitor they match, or stay unattributed. Requires a &#x60;read_write&#x60; scope API key.
 
 ### Example
 
@@ -244,7 +244,7 @@ null (empty response body)
 
 Delete a competitor
 
-Deletes a competitor (irreversible). It disappears immediately and frees a competitor slot; its tracked data is purged by a background job. Requires a &#x60;read_write&#x60; scope API key.
+Deletes a competitor (irreversible). It disappears immediately and frees a competitor slot; a background job then deletes its mentions, citations, sentiment and share of voice history. Its ads, shopping products, local businesses and brand entities are kept and move to the project or another competitor they match, or stay unattributed. Requires a &#x60;read_write&#x60; scope API key.
 
 ### Example
 

@@ -144,6 +144,8 @@ docs/ProjectDetailsAllOfDataCoverage.md
 docs/ProjectDetailsAllOfSearchConsole.md
 docs/ProjectDetailsAllOfStats.md
 docs/ProjectDetailsAllOfStatsPromptsByBrandKind.md
+docs/ProjectProfile.md
+docs/ProjectUpdateResponse.md
 docs/ProjectsApi.md
 docs/PromptExecutionRecord.md
 docs/PromptExecutionsResponse.md
@@ -393,6 +395,8 @@ src/main/java/ai/llmpulse/sdk/model/ProjectDetailsAllOfDataCoverage.java
 src/main/java/ai/llmpulse/sdk/model/ProjectDetailsAllOfSearchConsole.java
 src/main/java/ai/llmpulse/sdk/model/ProjectDetailsAllOfStats.java
 src/main/java/ai/llmpulse/sdk/model/ProjectDetailsAllOfStatsPromptsByBrandKind.java
+src/main/java/ai/llmpulse/sdk/model/ProjectProfile.java
+src/main/java/ai/llmpulse/sdk/model/ProjectUpdateResponse.java
 src/main/java/ai/llmpulse/sdk/model/PromptExecutionRecord.java
 src/main/java/ai/llmpulse/sdk/model/PromptExecutionsResponse.java
 src/main/java/ai/llmpulse/sdk/model/PromptRecord.java
