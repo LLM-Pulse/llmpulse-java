@@ -16,7 +16,7 @@
 |**executedAt** | **OffsetDateTime** |  |  [optional] |
 |**durationMs** | **BigDecimal** | Milliseconds, rounded to one decimal place |  [optional] |
 |**success** | **Boolean** | Null while the answer is still pending |  [optional] |
-|**noResult** | **Boolean** | True for a sentinel non-answer (the provider returned nothing after retries); excluded from platform metrics |  [optional] |
+|**noResult** | **Boolean** | True for a sentinel non-answer (the provider returned nothing after all retries, or the model declined to answer, today only Gemini); excluded from platform metrics |  [optional] |
 |**fanOutQueries** | **List&lt;String&gt;** |  |  [optional] |
 |**mentions** | **List&lt;Object&gt;** |  |  [optional] |
 |**citations** | **List&lt;Object&gt;** |  |  [optional] |
