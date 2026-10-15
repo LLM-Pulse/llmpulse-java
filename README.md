@@ -2,7 +2,7 @@
 
 LLM Pulse API
 
-- API version: 1.62.0
+- API version: 1.63.0
 
 - Generator version: 7.24.0
 
@@ -43,7 +43,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>ai.llmpulse</groupId>
   <artifactId>llmpulse-java</artifactId>
-  <version>1.62.0</version>
+  <version>1.63.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -53,7 +53,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "ai.llmpulse:llmpulse-java:1.62.0"
+compile "ai.llmpulse:llmpulse-java:1.63.0"
 ```
 
 ### Others
@@ -66,7 +66,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-- `target/llmpulse-java-1.62.0.jar`
+- `target/llmpulse-java-1.63.0.jar`
 - `target/lib/*.jar`
 
 ## Getting Started
@@ -147,6 +147,8 @@ Class | Method | HTTP request | Description
 *CollectionsTagsApi* | [**listCollectionsWithHttpInfo**](docs/CollectionsTagsApi.md#listCollectionsWithHttpInfo) | **GET** /dimensions/collections | List tags/collections
 *CollectionsTagsApi* | [**listTags**](docs/CollectionsTagsApi.md#listTags) | **GET** /dimensions/tags | List tags (alias for /collections)
 *CollectionsTagsApi* | [**listTagsWithHttpInfo**](docs/CollectionsTagsApi.md#listTagsWithHttpInfo) | **GET** /dimensions/tags | List tags (alias for /collections)
+*CollectionsTagsApi* | [**removePromptTags**](docs/CollectionsTagsApi.md#removePromptTags) | **POST** /prompts/remove_tags | Bulk-detach tags from prompts
+*CollectionsTagsApi* | [**removePromptTagsWithHttpInfo**](docs/CollectionsTagsApi.md#removePromptTagsWithHttpInfo) | **POST** /prompts/remove_tags | Bulk-detach tags from prompts
 *CollectionsTagsApi* | [**updateCollection**](docs/CollectionsTagsApi.md#updateCollection) | **PATCH** /collections/{id} | Update a tag
 *CollectionsTagsApi* | [**updateCollectionWithHttpInfo**](docs/CollectionsTagsApi.md#updateCollectionWithHttpInfo) | **PATCH** /collections/{id} | Update a tag
 *CompetitorsApi* | [**createCompetitor**](docs/CompetitorsApi.md#createCompetitor) | **POST** /competitors | Add a competitor
@@ -155,10 +157,18 @@ Class | Method | HTTP request | Description
 *CompetitorsApi* | [**deleteCompetitorWithHttpInfo**](docs/CompetitorsApi.md#deleteCompetitorWithHttpInfo) | **DELETE** /competitors/{id} | Delete a competitor
 *CompetitorsApi* | [**getCompetitorDetails**](docs/CompetitorsApi.md#getCompetitorDetails) | **GET** /dimensions/competitors/{id} | Competitor details
 *CompetitorsApi* | [**getCompetitorDetailsWithHttpInfo**](docs/CompetitorsApi.md#getCompetitorDetailsWithHttpInfo) | **GET** /dimensions/competitors/{id} | Competitor details
+*CompetitorsApi* | [**listCompetitorSuggestions**](docs/CompetitorsApi.md#listCompetitorSuggestions) | **GET** /competitors/suggestions | List competitor suggestions
+*CompetitorsApi* | [**listCompetitorSuggestionsWithHttpInfo**](docs/CompetitorsApi.md#listCompetitorSuggestionsWithHttpInfo) | **GET** /competitors/suggestions | List competitor suggestions
 *CompetitorsApi* | [**listCompetitors**](docs/CompetitorsApi.md#listCompetitors) | **GET** /dimensions/competitors | List competitors
 *CompetitorsApi* | [**listCompetitorsWithHttpInfo**](docs/CompetitorsApi.md#listCompetitorsWithHttpInfo) | **GET** /dimensions/competitors | List competitors
 *CompetitorsApi* | [**updateCompetitor**](docs/CompetitorsApi.md#updateCompetitor) | **PATCH** /competitors/{id} | Update a competitor
 *CompetitorsApi* | [**updateCompetitorWithHttpInfo**](docs/CompetitorsApi.md#updateCompetitorWithHttpInfo) | **PATCH** /competitors/{id} | Update a competitor
+*CustomReportsApi* | [**getCustomReport**](docs/CustomReportsApi.md#getCustomReport) | **GET** /custom_reports/{id} | Get a custom report with its widget data
+*CustomReportsApi* | [**getCustomReportWithHttpInfo**](docs/CustomReportsApi.md#getCustomReportWithHttpInfo) | **GET** /custom_reports/{id} | Get a custom report with its widget data
+*CustomReportsApi* | [**listCustomReports**](docs/CustomReportsApi.md#listCustomReports) | **GET** /custom_reports | List custom reports
+*CustomReportsApi* | [**listCustomReportsWithHttpInfo**](docs/CustomReportsApi.md#listCustomReportsWithHttpInfo) | **GET** /custom_reports | List custom reports
+*CustomReportsApi* | [**sendCustomReport**](docs/CustomReportsApi.md#sendCustomReport) | **POST** /custom_reports/{id}/send | Send a custom report now
+*CustomReportsApi* | [**sendCustomReportWithHttpInfo**](docs/CustomReportsApi.md#sendCustomReportWithHttpInfo) | **POST** /custom_reports/{id}/send | Send a custom report now
 *GeoAuditsApi* | [**compareGeoAuditRuns**](docs/GeoAuditsApi.md#compareGeoAuditRuns) | **GET** /geo_audits/{id}/comparison | Compare two GEO audit runs
 *GeoAuditsApi* | [**compareGeoAuditRunsWithHttpInfo**](docs/GeoAuditsApi.md#compareGeoAuditRunsWithHttpInfo) | **GET** /geo_audits/{id}/comparison | Compare two GEO audit runs
 *GeoAuditsApi* | [**createGeoAudits**](docs/GeoAuditsApi.md#createGeoAudits) | **POST** /geo_audits | Create GEO audits
@@ -219,10 +229,18 @@ Class | Method | HTTP request | Description
 *MetricsApi* | [**getTimeseriesWithHttpInfo**](docs/MetricsApi.md#getTimeseriesWithHttpInfo) | **GET** /metrics/timeseries | Time-series metrics
 *MetricsApi* | [**getTopSources**](docs/MetricsApi.md#getTopSources) | **GET** /metrics/top_sources | Top cited sources
 *MetricsApi* | [**getTopSourcesWithHttpInfo**](docs/MetricsApi.md#getTopSourcesWithHttpInfo) | **GET** /metrics/top_sources | Top cited sources
+*OwnedMediaCommunitiesApi* | [**getOwnedMediaProfiles**](docs/OwnedMediaCommunitiesApi.md#getOwnedMediaProfiles) | **GET** /projects/{id}/owned_media | Get a project&#39;s owned-media profiles
+*OwnedMediaCommunitiesApi* | [**getOwnedMediaProfilesWithHttpInfo**](docs/OwnedMediaCommunitiesApi.md#getOwnedMediaProfilesWithHttpInfo) | **GET** /projects/{id}/owned_media | Get a project&#39;s owned-media profiles
+*OwnedMediaCommunitiesApi* | [**getOwnedMediaSummary**](docs/OwnedMediaCommunitiesApi.md#getOwnedMediaSummary) | **GET** /dimensions/owned_media/summary | Get an owned-media summary
+*OwnedMediaCommunitiesApi* | [**getOwnedMediaSummaryWithHttpInfo**](docs/OwnedMediaCommunitiesApi.md#getOwnedMediaSummaryWithHttpInfo) | **GET** /dimensions/owned_media/summary | Get an owned-media summary
 *OwnedMediaCommunitiesApi* | [**listOwnedMedia**](docs/OwnedMediaCommunitiesApi.md#listOwnedMedia) | **GET** /dimensions/owned_media | List owned-media citations
 *OwnedMediaCommunitiesApi* | [**listOwnedMediaWithHttpInfo**](docs/OwnedMediaCommunitiesApi.md#listOwnedMediaWithHttpInfo) | **GET** /dimensions/owned_media | List owned-media citations
+*OwnedMediaCommunitiesApi* | [**listOwnedMediaCitingPrompts**](docs/OwnedMediaCommunitiesApi.md#listOwnedMediaCitingPrompts) | **GET** /dimensions/owned_media/citing_prompts | List the answers citing an owned-media item
+*OwnedMediaCommunitiesApi* | [**listOwnedMediaCitingPromptsWithHttpInfo**](docs/OwnedMediaCommunitiesApi.md#listOwnedMediaCitingPromptsWithHttpInfo) | **GET** /dimensions/owned_media/citing_prompts | List the answers citing an owned-media item
 *OwnedMediaCommunitiesApi* | [**listRedditCitations**](docs/OwnedMediaCommunitiesApi.md#listRedditCitations) | **GET** /dimensions/reddit | List cited Reddit content
 *OwnedMediaCommunitiesApi* | [**listRedditCitationsWithHttpInfo**](docs/OwnedMediaCommunitiesApi.md#listRedditCitationsWithHttpInfo) | **GET** /dimensions/reddit | List cited Reddit content
+*OwnedMediaCommunitiesApi* | [**updateOwnedMediaProfiles**](docs/OwnedMediaCommunitiesApi.md#updateOwnedMediaProfiles) | **PATCH** /projects/{id}/owned_media | Update a project&#39;s owned-media profiles
+*OwnedMediaCommunitiesApi* | [**updateOwnedMediaProfilesWithHttpInfo**](docs/OwnedMediaCommunitiesApi.md#updateOwnedMediaProfilesWithHttpInfo) | **PATCH** /projects/{id}/owned_media | Update a project&#39;s owned-media profiles
 *ProjectsApi* | [**createProject**](docs/ProjectsApi.md#createProject) | **POST** /projects | Create a project (fast mode)
 *ProjectsApi* | [**createProjectWithHttpInfo**](docs/ProjectsApi.md#createProjectWithHttpInfo) | **POST** /projects | Create a project (fast mode)
 *ProjectsApi* | [**createProjectDraft**](docs/ProjectsApi.md#createProjectDraft) | **POST** /project_drafts | Start a project draft (wizard step 1)
@@ -243,22 +261,38 @@ Class | Method | HTTP request | Description
 *ProjectsApi* | [**updateProjectWithHttpInfo**](docs/ProjectsApi.md#updateProjectWithHttpInfo) | **PATCH** /projects/{id} | Update a project profile (Brand Book)
 *ProjectsApi* | [**updateProjectDraft**](docs/ProjectsApi.md#updateProjectDraft) | **PATCH** /project_drafts/{id} | Submit a wizard step
 *ProjectsApi* | [**updateProjectDraftWithHttpInfo**](docs/ProjectsApi.md#updateProjectDraftWithHttpInfo) | **PATCH** /project_drafts/{id} | Submit a wizard step
+*PromptsApi* | [**acceptSuggestedPrompts**](docs/PromptsApi.md#acceptSuggestedPrompts) | **POST** /suggested_prompts/accept | Accept suggested prompts
+*PromptsApi* | [**acceptSuggestedPromptsWithHttpInfo**](docs/PromptsApi.md#acceptSuggestedPromptsWithHttpInfo) | **POST** /suggested_prompts/accept | Accept suggested prompts
+*PromptsApi* | [**createPromptGeneration**](docs/PromptsApi.md#createPromptGeneration) | **POST** /prompt_generations | Generate prompt suggestions
+*PromptsApi* | [**createPromptGenerationWithHttpInfo**](docs/PromptsApi.md#createPromptGenerationWithHttpInfo) | **POST** /prompt_generations | Generate prompt suggestions
 *PromptsApi* | [**createPrompts**](docs/PromptsApi.md#createPrompts) | **POST** /prompts | Bulk-create prompts
 *PromptsApi* | [**createPromptsWithHttpInfo**](docs/PromptsApi.md#createPromptsWithHttpInfo) | **POST** /prompts | Bulk-create prompts
 *PromptsApi* | [**deletePrompt**](docs/PromptsApi.md#deletePrompt) | **DELETE** /prompts/{id} | Delete a prompt
 *PromptsApi* | [**deletePromptWithHttpInfo**](docs/PromptsApi.md#deletePromptWithHttpInfo) | **DELETE** /prompts/{id} | Delete a prompt
+*PromptsApi* | [**getPromptGeneration**](docs/PromptsApi.md#getPromptGeneration) | **GET** /prompt_generations/{id} | Get a prompt generation run
+*PromptsApi* | [**getPromptGenerationWithHttpInfo**](docs/PromptsApi.md#getPromptGenerationWithHttpInfo) | **GET** /prompt_generations/{id} | Get a prompt generation run
+*PromptsApi* | [**importPrompts**](docs/PromptsApi.md#importPrompts) | **POST** /prompts/import | Import prompts
+*PromptsApi* | [**importPromptsWithHttpInfo**](docs/PromptsApi.md#importPromptsWithHttpInfo) | **POST** /prompts/import | Import prompts
 *PromptsApi* | [**listPromptExecutions**](docs/PromptsApi.md#listPromptExecutions) | **GET** /dimensions/prompt_executions | List prompt executions
 *PromptsApi* | [**listPromptExecutionsWithHttpInfo**](docs/PromptsApi.md#listPromptExecutionsWithHttpInfo) | **GET** /dimensions/prompt_executions | List prompt executions
 *PromptsApi* | [**listPrompts**](docs/PromptsApi.md#listPrompts) | **GET** /dimensions/prompts | List prompts
 *PromptsApi* | [**listPromptsWithHttpInfo**](docs/PromptsApi.md#listPromptsWithHttpInfo) | **GET** /dimensions/prompts | List prompts
 *PromptsApi* | [**listQueryFanOuts**](docs/PromptsApi.md#listQueryFanOuts) | **GET** /dimensions/query_fan_outs | List query fan-out
 *PromptsApi* | [**listQueryFanOutsWithHttpInfo**](docs/PromptsApi.md#listQueryFanOutsWithHttpInfo) | **GET** /dimensions/query_fan_outs | List query fan-out
+*PromptsApi* | [**listSuggestedPrompts**](docs/PromptsApi.md#listSuggestedPrompts) | **GET** /suggested_prompts | List suggested prompts
+*PromptsApi* | [**listSuggestedPromptsWithHttpInfo**](docs/PromptsApi.md#listSuggestedPromptsWithHttpInfo) | **GET** /suggested_prompts | List suggested prompts
+*PromptsApi* | [**rejectSuggestedPrompts**](docs/PromptsApi.md#rejectSuggestedPrompts) | **POST** /suggested_prompts/reject | Reject suggested prompts
+*PromptsApi* | [**rejectSuggestedPromptsWithHttpInfo**](docs/PromptsApi.md#rejectSuggestedPromptsWithHttpInfo) | **POST** /suggested_prompts/reject | Reject suggested prompts
+*PromptsApi* | [**updatePrompt**](docs/PromptsApi.md#updatePrompt) | **PATCH** /prompts/{id} | Edit a prompt&#39;s categorization
+*PromptsApi* | [**updatePromptWithHttpInfo**](docs/PromptsApi.md#updatePromptWithHttpInfo) | **PATCH** /prompts/{id} | Edit a prompt&#39;s categorization
 *RecommendationsApi* | [**getRecommendation**](docs/RecommendationsApi.md#getRecommendation) | **GET** /recommendations/{id} | Get recommendation run with items
 *RecommendationsApi* | [**getRecommendationWithHttpInfo**](docs/RecommendationsApi.md#getRecommendationWithHttpInfo) | **GET** /recommendations/{id} | Get recommendation run with items
 *RecommendationsApi* | [**launchRecommendations**](docs/RecommendationsApi.md#launchRecommendations) | **POST** /recommendations | Launch a recommendations generation
 *RecommendationsApi* | [**launchRecommendationsWithHttpInfo**](docs/RecommendationsApi.md#launchRecommendationsWithHttpInfo) | **POST** /recommendations | Launch a recommendations generation
 *RecommendationsApi* | [**listRecommendations**](docs/RecommendationsApi.md#listRecommendations) | **GET** /recommendations | List recommendation runs
 *RecommendationsApi* | [**listRecommendationsWithHttpInfo**](docs/RecommendationsApi.md#listRecommendationsWithHttpInfo) | **GET** /recommendations | List recommendation runs
+*RecommendationsApi* | [**updateRecommendationItem**](docs/RecommendationsApi.md#updateRecommendationItem) | **PATCH** /recommendations/{id}/items/{item_id} | Complete, archive or restore a recommendation item
+*RecommendationsApi* | [**updateRecommendationItemWithHttpInfo**](docs/RecommendationsApi.md#updateRecommendationItemWithHttpInfo) | **PATCH** /recommendations/{id}/items/{item_id} | Complete, archive or restore a recommendation item
 *ReputationStudiesApi* | [**getReputationReport**](docs/ReputationStudiesApi.md#getReputationReport) | **GET** /reputation/reports/{id} | Get reputation report scores
 *ReputationStudiesApi* | [**getReputationReportWithHttpInfo**](docs/ReputationStudiesApi.md#getReputationReportWithHttpInfo) | **GET** /reputation/reports/{id} | Get reputation report scores
 *ReputationStudiesApi* | [**getStudy**](docs/ReputationStudiesApi.md#getStudy) | **GET** /studies/{id} | Get a custom AI study
@@ -279,6 +313,10 @@ Class | Method | HTTP request | Description
 *SearchConsoleApi* | [**getSearchConsoleSummaryWithHttpInfo**](docs/SearchConsoleApi.md#getSearchConsoleSummaryWithHttpInfo) | **GET** /search_console/summary | Search Console summary (Growth+)
 *SearchConsoleApi* | [**getSearchConsoleTimeseries**](docs/SearchConsoleApi.md#getSearchConsoleTimeseries) | **GET** /search_console/timeseries | Search Console time series (Growth+)
 *SearchConsoleApi* | [**getSearchConsoleTimeseriesWithHttpInfo**](docs/SearchConsoleApi.md#getSearchConsoleTimeseriesWithHttpInfo) | **GET** /search_console/timeseries | Search Console time series (Growth+)
+*SentimentsApi* | [**getSentimentTags**](docs/SentimentsApi.md#getSentimentTags) | **GET** /reports/sentiment/tags | Sentiment by tag (Growth plan or above)
+*SentimentsApi* | [**getSentimentTagsWithHttpInfo**](docs/SentimentsApi.md#getSentimentTagsWithHttpInfo) | **GET** /reports/sentiment/tags | Sentiment by tag (Growth plan or above)
+*SentimentsApi* | [**getSentimentTopics**](docs/SentimentsApi.md#getSentimentTopics) | **GET** /reports/sentiment/topics | Sentiment by topic (Growth plan or above)
+*SentimentsApi* | [**getSentimentTopicsWithHttpInfo**](docs/SentimentsApi.md#getSentimentTopicsWithHttpInfo) | **GET** /reports/sentiment/topics | Sentiment by topic (Growth plan or above)
 *SentimentsApi* | [**listSentimentCategories**](docs/SentimentsApi.md#listSentimentCategories) | **GET** /dimensions/sentiments | List sentiment categories (Growth plan or above)
 *SentimentsApi* | [**listSentimentCategoriesWithHttpInfo**](docs/SentimentsApi.md#listSentimentCategoriesWithHttpInfo) | **GET** /dimensions/sentiments | List sentiment categories (Growth plan or above)
 *SentimentsApi* | [**listSentimentRecords**](docs/SentimentsApi.md#listSentimentRecords) | **GET** /sentiments | List sentiment records (Growth plan or above)
@@ -388,8 +426,11 @@ Class | Method | HTTP request | Description
  - [CompetitorCreateResponse](docs/CompetitorCreateResponse.md)
  - [CompetitorCreateResponseCompetitor](docs/CompetitorCreateResponseCompetitor.md)
  - [CompetitorDetails](docs/CompetitorDetails.md)
+ - [CompetitorDiscoveryState](docs/CompetitorDiscoveryState.md)
  - [CompetitorMentionRecord](docs/CompetitorMentionRecord.md)
  - [CompetitorMentionsResponse](docs/CompetitorMentionsResponse.md)
+ - [CompetitorSuggestion](docs/CompetitorSuggestion.md)
+ - [CompetitorSuggestionsResponse](docs/CompetitorSuggestionsResponse.md)
  - [CreateAnnotationRequest](docs/CreateAnnotationRequest.md)
  - [CreateCollectionRequest](docs/CreateCollectionRequest.md)
  - [CreateCompetitorRequest](docs/CreateCompetitorRequest.md)
@@ -399,6 +440,16 @@ Class | Method | HTTP request | Description
  - [CreateTechnicalGeoReportsRequest](docs/CreateTechnicalGeoReportsRequest.md)
  - [CreateWebhook201Response](docs/CreateWebhook201Response.md)
  - [CreateWebhookRequest](docs/CreateWebhookRequest.md)
+ - [CustomReportBlock](docs/CustomReportBlock.md)
+ - [CustomReportDateRange](docs/CustomReportDateRange.md)
+ - [CustomReportDetailResponse](docs/CustomReportDetailResponse.md)
+ - [CustomReportFilters](docs/CustomReportFilters.md)
+ - [CustomReportSchedule](docs/CustomReportSchedule.md)
+ - [CustomReportSendResponse](docs/CustomReportSendResponse.md)
+ - [CustomReportSummary](docs/CustomReportSummary.md)
+ - [CustomReportWidget](docs/CustomReportWidget.md)
+ - [CustomReportWidgetRef](docs/CustomReportWidgetRef.md)
+ - [CustomReportsResponse](docs/CustomReportsResponse.md)
  - [DeleteWebhook200Response](docs/DeleteWebhook200Response.md)
  - [FinalizeProjectDraftRequest](docs/FinalizeProjectDraftRequest.md)
  - [GeoAlert](docs/GeoAlert.md)
@@ -453,6 +504,29 @@ Class | Method | HTTP request | Description
  - [MentionsResponse](docs/MentionsResponse.md)
  - [MetricsFiltersEcho](docs/MetricsFiltersEcho.md)
  - [ModelsResponse](docs/ModelsResponse.md)
+ - [OwnedMediaAgeBucketShare](docs/OwnedMediaAgeBucketShare.md)
+ - [OwnedMediaCitedItem](docs/OwnedMediaCitedItem.md)
+ - [OwnedMediaCitedItemStats](docs/OwnedMediaCitedItemStats.md)
+ - [OwnedMediaCitingAnswer](docs/OwnedMediaCitingAnswer.md)
+ - [OwnedMediaCitingPromptsResponse](docs/OwnedMediaCitingPromptsResponse.md)
+ - [OwnedMediaContentTypeShare](docs/OwnedMediaContentTypeShare.md)
+ - [OwnedMediaCountryShare](docs/OwnedMediaCountryShare.md)
+ - [OwnedMediaKpiChanges](docs/OwnedMediaKpiChanges.md)
+ - [OwnedMediaKpis](docs/OwnedMediaKpis.md)
+ - [OwnedMediaListResponse](docs/OwnedMediaListResponse.md)
+ - [OwnedMediaModelShare](docs/OwnedMediaModelShare.md)
+ - [OwnedMediaPlatformProfiles](docs/OwnedMediaPlatformProfiles.md)
+ - [OwnedMediaPlatformRollup](docs/OwnedMediaPlatformRollup.md)
+ - [OwnedMediaPlatformRollupWeeklyInner](docs/OwnedMediaPlatformRollupWeeklyInner.md)
+ - [OwnedMediaProfile](docs/OwnedMediaProfile.md)
+ - [OwnedMediaProfileSettings](docs/OwnedMediaProfileSettings.md)
+ - [OwnedMediaProfilesResponse](docs/OwnedMediaProfilesResponse.md)
+ - [OwnedMediaProfilesUpdateResponse](docs/OwnedMediaProfilesUpdateResponse.md)
+ - [OwnedMediaRow](docs/OwnedMediaRow.md)
+ - [OwnedMediaStoreTotals](docs/OwnedMediaStoreTotals.md)
+ - [OwnedMediaSummaryResponse](docs/OwnedMediaSummaryResponse.md)
+ - [OwnedMediaSummaryResponsePrevious](docs/OwnedMediaSummaryResponsePrevious.md)
+ - [OwnedMediaWeek](docs/OwnedMediaWeek.md)
  - [PaginatedEnvelope](docs/PaginatedEnvelope.md)
  - [Ping200Response](docs/Ping200Response.md)
  - [Project](docs/Project.md)
@@ -474,20 +548,34 @@ Class | Method | HTTP request | Description
  - [ProjectDetailsAllOfStatsPromptsByBrandKind](docs/ProjectDetailsAllOfStatsPromptsByBrandKind.md)
  - [ProjectProfile](docs/ProjectProfile.md)
  - [ProjectUpdateResponse](docs/ProjectUpdateResponse.md)
+ - [PromptCategorization](docs/PromptCategorization.md)
+ - [PromptCategorizationResponse](docs/PromptCategorizationResponse.md)
  - [PromptExecutionRecord](docs/PromptExecutionRecord.md)
  - [PromptExecutionsResponse](docs/PromptExecutionsResponse.md)
+ - [PromptGenerationRequest](docs/PromptGenerationRequest.md)
+ - [PromptGenerationResponse](docs/PromptGenerationResponse.md)
+ - [PromptGenerationResponseError](docs/PromptGenerationResponseError.md)
+ - [PromptGenerationResponseParams](docs/PromptGenerationResponseParams.md)
  - [PromptRecord](docs/PromptRecord.md)
  - [PromptSummaryResponse](docs/PromptSummaryResponse.md)
  - [PromptSummaryRow](docs/PromptSummaryRow.md)
  - [PromptTagsAssignResponse](docs/PromptTagsAssignResponse.md)
+ - [PromptTagsRemoveResponse](docs/PromptTagsRemoveResponse.md)
  - [PromptsCreateRequest](docs/PromptsCreateRequest.md)
  - [PromptsCreateResponse](docs/PromptsCreateResponse.md)
  - [PromptsCreateResponseDataInner](docs/PromptsCreateResponseDataInner.md)
+ - [PromptsImportRequest](docs/PromptsImportRequest.md)
+ - [PromptsImportRequestRowsInner](docs/PromptsImportRequestRowsInner.md)
+ - [PromptsImportResponse](docs/PromptsImportResponse.md)
+ - [PromptsImportResponseRowErrorsInner](docs/PromptsImportResponseRowErrorsInner.md)
  - [PromptsResponse](docs/PromptsResponse.md)
  - [QueryWebAnalyticsRequest](docs/QueryWebAnalyticsRequest.md)
+ - [RecommendationItem](docs/RecommendationItem.md)
+ - [RecommendationItemUpdateResponse](docs/RecommendationItemUpdateResponse.md)
  - [RecommendationSummary](docs/RecommendationSummary.md)
  - [RecommendationSummarySummary](docs/RecommendationSummarySummary.md)
  - [RecommendationsResponse](docs/RecommendationsResponse.md)
+ - [RemovePromptTagsRequest](docs/RemovePromptTagsRequest.md)
  - [RemoveTeamMember200Response](docs/RemoveTeamMember200Response.md)
  - [RevokeTeamInvitation200Response](docs/RevokeTeamInvitation200Response.md)
  - [SampleWebhookPayloads200Response](docs/SampleWebhookPayloads200Response.md)
@@ -503,7 +591,15 @@ Class | Method | HTTP request | Description
  - [SearchConsoleSummaryResponseBreakdownInner](docs/SearchConsoleSummaryResponseBreakdownInner.md)
  - [SearchConsoleTimeseriesResponse](docs/SearchConsoleTimeseriesResponse.md)
  - [SearchConsoleTimeseriesResponseDataInner](docs/SearchConsoleTimeseriesResponseDataInner.md)
+ - [SendCustomReportRequest](docs/SendCustomReportRequest.md)
+ - [SentimentBreakdownBrand](docs/SentimentBreakdownBrand.md)
+ - [SentimentBreakdownCounts](docs/SentimentBreakdownCounts.md)
+ - [SentimentBreakdownEnvelope](docs/SentimentBreakdownEnvelope.md)
  - [SentimentRecord](docs/SentimentRecord.md)
+ - [SentimentTagRow](docs/SentimentTagRow.md)
+ - [SentimentTagsResponse](docs/SentimentTagsResponse.md)
+ - [SentimentTopicRow](docs/SentimentTopicRow.md)
+ - [SentimentTopicsResponse](docs/SentimentTopicsResponse.md)
  - [SentimentsResponse](docs/SentimentsResponse.md)
  - [SovResponse](docs/SovResponse.md)
  - [SovResponseBreakdownInner](docs/SovResponseBreakdownInner.md)
@@ -516,6 +612,13 @@ Class | Method | HTTP request | Description
  - [StoreConnectionResponseAccount](docs/StoreConnectionResponseAccount.md)
  - [StoreConnectionResponseCandidatesInner](docs/StoreConnectionResponseCandidatesInner.md)
  - [StoreConnectionResponseProject](docs/StoreConnectionResponseProject.md)
+ - [SuggestedPrompt](docs/SuggestedPrompt.md)
+ - [SuggestedPromptIdsRequest](docs/SuggestedPromptIdsRequest.md)
+ - [SuggestedPromptsAcceptRequest](docs/SuggestedPromptsAcceptRequest.md)
+ - [SuggestedPromptsAcceptResponse](docs/SuggestedPromptsAcceptResponse.md)
+ - [SuggestedPromptsAcceptResponseAcceptedInner](docs/SuggestedPromptsAcceptResponseAcceptedInner.md)
+ - [SuggestedPromptsRejectResponse](docs/SuggestedPromptsRejectResponse.md)
+ - [SuggestedPromptsResponse](docs/SuggestedPromptsResponse.md)
  - [SummaryResponse](docs/SummaryResponse.md)
  - [SummaryResponseAllOfPositionDistribution](docs/SummaryResponseAllOfPositionDistribution.md)
  - [SummaryResponseAllOfSummaryValueInner](docs/SummaryResponseAllOfSummaryValueInner.md)
@@ -535,8 +638,11 @@ Class | Method | HTTP request | Description
  - [UpdateAnnotationRequest](docs/UpdateAnnotationRequest.md)
  - [UpdateCollectionRequest](docs/UpdateCollectionRequest.md)
  - [UpdateCompetitorRequest](docs/UpdateCompetitorRequest.md)
+ - [UpdateOwnedMediaProfilesRequest](docs/UpdateOwnedMediaProfilesRequest.md)
  - [UpdateProjectDraftRequest](docs/UpdateProjectDraftRequest.md)
  - [UpdateProjectRequest](docs/UpdateProjectRequest.md)
+ - [UpdatePromptRequest](docs/UpdatePromptRequest.md)
+ - [UpdateRecommendationItemRequest](docs/UpdateRecommendationItemRequest.md)
  - [WebAnalyticsQueryResponse](docs/WebAnalyticsQueryResponse.md)
  - [WebAnalyticsQueryResponseColumnsInner](docs/WebAnalyticsQueryResponseColumnsInner.md)
  - [WebAnalyticsSchemaResponse](docs/WebAnalyticsSchemaResponse.md)

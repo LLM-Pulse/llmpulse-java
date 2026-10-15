@@ -10,6 +10,8 @@ All URIs are relative to *https://api.llmpulse.ai/api/v1*
 | [**deleteCompetitorWithHttpInfo**](CompetitorsApi.md#deleteCompetitorWithHttpInfo) | **DELETE** /competitors/{id} | Delete a competitor |
 | [**getCompetitorDetails**](CompetitorsApi.md#getCompetitorDetails) | **GET** /dimensions/competitors/{id} | Competitor details |
 | [**getCompetitorDetailsWithHttpInfo**](CompetitorsApi.md#getCompetitorDetailsWithHttpInfo) | **GET** /dimensions/competitors/{id} | Competitor details |
+| [**listCompetitorSuggestions**](CompetitorsApi.md#listCompetitorSuggestions) | **GET** /competitors/suggestions | List competitor suggestions |
+| [**listCompetitorSuggestionsWithHttpInfo**](CompetitorsApi.md#listCompetitorSuggestionsWithHttpInfo) | **GET** /competitors/suggestions | List competitor suggestions |
 | [**listCompetitors**](CompetitorsApi.md#listCompetitors) | **GET** /dimensions/competitors | List competitors |
 | [**listCompetitorsWithHttpInfo**](CompetitorsApi.md#listCompetitorsWithHttpInfo) | **GET** /dimensions/competitors | List competitors |
 | [**updateCompetitor**](CompetitorsApi.md#updateCompetitor) | **PATCH** /competitors/{id} | Update a competitor |
@@ -457,6 +459,172 @@ ApiResponse<[**CompetitorDetails**](CompetitorDetails.md)>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Competitor details |  -  |
+
+
+## listCompetitorSuggestions
+
+> CompetitorSuggestionsResponse listCompetitorSuggestions(projectId, basis, query, page, perPage, output)
+
+List competitor suggestions
+
+The two lists of the Suggested tab of the Competitors page. &#x60;basis&#x3D;brands&#x60; (default) returns the competing brands the AI discovery proposed that are not tracked or rejected yet, with the names it would match and, when counted, how many answers name it (&#x60;mentions&#x60;). &#x60;basis&#x3D;citations&#x60; returns the domains AI answers cite most that are not your own or tracked yet, with how many answers cite each (&#x60;citations&#x60;). &#x60;discovery&#x60; tells whether a discovery run is still loading. Read-only: it never starts a discovery run, which the page starts from its Discover button. Add a suggestion with POST /competitors.
+
+### Example
+
+```java
+// Import classes:
+import ai.llmpulse.sdk.ApiClient;
+import ai.llmpulse.sdk.ApiException;
+import ai.llmpulse.sdk.Configuration;
+import ai.llmpulse.sdk.auth.*;
+import ai.llmpulse.sdk.models.*;
+import ai.llmpulse.sdk.api.CompetitorsApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.llmpulse.ai/api/v1");
+        
+        // Configure HTTP bearer authorization: BearerAuth
+        HttpBearerAuth BearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("BearerAuth");
+        BearerAuth.setBearerToken("BEARER TOKEN");
+
+        CompetitorsApi apiInstance = new CompetitorsApi(defaultClient);
+        Integer projectId = 56; // Integer | Project ID
+        String basis = "brands"; // String | 
+        String query = "query_example"; // String | Only suggestions whose brand name or domain contains this text
+        Integer page = 1; // Integer | 
+        Integer perPage = 20; // Integer | 
+        String output = "flat"; // String | Rectangular output for BI tools (Tableau, Excel, Sheets, ELT). Omit for the default nested JSON. 'flat' returns the same metadata plus 'columns' and 'rows'; 'csv' returns those rows as text/csv. Errors are always returned as JSON.
+        try {
+            CompetitorSuggestionsResponse result = apiInstance.listCompetitorSuggestions(projectId, basis, query, page, perPage, output);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling CompetitorsApi#listCompetitorSuggestions");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **projectId** | **Integer**| Project ID | |
+| **basis** | **String**|  | [optional] [default to brands] [enum: brands, citations] |
+| **query** | **String**| Only suggestions whose brand name or domain contains this text | [optional] |
+| **page** | **Integer**|  | [optional] [default to 1] |
+| **perPage** | **Integer**|  | [optional] [default to 20] |
+| **output** | **String**| Rectangular output for BI tools (Tableau, Excel, Sheets, ELT). Omit for the default nested JSON. &#39;flat&#39; returns the same metadata plus &#39;columns&#39; and &#39;rows&#39;; &#39;csv&#39; returns those rows as text/csv. Errors are always returned as JSON. | [optional] [enum: flat, csv] |
+
+### Return type
+
+[**CompetitorSuggestionsResponse**](CompetitorSuggestionsResponse.md)
+
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Paginated suggestions |  -  |
+| **422** | Invalid parameters |  -  |
+
+## listCompetitorSuggestionsWithHttpInfo
+
+> ApiResponse<CompetitorSuggestionsResponse> listCompetitorSuggestionsWithHttpInfo(projectId, basis, query, page, perPage, output)
+
+List competitor suggestions
+
+The two lists of the Suggested tab of the Competitors page. &#x60;basis&#x3D;brands&#x60; (default) returns the competing brands the AI discovery proposed that are not tracked or rejected yet, with the names it would match and, when counted, how many answers name it (&#x60;mentions&#x60;). &#x60;basis&#x3D;citations&#x60; returns the domains AI answers cite most that are not your own or tracked yet, with how many answers cite each (&#x60;citations&#x60;). &#x60;discovery&#x60; tells whether a discovery run is still loading. Read-only: it never starts a discovery run, which the page starts from its Discover button. Add a suggestion with POST /competitors.
+
+### Example
+
+```java
+// Import classes:
+import ai.llmpulse.sdk.ApiClient;
+import ai.llmpulse.sdk.ApiException;
+import ai.llmpulse.sdk.ApiResponse;
+import ai.llmpulse.sdk.Configuration;
+import ai.llmpulse.sdk.auth.*;
+import ai.llmpulse.sdk.models.*;
+import ai.llmpulse.sdk.api.CompetitorsApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.llmpulse.ai/api/v1");
+        
+        // Configure HTTP bearer authorization: BearerAuth
+        HttpBearerAuth BearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("BearerAuth");
+        BearerAuth.setBearerToken("BEARER TOKEN");
+
+        CompetitorsApi apiInstance = new CompetitorsApi(defaultClient);
+        Integer projectId = 56; // Integer | Project ID
+        String basis = "brands"; // String | 
+        String query = "query_example"; // String | Only suggestions whose brand name or domain contains this text
+        Integer page = 1; // Integer | 
+        Integer perPage = 20; // Integer | 
+        String output = "flat"; // String | Rectangular output for BI tools (Tableau, Excel, Sheets, ELT). Omit for the default nested JSON. 'flat' returns the same metadata plus 'columns' and 'rows'; 'csv' returns those rows as text/csv. Errors are always returned as JSON.
+        try {
+            ApiResponse<CompetitorSuggestionsResponse> response = apiInstance.listCompetitorSuggestionsWithHttpInfo(projectId, basis, query, page, perPage, output);
+            System.out.println("Status code: " + response.getStatusCode());
+            System.out.println("Response headers: " + response.getHeaders());
+            System.out.println("Response body: " + response.getData());
+        } catch (ApiException e) {
+            System.err.println("Exception when calling CompetitorsApi#listCompetitorSuggestions");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            System.err.println("Reason: " + e.getResponseBody());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **projectId** | **Integer**| Project ID | |
+| **basis** | **String**|  | [optional] [default to brands] [enum: brands, citations] |
+| **query** | **String**| Only suggestions whose brand name or domain contains this text | [optional] |
+| **page** | **Integer**|  | [optional] [default to 1] |
+| **perPage** | **Integer**|  | [optional] [default to 20] |
+| **output** | **String**| Rectangular output for BI tools (Tableau, Excel, Sheets, ELT). Omit for the default nested JSON. &#39;flat&#39; returns the same metadata plus &#39;columns&#39; and &#39;rows&#39;; &#39;csv&#39; returns those rows as text/csv. Errors are always returned as JSON. | [optional] [enum: flat, csv] |
+
+### Return type
+
+ApiResponse<[**CompetitorSuggestionsResponse**](CompetitorSuggestionsResponse.md)>
+
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Paginated suggestions |  -  |
+| **422** | Invalid parameters |  -  |
 
 
 ## listCompetitors

@@ -14,6 +14,8 @@ All URIs are relative to *https://api.llmpulse.ai/api/v1*
 | [**listCollectionsWithHttpInfo**](CollectionsTagsApi.md#listCollectionsWithHttpInfo) | **GET** /dimensions/collections | List tags/collections |
 | [**listTags**](CollectionsTagsApi.md#listTags) | **GET** /dimensions/tags | List tags (alias for /collections) |
 | [**listTagsWithHttpInfo**](CollectionsTagsApi.md#listTagsWithHttpInfo) | **GET** /dimensions/tags | List tags (alias for /collections) |
+| [**removePromptTags**](CollectionsTagsApi.md#removePromptTags) | **POST** /prompts/remove_tags | Bulk-detach tags from prompts |
+| [**removePromptTagsWithHttpInfo**](CollectionsTagsApi.md#removePromptTagsWithHttpInfo) | **POST** /prompts/remove_tags | Bulk-detach tags from prompts |
 | [**updateCollection**](CollectionsTagsApi.md#updateCollection) | **PATCH** /collections/{id} | Update a tag |
 | [**updateCollectionWithHttpInfo**](CollectionsTagsApi.md#updateCollectionWithHttpInfo) | **PATCH** /collections/{id} | Update a tag |
 
@@ -751,6 +753,154 @@ ApiResponse<[**CollectionsResponse**](CollectionsResponse.md)>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Tags |  -  |
+
+
+## removePromptTags
+
+> PromptTagsRemoveResponse removePromptTags(removePromptTagsRequest)
+
+Bulk-detach tags from prompts
+
+Idempotent bulk removal of tags (Collections) from existing prompts: up to 500 prompt_ids and 50 tags, resolved by id or by name (case-insensitive). Only the prompt-tag links are removed; tags and prompts stay. Links that did not exist are counted in skipped_not_linked. Requires a &#x60;read_write&#x60; scope API key and, for team members, update access to Prompts.
+
+### Example
+
+```java
+// Import classes:
+import ai.llmpulse.sdk.ApiClient;
+import ai.llmpulse.sdk.ApiException;
+import ai.llmpulse.sdk.Configuration;
+import ai.llmpulse.sdk.auth.*;
+import ai.llmpulse.sdk.models.*;
+import ai.llmpulse.sdk.api.CollectionsTagsApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.llmpulse.ai/api/v1");
+        
+        // Configure HTTP bearer authorization: BearerAuth
+        HttpBearerAuth BearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("BearerAuth");
+        BearerAuth.setBearerToken("BEARER TOKEN");
+
+        CollectionsTagsApi apiInstance = new CollectionsTagsApi(defaultClient);
+        RemovePromptTagsRequest removePromptTagsRequest = new RemovePromptTagsRequest(); // RemovePromptTagsRequest | 
+        try {
+            PromptTagsRemoveResponse result = apiInstance.removePromptTags(removePromptTagsRequest);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling CollectionsTagsApi#removePromptTags");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **removePromptTagsRequest** | [**RemovePromptTagsRequest**](RemovePromptTagsRequest.md)|  | |
+
+### Return type
+
+[**PromptTagsRemoveResponse**](PromptTagsRemoveResponse.md)
+
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Tags detached |  -  |
+| **403** | API key lacks write permission |  -  |
+| **422** | Invalid parameters |  -  |
+
+## removePromptTagsWithHttpInfo
+
+> ApiResponse<PromptTagsRemoveResponse> removePromptTagsWithHttpInfo(removePromptTagsRequest)
+
+Bulk-detach tags from prompts
+
+Idempotent bulk removal of tags (Collections) from existing prompts: up to 500 prompt_ids and 50 tags, resolved by id or by name (case-insensitive). Only the prompt-tag links are removed; tags and prompts stay. Links that did not exist are counted in skipped_not_linked. Requires a &#x60;read_write&#x60; scope API key and, for team members, update access to Prompts.
+
+### Example
+
+```java
+// Import classes:
+import ai.llmpulse.sdk.ApiClient;
+import ai.llmpulse.sdk.ApiException;
+import ai.llmpulse.sdk.ApiResponse;
+import ai.llmpulse.sdk.Configuration;
+import ai.llmpulse.sdk.auth.*;
+import ai.llmpulse.sdk.models.*;
+import ai.llmpulse.sdk.api.CollectionsTagsApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.llmpulse.ai/api/v1");
+        
+        // Configure HTTP bearer authorization: BearerAuth
+        HttpBearerAuth BearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("BearerAuth");
+        BearerAuth.setBearerToken("BEARER TOKEN");
+
+        CollectionsTagsApi apiInstance = new CollectionsTagsApi(defaultClient);
+        RemovePromptTagsRequest removePromptTagsRequest = new RemovePromptTagsRequest(); // RemovePromptTagsRequest | 
+        try {
+            ApiResponse<PromptTagsRemoveResponse> response = apiInstance.removePromptTagsWithHttpInfo(removePromptTagsRequest);
+            System.out.println("Status code: " + response.getStatusCode());
+            System.out.println("Response headers: " + response.getHeaders());
+            System.out.println("Response body: " + response.getData());
+        } catch (ApiException e) {
+            System.err.println("Exception when calling CollectionsTagsApi#removePromptTags");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            System.err.println("Reason: " + e.getResponseBody());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **removePromptTagsRequest** | [**RemovePromptTagsRequest**](RemovePromptTagsRequest.md)|  | |
+
+### Return type
+
+ApiResponse<[**PromptTagsRemoveResponse**](PromptTagsRemoveResponse.md)>
+
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Tags detached |  -  |
+| **403** | API key lacks write permission |  -  |
+| **422** | Invalid parameters |  -  |
 
 
 ## updateCollection
