@@ -432,7 +432,7 @@ public class Example {
 | **200** | Query format for the connected provider |  -  |
 | **403** | Access forbidden |  -  |
 | **404** | Resource not found |  -  |
-| **503** | Upstream provider unavailable, retry after the number of seconds in the Retry-After header |  * Retry-After - Seconds until the report can be sent again <br>  |
+| **503** | Upstream provider unavailable, retry after the number of seconds in the Retry-After header: Google&#39;s own value when it sent one, otherwise 900 after a quota error and 60 after an outage |  * Retry-After - Seconds to wait before retrying <br>  |
 
 ## getWebAnalyticsSchemaWithHttpInfo
 
@@ -508,7 +508,7 @@ ApiResponse<[**WebAnalyticsSchemaResponse**](WebAnalyticsSchemaResponse.md)>
 | **200** | Query format for the connected provider |  -  |
 | **403** | Access forbidden |  -  |
 | **404** | Resource not found |  -  |
-| **503** | Upstream provider unavailable, retry after the number of seconds in the Retry-After header |  * Retry-After - Seconds until the report can be sent again <br>  |
+| **503** | Upstream provider unavailable, retry after the number of seconds in the Retry-After header: Google&#39;s own value when it sent one, otherwise 900 after a quota error and 60 after an outage |  * Retry-After - Seconds to wait before retrying <br>  |
 
 
 ## listAgentBots
@@ -733,7 +733,7 @@ public class Example {
 | **403** | Access forbidden |  -  |
 | **404** | Resource not found |  -  |
 | **422** | Invalid parameters |  -  |
-| **503** | Upstream provider unavailable, retry after the number of seconds in the Retry-After header |  * Retry-After - Seconds until the report can be sent again <br>  |
+| **503** | Upstream provider unavailable, retry after the number of seconds in the Retry-After header: Google&#39;s own value when it sent one, otherwise 900 after a quota error and 60 after an outage |  * Retry-After - Seconds to wait before retrying <br>  |
 
 ## queryWebAnalyticsWithHttpInfo
 
@@ -810,5 +810,5 @@ ApiResponse<[**WebAnalyticsQueryResponse**](WebAnalyticsQueryResponse.md)>
 | **403** | Access forbidden |  -  |
 | **404** | Resource not found |  -  |
 | **422** | Invalid parameters |  -  |
-| **503** | Upstream provider unavailable, retry after the number of seconds in the Retry-After header |  * Retry-After - Seconds until the report can be sent again <br>  |
+| **503** | Upstream provider unavailable, retry after the number of seconds in the Retry-After header: Google&#39;s own value when it sent one, otherwise 900 after a quota error and 60 after an outage |  * Retry-After - Seconds to wait before retrying <br>  |
 
