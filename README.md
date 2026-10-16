@@ -2,7 +2,7 @@
 
 LLM Pulse API
 
-- API version: 1.63.0
+- API version: 1.64.0
 
 - Generator version: 7.24.0
 
@@ -43,7 +43,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>ai.llmpulse</groupId>
   <artifactId>llmpulse-java</artifactId>
-  <version>1.63.0</version>
+  <version>1.64.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -53,7 +53,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "ai.llmpulse:llmpulse-java:1.63.0"
+compile "ai.llmpulse:llmpulse-java:1.64.0"
 ```
 
 ### Others
@@ -66,7 +66,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-- `target/llmpulse-java-1.63.0.jar`
+- `target/llmpulse-java-1.64.0.jar`
 - `target/lib/*.jar`
 
 ## Getting Started
@@ -257,8 +257,8 @@ Class | Method | HTTP request | Description
 *ProjectsApi* | [**listModelsWithHttpInfo**](docs/ProjectsApi.md#listModelsWithHttpInfo) | **GET** /dimensions/models | List models with data
 *ProjectsApi* | [**listProjects**](docs/ProjectsApi.md#listProjects) | **GET** /dimensions/projects | List projects
 *ProjectsApi* | [**listProjectsWithHttpInfo**](docs/ProjectsApi.md#listProjectsWithHttpInfo) | **GET** /dimensions/projects | List projects
-*ProjectsApi* | [**updateProject**](docs/ProjectsApi.md#updateProject) | **PATCH** /projects/{id} | Update a project profile (Brand Book)
-*ProjectsApi* | [**updateProjectWithHttpInfo**](docs/ProjectsApi.md#updateProjectWithHttpInfo) | **PATCH** /projects/{id} | Update a project profile (Brand Book)
+*ProjectsApi* | [**updateProject**](docs/ProjectsApi.md#updateProject) | **PATCH** /projects/{id} | Update a project profile (Brand Book) or prompt limit
+*ProjectsApi* | [**updateProjectWithHttpInfo**](docs/ProjectsApi.md#updateProjectWithHttpInfo) | **PATCH** /projects/{id} | Update a project profile (Brand Book) or prompt limit
 *ProjectsApi* | [**updateProjectDraft**](docs/ProjectsApi.md#updateProjectDraft) | **PATCH** /project_drafts/{id} | Submit a wizard step
 *ProjectsApi* | [**updateProjectDraftWithHttpInfo**](docs/ProjectsApi.md#updateProjectDraftWithHttpInfo) | **PATCH** /project_drafts/{id} | Submit a wizard step
 *PromptsApi* | [**acceptSuggestedPrompts**](docs/PromptsApi.md#acceptSuggestedPrompts) | **POST** /suggested_prompts/accept | Accept suggested prompts
