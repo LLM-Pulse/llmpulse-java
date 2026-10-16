@@ -311,7 +311,7 @@ public class UpdateOwnedMediaProfilesRequest {
   }
 
   /**
-   * The main LinkedIn Company Page URL (/company/...). An empty string or null clears it
+   * The main LinkedIn page URL: a company (/company/...), school (/school/...) or showcase (/showcase/...) page. An empty string or null clears it
    * @return linkedinCompanyUrl
    */
   @javax.annotation.Nullable
@@ -511,7 +511,7 @@ public class UpdateOwnedMediaProfilesRequest {
   }
 
   /**
-   * FULL replacement list of extra LinkedIn Company Page URLs (at most 10); [] clears it
+   * FULL replacement list of extra LinkedIn company, school or showcase page URLs (at most 10); [] clears it
    * @return linkedinExtraProfileUrls
    */
   @javax.annotation.Nullable

@@ -39,19 +39,16 @@ import ai.llmpulse.sdk.ApiClient;
  */
 @JsonPropertyOrder({
   ProjectDetailsAllOfStats.JSON_PROPERTY_PROMPTS_COUNT,
-  ProjectDetailsAllOfStats.JSON_PROPERTY_PROMPTS_AVAILABLE,
   ProjectDetailsAllOfStats.JSON_PROPERTY_PROMPTS_BY_BRAND_KIND,
   ProjectDetailsAllOfStats.JSON_PROPERTY_COMPETITORS_COUNT,
-  ProjectDetailsAllOfStats.JSON_PROPERTY_COLLECTIONS_COUNT
+  ProjectDetailsAllOfStats.JSON_PROPERTY_COLLECTIONS_COUNT,
+  ProjectDetailsAllOfStats.JSON_PROPERTY_PROMPTS_AVAILABLE
 })
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
 public class ProjectDetailsAllOfStats {
   public static final String JSON_PROPERTY_PROMPTS_COUNT = "prompts_count";
   @javax.annotation.Nullable
   private Integer promptsCount;
-
-  public static final String JSON_PROPERTY_PROMPTS_AVAILABLE = "prompts_available";
-  private JsonNullable<Integer> promptsAvailable = JsonNullable.<Integer>undefined();
 
   public static final String JSON_PROPERTY_PROMPTS_BY_BRAND_KIND = "prompts_by_brand_kind";
   @javax.annotation.Nullable
@@ -65,6 +62,9 @@ public class ProjectDetailsAllOfStats {
   @javax.annotation.Nullable
   private Integer collectionsCount;
 
+  public static final String JSON_PROPERTY_PROMPTS_AVAILABLE = "prompts_available";
+  private JsonNullable<Integer> promptsAvailable = JsonNullable.<Integer>undefined();
+
   public ProjectDetailsAllOfStats() { 
   }
 
@@ -74,7 +74,7 @@ public class ProjectDetailsAllOfStats {
   }
 
   /**
-   * Active prompts in the project
+   * Get promptsCount
    * @return promptsCount
    */
   @javax.annotation.Nullable
@@ -89,38 +89,6 @@ public class ProjectDetailsAllOfStats {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPromptsCount(@javax.annotation.Nullable Integer promptsCount) {
     this.promptsCount = promptsCount;
-  }
-
-
-  public ProjectDetailsAllOfStats promptsAvailable(@javax.annotation.Nullable Integer promptsAvailable) {
-    this.promptsAvailable = JsonNullable.<Integer>of(promptsAvailable);
-    return this;
-  }
-
-  /**
-   * Prompts that can still be added to this project, the lower of its free slots under prompt_limit and the prompts left in the account quota; null when neither caps it
-   * @return promptsAvailable
-   */
-  @javax.annotation.Nullable
-  @JsonIgnore
-  public Integer getPromptsAvailable() {
-        return promptsAvailable.orElse(null);
-  }
-
-  @JsonProperty(value = JSON_PROPERTY_PROMPTS_AVAILABLE, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public JsonNullable<Integer> getPromptsAvailable_JsonNullable() {
-    return promptsAvailable;
-  }
-  
-  @JsonProperty(JSON_PROPERTY_PROMPTS_AVAILABLE)
-  public void setPromptsAvailable_JsonNullable(JsonNullable<Integer> promptsAvailable) {
-    this.promptsAvailable = promptsAvailable;
-  }
-
-  public void setPromptsAvailable(@javax.annotation.Nullable Integer promptsAvailable) {
-    this.promptsAvailable = JsonNullable.<Integer>of(promptsAvailable);
   }
 
 
@@ -196,6 +164,38 @@ public class ProjectDetailsAllOfStats {
   }
 
 
+  public ProjectDetailsAllOfStats promptsAvailable(@javax.annotation.Nullable Integer promptsAvailable) {
+    this.promptsAvailable = JsonNullable.<Integer>of(promptsAvailable);
+    return this;
+  }
+
+  /**
+   * How many prompts can still be added to this project now, the same number the Prompts page offers. The lower of the project&#39;s free slots under prompt_limit and the account&#39;s remaining prompts; 0 when either is full (a project over its limit keeps its prompts). Null when neither caps it
+   * @return promptsAvailable
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public Integer getPromptsAvailable() {
+        return promptsAvailable.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_PROMPTS_AVAILABLE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<Integer> getPromptsAvailable_JsonNullable() {
+    return promptsAvailable;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_PROMPTS_AVAILABLE)
+  public void setPromptsAvailable_JsonNullable(JsonNullable<Integer> promptsAvailable) {
+    this.promptsAvailable = promptsAvailable;
+  }
+
+  public void setPromptsAvailable(@javax.annotation.Nullable Integer promptsAvailable) {
+    this.promptsAvailable = JsonNullable.<Integer>of(promptsAvailable);
+  }
+
+
   /**
    * Return true if this ProjectDetails_allOf_stats object is equal to o.
    */
@@ -209,10 +209,10 @@ public class ProjectDetailsAllOfStats {
     }
     ProjectDetailsAllOfStats projectDetailsAllOfStats = (ProjectDetailsAllOfStats) o;
     return Objects.equals(this.promptsCount, projectDetailsAllOfStats.promptsCount) &&
-        equalsNullable(this.promptsAvailable, projectDetailsAllOfStats.promptsAvailable) &&
         Objects.equals(this.promptsByBrandKind, projectDetailsAllOfStats.promptsByBrandKind) &&
         Objects.equals(this.competitorsCount, projectDetailsAllOfStats.competitorsCount) &&
-        Objects.equals(this.collectionsCount, projectDetailsAllOfStats.collectionsCount);
+        Objects.equals(this.collectionsCount, projectDetailsAllOfStats.collectionsCount) &&
+        equalsNullable(this.promptsAvailable, projectDetailsAllOfStats.promptsAvailable);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -221,7 +221,7 @@ public class ProjectDetailsAllOfStats {
 
   @Override
   public int hashCode() {
-    return Objects.hash(promptsCount, hashCodeNullable(promptsAvailable), promptsByBrandKind, competitorsCount, collectionsCount);
+    return Objects.hash(promptsCount, promptsByBrandKind, competitorsCount, collectionsCount, hashCodeNullable(promptsAvailable));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -236,10 +236,10 @@ public class ProjectDetailsAllOfStats {
     StringBuilder sb = new StringBuilder();
     sb.append("class ProjectDetailsAllOfStats {\n");
     sb.append("    promptsCount: ").append(toIndentedString(promptsCount)).append("\n");
-    sb.append("    promptsAvailable: ").append(toIndentedString(promptsAvailable)).append("\n");
     sb.append("    promptsByBrandKind: ").append(toIndentedString(promptsByBrandKind)).append("\n");
     sb.append("    competitorsCount: ").append(toIndentedString(competitorsCount)).append("\n");
     sb.append("    collectionsCount: ").append(toIndentedString(collectionsCount)).append("\n");
+    sb.append("    promptsAvailable: ").append(toIndentedString(promptsAvailable)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -289,11 +289,6 @@ public class ProjectDetailsAllOfStats {
       joiner.add(String.format(java.util.Locale.ROOT, "%sprompts_count%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPromptsCount()))));
     }
 
-    // add `prompts_available` to the URL query string
-    if (getPromptsAvailable() != null) {
-      joiner.add(String.format(java.util.Locale.ROOT, "%sprompts_available%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPromptsAvailable()))));
-    }
-
     // add `prompts_by_brand_kind` to the URL query string
     if (getPromptsByBrandKind() != null) {
       joiner.add(getPromptsByBrandKind().toUrlQueryString(prefix + "prompts_by_brand_kind" + suffix));
@@ -307,6 +302,11 @@ public class ProjectDetailsAllOfStats {
     // add `collections_count` to the URL query string
     if (getCollectionsCount() != null) {
       joiner.add(String.format(java.util.Locale.ROOT, "%scollections_count%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCollectionsCount()))));
+    }
+
+    // add `prompts_available` to the URL query string
+    if (getPromptsAvailable() != null) {
+      joiner.add(String.format(java.util.Locale.ROOT, "%sprompts_available%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPromptsAvailable()))));
     }
 
     return joiner.toString();

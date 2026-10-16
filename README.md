@@ -257,8 +257,8 @@ Class | Method | HTTP request | Description
 *ProjectsApi* | [**listModelsWithHttpInfo**](docs/ProjectsApi.md#listModelsWithHttpInfo) | **GET** /dimensions/models | List models with data
 *ProjectsApi* | [**listProjects**](docs/ProjectsApi.md#listProjects) | **GET** /dimensions/projects | List projects
 *ProjectsApi* | [**listProjectsWithHttpInfo**](docs/ProjectsApi.md#listProjectsWithHttpInfo) | **GET** /dimensions/projects | List projects
-*ProjectsApi* | [**updateProject**](docs/ProjectsApi.md#updateProject) | **PATCH** /projects/{id} | Update a project profile (Brand Book) or prompt limit
-*ProjectsApi* | [**updateProjectWithHttpInfo**](docs/ProjectsApi.md#updateProjectWithHttpInfo) | **PATCH** /projects/{id} | Update a project profile (Brand Book) or prompt limit
+*ProjectsApi* | [**updateProject**](docs/ProjectsApi.md#updateProject) | **PATCH** /projects/{id} | Update a project profile (Brand Book)
+*ProjectsApi* | [**updateProjectWithHttpInfo**](docs/ProjectsApi.md#updateProjectWithHttpInfo) | **PATCH** /projects/{id} | Update a project profile (Brand Book)
 *ProjectsApi* | [**updateProjectDraft**](docs/ProjectsApi.md#updateProjectDraft) | **PATCH** /project_drafts/{id} | Submit a wizard step
 *ProjectsApi* | [**updateProjectDraftWithHttpInfo**](docs/ProjectsApi.md#updateProjectDraftWithHttpInfo) | **PATCH** /project_drafts/{id} | Submit a wizard step
 *PromptsApi* | [**acceptSuggestedPrompts**](docs/PromptsApi.md#acceptSuggestedPrompts) | **POST** /suggested_prompts/accept | Accept suggested prompts
