@@ -177,6 +177,8 @@ docs/ProjectCreateResponseLimits.md
 docs/ProjectCreateResponsePrompts.md
 docs/ProjectCreateResponseSameDomainProjectsInner.md
 docs/ProjectDetails.md
+docs/ProjectDetailsAllOfAgentTraffic.md
+docs/ProjectDetailsAllOfAiTraffic.md
 docs/ProjectDetailsAllOfDataCoverage.md
 docs/ProjectDetailsAllOfSearchConsole.md
 docs/ProjectDetailsAllOfStats.md
@@ -497,6 +499,8 @@ src/main/java/ai/llmpulse/sdk/model/ProjectCreateResponseLimits.java
 src/main/java/ai/llmpulse/sdk/model/ProjectCreateResponsePrompts.java
 src/main/java/ai/llmpulse/sdk/model/ProjectCreateResponseSameDomainProjectsInner.java
 src/main/java/ai/llmpulse/sdk/model/ProjectDetails.java
+src/main/java/ai/llmpulse/sdk/model/ProjectDetailsAllOfAgentTraffic.java
+src/main/java/ai/llmpulse/sdk/model/ProjectDetailsAllOfAiTraffic.java
 src/main/java/ai/llmpulse/sdk/model/ProjectDetailsAllOfDataCoverage.java
 src/main/java/ai/llmpulse/sdk/model/ProjectDetailsAllOfSearchConsole.java
 src/main/java/ai/llmpulse/sdk/model/ProjectDetailsAllOfStats.java

@@ -2,7 +2,7 @@
 
 # ProjectDetailsAllOfSearchConsole
 
-Google Search Console connection of the project. connected means the Search Console endpoints can answer; reconnect_required means Google refused the stored access and the property must be reconnected in Preferences > Project Settings > Data Connections.
+Google Search Console connection of the project. connected means the Search Console endpoints can answer; reconnect_required means Google refused the stored access, so the endpoints return ERR_SEARCH_CONSOLE_ACCESS_REVOKED until the property is reconnected at connect_url; not_connected means the endpoints return ERR_SEARCH_CONSOLE_NOT_CONNECTED.
 
 ## Properties
 
@@ -10,6 +10,7 @@ Google Search Console connection of the project. connected means the Search Cons
 |------------ | ------------- | ------------- | -------------|
 |**status** | [**StatusEnum**](#StatusEnum) |  |  [optional] |
 |**property** | **String** | The connected property (e.g. sc-domain:example.com), null when not connected |  [optional] |
+|**connectUrl** | **URI** | The in-app page where the property is connected or reconnected (Preferences &gt; Project Settings &gt; Data Connections) |  [optional] |
 
 
 
