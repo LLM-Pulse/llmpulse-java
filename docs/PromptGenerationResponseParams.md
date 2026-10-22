@@ -19,6 +19,7 @@ The validated request the run uses, with the project's locale filled in
 |**sourceLanguageCode** | **String** |  |  [optional] |
 |**minWords** | **Integer** |  |  [optional] |
 |**allCountries** | **Boolean** |  |  [optional] |
+|**property** | **String** |  |  [optional] |
 
 
 

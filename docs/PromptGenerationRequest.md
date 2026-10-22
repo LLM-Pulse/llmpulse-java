@@ -20,6 +20,7 @@
 |**sourceLanguageCode** | **String** | translate: language of the prompts to translate |  [optional] |
 |**minWords** | **Integer** | search_console: skip queries shorter than this many words |  [optional] |
 |**allCountries** | **Boolean** | search_console: include queries from every country instead of country_code only |  [optional] |
+|**property** | **String** | search_console: the property id to read queries from (GET /search_console/properties lists them); the primary property when omitted |  [optional] |
 
 
 

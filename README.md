@@ -2,7 +2,7 @@
 
 LLM Pulse API
 
-- API version: 1.67.0
+- API version: 1.68.0
 
 - Generator version: 7.24.0
 
@@ -43,7 +43,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>ai.llmpulse</groupId>
   <artifactId>llmpulse-java</artifactId>
-  <version>1.67.0</version>
+  <version>1.68.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -53,7 +53,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "ai.llmpulse:llmpulse-java:1.67.0"
+compile "ai.llmpulse:llmpulse-java:1.68.0"
 ```
 
 ### Others
@@ -66,7 +66,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-- `target/llmpulse-java-1.67.0.jar`
+- `target/llmpulse-java-1.68.0.jar`
 - `target/lib/*.jar`
 
 ## Getting Started
@@ -313,6 +313,8 @@ Class | Method | HTTP request | Description
 *SearchConsoleApi* | [**getSearchConsoleSummaryWithHttpInfo**](docs/SearchConsoleApi.md#getSearchConsoleSummaryWithHttpInfo) | **GET** /search_console/summary | Search Console summary (Growth+)
 *SearchConsoleApi* | [**getSearchConsoleTimeseries**](docs/SearchConsoleApi.md#getSearchConsoleTimeseries) | **GET** /search_console/timeseries | Search Console time series (Growth+)
 *SearchConsoleApi* | [**getSearchConsoleTimeseriesWithHttpInfo**](docs/SearchConsoleApi.md#getSearchConsoleTimeseriesWithHttpInfo) | **GET** /search_console/timeseries | Search Console time series (Growth+)
+*SearchConsoleApi* | [**listSearchConsoleProperties**](docs/SearchConsoleApi.md#listSearchConsoleProperties) | **GET** /search_console/properties | List Search Console properties (Growth+)
+*SearchConsoleApi* | [**listSearchConsolePropertiesWithHttpInfo**](docs/SearchConsoleApi.md#listSearchConsolePropertiesWithHttpInfo) | **GET** /search_console/properties | List Search Console properties (Growth+)
 *SentimentsApi* | [**getSentimentTags**](docs/SentimentsApi.md#getSentimentTags) | **GET** /reports/sentiment/tags | Sentiment by tag (Growth plan or above)
 *SentimentsApi* | [**getSentimentTagsWithHttpInfo**](docs/SentimentsApi.md#getSentimentTagsWithHttpInfo) | **GET** /reports/sentiment/tags | Sentiment by tag (Growth plan or above)
 *SentimentsApi* | [**getSentimentTopics**](docs/SentimentsApi.md#getSentimentTopics) | **GET** /reports/sentiment/topics | Sentiment by topic (Growth plan or above)
@@ -582,11 +584,15 @@ Class | Method | HTTP request | Description
  - [RevokeTeamInvitation200Response](docs/RevokeTeamInvitation200Response.md)
  - [SampleWebhookPayloads200Response](docs/SampleWebhookPayloads200Response.md)
  - [SampleWebhookPayloads200ResponseDataInner](docs/SampleWebhookPayloads200ResponseDataInner.md)
+ - [SearchConsoleExcludedProperty](docs/SearchConsoleExcludedProperty.md)
  - [SearchConsoleFiltersInner](docs/SearchConsoleFiltersInner.md)
  - [SearchConsoleListResponse](docs/SearchConsoleListResponse.md)
  - [SearchConsoleListResponseDataInner](docs/SearchConsoleListResponseDataInner.md)
  - [SearchConsoleMetrics](docs/SearchConsoleMetrics.md)
+ - [SearchConsolePropertiesResponse](docs/SearchConsolePropertiesResponse.md)
+ - [SearchConsolePropertiesResponseDataInner](docs/SearchConsolePropertiesResponseDataInner.md)
  - [SearchConsoleProperty](docs/SearchConsoleProperty.md)
+ - [SearchConsolePropertyError](docs/SearchConsolePropertyError.md)
  - [SearchConsoleRowsResponse](docs/SearchConsoleRowsResponse.md)
  - [SearchConsoleRowsResponseDataInner](docs/SearchConsoleRowsResponseDataInner.md)
  - [SearchConsoleSummaryResponse](docs/SearchConsoleSummaryResponse.md)
