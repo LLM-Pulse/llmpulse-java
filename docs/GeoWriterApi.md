@@ -338,7 +338,7 @@ public class Example {
         GeoWriterApi apiInstance = new GeoWriterApi(defaultClient);
         Integer projectId = 56; // Integer | Project ID
         String taskType = "brief"; // String | 
-        String status = "status_example"; // String | 
+        String status = "pending"; // String | Keep only the tasks in this status. Discarded tasks are never listed, so discarded returns an empty page.
         Integer page = 1; // Integer | 
         Integer perPage = 20; // Integer | 
         try {
@@ -362,7 +362,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **projectId** | **Integer**| Project ID | |
 | **taskType** | **String**|  | [optional] [enum: brief, create, update, pr_insights, custom, product_listing] |
-| **status** | **String**|  | [optional] |
+| **status** | **String**| Keep only the tasks in this status. Discarded tasks are never listed, so discarded returns an empty page. | [optional] [enum: pending, processing, review, completed, in_progress, blocked, discarded] |
 | **page** | **Integer**|  | [optional] [default to 1] |
 | **perPage** | **Integer**|  | [optional] [default to 20] |
 
@@ -415,7 +415,7 @@ public class Example {
         GeoWriterApi apiInstance = new GeoWriterApi(defaultClient);
         Integer projectId = 56; // Integer | Project ID
         String taskType = "brief"; // String | 
-        String status = "status_example"; // String | 
+        String status = "pending"; // String | Keep only the tasks in this status. Discarded tasks are never listed, so discarded returns an empty page.
         Integer page = 1; // Integer | 
         Integer perPage = 20; // Integer | 
         try {
@@ -441,7 +441,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **projectId** | **Integer**| Project ID | |
 | **taskType** | **String**|  | [optional] [enum: brief, create, update, pr_insights, custom, product_listing] |
-| **status** | **String**|  | [optional] |
+| **status** | **String**| Keep only the tasks in this status. Discarded tasks are never listed, so discarded returns an empty page. | [optional] [enum: pending, processing, review, completed, in_progress, blocked, discarded] |
 | **page** | **Integer**|  | [optional] [default to 1] |
 | **perPage** | **Integer**|  | [optional] [default to 20] |
 
