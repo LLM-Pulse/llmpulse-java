@@ -21,7 +21,7 @@ One recommendation item, in the shape GET /recommendations/{id} lists items
 |**status** | [**StatusEnum**](#StatusEnum) |  |  |
 |**statusChangedAt** | **OffsetDateTime** |  |  [optional] |
 |**position** | **Integer** |  |  |
-|**metadata** | **Map&lt;String, Object&gt;** |  |  [optional] |
+|**metadata** | **Map&lt;String, Object&gt;** | Free-form details. Carries effort (low, medium or high) when the generator rated it, archive_reason (not_relevant, too_complex or competitor) on an item archived with a reason, and domain on PR &amp; Citation Building items. |  [optional] |
 |**createdAt** | **OffsetDateTime** |  |  |
 |**updatedAt** | **OffsetDateTime** |  |  |
 |**resolvedSourceRefs** | **List&lt;Map&lt;String, Object&gt;&gt;** | The evidence each source_refs code points to (prompt, citation or own page) |  [optional] |
