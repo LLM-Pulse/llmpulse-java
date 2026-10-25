@@ -13,7 +13,7 @@
 |**countryCode** | **String** |  |  [optional] |
 |**cadence** | [**CadenceEnum**](#CadenceEnum) |  |  [optional] |
 |**status** | [**StatusEnum**](#StatusEnum) |  |  [optional] |
-|**pausedReason** | **String** | user, or unreachable when three runs in a row could not reach the site |  [optional] |
+|**pausedReason** | **String** | Null unless status is paused. user (paused by hand), unreachable (three runs in a row could not reach the site) or quota (the account has more active recurring audits than its plan allows; resume it once there is room) |  [optional] |
 |**schedule** | [**GeoAuditSchedule**](GeoAuditSchedule.md) |  |  [optional] |
 |**nextRunAt** | **OffsetDateTime** |  |  [optional] |
 |**emailAlerts** | **Boolean** |  |  [optional] |
