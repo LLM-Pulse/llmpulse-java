@@ -8,6 +8,8 @@ All URIs are relative to *https://api.llmpulse.ai/api/v1*
 | [**createProjectWithHttpInfo**](ProjectsApi.md#createProjectWithHttpInfo) | **POST** /projects | Create a project (fast mode) |
 | [**createProjectDraft**](ProjectsApi.md#createProjectDraft) | **POST** /project_drafts | Start a project draft (wizard step 1) |
 | [**createProjectDraftWithHttpInfo**](ProjectsApi.md#createProjectDraftWithHttpInfo) | **POST** /project_drafts | Start a project draft (wizard step 1) |
+| [**deleteProject**](ProjectsApi.md#deleteProject) | **DELETE** /projects/{id} | Delete a project |
+| [**deleteProjectWithHttpInfo**](ProjectsApi.md#deleteProjectWithHttpInfo) | **DELETE** /projects/{id} | Delete a project |
 | [**finalizeProjectDraft**](ProjectsApi.md#finalizeProjectDraft) | **POST** /project_drafts/{id}/finalize | Finalize a draft into a real project |
 | [**finalizeProjectDraftWithHttpInfo**](ProjectsApi.md#finalizeProjectDraftWithHttpInfo) | **POST** /project_drafts/{id}/finalize | Finalize a draft into a real project |
 | [**getProjectDetails**](ProjectsApi.md#getProjectDetails) | **GET** /dimensions/projects/{id} | Project details |
@@ -321,6 +323,154 @@ ApiResponse<Void>
 | **201** | Draft created; envelope with draft state, suggestions and limits |  -  |
 | **422** | Invalid parameters |  -  |
 | **403** | Writes with a read-only key answer ERR_INSUFFICIENT_SCOPE, and a key limited to some projects ERR_KEY_PROJECT_SCOPED, with the same status: this operation acts on the whole account |  -  |
+
+
+## deleteProject
+
+> ProjectDeleteResponse deleteProject(id)
+
+Delete a project
+
+Deletes a project, like Delete Project in Project Settings, and cannot be undone. The project disappears at once from the app, GET /dimensions/projects and every other endpoint, and frees a project slot; a background job then deletes its prompts, answers, mentions, citations, sentiment, competitors and metrics history. API keys limited to it lose it, and a key left with no project is revoked. A project that is already being deleted, or that the key cannot see, answers ERR_PROJECT_NOT_FOUND. Requires an account-wide &#x60;read_write&#x60; scope API key: a key limited to some projects answers ERR_KEY_PROJECT_SCOPED. A team member needs permission to delete projects.
+
+### Example
+
+```java
+// Import classes:
+import ai.llmpulse.sdk.ApiClient;
+import ai.llmpulse.sdk.ApiException;
+import ai.llmpulse.sdk.Configuration;
+import ai.llmpulse.sdk.auth.*;
+import ai.llmpulse.sdk.models.*;
+import ai.llmpulse.sdk.api.ProjectsApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.llmpulse.ai/api/v1");
+        
+        // Configure HTTP bearer authorization: BearerAuth
+        HttpBearerAuth BearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("BearerAuth");
+        BearerAuth.setBearerToken("BEARER TOKEN");
+
+        ProjectsApi apiInstance = new ProjectsApi(defaultClient);
+        Integer id = 56; // Integer | 
+        try {
+            ProjectDeleteResponse result = apiInstance.deleteProject(id);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling ProjectsApi#deleteProject");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **Integer**|  | |
+
+### Return type
+
+[**ProjectDeleteResponse**](ProjectDeleteResponse.md)
+
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Deleted |  -  |
+| **403** | A read-only key answers ERR_INSUFFICIENT_SCOPE and a key limited to some projects ERR_KEY_PROJECT_SCOPED: deleting a project acts on the whole account. A team member whose permissions do not grant deleting projects answers ERR_INSUFFICIENT_PERMISSION. All with the same status, and nothing is deleted |  -  |
+| **404** | Resource not found |  -  |
+
+## deleteProjectWithHttpInfo
+
+> ApiResponse<ProjectDeleteResponse> deleteProjectWithHttpInfo(id)
+
+Delete a project
+
+Deletes a project, like Delete Project in Project Settings, and cannot be undone. The project disappears at once from the app, GET /dimensions/projects and every other endpoint, and frees a project slot; a background job then deletes its prompts, answers, mentions, citations, sentiment, competitors and metrics history. API keys limited to it lose it, and a key left with no project is revoked. A project that is already being deleted, or that the key cannot see, answers ERR_PROJECT_NOT_FOUND. Requires an account-wide &#x60;read_write&#x60; scope API key: a key limited to some projects answers ERR_KEY_PROJECT_SCOPED. A team member needs permission to delete projects.
+
+### Example
+
+```java
+// Import classes:
+import ai.llmpulse.sdk.ApiClient;
+import ai.llmpulse.sdk.ApiException;
+import ai.llmpulse.sdk.ApiResponse;
+import ai.llmpulse.sdk.Configuration;
+import ai.llmpulse.sdk.auth.*;
+import ai.llmpulse.sdk.models.*;
+import ai.llmpulse.sdk.api.ProjectsApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.llmpulse.ai/api/v1");
+        
+        // Configure HTTP bearer authorization: BearerAuth
+        HttpBearerAuth BearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("BearerAuth");
+        BearerAuth.setBearerToken("BEARER TOKEN");
+
+        ProjectsApi apiInstance = new ProjectsApi(defaultClient);
+        Integer id = 56; // Integer | 
+        try {
+            ApiResponse<ProjectDeleteResponse> response = apiInstance.deleteProjectWithHttpInfo(id);
+            System.out.println("Status code: " + response.getStatusCode());
+            System.out.println("Response headers: " + response.getHeaders());
+            System.out.println("Response body: " + response.getData());
+        } catch (ApiException e) {
+            System.err.println("Exception when calling ProjectsApi#deleteProject");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            System.err.println("Reason: " + e.getResponseBody());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **Integer**|  | |
+
+### Return type
+
+ApiResponse<[**ProjectDeleteResponse**](ProjectDeleteResponse.md)>
+
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Deleted |  -  |
+| **403** | A read-only key answers ERR_INSUFFICIENT_SCOPE and a key limited to some projects ERR_KEY_PROJECT_SCOPED: deleting a project acts on the whole account. A team member whose permissions do not grant deleting projects answers ERR_INSUFFICIENT_PERMISSION. All with the same status, and nothing is deleted |  -  |
+| **404** | Resource not found |  -  |
 
 
 ## finalizeProjectDraft

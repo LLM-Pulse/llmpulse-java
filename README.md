@@ -2,7 +2,7 @@
 
 LLM Pulse API
 
-- API version: 1.72.0
+- API version: 1.73.0
 
 - Generator version: 7.24.0
 
@@ -43,7 +43,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>ai.llmpulse</groupId>
   <artifactId>llmpulse-java</artifactId>
-  <version>1.72.0</version>
+  <version>1.73.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -53,7 +53,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "ai.llmpulse:llmpulse-java:1.72.0"
+compile "ai.llmpulse:llmpulse-java:1.73.0"
 ```
 
 ### Others
@@ -66,7 +66,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-- `target/llmpulse-java-1.72.0.jar`
+- `target/llmpulse-java-1.73.0.jar`
 - `target/lib/*.jar`
 
 ## Getting Started
@@ -251,6 +251,8 @@ Class | Method | HTTP request | Description
 *ProjectsApi* | [**createProjectWithHttpInfo**](docs/ProjectsApi.md#createProjectWithHttpInfo) | **POST** /projects | Create a project (fast mode)
 *ProjectsApi* | [**createProjectDraft**](docs/ProjectsApi.md#createProjectDraft) | **POST** /project_drafts | Start a project draft (wizard step 1)
 *ProjectsApi* | [**createProjectDraftWithHttpInfo**](docs/ProjectsApi.md#createProjectDraftWithHttpInfo) | **POST** /project_drafts | Start a project draft (wizard step 1)
+*ProjectsApi* | [**deleteProject**](docs/ProjectsApi.md#deleteProject) | **DELETE** /projects/{id} | Delete a project
+*ProjectsApi* | [**deleteProjectWithHttpInfo**](docs/ProjectsApi.md#deleteProjectWithHttpInfo) | **DELETE** /projects/{id} | Delete a project
 *ProjectsApi* | [**finalizeProjectDraft**](docs/ProjectsApi.md#finalizeProjectDraft) | **POST** /project_drafts/{id}/finalize | Finalize a draft into a real project
 *ProjectsApi* | [**finalizeProjectDraftWithHttpInfo**](docs/ProjectsApi.md#finalizeProjectDraftWithHttpInfo) | **POST** /project_drafts/{id}/finalize | Finalize a draft into a real project
 *ProjectsApi* | [**getProjectDetails**](docs/ProjectsApi.md#getProjectDetails) | **GET** /dimensions/projects/{id} | Project details
@@ -553,6 +555,7 @@ Class | Method | HTTP request | Description
  - [ProjectCreateResponseLimits](docs/ProjectCreateResponseLimits.md)
  - [ProjectCreateResponsePrompts](docs/ProjectCreateResponsePrompts.md)
  - [ProjectCreateResponseSameDomainProjectsInner](docs/ProjectCreateResponseSameDomainProjectsInner.md)
+ - [ProjectDeleteResponse](docs/ProjectDeleteResponse.md)
  - [ProjectDetails](docs/ProjectDetails.md)
  - [ProjectDetailsAllOfAgentTraffic](docs/ProjectDetailsAllOfAgentTraffic.md)
  - [ProjectDetailsAllOfAiTraffic](docs/ProjectDetailsAllOfAiTraffic.md)

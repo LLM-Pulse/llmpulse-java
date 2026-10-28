@@ -181,6 +181,7 @@ docs/ProjectCreateResponseEmailSubscription.md
 docs/ProjectCreateResponseLimits.md
 docs/ProjectCreateResponsePrompts.md
 docs/ProjectCreateResponseSameDomainProjectsInner.md
+docs/ProjectDeleteResponse.md
 docs/ProjectDetails.md
 docs/ProjectDetailsAllOfAgentTraffic.md
 docs/ProjectDetailsAllOfAiTraffic.md
@@ -513,6 +514,7 @@ src/main/java/ai/llmpulse/sdk/model/ProjectCreateResponseEmailSubscription.java
 src/main/java/ai/llmpulse/sdk/model/ProjectCreateResponseLimits.java
 src/main/java/ai/llmpulse/sdk/model/ProjectCreateResponsePrompts.java
 src/main/java/ai/llmpulse/sdk/model/ProjectCreateResponseSameDomainProjectsInner.java
+src/main/java/ai/llmpulse/sdk/model/ProjectDeleteResponse.java
 src/main/java/ai/llmpulse/sdk/model/ProjectDetails.java
 src/main/java/ai/llmpulse/sdk/model/ProjectDetailsAllOfAgentTraffic.java
 src/main/java/ai/llmpulse/sdk/model/ProjectDetailsAllOfAiTraffic.java
