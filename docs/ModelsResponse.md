@@ -30,6 +30,9 @@
 | NAVER_AI | &quot;naver_ai&quot; |
 | BAIDU_AI | &quot;baidu_ai&quot; |
 | META_AI | &quot;meta_ai&quot; |
+| NAVER_AI_TAB | &quot;naver_ai_tab&quot; |
+| QWEN | &quot;qwen&quot; |
+| DOUBAO | &quot;doubao&quot; |
 
 
 
