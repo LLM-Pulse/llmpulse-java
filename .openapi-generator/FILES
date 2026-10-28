@@ -30,6 +30,8 @@ docs/AnswerDetailsLocale.md
 docs/AnswersApi.md
 docs/ApiError.md
 docs/ApiErrorError.md
+docs/ApiKeyInfo.md
+docs/ApiKeysApi.md
 docs/AssignPromptTagsRequest.md
 docs/CatalogProduct.md
 docs/CatalogPromptSuggestion.md
@@ -60,6 +62,8 @@ docs/CompetitorSuggestion.md
 docs/CompetitorSuggestionsResponse.md
 docs/CompetitorsApi.md
 docs/CreateAnnotationRequest.md
+docs/CreateApiKey201Response.md
+docs/CreateApiKeyRequest.md
 docs/CreateCollectionRequest.md
 docs/CreateCompetitorRequest.md
 docs/CreateProjectDraftRequest.md
@@ -120,6 +124,7 @@ docs/IntelligenceTaskUpdateRequest.md
 docs/IntelligenceTaskUpdateResponse.md
 docs/IntelligenceTasksResponse.md
 docs/LaunchRecommendationsRequest.md
+docs/ListApiKeys200Response.md
 docs/ListCompetitors200Response.md
 docs/ListProjects200Response.md
 docs/ListTeamInvitations200Response.md
@@ -218,6 +223,7 @@ docs/RecommendationsResponse.md
 docs/RemovePromptTagsRequest.md
 docs/RemoveTeamMember200Response.md
 docs/ReputationStudiesApi.md
+docs/RevokeApiKey200Response.md
 docs/RevokeTeamInvitation200Response.md
 docs/SampleWebhookPayloads200Response.md
 docs/SampleWebhookPayloads200ResponseDataInner.md
@@ -324,6 +330,7 @@ src/main/java/ai/llmpulse/sdk/api/AiAgentTrafficApi.java
 src/main/java/ai/llmpulse/sdk/api/AiModelInsightsApi.java
 src/main/java/ai/llmpulse/sdk/api/AnnotationsApi.java
 src/main/java/ai/llmpulse/sdk/api/AnswersApi.java
+src/main/java/ai/llmpulse/sdk/api/ApiKeysApi.java
 src/main/java/ai/llmpulse/sdk/api/CollectionsTagsApi.java
 src/main/java/ai/llmpulse/sdk/api/CompetitorsApi.java
 src/main/java/ai/llmpulse/sdk/api/CustomReportsApi.java
@@ -365,6 +372,7 @@ src/main/java/ai/llmpulse/sdk/model/AnswerDetails.java
 src/main/java/ai/llmpulse/sdk/model/AnswerDetailsLocale.java
 src/main/java/ai/llmpulse/sdk/model/ApiError.java
 src/main/java/ai/llmpulse/sdk/model/ApiErrorError.java
+src/main/java/ai/llmpulse/sdk/model/ApiKeyInfo.java
 src/main/java/ai/llmpulse/sdk/model/AssignPromptTagsRequest.java
 src/main/java/ai/llmpulse/sdk/model/CatalogProduct.java
 src/main/java/ai/llmpulse/sdk/model/CatalogPromptSuggestion.java
@@ -393,6 +401,8 @@ src/main/java/ai/llmpulse/sdk/model/CompetitorMentionsResponse.java
 src/main/java/ai/llmpulse/sdk/model/CompetitorSuggestion.java
 src/main/java/ai/llmpulse/sdk/model/CompetitorSuggestionsResponse.java
 src/main/java/ai/llmpulse/sdk/model/CreateAnnotationRequest.java
+src/main/java/ai/llmpulse/sdk/model/CreateApiKey201Response.java
+src/main/java/ai/llmpulse/sdk/model/CreateApiKeyRequest.java
 src/main/java/ai/llmpulse/sdk/model/CreateCollectionRequest.java
 src/main/java/ai/llmpulse/sdk/model/CreateCompetitorRequest.java
 src/main/java/ai/llmpulse/sdk/model/CreateProjectDraftRequest.java
@@ -449,6 +459,7 @@ src/main/java/ai/llmpulse/sdk/model/IntelligenceTaskUpdateRequest.java
 src/main/java/ai/llmpulse/sdk/model/IntelligenceTaskUpdateResponse.java
 src/main/java/ai/llmpulse/sdk/model/IntelligenceTasksResponse.java
 src/main/java/ai/llmpulse/sdk/model/LaunchRecommendationsRequest.java
+src/main/java/ai/llmpulse/sdk/model/ListApiKeys200Response.java
 src/main/java/ai/llmpulse/sdk/model/ListCompetitors200Response.java
 src/main/java/ai/llmpulse/sdk/model/ListProjects200Response.java
 src/main/java/ai/llmpulse/sdk/model/ListTeamInvitations200Response.java
@@ -540,6 +551,7 @@ src/main/java/ai/llmpulse/sdk/model/RecommendationSummarySummary.java
 src/main/java/ai/llmpulse/sdk/model/RecommendationsResponse.java
 src/main/java/ai/llmpulse/sdk/model/RemovePromptTagsRequest.java
 src/main/java/ai/llmpulse/sdk/model/RemoveTeamMember200Response.java
+src/main/java/ai/llmpulse/sdk/model/RevokeApiKey200Response.java
 src/main/java/ai/llmpulse/sdk/model/RevokeTeamInvitation200Response.java
 src/main/java/ai/llmpulse/sdk/model/SampleWebhookPayloads200Response.java
 src/main/java/ai/llmpulse/sdk/model/SampleWebhookPayloads200ResponseDataInner.java

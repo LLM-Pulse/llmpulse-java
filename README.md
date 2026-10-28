@@ -2,7 +2,7 @@
 
 LLM Pulse API
 
-- API version: 1.71.0
+- API version: 1.72.0
 
 - Generator version: 7.24.0
 
@@ -43,7 +43,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>ai.llmpulse</groupId>
   <artifactId>llmpulse-java</artifactId>
-  <version>1.71.0</version>
+  <version>1.72.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -53,7 +53,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "ai.llmpulse:llmpulse-java:1.71.0"
+compile "ai.llmpulse:llmpulse-java:1.72.0"
 ```
 
 ### Others
@@ -66,7 +66,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-- `target/llmpulse-java-1.71.0.jar`
+- `target/llmpulse-java-1.72.0.jar`
 - `target/lib/*.jar`
 
 ## Getting Started
@@ -137,6 +137,12 @@ Class | Method | HTTP request | Description
 *AnswersApi* | [**getAnswerWithHttpInfo**](docs/AnswersApi.md#getAnswerWithHttpInfo) | **GET** /answers/{id} | Get one AI response
 *AnswersApi* | [**listAnswers**](docs/AnswersApi.md#listAnswers) | **GET** /answers | List AI responses
 *AnswersApi* | [**listAnswersWithHttpInfo**](docs/AnswersApi.md#listAnswersWithHttpInfo) | **GET** /answers | List AI responses
+*ApiKeysApi* | [**createApiKey**](docs/ApiKeysApi.md#createApiKey) | **POST** /api_keys | Create an API key limited to projects
+*ApiKeysApi* | [**createApiKeyWithHttpInfo**](docs/ApiKeysApi.md#createApiKeyWithHttpInfo) | **POST** /api_keys | Create an API key limited to projects
+*ApiKeysApi* | [**listApiKeys**](docs/ApiKeysApi.md#listApiKeys) | **GET** /api_keys | List API keys
+*ApiKeysApi* | [**listApiKeysWithHttpInfo**](docs/ApiKeysApi.md#listApiKeysWithHttpInfo) | **GET** /api_keys | List API keys
+*ApiKeysApi* | [**revokeApiKey**](docs/ApiKeysApi.md#revokeApiKey) | **DELETE** /api_keys/{id} | Revoke an API key
+*ApiKeysApi* | [**revokeApiKeyWithHttpInfo**](docs/ApiKeysApi.md#revokeApiKeyWithHttpInfo) | **DELETE** /api_keys/{id} | Revoke an API key
 *CollectionsTagsApi* | [**assignPromptTags**](docs/CollectionsTagsApi.md#assignPromptTags) | **POST** /prompts/assign_tags | Bulk-attach tags to prompts
 *CollectionsTagsApi* | [**assignPromptTagsWithHttpInfo**](docs/CollectionsTagsApi.md#assignPromptTagsWithHttpInfo) | **POST** /prompts/assign_tags | Bulk-attach tags to prompts
 *CollectionsTagsApi* | [**createCollection**](docs/CollectionsTagsApi.md#createCollection) | **POST** /collections | Create a tag
@@ -406,6 +412,7 @@ Class | Method | HTTP request | Description
  - [AnswerDetailsLocale](docs/AnswerDetailsLocale.md)
  - [ApiError](docs/ApiError.md)
  - [ApiErrorError](docs/ApiErrorError.md)
+ - [ApiKeyInfo](docs/ApiKeyInfo.md)
  - [AssignPromptTagsRequest](docs/AssignPromptTagsRequest.md)
  - [CatalogProduct](docs/CatalogProduct.md)
  - [CatalogPromptSuggestion](docs/CatalogPromptSuggestion.md)
@@ -434,6 +441,8 @@ Class | Method | HTTP request | Description
  - [CompetitorSuggestion](docs/CompetitorSuggestion.md)
  - [CompetitorSuggestionsResponse](docs/CompetitorSuggestionsResponse.md)
  - [CreateAnnotationRequest](docs/CreateAnnotationRequest.md)
+ - [CreateApiKey201Response](docs/CreateApiKey201Response.md)
+ - [CreateApiKeyRequest](docs/CreateApiKeyRequest.md)
  - [CreateCollectionRequest](docs/CreateCollectionRequest.md)
  - [CreateCompetitorRequest](docs/CreateCompetitorRequest.md)
  - [CreateProjectDraftRequest](docs/CreateProjectDraftRequest.md)
@@ -490,6 +499,7 @@ Class | Method | HTTP request | Description
  - [IntelligenceTaskUpdateResponse](docs/IntelligenceTaskUpdateResponse.md)
  - [IntelligenceTasksResponse](docs/IntelligenceTasksResponse.md)
  - [LaunchRecommendationsRequest](docs/LaunchRecommendationsRequest.md)
+ - [ListApiKeys200Response](docs/ListApiKeys200Response.md)
  - [ListCompetitors200Response](docs/ListCompetitors200Response.md)
  - [ListProjects200Response](docs/ListProjects200Response.md)
  - [ListTeamInvitations200Response](docs/ListTeamInvitations200Response.md)
@@ -581,6 +591,7 @@ Class | Method | HTTP request | Description
  - [RecommendationsResponse](docs/RecommendationsResponse.md)
  - [RemovePromptTagsRequest](docs/RemovePromptTagsRequest.md)
  - [RemoveTeamMember200Response](docs/RemoveTeamMember200Response.md)
+ - [RevokeApiKey200Response](docs/RevokeApiKey200Response.md)
  - [RevokeTeamInvitation200Response](docs/RevokeTeamInvitation200Response.md)
  - [SampleWebhookPayloads200Response](docs/SampleWebhookPayloads200Response.md)
  - [SampleWebhookPayloads200ResponseDataInner](docs/SampleWebhookPayloads200ResponseDataInner.md)
