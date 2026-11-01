@@ -14,6 +14,7 @@
 |**teamMembers** | [**AccountCapacity**](AccountCapacity.md) |  |  [optional] |
 |**recurringGeoAudits** | [**AccountQuota**](AccountQuota.md) |  |  [optional] |
 |**geoAuditManualRuns** | [**AccountQuota**](AccountQuota.md) |  |  [optional] |
+|**pitchProjects** | [**AccountPitchQuota**](AccountPitchQuota.md) |  |  [optional] |
 
 
 

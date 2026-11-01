@@ -8,6 +8,7 @@ build.gradle
 build.sbt
 docs/AccountApi.md
 docs/AccountCapacity.md
+docs/AccountPitchQuota.md
 docs/AccountQuota.md
 docs/Actor.md
 docs/AgentBot.md
@@ -186,6 +187,7 @@ docs/ProjectDetails.md
 docs/ProjectDetailsAllOfAgentTraffic.md
 docs/ProjectDetailsAllOfAiTraffic.md
 docs/ProjectDetailsAllOfDataCoverage.md
+docs/ProjectDetailsAllOfPitchRun.md
 docs/ProjectDetailsAllOfSearchConsole.md
 docs/ProjectDetailsAllOfStats.md
 docs/ProjectDetailsAllOfStatsPromptsByBrandKind.md
@@ -355,6 +357,7 @@ src/main/java/ai/llmpulse/sdk/api/TechnicalGeoReportsApi.java
 src/main/java/ai/llmpulse/sdk/api/WebhooksApi.java
 src/main/java/ai/llmpulse/sdk/model/AbstractOpenApiSchema.java
 src/main/java/ai/llmpulse/sdk/model/AccountCapacity.java
+src/main/java/ai/llmpulse/sdk/model/AccountPitchQuota.java
 src/main/java/ai/llmpulse/sdk/model/AccountQuota.java
 src/main/java/ai/llmpulse/sdk/model/Actor.java
 src/main/java/ai/llmpulse/sdk/model/AgentBot.java
@@ -519,6 +522,7 @@ src/main/java/ai/llmpulse/sdk/model/ProjectDetails.java
 src/main/java/ai/llmpulse/sdk/model/ProjectDetailsAllOfAgentTraffic.java
 src/main/java/ai/llmpulse/sdk/model/ProjectDetailsAllOfAiTraffic.java
 src/main/java/ai/llmpulse/sdk/model/ProjectDetailsAllOfDataCoverage.java
+src/main/java/ai/llmpulse/sdk/model/ProjectDetailsAllOfPitchRun.java
 src/main/java/ai/llmpulse/sdk/model/ProjectDetailsAllOfSearchConsole.java
 src/main/java/ai/llmpulse/sdk/model/ProjectDetailsAllOfStats.java
 src/main/java/ai/llmpulse/sdk/model/ProjectDetailsAllOfStatsPromptsByBrandKind.java

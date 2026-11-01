@@ -2,7 +2,7 @@
 
 LLM Pulse API
 
-- API version: 1.76.1
+- API version: 1.77.0
 
 - Generator version: 7.24.0
 
@@ -43,7 +43,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>ai.llmpulse</groupId>
   <artifactId>llmpulse-java</artifactId>
-  <version>1.76.1</version>
+  <version>1.77.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -53,7 +53,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "ai.llmpulse:llmpulse-java:1.76.1"
+compile "ai.llmpulse:llmpulse-java:1.77.0"
 ```
 
 ### Others
@@ -66,7 +66,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-- `target/llmpulse-java-1.76.1.jar`
+- `target/llmpulse-java-1.77.0.jar`
 - `target/lib/*.jar`
 
 ## Getting Started
@@ -396,6 +396,7 @@ Class | Method | HTTP request | Description
 ## Documentation for Models
 
  - [AccountCapacity](docs/AccountCapacity.md)
+ - [AccountPitchQuota](docs/AccountPitchQuota.md)
  - [AccountQuota](docs/AccountQuota.md)
  - [Actor](docs/Actor.md)
  - [AgentBot](docs/AgentBot.md)
@@ -560,6 +561,7 @@ Class | Method | HTTP request | Description
  - [ProjectDetailsAllOfAgentTraffic](docs/ProjectDetailsAllOfAgentTraffic.md)
  - [ProjectDetailsAllOfAiTraffic](docs/ProjectDetailsAllOfAiTraffic.md)
  - [ProjectDetailsAllOfDataCoverage](docs/ProjectDetailsAllOfDataCoverage.md)
+ - [ProjectDetailsAllOfPitchRun](docs/ProjectDetailsAllOfPitchRun.md)
  - [ProjectDetailsAllOfSearchConsole](docs/ProjectDetailsAllOfSearchConsole.md)
  - [ProjectDetailsAllOfStats](docs/ProjectDetailsAllOfStats.md)
  - [ProjectDetailsAllOfStatsPromptsByBrandKind](docs/ProjectDetailsAllOfStatsPromptsByBrandKind.md)
