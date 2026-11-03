@@ -2,7 +2,7 @@
 
 LLM Pulse API
 
-- API version: 1.80.0
+- API version: 1.81.0
 
 - Generator version: 7.24.0
 
@@ -43,7 +43,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>ai.llmpulse</groupId>
   <artifactId>llmpulse-java</artifactId>
-  <version>1.80.0</version>
+  <version>1.81.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -53,7 +53,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "ai.llmpulse:llmpulse-java:1.80.0"
+compile "ai.llmpulse:llmpulse-java:1.81.0"
 ```
 
 ### Others
@@ -66,7 +66,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-- `target/llmpulse-java-1.80.0.jar`
+- `target/llmpulse-java-1.81.0.jar`
 - `target/lib/*.jar`
 
 ## Getting Started
@@ -311,6 +311,16 @@ Class | Method | HTTP request | Description
 *ReputationStudiesApi* | [**listReputationReportsWithHttpInfo**](docs/ReputationStudiesApi.md#listReputationReportsWithHttpInfo) | **GET** /reputation/reports | List reputation reports
 *ReputationStudiesApi* | [**listStudies**](docs/ReputationStudiesApi.md#listStudies) | **GET** /studies | List custom AI studies
 *ReputationStudiesApi* | [**listStudiesWithHttpInfo**](docs/ReputationStudiesApi.md#listStudiesWithHttpInfo) | **GET** /studies | List custom AI studies
+*SearchConsoleApi* | [**getSearchConsoleAiVisibilityGaps**](docs/SearchConsoleApi.md#getSearchConsoleAiVisibilityGaps) | **GET** /search_console/ai_visibility_gaps | Search Console queries vs AI tracking (Growth+)
+*SearchConsoleApi* | [**getSearchConsoleAiVisibilityGapsWithHttpInfo**](docs/SearchConsoleApi.md#getSearchConsoleAiVisibilityGapsWithHttpInfo) | **GET** /search_console/ai_visibility_gaps | Search Console queries vs AI tracking (Growth+)
+*SearchConsoleApi* | [**getSearchConsoleBrandSplit**](docs/SearchConsoleApi.md#getSearchConsoleBrandSplit) | **GET** /search_console/brand_split | Search Console branded vs non-branded split (Growth+)
+*SearchConsoleApi* | [**getSearchConsoleBrandSplitWithHttpInfo**](docs/SearchConsoleApi.md#getSearchConsoleBrandSplitWithHttpInfo) | **GET** /search_console/brand_split | Search Console branded vs non-branded split (Growth+)
+*SearchConsoleApi* | [**getSearchConsoleCannibalization**](docs/SearchConsoleApi.md#getSearchConsoleCannibalization) | **GET** /search_console/cannibalization | Search Console keyword cannibalization (Growth+)
+*SearchConsoleApi* | [**getSearchConsoleCannibalizationWithHttpInfo**](docs/SearchConsoleApi.md#getSearchConsoleCannibalizationWithHttpInfo) | **GET** /search_console/cannibalization | Search Console keyword cannibalization (Growth+)
+*SearchConsoleApi* | [**getSearchConsoleDecay**](docs/SearchConsoleApi.md#getSearchConsoleDecay) | **GET** /search_console/decay | Search Console content decay (Growth+)
+*SearchConsoleApi* | [**getSearchConsoleDecayWithHttpInfo**](docs/SearchConsoleApi.md#getSearchConsoleDecayWithHttpInfo) | **GET** /search_console/decay | Search Console content decay (Growth+)
+*SearchConsoleApi* | [**getSearchConsoleOpportunities**](docs/SearchConsoleApi.md#getSearchConsoleOpportunities) | **GET** /search_console/opportunities | Search Console ranking opportunities (Growth+)
+*SearchConsoleApi* | [**getSearchConsoleOpportunitiesWithHttpInfo**](docs/SearchConsoleApi.md#getSearchConsoleOpportunitiesWithHttpInfo) | **GET** /search_console/opportunities | Search Console ranking opportunities (Growth+)
 *SearchConsoleApi* | [**getSearchConsolePages**](docs/SearchConsoleApi.md#getSearchConsolePages) | **GET** /search_console/pages | Top Search Console pages (Growth+)
 *SearchConsoleApi* | [**getSearchConsolePagesWithHttpInfo**](docs/SearchConsoleApi.md#getSearchConsolePagesWithHttpInfo) | **GET** /search_console/pages | Top Search Console pages (Growth+)
 *SearchConsoleApi* | [**getSearchConsoleQueries**](docs/SearchConsoleApi.md#getSearchConsoleQueries) | **GET** /search_console/queries | Top Search Console queries (Growth+)
@@ -622,11 +632,22 @@ Class | Method | HTTP request | Description
  - [RevokeTeamInvitation200Response](docs/RevokeTeamInvitation200Response.md)
  - [SampleWebhookPayloads200Response](docs/SampleWebhookPayloads200Response.md)
  - [SampleWebhookPayloads200ResponseDataInner](docs/SampleWebhookPayloads200ResponseDataInner.md)
+ - [SearchConsoleAiVisibilityGapsResponse](docs/SearchConsoleAiVisibilityGapsResponse.md)
+ - [SearchConsoleAiVisibilityGapsResponseDataInner](docs/SearchConsoleAiVisibilityGapsResponseDataInner.md)
+ - [SearchConsoleBrandSplitResponse](docs/SearchConsoleBrandSplitResponse.md)
+ - [SearchConsoleBrandSplitResponseUnclassified](docs/SearchConsoleBrandSplitResponseUnclassified.md)
+ - [SearchConsoleCannibalizationResponse](docs/SearchConsoleCannibalizationResponse.md)
+ - [SearchConsoleCannibalizationResponseDataInner](docs/SearchConsoleCannibalizationResponseDataInner.md)
+ - [SearchConsoleCannibalizationResponseDataInnerPagesInner](docs/SearchConsoleCannibalizationResponseDataInnerPagesInner.md)
+ - [SearchConsoleDecayResponse](docs/SearchConsoleDecayResponse.md)
+ - [SearchConsoleDecayResponseDataInner](docs/SearchConsoleDecayResponseDataInner.md)
  - [SearchConsoleExcludedProperty](docs/SearchConsoleExcludedProperty.md)
  - [SearchConsoleFiltersInner](docs/SearchConsoleFiltersInner.md)
  - [SearchConsoleListResponse](docs/SearchConsoleListResponse.md)
  - [SearchConsoleListResponseDataInner](docs/SearchConsoleListResponseDataInner.md)
  - [SearchConsoleMetrics](docs/SearchConsoleMetrics.md)
+ - [SearchConsoleOpportunitiesResponse](docs/SearchConsoleOpportunitiesResponse.md)
+ - [SearchConsoleOpportunitiesResponseDataInner](docs/SearchConsoleOpportunitiesResponseDataInner.md)
  - [SearchConsolePropertiesResponse](docs/SearchConsolePropertiesResponse.md)
  - [SearchConsolePropertiesResponseDataInner](docs/SearchConsolePropertiesResponseDataInner.md)
  - [SearchConsoleProperty](docs/SearchConsoleProperty.md)
