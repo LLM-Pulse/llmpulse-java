@@ -2,7 +2,7 @@
 
 LLM Pulse API
 
-- API version: 1.77.0
+- API version: 1.78.0
 
 - Generator version: 7.24.0
 
@@ -43,7 +43,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>ai.llmpulse</groupId>
   <artifactId>llmpulse-java</artifactId>
-  <version>1.77.0</version>
+  <version>1.78.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -53,7 +53,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "ai.llmpulse:llmpulse-java:1.77.0"
+compile "ai.llmpulse:llmpulse-java:1.78.0"
 ```
 
 ### Others
@@ -66,7 +66,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-- `target/llmpulse-java-1.77.0.jar`
+- `target/llmpulse-java-1.78.0.jar`
 - `target/lib/*.jar`
 
 ## Getting Started
@@ -402,6 +402,27 @@ Class | Method | HTTP request | Description
  - [AgentBot](docs/AgentBot.md)
  - [AgentBotsResponse](docs/AgentBotsResponse.md)
  - [AgentTrafficResponse](docs/AgentTrafficResponse.md)
+ - [AiModelCitationsRow](docs/AiModelCitationsRow.md)
+ - [AiModelInsightsFiltersEcho](docs/AiModelInsightsFiltersEcho.md)
+ - [AiModelInsightsModel](docs/AiModelInsightsModel.md)
+ - [AiModelInsightsSummaryResponse](docs/AiModelInsightsSummaryResponse.md)
+ - [AiModelInsightsSummaryResponseSummary](docs/AiModelInsightsSummaryResponseSummary.md)
+ - [AiModelInsightsSummaryResponseSummaryBrandNetSentimentByModel](docs/AiModelInsightsSummaryResponseSummaryBrandNetSentimentByModel.md)
+ - [AiModelInsightsSummaryResponseSummaryCitationsByModel](docs/AiModelInsightsSummaryResponseSummaryCitationsByModel.md)
+ - [AiModelInsightsSummaryResponseSummaryMentionsByModel](docs/AiModelInsightsSummaryResponseSummaryMentionsByModel.md)
+ - [AiModelInsightsSummaryResponseSummarySentimentMarketShare](docs/AiModelInsightsSummaryResponseSummarySentimentMarketShare.md)
+ - [AiModelInsightsSummaryResponseSummaryWeightedVisibilityByModel](docs/AiModelInsightsSummaryResponseSummaryWeightedVisibilityByModel.md)
+ - [AiModelInsightsSummaryResponseSummaryWeightedVisibilityMarketShare](docs/AiModelInsightsSummaryResponseSummaryWeightedVisibilityMarketShare.md)
+ - [AiModelMentionsRow](docs/AiModelMentionsRow.md)
+ - [AiModelRateCell](docs/AiModelRateCell.md)
+ - [AiModelRateMatrix](docs/AiModelRateMatrix.md)
+ - [AiModelRateMatrixActor](docs/AiModelRateMatrixActor.md)
+ - [AiModelSentimentCell](docs/AiModelSentimentCell.md)
+ - [AiModelSentimentMatrixActor](docs/AiModelSentimentMatrixActor.md)
+ - [AiModelSentimentRow](docs/AiModelSentimentRow.md)
+ - [AiModelWeightedVisibilityCell](docs/AiModelWeightedVisibilityCell.md)
+ - [AiModelWeightedVisibilityMatrixActor](docs/AiModelWeightedVisibilityMatrixActor.md)
+ - [AiModelWeightedVisibilityRow](docs/AiModelWeightedVisibilityRow.md)
  - [AiOrdersResponse](docs/AiOrdersResponse.md)
  - [AiOrdersResponseBySourceInner](docs/AiOrdersResponseBySourceInner.md)
  - [AiOrdersResponseSeriesInner](docs/AiOrdersResponseSeriesInner.md)

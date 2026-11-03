@@ -15,11 +15,11 @@ All URIs are relative to *https://api.llmpulse.ai/api/v1*
 
 ## getAiModelInsightsSummary
 
-> void getAiModelInsightsSummary(projectId, range, from, to, granularity, collectionId, countryCode, languageCode, promptType, brandKind, competitors)
+> AiModelInsightsSummaryResponse getAiModelInsightsSummary(projectId, range, from, to, granularity, collectionId, countryCode, languageCode, promptType, brandKind, competitors)
 
 AI Model Insights summary
 
-Per-model mentions, citations, brand net sentiment with raw counts, weighted visibility totals/shares, plus actor matrices. All actor entries use the standard shape &#x60;{ type, id, competitor_id, name, domain }&#x60; with bare (scheme-less) domains.
+Per-model mentions, citations, brand net sentiment with raw counts, weighted visibility totals/shares, plus actor matrices. All actor entries use the standard shape &#x60;{ type, id, competitor_id, name, domain }&#x60; with bare (scheme-less) domains. Rows cover the AI models the account has enabled or that answered in the window. A share, net sentiment or market share value with nothing behind it is null; counts, totals and weighted visibility scores stay 0.
 
 ### Example
 
@@ -54,7 +54,8 @@ public class Example {
         String brandKind = "brand"; // String | Filter by brand kind: brand (own brand/products), brand_other (competitors/other brands), non_brand (generic, no brand named). For fair 1:1 brand-vs-competitor comparisons (visibility, share of voice), use non_brand: brand-focused prompts skew results toward the brand they name. The in-app Overview page applies non_brand by default.
         String competitors = "competitors_example"; // String | Comma-separated competitor IDs (unknown IDs return ERR_INVALID_PARAM)
         try {
-            apiInstance.getAiModelInsightsSummary(projectId, range, from, to, granularity, collectionId, countryCode, languageCode, promptType, brandKind, competitors);
+            AiModelInsightsSummaryResponse result = apiInstance.getAiModelInsightsSummary(projectId, range, from, to, granularity, collectionId, countryCode, languageCode, promptType, brandKind, competitors);
+            System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling AiModelInsightsApi#getAiModelInsightsSummary");
             System.err.println("Status code: " + e.getCode());
@@ -85,8 +86,8 @@ public class Example {
 
 ### Return type
 
+[**AiModelInsightsSummaryResponse**](AiModelInsightsSummaryResponse.md)
 
-null (empty response body)
 
 ### Authorization
 
@@ -95,7 +96,7 @@ null (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -104,11 +105,11 @@ null (empty response body)
 
 ## getAiModelInsightsSummaryWithHttpInfo
 
-> ApiResponse<Void> getAiModelInsightsSummaryWithHttpInfo(projectId, range, from, to, granularity, collectionId, countryCode, languageCode, promptType, brandKind, competitors)
+> ApiResponse<AiModelInsightsSummaryResponse> getAiModelInsightsSummaryWithHttpInfo(projectId, range, from, to, granularity, collectionId, countryCode, languageCode, promptType, brandKind, competitors)
 
 AI Model Insights summary
 
-Per-model mentions, citations, brand net sentiment with raw counts, weighted visibility totals/shares, plus actor matrices. All actor entries use the standard shape &#x60;{ type, id, competitor_id, name, domain }&#x60; with bare (scheme-less) domains.
+Per-model mentions, citations, brand net sentiment with raw counts, weighted visibility totals/shares, plus actor matrices. All actor entries use the standard shape &#x60;{ type, id, competitor_id, name, domain }&#x60; with bare (scheme-less) domains. Rows cover the AI models the account has enabled or that answered in the window. A share, net sentiment or market share value with nothing behind it is null; counts, totals and weighted visibility scores stay 0.
 
 ### Example
 
@@ -144,9 +145,10 @@ public class Example {
         String brandKind = "brand"; // String | Filter by brand kind: brand (own brand/products), brand_other (competitors/other brands), non_brand (generic, no brand named). For fair 1:1 brand-vs-competitor comparisons (visibility, share of voice), use non_brand: brand-focused prompts skew results toward the brand they name. The in-app Overview page applies non_brand by default.
         String competitors = "competitors_example"; // String | Comma-separated competitor IDs (unknown IDs return ERR_INVALID_PARAM)
         try {
-            ApiResponse<Void> response = apiInstance.getAiModelInsightsSummaryWithHttpInfo(projectId, range, from, to, granularity, collectionId, countryCode, languageCode, promptType, brandKind, competitors);
+            ApiResponse<AiModelInsightsSummaryResponse> response = apiInstance.getAiModelInsightsSummaryWithHttpInfo(projectId, range, from, to, granularity, collectionId, countryCode, languageCode, promptType, brandKind, competitors);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
+            System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
             System.err.println("Exception when calling AiModelInsightsApi#getAiModelInsightsSummary");
             System.err.println("Status code: " + e.getCode());
@@ -177,8 +179,8 @@ public class Example {
 
 ### Return type
 
+ApiResponse<[**AiModelInsightsSummaryResponse**](AiModelInsightsSummaryResponse.md)>
 
-ApiResponse<Void>
 
 ### Authorization
 
@@ -187,7 +189,7 @@ ApiResponse<Void>
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
