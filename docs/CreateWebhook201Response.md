@@ -34,6 +34,7 @@
 | INTELLIGENCE_TASK_UPDATED | &quot;intelligence_task.updated&quot; |
 | GEO_AUDIT_RUN_COMPLETED | &quot;geo_audit_run.completed&quot; |
 | GEO_AUDIT_ALERT_TRIGGERED | &quot;geo_audit_alert.triggered&quot; |
+| TRACKING_RUN_COMPLETED | &quot;tracking_run.completed&quot; |
 
 
 
