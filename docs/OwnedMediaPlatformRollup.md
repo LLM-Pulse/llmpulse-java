@@ -13,6 +13,7 @@
 |**yours** | **Integer** |  |  [optional] |
 |**sharePct** | **BigDecimal** |  |  [optional] |
 |**weekly** | [**List&lt;OwnedMediaPlatformRollupWeeklyInner&gt;**](OwnedMediaPlatformRollupWeeklyInner.md) |  |  [optional] |
+|**activity** | [**List&lt;OwnedMediaPlatformActivityPeriod&gt;**](OwnedMediaPlatformActivityPeriod.md) | One date/citation row per actual project tracking period with runs |  [optional] |
 
 
 

@@ -2,7 +2,7 @@
 
 LLM Pulse API
 
-- API version: 1.83.0
+- API version: 1.84.0
 
 - Generator version: 7.24.0
 
@@ -43,7 +43,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>ai.llmpulse</groupId>
   <artifactId>llmpulse-java</artifactId>
-  <version>1.83.0</version>
+  <version>1.84.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -53,7 +53,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "ai.llmpulse:llmpulse-java:1.83.0"
+compile "ai.llmpulse:llmpulse-java:1.84.0"
 ```
 
 ### Others
@@ -66,7 +66,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-- `target/llmpulse-java-1.83.0.jar`
+- `target/llmpulse-java-1.84.0.jar`
 - `target/lib/*.jar`
 
 ## Getting Started
@@ -575,6 +575,7 @@ Class | Method | HTTP request | Description
  - [OwnedMediaKpis](docs/OwnedMediaKpis.md)
  - [OwnedMediaListResponse](docs/OwnedMediaListResponse.md)
  - [OwnedMediaModelShare](docs/OwnedMediaModelShare.md)
+ - [OwnedMediaPlatformActivityPeriod](docs/OwnedMediaPlatformActivityPeriod.md)
  - [OwnedMediaPlatformProfiles](docs/OwnedMediaPlatformProfiles.md)
  - [OwnedMediaPlatformRollup](docs/OwnedMediaPlatformRollup.md)
  - [OwnedMediaPlatformRollupWeeklyInner](docs/OwnedMediaPlatformRollupWeeklyInner.md)
@@ -584,6 +585,7 @@ Class | Method | HTTP request | Description
  - [OwnedMediaProfilesUpdateResponse](docs/OwnedMediaProfilesUpdateResponse.md)
  - [OwnedMediaRow](docs/OwnedMediaRow.md)
  - [OwnedMediaStoreTotals](docs/OwnedMediaStoreTotals.md)
+ - [OwnedMediaSummaryActivityPeriod](docs/OwnedMediaSummaryActivityPeriod.md)
  - [OwnedMediaSummaryResponse](docs/OwnedMediaSummaryResponse.md)
  - [OwnedMediaSummaryResponsePrevious](docs/OwnedMediaSummaryResponsePrevious.md)
  - [OwnedMediaWeek](docs/OwnedMediaWeek.md)
@@ -639,6 +641,9 @@ Class | Method | HTTP request | Description
  - [RecommendationSummary](docs/RecommendationSummary.md)
  - [RecommendationSummarySummary](docs/RecommendationSummarySummary.md)
  - [RecommendationsResponse](docs/RecommendationsResponse.md)
+ - [RedditBrandShare](docs/RedditBrandShare.md)
+ - [RedditPositionShare](docs/RedditPositionShare.md)
+ - [RedditSubredditActivityPeriod](docs/RedditSubredditActivityPeriod.md)
  - [RemovePromptTagsRequest](docs/RemovePromptTagsRequest.md)
  - [RemoveTeamMember200Response](docs/RemoveTeamMember200Response.md)
  - [RevokeApiKey200Response](docs/RevokeApiKey200Response.md)

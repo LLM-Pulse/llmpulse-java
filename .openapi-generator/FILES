@@ -185,6 +185,7 @@ docs/OwnedMediaKpiChanges.md
 docs/OwnedMediaKpis.md
 docs/OwnedMediaListResponse.md
 docs/OwnedMediaModelShare.md
+docs/OwnedMediaPlatformActivityPeriod.md
 docs/OwnedMediaPlatformProfiles.md
 docs/OwnedMediaPlatformRollup.md
 docs/OwnedMediaPlatformRollupWeeklyInner.md
@@ -194,6 +195,7 @@ docs/OwnedMediaProfilesResponse.md
 docs/OwnedMediaProfilesUpdateResponse.md
 docs/OwnedMediaRow.md
 docs/OwnedMediaStoreTotals.md
+docs/OwnedMediaSummaryActivityPeriod.md
 docs/OwnedMediaSummaryResponse.md
 docs/OwnedMediaSummaryResponsePrevious.md
 docs/OwnedMediaWeek.md
@@ -252,6 +254,9 @@ docs/RecommendationSummary.md
 docs/RecommendationSummarySummary.md
 docs/RecommendationsApi.md
 docs/RecommendationsResponse.md
+docs/RedditBrandShare.md
+docs/RedditPositionShare.md
+docs/RedditSubredditActivityPeriod.md
 docs/RemovePromptTagsRequest.md
 docs/RemoveTeamMember200Response.md
 docs/ReputationStudiesApi.md
@@ -560,6 +565,7 @@ src/main/java/ai/llmpulse/sdk/model/OwnedMediaKpiChanges.java
 src/main/java/ai/llmpulse/sdk/model/OwnedMediaKpis.java
 src/main/java/ai/llmpulse/sdk/model/OwnedMediaListResponse.java
 src/main/java/ai/llmpulse/sdk/model/OwnedMediaModelShare.java
+src/main/java/ai/llmpulse/sdk/model/OwnedMediaPlatformActivityPeriod.java
 src/main/java/ai/llmpulse/sdk/model/OwnedMediaPlatformProfiles.java
 src/main/java/ai/llmpulse/sdk/model/OwnedMediaPlatformRollup.java
 src/main/java/ai/llmpulse/sdk/model/OwnedMediaPlatformRollupWeeklyInner.java
@@ -569,6 +575,7 @@ src/main/java/ai/llmpulse/sdk/model/OwnedMediaProfilesResponse.java
 src/main/java/ai/llmpulse/sdk/model/OwnedMediaProfilesUpdateResponse.java
 src/main/java/ai/llmpulse/sdk/model/OwnedMediaRow.java
 src/main/java/ai/llmpulse/sdk/model/OwnedMediaStoreTotals.java
+src/main/java/ai/llmpulse/sdk/model/OwnedMediaSummaryActivityPeriod.java
 src/main/java/ai/llmpulse/sdk/model/OwnedMediaSummaryResponse.java
 src/main/java/ai/llmpulse/sdk/model/OwnedMediaSummaryResponsePrevious.java
 src/main/java/ai/llmpulse/sdk/model/OwnedMediaWeek.java
@@ -624,6 +631,9 @@ src/main/java/ai/llmpulse/sdk/model/RecommendationItemUpdateResponse.java
 src/main/java/ai/llmpulse/sdk/model/RecommendationSummary.java
 src/main/java/ai/llmpulse/sdk/model/RecommendationSummarySummary.java
 src/main/java/ai/llmpulse/sdk/model/RecommendationsResponse.java
+src/main/java/ai/llmpulse/sdk/model/RedditBrandShare.java
+src/main/java/ai/llmpulse/sdk/model/RedditPositionShare.java
+src/main/java/ai/llmpulse/sdk/model/RedditSubredditActivityPeriod.java
 src/main/java/ai/llmpulse/sdk/model/RemovePromptTagsRequest.java
 src/main/java/ai/llmpulse/sdk/model/RemoveTeamMember200Response.java
 src/main/java/ai/llmpulse/sdk/model/RevokeApiKey200Response.java
