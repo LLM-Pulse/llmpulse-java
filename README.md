@@ -2,7 +2,7 @@
 
 LLM Pulse API
 
-- API version: 1.82.0
+- API version: 1.83.0
 
 - Generator version: 7.24.0
 
@@ -43,7 +43,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>ai.llmpulse</groupId>
   <artifactId>llmpulse-java</artifactId>
-  <version>1.82.0</version>
+  <version>1.83.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -53,7 +53,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "ai.llmpulse:llmpulse-java:1.82.0"
+compile "ai.llmpulse:llmpulse-java:1.83.0"
 ```
 
 ### Others
@@ -66,7 +66,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-- `target/llmpulse-java-1.82.0.jar`
+- `target/llmpulse-java-1.83.0.jar`
 - `target/lib/*.jar`
 
 ## Getting Started
@@ -203,12 +203,18 @@ Class | Method | HTTP request | Description
 *GeoAuditsApi* | [**updateGeoAuditIssueWithHttpInfo**](docs/GeoAuditsApi.md#updateGeoAuditIssueWithHttpInfo) | **PATCH** /geo_audits/{geo_audit_id}/issues/{id} | Accept or reopen a GEO audit issue
 *GeoWriterApi* | [**createIntelligenceTask**](docs/GeoWriterApi.md#createIntelligenceTask) | **POST** /intelligence_tasks | Create a GEO Writer task
 *GeoWriterApi* | [**createIntelligenceTaskWithHttpInfo**](docs/GeoWriterApi.md#createIntelligenceTaskWithHttpInfo) | **POST** /intelligence_tasks | Create a GEO Writer task
+*GeoWriterApi* | [**getCmsContent**](docs/GeoWriterApi.md#getCmsContent) | **GET** /cms/content/{id} | Get one post or page of the connected WordPress site
+*GeoWriterApi* | [**getCmsContentWithHttpInfo**](docs/GeoWriterApi.md#getCmsContentWithHttpInfo) | **GET** /cms/content/{id} | Get one post or page of the connected WordPress site
 *GeoWriterApi* | [**getIntelligenceTask**](docs/GeoWriterApi.md#getIntelligenceTask) | **GET** /intelligence_tasks/{id} | Get a GEO Writer task
 *GeoWriterApi* | [**getIntelligenceTaskWithHttpInfo**](docs/GeoWriterApi.md#getIntelligenceTaskWithHttpInfo) | **GET** /intelligence_tasks/{id} | Get a GEO Writer task
+*GeoWriterApi* | [**listCmsContent**](docs/GeoWriterApi.md#listCmsContent) | **GET** /cms/content | List the posts or pages of the connected WordPress site
+*GeoWriterApi* | [**listCmsContentWithHttpInfo**](docs/GeoWriterApi.md#listCmsContentWithHttpInfo) | **GET** /cms/content | List the posts or pages of the connected WordPress site
 *GeoWriterApi* | [**listIntelligenceTasks**](docs/GeoWriterApi.md#listIntelligenceTasks) | **GET** /intelligence_tasks | List GEO Writer tasks
 *GeoWriterApi* | [**listIntelligenceTasksWithHttpInfo**](docs/GeoWriterApi.md#listIntelligenceTasksWithHttpInfo) | **GET** /intelligence_tasks | List GEO Writer tasks
 *GeoWriterApi* | [**revertIntelligenceTaskContent**](docs/GeoWriterApi.md#revertIntelligenceTaskContent) | **POST** /intelligence_tasks/{id}/revert | Revert GEO Writer task content
 *GeoWriterApi* | [**revertIntelligenceTaskContentWithHttpInfo**](docs/GeoWriterApi.md#revertIntelligenceTaskContentWithHttpInfo) | **POST** /intelligence_tasks/{id}/revert | Revert GEO Writer task content
+*GeoWriterApi* | [**sendIntelligenceTaskToCms**](docs/GeoWriterApi.md#sendIntelligenceTaskToCms) | **POST** /intelligence_tasks/{id}/send_to_cms | Send a GEO Writer task to WordPress as a draft
+*GeoWriterApi* | [**sendIntelligenceTaskToCmsWithHttpInfo**](docs/GeoWriterApi.md#sendIntelligenceTaskToCmsWithHttpInfo) | **POST** /intelligence_tasks/{id}/send_to_cms | Send a GEO Writer task to WordPress as a draft
 *GeoWriterApi* | [**updateIntelligenceTaskContent**](docs/GeoWriterApi.md#updateIntelligenceTaskContent) | **PATCH** /intelligence_tasks/{id} | Edit GEO Writer task content
 *GeoWriterApi* | [**updateIntelligenceTaskContentWithHttpInfo**](docs/GeoWriterApi.md#updateIntelligenceTaskContentWithHttpInfo) | **PATCH** /intelligence_tasks/{id} | Edit GEO Writer task content
 *HealthApi* | [**ping**](docs/HealthApi.md#ping) | **GET** /ping | Health check
@@ -463,6 +469,13 @@ Class | Method | HTTP request | Description
  - [CitationMatchMode](docs/CitationMatchMode.md)
  - [CitationRecord](docs/CitationRecord.md)
  - [CitationsResponse](docs/CitationsResponse.md)
+ - [CmsContentItem](docs/CmsContentItem.md)
+ - [CmsContentItemResponse](docs/CmsContentItemResponse.md)
+ - [CmsContentListResponse](docs/CmsContentListResponse.md)
+ - [CmsContentSummary](docs/CmsContentSummary.md)
+ - [CmsPublication](docs/CmsPublication.md)
+ - [CmsSendResponse](docs/CmsSendResponse.md)
+ - [CmsSite](docs/CmsSite.md)
  - [CollectionCreateResponse](docs/CollectionCreateResponse.md)
  - [CollectionCreateResponseCollection](docs/CollectionCreateResponseCollection.md)
  - [CollectionsResponse](docs/CollectionsResponse.md)

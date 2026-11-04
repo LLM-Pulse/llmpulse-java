@@ -70,6 +70,13 @@ docs/CatalogPromptSuggestionsResponse.md
 docs/CitationMatchMode.md
 docs/CitationRecord.md
 docs/CitationsResponse.md
+docs/CmsContentItem.md
+docs/CmsContentItemResponse.md
+docs/CmsContentListResponse.md
+docs/CmsContentSummary.md
+docs/CmsPublication.md
+docs/CmsSendResponse.md
+docs/CmsSite.md
 docs/CollectionCreateResponse.md
 docs/CollectionCreateResponseCollection.md
 docs/CollectionsResponse.md
@@ -447,6 +454,13 @@ src/main/java/ai/llmpulse/sdk/model/CatalogPromptSuggestionsResponse.java
 src/main/java/ai/llmpulse/sdk/model/CitationMatchMode.java
 src/main/java/ai/llmpulse/sdk/model/CitationRecord.java
 src/main/java/ai/llmpulse/sdk/model/CitationsResponse.java
+src/main/java/ai/llmpulse/sdk/model/CmsContentItem.java
+src/main/java/ai/llmpulse/sdk/model/CmsContentItemResponse.java
+src/main/java/ai/llmpulse/sdk/model/CmsContentListResponse.java
+src/main/java/ai/llmpulse/sdk/model/CmsContentSummary.java
+src/main/java/ai/llmpulse/sdk/model/CmsPublication.java
+src/main/java/ai/llmpulse/sdk/model/CmsSendResponse.java
+src/main/java/ai/llmpulse/sdk/model/CmsSite.java
 src/main/java/ai/llmpulse/sdk/model/CollectionCreateResponse.java
 src/main/java/ai/llmpulse/sdk/model/CollectionCreateResponseCollection.java
 src/main/java/ai/llmpulse/sdk/model/CollectionsResponse.java
