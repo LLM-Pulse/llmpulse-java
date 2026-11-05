@@ -2,7 +2,7 @@
 
 LLM Pulse API
 
-- API version: 1.84.0
+- API version: 1.85.0
 
 - Generator version: 7.24.0
 
@@ -43,7 +43,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>ai.llmpulse</groupId>
   <artifactId>llmpulse-java</artifactId>
-  <version>1.84.0</version>
+  <version>1.85.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -53,7 +53,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "ai.llmpulse:llmpulse-java:1.84.0"
+compile "ai.llmpulse:llmpulse-java:1.85.0"
 ```
 
 ### Others
@@ -66,7 +66,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-- `target/llmpulse-java-1.84.0.jar`
+- `target/llmpulse-java-1.85.0.jar`
 - `target/lib/*.jar`
 
 ## Getting Started
@@ -307,6 +307,8 @@ Class | Method | HTTP request | Description
 *RecommendationsApi* | [**listRecommendationsWithHttpInfo**](docs/RecommendationsApi.md#listRecommendationsWithHttpInfo) | **GET** /recommendations | List recommendation runs
 *RecommendationsApi* | [**updateRecommendationItem**](docs/RecommendationsApi.md#updateRecommendationItem) | **PATCH** /recommendations/{id}/items/{item_id} | Complete, archive or restore a recommendation item
 *RecommendationsApi* | [**updateRecommendationItemWithHttpInfo**](docs/RecommendationsApi.md#updateRecommendationItemWithHttpInfo) | **PATCH** /recommendations/{id}/items/{item_id} | Complete, archive or restore a recommendation item
+*ReputationStudiesApi* | [**createReputationReport**](docs/ReputationStudiesApi.md#createReputationReport) | **POST** /reputation/reports | Start a reputation report
+*ReputationStudiesApi* | [**createReputationReportWithHttpInfo**](docs/ReputationStudiesApi.md#createReputationReportWithHttpInfo) | **POST** /reputation/reports | Start a reputation report
 *ReputationStudiesApi* | [**getReputationReport**](docs/ReputationStudiesApi.md#getReputationReport) | **GET** /reputation/reports/{id} | Get reputation report scores
 *ReputationStudiesApi* | [**getReputationReportWithHttpInfo**](docs/ReputationStudiesApi.md#getReputationReportWithHttpInfo) | **GET** /reputation/reports/{id} | Get reputation report scores
 *ReputationStudiesApi* | [**getStudy**](docs/ReputationStudiesApi.md#getStudy) | **GET** /studies/{id} | Get a custom AI study
@@ -494,6 +496,7 @@ Class | Method | HTTP request | Description
  - [CreateCollectionRequest](docs/CreateCollectionRequest.md)
  - [CreateCompetitorRequest](docs/CreateCompetitorRequest.md)
  - [CreateProjectDraftRequest](docs/CreateProjectDraftRequest.md)
+ - [CreateReputationReportRequest](docs/CreateReputationReportRequest.md)
  - [CreateTeamInvitation201Response](docs/CreateTeamInvitation201Response.md)
  - [CreateTeamInvitationRequest](docs/CreateTeamInvitationRequest.md)
  - [CreateTechnicalGeoReportsRequest](docs/CreateTechnicalGeoReportsRequest.md)
@@ -646,6 +649,8 @@ Class | Method | HTTP request | Description
  - [RedditSubredditActivityPeriod](docs/RedditSubredditActivityPeriod.md)
  - [RemovePromptTagsRequest](docs/RemovePromptTagsRequest.md)
  - [RemoveTeamMember200Response](docs/RemoveTeamMember200Response.md)
+ - [ReputationReportCreateResponse](docs/ReputationReportCreateResponse.md)
+ - [ReputationReportSummary](docs/ReputationReportSummary.md)
  - [RevokeApiKey200Response](docs/RevokeApiKey200Response.md)
  - [RevokeTeamInvitation200Response](docs/RevokeTeamInvitation200Response.md)
  - [SampleWebhookPayloads200Response](docs/SampleWebhookPayloads200Response.md)

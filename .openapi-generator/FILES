@@ -97,6 +97,7 @@ docs/CreateApiKeyRequest.md
 docs/CreateCollectionRequest.md
 docs/CreateCompetitorRequest.md
 docs/CreateProjectDraftRequest.md
+docs/CreateReputationReportRequest.md
 docs/CreateTeamInvitation201Response.md
 docs/CreateTeamInvitationRequest.md
 docs/CreateTechnicalGeoReportsRequest.md
@@ -259,6 +260,8 @@ docs/RedditPositionShare.md
 docs/RedditSubredditActivityPeriod.md
 docs/RemovePromptTagsRequest.md
 docs/RemoveTeamMember200Response.md
+docs/ReputationReportCreateResponse.md
+docs/ReputationReportSummary.md
 docs/ReputationStudiesApi.md
 docs/RevokeApiKey200Response.md
 docs/RevokeTeamInvitation200Response.md
@@ -484,6 +487,7 @@ src/main/java/ai/llmpulse/sdk/model/CreateApiKeyRequest.java
 src/main/java/ai/llmpulse/sdk/model/CreateCollectionRequest.java
 src/main/java/ai/llmpulse/sdk/model/CreateCompetitorRequest.java
 src/main/java/ai/llmpulse/sdk/model/CreateProjectDraftRequest.java
+src/main/java/ai/llmpulse/sdk/model/CreateReputationReportRequest.java
 src/main/java/ai/llmpulse/sdk/model/CreateTeamInvitation201Response.java
 src/main/java/ai/llmpulse/sdk/model/CreateTeamInvitationRequest.java
 src/main/java/ai/llmpulse/sdk/model/CreateTechnicalGeoReportsRequest.java
@@ -636,6 +640,8 @@ src/main/java/ai/llmpulse/sdk/model/RedditPositionShare.java
 src/main/java/ai/llmpulse/sdk/model/RedditSubredditActivityPeriod.java
 src/main/java/ai/llmpulse/sdk/model/RemovePromptTagsRequest.java
 src/main/java/ai/llmpulse/sdk/model/RemoveTeamMember200Response.java
+src/main/java/ai/llmpulse/sdk/model/ReputationReportCreateResponse.java
+src/main/java/ai/llmpulse/sdk/model/ReputationReportSummary.java
 src/main/java/ai/llmpulse/sdk/model/RevokeApiKey200Response.java
 src/main/java/ai/llmpulse/sdk/model/RevokeTeamInvitation200Response.java
 src/main/java/ai/llmpulse/sdk/model/SampleWebhookPayloads200Response.java

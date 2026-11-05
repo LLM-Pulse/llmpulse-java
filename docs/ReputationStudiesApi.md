@@ -4,6 +4,8 @@ All URIs are relative to *https://api.llmpulse.ai/api/v1*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
+| [**createReputationReport**](ReputationStudiesApi.md#createReputationReport) | **POST** /reputation/reports | Start a reputation report |
+| [**createReputationReportWithHttpInfo**](ReputationStudiesApi.md#createReputationReportWithHttpInfo) | **POST** /reputation/reports | Start a reputation report |
 | [**getReputationReport**](ReputationStudiesApi.md#getReputationReport) | **GET** /reputation/reports/{id} | Get reputation report scores |
 | [**getReputationReportWithHttpInfo**](ReputationStudiesApi.md#getReputationReportWithHttpInfo) | **GET** /reputation/reports/{id} | Get reputation report scores |
 | [**getStudy**](ReputationStudiesApi.md#getStudy) | **GET** /studies/{id} | Get a custom AI study |
@@ -15,6 +17,160 @@ All URIs are relative to *https://api.llmpulse.ai/api/v1*
 | [**listStudies**](ReputationStudiesApi.md#listStudies) | **GET** /studies | List custom AI studies |
 | [**listStudiesWithHttpInfo**](ReputationStudiesApi.md#listStudiesWithHttpInfo) | **GET** /studies | List custom AI studies |
 
+
+
+## createReputationReport
+
+> ReputationReportCreateResponse createReputationReport(createReputationReportRequest)
+
+Start a reputation report
+
+Starts this month&#39;s Brand Reputation report, like the Generate button on the Reputation page: 201 with the new report (status pending). When the month already holds a report that did not fail, whether it is still running or finished, nothing new starts and the answer is 200 with created false and that report. With recalculate true it uses the month&#39;s one manual recalculation instead (the Recalculate This Month button): a fresh run across every analyst model, 201 when it starts, 200 with created false while a report is still running, and ERR_LIMIT_REACHED once the month holds two reports. Generation runs in the background: poll GET /reputation/reports until status is completed, then read the scores with GET /reputation/reports/{id}. ERR_RATE_LIMITED (429, with Retry-After) means another request is starting a report for the same project; retry after a few seconds. recalculate must be true or false and unknown fields are refused (ERR_INVALID_PARAM). Requires reputation monitoring on the account, a &#x60;read_write&#x60; scope API key and, for team members, create permission on Reputation.
+
+### Example
+
+```java
+// Import classes:
+import ai.llmpulse.sdk.ApiClient;
+import ai.llmpulse.sdk.ApiException;
+import ai.llmpulse.sdk.Configuration;
+import ai.llmpulse.sdk.auth.*;
+import ai.llmpulse.sdk.models.*;
+import ai.llmpulse.sdk.api.ReputationStudiesApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.llmpulse.ai/api/v1");
+        
+        // Configure HTTP bearer authorization: BearerAuth
+        HttpBearerAuth BearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("BearerAuth");
+        BearerAuth.setBearerToken("BEARER TOKEN");
+
+        ReputationStudiesApi apiInstance = new ReputationStudiesApi(defaultClient);
+        CreateReputationReportRequest createReputationReportRequest = new CreateReputationReportRequest(); // CreateReputationReportRequest | 
+        try {
+            ReputationReportCreateResponse result = apiInstance.createReputationReport(createReputationReportRequest);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling ReputationStudiesApi#createReputationReport");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **createReputationReportRequest** | [**CreateReputationReportRequest**](CreateReputationReportRequest.md)|  | |
+
+### Return type
+
+[**ReputationReportCreateResponse**](ReputationReportCreateResponse.md)
+
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Nothing new started; the report that already holds this month |  -  |
+| **201** | The new report, status pending |  -  |
+| **403** | API key lacks write permission |  -  |
+| **404** | Resource not found |  -  |
+| **422** | Invalid parameters |  -  |
+| **429** | Another request is starting a report for this project; retry after a few seconds |  -  |
+
+## createReputationReportWithHttpInfo
+
+> ApiResponse<ReputationReportCreateResponse> createReputationReportWithHttpInfo(createReputationReportRequest)
+
+Start a reputation report
+
+Starts this month&#39;s Brand Reputation report, like the Generate button on the Reputation page: 201 with the new report (status pending). When the month already holds a report that did not fail, whether it is still running or finished, nothing new starts and the answer is 200 with created false and that report. With recalculate true it uses the month&#39;s one manual recalculation instead (the Recalculate This Month button): a fresh run across every analyst model, 201 when it starts, 200 with created false while a report is still running, and ERR_LIMIT_REACHED once the month holds two reports. Generation runs in the background: poll GET /reputation/reports until status is completed, then read the scores with GET /reputation/reports/{id}. ERR_RATE_LIMITED (429, with Retry-After) means another request is starting a report for the same project; retry after a few seconds. recalculate must be true or false and unknown fields are refused (ERR_INVALID_PARAM). Requires reputation monitoring on the account, a &#x60;read_write&#x60; scope API key and, for team members, create permission on Reputation.
+
+### Example
+
+```java
+// Import classes:
+import ai.llmpulse.sdk.ApiClient;
+import ai.llmpulse.sdk.ApiException;
+import ai.llmpulse.sdk.ApiResponse;
+import ai.llmpulse.sdk.Configuration;
+import ai.llmpulse.sdk.auth.*;
+import ai.llmpulse.sdk.models.*;
+import ai.llmpulse.sdk.api.ReputationStudiesApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.llmpulse.ai/api/v1");
+        
+        // Configure HTTP bearer authorization: BearerAuth
+        HttpBearerAuth BearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("BearerAuth");
+        BearerAuth.setBearerToken("BEARER TOKEN");
+
+        ReputationStudiesApi apiInstance = new ReputationStudiesApi(defaultClient);
+        CreateReputationReportRequest createReputationReportRequest = new CreateReputationReportRequest(); // CreateReputationReportRequest | 
+        try {
+            ApiResponse<ReputationReportCreateResponse> response = apiInstance.createReputationReportWithHttpInfo(createReputationReportRequest);
+            System.out.println("Status code: " + response.getStatusCode());
+            System.out.println("Response headers: " + response.getHeaders());
+            System.out.println("Response body: " + response.getData());
+        } catch (ApiException e) {
+            System.err.println("Exception when calling ReputationStudiesApi#createReputationReport");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            System.err.println("Reason: " + e.getResponseBody());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **createReputationReportRequest** | [**CreateReputationReportRequest**](CreateReputationReportRequest.md)|  | |
+
+### Return type
+
+ApiResponse<[**ReputationReportCreateResponse**](ReputationReportCreateResponse.md)>
+
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Nothing new started; the report that already holds this month |  -  |
+| **201** | The new report, status pending |  -  |
+| **403** | API key lacks write permission |  -  |
+| **404** | Resource not found |  -  |
+| **422** | Invalid parameters |  -  |
+| **429** | Another request is starting a report for this project; retry after a few seconds |  -  |
 
 
 ## getReputationReport
