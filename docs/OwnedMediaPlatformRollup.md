@@ -27,6 +27,7 @@
 | FACEBOOK | &quot;facebook&quot; |
 | TIKTOK | &quot;tiktok&quot; |
 | LINKEDIN | &quot;linkedin&quot; |
+| TRUSTPILOT | &quot;trustpilot&quot; |
 | REDDIT | &quot;reddit&quot; |
 
 

@@ -244,10 +244,10 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | The post or page with its sanitized content |  -  |
-| **403** | WordPress no longer accepts the stored application password, or its user cannot write posts (ERR_CMS_ACCESS_REVOKED, with error.meta.connect_url to reconnect). A white-label portal host answers ERR_INTEGRATION_UNAVAILABLE, a read-only key on a write ERR_INSUFFICIENT_SCOPE and a team member without the permission ERR_INSUFFICIENT_PERMISSION, with the same status |  -  |
+| **403** | WordPress no longer accepts the stored application password, or its user cannot write posts (ERR_CMS_ACCESS_REVOKED, with error.meta.connect_url to reconnect). error.meta.reason says why: reconnect_required, authorization_header_lost (the password stopped reaching WordPress: revoked, or the server now strips the Authorization header), unknown_user, application_passwords_disabled, application_passwords_disabled_for_user, rest_api_restricted or missing_capability. A white-label portal host answers ERR_INTEGRATION_UNAVAILABLE, a read-only key on a write ERR_INSUFFICIENT_SCOPE and a team member without the permission ERR_INSUFFICIENT_PERMISSION, with the same status |  -  |
 | **404** | The project has no WordPress connection (ERR_CMS_NOT_CONNECTED, with error.meta.connect_url), the project does not exist (ERR_PROJECT_NOT_FOUND), or the task or post does not (ERR_NOT_FOUND) |  -  |
-| **422** | A parameter failed validation (ERR_INVALID_PARAM), or WordPress refused the request, the site now redirects to another address or it can no longer be reached safely from our servers (ERR_CMS_REJECTED, error.meta.reason rejected, redirected or unsafe_site; redirected carries error.meta.connect_url to reconnect). Retrying the same request gives the same answer |  -  |
-| **503** | The WordPress site could not be reached or took too long to answer (ERR_CMS_UPSTREAM). Retry later; error.meta.reason says why |  -  |
+| **422** | A parameter failed validation (ERR_INVALID_PARAM), or WordPress refused the request, the site now redirects to another address or it can no longer be reached safely from our servers (ERR_CMS_REJECTED, error.meta.reason rejected, firewall_blocked, http_auth_required, invalid_json, redirected, unsafe_site, dns_failed or private_address; redirected carries error.meta.connect_url to reconnect). Retrying the same request gives the same answer |  -  |
+| **503** | The WordPress site could not be reached or took too long to answer (ERR_CMS_UPSTREAM). Retry later; error.meta.reason says why: unreachable, timeout, connection_refused, tls_error, server_error or maintenance |  -  |
 
 ## getCmsContentWithHttpInfo
 
@@ -325,10 +325,10 @@ ApiResponse<[**CmsContentItemResponse**](CmsContentItemResponse.md)>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | The post or page with its sanitized content |  -  |
-| **403** | WordPress no longer accepts the stored application password, or its user cannot write posts (ERR_CMS_ACCESS_REVOKED, with error.meta.connect_url to reconnect). A white-label portal host answers ERR_INTEGRATION_UNAVAILABLE, a read-only key on a write ERR_INSUFFICIENT_SCOPE and a team member without the permission ERR_INSUFFICIENT_PERMISSION, with the same status |  -  |
+| **403** | WordPress no longer accepts the stored application password, or its user cannot write posts (ERR_CMS_ACCESS_REVOKED, with error.meta.connect_url to reconnect). error.meta.reason says why: reconnect_required, authorization_header_lost (the password stopped reaching WordPress: revoked, or the server now strips the Authorization header), unknown_user, application_passwords_disabled, application_passwords_disabled_for_user, rest_api_restricted or missing_capability. A white-label portal host answers ERR_INTEGRATION_UNAVAILABLE, a read-only key on a write ERR_INSUFFICIENT_SCOPE and a team member without the permission ERR_INSUFFICIENT_PERMISSION, with the same status |  -  |
 | **404** | The project has no WordPress connection (ERR_CMS_NOT_CONNECTED, with error.meta.connect_url), the project does not exist (ERR_PROJECT_NOT_FOUND), or the task or post does not (ERR_NOT_FOUND) |  -  |
-| **422** | A parameter failed validation (ERR_INVALID_PARAM), or WordPress refused the request, the site now redirects to another address or it can no longer be reached safely from our servers (ERR_CMS_REJECTED, error.meta.reason rejected, redirected or unsafe_site; redirected carries error.meta.connect_url to reconnect). Retrying the same request gives the same answer |  -  |
-| **503** | The WordPress site could not be reached or took too long to answer (ERR_CMS_UPSTREAM). Retry later; error.meta.reason says why |  -  |
+| **422** | A parameter failed validation (ERR_INVALID_PARAM), or WordPress refused the request, the site now redirects to another address or it can no longer be reached safely from our servers (ERR_CMS_REJECTED, error.meta.reason rejected, firewall_blocked, http_auth_required, invalid_json, redirected, unsafe_site, dns_failed or private_address; redirected carries error.meta.connect_url to reconnect). Retrying the same request gives the same answer |  -  |
+| **503** | The WordPress site could not be reached or took too long to answer (ERR_CMS_UPSTREAM). Retry later; error.meta.reason says why: unreachable, timeout, connection_refused, tls_error, server_error or maintenance |  -  |
 
 
 ## getIntelligenceTask
@@ -554,10 +554,10 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | One page of posts or pages |  -  |
-| **403** | WordPress no longer accepts the stored application password, or its user cannot write posts (ERR_CMS_ACCESS_REVOKED, with error.meta.connect_url to reconnect). A white-label portal host answers ERR_INTEGRATION_UNAVAILABLE, a read-only key on a write ERR_INSUFFICIENT_SCOPE and a team member without the permission ERR_INSUFFICIENT_PERMISSION, with the same status |  -  |
+| **403** | WordPress no longer accepts the stored application password, or its user cannot write posts (ERR_CMS_ACCESS_REVOKED, with error.meta.connect_url to reconnect). error.meta.reason says why: reconnect_required, authorization_header_lost (the password stopped reaching WordPress: revoked, or the server now strips the Authorization header), unknown_user, application_passwords_disabled, application_passwords_disabled_for_user, rest_api_restricted or missing_capability. A white-label portal host answers ERR_INTEGRATION_UNAVAILABLE, a read-only key on a write ERR_INSUFFICIENT_SCOPE and a team member without the permission ERR_INSUFFICIENT_PERMISSION, with the same status |  -  |
 | **404** | The project has no WordPress connection (ERR_CMS_NOT_CONNECTED, with error.meta.connect_url), the project does not exist (ERR_PROJECT_NOT_FOUND), or the task or post does not (ERR_NOT_FOUND) |  -  |
-| **422** | A parameter failed validation (ERR_INVALID_PARAM), or WordPress refused the request, the site now redirects to another address or it can no longer be reached safely from our servers (ERR_CMS_REJECTED, error.meta.reason rejected, redirected or unsafe_site; redirected carries error.meta.connect_url to reconnect). Retrying the same request gives the same answer |  -  |
-| **503** | The WordPress site could not be reached or took too long to answer (ERR_CMS_UPSTREAM). Retry later; error.meta.reason says why |  -  |
+| **422** | A parameter failed validation (ERR_INVALID_PARAM), or WordPress refused the request, the site now redirects to another address or it can no longer be reached safely from our servers (ERR_CMS_REJECTED, error.meta.reason rejected, firewall_blocked, http_auth_required, invalid_json, redirected, unsafe_site, dns_failed or private_address; redirected carries error.meta.connect_url to reconnect). Retrying the same request gives the same answer |  -  |
+| **503** | The WordPress site could not be reached or took too long to answer (ERR_CMS_UPSTREAM). Retry later; error.meta.reason says why: unreachable, timeout, connection_refused, tls_error, server_error or maintenance |  -  |
 
 ## listCmsContentWithHttpInfo
 
@@ -641,10 +641,10 @@ ApiResponse<[**CmsContentListResponse**](CmsContentListResponse.md)>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | One page of posts or pages |  -  |
-| **403** | WordPress no longer accepts the stored application password, or its user cannot write posts (ERR_CMS_ACCESS_REVOKED, with error.meta.connect_url to reconnect). A white-label portal host answers ERR_INTEGRATION_UNAVAILABLE, a read-only key on a write ERR_INSUFFICIENT_SCOPE and a team member without the permission ERR_INSUFFICIENT_PERMISSION, with the same status |  -  |
+| **403** | WordPress no longer accepts the stored application password, or its user cannot write posts (ERR_CMS_ACCESS_REVOKED, with error.meta.connect_url to reconnect). error.meta.reason says why: reconnect_required, authorization_header_lost (the password stopped reaching WordPress: revoked, or the server now strips the Authorization header), unknown_user, application_passwords_disabled, application_passwords_disabled_for_user, rest_api_restricted or missing_capability. A white-label portal host answers ERR_INTEGRATION_UNAVAILABLE, a read-only key on a write ERR_INSUFFICIENT_SCOPE and a team member without the permission ERR_INSUFFICIENT_PERMISSION, with the same status |  -  |
 | **404** | The project has no WordPress connection (ERR_CMS_NOT_CONNECTED, with error.meta.connect_url), the project does not exist (ERR_PROJECT_NOT_FOUND), or the task or post does not (ERR_NOT_FOUND) |  -  |
-| **422** | A parameter failed validation (ERR_INVALID_PARAM), or WordPress refused the request, the site now redirects to another address or it can no longer be reached safely from our servers (ERR_CMS_REJECTED, error.meta.reason rejected, redirected or unsafe_site; redirected carries error.meta.connect_url to reconnect). Retrying the same request gives the same answer |  -  |
-| **503** | The WordPress site could not be reached or took too long to answer (ERR_CMS_UPSTREAM). Retry later; error.meta.reason says why |  -  |
+| **422** | A parameter failed validation (ERR_INVALID_PARAM), or WordPress refused the request, the site now redirects to another address or it can no longer be reached safely from our servers (ERR_CMS_REJECTED, error.meta.reason rejected, firewall_blocked, http_auth_required, invalid_json, redirected, unsafe_site, dns_failed or private_address; redirected carries error.meta.connect_url to reconnect). Retrying the same request gives the same answer |  -  |
+| **503** | The WordPress site could not be reached or took too long to answer (ERR_CMS_UPSTREAM). Retry later; error.meta.reason says why: unreachable, timeout, connection_refused, tls_error, server_error or maintenance |  -  |
 
 
 ## listIntelligenceTasks
@@ -1029,7 +1029,7 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | This version is already a draft in WordPress; nothing was sent |  -  |
 | **202** | The draft is queued, or this version was already queued |  -  |
-| **403** | WordPress no longer accepts the stored application password, or its user cannot write posts (ERR_CMS_ACCESS_REVOKED, with error.meta.connect_url to reconnect). A white-label portal host answers ERR_INTEGRATION_UNAVAILABLE, a read-only key on a write ERR_INSUFFICIENT_SCOPE and a team member without the permission ERR_INSUFFICIENT_PERMISSION, with the same status |  -  |
+| **403** | WordPress no longer accepts the stored application password, or its user cannot write posts (ERR_CMS_ACCESS_REVOKED, with error.meta.connect_url to reconnect). error.meta.reason says why: reconnect_required, authorization_header_lost (the password stopped reaching WordPress: revoked, or the server now strips the Authorization header), unknown_user, application_passwords_disabled, application_passwords_disabled_for_user, rest_api_restricted or missing_capability. A white-label portal host answers ERR_INTEGRATION_UNAVAILABLE, a read-only key on a write ERR_INSUFFICIENT_SCOPE and a team member without the permission ERR_INSUFFICIENT_PERMISSION, with the same status |  -  |
 | **404** | The project has no WordPress connection (ERR_CMS_NOT_CONNECTED, with error.meta.connect_url), the project does not exist (ERR_PROJECT_NOT_FOUND), or the task or post does not (ERR_NOT_FOUND) |  -  |
 | **422** | Invalid parameters |  -  |
 
@@ -1108,7 +1108,7 @@ ApiResponse<[**CmsSendResponse**](CmsSendResponse.md)>
 |-------------|-------------|------------------|
 | **200** | This version is already a draft in WordPress; nothing was sent |  -  |
 | **202** | The draft is queued, or this version was already queued |  -  |
-| **403** | WordPress no longer accepts the stored application password, or its user cannot write posts (ERR_CMS_ACCESS_REVOKED, with error.meta.connect_url to reconnect). A white-label portal host answers ERR_INTEGRATION_UNAVAILABLE, a read-only key on a write ERR_INSUFFICIENT_SCOPE and a team member without the permission ERR_INSUFFICIENT_PERMISSION, with the same status |  -  |
+| **403** | WordPress no longer accepts the stored application password, or its user cannot write posts (ERR_CMS_ACCESS_REVOKED, with error.meta.connect_url to reconnect). error.meta.reason says why: reconnect_required, authorization_header_lost (the password stopped reaching WordPress: revoked, or the server now strips the Authorization header), unknown_user, application_passwords_disabled, application_passwords_disabled_for_user, rest_api_restricted or missing_capability. A white-label portal host answers ERR_INTEGRATION_UNAVAILABLE, a read-only key on a write ERR_INSUFFICIENT_SCOPE and a team member without the permission ERR_INSUFFICIENT_PERMISSION, with the same status |  -  |
 | **404** | The project has no WordPress connection (ERR_CMS_NOT_CONNECTED, with error.meta.connect_url), the project does not exist (ERR_PROJECT_NOT_FOUND), or the task or post does not (ERR_NOT_FOUND) |  -  |
 | **422** | Invalid parameters |  -  |
 
