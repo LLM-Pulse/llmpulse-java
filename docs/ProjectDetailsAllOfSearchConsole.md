@@ -10,7 +10,7 @@ Google Search Console connection of the project, judged by its primary property.
 |------------ | ------------- | ------------- | -------------|
 |**status** | [**StatusEnum**](#StatusEnum) |  |  [optional] |
 |**property** | **String** | The primary property (e.g. sc-domain:example.com), null when not connected |  [optional] |
-|**connectUrl** | **URI** | The in-app page where the property is connected or reconnected (Preferences &gt; Project Settings &gt; Data Connections) |  [optional] |
+|**connectUrl** | **URI** | The in-app page where the property is connected or reconnected (Preferences &gt; Project Settings &gt; Connections) |  [optional] |
 |**propertiesCount** | **Integer** | Connected properties Google still accepts (reconnect_required ones excluded); GET /search_console/properties lists every property with its status |  [optional] |
 
 
