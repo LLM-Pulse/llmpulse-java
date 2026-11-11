@@ -34,6 +34,7 @@ AI models, countries and languages the project has data for
 | NAVER_AI_TAB | &quot;naver_ai_tab&quot; |
 | QWEN | &quot;qwen&quot; |
 | DOUBAO | &quot;doubao&quot; |
+| BING_AI_MODE | &quot;bing_ai_mode&quot; |
 
 
 
