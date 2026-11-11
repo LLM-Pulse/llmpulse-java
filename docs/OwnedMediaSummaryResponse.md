@@ -26,6 +26,7 @@
 |**subredditActivity** | [**List&lt;RedditSubredditActivityPeriod&gt;**](RedditSubredditActivityPeriod.md) | provider&#x3D;reddit only. One row per subreddit and actual reporting period; the top five subreddits are separate and Others has a null subreddit |  [optional] |
 |**positions** | [**List&lt;RedditPositionShare&gt;**](RedditPositionShare.md) | provider&#x3D;reddit only. Position distribution over the selected date window |  [optional] |
 |**brandShare** | [**List&lt;RedditBrandShare&gt;**](RedditBrandShare.md) | provider&#x3D;reddit only. Citation share among the tracked brand and competitors with cited mentions |  [optional] |
+|**replies** | [**TrustpilotReplies**](TrustpilotReplies.md) |  |  [optional] |
 |**requestId** | **String** |  |  [optional] |
 
 

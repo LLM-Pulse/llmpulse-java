@@ -344,6 +344,7 @@ docs/TimeseriesResponse.md
 docs/TimeseriesSeries.md
 docs/TopSourcesResponse.md
 docs/TopSourcesResponseDataInner.md
+docs/TrustpilotReplies.md
 docs/UpdateAnnotationRequest.md
 docs/UpdateCollectionRequest.md
 docs/UpdateCompetitorRequest.md
@@ -716,6 +717,7 @@ src/main/java/ai/llmpulse/sdk/model/TimeseriesResponse.java
 src/main/java/ai/llmpulse/sdk/model/TimeseriesSeries.java
 src/main/java/ai/llmpulse/sdk/model/TopSourcesResponse.java
 src/main/java/ai/llmpulse/sdk/model/TopSourcesResponseDataInner.java
+src/main/java/ai/llmpulse/sdk/model/TrustpilotReplies.java
 src/main/java/ai/llmpulse/sdk/model/UpdateAnnotationRequest.java
 src/main/java/ai/llmpulse/sdk/model/UpdateCollectionRequest.java
 src/main/java/ai/llmpulse/sdk/model/UpdateCompetitorRequest.java
