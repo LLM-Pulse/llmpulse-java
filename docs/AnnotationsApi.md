@@ -345,7 +345,7 @@ public class Example {
         Integer projectId = 56; // Integer | Project ID
         LocalDate from = LocalDate.now(); // LocalDate | 
         LocalDate to = LocalDate.now(); // LocalDate | 
-        Integer annotationCategoryId = 56; // Integer | 
+        Integer annotationCategoryId = 56; // Integer | Keep the annotations filed under this category, one of the project's or a system category. Any other id returns 422 ERR_INVALID_PARAM.
         Integer page = 1; // Integer | 
         Integer perPage = 20; // Integer | 
         try {
@@ -369,7 +369,7 @@ public class Example {
 | **projectId** | **Integer**| Project ID | |
 | **from** | **LocalDate**|  | [optional] |
 | **to** | **LocalDate**|  | [optional] |
-| **annotationCategoryId** | **Integer**|  | [optional] |
+| **annotationCategoryId** | **Integer**| Keep the annotations filed under this category, one of the project&#39;s or a system category. Any other id returns 422 ERR_INVALID_PARAM. | [optional] |
 | **page** | **Integer**|  | [optional] [default to 1] |
 | **perPage** | **Integer**|  | [optional] [default to 20] |
 
@@ -426,7 +426,7 @@ public class Example {
         Integer projectId = 56; // Integer | Project ID
         LocalDate from = LocalDate.now(); // LocalDate | 
         LocalDate to = LocalDate.now(); // LocalDate | 
-        Integer annotationCategoryId = 56; // Integer | 
+        Integer annotationCategoryId = 56; // Integer | Keep the annotations filed under this category, one of the project's or a system category. Any other id returns 422 ERR_INVALID_PARAM.
         Integer page = 1; // Integer | 
         Integer perPage = 20; // Integer | 
         try {
@@ -452,7 +452,7 @@ public class Example {
 | **projectId** | **Integer**| Project ID | |
 | **from** | **LocalDate**|  | [optional] |
 | **to** | **LocalDate**|  | [optional] |
-| **annotationCategoryId** | **Integer**|  | [optional] |
+| **annotationCategoryId** | **Integer**| Keep the annotations filed under this category, one of the project&#39;s or a system category. Any other id returns 422 ERR_INVALID_PARAM. | [optional] |
 | **page** | **Integer**|  | [optional] [default to 1] |
 | **perPage** | **Integer**|  | [optional] [default to 20] |
 

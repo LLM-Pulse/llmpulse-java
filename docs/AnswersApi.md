@@ -167,7 +167,7 @@ ApiResponse<[**AnswerDetails**](AnswerDetails.md)>
 
 ## listAnswers
 
-> void listAnswers(projectId, model, collectionId, countryCode, languageCode, prompt, mentionFilter, citationFilter, competitors, from, to, page, perPage, query, noResult)
+> void listAnswers(projectId, model, collectionId, countryCode, languageCode, prompt, promptType, brandKind, mentionFilter, citationFilter, competitors, from, to, page, perPage, query, noResult)
 
 List AI responses
 
@@ -199,18 +199,20 @@ public class Example {
         String collectionId = "12,34"; // String | One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize.
         String countryCode = "countryCode_example"; // String | One ISO country code or a comma-separated list (e.g. US,GB,DE)
         String languageCode = "languageCode_example"; // String | One ISO language code or a comma-separated list (e.g. en,es,de)
-        Integer prompt = 56; // Integer | Filter by prompt ID
+        Integer prompt = 56; // Integer | Filter by prompt ID. An id that is not a plain positive number, or that names no prompt of the project, returns 422 ERR_INVALID_PARAM.
+        String promptType = "promptType_example"; // String | One prompt type or a comma-separated list: informational, navigational, commercial, transactional
+        String brandKind = "brand"; // String | Filter by brand kind: brand (own brand/products), brand_other (competitors/other brands), non_brand (generic, no brand named). For fair 1:1 brand-vs-competitor comparisons (visibility, share of voice), use non_brand: brand-focused prompts skew results toward the brand they name. The in-app Overview page applies non_brand by default.
         String mentionFilter = "mentions_you"; // String | Filter by which brands are mentioned, as a two-axis matrix (your brand x competitors): mentions_you / not_mentions_you, mentions_competitor / not_mentions_competitor, and the four combined cells you_and_competitor, competitor_not_you (a rival wins and you are absent), you_not_competitor, no_brands (no tracked brand appears, i.e. open space; on answers, finished answers only). Combine with 'competitors' to narrow the competitor side to specific rivals; on a negative cell that reads 'none of these'. On /dimensions/sources it applies to the crawled content of each cited page instead of the answer text. The legacy value 'competitors_only' is still accepted as an alias of competitor_not_you.
         String citationFilter = "cites_you"; // String | Same two-axis matrix applied to the domains cited in the answer instead of the brands named in it (cites_no_brands still allows other domains), plus no_citations, finished answers that cite no source at all. Independent of mention_filter; pass both to intersect them (e.g. mentions_you + not_cites_you finds answers that talk about you without linking to you).
-        String competitors = "competitors_example"; // String | Comma-separated competitor IDs (unknown IDs return ERR_INVALID_PARAM)
-        OffsetDateTime from = OffsetDateTime.now(); // OffsetDateTime | 
-        OffsetDateTime to = OffsetDateTime.now(); // OffsetDateTime | End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier.
+        String competitors = "competitors_example"; // String | Comma-separated competitor IDs (a malformed or unknown ID returns ERR_INVALID_PARAM)
+        OffsetDateTime from = OffsetDateTime.now(); // OffsetDateTime | Start of the window. Sent alone, the window runs from it to the end of today. A from later than to, or a window longer than 1,500 days, returns 422 ERR_INVALID_PARAM.
+        OffsetDateTime to = OffsetDateTime.now(); // OffsetDateTime | End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. Sent without from, the window covers the 30 days that end on it.
         Integer page = 1; // Integer | 
         Integer perPage = 20; // Integer | 
         String query = "query_example"; // String | Case-insensitive full-text search inside AI response texts. Switches items to snippet + match_count mode.
         Boolean noResult = true; // Boolean | Filter sentinel non-answers (no answer could be collected after all retries, or the model declined to answer, today only Gemini; excluded from platform metrics). false = only real answers, true = only sentinels, omit = both. Every item carries its own no_result flag, and a sentinel also carries no_result_reason (declined or no_answer).
         try {
-            apiInstance.listAnswers(projectId, model, collectionId, countryCode, languageCode, prompt, mentionFilter, citationFilter, competitors, from, to, page, perPage, query, noResult);
+            apiInstance.listAnswers(projectId, model, collectionId, countryCode, languageCode, prompt, promptType, brandKind, mentionFilter, citationFilter, competitors, from, to, page, perPage, query, noResult);
         } catch (ApiException e) {
             System.err.println("Exception when calling AnswersApi#listAnswers");
             System.err.println("Status code: " + e.getCode());
@@ -232,12 +234,14 @@ public class Example {
 | **collectionId** | **String**| One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. | [optional] |
 | **countryCode** | **String**| One ISO country code or a comma-separated list (e.g. US,GB,DE) | [optional] |
 | **languageCode** | **String**| One ISO language code or a comma-separated list (e.g. en,es,de) | [optional] |
-| **prompt** | **Integer**| Filter by prompt ID | [optional] |
+| **prompt** | **Integer**| Filter by prompt ID. An id that is not a plain positive number, or that names no prompt of the project, returns 422 ERR_INVALID_PARAM. | [optional] |
+| **promptType** | **String**| One prompt type or a comma-separated list: informational, navigational, commercial, transactional | [optional] |
+| **brandKind** | **String**| Filter by brand kind: brand (own brand/products), brand_other (competitors/other brands), non_brand (generic, no brand named). For fair 1:1 brand-vs-competitor comparisons (visibility, share of voice), use non_brand: brand-focused prompts skew results toward the brand they name. The in-app Overview page applies non_brand by default. | [optional] [enum: brand, brand_other, non_brand] |
 | **mentionFilter** | **String**| Filter by which brands are mentioned, as a two-axis matrix (your brand x competitors): mentions_you / not_mentions_you, mentions_competitor / not_mentions_competitor, and the four combined cells you_and_competitor, competitor_not_you (a rival wins and you are absent), you_not_competitor, no_brands (no tracked brand appears, i.e. open space; on answers, finished answers only). Combine with &#39;competitors&#39; to narrow the competitor side to specific rivals; on a negative cell that reads &#39;none of these&#39;. On /dimensions/sources it applies to the crawled content of each cited page instead of the answer text. The legacy value &#39;competitors_only&#39; is still accepted as an alias of competitor_not_you. | [optional] [enum: mentions_you, not_mentions_you, mentions_competitor, not_mentions_competitor, you_and_competitor, competitor_not_you, you_not_competitor, no_brands] |
 | **citationFilter** | **String**| Same two-axis matrix applied to the domains cited in the answer instead of the brands named in it (cites_no_brands still allows other domains), plus no_citations, finished answers that cite no source at all. Independent of mention_filter; pass both to intersect them (e.g. mentions_you + not_cites_you finds answers that talk about you without linking to you). | [optional] [enum: cites_you, not_cites_you, cites_competitor, not_cites_competitor, you_and_competitor, competitor_not_you, you_not_competitor, cites_no_brands, no_citations] |
-| **competitors** | **String**| Comma-separated competitor IDs (unknown IDs return ERR_INVALID_PARAM) | [optional] |
-| **from** | **OffsetDateTime**|  | [optional] |
-| **to** | **OffsetDateTime**| End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. | [optional] |
+| **competitors** | **String**| Comma-separated competitor IDs (a malformed or unknown ID returns ERR_INVALID_PARAM) | [optional] |
+| **from** | **OffsetDateTime**| Start of the window. Sent alone, the window runs from it to the end of today. A from later than to, or a window longer than 1,500 days, returns 422 ERR_INVALID_PARAM. | [optional] |
+| **to** | **OffsetDateTime**| End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. Sent without from, the window covers the 30 days that end on it. | [optional] |
 | **page** | **Integer**|  | [optional] [default to 1] |
 | **perPage** | **Integer**|  | [optional] [default to 20] |
 | **query** | **String**| Case-insensitive full-text search inside AI response texts. Switches items to snippet + match_count mode. | [optional] |
@@ -265,7 +269,7 @@ null (empty response body)
 
 ## listAnswersWithHttpInfo
 
-> ApiResponse<Void> listAnswersWithHttpInfo(projectId, model, collectionId, countryCode, languageCode, prompt, mentionFilter, citationFilter, competitors, from, to, page, perPage, query, noResult)
+> ApiResponse<Void> listAnswersWithHttpInfo(projectId, model, collectionId, countryCode, languageCode, prompt, promptType, brandKind, mentionFilter, citationFilter, competitors, from, to, page, perPage, query, noResult)
 
 List AI responses
 
@@ -298,18 +302,20 @@ public class Example {
         String collectionId = "12,34"; // String | One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize.
         String countryCode = "countryCode_example"; // String | One ISO country code or a comma-separated list (e.g. US,GB,DE)
         String languageCode = "languageCode_example"; // String | One ISO language code or a comma-separated list (e.g. en,es,de)
-        Integer prompt = 56; // Integer | Filter by prompt ID
+        Integer prompt = 56; // Integer | Filter by prompt ID. An id that is not a plain positive number, or that names no prompt of the project, returns 422 ERR_INVALID_PARAM.
+        String promptType = "promptType_example"; // String | One prompt type or a comma-separated list: informational, navigational, commercial, transactional
+        String brandKind = "brand"; // String | Filter by brand kind: brand (own brand/products), brand_other (competitors/other brands), non_brand (generic, no brand named). For fair 1:1 brand-vs-competitor comparisons (visibility, share of voice), use non_brand: brand-focused prompts skew results toward the brand they name. The in-app Overview page applies non_brand by default.
         String mentionFilter = "mentions_you"; // String | Filter by which brands are mentioned, as a two-axis matrix (your brand x competitors): mentions_you / not_mentions_you, mentions_competitor / not_mentions_competitor, and the four combined cells you_and_competitor, competitor_not_you (a rival wins and you are absent), you_not_competitor, no_brands (no tracked brand appears, i.e. open space; on answers, finished answers only). Combine with 'competitors' to narrow the competitor side to specific rivals; on a negative cell that reads 'none of these'. On /dimensions/sources it applies to the crawled content of each cited page instead of the answer text. The legacy value 'competitors_only' is still accepted as an alias of competitor_not_you.
         String citationFilter = "cites_you"; // String | Same two-axis matrix applied to the domains cited in the answer instead of the brands named in it (cites_no_brands still allows other domains), plus no_citations, finished answers that cite no source at all. Independent of mention_filter; pass both to intersect them (e.g. mentions_you + not_cites_you finds answers that talk about you without linking to you).
-        String competitors = "competitors_example"; // String | Comma-separated competitor IDs (unknown IDs return ERR_INVALID_PARAM)
-        OffsetDateTime from = OffsetDateTime.now(); // OffsetDateTime | 
-        OffsetDateTime to = OffsetDateTime.now(); // OffsetDateTime | End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier.
+        String competitors = "competitors_example"; // String | Comma-separated competitor IDs (a malformed or unknown ID returns ERR_INVALID_PARAM)
+        OffsetDateTime from = OffsetDateTime.now(); // OffsetDateTime | Start of the window. Sent alone, the window runs from it to the end of today. A from later than to, or a window longer than 1,500 days, returns 422 ERR_INVALID_PARAM.
+        OffsetDateTime to = OffsetDateTime.now(); // OffsetDateTime | End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. Sent without from, the window covers the 30 days that end on it.
         Integer page = 1; // Integer | 
         Integer perPage = 20; // Integer | 
         String query = "query_example"; // String | Case-insensitive full-text search inside AI response texts. Switches items to snippet + match_count mode.
         Boolean noResult = true; // Boolean | Filter sentinel non-answers (no answer could be collected after all retries, or the model declined to answer, today only Gemini; excluded from platform metrics). false = only real answers, true = only sentinels, omit = both. Every item carries its own no_result flag, and a sentinel also carries no_result_reason (declined or no_answer).
         try {
-            ApiResponse<Void> response = apiInstance.listAnswersWithHttpInfo(projectId, model, collectionId, countryCode, languageCode, prompt, mentionFilter, citationFilter, competitors, from, to, page, perPage, query, noResult);
+            ApiResponse<Void> response = apiInstance.listAnswersWithHttpInfo(projectId, model, collectionId, countryCode, languageCode, prompt, promptType, brandKind, mentionFilter, citationFilter, competitors, from, to, page, perPage, query, noResult);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
         } catch (ApiException e) {
@@ -333,12 +339,14 @@ public class Example {
 | **collectionId** | **String**| One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. | [optional] |
 | **countryCode** | **String**| One ISO country code or a comma-separated list (e.g. US,GB,DE) | [optional] |
 | **languageCode** | **String**| One ISO language code or a comma-separated list (e.g. en,es,de) | [optional] |
-| **prompt** | **Integer**| Filter by prompt ID | [optional] |
+| **prompt** | **Integer**| Filter by prompt ID. An id that is not a plain positive number, or that names no prompt of the project, returns 422 ERR_INVALID_PARAM. | [optional] |
+| **promptType** | **String**| One prompt type or a comma-separated list: informational, navigational, commercial, transactional | [optional] |
+| **brandKind** | **String**| Filter by brand kind: brand (own brand/products), brand_other (competitors/other brands), non_brand (generic, no brand named). For fair 1:1 brand-vs-competitor comparisons (visibility, share of voice), use non_brand: brand-focused prompts skew results toward the brand they name. The in-app Overview page applies non_brand by default. | [optional] [enum: brand, brand_other, non_brand] |
 | **mentionFilter** | **String**| Filter by which brands are mentioned, as a two-axis matrix (your brand x competitors): mentions_you / not_mentions_you, mentions_competitor / not_mentions_competitor, and the four combined cells you_and_competitor, competitor_not_you (a rival wins and you are absent), you_not_competitor, no_brands (no tracked brand appears, i.e. open space; on answers, finished answers only). Combine with &#39;competitors&#39; to narrow the competitor side to specific rivals; on a negative cell that reads &#39;none of these&#39;. On /dimensions/sources it applies to the crawled content of each cited page instead of the answer text. The legacy value &#39;competitors_only&#39; is still accepted as an alias of competitor_not_you. | [optional] [enum: mentions_you, not_mentions_you, mentions_competitor, not_mentions_competitor, you_and_competitor, competitor_not_you, you_not_competitor, no_brands] |
 | **citationFilter** | **String**| Same two-axis matrix applied to the domains cited in the answer instead of the brands named in it (cites_no_brands still allows other domains), plus no_citations, finished answers that cite no source at all. Independent of mention_filter; pass both to intersect them (e.g. mentions_you + not_cites_you finds answers that talk about you without linking to you). | [optional] [enum: cites_you, not_cites_you, cites_competitor, not_cites_competitor, you_and_competitor, competitor_not_you, you_not_competitor, cites_no_brands, no_citations] |
-| **competitors** | **String**| Comma-separated competitor IDs (unknown IDs return ERR_INVALID_PARAM) | [optional] |
-| **from** | **OffsetDateTime**|  | [optional] |
-| **to** | **OffsetDateTime**| End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. | [optional] |
+| **competitors** | **String**| Comma-separated competitor IDs (a malformed or unknown ID returns ERR_INVALID_PARAM) | [optional] |
+| **from** | **OffsetDateTime**| Start of the window. Sent alone, the window runs from it to the end of today. A from later than to, or a window longer than 1,500 days, returns 422 ERR_INVALID_PARAM. | [optional] |
+| **to** | **OffsetDateTime**| End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. Sent without from, the window covers the 30 days that end on it. | [optional] |
 | **page** | **Integer**|  | [optional] [default to 1] |
 | **perPage** | **Integer**|  | [optional] [default to 20] |
 | **query** | **String**| Case-insensitive full-text search inside AI response texts. Switches items to snippet + match_count mode. | [optional] |

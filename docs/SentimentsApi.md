@@ -45,7 +45,7 @@ public class Example {
 
         SentimentsApi apiInstance = new SentimentsApi(defaultClient);
         Integer projectId = 56; // Integer | Project ID
-        Integer range = 56; // Integer | Number of days to look back, today included (default 28, like the Sentiment page). Ignored when from or to is given.
+        Integer range = 56; // Integer | Number of days to look back, today included (default 28, like the Sentiment page). from or to win over it, but a value that is not a plain positive number returns 422 ERR_INVALID_PARAM even beside them.
         OffsetDateTime from = OffsetDateTime.now(); // OffsetDateTime | 
         OffsetDateTime to = OffsetDateTime.now(); // OffsetDateTime | End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier.
         String model = "chatgpt"; // String | Filter by one AI model. It must be a model enabled for the API key's user: an unknown value, or a model the user has not enabled, returns 422 ERR_INVALID_PARAM with the valid values in the message.
@@ -82,7 +82,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **projectId** | **Integer**| Project ID | |
-| **range** | **Integer**| Number of days to look back, today included (default 28, like the Sentiment page). Ignored when from or to is given. | [optional] |
+| **range** | **Integer**| Number of days to look back, today included (default 28, like the Sentiment page). from or to win over it, but a value that is not a plain positive number returns 422 ERR_INVALID_PARAM even beside them. | [optional] |
 | **from** | **OffsetDateTime**|  | [optional] |
 | **to** | **OffsetDateTime**| End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. | [optional] |
 | **model** | **String**| Filter by one AI model. It must be a model enabled for the API key&#39;s user: an unknown value, or a model the user has not enabled, returns 422 ERR_INVALID_PARAM with the valid values in the message. | [optional] [enum: chatgpt, perplexity, ai_mode, ai_overview, gemini, copilot, amazon_rufus, claude, grok, deepseek, naver_ai, baidu_ai, meta_ai, naver_ai_tab, qwen, doubao, bing_ai_mode] |
@@ -152,7 +152,7 @@ public class Example {
 
         SentimentsApi apiInstance = new SentimentsApi(defaultClient);
         Integer projectId = 56; // Integer | Project ID
-        Integer range = 56; // Integer | Number of days to look back, today included (default 28, like the Sentiment page). Ignored when from or to is given.
+        Integer range = 56; // Integer | Number of days to look back, today included (default 28, like the Sentiment page). from or to win over it, but a value that is not a plain positive number returns 422 ERR_INVALID_PARAM even beside them.
         OffsetDateTime from = OffsetDateTime.now(); // OffsetDateTime | 
         OffsetDateTime to = OffsetDateTime.now(); // OffsetDateTime | End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier.
         String model = "chatgpt"; // String | Filter by one AI model. It must be a model enabled for the API key's user: an unknown value, or a model the user has not enabled, returns 422 ERR_INVALID_PARAM with the valid values in the message.
@@ -191,7 +191,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **projectId** | **Integer**| Project ID | |
-| **range** | **Integer**| Number of days to look back, today included (default 28, like the Sentiment page). Ignored when from or to is given. | [optional] |
+| **range** | **Integer**| Number of days to look back, today included (default 28, like the Sentiment page). from or to win over it, but a value that is not a plain positive number returns 422 ERR_INVALID_PARAM even beside them. | [optional] |
 | **from** | **OffsetDateTime**|  | [optional] |
 | **to** | **OffsetDateTime**| End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. | [optional] |
 | **model** | **String**| Filter by one AI model. It must be a model enabled for the API key&#39;s user: an unknown value, or a model the user has not enabled, returns 422 ERR_INVALID_PARAM with the valid values in the message. | [optional] [enum: chatgpt, perplexity, ai_mode, ai_overview, gemini, copilot, amazon_rufus, claude, grok, deepseek, naver_ai, baidu_ai, meta_ai, naver_ai_tab, qwen, doubao, bing_ai_mode] |
@@ -261,7 +261,7 @@ public class Example {
 
         SentimentsApi apiInstance = new SentimentsApi(defaultClient);
         Integer projectId = 56; // Integer | Project ID
-        Integer range = 56; // Integer | Number of days to look back, today included (default 28, like the Sentiment page). Ignored when from or to is given.
+        Integer range = 56; // Integer | Number of days to look back, today included (default 28, like the Sentiment page). from or to win over it, but a value that is not a plain positive number returns 422 ERR_INVALID_PARAM even beside them.
         OffsetDateTime from = OffsetDateTime.now(); // OffsetDateTime | 
         OffsetDateTime to = OffsetDateTime.now(); // OffsetDateTime | End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier.
         String model = "chatgpt"; // String | Filter by one AI model. It must be a model enabled for the API key's user: an unknown value, or a model the user has not enabled, returns 422 ERR_INVALID_PARAM with the valid values in the message.
@@ -298,7 +298,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **projectId** | **Integer**| Project ID | |
-| **range** | **Integer**| Number of days to look back, today included (default 28, like the Sentiment page). Ignored when from or to is given. | [optional] |
+| **range** | **Integer**| Number of days to look back, today included (default 28, like the Sentiment page). from or to win over it, but a value that is not a plain positive number returns 422 ERR_INVALID_PARAM even beside them. | [optional] |
 | **from** | **OffsetDateTime**|  | [optional] |
 | **to** | **OffsetDateTime**| End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. | [optional] |
 | **model** | **String**| Filter by one AI model. It must be a model enabled for the API key&#39;s user: an unknown value, or a model the user has not enabled, returns 422 ERR_INVALID_PARAM with the valid values in the message. | [optional] [enum: chatgpt, perplexity, ai_mode, ai_overview, gemini, copilot, amazon_rufus, claude, grok, deepseek, naver_ai, baidu_ai, meta_ai, naver_ai_tab, qwen, doubao, bing_ai_mode] |
@@ -368,7 +368,7 @@ public class Example {
 
         SentimentsApi apiInstance = new SentimentsApi(defaultClient);
         Integer projectId = 56; // Integer | Project ID
-        Integer range = 56; // Integer | Number of days to look back, today included (default 28, like the Sentiment page). Ignored when from or to is given.
+        Integer range = 56; // Integer | Number of days to look back, today included (default 28, like the Sentiment page). from or to win over it, but a value that is not a plain positive number returns 422 ERR_INVALID_PARAM even beside them.
         OffsetDateTime from = OffsetDateTime.now(); // OffsetDateTime | 
         OffsetDateTime to = OffsetDateTime.now(); // OffsetDateTime | End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier.
         String model = "chatgpt"; // String | Filter by one AI model. It must be a model enabled for the API key's user: an unknown value, or a model the user has not enabled, returns 422 ERR_INVALID_PARAM with the valid values in the message.
@@ -407,7 +407,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **projectId** | **Integer**| Project ID | |
-| **range** | **Integer**| Number of days to look back, today included (default 28, like the Sentiment page). Ignored when from or to is given. | [optional] |
+| **range** | **Integer**| Number of days to look back, today included (default 28, like the Sentiment page). from or to win over it, but a value that is not a plain positive number returns 422 ERR_INVALID_PARAM even beside them. | [optional] |
 | **from** | **OffsetDateTime**|  | [optional] |
 | **to** | **OffsetDateTime**| End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. | [optional] |
 | **model** | **String**| Filter by one AI model. It must be a model enabled for the API key&#39;s user: an unknown value, or a model the user has not enabled, returns 422 ERR_INVALID_PARAM with the valid values in the message. | [optional] [enum: chatgpt, perplexity, ai_mode, ai_overview, gemini, copilot, amazon_rufus, claude, grok, deepseek, naver_ai, baidu_ai, meta_ai, naver_ai_tab, qwen, doubao, bing_ai_mode] |
@@ -625,15 +625,15 @@ public class Example {
 
         SentimentsApi apiInstance = new SentimentsApi(defaultClient);
         Integer projectId = 56; // Integer | Project ID
-        Integer competitorId = 56; // Integer | 
-        Boolean brandOnly = true; // Boolean | 
+        Integer competitorId = 56; // Integer | Keep the sentiments about this competitor. An id that is not a plain positive number, or that names no competitor of the project, returns 422 ERR_INVALID_PARAM.
+        Boolean brandOnly = true; // Boolean | true keeps only the sentiments about your own brand.
         String analysis = "analysis_example"; // String | One sentiment level or a comma-separated list: very_positive, positive, neutral, negative, very_negative
-        String model = "chatgpt"; // String | Filter by one AI model. Here an unknown value, or a model the API key's user has not enabled, is ignored rather than rejected: the request succeeds and returns the records of every enabled model, as if model were omitted.
+        String model = "chatgpt"; // String | Filter by one AI model. It must be a model enabled for the API key's user: an unknown value, or a model the user has not enabled, returns 422 ERR_INVALID_PARAM with the valid values in the message.
         String collectionId = "12,34"; // String | One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize.
         String countryCode = "countryCode_example"; // String | One ISO country code or a comma-separated list (e.g. US,GB,DE)
         String languageCode = "languageCode_example"; // String | One ISO language code or a comma-separated list (e.g. en,es,de)
-        OffsetDateTime from = OffsetDateTime.now(); // OffsetDateTime | 
-        OffsetDateTime to = OffsetDateTime.now(); // OffsetDateTime | End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier.
+        OffsetDateTime from = OffsetDateTime.now(); // OffsetDateTime | Start of the window. Sent alone, the window runs from it to the end of today. A from later than to, or a window longer than 1,500 days, returns 422 ERR_INVALID_PARAM.
+        OffsetDateTime to = OffsetDateTime.now(); // OffsetDateTime | End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. Sent without from, the window covers the 30 days that end on it.
         Integer page = 1; // Integer | 
         Integer perPage = 20; // Integer | 
         try {
@@ -656,15 +656,15 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **projectId** | **Integer**| Project ID | |
-| **competitorId** | **Integer**|  | [optional] |
-| **brandOnly** | **Boolean**|  | [optional] |
+| **competitorId** | **Integer**| Keep the sentiments about this competitor. An id that is not a plain positive number, or that names no competitor of the project, returns 422 ERR_INVALID_PARAM. | [optional] |
+| **brandOnly** | **Boolean**| true keeps only the sentiments about your own brand. | [optional] |
 | **analysis** | **String**| One sentiment level or a comma-separated list: very_positive, positive, neutral, negative, very_negative | [optional] |
-| **model** | **String**| Filter by one AI model. Here an unknown value, or a model the API key&#39;s user has not enabled, is ignored rather than rejected: the request succeeds and returns the records of every enabled model, as if model were omitted. | [optional] [enum: chatgpt, perplexity, ai_mode, ai_overview, gemini, copilot, amazon_rufus, claude, grok, deepseek, naver_ai, baidu_ai, meta_ai, naver_ai_tab, qwen, doubao, bing_ai_mode] |
+| **model** | **String**| Filter by one AI model. It must be a model enabled for the API key&#39;s user: an unknown value, or a model the user has not enabled, returns 422 ERR_INVALID_PARAM with the valid values in the message. | [optional] [enum: chatgpt, perplexity, ai_mode, ai_overview, gemini, copilot, amazon_rufus, claude, grok, deepseek, naver_ai, baidu_ai, meta_ai, naver_ai_tab, qwen, doubao, bing_ai_mode] |
 | **collectionId** | **String**| One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. | [optional] |
 | **countryCode** | **String**| One ISO country code or a comma-separated list (e.g. US,GB,DE) | [optional] |
 | **languageCode** | **String**| One ISO language code or a comma-separated list (e.g. en,es,de) | [optional] |
-| **from** | **OffsetDateTime**|  | [optional] |
-| **to** | **OffsetDateTime**| End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. | [optional] |
+| **from** | **OffsetDateTime**| Start of the window. Sent alone, the window runs from it to the end of today. A from later than to, or a window longer than 1,500 days, returns 422 ERR_INVALID_PARAM. | [optional] |
+| **to** | **OffsetDateTime**| End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. Sent without from, the window covers the 30 days that end on it. | [optional] |
 | **page** | **Integer**|  | [optional] [default to 1] |
 | **perPage** | **Integer**|  | [optional] [default to 20] |
 
@@ -720,15 +720,15 @@ public class Example {
 
         SentimentsApi apiInstance = new SentimentsApi(defaultClient);
         Integer projectId = 56; // Integer | Project ID
-        Integer competitorId = 56; // Integer | 
-        Boolean brandOnly = true; // Boolean | 
+        Integer competitorId = 56; // Integer | Keep the sentiments about this competitor. An id that is not a plain positive number, or that names no competitor of the project, returns 422 ERR_INVALID_PARAM.
+        Boolean brandOnly = true; // Boolean | true keeps only the sentiments about your own brand.
         String analysis = "analysis_example"; // String | One sentiment level or a comma-separated list: very_positive, positive, neutral, negative, very_negative
-        String model = "chatgpt"; // String | Filter by one AI model. Here an unknown value, or a model the API key's user has not enabled, is ignored rather than rejected: the request succeeds and returns the records of every enabled model, as if model were omitted.
+        String model = "chatgpt"; // String | Filter by one AI model. It must be a model enabled for the API key's user: an unknown value, or a model the user has not enabled, returns 422 ERR_INVALID_PARAM with the valid values in the message.
         String collectionId = "12,34"; // String | One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize.
         String countryCode = "countryCode_example"; // String | One ISO country code or a comma-separated list (e.g. US,GB,DE)
         String languageCode = "languageCode_example"; // String | One ISO language code or a comma-separated list (e.g. en,es,de)
-        OffsetDateTime from = OffsetDateTime.now(); // OffsetDateTime | 
-        OffsetDateTime to = OffsetDateTime.now(); // OffsetDateTime | End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier.
+        OffsetDateTime from = OffsetDateTime.now(); // OffsetDateTime | Start of the window. Sent alone, the window runs from it to the end of today. A from later than to, or a window longer than 1,500 days, returns 422 ERR_INVALID_PARAM.
+        OffsetDateTime to = OffsetDateTime.now(); // OffsetDateTime | End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. Sent without from, the window covers the 30 days that end on it.
         Integer page = 1; // Integer | 
         Integer perPage = 20; // Integer | 
         try {
@@ -753,15 +753,15 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **projectId** | **Integer**| Project ID | |
-| **competitorId** | **Integer**|  | [optional] |
-| **brandOnly** | **Boolean**|  | [optional] |
+| **competitorId** | **Integer**| Keep the sentiments about this competitor. An id that is not a plain positive number, or that names no competitor of the project, returns 422 ERR_INVALID_PARAM. | [optional] |
+| **brandOnly** | **Boolean**| true keeps only the sentiments about your own brand. | [optional] |
 | **analysis** | **String**| One sentiment level or a comma-separated list: very_positive, positive, neutral, negative, very_negative | [optional] |
-| **model** | **String**| Filter by one AI model. Here an unknown value, or a model the API key&#39;s user has not enabled, is ignored rather than rejected: the request succeeds and returns the records of every enabled model, as if model were omitted. | [optional] [enum: chatgpt, perplexity, ai_mode, ai_overview, gemini, copilot, amazon_rufus, claude, grok, deepseek, naver_ai, baidu_ai, meta_ai, naver_ai_tab, qwen, doubao, bing_ai_mode] |
+| **model** | **String**| Filter by one AI model. It must be a model enabled for the API key&#39;s user: an unknown value, or a model the user has not enabled, returns 422 ERR_INVALID_PARAM with the valid values in the message. | [optional] [enum: chatgpt, perplexity, ai_mode, ai_overview, gemini, copilot, amazon_rufus, claude, grok, deepseek, naver_ai, baidu_ai, meta_ai, naver_ai_tab, qwen, doubao, bing_ai_mode] |
 | **collectionId** | **String**| One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. | [optional] |
 | **countryCode** | **String**| One ISO country code or a comma-separated list (e.g. US,GB,DE) | [optional] |
 | **languageCode** | **String**| One ISO language code or a comma-separated list (e.g. en,es,de) | [optional] |
-| **from** | **OffsetDateTime**|  | [optional] |
-| **to** | **OffsetDateTime**| End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. | [optional] |
+| **from** | **OffsetDateTime**| Start of the window. Sent alone, the window runs from it to the end of today. A from later than to, or a window longer than 1,500 days, returns 422 ERR_INVALID_PARAM. | [optional] |
+| **to** | **OffsetDateTime**| End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. Sent without from, the window covers the 30 days that end on it. | [optional] |
 | **page** | **Integer**|  | [optional] [default to 1] |
 | **perPage** | **Integer**|  | [optional] [default to 20] |
 

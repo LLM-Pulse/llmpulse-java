@@ -346,7 +346,7 @@ public class Example {
         BearerAuth.setBearerToken("BEARER TOKEN");
 
         WebhooksApi apiInstance = new WebhooksApi(defaultClient);
-        Integer projectId = 56; // Integer | Optional project filter
+        Integer projectId = 56; // Integer | Optional project filter. An id that is not a plain number, or that names no project of the account, returns ERR_PROJECT_NOT_FOUND.
         Integer page = 56; // Integer | 
         Integer perPage = 56; // Integer | Max 100
         try {
@@ -368,7 +368,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **projectId** | **Integer**| Optional project filter | [optional] |
+| **projectId** | **Integer**| Optional project filter. An id that is not a plain number, or that names no project of the account, returns ERR_PROJECT_NOT_FOUND. | [optional] |
 | **page** | **Integer**|  | [optional] |
 | **perPage** | **Integer**| Max 100 | [optional] |
 
@@ -392,6 +392,7 @@ public class Example {
 | **200** | OK |  -  |
 | **401** | Authentication failed |  -  |
 | **403** | Endpoint requires a higher plan tier |  -  |
+| **404** | Resource not found |  -  |
 
 ## listWebhooksWithHttpInfo
 
@@ -423,7 +424,7 @@ public class Example {
         BearerAuth.setBearerToken("BEARER TOKEN");
 
         WebhooksApi apiInstance = new WebhooksApi(defaultClient);
-        Integer projectId = 56; // Integer | Optional project filter
+        Integer projectId = 56; // Integer | Optional project filter. An id that is not a plain number, or that names no project of the account, returns ERR_PROJECT_NOT_FOUND.
         Integer page = 56; // Integer | 
         Integer perPage = 56; // Integer | Max 100
         try {
@@ -447,7 +448,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **projectId** | **Integer**| Optional project filter | [optional] |
+| **projectId** | **Integer**| Optional project filter. An id that is not a plain number, or that names no project of the account, returns ERR_PROJECT_NOT_FOUND. | [optional] |
 | **page** | **Integer**|  | [optional] |
 | **perPage** | **Integer**| Max 100 | [optional] |
 
@@ -471,6 +472,7 @@ ApiResponse<[**ListWebhooks200Response**](ListWebhooks200Response.md)>
 | **200** | OK |  -  |
 | **401** | Authentication failed |  -  |
 | **403** | Endpoint requires a higher plan tier |  -  |
+| **404** | Resource not found |  -  |
 
 
 ## sampleWebhookPayloads

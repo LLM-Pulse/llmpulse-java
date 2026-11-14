@@ -60,7 +60,7 @@ public class Example {
         SearchConsoleApi apiInstance = new SearchConsoleApi(defaultClient);
         Integer projectId = 56; // Integer | Project ID
         String property = "all"; // String | Which Search Console properties to read; /search_console/properties lists them. Omit it for the primary property, or pass one property id (e.g. sc-domain:example.com) to read that one; both answer with property. A comma-separated list of ids, or all, combines several and answers with properties, excluded_properties and property_errors instead: excluded_properties are left out because another selected property already counts them (a URL-prefix property under a domain property), so no click is counted twice; property_errors are properties Google refused, left out of the figures and also named in the X-Search-Console-Property-Errors header. When Google refuses every property, the request fails as a single-property read would.
-        Integer range = 56; // Integer | Number of days to look back, today included (alternative to from/to). At most 487, Google's retention.
+        Integer range = 56; // Integer | Number of days to look back, today included (alternative to from/to, which win when both are given). At most 487, Google's retention. A value that is not a plain positive number returns 422 ERR_INVALID_PARAM even beside from/to.
         LocalDate from = LocalDate.now(); // LocalDate | Start date (YYYY-MM-DD). Defaults to 30 days ago.
         LocalDate to = LocalDate.now(); // LocalDate | End date (YYYY-MM-DD), inclusive. Defaults to today. Google publishes data with a 2-3 day lag, so data_through in the response says how far it reaches.
         Integer minImpressions = 100; // Integer | Smallest impressions a query needs.
@@ -93,7 +93,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **projectId** | **Integer**| Project ID | |
 | **property** | **String**| Which Search Console properties to read; /search_console/properties lists them. Omit it for the primary property, or pass one property id (e.g. sc-domain:example.com) to read that one; both answer with property. A comma-separated list of ids, or all, combines several and answers with properties, excluded_properties and property_errors instead: excluded_properties are left out because another selected property already counts them (a URL-prefix property under a domain property), so no click is counted twice; property_errors are properties Google refused, left out of the figures and also named in the X-Search-Console-Property-Errors header. When Google refuses every property, the request fails as a single-property read would. | [optional] |
-| **range** | **Integer**| Number of days to look back, today included (alternative to from/to). At most 487, Google&#39;s retention. | [optional] |
+| **range** | **Integer**| Number of days to look back, today included (alternative to from/to, which win when both are given). At most 487, Google&#39;s retention. A value that is not a plain positive number returns 422 ERR_INVALID_PARAM even beside from/to. | [optional] |
 | **from** | **LocalDate**| Start date (YYYY-MM-DD). Defaults to 30 days ago. | [optional] |
 | **to** | **LocalDate**| End date (YYYY-MM-DD), inclusive. Defaults to today. Google publishes data with a 2-3 day lag, so data_through in the response says how far it reaches. | [optional] |
 | **minImpressions** | **Integer**| Smallest impressions a query needs. | [optional] [default to 100] |
@@ -162,7 +162,7 @@ public class Example {
         SearchConsoleApi apiInstance = new SearchConsoleApi(defaultClient);
         Integer projectId = 56; // Integer | Project ID
         String property = "all"; // String | Which Search Console properties to read; /search_console/properties lists them. Omit it for the primary property, or pass one property id (e.g. sc-domain:example.com) to read that one; both answer with property. A comma-separated list of ids, or all, combines several and answers with properties, excluded_properties and property_errors instead: excluded_properties are left out because another selected property already counts them (a URL-prefix property under a domain property), so no click is counted twice; property_errors are properties Google refused, left out of the figures and also named in the X-Search-Console-Property-Errors header. When Google refuses every property, the request fails as a single-property read would.
-        Integer range = 56; // Integer | Number of days to look back, today included (alternative to from/to). At most 487, Google's retention.
+        Integer range = 56; // Integer | Number of days to look back, today included (alternative to from/to, which win when both are given). At most 487, Google's retention. A value that is not a plain positive number returns 422 ERR_INVALID_PARAM even beside from/to.
         LocalDate from = LocalDate.now(); // LocalDate | Start date (YYYY-MM-DD). Defaults to 30 days ago.
         LocalDate to = LocalDate.now(); // LocalDate | End date (YYYY-MM-DD), inclusive. Defaults to today. Google publishes data with a 2-3 day lag, so data_through in the response says how far it reaches.
         Integer minImpressions = 100; // Integer | Smallest impressions a query needs.
@@ -197,7 +197,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **projectId** | **Integer**| Project ID | |
 | **property** | **String**| Which Search Console properties to read; /search_console/properties lists them. Omit it for the primary property, or pass one property id (e.g. sc-domain:example.com) to read that one; both answer with property. A comma-separated list of ids, or all, combines several and answers with properties, excluded_properties and property_errors instead: excluded_properties are left out because another selected property already counts them (a URL-prefix property under a domain property), so no click is counted twice; property_errors are properties Google refused, left out of the figures and also named in the X-Search-Console-Property-Errors header. When Google refuses every property, the request fails as a single-property read would. | [optional] |
-| **range** | **Integer**| Number of days to look back, today included (alternative to from/to). At most 487, Google&#39;s retention. | [optional] |
+| **range** | **Integer**| Number of days to look back, today included (alternative to from/to, which win when both are given). At most 487, Google&#39;s retention. A value that is not a plain positive number returns 422 ERR_INVALID_PARAM even beside from/to. | [optional] |
 | **from** | **LocalDate**| Start date (YYYY-MM-DD). Defaults to 30 days ago. | [optional] |
 | **to** | **LocalDate**| End date (YYYY-MM-DD), inclusive. Defaults to today. Google publishes data with a 2-3 day lag, so data_through in the response says how far it reaches. | [optional] |
 | **minImpressions** | **Integer**| Smallest impressions a query needs. | [optional] [default to 100] |
@@ -266,7 +266,7 @@ public class Example {
         SearchConsoleApi apiInstance = new SearchConsoleApi(defaultClient);
         Integer projectId = 56; // Integer | Project ID
         String property = "all"; // String | Which Search Console properties to read; /search_console/properties lists them. Omit it for the primary property, or pass one property id (e.g. sc-domain:example.com) to read that one; both answer with property. A comma-separated list of ids, or all, combines several and answers with properties, excluded_properties and property_errors instead: excluded_properties are left out because another selected property already counts them (a URL-prefix property under a domain property), so no click is counted twice; property_errors are properties Google refused, left out of the figures and also named in the X-Search-Console-Property-Errors header. When Google refuses every property, the request fails as a single-property read would.
-        Integer range = 56; // Integer | Number of days to look back, today included (alternative to from/to). At most 487, Google's retention.
+        Integer range = 56; // Integer | Number of days to look back, today included (alternative to from/to, which win when both are given). At most 487, Google's retention. A value that is not a plain positive number returns 422 ERR_INVALID_PARAM even beside from/to.
         LocalDate from = LocalDate.now(); // LocalDate | Start date (YYYY-MM-DD). Defaults to 30 days ago.
         LocalDate to = LocalDate.now(); // LocalDate | End date (YYYY-MM-DD), inclusive. Defaults to today. Google publishes data with a 2-3 day lag, so data_through in the response says how far it reaches.
         String searchType = "web"; // String | Which search surface to measure. Defaults to web. discover and googleNews carry no query dimension, so Google rejects /search_console/queries for them.
@@ -294,7 +294,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **projectId** | **Integer**| Project ID | |
 | **property** | **String**| Which Search Console properties to read; /search_console/properties lists them. Omit it for the primary property, or pass one property id (e.g. sc-domain:example.com) to read that one; both answer with property. A comma-separated list of ids, or all, combines several and answers with properties, excluded_properties and property_errors instead: excluded_properties are left out because another selected property already counts them (a URL-prefix property under a domain property), so no click is counted twice; property_errors are properties Google refused, left out of the figures and also named in the X-Search-Console-Property-Errors header. When Google refuses every property, the request fails as a single-property read would. | [optional] |
-| **range** | **Integer**| Number of days to look back, today included (alternative to from/to). At most 487, Google&#39;s retention. | [optional] |
+| **range** | **Integer**| Number of days to look back, today included (alternative to from/to, which win when both are given). At most 487, Google&#39;s retention. A value that is not a plain positive number returns 422 ERR_INVALID_PARAM even beside from/to. | [optional] |
 | **from** | **LocalDate**| Start date (YYYY-MM-DD). Defaults to 30 days ago. | [optional] |
 | **to** | **LocalDate**| End date (YYYY-MM-DD), inclusive. Defaults to today. Google publishes data with a 2-3 day lag, so data_through in the response says how far it reaches. | [optional] |
 | **searchType** | **String**| Which search surface to measure. Defaults to web. discover and googleNews carry no query dimension, so Google rejects /search_console/queries for them. | [optional] [default to web] [enum: web, image, video, news, discover, googleNews] |
@@ -358,7 +358,7 @@ public class Example {
         SearchConsoleApi apiInstance = new SearchConsoleApi(defaultClient);
         Integer projectId = 56; // Integer | Project ID
         String property = "all"; // String | Which Search Console properties to read; /search_console/properties lists them. Omit it for the primary property, or pass one property id (e.g. sc-domain:example.com) to read that one; both answer with property. A comma-separated list of ids, or all, combines several and answers with properties, excluded_properties and property_errors instead: excluded_properties are left out because another selected property already counts them (a URL-prefix property under a domain property), so no click is counted twice; property_errors are properties Google refused, left out of the figures and also named in the X-Search-Console-Property-Errors header. When Google refuses every property, the request fails as a single-property read would.
-        Integer range = 56; // Integer | Number of days to look back, today included (alternative to from/to). At most 487, Google's retention.
+        Integer range = 56; // Integer | Number of days to look back, today included (alternative to from/to, which win when both are given). At most 487, Google's retention. A value that is not a plain positive number returns 422 ERR_INVALID_PARAM even beside from/to.
         LocalDate from = LocalDate.now(); // LocalDate | Start date (YYYY-MM-DD). Defaults to 30 days ago.
         LocalDate to = LocalDate.now(); // LocalDate | End date (YYYY-MM-DD), inclusive. Defaults to today. Google publishes data with a 2-3 day lag, so data_through in the response says how far it reaches.
         String searchType = "web"; // String | Which search surface to measure. Defaults to web. discover and googleNews carry no query dimension, so Google rejects /search_console/queries for them.
@@ -388,7 +388,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **projectId** | **Integer**| Project ID | |
 | **property** | **String**| Which Search Console properties to read; /search_console/properties lists them. Omit it for the primary property, or pass one property id (e.g. sc-domain:example.com) to read that one; both answer with property. A comma-separated list of ids, or all, combines several and answers with properties, excluded_properties and property_errors instead: excluded_properties are left out because another selected property already counts them (a URL-prefix property under a domain property), so no click is counted twice; property_errors are properties Google refused, left out of the figures and also named in the X-Search-Console-Property-Errors header. When Google refuses every property, the request fails as a single-property read would. | [optional] |
-| **range** | **Integer**| Number of days to look back, today included (alternative to from/to). At most 487, Google&#39;s retention. | [optional] |
+| **range** | **Integer**| Number of days to look back, today included (alternative to from/to, which win when both are given). At most 487, Google&#39;s retention. A value that is not a plain positive number returns 422 ERR_INVALID_PARAM even beside from/to. | [optional] |
 | **from** | **LocalDate**| Start date (YYYY-MM-DD). Defaults to 30 days ago. | [optional] |
 | **to** | **LocalDate**| End date (YYYY-MM-DD), inclusive. Defaults to today. Google publishes data with a 2-3 day lag, so data_through in the response says how far it reaches. | [optional] |
 | **searchType** | **String**| Which search surface to measure. Defaults to web. discover and googleNews carry no query dimension, so Google rejects /search_console/queries for them. | [optional] [default to web] [enum: web, image, video, news, discover, googleNews] |
@@ -452,7 +452,7 @@ public class Example {
         SearchConsoleApi apiInstance = new SearchConsoleApi(defaultClient);
         Integer projectId = 56; // Integer | Project ID
         String property = "all"; // String | Which Search Console properties to read; /search_console/properties lists them. Omit it for the primary property, or pass one property id (e.g. sc-domain:example.com) to read that one; both answer with property. A comma-separated list of ids, or all, combines several and answers with properties, excluded_properties and property_errors instead: excluded_properties are left out because another selected property already counts them (a URL-prefix property under a domain property), so no click is counted twice; property_errors are properties Google refused, left out of the figures and also named in the X-Search-Console-Property-Errors header. When Google refuses every property, the request fails as a single-property read would.
-        Integer range = 56; // Integer | Number of days to look back, today included (alternative to from/to). At most 487, Google's retention.
+        Integer range = 56; // Integer | Number of days to look back, today included (alternative to from/to, which win when both are given). At most 487, Google's retention. A value that is not a plain positive number returns 422 ERR_INVALID_PARAM even beside from/to.
         LocalDate from = LocalDate.now(); // LocalDate | Start date (YYYY-MM-DD). Defaults to 30 days ago.
         LocalDate to = LocalDate.now(); // LocalDate | End date (YYYY-MM-DD), inclusive. Defaults to today. Google publishes data with a 2-3 day lag, so data_through in the response says how far it reaches.
         Integer minImpressions = 100; // Integer | Smallest impressions a query needs.
@@ -485,7 +485,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **projectId** | **Integer**| Project ID | |
 | **property** | **String**| Which Search Console properties to read; /search_console/properties lists them. Omit it for the primary property, or pass one property id (e.g. sc-domain:example.com) to read that one; both answer with property. A comma-separated list of ids, or all, combines several and answers with properties, excluded_properties and property_errors instead: excluded_properties are left out because another selected property already counts them (a URL-prefix property under a domain property), so no click is counted twice; property_errors are properties Google refused, left out of the figures and also named in the X-Search-Console-Property-Errors header. When Google refuses every property, the request fails as a single-property read would. | [optional] |
-| **range** | **Integer**| Number of days to look back, today included (alternative to from/to). At most 487, Google&#39;s retention. | [optional] |
+| **range** | **Integer**| Number of days to look back, today included (alternative to from/to, which win when both are given). At most 487, Google&#39;s retention. A value that is not a plain positive number returns 422 ERR_INVALID_PARAM even beside from/to. | [optional] |
 | **from** | **LocalDate**| Start date (YYYY-MM-DD). Defaults to 30 days ago. | [optional] |
 | **to** | **LocalDate**| End date (YYYY-MM-DD), inclusive. Defaults to today. Google publishes data with a 2-3 day lag, so data_through in the response says how far it reaches. | [optional] |
 | **minImpressions** | **Integer**| Smallest impressions a query needs. | [optional] [default to 100] |
@@ -554,7 +554,7 @@ public class Example {
         SearchConsoleApi apiInstance = new SearchConsoleApi(defaultClient);
         Integer projectId = 56; // Integer | Project ID
         String property = "all"; // String | Which Search Console properties to read; /search_console/properties lists them. Omit it for the primary property, or pass one property id (e.g. sc-domain:example.com) to read that one; both answer with property. A comma-separated list of ids, or all, combines several and answers with properties, excluded_properties and property_errors instead: excluded_properties are left out because another selected property already counts them (a URL-prefix property under a domain property), so no click is counted twice; property_errors are properties Google refused, left out of the figures and also named in the X-Search-Console-Property-Errors header. When Google refuses every property, the request fails as a single-property read would.
-        Integer range = 56; // Integer | Number of days to look back, today included (alternative to from/to). At most 487, Google's retention.
+        Integer range = 56; // Integer | Number of days to look back, today included (alternative to from/to, which win when both are given). At most 487, Google's retention. A value that is not a plain positive number returns 422 ERR_INVALID_PARAM even beside from/to.
         LocalDate from = LocalDate.now(); // LocalDate | Start date (YYYY-MM-DD). Defaults to 30 days ago.
         LocalDate to = LocalDate.now(); // LocalDate | End date (YYYY-MM-DD), inclusive. Defaults to today. Google publishes data with a 2-3 day lag, so data_through in the response says how far it reaches.
         Integer minImpressions = 100; // Integer | Smallest impressions a query needs.
@@ -589,7 +589,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **projectId** | **Integer**| Project ID | |
 | **property** | **String**| Which Search Console properties to read; /search_console/properties lists them. Omit it for the primary property, or pass one property id (e.g. sc-domain:example.com) to read that one; both answer with property. A comma-separated list of ids, or all, combines several and answers with properties, excluded_properties and property_errors instead: excluded_properties are left out because another selected property already counts them (a URL-prefix property under a domain property), so no click is counted twice; property_errors are properties Google refused, left out of the figures and also named in the X-Search-Console-Property-Errors header. When Google refuses every property, the request fails as a single-property read would. | [optional] |
-| **range** | **Integer**| Number of days to look back, today included (alternative to from/to). At most 487, Google&#39;s retention. | [optional] |
+| **range** | **Integer**| Number of days to look back, today included (alternative to from/to, which win when both are given). At most 487, Google&#39;s retention. A value that is not a plain positive number returns 422 ERR_INVALID_PARAM even beside from/to. | [optional] |
 | **from** | **LocalDate**| Start date (YYYY-MM-DD). Defaults to 30 days ago. | [optional] |
 | **to** | **LocalDate**| End date (YYYY-MM-DD), inclusive. Defaults to today. Google publishes data with a 2-3 day lag, so data_through in the response says how far it reaches. | [optional] |
 | **minImpressions** | **Integer**| Smallest impressions a query needs. | [optional] [default to 100] |
@@ -658,7 +658,7 @@ public class Example {
         SearchConsoleApi apiInstance = new SearchConsoleApi(defaultClient);
         Integer projectId = 56; // Integer | Project ID
         String property = "all"; // String | Which Search Console properties to read; /search_console/properties lists them. Omit it for the primary property, or pass one property id (e.g. sc-domain:example.com) to read that one; both answer with property. A comma-separated list of ids, or all, combines several and answers with properties, excluded_properties and property_errors instead: excluded_properties are left out because another selected property already counts them (a URL-prefix property under a domain property), so no click is counted twice; property_errors are properties Google refused, left out of the figures and also named in the X-Search-Console-Property-Errors header. When Google refuses every property, the request fails as a single-property read would.
-        Integer range = 56; // Integer | Number of days to look back, today included (alternative to from/to). At most 487, Google's retention.
+        Integer range = 56; // Integer | Number of days to look back, today included (alternative to from/to, which win when both are given). At most 487, Google's retention. A value that is not a plain positive number returns 422 ERR_INVALID_PARAM even beside from/to.
         LocalDate from = LocalDate.now(); // LocalDate | Start date (YYYY-MM-DD). Defaults to 30 days ago.
         LocalDate to = LocalDate.now(); // LocalDate | End date (YYYY-MM-DD), inclusive. Defaults to today. Google publishes data with a 2-3 day lag, so data_through in the response says how far it reaches.
         String dimension = "page"; // String | Compare pages or queries.
@@ -691,7 +691,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **projectId** | **Integer**| Project ID | |
 | **property** | **String**| Which Search Console properties to read; /search_console/properties lists them. Omit it for the primary property, or pass one property id (e.g. sc-domain:example.com) to read that one; both answer with property. A comma-separated list of ids, or all, combines several and answers with properties, excluded_properties and property_errors instead: excluded_properties are left out because another selected property already counts them (a URL-prefix property under a domain property), so no click is counted twice; property_errors are properties Google refused, left out of the figures and also named in the X-Search-Console-Property-Errors header. When Google refuses every property, the request fails as a single-property read would. | [optional] |
-| **range** | **Integer**| Number of days to look back, today included (alternative to from/to). At most 487, Google&#39;s retention. | [optional] |
+| **range** | **Integer**| Number of days to look back, today included (alternative to from/to, which win when both are given). At most 487, Google&#39;s retention. A value that is not a plain positive number returns 422 ERR_INVALID_PARAM even beside from/to. | [optional] |
 | **from** | **LocalDate**| Start date (YYYY-MM-DD). Defaults to 30 days ago. | [optional] |
 | **to** | **LocalDate**| End date (YYYY-MM-DD), inclusive. Defaults to today. Google publishes data with a 2-3 day lag, so data_through in the response says how far it reaches. | [optional] |
 | **dimension** | **String**| Compare pages or queries. | [optional] [default to page] [enum: page, query] |
@@ -760,7 +760,7 @@ public class Example {
         SearchConsoleApi apiInstance = new SearchConsoleApi(defaultClient);
         Integer projectId = 56; // Integer | Project ID
         String property = "all"; // String | Which Search Console properties to read; /search_console/properties lists them. Omit it for the primary property, or pass one property id (e.g. sc-domain:example.com) to read that one; both answer with property. A comma-separated list of ids, or all, combines several and answers with properties, excluded_properties and property_errors instead: excluded_properties are left out because another selected property already counts them (a URL-prefix property under a domain property), so no click is counted twice; property_errors are properties Google refused, left out of the figures and also named in the X-Search-Console-Property-Errors header. When Google refuses every property, the request fails as a single-property read would.
-        Integer range = 56; // Integer | Number of days to look back, today included (alternative to from/to). At most 487, Google's retention.
+        Integer range = 56; // Integer | Number of days to look back, today included (alternative to from/to, which win when both are given). At most 487, Google's retention. A value that is not a plain positive number returns 422 ERR_INVALID_PARAM even beside from/to.
         LocalDate from = LocalDate.now(); // LocalDate | Start date (YYYY-MM-DD). Defaults to 30 days ago.
         LocalDate to = LocalDate.now(); // LocalDate | End date (YYYY-MM-DD), inclusive. Defaults to today. Google publishes data with a 2-3 day lag, so data_through in the response says how far it reaches.
         String dimension = "page"; // String | Compare pages or queries.
@@ -795,7 +795,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **projectId** | **Integer**| Project ID | |
 | **property** | **String**| Which Search Console properties to read; /search_console/properties lists them. Omit it for the primary property, or pass one property id (e.g. sc-domain:example.com) to read that one; both answer with property. A comma-separated list of ids, or all, combines several and answers with properties, excluded_properties and property_errors instead: excluded_properties are left out because another selected property already counts them (a URL-prefix property under a domain property), so no click is counted twice; property_errors are properties Google refused, left out of the figures and also named in the X-Search-Console-Property-Errors header. When Google refuses every property, the request fails as a single-property read would. | [optional] |
-| **range** | **Integer**| Number of days to look back, today included (alternative to from/to). At most 487, Google&#39;s retention. | [optional] |
+| **range** | **Integer**| Number of days to look back, today included (alternative to from/to, which win when both are given). At most 487, Google&#39;s retention. A value that is not a plain positive number returns 422 ERR_INVALID_PARAM even beside from/to. | [optional] |
 | **from** | **LocalDate**| Start date (YYYY-MM-DD). Defaults to 30 days ago. | [optional] |
 | **to** | **LocalDate**| End date (YYYY-MM-DD), inclusive. Defaults to today. Google publishes data with a 2-3 day lag, so data_through in the response says how far it reaches. | [optional] |
 | **dimension** | **String**| Compare pages or queries. | [optional] [default to page] [enum: page, query] |
@@ -864,7 +864,7 @@ public class Example {
         SearchConsoleApi apiInstance = new SearchConsoleApi(defaultClient);
         Integer projectId = 56; // Integer | Project ID
         String property = "all"; // String | Which Search Console properties to read; /search_console/properties lists them. Omit it for the primary property, or pass one property id (e.g. sc-domain:example.com) to read that one; both answer with property. A comma-separated list of ids, or all, combines several and answers with properties, excluded_properties and property_errors instead: excluded_properties are left out because another selected property already counts them (a URL-prefix property under a domain property), so no click is counted twice; property_errors are properties Google refused, left out of the figures and also named in the X-Search-Console-Property-Errors header. When Google refuses every property, the request fails as a single-property read would.
-        Integer range = 56; // Integer | Number of days to look back, today included (alternative to from/to). At most 487, Google's retention.
+        Integer range = 56; // Integer | Number of days to look back, today included (alternative to from/to, which win when both are given). At most 487, Google's retention. A value that is not a plain positive number returns 422 ERR_INVALID_PARAM even beside from/to.
         LocalDate from = LocalDate.now(); // LocalDate | Start date (YYYY-MM-DD). Defaults to 30 days ago.
         LocalDate to = LocalDate.now(); // LocalDate | End date (YYYY-MM-DD), inclusive. Defaults to today. Google publishes data with a 2-3 day lag, so data_through in the response says how far it reaches.
         Integer minImpressions = 100; // Integer | Smallest impressions a query needs.
@@ -898,7 +898,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **projectId** | **Integer**| Project ID | |
 | **property** | **String**| Which Search Console properties to read; /search_console/properties lists them. Omit it for the primary property, or pass one property id (e.g. sc-domain:example.com) to read that one; both answer with property. A comma-separated list of ids, or all, combines several and answers with properties, excluded_properties and property_errors instead: excluded_properties are left out because another selected property already counts them (a URL-prefix property under a domain property), so no click is counted twice; property_errors are properties Google refused, left out of the figures and also named in the X-Search-Console-Property-Errors header. When Google refuses every property, the request fails as a single-property read would. | [optional] |
-| **range** | **Integer**| Number of days to look back, today included (alternative to from/to). At most 487, Google&#39;s retention. | [optional] |
+| **range** | **Integer**| Number of days to look back, today included (alternative to from/to, which win when both are given). At most 487, Google&#39;s retention. A value that is not a plain positive number returns 422 ERR_INVALID_PARAM even beside from/to. | [optional] |
 | **from** | **LocalDate**| Start date (YYYY-MM-DD). Defaults to 30 days ago. | [optional] |
 | **to** | **LocalDate**| End date (YYYY-MM-DD), inclusive. Defaults to today. Google publishes data with a 2-3 day lag, so data_through in the response says how far it reaches. | [optional] |
 | **minImpressions** | **Integer**| Smallest impressions a query needs. | [optional] [default to 100] |
@@ -968,7 +968,7 @@ public class Example {
         SearchConsoleApi apiInstance = new SearchConsoleApi(defaultClient);
         Integer projectId = 56; // Integer | Project ID
         String property = "all"; // String | Which Search Console properties to read; /search_console/properties lists them. Omit it for the primary property, or pass one property id (e.g. sc-domain:example.com) to read that one; both answer with property. A comma-separated list of ids, or all, combines several and answers with properties, excluded_properties and property_errors instead: excluded_properties are left out because another selected property already counts them (a URL-prefix property under a domain property), so no click is counted twice; property_errors are properties Google refused, left out of the figures and also named in the X-Search-Console-Property-Errors header. When Google refuses every property, the request fails as a single-property read would.
-        Integer range = 56; // Integer | Number of days to look back, today included (alternative to from/to). At most 487, Google's retention.
+        Integer range = 56; // Integer | Number of days to look back, today included (alternative to from/to, which win when both are given). At most 487, Google's retention. A value that is not a plain positive number returns 422 ERR_INVALID_PARAM even beside from/to.
         LocalDate from = LocalDate.now(); // LocalDate | Start date (YYYY-MM-DD). Defaults to 30 days ago.
         LocalDate to = LocalDate.now(); // LocalDate | End date (YYYY-MM-DD), inclusive. Defaults to today. Google publishes data with a 2-3 day lag, so data_through in the response says how far it reaches.
         Integer minImpressions = 100; // Integer | Smallest impressions a query needs.
@@ -1004,7 +1004,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **projectId** | **Integer**| Project ID | |
 | **property** | **String**| Which Search Console properties to read; /search_console/properties lists them. Omit it for the primary property, or pass one property id (e.g. sc-domain:example.com) to read that one; both answer with property. A comma-separated list of ids, or all, combines several and answers with properties, excluded_properties and property_errors instead: excluded_properties are left out because another selected property already counts them (a URL-prefix property under a domain property), so no click is counted twice; property_errors are properties Google refused, left out of the figures and also named in the X-Search-Console-Property-Errors header. When Google refuses every property, the request fails as a single-property read would. | [optional] |
-| **range** | **Integer**| Number of days to look back, today included (alternative to from/to). At most 487, Google&#39;s retention. | [optional] |
+| **range** | **Integer**| Number of days to look back, today included (alternative to from/to, which win when both are given). At most 487, Google&#39;s retention. A value that is not a plain positive number returns 422 ERR_INVALID_PARAM even beside from/to. | [optional] |
 | **from** | **LocalDate**| Start date (YYYY-MM-DD). Defaults to 30 days ago. | [optional] |
 | **to** | **LocalDate**| End date (YYYY-MM-DD), inclusive. Defaults to today. Google publishes data with a 2-3 day lag, so data_through in the response says how far it reaches. | [optional] |
 | **minImpressions** | **Integer**| Smallest impressions a query needs. | [optional] [default to 100] |
@@ -1073,7 +1073,7 @@ public class Example {
 
         SearchConsoleApi apiInstance = new SearchConsoleApi(defaultClient);
         Integer projectId = 56; // Integer | Project ID
-        Integer range = 56; // Integer | Number of days to look back, today included (alternative to from/to). At most 487, Google's retention.
+        Integer range = 56; // Integer | Number of days to look back, today included (alternative to from/to, which win when both are given). At most 487, Google's retention. A value that is not a plain positive number returns 422 ERR_INVALID_PARAM even beside from/to.
         LocalDate from = LocalDate.now(); // LocalDate | Start date (YYYY-MM-DD). Defaults to 30 days ago.
         LocalDate to = LocalDate.now(); // LocalDate | End date (YYYY-MM-DD), inclusive. Defaults to today. Google publishes data with a 2-3 day lag, so data_through in the response says how far it reaches.
         String sort = "impressions"; // String | 
@@ -1106,7 +1106,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **projectId** | **Integer**| Project ID | |
-| **range** | **Integer**| Number of days to look back, today included (alternative to from/to). At most 487, Google&#39;s retention. | [optional] |
+| **range** | **Integer**| Number of days to look back, today included (alternative to from/to, which win when both are given). At most 487, Google&#39;s retention. A value that is not a plain positive number returns 422 ERR_INVALID_PARAM even beside from/to. | [optional] |
 | **from** | **LocalDate**| Start date (YYYY-MM-DD). Defaults to 30 days ago. | [optional] |
 | **to** | **LocalDate**| End date (YYYY-MM-DD), inclusive. Defaults to today. Google publishes data with a 2-3 day lag, so data_through in the response says how far it reaches. | [optional] |
 | **sort** | **String**|  | [optional] [default to impressions] [enum: impressions, clicks, ctr, position] |
@@ -1175,7 +1175,7 @@ public class Example {
 
         SearchConsoleApi apiInstance = new SearchConsoleApi(defaultClient);
         Integer projectId = 56; // Integer | Project ID
-        Integer range = 56; // Integer | Number of days to look back, today included (alternative to from/to). At most 487, Google's retention.
+        Integer range = 56; // Integer | Number of days to look back, today included (alternative to from/to, which win when both are given). At most 487, Google's retention. A value that is not a plain positive number returns 422 ERR_INVALID_PARAM even beside from/to.
         LocalDate from = LocalDate.now(); // LocalDate | Start date (YYYY-MM-DD). Defaults to 30 days ago.
         LocalDate to = LocalDate.now(); // LocalDate | End date (YYYY-MM-DD), inclusive. Defaults to today. Google publishes data with a 2-3 day lag, so data_through in the response says how far it reaches.
         String sort = "impressions"; // String | 
@@ -1210,7 +1210,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **projectId** | **Integer**| Project ID | |
-| **range** | **Integer**| Number of days to look back, today included (alternative to from/to). At most 487, Google&#39;s retention. | [optional] |
+| **range** | **Integer**| Number of days to look back, today included (alternative to from/to, which win when both are given). At most 487, Google&#39;s retention. A value that is not a plain positive number returns 422 ERR_INVALID_PARAM even beside from/to. | [optional] |
 | **from** | **LocalDate**| Start date (YYYY-MM-DD). Defaults to 30 days ago. | [optional] |
 | **to** | **LocalDate**| End date (YYYY-MM-DD), inclusive. Defaults to today. Google publishes data with a 2-3 day lag, so data_through in the response says how far it reaches. | [optional] |
 | **sort** | **String**|  | [optional] [default to impressions] [enum: impressions, clicks, ctr, position] |
@@ -1279,7 +1279,7 @@ public class Example {
 
         SearchConsoleApi apiInstance = new SearchConsoleApi(defaultClient);
         Integer projectId = 56; // Integer | Project ID
-        Integer range = 56; // Integer | Number of days to look back, today included (alternative to from/to). At most 487, Google's retention.
+        Integer range = 56; // Integer | Number of days to look back, today included (alternative to from/to, which win when both are given). At most 487, Google's retention. A value that is not a plain positive number returns 422 ERR_INVALID_PARAM even beside from/to.
         LocalDate from = LocalDate.now(); // LocalDate | Start date (YYYY-MM-DD). Defaults to 30 days ago.
         LocalDate to = LocalDate.now(); // LocalDate | End date (YYYY-MM-DD), inclusive. Defaults to today. Google publishes data with a 2-3 day lag, so data_through in the response says how far it reaches.
         String sort = "impressions"; // String | 
@@ -1312,7 +1312,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **projectId** | **Integer**| Project ID | |
-| **range** | **Integer**| Number of days to look back, today included (alternative to from/to). At most 487, Google&#39;s retention. | [optional] |
+| **range** | **Integer**| Number of days to look back, today included (alternative to from/to, which win when both are given). At most 487, Google&#39;s retention. A value that is not a plain positive number returns 422 ERR_INVALID_PARAM even beside from/to. | [optional] |
 | **from** | **LocalDate**| Start date (YYYY-MM-DD). Defaults to 30 days ago. | [optional] |
 | **to** | **LocalDate**| End date (YYYY-MM-DD), inclusive. Defaults to today. Google publishes data with a 2-3 day lag, so data_through in the response says how far it reaches. | [optional] |
 | **sort** | **String**|  | [optional] [default to impressions] [enum: impressions, clicks, ctr, position] |
@@ -1381,7 +1381,7 @@ public class Example {
 
         SearchConsoleApi apiInstance = new SearchConsoleApi(defaultClient);
         Integer projectId = 56; // Integer | Project ID
-        Integer range = 56; // Integer | Number of days to look back, today included (alternative to from/to). At most 487, Google's retention.
+        Integer range = 56; // Integer | Number of days to look back, today included (alternative to from/to, which win when both are given). At most 487, Google's retention. A value that is not a plain positive number returns 422 ERR_INVALID_PARAM even beside from/to.
         LocalDate from = LocalDate.now(); // LocalDate | Start date (YYYY-MM-DD). Defaults to 30 days ago.
         LocalDate to = LocalDate.now(); // LocalDate | End date (YYYY-MM-DD), inclusive. Defaults to today. Google publishes data with a 2-3 day lag, so data_through in the response says how far it reaches.
         String sort = "impressions"; // String | 
@@ -1416,7 +1416,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **projectId** | **Integer**| Project ID | |
-| **range** | **Integer**| Number of days to look back, today included (alternative to from/to). At most 487, Google&#39;s retention. | [optional] |
+| **range** | **Integer**| Number of days to look back, today included (alternative to from/to, which win when both are given). At most 487, Google&#39;s retention. A value that is not a plain positive number returns 422 ERR_INVALID_PARAM even beside from/to. | [optional] |
 | **from** | **LocalDate**| Start date (YYYY-MM-DD). Defaults to 30 days ago. | [optional] |
 | **to** | **LocalDate**| End date (YYYY-MM-DD), inclusive. Defaults to today. Google publishes data with a 2-3 day lag, so data_through in the response says how far it reaches. | [optional] |
 | **sort** | **String**|  | [optional] [default to impressions] [enum: impressions, clicks, ctr, position] |
@@ -1486,7 +1486,7 @@ public class Example {
         SearchConsoleApi apiInstance = new SearchConsoleApi(defaultClient);
         Integer projectId = 56; // Integer | Project ID
         String dimensions = "page,query"; // String | Comma-separated dimensions to group by, 1 to 3 of date, country, device, page, query, searchAppearance, property. Each becomes a field of every row; country and device values are lowercase. property is the Search Console property the row comes from (see the property parameter).
-        Integer range = 56; // Integer | Number of days to look back, today included (alternative to from/to). At most 487, Google's retention.
+        Integer range = 56; // Integer | Number of days to look back, today included (alternative to from/to, which win when both are given). At most 487, Google's retention. A value that is not a plain positive number returns 422 ERR_INVALID_PARAM even beside from/to.
         LocalDate from = LocalDate.now(); // LocalDate | Start date (YYYY-MM-DD). Defaults to 30 days ago.
         LocalDate to = LocalDate.now(); // LocalDate | End date (YYYY-MM-DD), inclusive. Defaults to today. Google publishes data with a 2-3 day lag, so data_through in the response says how far it reaches.
         String sort = "impressions"; // String | 
@@ -1520,7 +1520,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **projectId** | **Integer**| Project ID | |
 | **dimensions** | **String**| Comma-separated dimensions to group by, 1 to 3 of date, country, device, page, query, searchAppearance, property. Each becomes a field of every row; country and device values are lowercase. property is the Search Console property the row comes from (see the property parameter). | |
-| **range** | **Integer**| Number of days to look back, today included (alternative to from/to). At most 487, Google&#39;s retention. | [optional] |
+| **range** | **Integer**| Number of days to look back, today included (alternative to from/to, which win when both are given). At most 487, Google&#39;s retention. A value that is not a plain positive number returns 422 ERR_INVALID_PARAM even beside from/to. | [optional] |
 | **from** | **LocalDate**| Start date (YYYY-MM-DD). Defaults to 30 days ago. | [optional] |
 | **to** | **LocalDate**| End date (YYYY-MM-DD), inclusive. Defaults to today. Google publishes data with a 2-3 day lag, so data_through in the response says how far it reaches. | [optional] |
 | **sort** | **String**|  | [optional] [default to impressions] [enum: impressions, clicks, ctr, position] |
@@ -1590,7 +1590,7 @@ public class Example {
         SearchConsoleApi apiInstance = new SearchConsoleApi(defaultClient);
         Integer projectId = 56; // Integer | Project ID
         String dimensions = "page,query"; // String | Comma-separated dimensions to group by, 1 to 3 of date, country, device, page, query, searchAppearance, property. Each becomes a field of every row; country and device values are lowercase. property is the Search Console property the row comes from (see the property parameter).
-        Integer range = 56; // Integer | Number of days to look back, today included (alternative to from/to). At most 487, Google's retention.
+        Integer range = 56; // Integer | Number of days to look back, today included (alternative to from/to, which win when both are given). At most 487, Google's retention. A value that is not a plain positive number returns 422 ERR_INVALID_PARAM even beside from/to.
         LocalDate from = LocalDate.now(); // LocalDate | Start date (YYYY-MM-DD). Defaults to 30 days ago.
         LocalDate to = LocalDate.now(); // LocalDate | End date (YYYY-MM-DD), inclusive. Defaults to today. Google publishes data with a 2-3 day lag, so data_through in the response says how far it reaches.
         String sort = "impressions"; // String | 
@@ -1626,7 +1626,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **projectId** | **Integer**| Project ID | |
 | **dimensions** | **String**| Comma-separated dimensions to group by, 1 to 3 of date, country, device, page, query, searchAppearance, property. Each becomes a field of every row; country and device values are lowercase. property is the Search Console property the row comes from (see the property parameter). | |
-| **range** | **Integer**| Number of days to look back, today included (alternative to from/to). At most 487, Google&#39;s retention. | [optional] |
+| **range** | **Integer**| Number of days to look back, today included (alternative to from/to, which win when both are given). At most 487, Google&#39;s retention. A value that is not a plain positive number returns 422 ERR_INVALID_PARAM even beside from/to. | [optional] |
 | **from** | **LocalDate**| Start date (YYYY-MM-DD). Defaults to 30 days ago. | [optional] |
 | **to** | **LocalDate**| End date (YYYY-MM-DD), inclusive. Defaults to today. Google publishes data with a 2-3 day lag, so data_through in the response says how far it reaches. | [optional] |
 | **sort** | **String**|  | [optional] [default to impressions] [enum: impressions, clicks, ctr, position] |
@@ -1695,7 +1695,7 @@ public class Example {
 
         SearchConsoleApi apiInstance = new SearchConsoleApi(defaultClient);
         Integer projectId = 56; // Integer | Project ID
-        Integer range = 56; // Integer | Number of days to look back, today included (alternative to from/to). At most 487, Google's retention.
+        Integer range = 56; // Integer | Number of days to look back, today included (alternative to from/to, which win when both are given). At most 487, Google's retention. A value that is not a plain positive number returns 422 ERR_INVALID_PARAM even beside from/to.
         LocalDate from = LocalDate.now(); // LocalDate | Start date (YYYY-MM-DD). Defaults to 30 days ago.
         LocalDate to = LocalDate.now(); // LocalDate | End date (YYYY-MM-DD), inclusive. Defaults to today. Google publishes data with a 2-3 day lag, so data_through in the response says how far it reaches.
         String dimension = "country"; // String | Optional breakdown aggregated over the range. country and device are lowercased; page and query keep the casing Google returns, because a page URL is case sensitive. property gives one row per property read (see the property parameter).
@@ -1725,7 +1725,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **projectId** | **Integer**| Project ID | |
-| **range** | **Integer**| Number of days to look back, today included (alternative to from/to). At most 487, Google&#39;s retention. | [optional] |
+| **range** | **Integer**| Number of days to look back, today included (alternative to from/to, which win when both are given). At most 487, Google&#39;s retention. A value that is not a plain positive number returns 422 ERR_INVALID_PARAM even beside from/to. | [optional] |
 | **from** | **LocalDate**| Start date (YYYY-MM-DD). Defaults to 30 days ago. | [optional] |
 | **to** | **LocalDate**| End date (YYYY-MM-DD), inclusive. Defaults to today. Google publishes data with a 2-3 day lag, so data_through in the response says how far it reaches. | [optional] |
 | **dimension** | **String**| Optional breakdown aggregated over the range. country and device are lowercased; page and query keep the casing Google returns, because a page URL is case sensitive. property gives one row per property read (see the property parameter). | [optional] [enum: country, device, page, query, searchAppearance, property] |
@@ -1791,7 +1791,7 @@ public class Example {
 
         SearchConsoleApi apiInstance = new SearchConsoleApi(defaultClient);
         Integer projectId = 56; // Integer | Project ID
-        Integer range = 56; // Integer | Number of days to look back, today included (alternative to from/to). At most 487, Google's retention.
+        Integer range = 56; // Integer | Number of days to look back, today included (alternative to from/to, which win when both are given). At most 487, Google's retention. A value that is not a plain positive number returns 422 ERR_INVALID_PARAM even beside from/to.
         LocalDate from = LocalDate.now(); // LocalDate | Start date (YYYY-MM-DD). Defaults to 30 days ago.
         LocalDate to = LocalDate.now(); // LocalDate | End date (YYYY-MM-DD), inclusive. Defaults to today. Google publishes data with a 2-3 day lag, so data_through in the response says how far it reaches.
         String dimension = "country"; // String | Optional breakdown aggregated over the range. country and device are lowercased; page and query keep the casing Google returns, because a page URL is case sensitive. property gives one row per property read (see the property parameter).
@@ -1823,7 +1823,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **projectId** | **Integer**| Project ID | |
-| **range** | **Integer**| Number of days to look back, today included (alternative to from/to). At most 487, Google&#39;s retention. | [optional] |
+| **range** | **Integer**| Number of days to look back, today included (alternative to from/to, which win when both are given). At most 487, Google&#39;s retention. A value that is not a plain positive number returns 422 ERR_INVALID_PARAM even beside from/to. | [optional] |
 | **from** | **LocalDate**| Start date (YYYY-MM-DD). Defaults to 30 days ago. | [optional] |
 | **to** | **LocalDate**| End date (YYYY-MM-DD), inclusive. Defaults to today. Google publishes data with a 2-3 day lag, so data_through in the response says how far it reaches. | [optional] |
 | **dimension** | **String**| Optional breakdown aggregated over the range. country and device are lowercased; page and query keep the casing Google returns, because a page URL is case sensitive. property gives one row per property read (see the property parameter). | [optional] [enum: country, device, page, query, searchAppearance, property] |
@@ -1889,7 +1889,7 @@ public class Example {
 
         SearchConsoleApi apiInstance = new SearchConsoleApi(defaultClient);
         Integer projectId = 56; // Integer | Project ID
-        Integer range = 56; // Integer | Number of days to look back, today included (alternative to from/to). At most 487, Google's retention.
+        Integer range = 56; // Integer | Number of days to look back, today included (alternative to from/to, which win when both are given). At most 487, Google's retention. A value that is not a plain positive number returns 422 ERR_INVALID_PARAM even beside from/to.
         LocalDate from = LocalDate.now(); // LocalDate | Start date (YYYY-MM-DD). Defaults to 30 days ago.
         LocalDate to = LocalDate.now(); // LocalDate | End date (YYYY-MM-DD), inclusive. Defaults to today. Google publishes data with a 2-3 day lag, so data_through in the response says how far it reaches.
         String granularity = "day"; // String | 
@@ -1919,7 +1919,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **projectId** | **Integer**| Project ID | |
-| **range** | **Integer**| Number of days to look back, today included (alternative to from/to). At most 487, Google&#39;s retention. | [optional] |
+| **range** | **Integer**| Number of days to look back, today included (alternative to from/to, which win when both are given). At most 487, Google&#39;s retention. A value that is not a plain positive number returns 422 ERR_INVALID_PARAM even beside from/to. | [optional] |
 | **from** | **LocalDate**| Start date (YYYY-MM-DD). Defaults to 30 days ago. | [optional] |
 | **to** | **LocalDate**| End date (YYYY-MM-DD), inclusive. Defaults to today. Google publishes data with a 2-3 day lag, so data_through in the response says how far it reaches. | [optional] |
 | **granularity** | **String**|  | [optional] [enum: day, week, month] |
@@ -1985,7 +1985,7 @@ public class Example {
 
         SearchConsoleApi apiInstance = new SearchConsoleApi(defaultClient);
         Integer projectId = 56; // Integer | Project ID
-        Integer range = 56; // Integer | Number of days to look back, today included (alternative to from/to). At most 487, Google's retention.
+        Integer range = 56; // Integer | Number of days to look back, today included (alternative to from/to, which win when both are given). At most 487, Google's retention. A value that is not a plain positive number returns 422 ERR_INVALID_PARAM even beside from/to.
         LocalDate from = LocalDate.now(); // LocalDate | Start date (YYYY-MM-DD). Defaults to 30 days ago.
         LocalDate to = LocalDate.now(); // LocalDate | End date (YYYY-MM-DD), inclusive. Defaults to today. Google publishes data with a 2-3 day lag, so data_through in the response says how far it reaches.
         String granularity = "day"; // String | 
@@ -2017,7 +2017,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **projectId** | **Integer**| Project ID | |
-| **range** | **Integer**| Number of days to look back, today included (alternative to from/to). At most 487, Google&#39;s retention. | [optional] |
+| **range** | **Integer**| Number of days to look back, today included (alternative to from/to, which win when both are given). At most 487, Google&#39;s retention. A value that is not a plain positive number returns 422 ERR_INVALID_PARAM even beside from/to. | [optional] |
 | **from** | **LocalDate**| Start date (YYYY-MM-DD). Defaults to 30 days ago. | [optional] |
 | **to** | **LocalDate**| End date (YYYY-MM-DD), inclusive. Defaults to today. Google publishes data with a 2-3 day lag, so data_through in the response says how far it reaches. | [optional] |
 | **granularity** | **String**|  | [optional] [enum: day, week, month] |

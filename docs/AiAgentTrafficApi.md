@@ -47,7 +47,7 @@ public class Example {
 
         AiAgentTrafficApi apiInstance = new AiAgentTrafficApi(defaultClient);
         Integer projectId = 56; // Integer | Project ID
-        Integer range = 56; // Integer | Number of days to look back (alternative to from/to)
+        Integer range = 56; // Integer | Number of days to look back (alternative to from/to, which win when both are given). A value that is not a plain positive number returns 422 ERR_INVALID_PARAM, even beside from/to.
         OffsetDateTime from = OffsetDateTime.now(); // OffsetDateTime | 
         OffsetDateTime to = OffsetDateTime.now(); // OffsetDateTime | End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier.
         String bot = "bot_example"; // String | Filter by bot slug (e.g. gptbot, claudebot, perplexitybot)
@@ -74,7 +74,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **projectId** | **Integer**| Project ID | |
-| **range** | **Integer**| Number of days to look back (alternative to from/to) | [optional] |
+| **range** | **Integer**| Number of days to look back (alternative to from/to, which win when both are given). A value that is not a plain positive number returns 422 ERR_INVALID_PARAM, even beside from/to. | [optional] |
 | **from** | **OffsetDateTime**|  | [optional] |
 | **to** | **OffsetDateTime**| End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. | [optional] |
 | **bot** | **String**| Filter by bot slug (e.g. gptbot, claudebot, perplexitybot) | [optional] |
@@ -134,7 +134,7 @@ public class Example {
 
         AiAgentTrafficApi apiInstance = new AiAgentTrafficApi(defaultClient);
         Integer projectId = 56; // Integer | Project ID
-        Integer range = 56; // Integer | Number of days to look back (alternative to from/to)
+        Integer range = 56; // Integer | Number of days to look back (alternative to from/to, which win when both are given). A value that is not a plain positive number returns 422 ERR_INVALID_PARAM, even beside from/to.
         OffsetDateTime from = OffsetDateTime.now(); // OffsetDateTime | 
         OffsetDateTime to = OffsetDateTime.now(); // OffsetDateTime | End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier.
         String bot = "bot_example"; // String | Filter by bot slug (e.g. gptbot, claudebot, perplexitybot)
@@ -163,7 +163,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **projectId** | **Integer**| Project ID | |
-| **range** | **Integer**| Number of days to look back (alternative to from/to) | [optional] |
+| **range** | **Integer**| Number of days to look back (alternative to from/to, which win when both are given). A value that is not a plain positive number returns 422 ERR_INVALID_PARAM, even beside from/to. | [optional] |
 | **from** | **OffsetDateTime**|  | [optional] |
 | **to** | **OffsetDateTime**| End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. | [optional] |
 | **bot** | **String**| Filter by bot slug (e.g. gptbot, claudebot, perplexitybot) | [optional] |
@@ -223,7 +223,7 @@ public class Example {
 
         AiAgentTrafficApi apiInstance = new AiAgentTrafficApi(defaultClient);
         Integer projectId = 56; // Integer | Project ID
-        Integer range = 56; // Integer | Number of days to look back (alternative to from/to)
+        Integer range = 56; // Integer | Number of days to look back (alternative to from/to, which win when both are given). A value that is not a plain positive number returns 422 ERR_INVALID_PARAM, even beside from/to.
         OffsetDateTime from = OffsetDateTime.now(); // OffsetDateTime | 
         OffsetDateTime to = OffsetDateTime.now(); // OffsetDateTime | End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier.
         String source = "source_example"; // String | Filter by a single AI source slug (e.g. chatgpt, perplexity, gemini, claude)
@@ -247,7 +247,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **projectId** | **Integer**| Project ID | |
-| **range** | **Integer**| Number of days to look back (alternative to from/to) | [optional] |
+| **range** | **Integer**| Number of days to look back (alternative to from/to, which win when both are given). A value that is not a plain positive number returns 422 ERR_INVALID_PARAM, even beside from/to. | [optional] |
 | **from** | **OffsetDateTime**|  | [optional] |
 | **to** | **OffsetDateTime**| End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. | [optional] |
 | **source** | **String**| Filter by a single AI source slug (e.g. chatgpt, perplexity, gemini, claude) | [optional] |
@@ -306,7 +306,7 @@ public class Example {
 
         AiAgentTrafficApi apiInstance = new AiAgentTrafficApi(defaultClient);
         Integer projectId = 56; // Integer | Project ID
-        Integer range = 56; // Integer | Number of days to look back (alternative to from/to)
+        Integer range = 56; // Integer | Number of days to look back (alternative to from/to, which win when both are given). A value that is not a plain positive number returns 422 ERR_INVALID_PARAM, even beside from/to.
         OffsetDateTime from = OffsetDateTime.now(); // OffsetDateTime | 
         OffsetDateTime to = OffsetDateTime.now(); // OffsetDateTime | End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier.
         String source = "source_example"; // String | Filter by a single AI source slug (e.g. chatgpt, perplexity, gemini, claude)
@@ -332,7 +332,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **projectId** | **Integer**| Project ID | |
-| **range** | **Integer**| Number of days to look back (alternative to from/to) | [optional] |
+| **range** | **Integer**| Number of days to look back (alternative to from/to, which win when both are given). A value that is not a plain positive number returns 422 ERR_INVALID_PARAM, even beside from/to. | [optional] |
 | **from** | **OffsetDateTime**|  | [optional] |
 | **to** | **OffsetDateTime**| End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. | [optional] |
 | **source** | **String**| Filter by a single AI source slug (e.g. chatgpt, perplexity, gemini, claude) | [optional] |

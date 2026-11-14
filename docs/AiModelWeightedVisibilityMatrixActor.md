@@ -13,7 +13,7 @@ An actor (the standard actor shape) with one AI Visibility Score cell per model
 |**competitorId** | **Integer** | Null for the project, the competitor id otherwise |  [optional] |
 |**name** | **String** |  |  [optional] |
 |**domain** | **String** | Bare (scheme-less) domain. Null for the project actor when the project has no URL. |  [optional] |
-|**totalWeightedVisibilityScore** | **BigDecimal** | The actor&#39;s AI Visibility Score points summed over the models |  [optional] |
+|**totalWeightedVisibilityScore** | **BigDecimal** | The actor&#39;s AI Visibility Score across the enabled models, its points there divided by the project&#39;s days with answers in them, so actors compare |  [optional] |
 |**models** | [**Map&lt;String, AiModelWeightedVisibilityCell&gt;**](AiModelWeightedVisibilityCell.md) | One cell per model, keyed by model |  [optional] |
 
 

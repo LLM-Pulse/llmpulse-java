@@ -43,7 +43,7 @@ public class Example {
 
         AiModelInsightsApi apiInstance = new AiModelInsightsApi(defaultClient);
         Integer projectId = 56; // Integer | Project ID
-        Integer range = 56; // Integer | Number of days to look back (alternative to from/to)
+        Integer range = 56; // Integer | Number of days to look back (alternative to from/to, which win when both are given). A value that is not a plain positive number returns 422 ERR_INVALID_PARAM, even beside from/to.
         OffsetDateTime from = OffsetDateTime.now(); // OffsetDateTime | 
         OffsetDateTime to = OffsetDateTime.now(); // OffsetDateTime | End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier.
         String granularity = "day"; // String | 
@@ -52,7 +52,7 @@ public class Example {
         String languageCode = "languageCode_example"; // String | One ISO language code or a comma-separated list (e.g. en,es,de)
         String promptType = "promptType_example"; // String | One prompt type or a comma-separated list: informational, navigational, commercial, transactional
         String brandKind = "brand"; // String | Filter by brand kind: brand (own brand/products), brand_other (competitors/other brands), non_brand (generic, no brand named). For fair 1:1 brand-vs-competitor comparisons (visibility, share of voice), use non_brand: brand-focused prompts skew results toward the brand they name. The in-app Overview page applies non_brand by default.
-        String competitors = "competitors_example"; // String | Comma-separated competitor IDs (unknown IDs return ERR_INVALID_PARAM)
+        String competitors = "competitors_example"; // String | Comma-separated competitor IDs (a malformed or unknown ID returns ERR_INVALID_PARAM)
         try {
             AiModelInsightsSummaryResponse result = apiInstance.getAiModelInsightsSummary(projectId, range, from, to, granularity, collectionId, countryCode, languageCode, promptType, brandKind, competitors);
             System.out.println(result);
@@ -73,7 +73,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **projectId** | **Integer**| Project ID | |
-| **range** | **Integer**| Number of days to look back (alternative to from/to) | [optional] |
+| **range** | **Integer**| Number of days to look back (alternative to from/to, which win when both are given). A value that is not a plain positive number returns 422 ERR_INVALID_PARAM, even beside from/to. | [optional] |
 | **from** | **OffsetDateTime**|  | [optional] |
 | **to** | **OffsetDateTime**| End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. | [optional] |
 | **granularity** | **String**|  | [optional] [enum: day, week, month] |
@@ -82,7 +82,7 @@ public class Example {
 | **languageCode** | **String**| One ISO language code or a comma-separated list (e.g. en,es,de) | [optional] |
 | **promptType** | **String**| One prompt type or a comma-separated list: informational, navigational, commercial, transactional | [optional] |
 | **brandKind** | **String**| Filter by brand kind: brand (own brand/products), brand_other (competitors/other brands), non_brand (generic, no brand named). For fair 1:1 brand-vs-competitor comparisons (visibility, share of voice), use non_brand: brand-focused prompts skew results toward the brand they name. The in-app Overview page applies non_brand by default. | [optional] [enum: brand, brand_other, non_brand] |
-| **competitors** | **String**| Comma-separated competitor IDs (unknown IDs return ERR_INVALID_PARAM) | [optional] |
+| **competitors** | **String**| Comma-separated competitor IDs (a malformed or unknown ID returns ERR_INVALID_PARAM) | [optional] |
 
 ### Return type
 
@@ -134,7 +134,7 @@ public class Example {
 
         AiModelInsightsApi apiInstance = new AiModelInsightsApi(defaultClient);
         Integer projectId = 56; // Integer | Project ID
-        Integer range = 56; // Integer | Number of days to look back (alternative to from/to)
+        Integer range = 56; // Integer | Number of days to look back (alternative to from/to, which win when both are given). A value that is not a plain positive number returns 422 ERR_INVALID_PARAM, even beside from/to.
         OffsetDateTime from = OffsetDateTime.now(); // OffsetDateTime | 
         OffsetDateTime to = OffsetDateTime.now(); // OffsetDateTime | End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier.
         String granularity = "day"; // String | 
@@ -143,7 +143,7 @@ public class Example {
         String languageCode = "languageCode_example"; // String | One ISO language code or a comma-separated list (e.g. en,es,de)
         String promptType = "promptType_example"; // String | One prompt type or a comma-separated list: informational, navigational, commercial, transactional
         String brandKind = "brand"; // String | Filter by brand kind: brand (own brand/products), brand_other (competitors/other brands), non_brand (generic, no brand named). For fair 1:1 brand-vs-competitor comparisons (visibility, share of voice), use non_brand: brand-focused prompts skew results toward the brand they name. The in-app Overview page applies non_brand by default.
-        String competitors = "competitors_example"; // String | Comma-separated competitor IDs (unknown IDs return ERR_INVALID_PARAM)
+        String competitors = "competitors_example"; // String | Comma-separated competitor IDs (a malformed or unknown ID returns ERR_INVALID_PARAM)
         try {
             ApiResponse<AiModelInsightsSummaryResponse> response = apiInstance.getAiModelInsightsSummaryWithHttpInfo(projectId, range, from, to, granularity, collectionId, countryCode, languageCode, promptType, brandKind, competitors);
             System.out.println("Status code: " + response.getStatusCode());
@@ -166,7 +166,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **projectId** | **Integer**| Project ID | |
-| **range** | **Integer**| Number of days to look back (alternative to from/to) | [optional] |
+| **range** | **Integer**| Number of days to look back (alternative to from/to, which win when both are given). A value that is not a plain positive number returns 422 ERR_INVALID_PARAM, even beside from/to. | [optional] |
 | **from** | **OffsetDateTime**|  | [optional] |
 | **to** | **OffsetDateTime**| End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. | [optional] |
 | **granularity** | **String**|  | [optional] [enum: day, week, month] |
@@ -175,7 +175,7 @@ public class Example {
 | **languageCode** | **String**| One ISO language code or a comma-separated list (e.g. en,es,de) | [optional] |
 | **promptType** | **String**| One prompt type or a comma-separated list: informational, navigational, commercial, transactional | [optional] |
 | **brandKind** | **String**| Filter by brand kind: brand (own brand/products), brand_other (competitors/other brands), non_brand (generic, no brand named). For fair 1:1 brand-vs-competitor comparisons (visibility, share of voice), use non_brand: brand-focused prompts skew results toward the brand they name. The in-app Overview page applies non_brand by default. | [optional] [enum: brand, brand_other, non_brand] |
-| **competitors** | **String**| Comma-separated competitor IDs (unknown IDs return ERR_INVALID_PARAM) | [optional] |
+| **competitors** | **String**| Comma-separated competitor IDs (a malformed or unknown ID returns ERR_INVALID_PARAM) | [optional] |
 
 ### Return type
 
@@ -225,7 +225,7 @@ public class Example {
 
         AiModelInsightsApi apiInstance = new AiModelInsightsApi(defaultClient);
         Integer projectId = 56; // Integer | Project ID
-        Integer range = 56; // Integer | Number of days to look back (alternative to from/to)
+        Integer range = 56; // Integer | Number of days to look back (alternative to from/to, which win when both are given). A value that is not a plain positive number returns 422 ERR_INVALID_PARAM, even beside from/to.
         OffsetDateTime from = OffsetDateTime.now(); // OffsetDateTime | 
         OffsetDateTime to = OffsetDateTime.now(); // OffsetDateTime | End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier.
         String granularity = "day"; // String | 
@@ -256,7 +256,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **projectId** | **Integer**| Project ID | |
-| **range** | **Integer**| Number of days to look back (alternative to from/to) | [optional] |
+| **range** | **Integer**| Number of days to look back (alternative to from/to, which win when both are given). A value that is not a plain positive number returns 422 ERR_INVALID_PARAM, even beside from/to. | [optional] |
 | **from** | **OffsetDateTime**|  | [optional] |
 | **to** | **OffsetDateTime**| End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. | [optional] |
 | **granularity** | **String**|  | [optional] [enum: day, week, month] |
@@ -317,7 +317,7 @@ public class Example {
 
         AiModelInsightsApi apiInstance = new AiModelInsightsApi(defaultClient);
         Integer projectId = 56; // Integer | Project ID
-        Integer range = 56; // Integer | Number of days to look back (alternative to from/to)
+        Integer range = 56; // Integer | Number of days to look back (alternative to from/to, which win when both are given). A value that is not a plain positive number returns 422 ERR_INVALID_PARAM, even beside from/to.
         OffsetDateTime from = OffsetDateTime.now(); // OffsetDateTime | 
         OffsetDateTime to = OffsetDateTime.now(); // OffsetDateTime | End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier.
         String granularity = "day"; // String | 
@@ -350,7 +350,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **projectId** | **Integer**| Project ID | |
-| **range** | **Integer**| Number of days to look back (alternative to from/to) | [optional] |
+| **range** | **Integer**| Number of days to look back (alternative to from/to, which win when both are given). A value that is not a plain positive number returns 422 ERR_INVALID_PARAM, even beside from/to. | [optional] |
 | **from** | **OffsetDateTime**|  | [optional] |
 | **to** | **OffsetDateTime**| End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. | [optional] |
 | **granularity** | **String**|  | [optional] [enum: day, week, month] |
@@ -411,7 +411,7 @@ public class Example {
 
         AiModelInsightsApi apiInstance = new AiModelInsightsApi(defaultClient);
         Integer projectId = 56; // Integer | Project ID
-        Integer range = 56; // Integer | Number of days to look back (alternative to from/to)
+        Integer range = 56; // Integer | Number of days to look back (alternative to from/to, which win when both are given). A value that is not a plain positive number returns 422 ERR_INVALID_PARAM, even beside from/to.
         OffsetDateTime from = OffsetDateTime.now(); // OffsetDateTime | 
         OffsetDateTime to = OffsetDateTime.now(); // OffsetDateTime | End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier.
         String granularity = "day"; // String | 
@@ -441,7 +441,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **projectId** | **Integer**| Project ID | |
-| **range** | **Integer**| Number of days to look back (alternative to from/to) | [optional] |
+| **range** | **Integer**| Number of days to look back (alternative to from/to, which win when both are given). A value that is not a plain positive number returns 422 ERR_INVALID_PARAM, even beside from/to. | [optional] |
 | **from** | **OffsetDateTime**|  | [optional] |
 | **to** | **OffsetDateTime**| End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. | [optional] |
 | **granularity** | **String**|  | [optional] [enum: day, week, month] |
@@ -501,7 +501,7 @@ public class Example {
 
         AiModelInsightsApi apiInstance = new AiModelInsightsApi(defaultClient);
         Integer projectId = 56; // Integer | Project ID
-        Integer range = 56; // Integer | Number of days to look back (alternative to from/to)
+        Integer range = 56; // Integer | Number of days to look back (alternative to from/to, which win when both are given). A value that is not a plain positive number returns 422 ERR_INVALID_PARAM, even beside from/to.
         OffsetDateTime from = OffsetDateTime.now(); // OffsetDateTime | 
         OffsetDateTime to = OffsetDateTime.now(); // OffsetDateTime | End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier.
         String granularity = "day"; // String | 
@@ -533,7 +533,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **projectId** | **Integer**| Project ID | |
-| **range** | **Integer**| Number of days to look back (alternative to from/to) | [optional] |
+| **range** | **Integer**| Number of days to look back (alternative to from/to, which win when both are given). A value that is not a plain positive number returns 422 ERR_INVALID_PARAM, even beside from/to. | [optional] |
 | **from** | **OffsetDateTime**|  | [optional] |
 | **to** | **OffsetDateTime**| End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. | [optional] |
 | **granularity** | **String**|  | [optional] [enum: day, week, month] |
