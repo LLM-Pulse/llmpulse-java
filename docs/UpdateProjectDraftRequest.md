@@ -9,7 +9,7 @@
 |------------ | ------------- | ------------- | -------------|
 |**step** | [**StepEnum**](#StepEnum) |  |  |
 |**name** | **String** |  |  [optional] |
-|**brandName** | **String** |  |  [optional] |
+|**brandName** | **String** | Defaults to name. Up to 100 characters, the name included when it stands in; finalize refuses a longer one with ERR_INVALID_PARAM |  [optional] |
 |**description** | **String** |  |  [optional] |
 |**industry** | **List&lt;String&gt;** |  |  [optional] |
 |**matchingNames** | **List&lt;String&gt;** | Brand-name variants used to detect mentions (details step). At most 50 names of up to 100 characters each; the step stores the list as sent, and finalize refuses a longer list or name with ERR_INVALID_PARAM (422) |  [optional] |
