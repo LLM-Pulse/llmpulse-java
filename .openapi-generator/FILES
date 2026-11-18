@@ -17,6 +17,13 @@ docs/AgentBotsResponse.md
 docs/AgentTrafficResponse.md
 docs/AiAgentTrafficApi.md
 docs/AiModelCitationsRow.md
+docs/AiModelDeclineCounts.md
+docs/AiModelDeclinedAnswersResponse.md
+docs/AiModelDeclinedAnswersResponseByPrompt.md
+docs/AiModelDeclinedAnswersResponseByPromptDataInner.md
+docs/AiModelDeclinedAnswersResponseChartInner.md
+docs/AiModelDeclinedAnswersResponseFilters.md
+docs/AiModelDeclinedAnswersResponseSummary.md
 docs/AiModelInsightsApi.md
 docs/AiModelInsightsFiltersEcho.md
 docs/AiModelInsightsModel.md
@@ -434,6 +441,13 @@ src/main/java/ai/llmpulse/sdk/model/AgentBot.java
 src/main/java/ai/llmpulse/sdk/model/AgentBotsResponse.java
 src/main/java/ai/llmpulse/sdk/model/AgentTrafficResponse.java
 src/main/java/ai/llmpulse/sdk/model/AiModelCitationsRow.java
+src/main/java/ai/llmpulse/sdk/model/AiModelDeclineCounts.java
+src/main/java/ai/llmpulse/sdk/model/AiModelDeclinedAnswersResponse.java
+src/main/java/ai/llmpulse/sdk/model/AiModelDeclinedAnswersResponseByPrompt.java
+src/main/java/ai/llmpulse/sdk/model/AiModelDeclinedAnswersResponseByPromptDataInner.java
+src/main/java/ai/llmpulse/sdk/model/AiModelDeclinedAnswersResponseChartInner.java
+src/main/java/ai/llmpulse/sdk/model/AiModelDeclinedAnswersResponseFilters.java
+src/main/java/ai/llmpulse/sdk/model/AiModelDeclinedAnswersResponseSummary.java
 src/main/java/ai/llmpulse/sdk/model/AiModelInsightsFiltersEcho.java
 src/main/java/ai/llmpulse/sdk/model/AiModelInsightsModel.java
 src/main/java/ai/llmpulse/sdk/model/AiModelInsightsSummaryResponse.java

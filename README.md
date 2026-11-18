@@ -2,7 +2,7 @@
 
 LLM Pulse API
 
-- API version: 1.98.0
+- API version: 1.99.0
 
 - Generator version: 7.24.0
 
@@ -43,7 +43,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>ai.llmpulse</groupId>
   <artifactId>llmpulse-java</artifactId>
-  <version>1.98.0</version>
+  <version>1.99.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -53,7 +53,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "ai.llmpulse:llmpulse-java:1.98.0"
+compile "ai.llmpulse:llmpulse-java:1.99.0"
 ```
 
 ### Others
@@ -66,7 +66,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-- `target/llmpulse-java-1.98.0.jar`
+- `target/llmpulse-java-1.99.0.jar`
 - `target/lib/*.jar`
 
 ## Getting Started
@@ -125,6 +125,8 @@ Class | Method | HTTP request | Description
 *AiModelInsightsApi* | [**getAiModelPositionDistributionWithHttpInfo**](docs/AiModelInsightsApi.md#getAiModelPositionDistributionWithHttpInfo) | **GET** /reports/ai_model_insights/position_distribution | Position distribution comparison
 *AiModelInsightsApi* | [**getAiOverviewResults**](docs/AiModelInsightsApi.md#getAiOverviewResults) | **GET** /reports/ai_model_insights/ai_overview_results | Google AI Overview result availability
 *AiModelInsightsApi* | [**getAiOverviewResultsWithHttpInfo**](docs/AiModelInsightsApi.md#getAiOverviewResultsWithHttpInfo) | **GET** /reports/ai_model_insights/ai_overview_results | Google AI Overview result availability
+*AiModelInsightsApi* | [**getDeclinedAnswers**](docs/AiModelInsightsApi.md#getDeclinedAnswers) | **GET** /reports/ai_model_insights/declined_answers | Declined answers (decline rate)
+*AiModelInsightsApi* | [**getDeclinedAnswersWithHttpInfo**](docs/AiModelInsightsApi.md#getDeclinedAnswersWithHttpInfo) | **GET** /reports/ai_model_insights/declined_answers | Declined answers (decline rate)
 *AnnotationsApi* | [**createAnnotation**](docs/AnnotationsApi.md#createAnnotation) | **POST** /annotations | Create a timeline annotation
 *AnnotationsApi* | [**createAnnotationWithHttpInfo**](docs/AnnotationsApi.md#createAnnotationWithHttpInfo) | **POST** /annotations | Create a timeline annotation
 *AnnotationsApi* | [**deleteAnnotation**](docs/AnnotationsApi.md#deleteAnnotation) | **DELETE** /annotations/{id} | Delete a timeline annotation
@@ -436,6 +438,13 @@ Class | Method | HTTP request | Description
  - [AgentBotsResponse](docs/AgentBotsResponse.md)
  - [AgentTrafficResponse](docs/AgentTrafficResponse.md)
  - [AiModelCitationsRow](docs/AiModelCitationsRow.md)
+ - [AiModelDeclineCounts](docs/AiModelDeclineCounts.md)
+ - [AiModelDeclinedAnswersResponse](docs/AiModelDeclinedAnswersResponse.md)
+ - [AiModelDeclinedAnswersResponseByPrompt](docs/AiModelDeclinedAnswersResponseByPrompt.md)
+ - [AiModelDeclinedAnswersResponseByPromptDataInner](docs/AiModelDeclinedAnswersResponseByPromptDataInner.md)
+ - [AiModelDeclinedAnswersResponseChartInner](docs/AiModelDeclinedAnswersResponseChartInner.md)
+ - [AiModelDeclinedAnswersResponseFilters](docs/AiModelDeclinedAnswersResponseFilters.md)
+ - [AiModelDeclinedAnswersResponseSummary](docs/AiModelDeclinedAnswersResponseSummary.md)
  - [AiModelInsightsFiltersEcho](docs/AiModelInsightsFiltersEcho.md)
  - [AiModelInsightsModel](docs/AiModelInsightsModel.md)
  - [AiModelInsightsSummaryResponse](docs/AiModelInsightsSummaryResponse.md)
