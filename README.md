@@ -2,7 +2,7 @@
 
 LLM Pulse API
 
-- API version: 1.97.0
+- API version: 1.98.0
 
 - Generator version: 7.24.0
 
@@ -43,7 +43,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>ai.llmpulse</groupId>
   <artifactId>llmpulse-java</artifactId>
-  <version>1.97.0</version>
+  <version>1.98.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -53,7 +53,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "ai.llmpulse:llmpulse-java:1.97.0"
+compile "ai.llmpulse:llmpulse-java:1.98.0"
 ```
 
 ### Others
@@ -66,7 +66,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-- `target/llmpulse-java-1.97.0.jar`
+- `target/llmpulse-java-1.98.0.jar`
 - `target/lib/*.jar`
 
 ## Getting Started
@@ -355,18 +355,32 @@ Class | Method | HTTP request | Description
 *ShoppingAdsApi* | [**listLocalBusinessesWithHttpInfo**](docs/ShoppingAdsApi.md#listLocalBusinessesWithHttpInfo) | **GET** /dimensions/local_businesses | List local businesses
 *ShoppingAdsApi* | [**listShopping**](docs/ShoppingAdsApi.md#listShopping) | **GET** /dimensions/shopping | List shopping results
 *ShoppingAdsApi* | [**listShoppingWithHttpInfo**](docs/ShoppingAdsApi.md#listShoppingWithHttpInfo) | **GET** /dimensions/shopping | List shopping results
+*SourcesCitationIntelligenceApi* | [**addUrlListEntries**](docs/SourcesCitationIntelligenceApi.md#addUrlListEntries) | **POST** /url_lists/{id}/entries | Add entries to a URL list
+*SourcesCitationIntelligenceApi* | [**addUrlListEntriesWithHttpInfo**](docs/SourcesCitationIntelligenceApi.md#addUrlListEntriesWithHttpInfo) | **POST** /url_lists/{id}/entries | Add entries to a URL list
+*SourcesCitationIntelligenceApi* | [**createUrlList**](docs/SourcesCitationIntelligenceApi.md#createUrlList) | **POST** /url_lists | Create a URL list
+*SourcesCitationIntelligenceApi* | [**createUrlListWithHttpInfo**](docs/SourcesCitationIntelligenceApi.md#createUrlListWithHttpInfo) | **POST** /url_lists | Create a URL list
+*SourcesCitationIntelligenceApi* | [**deleteUrlList**](docs/SourcesCitationIntelligenceApi.md#deleteUrlList) | **DELETE** /url_lists/{id} | Delete a URL list
+*SourcesCitationIntelligenceApi* | [**deleteUrlListWithHttpInfo**](docs/SourcesCitationIntelligenceApi.md#deleteUrlListWithHttpInfo) | **DELETE** /url_lists/{id} | Delete a URL list
 *SourcesCitationIntelligenceApi* | [**getCitedUrlContent**](docs/SourcesCitationIntelligenceApi.md#getCitedUrlContent) | **GET** /citation_intelligence/urls/{url_sha256}/content | Cited URL cached content
 *SourcesCitationIntelligenceApi* | [**getCitedUrlContentWithHttpInfo**](docs/SourcesCitationIntelligenceApi.md#getCitedUrlContentWithHttpInfo) | **GET** /citation_intelligence/urls/{url_sha256}/content | Cited URL cached content
 *SourcesCitationIntelligenceApi* | [**getCitedUrlDetail**](docs/SourcesCitationIntelligenceApi.md#getCitedUrlDetail) | **GET** /citation_intelligence/urls/{url_sha256} | Cited URL detail
 *SourcesCitationIntelligenceApi* | [**getCitedUrlDetailWithHttpInfo**](docs/SourcesCitationIntelligenceApi.md#getCitedUrlDetailWithHttpInfo) | **GET** /citation_intelligence/urls/{url_sha256} | Cited URL detail
 *SourcesCitationIntelligenceApi* | [**getMentionsByCitingDomain**](docs/SourcesCitationIntelligenceApi.md#getMentionsByCitingDomain) | **GET** /citation_intelligence/mentions_by_domain | Mention share by citing domain
 *SourcesCitationIntelligenceApi* | [**getMentionsByCitingDomainWithHttpInfo**](docs/SourcesCitationIntelligenceApi.md#getMentionsByCitingDomainWithHttpInfo) | **GET** /citation_intelligence/mentions_by_domain | Mention share by citing domain
+*SourcesCitationIntelligenceApi* | [**getUrlList**](docs/SourcesCitationIntelligenceApi.md#getUrlList) | **GET** /url_lists/{id} | Get a URL list report
+*SourcesCitationIntelligenceApi* | [**getUrlListWithHttpInfo**](docs/SourcesCitationIntelligenceApi.md#getUrlListWithHttpInfo) | **GET** /url_lists/{id} | Get a URL list report
 *SourcesCitationIntelligenceApi* | [**listCitationGroups**](docs/SourcesCitationIntelligenceApi.md#listCitationGroups) | **GET** /citation_intelligence/groups | Grouped citation intelligence
 *SourcesCitationIntelligenceApi* | [**listCitationGroupsWithHttpInfo**](docs/SourcesCitationIntelligenceApi.md#listCitationGroupsWithHttpInfo) | **GET** /citation_intelligence/groups | Grouped citation intelligence
 *SourcesCitationIntelligenceApi* | [**listCitedUrlOccurrences**](docs/SourcesCitationIntelligenceApi.md#listCitedUrlOccurrences) | **GET** /citation_intelligence/urls/{url_sha256}/occurrences | Cited URL occurrences
 *SourcesCitationIntelligenceApi* | [**listCitedUrlOccurrencesWithHttpInfo**](docs/SourcesCitationIntelligenceApi.md#listCitedUrlOccurrencesWithHttpInfo) | **GET** /citation_intelligence/urls/{url_sha256}/occurrences | Cited URL occurrences
 *SourcesCitationIntelligenceApi* | [**listSources**](docs/SourcesCitationIntelligenceApi.md#listSources) | **GET** /dimensions/sources | List source URLs
 *SourcesCitationIntelligenceApi* | [**listSourcesWithHttpInfo**](docs/SourcesCitationIntelligenceApi.md#listSourcesWithHttpInfo) | **GET** /dimensions/sources | List source URLs
+*SourcesCitationIntelligenceApi* | [**listUrlLists**](docs/SourcesCitationIntelligenceApi.md#listUrlLists) | **GET** /url_lists | List URL lists
+*SourcesCitationIntelligenceApi* | [**listUrlListsWithHttpInfo**](docs/SourcesCitationIntelligenceApi.md#listUrlListsWithHttpInfo) | **GET** /url_lists | List URL lists
+*SourcesCitationIntelligenceApi* | [**removeUrlListEntries**](docs/SourcesCitationIntelligenceApi.md#removeUrlListEntries) | **POST** /url_lists/{id}/entries/remove | Remove entries from a URL list
+*SourcesCitationIntelligenceApi* | [**removeUrlListEntriesWithHttpInfo**](docs/SourcesCitationIntelligenceApi.md#removeUrlListEntriesWithHttpInfo) | **POST** /url_lists/{id}/entries/remove | Remove entries from a URL list
+*SourcesCitationIntelligenceApi* | [**updateUrlList**](docs/SourcesCitationIntelligenceApi.md#updateUrlList) | **PATCH** /url_lists/{id} | Update a URL list
+*SourcesCitationIntelligenceApi* | [**updateUrlListWithHttpInfo**](docs/SourcesCitationIntelligenceApi.md#updateUrlListWithHttpInfo) | **PATCH** /url_lists/{id} | Update a URL list
 *StoreIntegrationsApi* | [**acceptCatalogPromptSuggestions**](docs/StoreIntegrationsApi.md#acceptCatalogPromptSuggestions) | **POST** /catalog_prompt_suggestions/accept | Accept catalog prompt suggestions
 *StoreIntegrationsApi* | [**acceptCatalogPromptSuggestionsWithHttpInfo**](docs/StoreIntegrationsApi.md#acceptCatalogPromptSuggestionsWithHttpInfo) | **POST** /catalog_prompt_suggestions/accept | Accept catalog prompt suggestions
 *StoreIntegrationsApi* | [**createCatalogPromptSuggestions**](docs/StoreIntegrationsApi.md#createCatalogPromptSuggestions) | **POST** /catalog_prompt_suggestions | Suggest buyer prompts from catalog products
@@ -734,6 +748,26 @@ Class | Method | HTTP request | Description
  - [UpdateProjectRequest](docs/UpdateProjectRequest.md)
  - [UpdatePromptRequest](docs/UpdatePromptRequest.md)
  - [UpdateRecommendationItemRequest](docs/UpdateRecommendationItemRequest.md)
+ - [UrlList](docs/UrlList.md)
+ - [UrlListCreateRequest](docs/UrlListCreateRequest.md)
+ - [UrlListCreateResponse](docs/UrlListCreateResponse.md)
+ - [UrlListDeleteResponse](docs/UrlListDeleteResponse.md)
+ - [UrlListDetailResponse](docs/UrlListDetailResponse.md)
+ - [UrlListEntriesAddRequest](docs/UrlListEntriesAddRequest.md)
+ - [UrlListEntriesAddResponse](docs/UrlListEntriesAddResponse.md)
+ - [UrlListEntriesRemoveRequest](docs/UrlListEntriesRemoveRequest.md)
+ - [UrlListEntriesRemoveResponse](docs/UrlListEntriesRemoveResponse.md)
+ - [UrlListEntry](docs/UrlListEntry.md)
+ - [UrlListEntryInput](docs/UrlListEntryInput.md)
+ - [UrlListFilters](docs/UrlListFilters.md)
+ - [UrlListInvalidEntry](docs/UrlListInvalidEntry.md)
+ - [UrlListStatusCounts](docs/UrlListStatusCounts.md)
+ - [UrlListSummary](docs/UrlListSummary.md)
+ - [UrlListUpdateRequest](docs/UrlListUpdateRequest.md)
+ - [UrlListUpdateResponse](docs/UrlListUpdateResponse.md)
+ - [UrlListWithCounts](docs/UrlListWithCounts.md)
+ - [UrlListWithStats](docs/UrlListWithStats.md)
+ - [UrlListsResponse](docs/UrlListsResponse.md)
  - [WebAnalyticsQueryResponse](docs/WebAnalyticsQueryResponse.md)
  - [WebAnalyticsQueryResponseColumnsInner](docs/WebAnalyticsQueryResponseColumnsInner.md)
  - [WebAnalyticsSchemaResponse](docs/WebAnalyticsSchemaResponse.md)

@@ -4,19 +4,487 @@ All URIs are relative to *https://api.llmpulse.ai/api/v1*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
+| [**addUrlListEntries**](SourcesCitationIntelligenceApi.md#addUrlListEntries) | **POST** /url_lists/{id}/entries | Add entries to a URL list |
+| [**addUrlListEntriesWithHttpInfo**](SourcesCitationIntelligenceApi.md#addUrlListEntriesWithHttpInfo) | **POST** /url_lists/{id}/entries | Add entries to a URL list |
+| [**createUrlList**](SourcesCitationIntelligenceApi.md#createUrlList) | **POST** /url_lists | Create a URL list |
+| [**createUrlListWithHttpInfo**](SourcesCitationIntelligenceApi.md#createUrlListWithHttpInfo) | **POST** /url_lists | Create a URL list |
+| [**deleteUrlList**](SourcesCitationIntelligenceApi.md#deleteUrlList) | **DELETE** /url_lists/{id} | Delete a URL list |
+| [**deleteUrlListWithHttpInfo**](SourcesCitationIntelligenceApi.md#deleteUrlListWithHttpInfo) | **DELETE** /url_lists/{id} | Delete a URL list |
 | [**getCitedUrlContent**](SourcesCitationIntelligenceApi.md#getCitedUrlContent) | **GET** /citation_intelligence/urls/{url_sha256}/content | Cited URL cached content |
 | [**getCitedUrlContentWithHttpInfo**](SourcesCitationIntelligenceApi.md#getCitedUrlContentWithHttpInfo) | **GET** /citation_intelligence/urls/{url_sha256}/content | Cited URL cached content |
 | [**getCitedUrlDetail**](SourcesCitationIntelligenceApi.md#getCitedUrlDetail) | **GET** /citation_intelligence/urls/{url_sha256} | Cited URL detail |
 | [**getCitedUrlDetailWithHttpInfo**](SourcesCitationIntelligenceApi.md#getCitedUrlDetailWithHttpInfo) | **GET** /citation_intelligence/urls/{url_sha256} | Cited URL detail |
 | [**getMentionsByCitingDomain**](SourcesCitationIntelligenceApi.md#getMentionsByCitingDomain) | **GET** /citation_intelligence/mentions_by_domain | Mention share by citing domain |
 | [**getMentionsByCitingDomainWithHttpInfo**](SourcesCitationIntelligenceApi.md#getMentionsByCitingDomainWithHttpInfo) | **GET** /citation_intelligence/mentions_by_domain | Mention share by citing domain |
+| [**getUrlList**](SourcesCitationIntelligenceApi.md#getUrlList) | **GET** /url_lists/{id} | Get a URL list report |
+| [**getUrlListWithHttpInfo**](SourcesCitationIntelligenceApi.md#getUrlListWithHttpInfo) | **GET** /url_lists/{id} | Get a URL list report |
 | [**listCitationGroups**](SourcesCitationIntelligenceApi.md#listCitationGroups) | **GET** /citation_intelligence/groups | Grouped citation intelligence |
 | [**listCitationGroupsWithHttpInfo**](SourcesCitationIntelligenceApi.md#listCitationGroupsWithHttpInfo) | **GET** /citation_intelligence/groups | Grouped citation intelligence |
 | [**listCitedUrlOccurrences**](SourcesCitationIntelligenceApi.md#listCitedUrlOccurrences) | **GET** /citation_intelligence/urls/{url_sha256}/occurrences | Cited URL occurrences |
 | [**listCitedUrlOccurrencesWithHttpInfo**](SourcesCitationIntelligenceApi.md#listCitedUrlOccurrencesWithHttpInfo) | **GET** /citation_intelligence/urls/{url_sha256}/occurrences | Cited URL occurrences |
 | [**listSources**](SourcesCitationIntelligenceApi.md#listSources) | **GET** /dimensions/sources | List source URLs |
 | [**listSourcesWithHttpInfo**](SourcesCitationIntelligenceApi.md#listSourcesWithHttpInfo) | **GET** /dimensions/sources | List source URLs |
+| [**listUrlLists**](SourcesCitationIntelligenceApi.md#listUrlLists) | **GET** /url_lists | List URL lists |
+| [**listUrlListsWithHttpInfo**](SourcesCitationIntelligenceApi.md#listUrlListsWithHttpInfo) | **GET** /url_lists | List URL lists |
+| [**removeUrlListEntries**](SourcesCitationIntelligenceApi.md#removeUrlListEntries) | **POST** /url_lists/{id}/entries/remove | Remove entries from a URL list |
+| [**removeUrlListEntriesWithHttpInfo**](SourcesCitationIntelligenceApi.md#removeUrlListEntriesWithHttpInfo) | **POST** /url_lists/{id}/entries/remove | Remove entries from a URL list |
+| [**updateUrlList**](SourcesCitationIntelligenceApi.md#updateUrlList) | **PATCH** /url_lists/{id} | Update a URL list |
+| [**updateUrlListWithHttpInfo**](SourcesCitationIntelligenceApi.md#updateUrlListWithHttpInfo) | **PATCH** /url_lists/{id} | Update a URL list |
 
+
+
+## addUrlListEntries
+
+> UrlListEntriesAddResponse addUrlListEntries(id, urlListEntriesAddRequest)
+
+Add entries to a URL list
+
+Adds entries, as POST /url_lists reads them. A rule the list already holds keeps its place and takes only the added_on, cost and channel this request sends for it. Values that do not parse come back in invalid_entries. Requires a &#x60;read_write&#x60; scope API key and the Growth plan.
+
+### Example
+
+```java
+// Import classes:
+import ai.llmpulse.sdk.ApiClient;
+import ai.llmpulse.sdk.ApiException;
+import ai.llmpulse.sdk.Configuration;
+import ai.llmpulse.sdk.auth.*;
+import ai.llmpulse.sdk.models.*;
+import ai.llmpulse.sdk.api.SourcesCitationIntelligenceApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.llmpulse.ai/api/v1");
+        
+        // Configure HTTP bearer authorization: BearerAuth
+        HttpBearerAuth BearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("BearerAuth");
+        BearerAuth.setBearerToken("BEARER TOKEN");
+
+        SourcesCitationIntelligenceApi apiInstance = new SourcesCitationIntelligenceApi(defaultClient);
+        Integer id = 56; // Integer | 
+        UrlListEntriesAddRequest urlListEntriesAddRequest = new UrlListEntriesAddRequest(); // UrlListEntriesAddRequest | 
+        try {
+            UrlListEntriesAddResponse result = apiInstance.addUrlListEntries(id, urlListEntriesAddRequest);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling SourcesCitationIntelligenceApi#addUrlListEntries");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **Integer**|  | |
+| **urlListEntriesAddRequest** | [**UrlListEntriesAddRequest**](UrlListEntriesAddRequest.md)|  | |
+
+### Return type
+
+[**UrlListEntriesAddResponse**](UrlListEntriesAddResponse.md)
+
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Entries written |  -  |
+| **403** | API key lacks write permission |  -  |
+| **404** | Resource not found |  -  |
+| **422** | Invalid parameters |  -  |
+
+## addUrlListEntriesWithHttpInfo
+
+> ApiResponse<UrlListEntriesAddResponse> addUrlListEntriesWithHttpInfo(id, urlListEntriesAddRequest)
+
+Add entries to a URL list
+
+Adds entries, as POST /url_lists reads them. A rule the list already holds keeps its place and takes only the added_on, cost and channel this request sends for it. Values that do not parse come back in invalid_entries. Requires a &#x60;read_write&#x60; scope API key and the Growth plan.
+
+### Example
+
+```java
+// Import classes:
+import ai.llmpulse.sdk.ApiClient;
+import ai.llmpulse.sdk.ApiException;
+import ai.llmpulse.sdk.ApiResponse;
+import ai.llmpulse.sdk.Configuration;
+import ai.llmpulse.sdk.auth.*;
+import ai.llmpulse.sdk.models.*;
+import ai.llmpulse.sdk.api.SourcesCitationIntelligenceApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.llmpulse.ai/api/v1");
+        
+        // Configure HTTP bearer authorization: BearerAuth
+        HttpBearerAuth BearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("BearerAuth");
+        BearerAuth.setBearerToken("BEARER TOKEN");
+
+        SourcesCitationIntelligenceApi apiInstance = new SourcesCitationIntelligenceApi(defaultClient);
+        Integer id = 56; // Integer | 
+        UrlListEntriesAddRequest urlListEntriesAddRequest = new UrlListEntriesAddRequest(); // UrlListEntriesAddRequest | 
+        try {
+            ApiResponse<UrlListEntriesAddResponse> response = apiInstance.addUrlListEntriesWithHttpInfo(id, urlListEntriesAddRequest);
+            System.out.println("Status code: " + response.getStatusCode());
+            System.out.println("Response headers: " + response.getHeaders());
+            System.out.println("Response body: " + response.getData());
+        } catch (ApiException e) {
+            System.err.println("Exception when calling SourcesCitationIntelligenceApi#addUrlListEntries");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            System.err.println("Reason: " + e.getResponseBody());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **Integer**|  | |
+| **urlListEntriesAddRequest** | [**UrlListEntriesAddRequest**](UrlListEntriesAddRequest.md)|  | |
+
+### Return type
+
+ApiResponse<[**UrlListEntriesAddResponse**](UrlListEntriesAddResponse.md)>
+
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Entries written |  -  |
+| **403** | API key lacks write permission |  -  |
+| **404** | Resource not found |  -  |
+| **422** | Invalid parameters |  -  |
+
+
+## createUrlList
+
+> UrlListCreateResponse createUrlList(urlListCreateRequest)
+
+Create a URL list
+
+Creates a URL list. Each entry is a string or an object with value, match_type, added_on (YYYY-MM-DD, default today), cost (in the list currency) and channel. Without a match_type, \&quot;acme.com/blog/_*\&quot; is a prefix, a value with a path or query an exact URL and a bare host a domain. A list holds at most 1000 entries and a project at most 100 lists; the name is unique per project, case-insensitive. Refusals answer ERR_INVALID_PARAM with a reason token in error.meta.reason. Requires a &#x60;read_write&#x60; scope API key and the Growth plan.
+
+### Example
+
+```java
+// Import classes:
+import ai.llmpulse.sdk.ApiClient;
+import ai.llmpulse.sdk.ApiException;
+import ai.llmpulse.sdk.Configuration;
+import ai.llmpulse.sdk.auth.*;
+import ai.llmpulse.sdk.models.*;
+import ai.llmpulse.sdk.api.SourcesCitationIntelligenceApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.llmpulse.ai/api/v1");
+        
+        // Configure HTTP bearer authorization: BearerAuth
+        HttpBearerAuth BearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("BearerAuth");
+        BearerAuth.setBearerToken("BEARER TOKEN");
+
+        SourcesCitationIntelligenceApi apiInstance = new SourcesCitationIntelligenceApi(defaultClient);
+        UrlListCreateRequest urlListCreateRequest = new UrlListCreateRequest(); // UrlListCreateRequest | 
+        try {
+            UrlListCreateResponse result = apiInstance.createUrlList(urlListCreateRequest);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling SourcesCitationIntelligenceApi#createUrlList");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **urlListCreateRequest** | [**UrlListCreateRequest**](UrlListCreateRequest.md)|  | |
+
+### Return type
+
+[**UrlListCreateResponse**](UrlListCreateResponse.md)
+
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **201** | Created |  -  |
+| **403** | API key lacks write permission |  -  |
+| **422** | Invalid parameters |  -  |
+
+## createUrlListWithHttpInfo
+
+> ApiResponse<UrlListCreateResponse> createUrlListWithHttpInfo(urlListCreateRequest)
+
+Create a URL list
+
+Creates a URL list. Each entry is a string or an object with value, match_type, added_on (YYYY-MM-DD, default today), cost (in the list currency) and channel. Without a match_type, \&quot;acme.com/blog/_*\&quot; is a prefix, a value with a path or query an exact URL and a bare host a domain. A list holds at most 1000 entries and a project at most 100 lists; the name is unique per project, case-insensitive. Refusals answer ERR_INVALID_PARAM with a reason token in error.meta.reason. Requires a &#x60;read_write&#x60; scope API key and the Growth plan.
+
+### Example
+
+```java
+// Import classes:
+import ai.llmpulse.sdk.ApiClient;
+import ai.llmpulse.sdk.ApiException;
+import ai.llmpulse.sdk.ApiResponse;
+import ai.llmpulse.sdk.Configuration;
+import ai.llmpulse.sdk.auth.*;
+import ai.llmpulse.sdk.models.*;
+import ai.llmpulse.sdk.api.SourcesCitationIntelligenceApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.llmpulse.ai/api/v1");
+        
+        // Configure HTTP bearer authorization: BearerAuth
+        HttpBearerAuth BearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("BearerAuth");
+        BearerAuth.setBearerToken("BEARER TOKEN");
+
+        SourcesCitationIntelligenceApi apiInstance = new SourcesCitationIntelligenceApi(defaultClient);
+        UrlListCreateRequest urlListCreateRequest = new UrlListCreateRequest(); // UrlListCreateRequest | 
+        try {
+            ApiResponse<UrlListCreateResponse> response = apiInstance.createUrlListWithHttpInfo(urlListCreateRequest);
+            System.out.println("Status code: " + response.getStatusCode());
+            System.out.println("Response headers: " + response.getHeaders());
+            System.out.println("Response body: " + response.getData());
+        } catch (ApiException e) {
+            System.err.println("Exception when calling SourcesCitationIntelligenceApi#createUrlList");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            System.err.println("Reason: " + e.getResponseBody());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **urlListCreateRequest** | [**UrlListCreateRequest**](UrlListCreateRequest.md)|  | |
+
+### Return type
+
+ApiResponse<[**UrlListCreateResponse**](UrlListCreateResponse.md)>
+
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **201** | Created |  -  |
+| **403** | API key lacks write permission |  -  |
+| **422** | Invalid parameters |  -  |
+
+
+## deleteUrlList
+
+> UrlListDeleteResponse deleteUrlList(projectId, id)
+
+Delete a URL list
+
+Deletes a URL list and its entries. Citation data is not affected. Requires a &#x60;read_write&#x60; scope API key and the Growth plan.
+
+### Example
+
+```java
+// Import classes:
+import ai.llmpulse.sdk.ApiClient;
+import ai.llmpulse.sdk.ApiException;
+import ai.llmpulse.sdk.Configuration;
+import ai.llmpulse.sdk.auth.*;
+import ai.llmpulse.sdk.models.*;
+import ai.llmpulse.sdk.api.SourcesCitationIntelligenceApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.llmpulse.ai/api/v1");
+        
+        // Configure HTTP bearer authorization: BearerAuth
+        HttpBearerAuth BearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("BearerAuth");
+        BearerAuth.setBearerToken("BEARER TOKEN");
+
+        SourcesCitationIntelligenceApi apiInstance = new SourcesCitationIntelligenceApi(defaultClient);
+        Integer projectId = 56; // Integer | Project ID
+        Integer id = 56; // Integer | 
+        try {
+            UrlListDeleteResponse result = apiInstance.deleteUrlList(projectId, id);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling SourcesCitationIntelligenceApi#deleteUrlList");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **projectId** | **Integer**| Project ID | |
+| **id** | **Integer**|  | |
+
+### Return type
+
+[**UrlListDeleteResponse**](UrlListDeleteResponse.md)
+
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Deleted |  -  |
+| **403** | API key lacks write permission |  -  |
+| **404** | Resource not found |  -  |
+
+## deleteUrlListWithHttpInfo
+
+> ApiResponse<UrlListDeleteResponse> deleteUrlListWithHttpInfo(projectId, id)
+
+Delete a URL list
+
+Deletes a URL list and its entries. Citation data is not affected. Requires a &#x60;read_write&#x60; scope API key and the Growth plan.
+
+### Example
+
+```java
+// Import classes:
+import ai.llmpulse.sdk.ApiClient;
+import ai.llmpulse.sdk.ApiException;
+import ai.llmpulse.sdk.ApiResponse;
+import ai.llmpulse.sdk.Configuration;
+import ai.llmpulse.sdk.auth.*;
+import ai.llmpulse.sdk.models.*;
+import ai.llmpulse.sdk.api.SourcesCitationIntelligenceApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.llmpulse.ai/api/v1");
+        
+        // Configure HTTP bearer authorization: BearerAuth
+        HttpBearerAuth BearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("BearerAuth");
+        BearerAuth.setBearerToken("BEARER TOKEN");
+
+        SourcesCitationIntelligenceApi apiInstance = new SourcesCitationIntelligenceApi(defaultClient);
+        Integer projectId = 56; // Integer | Project ID
+        Integer id = 56; // Integer | 
+        try {
+            ApiResponse<UrlListDeleteResponse> response = apiInstance.deleteUrlListWithHttpInfo(projectId, id);
+            System.out.println("Status code: " + response.getStatusCode());
+            System.out.println("Response headers: " + response.getHeaders());
+            System.out.println("Response body: " + response.getData());
+        } catch (ApiException e) {
+            System.err.println("Exception when calling SourcesCitationIntelligenceApi#deleteUrlList");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            System.err.println("Reason: " + e.getResponseBody());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **projectId** | **Integer**| Project ID | |
+| **id** | **Integer**|  | |
+
+### Return type
+
+ApiResponse<[**UrlListDeleteResponse**](UrlListDeleteResponse.md)>
+
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Deleted |  -  |
+| **403** | API key lacks write permission |  -  |
+| **404** | Resource not found |  -  |
 
 
 ## getCitedUrlContent
@@ -540,6 +1008,216 @@ ApiResponse<Void>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Mention share per citing domain |  -  |
+| **422** | Invalid parameters |  -  |
+
+
+## getUrlList
+
+> UrlListDetailResponse getUrlList(id, projectId, status, order, direction, page, perPage, model, collectionId, countryCode, languageCode, prompt, brandKind, from, to, range)
+
+Get a URL list report
+
+The list, its summary (entries_count, cited_entries, citations, answers in the window, citation_rate, avg_citation_position, median_days_to_first_citation, total_cost, cost_per_cited_entry) and a page of its entries. An entry&#39;s status is cited (an answer cited it in the window), lost (cited before the window, not in it) or not_cited. first_cited_at reads the filtered answers up to the window&#39;s end. days_to_first_citation is null before the first citation or when the page was cited before it was added. brand_mentioned is set for exact URLs once their page was read, else null. Without from/to or range the window is all time. Requires the Growth plan.
+
+### Example
+
+```java
+// Import classes:
+import ai.llmpulse.sdk.ApiClient;
+import ai.llmpulse.sdk.ApiException;
+import ai.llmpulse.sdk.Configuration;
+import ai.llmpulse.sdk.auth.*;
+import ai.llmpulse.sdk.models.*;
+import ai.llmpulse.sdk.api.SourcesCitationIntelligenceApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.llmpulse.ai/api/v1");
+        
+        // Configure HTTP bearer authorization: BearerAuth
+        HttpBearerAuth BearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("BearerAuth");
+        BearerAuth.setBearerToken("BEARER TOKEN");
+
+        SourcesCitationIntelligenceApi apiInstance = new SourcesCitationIntelligenceApi(defaultClient);
+        Integer id = 56; // Integer | 
+        Integer projectId = 56; // Integer | Project ID
+        String status = "cited"; // String | Only entries with this status.
+        String order = "value"; // String | 
+        String direction = "asc"; // String | 
+        Integer page = 1; // Integer | 
+        Integer perPage = 20; // Integer | 
+        String model = "chatgpt"; // String | Filter by one AI model. Only chatgpt, ai_overview, ai_mode, perplexity, gemini, naver_ai, baidu_ai, naver_ai_tab, qwen, doubao and bing_ai_mode are accepted: any other value, including another model enabled for the API key's user, returns 422 ERR_INVALID_PARAM (invalid model). One of those eleven that the user has not enabled also returns 422 ERR_INVALID_PARAM, with the valid values in the message.
+        String collectionId = "12,34"; // String | One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize.
+        String countryCode = "countryCode_example"; // String | One ISO country code or a comma-separated list (e.g. US,GB,DE)
+        String languageCode = "languageCode_example"; // String | One ISO language code or a comma-separated list (e.g. en,es,de)
+        Integer prompt = 56; // Integer | Filter by prompt ID. An id that is not a plain positive number, or that names no prompt of the project, returns 422 ERR_INVALID_PARAM.
+        String brandKind = "brand"; // String | Filter by brand kind: brand (own brand/products), brand_other (competitors/other brands), non_brand (generic, no brand named). For fair 1:1 brand-vs-competitor comparisons (visibility, share of voice), use non_brand: brand-focused prompts skew results toward the brand they name. The in-app Overview page applies non_brand by default.
+        OffsetDateTime from = OffsetDateTime.now(); // OffsetDateTime | 
+        OffsetDateTime to = OffsetDateTime.now(); // OffsetDateTime | End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier.
+        Integer range = 56; // Integer | Number of days to look back (alternative to from/to, which win when both are given). A value that is not a plain positive number returns 422 ERR_INVALID_PARAM, even beside from/to.
+        try {
+            UrlListDetailResponse result = apiInstance.getUrlList(id, projectId, status, order, direction, page, perPage, model, collectionId, countryCode, languageCode, prompt, brandKind, from, to, range);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling SourcesCitationIntelligenceApi#getUrlList");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **Integer**|  | |
+| **projectId** | **Integer**| Project ID | |
+| **status** | **String**| Only entries with this status. | [optional] [enum: cited, lost, not_cited] |
+| **order** | **String**|  | [optional] [default to citations] [enum: value, status, added_on, first_cited_at, days_to_cite, citations, avg_position, cost, channel] |
+| **direction** | **String**|  | [optional] [default to desc] [enum: asc, desc] |
+| **page** | **Integer**|  | [optional] [default to 1] |
+| **perPage** | **Integer**|  | [optional] [default to 20] |
+| **model** | **String**| Filter by one AI model. Only chatgpt, ai_overview, ai_mode, perplexity, gemini, naver_ai, baidu_ai, naver_ai_tab, qwen, doubao and bing_ai_mode are accepted: any other value, including another model enabled for the API key&#39;s user, returns 422 ERR_INVALID_PARAM (invalid model). One of those eleven that the user has not enabled also returns 422 ERR_INVALID_PARAM, with the valid values in the message. | [optional] [enum: chatgpt, perplexity, ai_mode, ai_overview, gemini, copilot, amazon_rufus, claude, grok, deepseek, naver_ai, baidu_ai, meta_ai, naver_ai_tab, qwen, doubao, bing_ai_mode] |
+| **collectionId** | **String**| One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. | [optional] |
+| **countryCode** | **String**| One ISO country code or a comma-separated list (e.g. US,GB,DE) | [optional] |
+| **languageCode** | **String**| One ISO language code or a comma-separated list (e.g. en,es,de) | [optional] |
+| **prompt** | **Integer**| Filter by prompt ID. An id that is not a plain positive number, or that names no prompt of the project, returns 422 ERR_INVALID_PARAM. | [optional] |
+| **brandKind** | **String**| Filter by brand kind: brand (own brand/products), brand_other (competitors/other brands), non_brand (generic, no brand named). For fair 1:1 brand-vs-competitor comparisons (visibility, share of voice), use non_brand: brand-focused prompts skew results toward the brand they name. The in-app Overview page applies non_brand by default. | [optional] [enum: brand, brand_other, non_brand] |
+| **from** | **OffsetDateTime**|  | [optional] |
+| **to** | **OffsetDateTime**| End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. | [optional] |
+| **range** | **Integer**| Number of days to look back (alternative to from/to, which win when both are given). A value that is not a plain positive number returns 422 ERR_INVALID_PARAM, even beside from/to. | [optional] |
+
+### Return type
+
+[**UrlListDetailResponse**](UrlListDetailResponse.md)
+
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | URL list report |  -  |
+| **403** | Endpoint requires the Growth plan or above |  -  |
+| **404** | Resource not found |  -  |
+| **422** | Invalid parameters |  -  |
+
+## getUrlListWithHttpInfo
+
+> ApiResponse<UrlListDetailResponse> getUrlListWithHttpInfo(id, projectId, status, order, direction, page, perPage, model, collectionId, countryCode, languageCode, prompt, brandKind, from, to, range)
+
+Get a URL list report
+
+The list, its summary (entries_count, cited_entries, citations, answers in the window, citation_rate, avg_citation_position, median_days_to_first_citation, total_cost, cost_per_cited_entry) and a page of its entries. An entry&#39;s status is cited (an answer cited it in the window), lost (cited before the window, not in it) or not_cited. first_cited_at reads the filtered answers up to the window&#39;s end. days_to_first_citation is null before the first citation or when the page was cited before it was added. brand_mentioned is set for exact URLs once their page was read, else null. Without from/to or range the window is all time. Requires the Growth plan.
+
+### Example
+
+```java
+// Import classes:
+import ai.llmpulse.sdk.ApiClient;
+import ai.llmpulse.sdk.ApiException;
+import ai.llmpulse.sdk.ApiResponse;
+import ai.llmpulse.sdk.Configuration;
+import ai.llmpulse.sdk.auth.*;
+import ai.llmpulse.sdk.models.*;
+import ai.llmpulse.sdk.api.SourcesCitationIntelligenceApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.llmpulse.ai/api/v1");
+        
+        // Configure HTTP bearer authorization: BearerAuth
+        HttpBearerAuth BearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("BearerAuth");
+        BearerAuth.setBearerToken("BEARER TOKEN");
+
+        SourcesCitationIntelligenceApi apiInstance = new SourcesCitationIntelligenceApi(defaultClient);
+        Integer id = 56; // Integer | 
+        Integer projectId = 56; // Integer | Project ID
+        String status = "cited"; // String | Only entries with this status.
+        String order = "value"; // String | 
+        String direction = "asc"; // String | 
+        Integer page = 1; // Integer | 
+        Integer perPage = 20; // Integer | 
+        String model = "chatgpt"; // String | Filter by one AI model. Only chatgpt, ai_overview, ai_mode, perplexity, gemini, naver_ai, baidu_ai, naver_ai_tab, qwen, doubao and bing_ai_mode are accepted: any other value, including another model enabled for the API key's user, returns 422 ERR_INVALID_PARAM (invalid model). One of those eleven that the user has not enabled also returns 422 ERR_INVALID_PARAM, with the valid values in the message.
+        String collectionId = "12,34"; // String | One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize.
+        String countryCode = "countryCode_example"; // String | One ISO country code or a comma-separated list (e.g. US,GB,DE)
+        String languageCode = "languageCode_example"; // String | One ISO language code or a comma-separated list (e.g. en,es,de)
+        Integer prompt = 56; // Integer | Filter by prompt ID. An id that is not a plain positive number, or that names no prompt of the project, returns 422 ERR_INVALID_PARAM.
+        String brandKind = "brand"; // String | Filter by brand kind: brand (own brand/products), brand_other (competitors/other brands), non_brand (generic, no brand named). For fair 1:1 brand-vs-competitor comparisons (visibility, share of voice), use non_brand: brand-focused prompts skew results toward the brand they name. The in-app Overview page applies non_brand by default.
+        OffsetDateTime from = OffsetDateTime.now(); // OffsetDateTime | 
+        OffsetDateTime to = OffsetDateTime.now(); // OffsetDateTime | End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier.
+        Integer range = 56; // Integer | Number of days to look back (alternative to from/to, which win when both are given). A value that is not a plain positive number returns 422 ERR_INVALID_PARAM, even beside from/to.
+        try {
+            ApiResponse<UrlListDetailResponse> response = apiInstance.getUrlListWithHttpInfo(id, projectId, status, order, direction, page, perPage, model, collectionId, countryCode, languageCode, prompt, brandKind, from, to, range);
+            System.out.println("Status code: " + response.getStatusCode());
+            System.out.println("Response headers: " + response.getHeaders());
+            System.out.println("Response body: " + response.getData());
+        } catch (ApiException e) {
+            System.err.println("Exception when calling SourcesCitationIntelligenceApi#getUrlList");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            System.err.println("Reason: " + e.getResponseBody());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **Integer**|  | |
+| **projectId** | **Integer**| Project ID | |
+| **status** | **String**| Only entries with this status. | [optional] [enum: cited, lost, not_cited] |
+| **order** | **String**|  | [optional] [default to citations] [enum: value, status, added_on, first_cited_at, days_to_cite, citations, avg_position, cost, channel] |
+| **direction** | **String**|  | [optional] [default to desc] [enum: asc, desc] |
+| **page** | **Integer**|  | [optional] [default to 1] |
+| **perPage** | **Integer**|  | [optional] [default to 20] |
+| **model** | **String**| Filter by one AI model. Only chatgpt, ai_overview, ai_mode, perplexity, gemini, naver_ai, baidu_ai, naver_ai_tab, qwen, doubao and bing_ai_mode are accepted: any other value, including another model enabled for the API key&#39;s user, returns 422 ERR_INVALID_PARAM (invalid model). One of those eleven that the user has not enabled also returns 422 ERR_INVALID_PARAM, with the valid values in the message. | [optional] [enum: chatgpt, perplexity, ai_mode, ai_overview, gemini, copilot, amazon_rufus, claude, grok, deepseek, naver_ai, baidu_ai, meta_ai, naver_ai_tab, qwen, doubao, bing_ai_mode] |
+| **collectionId** | **String**| One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. | [optional] |
+| **countryCode** | **String**| One ISO country code or a comma-separated list (e.g. US,GB,DE) | [optional] |
+| **languageCode** | **String**| One ISO language code or a comma-separated list (e.g. en,es,de) | [optional] |
+| **prompt** | **Integer**| Filter by prompt ID. An id that is not a plain positive number, or that names no prompt of the project, returns 422 ERR_INVALID_PARAM. | [optional] |
+| **brandKind** | **String**| Filter by brand kind: brand (own brand/products), brand_other (competitors/other brands), non_brand (generic, no brand named). For fair 1:1 brand-vs-competitor comparisons (visibility, share of voice), use non_brand: brand-focused prompts skew results toward the brand they name. The in-app Overview page applies non_brand by default. | [optional] [enum: brand, brand_other, non_brand] |
+| **from** | **OffsetDateTime**|  | [optional] |
+| **to** | **OffsetDateTime**| End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. | [optional] |
+| **range** | **Integer**| Number of days to look back (alternative to from/to, which win when both are given). A value that is not a plain positive number returns 422 ERR_INVALID_PARAM, even beside from/to. | [optional] |
+
+### Return type
+
+ApiResponse<[**UrlListDetailResponse**](UrlListDetailResponse.md)>
+
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | URL list report |  -  |
+| **403** | Endpoint requires the Growth plan or above |  -  |
+| **404** | Resource not found |  -  |
 | **422** | Invalid parameters |  -  |
 
 
@@ -1116,5 +1794,497 @@ ApiResponse<Void>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Paginated sources |  -  |
+| **422** | Invalid parameters |  -  |
+
+
+## listUrlLists
+
+> UrlListsResponse listUrlLists(projectId, model, collectionId, countryCode, languageCode, prompt, brandKind, from, to, range)
+
+List URL lists
+
+A URL list is a named set of rules, each an exact URL (matched over http and https, with or without www), a URL prefix (every page under host/path) or a domain (the site and its subdomains). Its numbers count the AI answers to the prompts tracked in the project: cited_entries is the entries an answer cited in the window and citations the answers citing any entry, each once. Without from/to or range the window is all time. Requires the Growth plan; lower tiers receive ERR_PLAN_REQUIRED.
+
+### Example
+
+```java
+// Import classes:
+import ai.llmpulse.sdk.ApiClient;
+import ai.llmpulse.sdk.ApiException;
+import ai.llmpulse.sdk.Configuration;
+import ai.llmpulse.sdk.auth.*;
+import ai.llmpulse.sdk.models.*;
+import ai.llmpulse.sdk.api.SourcesCitationIntelligenceApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.llmpulse.ai/api/v1");
+        
+        // Configure HTTP bearer authorization: BearerAuth
+        HttpBearerAuth BearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("BearerAuth");
+        BearerAuth.setBearerToken("BEARER TOKEN");
+
+        SourcesCitationIntelligenceApi apiInstance = new SourcesCitationIntelligenceApi(defaultClient);
+        Integer projectId = 56; // Integer | Project ID
+        String model = "chatgpt"; // String | Filter by one AI model. Only chatgpt, ai_overview, ai_mode, perplexity, gemini, naver_ai, baidu_ai, naver_ai_tab, qwen, doubao and bing_ai_mode are accepted: any other value, including another model enabled for the API key's user, returns 422 ERR_INVALID_PARAM (invalid model). One of those eleven that the user has not enabled also returns 422 ERR_INVALID_PARAM, with the valid values in the message.
+        String collectionId = "12,34"; // String | One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize.
+        String countryCode = "countryCode_example"; // String | One ISO country code or a comma-separated list (e.g. US,GB,DE)
+        String languageCode = "languageCode_example"; // String | One ISO language code or a comma-separated list (e.g. en,es,de)
+        Integer prompt = 56; // Integer | Filter by prompt ID. An id that is not a plain positive number, or that names no prompt of the project, returns 422 ERR_INVALID_PARAM.
+        String brandKind = "brand"; // String | Filter by brand kind: brand (own brand/products), brand_other (competitors/other brands), non_brand (generic, no brand named). For fair 1:1 brand-vs-competitor comparisons (visibility, share of voice), use non_brand: brand-focused prompts skew results toward the brand they name. The in-app Overview page applies non_brand by default.
+        OffsetDateTime from = OffsetDateTime.now(); // OffsetDateTime | 
+        OffsetDateTime to = OffsetDateTime.now(); // OffsetDateTime | End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier.
+        Integer range = 56; // Integer | Number of days to look back (alternative to from/to, which win when both are given). A value that is not a plain positive number returns 422 ERR_INVALID_PARAM, even beside from/to.
+        try {
+            UrlListsResponse result = apiInstance.listUrlLists(projectId, model, collectionId, countryCode, languageCode, prompt, brandKind, from, to, range);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling SourcesCitationIntelligenceApi#listUrlLists");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **projectId** | **Integer**| Project ID | |
+| **model** | **String**| Filter by one AI model. Only chatgpt, ai_overview, ai_mode, perplexity, gemini, naver_ai, baidu_ai, naver_ai_tab, qwen, doubao and bing_ai_mode are accepted: any other value, including another model enabled for the API key&#39;s user, returns 422 ERR_INVALID_PARAM (invalid model). One of those eleven that the user has not enabled also returns 422 ERR_INVALID_PARAM, with the valid values in the message. | [optional] [enum: chatgpt, perplexity, ai_mode, ai_overview, gemini, copilot, amazon_rufus, claude, grok, deepseek, naver_ai, baidu_ai, meta_ai, naver_ai_tab, qwen, doubao, bing_ai_mode] |
+| **collectionId** | **String**| One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. | [optional] |
+| **countryCode** | **String**| One ISO country code or a comma-separated list (e.g. US,GB,DE) | [optional] |
+| **languageCode** | **String**| One ISO language code or a comma-separated list (e.g. en,es,de) | [optional] |
+| **prompt** | **Integer**| Filter by prompt ID. An id that is not a plain positive number, or that names no prompt of the project, returns 422 ERR_INVALID_PARAM. | [optional] |
+| **brandKind** | **String**| Filter by brand kind: brand (own brand/products), brand_other (competitors/other brands), non_brand (generic, no brand named). For fair 1:1 brand-vs-competitor comparisons (visibility, share of voice), use non_brand: brand-focused prompts skew results toward the brand they name. The in-app Overview page applies non_brand by default. | [optional] [enum: brand, brand_other, non_brand] |
+| **from** | **OffsetDateTime**|  | [optional] |
+| **to** | **OffsetDateTime**| End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. | [optional] |
+| **range** | **Integer**| Number of days to look back (alternative to from/to, which win when both are given). A value that is not a plain positive number returns 422 ERR_INVALID_PARAM, even beside from/to. | [optional] |
+
+### Return type
+
+[**UrlListsResponse**](UrlListsResponse.md)
+
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | URL lists |  -  |
+| **403** | Endpoint requires the Growth plan or above |  -  |
+| **422** | Invalid parameters |  -  |
+
+## listUrlListsWithHttpInfo
+
+> ApiResponse<UrlListsResponse> listUrlListsWithHttpInfo(projectId, model, collectionId, countryCode, languageCode, prompt, brandKind, from, to, range)
+
+List URL lists
+
+A URL list is a named set of rules, each an exact URL (matched over http and https, with or without www), a URL prefix (every page under host/path) or a domain (the site and its subdomains). Its numbers count the AI answers to the prompts tracked in the project: cited_entries is the entries an answer cited in the window and citations the answers citing any entry, each once. Without from/to or range the window is all time. Requires the Growth plan; lower tiers receive ERR_PLAN_REQUIRED.
+
+### Example
+
+```java
+// Import classes:
+import ai.llmpulse.sdk.ApiClient;
+import ai.llmpulse.sdk.ApiException;
+import ai.llmpulse.sdk.ApiResponse;
+import ai.llmpulse.sdk.Configuration;
+import ai.llmpulse.sdk.auth.*;
+import ai.llmpulse.sdk.models.*;
+import ai.llmpulse.sdk.api.SourcesCitationIntelligenceApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.llmpulse.ai/api/v1");
+        
+        // Configure HTTP bearer authorization: BearerAuth
+        HttpBearerAuth BearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("BearerAuth");
+        BearerAuth.setBearerToken("BEARER TOKEN");
+
+        SourcesCitationIntelligenceApi apiInstance = new SourcesCitationIntelligenceApi(defaultClient);
+        Integer projectId = 56; // Integer | Project ID
+        String model = "chatgpt"; // String | Filter by one AI model. Only chatgpt, ai_overview, ai_mode, perplexity, gemini, naver_ai, baidu_ai, naver_ai_tab, qwen, doubao and bing_ai_mode are accepted: any other value, including another model enabled for the API key's user, returns 422 ERR_INVALID_PARAM (invalid model). One of those eleven that the user has not enabled also returns 422 ERR_INVALID_PARAM, with the valid values in the message.
+        String collectionId = "12,34"; // String | One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize.
+        String countryCode = "countryCode_example"; // String | One ISO country code or a comma-separated list (e.g. US,GB,DE)
+        String languageCode = "languageCode_example"; // String | One ISO language code or a comma-separated list (e.g. en,es,de)
+        Integer prompt = 56; // Integer | Filter by prompt ID. An id that is not a plain positive number, or that names no prompt of the project, returns 422 ERR_INVALID_PARAM.
+        String brandKind = "brand"; // String | Filter by brand kind: brand (own brand/products), brand_other (competitors/other brands), non_brand (generic, no brand named). For fair 1:1 brand-vs-competitor comparisons (visibility, share of voice), use non_brand: brand-focused prompts skew results toward the brand they name. The in-app Overview page applies non_brand by default.
+        OffsetDateTime from = OffsetDateTime.now(); // OffsetDateTime | 
+        OffsetDateTime to = OffsetDateTime.now(); // OffsetDateTime | End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier.
+        Integer range = 56; // Integer | Number of days to look back (alternative to from/to, which win when both are given). A value that is not a plain positive number returns 422 ERR_INVALID_PARAM, even beside from/to.
+        try {
+            ApiResponse<UrlListsResponse> response = apiInstance.listUrlListsWithHttpInfo(projectId, model, collectionId, countryCode, languageCode, prompt, brandKind, from, to, range);
+            System.out.println("Status code: " + response.getStatusCode());
+            System.out.println("Response headers: " + response.getHeaders());
+            System.out.println("Response body: " + response.getData());
+        } catch (ApiException e) {
+            System.err.println("Exception when calling SourcesCitationIntelligenceApi#listUrlLists");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            System.err.println("Reason: " + e.getResponseBody());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **projectId** | **Integer**| Project ID | |
+| **model** | **String**| Filter by one AI model. Only chatgpt, ai_overview, ai_mode, perplexity, gemini, naver_ai, baidu_ai, naver_ai_tab, qwen, doubao and bing_ai_mode are accepted: any other value, including another model enabled for the API key&#39;s user, returns 422 ERR_INVALID_PARAM (invalid model). One of those eleven that the user has not enabled also returns 422 ERR_INVALID_PARAM, with the valid values in the message. | [optional] [enum: chatgpt, perplexity, ai_mode, ai_overview, gemini, copilot, amazon_rufus, claude, grok, deepseek, naver_ai, baidu_ai, meta_ai, naver_ai_tab, qwen, doubao, bing_ai_mode] |
+| **collectionId** | **String**| One collection/tag ID or a comma-separated list of IDs. A query value is always a string on the wire, so it is typed as one: the previous integer-or-string union made generators emit a wrapper type they could not serialize. | [optional] |
+| **countryCode** | **String**| One ISO country code or a comma-separated list (e.g. US,GB,DE) | [optional] |
+| **languageCode** | **String**| One ISO language code or a comma-separated list (e.g. en,es,de) | [optional] |
+| **prompt** | **Integer**| Filter by prompt ID. An id that is not a plain positive number, or that names no prompt of the project, returns 422 ERR_INVALID_PARAM. | [optional] |
+| **brandKind** | **String**| Filter by brand kind: brand (own brand/products), brand_other (competitors/other brands), non_brand (generic, no brand named). For fair 1:1 brand-vs-competitor comparisons (visibility, share of voice), use non_brand: brand-focused prompts skew results toward the brand they name. The in-app Overview page applies non_brand by default. | [optional] [enum: brand, brand_other, non_brand] |
+| **from** | **OffsetDateTime**|  | [optional] |
+| **to** | **OffsetDateTime**| End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. | [optional] |
+| **range** | **Integer**| Number of days to look back (alternative to from/to, which win when both are given). A value that is not a plain positive number returns 422 ERR_INVALID_PARAM, even beside from/to. | [optional] |
+
+### Return type
+
+ApiResponse<[**UrlListsResponse**](UrlListsResponse.md)>
+
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | URL lists |  -  |
+| **403** | Endpoint requires the Growth plan or above |  -  |
+| **422** | Invalid parameters |  -  |
+
+
+## removeUrlListEntries
+
+> UrlListEntriesRemoveResponse removeUrlListEntries(id, urlListEntriesRemoveRequest)
+
+Remove entries from a URL list
+
+Removes entries by id (from GET /url_lists/{id}) or by value as written (\&quot;https://acme.com/a\&quot;, \&quot;acme.com/blog/_*\&quot;, \&quot;acme.com\&quot;). Sending neither answers ERR_INVALID_PARAM. Requires a &#x60;read_write&#x60; scope API key and the Growth plan.
+
+### Example
+
+```java
+// Import classes:
+import ai.llmpulse.sdk.ApiClient;
+import ai.llmpulse.sdk.ApiException;
+import ai.llmpulse.sdk.Configuration;
+import ai.llmpulse.sdk.auth.*;
+import ai.llmpulse.sdk.models.*;
+import ai.llmpulse.sdk.api.SourcesCitationIntelligenceApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.llmpulse.ai/api/v1");
+        
+        // Configure HTTP bearer authorization: BearerAuth
+        HttpBearerAuth BearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("BearerAuth");
+        BearerAuth.setBearerToken("BEARER TOKEN");
+
+        SourcesCitationIntelligenceApi apiInstance = new SourcesCitationIntelligenceApi(defaultClient);
+        Integer id = 56; // Integer | 
+        UrlListEntriesRemoveRequest urlListEntriesRemoveRequest = new UrlListEntriesRemoveRequest(); // UrlListEntriesRemoveRequest | 
+        try {
+            UrlListEntriesRemoveResponse result = apiInstance.removeUrlListEntries(id, urlListEntriesRemoveRequest);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling SourcesCitationIntelligenceApi#removeUrlListEntries");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **Integer**|  | |
+| **urlListEntriesRemoveRequest** | [**UrlListEntriesRemoveRequest**](UrlListEntriesRemoveRequest.md)|  | |
+
+### Return type
+
+[**UrlListEntriesRemoveResponse**](UrlListEntriesRemoveResponse.md)
+
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Entries removed |  -  |
+| **403** | API key lacks write permission |  -  |
+| **404** | Resource not found |  -  |
+| **422** | Invalid parameters |  -  |
+
+## removeUrlListEntriesWithHttpInfo
+
+> ApiResponse<UrlListEntriesRemoveResponse> removeUrlListEntriesWithHttpInfo(id, urlListEntriesRemoveRequest)
+
+Remove entries from a URL list
+
+Removes entries by id (from GET /url_lists/{id}) or by value as written (\&quot;https://acme.com/a\&quot;, \&quot;acme.com/blog/_*\&quot;, \&quot;acme.com\&quot;). Sending neither answers ERR_INVALID_PARAM. Requires a &#x60;read_write&#x60; scope API key and the Growth plan.
+
+### Example
+
+```java
+// Import classes:
+import ai.llmpulse.sdk.ApiClient;
+import ai.llmpulse.sdk.ApiException;
+import ai.llmpulse.sdk.ApiResponse;
+import ai.llmpulse.sdk.Configuration;
+import ai.llmpulse.sdk.auth.*;
+import ai.llmpulse.sdk.models.*;
+import ai.llmpulse.sdk.api.SourcesCitationIntelligenceApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.llmpulse.ai/api/v1");
+        
+        // Configure HTTP bearer authorization: BearerAuth
+        HttpBearerAuth BearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("BearerAuth");
+        BearerAuth.setBearerToken("BEARER TOKEN");
+
+        SourcesCitationIntelligenceApi apiInstance = new SourcesCitationIntelligenceApi(defaultClient);
+        Integer id = 56; // Integer | 
+        UrlListEntriesRemoveRequest urlListEntriesRemoveRequest = new UrlListEntriesRemoveRequest(); // UrlListEntriesRemoveRequest | 
+        try {
+            ApiResponse<UrlListEntriesRemoveResponse> response = apiInstance.removeUrlListEntriesWithHttpInfo(id, urlListEntriesRemoveRequest);
+            System.out.println("Status code: " + response.getStatusCode());
+            System.out.println("Response headers: " + response.getHeaders());
+            System.out.println("Response body: " + response.getData());
+        } catch (ApiException e) {
+            System.err.println("Exception when calling SourcesCitationIntelligenceApi#removeUrlListEntries");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            System.err.println("Reason: " + e.getResponseBody());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **Integer**|  | |
+| **urlListEntriesRemoveRequest** | [**UrlListEntriesRemoveRequest**](UrlListEntriesRemoveRequest.md)|  | |
+
+### Return type
+
+ApiResponse<[**UrlListEntriesRemoveResponse**](UrlListEntriesRemoveResponse.md)>
+
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Entries removed |  -  |
+| **403** | API key lacks write permission |  -  |
+| **404** | Resource not found |  -  |
+| **422** | Invalid parameters |  -  |
+
+
+## updateUrlList
+
+> UrlListUpdateResponse updateUrlList(id, urlListUpdateRequest)
+
+Update a URL list
+
+Changes the name, description or currency of a URL list. Entries are added with POST /url_lists/{id}/entries and removed with POST /url_lists/{id}/entries/remove. Requires a &#x60;read_write&#x60; scope API key and the Growth plan.
+
+### Example
+
+```java
+// Import classes:
+import ai.llmpulse.sdk.ApiClient;
+import ai.llmpulse.sdk.ApiException;
+import ai.llmpulse.sdk.Configuration;
+import ai.llmpulse.sdk.auth.*;
+import ai.llmpulse.sdk.models.*;
+import ai.llmpulse.sdk.api.SourcesCitationIntelligenceApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.llmpulse.ai/api/v1");
+        
+        // Configure HTTP bearer authorization: BearerAuth
+        HttpBearerAuth BearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("BearerAuth");
+        BearerAuth.setBearerToken("BEARER TOKEN");
+
+        SourcesCitationIntelligenceApi apiInstance = new SourcesCitationIntelligenceApi(defaultClient);
+        Integer id = 56; // Integer | 
+        UrlListUpdateRequest urlListUpdateRequest = new UrlListUpdateRequest(); // UrlListUpdateRequest | 
+        try {
+            UrlListUpdateResponse result = apiInstance.updateUrlList(id, urlListUpdateRequest);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling SourcesCitationIntelligenceApi#updateUrlList");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **Integer**|  | |
+| **urlListUpdateRequest** | [**UrlListUpdateRequest**](UrlListUpdateRequest.md)|  | |
+
+### Return type
+
+[**UrlListUpdateResponse**](UrlListUpdateResponse.md)
+
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Updated |  -  |
+| **403** | API key lacks write permission |  -  |
+| **404** | Resource not found |  -  |
+| **422** | Invalid parameters |  -  |
+
+## updateUrlListWithHttpInfo
+
+> ApiResponse<UrlListUpdateResponse> updateUrlListWithHttpInfo(id, urlListUpdateRequest)
+
+Update a URL list
+
+Changes the name, description or currency of a URL list. Entries are added with POST /url_lists/{id}/entries and removed with POST /url_lists/{id}/entries/remove. Requires a &#x60;read_write&#x60; scope API key and the Growth plan.
+
+### Example
+
+```java
+// Import classes:
+import ai.llmpulse.sdk.ApiClient;
+import ai.llmpulse.sdk.ApiException;
+import ai.llmpulse.sdk.ApiResponse;
+import ai.llmpulse.sdk.Configuration;
+import ai.llmpulse.sdk.auth.*;
+import ai.llmpulse.sdk.models.*;
+import ai.llmpulse.sdk.api.SourcesCitationIntelligenceApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.llmpulse.ai/api/v1");
+        
+        // Configure HTTP bearer authorization: BearerAuth
+        HttpBearerAuth BearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("BearerAuth");
+        BearerAuth.setBearerToken("BEARER TOKEN");
+
+        SourcesCitationIntelligenceApi apiInstance = new SourcesCitationIntelligenceApi(defaultClient);
+        Integer id = 56; // Integer | 
+        UrlListUpdateRequest urlListUpdateRequest = new UrlListUpdateRequest(); // UrlListUpdateRequest | 
+        try {
+            ApiResponse<UrlListUpdateResponse> response = apiInstance.updateUrlListWithHttpInfo(id, urlListUpdateRequest);
+            System.out.println("Status code: " + response.getStatusCode());
+            System.out.println("Response headers: " + response.getHeaders());
+            System.out.println("Response body: " + response.getData());
+        } catch (ApiException e) {
+            System.err.println("Exception when calling SourcesCitationIntelligenceApi#updateUrlList");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            System.err.println("Reason: " + e.getResponseBody());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **Integer**|  | |
+| **urlListUpdateRequest** | [**UrlListUpdateRequest**](UrlListUpdateRequest.md)|  | |
+
+### Return type
+
+ApiResponse<[**UrlListUpdateResponse**](UrlListUpdateResponse.md)>
+
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Updated |  -  |
+| **403** | API key lacks write permission |  -  |
+| **404** | Resource not found |  -  |
 | **422** | Invalid parameters |  -  |
 
