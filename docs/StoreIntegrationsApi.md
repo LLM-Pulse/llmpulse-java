@@ -481,7 +481,7 @@ ApiResponse<[**StoreConnectionResponse**](StoreConnectionResponse.md)>
 
 Read AI-referred store orders
 
-Reads back the AI-referred orders a store app pushed for a project: totals, one row per AI assistant and a daily series of the days with orders. Revenue values are decimal strings in currency. Team members need read access to AI Traffic. Not available to accounts with a white-label portal or an embed (ERR_INTEGRATION_UNAVAILABLE).
+Reads back the AI-referred orders a store app pushed for a project: totals, one row per AI assistant and a daily series of the days with orders. Revenue values are decimal strings in currency. Needs the Growth plan or above, like AI Traffic, while the store app keeps pushing orders on every plan. Team members need read access to AI Traffic. Not available to accounts with a white-label portal or an embed (ERR_INTEGRATION_UNAVAILABLE).
 
 ### Example
 
@@ -550,7 +550,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Totals, per-assistant rows and the daily series |  -  |
-| **403** | The account has a white-label portal or an embed, so store integrations are not available (ERR_INTEGRATION_UNAVAILABLE). Writes with a read-only key answer ERR_INSUFFICIENT_SCOPE, and a team member without the permission ERR_INSUFFICIENT_PERMISSION, with the same status |  -  |
+| **403** | A plan below Growth answers ERR_PLAN_REQUIRED, and an account with a white-label portal or an embed ERR_INTEGRATION_UNAVAILABLE, with the same status |  -  |
 | **404** | Resource not found |  -  |
 | **422** | Invalid parameters |  -  |
 
@@ -560,7 +560,7 @@ public class Example {
 
 Read AI-referred store orders
 
-Reads back the AI-referred orders a store app pushed for a project: totals, one row per AI assistant and a daily series of the days with orders. Revenue values are decimal strings in currency. Team members need read access to AI Traffic. Not available to accounts with a white-label portal or an embed (ERR_INTEGRATION_UNAVAILABLE).
+Reads back the AI-referred orders a store app pushed for a project: totals, one row per AI assistant and a daily series of the days with orders. Revenue values are decimal strings in currency. Needs the Growth plan or above, like AI Traffic, while the store app keeps pushing orders on every plan. Team members need read access to AI Traffic. Not available to accounts with a white-label portal or an embed (ERR_INTEGRATION_UNAVAILABLE).
 
 ### Example
 
@@ -632,7 +632,7 @@ ApiResponse<[**AiOrdersResponse**](AiOrdersResponse.md)>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Totals, per-assistant rows and the daily series |  -  |
-| **403** | The account has a white-label portal or an embed, so store integrations are not available (ERR_INTEGRATION_UNAVAILABLE). Writes with a read-only key answer ERR_INSUFFICIENT_SCOPE, and a team member without the permission ERR_INSUFFICIENT_PERMISSION, with the same status |  -  |
+| **403** | A plan below Growth answers ERR_PLAN_REQUIRED, and an account with a white-label portal or an embed ERR_INTEGRATION_UNAVAILABLE, with the same status |  -  |
 | **404** | Resource not found |  -  |
 | **422** | Invalid parameters |  -  |
 

@@ -675,7 +675,7 @@ public class Example {
         OffsetDateTime from = OffsetDateTime.now(); // OffsetDateTime | 
         OffsetDateTime to = OffsetDateTime.now(); // OffsetDateTime | End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier.
         String sourceType = "owned"; // String | 
-        String sentiment = "negative"; // String | 
+        String sentiment = "negative"; // String | Keeps the citations of answers with a negative brand sentiment. Needs the Growth plan or above: below it the filter answers 403 ERR_PLAN_REQUIRED.
         String contentGap = "mentioned"; // String | mentioned: the cited page mentions your brand. gap: it mentions a competitor but not your brand. Only pages with usable content whose mention analysis has completed for this project match.
         Boolean includeSeries = false; // Boolean | Adds citation_series. Without it the response is unchanged.
         try {
@@ -707,7 +707,7 @@ public class Example {
 | **from** | **OffsetDateTime**|  | [optional] |
 | **to** | **OffsetDateTime**| End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. | [optional] |
 | **sourceType** | **String**|  | [optional] [enum: owned, competitor, third_party, social_media, own_domain, ugc, background] |
-| **sentiment** | **String**|  | [optional] [enum: negative] |
+| **sentiment** | **String**| Keeps the citations of answers with a negative brand sentiment. Needs the Growth plan or above: below it the filter answers 403 ERR_PLAN_REQUIRED. | [optional] [enum: negative] |
 | **contentGap** | **String**| mentioned: the cited page mentions your brand. gap: it mentions a competitor but not your brand. Only pages with usable content whose mention analysis has completed for this project match. | [optional] [enum: mentioned, gap] |
 | **includeSeries** | **Boolean**| Adds citation_series. Without it the response is unchanged. | [optional] [default to false] |
 
@@ -729,6 +729,7 @@ null (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | URL-level intelligence |  -  |
+| **403** | Endpoint requires the Growth plan or above |  -  |
 | **404** | Resource not found |  -  |
 
 ## getCitedUrlDetailWithHttpInfo
@@ -772,7 +773,7 @@ public class Example {
         OffsetDateTime from = OffsetDateTime.now(); // OffsetDateTime | 
         OffsetDateTime to = OffsetDateTime.now(); // OffsetDateTime | End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier.
         String sourceType = "owned"; // String | 
-        String sentiment = "negative"; // String | 
+        String sentiment = "negative"; // String | Keeps the citations of answers with a negative brand sentiment. Needs the Growth plan or above: below it the filter answers 403 ERR_PLAN_REQUIRED.
         String contentGap = "mentioned"; // String | mentioned: the cited page mentions your brand. gap: it mentions a competitor but not your brand. Only pages with usable content whose mention analysis has completed for this project match.
         Boolean includeSeries = false; // Boolean | Adds citation_series. Without it the response is unchanged.
         try {
@@ -806,7 +807,7 @@ public class Example {
 | **from** | **OffsetDateTime**|  | [optional] |
 | **to** | **OffsetDateTime**| End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. | [optional] |
 | **sourceType** | **String**|  | [optional] [enum: owned, competitor, third_party, social_media, own_domain, ugc, background] |
-| **sentiment** | **String**|  | [optional] [enum: negative] |
+| **sentiment** | **String**| Keeps the citations of answers with a negative brand sentiment. Needs the Growth plan or above: below it the filter answers 403 ERR_PLAN_REQUIRED. | [optional] [enum: negative] |
 | **contentGap** | **String**| mentioned: the cited page mentions your brand. gap: it mentions a competitor but not your brand. Only pages with usable content whose mention analysis has completed for this project match. | [optional] [enum: mentioned, gap] |
 | **includeSeries** | **Boolean**| Adds citation_series. Without it the response is unchanged. | [optional] [default to false] |
 
@@ -828,6 +829,7 @@ ApiResponse<Void>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | URL-level intelligence |  -  |
+| **403** | Endpoint requires the Growth plan or above |  -  |
 | **404** | Resource not found |  -  |
 
 
@@ -1268,7 +1270,7 @@ public class Example {
         Boolean includeSeries = false; // Boolean | Requires key, else 422 ERR_INVALID_PARAM. Adds citation_series to the group's row.
         String query = "query_example"; // String | 
         String sourceType = "owned"; // String | 
-        String sentiment = "negative"; // String | 
+        String sentiment = "negative"; // String | Keeps the citations of answers with a negative brand sentiment. Needs the Growth plan or above: below it the filter answers 403 ERR_PLAN_REQUIRED.
         String contentGap = "mentioned"; // String | mentioned: the cited page mentions your brand. gap: it mentions a competitor but not your brand. Only pages with usable content whose mention analysis has completed for this project match.
         try {
             apiInstance.listCitationGroups(projectId, view, page, perPage, order, direction, model, collectionId, countryCode, languageCode, prompt, brandKind, from, to, key, includeSeries, query, sourceType, sentiment, contentGap);
@@ -1306,7 +1308,7 @@ public class Example {
 | **includeSeries** | **Boolean**| Requires key, else 422 ERR_INVALID_PARAM. Adds citation_series to the group&#39;s row. | [optional] [default to false] |
 | **query** | **String**|  | [optional] |
 | **sourceType** | **String**|  | [optional] [enum: owned, competitor, third_party, social_media, own_domain, ugc, background] |
-| **sentiment** | **String**|  | [optional] [enum: negative] |
+| **sentiment** | **String**| Keeps the citations of answers with a negative brand sentiment. Needs the Growth plan or above: below it the filter answers 403 ERR_PLAN_REQUIRED. | [optional] [enum: negative] |
 | **contentGap** | **String**| mentioned: the cited page mentions your brand. gap: it mentions a competitor but not your brand. Only pages with usable content whose mention analysis has completed for this project match. | [optional] [enum: mentioned, gap] |
 
 ### Return type
@@ -1327,6 +1329,7 @@ null (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Grouped citation intelligence |  -  |
+| **403** | Endpoint requires the Growth plan or above |  -  |
 | **422** | Invalid parameters |  -  |
 
 ## listCitationGroupsWithHttpInfo
@@ -1377,7 +1380,7 @@ public class Example {
         Boolean includeSeries = false; // Boolean | Requires key, else 422 ERR_INVALID_PARAM. Adds citation_series to the group's row.
         String query = "query_example"; // String | 
         String sourceType = "owned"; // String | 
-        String sentiment = "negative"; // String | 
+        String sentiment = "negative"; // String | Keeps the citations of answers with a negative brand sentiment. Needs the Growth plan or above: below it the filter answers 403 ERR_PLAN_REQUIRED.
         String contentGap = "mentioned"; // String | mentioned: the cited page mentions your brand. gap: it mentions a competitor but not your brand. Only pages with usable content whose mention analysis has completed for this project match.
         try {
             ApiResponse<Void> response = apiInstance.listCitationGroupsWithHttpInfo(projectId, view, page, perPage, order, direction, model, collectionId, countryCode, languageCode, prompt, brandKind, from, to, key, includeSeries, query, sourceType, sentiment, contentGap);
@@ -1417,7 +1420,7 @@ public class Example {
 | **includeSeries** | **Boolean**| Requires key, else 422 ERR_INVALID_PARAM. Adds citation_series to the group&#39;s row. | [optional] [default to false] |
 | **query** | **String**|  | [optional] |
 | **sourceType** | **String**|  | [optional] [enum: owned, competitor, third_party, social_media, own_domain, ugc, background] |
-| **sentiment** | **String**|  | [optional] [enum: negative] |
+| **sentiment** | **String**| Keeps the citations of answers with a negative brand sentiment. Needs the Growth plan or above: below it the filter answers 403 ERR_PLAN_REQUIRED. | [optional] [enum: negative] |
 | **contentGap** | **String**| mentioned: the cited page mentions your brand. gap: it mentions a competitor but not your brand. Only pages with usable content whose mention analysis has completed for this project match. | [optional] [enum: mentioned, gap] |
 
 ### Return type
@@ -1438,12 +1441,13 @@ ApiResponse<Void>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Grouped citation intelligence |  -  |
+| **403** | Endpoint requires the Growth plan or above |  -  |
 | **422** | Invalid parameters |  -  |
 
 
 ## listCitedUrlOccurrences
 
-> void listCitedUrlOccurrences(projectId, urlSha256, page, perPage)
+> void listCitedUrlOccurrences(projectId, urlSha256, page, perPage, sentiment)
 
 Cited URL occurrences
 
@@ -1472,8 +1476,9 @@ public class Example {
         String urlSha256 = "urlSha256_example"; // String | 64-character hex SHA-256 of the cited URL
         Integer page = 1; // Integer | 
         Integer perPage = 20; // Integer | 
+        String sentiment = "negative"; // String | Keeps the occurrences in answers with a negative brand sentiment. Needs the Growth plan or above: below it the filter answers 403 ERR_PLAN_REQUIRED.
         try {
-            apiInstance.listCitedUrlOccurrences(projectId, urlSha256, page, perPage);
+            apiInstance.listCitedUrlOccurrences(projectId, urlSha256, page, perPage, sentiment);
         } catch (ApiException e) {
             System.err.println("Exception when calling SourcesCitationIntelligenceApi#listCitedUrlOccurrences");
             System.err.println("Status code: " + e.getCode());
@@ -1494,6 +1499,7 @@ public class Example {
 | **urlSha256** | **String**| 64-character hex SHA-256 of the cited URL | |
 | **page** | **Integer**|  | [optional] [default to 1] |
 | **perPage** | **Integer**|  | [optional] [default to 20] |
+| **sentiment** | **String**| Keeps the occurrences in answers with a negative brand sentiment. Needs the Growth plan or above: below it the filter answers 403 ERR_PLAN_REQUIRED. | [optional] [enum: negative] |
 
 ### Return type
 
@@ -1513,11 +1519,12 @@ null (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Paginated occurrences |  -  |
+| **403** | Endpoint requires the Growth plan or above |  -  |
 | **404** | Resource not found |  -  |
 
 ## listCitedUrlOccurrencesWithHttpInfo
 
-> ApiResponse<Void> listCitedUrlOccurrencesWithHttpInfo(projectId, urlSha256, page, perPage)
+> ApiResponse<Void> listCitedUrlOccurrencesWithHttpInfo(projectId, urlSha256, page, perPage, sentiment)
 
 Cited URL occurrences
 
@@ -1547,8 +1554,9 @@ public class Example {
         String urlSha256 = "urlSha256_example"; // String | 64-character hex SHA-256 of the cited URL
         Integer page = 1; // Integer | 
         Integer perPage = 20; // Integer | 
+        String sentiment = "negative"; // String | Keeps the occurrences in answers with a negative brand sentiment. Needs the Growth plan or above: below it the filter answers 403 ERR_PLAN_REQUIRED.
         try {
-            ApiResponse<Void> response = apiInstance.listCitedUrlOccurrencesWithHttpInfo(projectId, urlSha256, page, perPage);
+            ApiResponse<Void> response = apiInstance.listCitedUrlOccurrencesWithHttpInfo(projectId, urlSha256, page, perPage, sentiment);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
         } catch (ApiException e) {
@@ -1571,6 +1579,7 @@ public class Example {
 | **urlSha256** | **String**| 64-character hex SHA-256 of the cited URL | |
 | **page** | **Integer**|  | [optional] [default to 1] |
 | **perPage** | **Integer**|  | [optional] [default to 20] |
+| **sentiment** | **String**| Keeps the occurrences in answers with a negative brand sentiment. Needs the Growth plan or above: below it the filter answers 403 ERR_PLAN_REQUIRED. | [optional] [enum: negative] |
 
 ### Return type
 
@@ -1590,6 +1599,7 @@ ApiResponse<Void>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Paginated occurrences |  -  |
+| **403** | Endpoint requires the Growth plan or above |  -  |
 | **404** | Resource not found |  -  |
 
 

@@ -18,6 +18,7 @@
 |**perPage** | **Integer** |  |  [optional] |
 |**total** | **Integer** |  |  [optional] |
 |**data** | [**List&lt;PromptSummaryRow&gt;**](PromptSummaryRow.md) |  |  [optional] |
+|**planRequiredFields** | **List&lt;String&gt;** | The row fields left out because they need a higher plan (the sentiment fields below Growth); empty when none is |  |
 |**requestId** | **String** |  |  [optional] |
 
 
