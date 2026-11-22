@@ -2,7 +2,7 @@
 
 LLM Pulse API
 
-- API version: 1.100.0
+- API version: 1.101.0
 
 - Generator version: 7.24.0
 
@@ -43,7 +43,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>ai.llmpulse</groupId>
   <artifactId>llmpulse-java</artifactId>
-  <version>1.100.0</version>
+  <version>1.101.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -53,7 +53,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "ai.llmpulse:llmpulse-java:1.100.0"
+compile "ai.llmpulse:llmpulse-java:1.101.0"
 ```
 
 ### Others
@@ -66,7 +66,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-- `target/llmpulse-java-1.100.0.jar`
+- `target/llmpulse-java-1.101.0.jar`
 - `target/lib/*.jar`
 
 ## Getting Started
@@ -145,6 +145,14 @@ Class | Method | HTTP request | Description
 *ApiKeysApi* | [**listApiKeysWithHttpInfo**](docs/ApiKeysApi.md#listApiKeysWithHttpInfo) | **GET** /api_keys | List API keys
 *ApiKeysApi* | [**revokeApiKey**](docs/ApiKeysApi.md#revokeApiKey) | **DELETE** /api_keys/{id} | Revoke an API key
 *ApiKeysApi* | [**revokeApiKeyWithHttpInfo**](docs/ApiKeysApi.md#revokeApiKeyWithHttpInfo) | **DELETE** /api_keys/{id} | Revoke an API key
+*BingWebmasterToolsApi* | [**getBingWebmasterPages**](docs/BingWebmasterToolsApi.md#getBingWebmasterPages) | **GET** /bing_webmaster/pages | Top Bing Webmaster Tools pages (Growth+)
+*BingWebmasterToolsApi* | [**getBingWebmasterPagesWithHttpInfo**](docs/BingWebmasterToolsApi.md#getBingWebmasterPagesWithHttpInfo) | **GET** /bing_webmaster/pages | Top Bing Webmaster Tools pages (Growth+)
+*BingWebmasterToolsApi* | [**getBingWebmasterQueries**](docs/BingWebmasterToolsApi.md#getBingWebmasterQueries) | **GET** /bing_webmaster/queries | Top Bing Webmaster Tools queries (Growth+)
+*BingWebmasterToolsApi* | [**getBingWebmasterQueriesWithHttpInfo**](docs/BingWebmasterToolsApi.md#getBingWebmasterQueriesWithHttpInfo) | **GET** /bing_webmaster/queries | Top Bing Webmaster Tools queries (Growth+)
+*BingWebmasterToolsApi* | [**getBingWebmasterSummary**](docs/BingWebmasterToolsApi.md#getBingWebmasterSummary) | **GET** /bing_webmaster/summary | Bing Webmaster Tools summary (Growth+)
+*BingWebmasterToolsApi* | [**getBingWebmasterSummaryWithHttpInfo**](docs/BingWebmasterToolsApi.md#getBingWebmasterSummaryWithHttpInfo) | **GET** /bing_webmaster/summary | Bing Webmaster Tools summary (Growth+)
+*BingWebmasterToolsApi* | [**getBingWebmasterTimeseries**](docs/BingWebmasterToolsApi.md#getBingWebmasterTimeseries) | **GET** /bing_webmaster/timeseries | Bing Webmaster Tools time series (Growth+)
+*BingWebmasterToolsApi* | [**getBingWebmasterTimeseriesWithHttpInfo**](docs/BingWebmasterToolsApi.md#getBingWebmasterTimeseriesWithHttpInfo) | **GET** /bing_webmaster/timeseries | Bing Webmaster Tools time series (Growth+)
 *CollectionsTagsApi* | [**assignPromptTags**](docs/CollectionsTagsApi.md#assignPromptTags) | **POST** /prompts/assign_tags | Bulk-attach tags to prompts
 *CollectionsTagsApi* | [**assignPromptTagsWithHttpInfo**](docs/CollectionsTagsApi.md#assignPromptTagsWithHttpInfo) | **POST** /prompts/assign_tags | Bulk-attach tags to prompts
 *CollectionsTagsApi* | [**createCollection**](docs/CollectionsTagsApi.md#createCollection) | **POST** /collections | Create a tag
@@ -480,6 +488,12 @@ Class | Method | HTTP request | Description
  - [ApiErrorError](docs/ApiErrorError.md)
  - [ApiKeyInfo](docs/ApiKeyInfo.md)
  - [AssignPromptTagsRequest](docs/AssignPromptTagsRequest.md)
+ - [BingWebmasterListResponse](docs/BingWebmasterListResponse.md)
+ - [BingWebmasterListResponseDataInner](docs/BingWebmasterListResponseDataInner.md)
+ - [BingWebmasterMetrics](docs/BingWebmasterMetrics.md)
+ - [BingWebmasterSummaryResponse](docs/BingWebmasterSummaryResponse.md)
+ - [BingWebmasterTimeseriesResponse](docs/BingWebmasterTimeseriesResponse.md)
+ - [BingWebmasterTimeseriesResponseDataInner](docs/BingWebmasterTimeseriesResponseDataInner.md)
  - [CatalogProduct](docs/CatalogProduct.md)
  - [CatalogPromptSuggestion](docs/CatalogPromptSuggestion.md)
  - [CatalogPromptSuggestionIdsRequest](docs/CatalogPromptSuggestionIdsRequest.md)
@@ -633,6 +647,7 @@ Class | Method | HTTP request | Description
  - [ProjectDetails](docs/ProjectDetails.md)
  - [ProjectDetailsAllOfAgentTraffic](docs/ProjectDetailsAllOfAgentTraffic.md)
  - [ProjectDetailsAllOfAiTraffic](docs/ProjectDetailsAllOfAiTraffic.md)
+ - [ProjectDetailsAllOfBingWebmaster](docs/ProjectDetailsAllOfBingWebmaster.md)
  - [ProjectDetailsAllOfDataCoverage](docs/ProjectDetailsAllOfDataCoverage.md)
  - [ProjectDetailsAllOfPitchRun](docs/ProjectDetailsAllOfPitchRun.md)
  - [ProjectDetailsAllOfSearchConsole](docs/ProjectDetailsAllOfSearchConsole.md)

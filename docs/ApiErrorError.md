@@ -9,7 +9,7 @@
 |------------ | ------------- | ------------- | -------------|
 |**code** | [**CodeEnum**](#CodeEnum) |  |  [optional] |
 |**message** | **String** |  |  [optional] |
-|**meta** | **Object** | Extra detail for some codes. A not-connected or access-revoked error from the Search Console, AI traffic, web analytics or agent traffic endpoints carries connect_url, the in-app page where the user connects or reconnects the source. A prompt write refused because a launched pitch project&#39;s prompts are fixed carries reason pitch_prompts_frozen. |  [optional] |
+|**meta** | **Object** | Extra detail for some codes. A not-connected or access-revoked error from the Search Console, Bing Webmaster Tools, AI traffic, web analytics or agent traffic endpoints carries connect_url, the in-app page where the user connects or reconnects the source. A prompt write refused because a launched pitch project&#39;s prompts are fixed carries reason pitch_prompts_frozen. |  [optional] |
 
 
 
@@ -44,6 +44,7 @@
 | ERR_WEB_ANALYTICS_ACCESS_REVOKED | &quot;ERR_WEB_ANALYTICS_ACCESS_REVOKED&quot; |
 | ERR_WEB_ANALYTICS_UPSTREAM | &quot;ERR_WEB_ANALYTICS_UPSTREAM&quot; |
 | ERR_AGENT_TRAFFIC_NOT_CONNECTED | &quot;ERR_AGENT_TRAFFIC_NOT_CONNECTED&quot; |
+| ERR_BING_WEBMASTER_NOT_CONNECTED | &quot;ERR_BING_WEBMASTER_NOT_CONNECTED&quot; |
 | ERR_INVALID_PARAM | &quot;ERR_INVALID_PARAM&quot; |
 | ERR_INVALID_RANGE | &quot;ERR_INVALID_RANGE&quot; |
 | ERR_LIMIT_REACHED | &quot;ERR_LIMIT_REACHED&quot; |

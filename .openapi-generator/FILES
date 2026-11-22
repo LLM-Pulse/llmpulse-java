@@ -63,6 +63,13 @@ docs/ApiErrorError.md
 docs/ApiKeyInfo.md
 docs/ApiKeysApi.md
 docs/AssignPromptTagsRequest.md
+docs/BingWebmasterListResponse.md
+docs/BingWebmasterListResponseDataInner.md
+docs/BingWebmasterMetrics.md
+docs/BingWebmasterSummaryResponse.md
+docs/BingWebmasterTimeseriesResponse.md
+docs/BingWebmasterTimeseriesResponseDataInner.md
+docs/BingWebmasterToolsApi.md
 docs/CatalogProduct.md
 docs/CatalogPromptSuggestion.md
 docs/CatalogPromptSuggestionIdsRequest.md
@@ -225,6 +232,7 @@ docs/ProjectDeleteResponse.md
 docs/ProjectDetails.md
 docs/ProjectDetailsAllOfAgentTraffic.md
 docs/ProjectDetailsAllOfAiTraffic.md
+docs/ProjectDetailsAllOfBingWebmaster.md
 docs/ProjectDetailsAllOfDataCoverage.md
 docs/ProjectDetailsAllOfPitchRun.md
 docs/ProjectDetailsAllOfSearchConsole.md
@@ -410,6 +418,7 @@ src/main/java/ai/llmpulse/sdk/api/AiModelInsightsApi.java
 src/main/java/ai/llmpulse/sdk/api/AnnotationsApi.java
 src/main/java/ai/llmpulse/sdk/api/AnswersApi.java
 src/main/java/ai/llmpulse/sdk/api/ApiKeysApi.java
+src/main/java/ai/llmpulse/sdk/api/BingWebmasterToolsApi.java
 src/main/java/ai/llmpulse/sdk/api/CollectionsTagsApi.java
 src/main/java/ai/llmpulse/sdk/api/CompetitorsApi.java
 src/main/java/ai/llmpulse/sdk/api/CustomReportsApi.java
@@ -483,6 +492,12 @@ src/main/java/ai/llmpulse/sdk/model/ApiError.java
 src/main/java/ai/llmpulse/sdk/model/ApiErrorError.java
 src/main/java/ai/llmpulse/sdk/model/ApiKeyInfo.java
 src/main/java/ai/llmpulse/sdk/model/AssignPromptTagsRequest.java
+src/main/java/ai/llmpulse/sdk/model/BingWebmasterListResponse.java
+src/main/java/ai/llmpulse/sdk/model/BingWebmasterListResponseDataInner.java
+src/main/java/ai/llmpulse/sdk/model/BingWebmasterMetrics.java
+src/main/java/ai/llmpulse/sdk/model/BingWebmasterSummaryResponse.java
+src/main/java/ai/llmpulse/sdk/model/BingWebmasterTimeseriesResponse.java
+src/main/java/ai/llmpulse/sdk/model/BingWebmasterTimeseriesResponseDataInner.java
 src/main/java/ai/llmpulse/sdk/model/CatalogProduct.java
 src/main/java/ai/llmpulse/sdk/model/CatalogPromptSuggestion.java
 src/main/java/ai/llmpulse/sdk/model/CatalogPromptSuggestionIdsRequest.java
@@ -636,6 +651,7 @@ src/main/java/ai/llmpulse/sdk/model/ProjectDeleteResponse.java
 src/main/java/ai/llmpulse/sdk/model/ProjectDetails.java
 src/main/java/ai/llmpulse/sdk/model/ProjectDetailsAllOfAgentTraffic.java
 src/main/java/ai/llmpulse/sdk/model/ProjectDetailsAllOfAiTraffic.java
+src/main/java/ai/llmpulse/sdk/model/ProjectDetailsAllOfBingWebmaster.java
 src/main/java/ai/llmpulse/sdk/model/ProjectDetailsAllOfDataCoverage.java
 src/main/java/ai/llmpulse/sdk/model/ProjectDetailsAllOfPitchRun.java
 src/main/java/ai/llmpulse/sdk/model/ProjectDetailsAllOfSearchConsole.java
