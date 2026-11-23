@@ -48,6 +48,7 @@ The one run of a pitch project; null for a tracked project. Its answers are date
 | QWEN | &quot;qwen&quot; |
 | DOUBAO | &quot;doubao&quot; |
 | BING_AI_MODE | &quot;bing_ai_mode&quot; |
+| BING_AI_OVERVIEW | &quot;bing_ai_overview&quot; |
 
 
 
