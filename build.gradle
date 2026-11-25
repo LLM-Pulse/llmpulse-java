@@ -3,7 +3,7 @@ apply plugin: 'eclipse'
 apply plugin: 'com.diffplug.spotless'
 
 group = 'ai.llmpulse'
-version = '1.102.0'
+version = '1.103.0'
 
 buildscript {
     repositories {

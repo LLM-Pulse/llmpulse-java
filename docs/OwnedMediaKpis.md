@@ -15,6 +15,7 @@
 |**uniqueSubreddits** | **Integer** | Number of cited subreddits (provider&#x3D;reddit; null or omitted for other providers) |  [optional] |
 |**uniqueAuthors** | **Integer** | Number of cited Reddit authors (provider&#x3D;reddit; null or omitted for other providers) |  [optional] |
 |**positivePct** | **BigDecimal** | Positive sentiment among rated Reddit citations, as a percentage (provider&#x3D;reddit; null or omitted for other providers) |  [optional] |
+|**connectedCount** | **Integer** | provider&#x3D;overview only. The platforms with a connected profile, channel or app, out of the rows in platforms (the Connected sources card). It describes the current setup, so previous.kpis and changes leave it out |  [optional] |
 
 
 
