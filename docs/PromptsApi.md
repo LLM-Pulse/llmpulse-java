@@ -14,8 +14,12 @@ All URIs are relative to *https://api.llmpulse.ai/api/v1*
 | [**deletePromptWithHttpInfo**](PromptsApi.md#deletePromptWithHttpInfo) | **DELETE** /prompts/{id} | Delete a prompt |
 | [**getPromptGeneration**](PromptsApi.md#getPromptGeneration) | **GET** /prompt_generations/{id} | Get a prompt generation run |
 | [**getPromptGenerationWithHttpInfo**](PromptsApi.md#getPromptGenerationWithHttpInfo) | **GET** /prompt_generations/{id} | Get a prompt generation run |
+| [**importPeecExport**](PromptsApi.md#importPeecExport) | **POST** /prompts/import_peec_export | Import a Peec AI export |
+| [**importPeecExportWithHttpInfo**](PromptsApi.md#importPeecExportWithHttpInfo) | **POST** /prompts/import_peec_export | Import a Peec AI export |
 | [**importPrompts**](PromptsApi.md#importPrompts) | **POST** /prompts/import | Import prompts |
 | [**importPromptsWithHttpInfo**](PromptsApi.md#importPromptsWithHttpInfo) | **POST** /prompts/import | Import prompts |
+| [**importPromptsFile**](PromptsApi.md#importPromptsFile) | **POST** /prompts/import_file | Import prompts from a file |
+| [**importPromptsFileWithHttpInfo**](PromptsApi.md#importPromptsFileWithHttpInfo) | **POST** /prompts/import_file | Import prompts from a file |
 | [**listPromptExecutions**](PromptsApi.md#listPromptExecutions) | **GET** /dimensions/prompt_executions | List prompt executions |
 | [**listPromptExecutionsWithHttpInfo**](PromptsApi.md#listPromptExecutionsWithHttpInfo) | **GET** /dimensions/prompt_executions | List prompt executions |
 | [**listPrompts**](PromptsApi.md#listPrompts) | **GET** /dimensions/prompts | List prompts |
@@ -37,7 +41,7 @@ All URIs are relative to *https://api.llmpulse.ai/api/v1*
 
 Accept suggested prompts
 
-Starts tracking up to 100 pending suggestions: each becomes a prompt in its own country and language, optionally put in one tag (tag_ids or tag_names; create_missing creates a missing name when the team member may create tags). Suggestions that are no longer pending come back in skipped. When the new prompts would exceed the plan the call returns ERR_LIMIT_REACHED and accepts nothing. The prompts of a launched pitch project are fixed, so accepting a suggestion returns ERR_INVALID_PARAM with error.meta.reason pitch_prompts_frozen. Requires a &#x60;read_write&#x60; scope API key and, for team members, create access to Prompts.
+Starts tracking up to 100 pending suggestions: each becomes a prompt in its own country and language, optionally put in one tag (tag_ids or tag_names; create_missing creates a missing name when the team member may create tags). Suggestions that are no longer pending come back in skipped, as does one that would be a new prompt over the 2,000-byte limit (reason prompt_too_long), which stays pending. When the new prompts would exceed the plan the call returns ERR_LIMIT_REACHED and accepts nothing. The prompts of a launched pitch project are fixed, so accepting a suggestion returns ERR_INVALID_PARAM with error.meta.reason pitch_prompts_frozen. Requires a &#x60;read_write&#x60; scope API key and, for team members, create access to Prompts.
 
 ### Example
 
@@ -110,7 +114,7 @@ public class Example {
 
 Accept suggested prompts
 
-Starts tracking up to 100 pending suggestions: each becomes a prompt in its own country and language, optionally put in one tag (tag_ids or tag_names; create_missing creates a missing name when the team member may create tags). Suggestions that are no longer pending come back in skipped. When the new prompts would exceed the plan the call returns ERR_LIMIT_REACHED and accepts nothing. The prompts of a launched pitch project are fixed, so accepting a suggestion returns ERR_INVALID_PARAM with error.meta.reason pitch_prompts_frozen. Requires a &#x60;read_write&#x60; scope API key and, for team members, create access to Prompts.
+Starts tracking up to 100 pending suggestions: each becomes a prompt in its own country and language, optionally put in one tag (tag_ids or tag_names; create_missing creates a missing name when the team member may create tags). Suggestions that are no longer pending come back in skipped, as does one that would be a new prompt over the 2,000-byte limit (reason prompt_too_long), which stays pending. When the new prompts would exceed the plan the call returns ERR_LIMIT_REACHED and accepts nothing. The prompts of a launched pitch project are fixed, so accepting a suggestion returns ERR_INVALID_PARAM with error.meta.reason pitch_prompts_frozen. Requires a &#x60;read_write&#x60; scope API key and, for team members, create access to Prompts.
 
 ### Example
 
@@ -337,7 +341,7 @@ ApiResponse<[**PromptGenerationResponse**](PromptGenerationResponse.md)>
 
 Bulk-create prompts
 
-Add prompts to a project in bulk (up to 100 per request). Validates the account prompt quota and skips duplicates. When the project does not run on the schedule (paused, or beyond the plan&#39;s project limit) the prompts are still created, and the response says so with &#x60;tracked&#x60; false, &#x60;untracked_reason&#x60; and a &#x60;warning&#x60;. New prompts get their first answers within about 24 hours. The first run is queued on creation and a nightly run at 00:00 Europe/Madrid picks up any prompt still without answers, as far as the account&#39;s allowance of AI answers for the cycle covers it. When the allowance left cannot give every new prompt one answer per enabled AI model, &#x60;first_runs_wait_until&#x60; gives the reset time when the rest run, with a &#x60;warning&#x60;. On an account that caps each project&#39;s executions at its prompt limit, the project&#39;s own share of the allowance counts the same way. A pitch project holds at most 100 prompts in all, deleted ones included (ERR_LIMIT_REACHED past that), and the prompts of a launched pitch project are fixed, so adding one returns ERR_INVALID_PARAM with error.meta.reason pitch_prompts_frozen. Requires a &#x60;read_write&#x60; scope API key.
+Add prompts to a project in bulk (up to 100 per request). Validates the account prompt quota and skips duplicates. When the project does not run on the schedule (paused, or beyond the plan&#39;s project limit) the prompts are still created, and the response says so with &#x60;tracked&#x60; false, &#x60;untracked_reason&#x60; and a &#x60;warning&#x60;. New prompts get their first answers within about 24 hours. The first run is queued on creation and a nightly run at 00:00 Europe/Madrid picks up any prompt still without answers, as far as the account&#39;s allowance of AI answers for the cycle covers it. When the allowance left cannot give every new prompt one answer per enabled AI model, &#x60;first_runs_wait_until&#x60; gives the reset time when the rest run, with a &#x60;warning&#x60;. On an account that caps each project&#39;s executions at its prompt limit, the project&#39;s own share of the allowance counts the same way. A pitch project holds at most 100 prompts in all, deleted ones included (ERR_LIMIT_REACHED past that), and the prompts of a launched pitch project are fixed, so adding one returns ERR_INVALID_PARAM with error.meta.reason pitch_prompts_frozen. A new prompt over 2,000 bytes returns ERR_INVALID_PARAM with error.meta.reason prompt_too_long (see prompts). Requires a &#x60;read_write&#x60; scope API key.
 
 ### Example
 
@@ -409,7 +413,7 @@ public class Example {
 
 Bulk-create prompts
 
-Add prompts to a project in bulk (up to 100 per request). Validates the account prompt quota and skips duplicates. When the project does not run on the schedule (paused, or beyond the plan&#39;s project limit) the prompts are still created, and the response says so with &#x60;tracked&#x60; false, &#x60;untracked_reason&#x60; and a &#x60;warning&#x60;. New prompts get their first answers within about 24 hours. The first run is queued on creation and a nightly run at 00:00 Europe/Madrid picks up any prompt still without answers, as far as the account&#39;s allowance of AI answers for the cycle covers it. When the allowance left cannot give every new prompt one answer per enabled AI model, &#x60;first_runs_wait_until&#x60; gives the reset time when the rest run, with a &#x60;warning&#x60;. On an account that caps each project&#39;s executions at its prompt limit, the project&#39;s own share of the allowance counts the same way. A pitch project holds at most 100 prompts in all, deleted ones included (ERR_LIMIT_REACHED past that), and the prompts of a launched pitch project are fixed, so adding one returns ERR_INVALID_PARAM with error.meta.reason pitch_prompts_frozen. Requires a &#x60;read_write&#x60; scope API key.
+Add prompts to a project in bulk (up to 100 per request). Validates the account prompt quota and skips duplicates. When the project does not run on the schedule (paused, or beyond the plan&#39;s project limit) the prompts are still created, and the response says so with &#x60;tracked&#x60; false, &#x60;untracked_reason&#x60; and a &#x60;warning&#x60;. New prompts get their first answers within about 24 hours. The first run is queued on creation and a nightly run at 00:00 Europe/Madrid picks up any prompt still without answers, as far as the account&#39;s allowance of AI answers for the cycle covers it. When the allowance left cannot give every new prompt one answer per enabled AI model, &#x60;first_runs_wait_until&#x60; gives the reset time when the rest run, with a &#x60;warning&#x60;. On an account that caps each project&#39;s executions at its prompt limit, the project&#39;s own share of the allowance counts the same way. A pitch project holds at most 100 prompts in all, deleted ones included (ERR_LIMIT_REACHED past that), and the prompts of a launched pitch project are fixed, so adding one returns ERR_INVALID_PARAM with error.meta.reason pitch_prompts_frozen. A new prompt over 2,000 bytes returns ERR_INVALID_PARAM with error.meta.reason prompt_too_long (see prompts). Requires a &#x60;read_write&#x60; scope API key.
 
 ### Example
 
@@ -785,13 +789,167 @@ ApiResponse<[**PromptGenerationResponse**](PromptGenerationResponse.md)>
 | **404** | Resource not found |  -  |
 
 
+## importPeecExport
+
+> PeecExportImportResponse importPeecExport(projectId, _file)
+
+Import a Peec AI export
+
+Not available yet: until file imports are enabled, the call returns ERR_INTEGRATION_UNAVAILABLE (403). Imports the answers export of Peec AI, sent as a multipart/form-data body with project_id and the file as a part named file: a CSV of up to 8 MB and 20,000 answers with Peec AI&#39;s column names (user, assistant, model, created, and optionally country and mentions). Every prompt of the file becomes a tracked prompt of the project, and each answer from an AI model the account tracks is filed as that week&#39;s answer for its model and analysed for mentions, sources and sentiment like a tracked one; answers from other models are skipped and listed in skipped_models. Competitors are not created: detected_brands lists the names the export mentions, to add with POST /competitors. The file is checked whole before anything is written: a file that cannot be read returns ERR_INVALID_PARAM with error.meta.reason file_missing, file_empty, file_too_large, columns_missing, models_not_tracked, nothing_to_import or too_large (more than 20,000 weekly answers: prompts x AI models x weeks), dates_out_of_range (an answer dated before 2022-11-30 or after today), answer_too_long (an answer over 50,000 characters) or prompt_too_long (a prompt over 2,000 bytes), or a message naming the problem. The prompt limits count only the prompts the project does not hold yet, together with those of the account&#39;s imports still finishing: when they would exceed the project or the plan, the call returns ERR_LIMIT_REACHED and imports nothing, so a full account can still add answers to the prompts it holds. The analysis is paid on-demand work, so an account that is not active gets ERR_ACCOUNT_INACTIVE. The import is planned in the request and finishes in the background, usually within minutes: 202 means it started, and app_url opens the project&#39;s prompts. The MCP tool import_peec_export takes the same file through the MCP files extension. Requires a &#x60;read_write&#x60; scope API key and, for team members, create access to Prompts.
+
+### Example
+
+```java
+// Import classes:
+import ai.llmpulse.sdk.ApiClient;
+import ai.llmpulse.sdk.ApiException;
+import ai.llmpulse.sdk.Configuration;
+import ai.llmpulse.sdk.auth.*;
+import ai.llmpulse.sdk.models.*;
+import ai.llmpulse.sdk.api.PromptsApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.llmpulse.ai/api/v1");
+        
+        // Configure HTTP bearer authorization: BearerAuth
+        HttpBearerAuth BearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("BearerAuth");
+        BearerAuth.setBearerToken("BEARER TOKEN");
+
+        PromptsApi apiInstance = new PromptsApi(defaultClient);
+        Integer projectId = 56; // Integer | 
+        File _file = new File("/path/to/file"); // File | The answers export of Peec AI, a CSV of up to 8 MB and 20,000 answers
+        try {
+            PeecExportImportResponse result = apiInstance.importPeecExport(projectId, _file);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling PromptsApi#importPeecExport");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **projectId** | **Integer**|  | |
+| **_file** | **File**| The answers export of Peec AI, a CSV of up to 8 MB and 20,000 answers | |
+
+### Return type
+
+[**PeecExportImportResponse**](PeecExportImportResponse.md)
+
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: multipart/form-data
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **202** | The import started |  -  |
+| **403** | File imports are not available until they are enabled (ERR_INTEGRATION_UNAVAILABLE). Writes with a read-only key answer ERR_INSUFFICIENT_SCOPE, and a team member without the permission ERR_INSUFFICIENT_PERMISSION, with the same status |  -  |
+| **404** | Resource not found |  -  |
+| **422** | Invalid parameters |  -  |
+
+## importPeecExportWithHttpInfo
+
+> ApiResponse<PeecExportImportResponse> importPeecExportWithHttpInfo(projectId, _file)
+
+Import a Peec AI export
+
+Not available yet: until file imports are enabled, the call returns ERR_INTEGRATION_UNAVAILABLE (403). Imports the answers export of Peec AI, sent as a multipart/form-data body with project_id and the file as a part named file: a CSV of up to 8 MB and 20,000 answers with Peec AI&#39;s column names (user, assistant, model, created, and optionally country and mentions). Every prompt of the file becomes a tracked prompt of the project, and each answer from an AI model the account tracks is filed as that week&#39;s answer for its model and analysed for mentions, sources and sentiment like a tracked one; answers from other models are skipped and listed in skipped_models. Competitors are not created: detected_brands lists the names the export mentions, to add with POST /competitors. The file is checked whole before anything is written: a file that cannot be read returns ERR_INVALID_PARAM with error.meta.reason file_missing, file_empty, file_too_large, columns_missing, models_not_tracked, nothing_to_import or too_large (more than 20,000 weekly answers: prompts x AI models x weeks), dates_out_of_range (an answer dated before 2022-11-30 or after today), answer_too_long (an answer over 50,000 characters) or prompt_too_long (a prompt over 2,000 bytes), or a message naming the problem. The prompt limits count only the prompts the project does not hold yet, together with those of the account&#39;s imports still finishing: when they would exceed the project or the plan, the call returns ERR_LIMIT_REACHED and imports nothing, so a full account can still add answers to the prompts it holds. The analysis is paid on-demand work, so an account that is not active gets ERR_ACCOUNT_INACTIVE. The import is planned in the request and finishes in the background, usually within minutes: 202 means it started, and app_url opens the project&#39;s prompts. The MCP tool import_peec_export takes the same file through the MCP files extension. Requires a &#x60;read_write&#x60; scope API key and, for team members, create access to Prompts.
+
+### Example
+
+```java
+// Import classes:
+import ai.llmpulse.sdk.ApiClient;
+import ai.llmpulse.sdk.ApiException;
+import ai.llmpulse.sdk.ApiResponse;
+import ai.llmpulse.sdk.Configuration;
+import ai.llmpulse.sdk.auth.*;
+import ai.llmpulse.sdk.models.*;
+import ai.llmpulse.sdk.api.PromptsApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.llmpulse.ai/api/v1");
+        
+        // Configure HTTP bearer authorization: BearerAuth
+        HttpBearerAuth BearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("BearerAuth");
+        BearerAuth.setBearerToken("BEARER TOKEN");
+
+        PromptsApi apiInstance = new PromptsApi(defaultClient);
+        Integer projectId = 56; // Integer | 
+        File _file = new File("/path/to/file"); // File | The answers export of Peec AI, a CSV of up to 8 MB and 20,000 answers
+        try {
+            ApiResponse<PeecExportImportResponse> response = apiInstance.importPeecExportWithHttpInfo(projectId, _file);
+            System.out.println("Status code: " + response.getStatusCode());
+            System.out.println("Response headers: " + response.getHeaders());
+            System.out.println("Response body: " + response.getData());
+        } catch (ApiException e) {
+            System.err.println("Exception when calling PromptsApi#importPeecExport");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            System.err.println("Reason: " + e.getResponseBody());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **projectId** | **Integer**|  | |
+| **_file** | **File**| The answers export of Peec AI, a CSV of up to 8 MB and 20,000 answers | |
+
+### Return type
+
+ApiResponse<[**PeecExportImportResponse**](PeecExportImportResponse.md)>
+
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: multipart/form-data
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **202** | The import started |  -  |
+| **403** | File imports are not available until they are enabled (ERR_INTEGRATION_UNAVAILABLE). Writes with a read-only key answer ERR_INSUFFICIENT_SCOPE, and a team member without the permission ERR_INSUFFICIENT_PERMISSION, with the same status |  -  |
+| **404** | Resource not found |  -  |
+| **422** | Invalid parameters |  -  |
+
+
 ## importPrompts
 
 > PromptsImportResponse importPrompts(promptsImportRequest)
 
 Import prompts
 
-The app&#39;s CSV import as JSON: up to 500 rows, each with its own prompt, country_code, language_code (codes or names; both default to the project&#39;s) and tags, created when missing. Duplicates are skipped and existing prompts still get the row&#39;s tags. The prompt limits are checked before anything is written: when the new prompts would exceed the plan the call returns ERR_LIMIT_REACHED and imports nothing. A row is skipped and comes back in row_errors when its country or language is unknown, when it would give a prompt more than 50 tags (rows repeating a prompt add up) or when its tags would take the request past 500 new tags. For a team member without create access to Tags, a row that needs a tag that does not exist yet is skipped and comes back in row_errors. For a team member without update access to Prompts, a row matching a prompt that already existed adds no tags to it, and comes back in row_errors when it would have added one. Responds 201 when it created prompts, 200 otherwise. The prompts of a launched pitch project are fixed, so importing one returns ERR_INVALID_PARAM with error.meta.reason pitch_prompts_frozen. &#x60;tracked&#x60; false, with &#x60;untracked_reason&#x60; and a &#x60;warning&#x60;, means the project does not run on the schedule, so the imported prompts do not run until that changes. Imported prompts get their first answers within about 24 hours. The first run is queued on creation and a nightly run at 00:00 Europe/Madrid picks up any prompt still without answers, as far as the account&#39;s allowance of AI answers for the cycle covers it. When the allowance left cannot give every new prompt one answer per enabled AI model, &#x60;first_runs_wait_until&#x60; gives the reset time when the rest run, with a &#x60;warning&#x60;. On an account that caps each project&#39;s executions at its prompt limit, the project&#39;s own share of the allowance counts the same way. Requires a &#x60;read_write&#x60; scope API key and, for team members, create access to Prompts.
+The app&#39;s CSV import as JSON: up to 500 rows, each with its own prompt, country_code, language_code (codes or names; both default to the project&#39;s) and tags, created when missing. Duplicates are skipped and existing prompts still get the row&#39;s tags. The prompt limits are checked before anything is written: when the new prompts would exceed the plan the call returns ERR_LIMIT_REACHED and imports nothing. A row is skipped and comes back in row_errors when it would add a new prompt over 2,000 bytes, when its country or language is unknown, when it would give a prompt more than 50 tags (rows repeating a prompt add up) or when its tags would take the request past 500 new tags. For a team member without create access to Tags, a row that needs a tag that does not exist yet is skipped and comes back in row_errors. For a team member without update access to Prompts, a row matching a prompt that already existed adds no tags to it, and comes back in row_errors when it would have added one. Responds 201 when it created prompts, 200 otherwise. The prompts of a launched pitch project are fixed, so importing one returns ERR_INVALID_PARAM with error.meta.reason pitch_prompts_frozen. &#x60;tracked&#x60; false, with &#x60;untracked_reason&#x60; and a &#x60;warning&#x60;, means the project does not run on the schedule, so the imported prompts do not run until that changes. Imported prompts get their first answers within about 24 hours. The first run is queued on creation and a nightly run at 00:00 Europe/Madrid picks up any prompt still without answers, as far as the account&#39;s allowance of AI answers for the cycle covers it. When the allowance left cannot give every new prompt one answer per enabled AI model, &#x60;first_runs_wait_until&#x60; gives the reset time when the rest run, with a &#x60;warning&#x60;. On an account that caps each project&#39;s executions at its prompt limit, the project&#39;s own share of the allowance counts the same way. Requires a &#x60;read_write&#x60; scope API key and, for team members, create access to Prompts.
 
 ### Example
 
@@ -865,7 +1023,7 @@ public class Example {
 
 Import prompts
 
-The app&#39;s CSV import as JSON: up to 500 rows, each with its own prompt, country_code, language_code (codes or names; both default to the project&#39;s) and tags, created when missing. Duplicates are skipped and existing prompts still get the row&#39;s tags. The prompt limits are checked before anything is written: when the new prompts would exceed the plan the call returns ERR_LIMIT_REACHED and imports nothing. A row is skipped and comes back in row_errors when its country or language is unknown, when it would give a prompt more than 50 tags (rows repeating a prompt add up) or when its tags would take the request past 500 new tags. For a team member without create access to Tags, a row that needs a tag that does not exist yet is skipped and comes back in row_errors. For a team member without update access to Prompts, a row matching a prompt that already existed adds no tags to it, and comes back in row_errors when it would have added one. Responds 201 when it created prompts, 200 otherwise. The prompts of a launched pitch project are fixed, so importing one returns ERR_INVALID_PARAM with error.meta.reason pitch_prompts_frozen. &#x60;tracked&#x60; false, with &#x60;untracked_reason&#x60; and a &#x60;warning&#x60;, means the project does not run on the schedule, so the imported prompts do not run until that changes. Imported prompts get their first answers within about 24 hours. The first run is queued on creation and a nightly run at 00:00 Europe/Madrid picks up any prompt still without answers, as far as the account&#39;s allowance of AI answers for the cycle covers it. When the allowance left cannot give every new prompt one answer per enabled AI model, &#x60;first_runs_wait_until&#x60; gives the reset time when the rest run, with a &#x60;warning&#x60;. On an account that caps each project&#39;s executions at its prompt limit, the project&#39;s own share of the allowance counts the same way. Requires a &#x60;read_write&#x60; scope API key and, for team members, create access to Prompts.
+The app&#39;s CSV import as JSON: up to 500 rows, each with its own prompt, country_code, language_code (codes or names; both default to the project&#39;s) and tags, created when missing. Duplicates are skipped and existing prompts still get the row&#39;s tags. The prompt limits are checked before anything is written: when the new prompts would exceed the plan the call returns ERR_LIMIT_REACHED and imports nothing. A row is skipped and comes back in row_errors when it would add a new prompt over 2,000 bytes, when its country or language is unknown, when it would give a prompt more than 50 tags (rows repeating a prompt add up) or when its tags would take the request past 500 new tags. For a team member without create access to Tags, a row that needs a tag that does not exist yet is skipped and comes back in row_errors. For a team member without update access to Prompts, a row matching a prompt that already existed adds no tags to it, and comes back in row_errors when it would have added one. Responds 201 when it created prompts, 200 otherwise. The prompts of a launched pitch project are fixed, so importing one returns ERR_INVALID_PARAM with error.meta.reason pitch_prompts_frozen. &#x60;tracked&#x60; false, with &#x60;untracked_reason&#x60; and a &#x60;warning&#x60;, means the project does not run on the schedule, so the imported prompts do not run until that changes. Imported prompts get their first answers within about 24 hours. The first run is queued on creation and a nightly run at 00:00 Europe/Madrid picks up any prompt still without answers, as far as the account&#39;s allowance of AI answers for the cycle covers it. When the allowance left cannot give every new prompt one answer per enabled AI model, &#x60;first_runs_wait_until&#x60; gives the reset time when the rest run, with a &#x60;warning&#x60;. On an account that caps each project&#39;s executions at its prompt limit, the project&#39;s own share of the allowance counts the same way. Requires a &#x60;read_write&#x60; scope API key and, for team members, create access to Prompts.
 
 ### Example
 
@@ -933,6 +1091,162 @@ ApiResponse<[**PromptsImportResponse**](PromptsImportResponse.md)>
 | **200** | Nothing new was created (every row was a duplicate) |  -  |
 | **201** | Prompts imported |  -  |
 | **403** | API key lacks write permission |  -  |
+| **404** | Resource not found |  -  |
+| **422** | Invalid parameters |  -  |
+
+
+## importPromptsFile
+
+> PromptsImportFileResponse importPromptsFile(projectId, _file)
+
+Import prompts from a file
+
+Not available yet: until file imports are enabled, the call returns ERR_INTEGRATION_UNAVAILABLE (403). The app&#39;s CSV import with the file itself: a multipart/form-data body with project_id and the file as a part named file, a CSV or an .xlsx workbook (its first sheet) of up to 5 MB and 10,000 rows. The file is recognized by its bytes, never by its name or declared type, and formulas are never evaluated: a cell gives the value its spreadsheet saved. The columns are those of the app&#39;s import: prompt, then optional country, language and tags (separated by | or ,), under a header row or in that order; country and language take codes or names and default to the project&#39;s. Duplicates are skipped and existing prompts still get the row&#39;s tags. As in the app, the prompt limits count only the new prompts: when they would exceed the project or the plan, the call returns ERR_LIMIT_REACHED and imports nothing, so a full account can still tag the prompts it holds. A file that cannot be read returns ERR_INVALID_PARAM with error.meta.reason file_missing, file_empty or file_too_large, or a message naming the problem; rows that cannot be imported come back in row_errors, among them a row that would add a new prompt over 2,000 bytes. The MCP tool import_prompts_file takes the same file through the MCP files extension, so its rows never pass through the conversation. &#x60;tracked&#x60;, &#x60;warning&#x60; and &#x60;first_runs_wait_until&#x60; read as on POST /prompts/import. Requires a &#x60;read_write&#x60; scope API key and, for team members, create access to Prompts.
+
+### Example
+
+```java
+// Import classes:
+import ai.llmpulse.sdk.ApiClient;
+import ai.llmpulse.sdk.ApiException;
+import ai.llmpulse.sdk.Configuration;
+import ai.llmpulse.sdk.auth.*;
+import ai.llmpulse.sdk.models.*;
+import ai.llmpulse.sdk.api.PromptsApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.llmpulse.ai/api/v1");
+        
+        // Configure HTTP bearer authorization: BearerAuth
+        HttpBearerAuth BearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("BearerAuth");
+        BearerAuth.setBearerToken("BEARER TOKEN");
+
+        PromptsApi apiInstance = new PromptsApi(defaultClient);
+        Integer projectId = 56; // Integer | 
+        File _file = new File("/path/to/file"); // File | A CSV or .xlsx file (its first sheet is read) of up to 5 MB and 10,000 rows, with the columns of the app's CSV import
+        try {
+            PromptsImportFileResponse result = apiInstance.importPromptsFile(projectId, _file);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling PromptsApi#importPromptsFile");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **projectId** | **Integer**|  | |
+| **_file** | **File**| A CSV or .xlsx file (its first sheet is read) of up to 5 MB and 10,000 rows, with the columns of the app&#39;s CSV import | |
+
+### Return type
+
+[**PromptsImportFileResponse**](PromptsImportFileResponse.md)
+
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: multipart/form-data
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Nothing new was created (every row was a duplicate) |  -  |
+| **201** | Prompts imported |  -  |
+| **403** | File imports are not available until they are enabled (ERR_INTEGRATION_UNAVAILABLE). Writes with a read-only key answer ERR_INSUFFICIENT_SCOPE, and a team member without the permission ERR_INSUFFICIENT_PERMISSION, with the same status |  -  |
+| **404** | Resource not found |  -  |
+| **422** | Invalid parameters |  -  |
+
+## importPromptsFileWithHttpInfo
+
+> ApiResponse<PromptsImportFileResponse> importPromptsFileWithHttpInfo(projectId, _file)
+
+Import prompts from a file
+
+Not available yet: until file imports are enabled, the call returns ERR_INTEGRATION_UNAVAILABLE (403). The app&#39;s CSV import with the file itself: a multipart/form-data body with project_id and the file as a part named file, a CSV or an .xlsx workbook (its first sheet) of up to 5 MB and 10,000 rows. The file is recognized by its bytes, never by its name or declared type, and formulas are never evaluated: a cell gives the value its spreadsheet saved. The columns are those of the app&#39;s import: prompt, then optional country, language and tags (separated by | or ,), under a header row or in that order; country and language take codes or names and default to the project&#39;s. Duplicates are skipped and existing prompts still get the row&#39;s tags. As in the app, the prompt limits count only the new prompts: when they would exceed the project or the plan, the call returns ERR_LIMIT_REACHED and imports nothing, so a full account can still tag the prompts it holds. A file that cannot be read returns ERR_INVALID_PARAM with error.meta.reason file_missing, file_empty or file_too_large, or a message naming the problem; rows that cannot be imported come back in row_errors, among them a row that would add a new prompt over 2,000 bytes. The MCP tool import_prompts_file takes the same file through the MCP files extension, so its rows never pass through the conversation. &#x60;tracked&#x60;, &#x60;warning&#x60; and &#x60;first_runs_wait_until&#x60; read as on POST /prompts/import. Requires a &#x60;read_write&#x60; scope API key and, for team members, create access to Prompts.
+
+### Example
+
+```java
+// Import classes:
+import ai.llmpulse.sdk.ApiClient;
+import ai.llmpulse.sdk.ApiException;
+import ai.llmpulse.sdk.ApiResponse;
+import ai.llmpulse.sdk.Configuration;
+import ai.llmpulse.sdk.auth.*;
+import ai.llmpulse.sdk.models.*;
+import ai.llmpulse.sdk.api.PromptsApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.llmpulse.ai/api/v1");
+        
+        // Configure HTTP bearer authorization: BearerAuth
+        HttpBearerAuth BearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("BearerAuth");
+        BearerAuth.setBearerToken("BEARER TOKEN");
+
+        PromptsApi apiInstance = new PromptsApi(defaultClient);
+        Integer projectId = 56; // Integer | 
+        File _file = new File("/path/to/file"); // File | A CSV or .xlsx file (its first sheet is read) of up to 5 MB and 10,000 rows, with the columns of the app's CSV import
+        try {
+            ApiResponse<PromptsImportFileResponse> response = apiInstance.importPromptsFileWithHttpInfo(projectId, _file);
+            System.out.println("Status code: " + response.getStatusCode());
+            System.out.println("Response headers: " + response.getHeaders());
+            System.out.println("Response body: " + response.getData());
+        } catch (ApiException e) {
+            System.err.println("Exception when calling PromptsApi#importPromptsFile");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            System.err.println("Reason: " + e.getResponseBody());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **projectId** | **Integer**|  | |
+| **_file** | **File**| A CSV or .xlsx file (its first sheet is read) of up to 5 MB and 10,000 rows, with the columns of the app&#39;s CSV import | |
+
+### Return type
+
+ApiResponse<[**PromptsImportFileResponse**](PromptsImportFileResponse.md)>
+
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: multipart/form-data
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Nothing new was created (every row was a duplicate) |  -  |
+| **201** | Prompts imported |  -  |
+| **403** | File imports are not available until they are enabled (ERR_INTEGRATION_UNAVAILABLE). Writes with a read-only key answer ERR_INSUFFICIENT_SCOPE, and a team member without the permission ERR_INSUFFICIENT_PERMISSION, with the same status |  -  |
 | **404** | Resource not found |  -  |
 | **422** | Invalid parameters |  -  |
 

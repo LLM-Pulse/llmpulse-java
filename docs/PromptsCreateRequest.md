@@ -8,7 +8,7 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**projectId** | **Integer** |  |  |
-|**prompts** | **List&lt;String&gt;** |  |  |
+|**prompts** | **List&lt;String&gt;** | Prompt texts (max 100). Each can be up to 2,000 bytes of UTF-8 text (about 2,000 characters in English, fewer with accented letters or non-Latin scripts). A new prompt over that returns ERR_INVALID_PARAM with error.meta.reason prompt_too_long and creates none of the batch; a text the project already tracks still comes back as exists. |  |
 |**countryCode** | **String** |  |  |
 |**languageCode** | **String** |  |  |
 
