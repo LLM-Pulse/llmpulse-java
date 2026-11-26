@@ -165,7 +165,7 @@ ApiResponse<[**AnnotationCreateResponse**](AnnotationCreateResponse.md)>
 
 ## deleteAnnotation
 
-> void deleteAnnotation(projectId, id)
+> AnnotationDeleteResponse deleteAnnotation(projectId, id)
 
 Delete a timeline annotation
 
@@ -195,7 +195,8 @@ public class Example {
         Integer projectId = 56; // Integer | Project ID
         Integer id = 56; // Integer | 
         try {
-            apiInstance.deleteAnnotation(projectId, id);
+            AnnotationDeleteResponse result = apiInstance.deleteAnnotation(projectId, id);
+            System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling AnnotationsApi#deleteAnnotation");
             System.err.println("Status code: " + e.getCode());
@@ -217,8 +218,8 @@ public class Example {
 
 ### Return type
 
+[**AnnotationDeleteResponse**](AnnotationDeleteResponse.md)
 
-null (empty response body)
 
 ### Authorization
 
@@ -238,7 +239,7 @@ null (empty response body)
 
 ## deleteAnnotationWithHttpInfo
 
-> ApiResponse<Void> deleteAnnotationWithHttpInfo(projectId, id)
+> ApiResponse<AnnotationDeleteResponse> deleteAnnotationWithHttpInfo(projectId, id)
 
 Delete a timeline annotation
 
@@ -269,9 +270,10 @@ public class Example {
         Integer projectId = 56; // Integer | Project ID
         Integer id = 56; // Integer | 
         try {
-            ApiResponse<Void> response = apiInstance.deleteAnnotationWithHttpInfo(projectId, id);
+            ApiResponse<AnnotationDeleteResponse> response = apiInstance.deleteAnnotationWithHttpInfo(projectId, id);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
+            System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
             System.err.println("Exception when calling AnnotationsApi#deleteAnnotation");
             System.err.println("Status code: " + e.getCode());
@@ -293,8 +295,8 @@ public class Example {
 
 ### Return type
 
+ApiResponse<[**AnnotationDeleteResponse**](AnnotationDeleteResponse.md)>
 
-ApiResponse<Void>
 
 ### Authorization
 
@@ -315,7 +317,7 @@ ApiResponse<Void>
 
 ## listAnnotations
 
-> void listAnnotations(projectId, from, to, annotationCategoryId, page, perPage)
+> AnnotationsResponse listAnnotations(projectId, from, to, annotationCategoryId, page, perPage)
 
 List timeline annotations
 
@@ -349,7 +351,8 @@ public class Example {
         Integer page = 1; // Integer | 
         Integer perPage = 20; // Integer | 
         try {
-            apiInstance.listAnnotations(projectId, from, to, annotationCategoryId, page, perPage);
+            AnnotationsResponse result = apiInstance.listAnnotations(projectId, from, to, annotationCategoryId, page, perPage);
+            System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling AnnotationsApi#listAnnotations");
             System.err.println("Status code: " + e.getCode());
@@ -375,8 +378,8 @@ public class Example {
 
 ### Return type
 
+[**AnnotationsResponse**](AnnotationsResponse.md)
 
-null (empty response body)
 
 ### Authorization
 
@@ -395,7 +398,7 @@ null (empty response body)
 
 ## listAnnotationsWithHttpInfo
 
-> ApiResponse<Void> listAnnotationsWithHttpInfo(projectId, from, to, annotationCategoryId, page, perPage)
+> ApiResponse<AnnotationsResponse> listAnnotationsWithHttpInfo(projectId, from, to, annotationCategoryId, page, perPage)
 
 List timeline annotations
 
@@ -430,9 +433,10 @@ public class Example {
         Integer page = 1; // Integer | 
         Integer perPage = 20; // Integer | 
         try {
-            ApiResponse<Void> response = apiInstance.listAnnotationsWithHttpInfo(projectId, from, to, annotationCategoryId, page, perPage);
+            ApiResponse<AnnotationsResponse> response = apiInstance.listAnnotationsWithHttpInfo(projectId, from, to, annotationCategoryId, page, perPage);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
+            System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
             System.err.println("Exception when calling AnnotationsApi#listAnnotations");
             System.err.println("Status code: " + e.getCode());
@@ -458,8 +462,8 @@ public class Example {
 
 ### Return type
 
+ApiResponse<[**AnnotationsResponse**](AnnotationsResponse.md)>
 
-ApiResponse<Void>
 
 ### Authorization
 
@@ -479,7 +483,7 @@ ApiResponse<Void>
 
 ## updateAnnotation
 
-> void updateAnnotation(id, updateAnnotationRequest)
+> AnnotationUpdateResponse updateAnnotation(id, updateAnnotationRequest)
 
 Update a timeline annotation
 
@@ -509,7 +513,8 @@ public class Example {
         Integer id = 56; // Integer | 
         UpdateAnnotationRequest updateAnnotationRequest = new UpdateAnnotationRequest(); // UpdateAnnotationRequest | 
         try {
-            apiInstance.updateAnnotation(id, updateAnnotationRequest);
+            AnnotationUpdateResponse result = apiInstance.updateAnnotation(id, updateAnnotationRequest);
+            System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling AnnotationsApi#updateAnnotation");
             System.err.println("Status code: " + e.getCode());
@@ -531,8 +536,8 @@ public class Example {
 
 ### Return type
 
+[**AnnotationUpdateResponse**](AnnotationUpdateResponse.md)
 
-null (empty response body)
 
 ### Authorization
 
@@ -553,7 +558,7 @@ null (empty response body)
 
 ## updateAnnotationWithHttpInfo
 
-> ApiResponse<Void> updateAnnotationWithHttpInfo(id, updateAnnotationRequest)
+> ApiResponse<AnnotationUpdateResponse> updateAnnotationWithHttpInfo(id, updateAnnotationRequest)
 
 Update a timeline annotation
 
@@ -584,9 +589,10 @@ public class Example {
         Integer id = 56; // Integer | 
         UpdateAnnotationRequest updateAnnotationRequest = new UpdateAnnotationRequest(); // UpdateAnnotationRequest | 
         try {
-            ApiResponse<Void> response = apiInstance.updateAnnotationWithHttpInfo(id, updateAnnotationRequest);
+            ApiResponse<AnnotationUpdateResponse> response = apiInstance.updateAnnotationWithHttpInfo(id, updateAnnotationRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
+            System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
             System.err.println("Exception when calling AnnotationsApi#updateAnnotation");
             System.err.println("Status code: " + e.getCode());
@@ -608,8 +614,8 @@ public class Example {
 
 ### Return type
 
+ApiResponse<[**AnnotationUpdateResponse**](AnnotationUpdateResponse.md)>
 
-ApiResponse<Void>
 
 ### Authorization
 

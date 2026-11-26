@@ -17,7 +17,7 @@ All URIs are relative to *https://api.llmpulse.ai/api/v1*
 
 ## getRecommendation
 
-> void getRecommendation(projectId, id, itemStatus, resolveSourceRefs)
+> RecommendationDetailResponse getRecommendation(projectId, id, itemStatus, resolveSourceRefs)
 
 Get recommendation run with items
 
@@ -47,7 +47,8 @@ public class Example {
         String itemStatus = "active"; // String | 
         Boolean resolveSourceRefs = true; // Boolean | 
         try {
-            apiInstance.getRecommendation(projectId, id, itemStatus, resolveSourceRefs);
+            RecommendationDetailResponse result = apiInstance.getRecommendation(projectId, id, itemStatus, resolveSourceRefs);
+            System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling RecommendationsApi#getRecommendation");
             System.err.println("Status code: " + e.getCode());
@@ -71,8 +72,8 @@ public class Example {
 
 ### Return type
 
+[**RecommendationDetailResponse**](RecommendationDetailResponse.md)
 
-null (empty response body)
 
 ### Authorization
 
@@ -91,7 +92,7 @@ null (empty response body)
 
 ## getRecommendationWithHttpInfo
 
-> ApiResponse<Void> getRecommendationWithHttpInfo(projectId, id, itemStatus, resolveSourceRefs)
+> ApiResponse<RecommendationDetailResponse> getRecommendationWithHttpInfo(projectId, id, itemStatus, resolveSourceRefs)
 
 Get recommendation run with items
 
@@ -122,9 +123,10 @@ public class Example {
         String itemStatus = "active"; // String | 
         Boolean resolveSourceRefs = true; // Boolean | 
         try {
-            ApiResponse<Void> response = apiInstance.getRecommendationWithHttpInfo(projectId, id, itemStatus, resolveSourceRefs);
+            ApiResponse<RecommendationDetailResponse> response = apiInstance.getRecommendationWithHttpInfo(projectId, id, itemStatus, resolveSourceRefs);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
+            System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
             System.err.println("Exception when calling RecommendationsApi#getRecommendation");
             System.err.println("Status code: " + e.getCode());
@@ -148,8 +150,8 @@ public class Example {
 
 ### Return type
 
+ApiResponse<[**RecommendationDetailResponse**](RecommendationDetailResponse.md)>
 
-ApiResponse<Void>
 
 ### Authorization
 
@@ -169,7 +171,7 @@ ApiResponse<Void>
 
 ## launchRecommendations
 
-> void launchRecommendations(launchRecommendationsRequest)
+> RecommendationLaunchResponse launchRecommendations(launchRecommendationsRequest)
 
 Launch a recommendations generation
 
@@ -198,7 +200,8 @@ public class Example {
         RecommendationsApi apiInstance = new RecommendationsApi(defaultClient);
         LaunchRecommendationsRequest launchRecommendationsRequest = new LaunchRecommendationsRequest(); // LaunchRecommendationsRequest | 
         try {
-            apiInstance.launchRecommendations(launchRecommendationsRequest);
+            RecommendationLaunchResponse result = apiInstance.launchRecommendations(launchRecommendationsRequest);
+            System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling RecommendationsApi#launchRecommendations");
             System.err.println("Status code: " + e.getCode());
@@ -219,8 +222,8 @@ public class Example {
 
 ### Return type
 
+[**RecommendationLaunchResponse**](RecommendationLaunchResponse.md)
 
-null (empty response body)
 
 ### Authorization
 
@@ -240,7 +243,7 @@ null (empty response body)
 
 ## launchRecommendationsWithHttpInfo
 
-> ApiResponse<Void> launchRecommendationsWithHttpInfo(launchRecommendationsRequest)
+> ApiResponse<RecommendationLaunchResponse> launchRecommendationsWithHttpInfo(launchRecommendationsRequest)
 
 Launch a recommendations generation
 
@@ -270,9 +273,10 @@ public class Example {
         RecommendationsApi apiInstance = new RecommendationsApi(defaultClient);
         LaunchRecommendationsRequest launchRecommendationsRequest = new LaunchRecommendationsRequest(); // LaunchRecommendationsRequest | 
         try {
-            ApiResponse<Void> response = apiInstance.launchRecommendationsWithHttpInfo(launchRecommendationsRequest);
+            ApiResponse<RecommendationLaunchResponse> response = apiInstance.launchRecommendationsWithHttpInfo(launchRecommendationsRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
+            System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
             System.err.println("Exception when calling RecommendationsApi#launchRecommendations");
             System.err.println("Status code: " + e.getCode());
@@ -293,8 +297,8 @@ public class Example {
 
 ### Return type
 
+ApiResponse<[**RecommendationLaunchResponse**](RecommendationLaunchResponse.md)>
 
-ApiResponse<Void>
 
 ### Authorization
 

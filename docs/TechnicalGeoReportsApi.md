@@ -19,7 +19,7 @@ All URIs are relative to *https://api.llmpulse.ai/api/v1*
 
 ## createTechnicalGeoReports
 
-> void createTechnicalGeoReports(createTechnicalGeoReportsRequest)
+> TechnicalGeoReportsCreateResponse createTechnicalGeoReports(createTechnicalGeoReportsRequest)
 
 Run technical GEO analysis
 
@@ -48,7 +48,8 @@ public class Example {
         TechnicalGeoReportsApi apiInstance = new TechnicalGeoReportsApi(defaultClient);
         CreateTechnicalGeoReportsRequest createTechnicalGeoReportsRequest = new CreateTechnicalGeoReportsRequest(); // CreateTechnicalGeoReportsRequest | 
         try {
-            apiInstance.createTechnicalGeoReports(createTechnicalGeoReportsRequest);
+            TechnicalGeoReportsCreateResponse result = apiInstance.createTechnicalGeoReports(createTechnicalGeoReportsRequest);
+            System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling TechnicalGeoReportsApi#createTechnicalGeoReports");
             System.err.println("Status code: " + e.getCode());
@@ -69,8 +70,8 @@ public class Example {
 
 ### Return type
 
+[**TechnicalGeoReportsCreateResponse**](TechnicalGeoReportsCreateResponse.md)
 
-null (empty response body)
 
 ### Authorization
 
@@ -90,7 +91,7 @@ null (empty response body)
 
 ## createTechnicalGeoReportsWithHttpInfo
 
-> ApiResponse<Void> createTechnicalGeoReportsWithHttpInfo(createTechnicalGeoReportsRequest)
+> ApiResponse<TechnicalGeoReportsCreateResponse> createTechnicalGeoReportsWithHttpInfo(createTechnicalGeoReportsRequest)
 
 Run technical GEO analysis
 
@@ -120,9 +121,10 @@ public class Example {
         TechnicalGeoReportsApi apiInstance = new TechnicalGeoReportsApi(defaultClient);
         CreateTechnicalGeoReportsRequest createTechnicalGeoReportsRequest = new CreateTechnicalGeoReportsRequest(); // CreateTechnicalGeoReportsRequest | 
         try {
-            ApiResponse<Void> response = apiInstance.createTechnicalGeoReportsWithHttpInfo(createTechnicalGeoReportsRequest);
+            ApiResponse<TechnicalGeoReportsCreateResponse> response = apiInstance.createTechnicalGeoReportsWithHttpInfo(createTechnicalGeoReportsRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
+            System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
             System.err.println("Exception when calling TechnicalGeoReportsApi#createTechnicalGeoReports");
             System.err.println("Status code: " + e.getCode());
@@ -143,8 +145,8 @@ public class Example {
 
 ### Return type
 
+ApiResponse<[**TechnicalGeoReportsCreateResponse**](TechnicalGeoReportsCreateResponse.md)>
 
-ApiResponse<Void>
 
 ### Authorization
 
@@ -165,7 +167,7 @@ ApiResponse<Void>
 
 ## getTechnicalGeoReport
 
-> void getTechnicalGeoReport(projectId, reportType, id)
+> TechnicalGeoReportResponse getTechnicalGeoReport(projectId, reportType, id)
 
 Get a technical GEO report
 
@@ -196,7 +198,8 @@ public class Example {
         String reportType = "crawlability"; // String | 
         Integer id = 56; // Integer | Report id returned by POST /technical_geo_reports or GET /technical_geo_reports
         try {
-            apiInstance.getTechnicalGeoReport(projectId, reportType, id);
+            TechnicalGeoReportResponse result = apiInstance.getTechnicalGeoReport(projectId, reportType, id);
+            System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling TechnicalGeoReportsApi#getTechnicalGeoReport");
             System.err.println("Status code: " + e.getCode());
@@ -219,8 +222,8 @@ public class Example {
 
 ### Return type
 
+[**TechnicalGeoReportResponse**](TechnicalGeoReportResponse.md)
 
-null (empty response body)
 
 ### Authorization
 
@@ -240,7 +243,7 @@ null (empty response body)
 
 ## getTechnicalGeoReportWithHttpInfo
 
-> ApiResponse<Void> getTechnicalGeoReportWithHttpInfo(projectId, reportType, id)
+> ApiResponse<TechnicalGeoReportResponse> getTechnicalGeoReportWithHttpInfo(projectId, reportType, id)
 
 Get a technical GEO report
 
@@ -272,9 +275,10 @@ public class Example {
         String reportType = "crawlability"; // String | 
         Integer id = 56; // Integer | Report id returned by POST /technical_geo_reports or GET /technical_geo_reports
         try {
-            ApiResponse<Void> response = apiInstance.getTechnicalGeoReportWithHttpInfo(projectId, reportType, id);
+            ApiResponse<TechnicalGeoReportResponse> response = apiInstance.getTechnicalGeoReportWithHttpInfo(projectId, reportType, id);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
+            System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
             System.err.println("Exception when calling TechnicalGeoReportsApi#getTechnicalGeoReport");
             System.err.println("Status code: " + e.getCode());
@@ -297,8 +301,8 @@ public class Example {
 
 ### Return type
 
+ApiResponse<[**TechnicalGeoReportResponse**](TechnicalGeoReportResponse.md)>
 
-ApiResponse<Void>
 
 ### Authorization
 
@@ -319,7 +323,7 @@ ApiResponse<Void>
 
 ## listTechnicalGeoReports
 
-> void listTechnicalGeoReports(projectId, reportType, status, batchId, page, perPage)
+> TechnicalGeoReportsResponse listTechnicalGeoReports(projectId, reportType, status, batchId, page, perPage)
 
 List technical GEO reports
 
@@ -353,7 +357,8 @@ public class Example {
         Integer page = 1; // Integer | 
         Integer perPage = 20; // Integer | 
         try {
-            apiInstance.listTechnicalGeoReports(projectId, reportType, status, batchId, page, perPage);
+            TechnicalGeoReportsResponse result = apiInstance.listTechnicalGeoReports(projectId, reportType, status, batchId, page, perPage);
+            System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling TechnicalGeoReportsApi#listTechnicalGeoReports");
             System.err.println("Status code: " + e.getCode());
@@ -379,8 +384,8 @@ public class Example {
 
 ### Return type
 
+[**TechnicalGeoReportsResponse**](TechnicalGeoReportsResponse.md)
 
-null (empty response body)
 
 ### Authorization
 
@@ -399,7 +404,7 @@ null (empty response body)
 
 ## listTechnicalGeoReportsWithHttpInfo
 
-> ApiResponse<Void> listTechnicalGeoReportsWithHttpInfo(projectId, reportType, status, batchId, page, perPage)
+> ApiResponse<TechnicalGeoReportsResponse> listTechnicalGeoReportsWithHttpInfo(projectId, reportType, status, batchId, page, perPage)
 
 List technical GEO reports
 
@@ -434,9 +439,10 @@ public class Example {
         Integer page = 1; // Integer | 
         Integer perPage = 20; // Integer | 
         try {
-            ApiResponse<Void> response = apiInstance.listTechnicalGeoReportsWithHttpInfo(projectId, reportType, status, batchId, page, perPage);
+            ApiResponse<TechnicalGeoReportsResponse> response = apiInstance.listTechnicalGeoReportsWithHttpInfo(projectId, reportType, status, batchId, page, perPage);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
+            System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
             System.err.println("Exception when calling TechnicalGeoReportsApi#listTechnicalGeoReports");
             System.err.println("Status code: " + e.getCode());
@@ -462,8 +468,8 @@ public class Example {
 
 ### Return type
 
+ApiResponse<[**TechnicalGeoReportsResponse**](TechnicalGeoReportsResponse.md)>
 
-ApiResponse<Void>
 
 ### Authorization
 

@@ -195,7 +195,7 @@ ApiResponse<[**AgentTrafficResponse**](AgentTrafficResponse.md)>
 
 ## getAiTraffic
 
-> void getAiTraffic(projectId, range, from, to, source, granularity)
+> AiTrafficResponse getAiTraffic(projectId, range, from, to, source, granularity)
 
 AI referral traffic (Scale plan or above)
 
@@ -229,7 +229,8 @@ public class Example {
         String source = "source_example"; // String | Filter by a single AI source slug (e.g. chatgpt, perplexity, gemini, claude)
         String granularity = "day"; // String | 
         try {
-            apiInstance.getAiTraffic(projectId, range, from, to, source, granularity);
+            AiTrafficResponse result = apiInstance.getAiTraffic(projectId, range, from, to, source, granularity);
+            System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling AiAgentTrafficApi#getAiTraffic");
             System.err.println("Status code: " + e.getCode());
@@ -255,8 +256,8 @@ public class Example {
 
 ### Return type
 
+[**AiTrafficResponse**](AiTrafficResponse.md)
 
-null (empty response body)
 
 ### Authorization
 
@@ -277,7 +278,7 @@ null (empty response body)
 
 ## getAiTrafficWithHttpInfo
 
-> ApiResponse<Void> getAiTrafficWithHttpInfo(projectId, range, from, to, source, granularity)
+> ApiResponse<AiTrafficResponse> getAiTrafficWithHttpInfo(projectId, range, from, to, source, granularity)
 
 AI referral traffic (Scale plan or above)
 
@@ -312,9 +313,10 @@ public class Example {
         String source = "source_example"; // String | Filter by a single AI source slug (e.g. chatgpt, perplexity, gemini, claude)
         String granularity = "day"; // String | 
         try {
-            ApiResponse<Void> response = apiInstance.getAiTrafficWithHttpInfo(projectId, range, from, to, source, granularity);
+            ApiResponse<AiTrafficResponse> response = apiInstance.getAiTrafficWithHttpInfo(projectId, range, from, to, source, granularity);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
+            System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
             System.err.println("Exception when calling AiAgentTrafficApi#getAiTraffic");
             System.err.println("Status code: " + e.getCode());
@@ -340,8 +342,8 @@ public class Example {
 
 ### Return type
 
+ApiResponse<[**AiTrafficResponse**](AiTrafficResponse.md)>
 
-ApiResponse<Void>
 
 ### Authorization
 

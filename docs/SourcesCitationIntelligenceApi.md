@@ -489,7 +489,7 @@ ApiResponse<[**UrlListDeleteResponse**](UrlListDeleteResponse.md)>
 
 ## getCitedUrlContent
 
-> void getCitedUrlContent(projectId, urlSha256)
+> CitedUrlContentResponse getCitedUrlContent(projectId, urlSha256)
 
 Cited URL cached content
 
@@ -519,7 +519,8 @@ public class Example {
         Integer projectId = 56; // Integer | Project ID
         String urlSha256 = "urlSha256_example"; // String | 64-character hex SHA-256 of the cited URL
         try {
-            apiInstance.getCitedUrlContent(projectId, urlSha256);
+            CitedUrlContentResponse result = apiInstance.getCitedUrlContent(projectId, urlSha256);
+            System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling SourcesCitationIntelligenceApi#getCitedUrlContent");
             System.err.println("Status code: " + e.getCode());
@@ -541,8 +542,8 @@ public class Example {
 
 ### Return type
 
+[**CitedUrlContentResponse**](CitedUrlContentResponse.md)
 
-null (empty response body)
 
 ### Authorization
 
@@ -561,7 +562,7 @@ null (empty response body)
 
 ## getCitedUrlContentWithHttpInfo
 
-> ApiResponse<Void> getCitedUrlContentWithHttpInfo(projectId, urlSha256)
+> ApiResponse<CitedUrlContentResponse> getCitedUrlContentWithHttpInfo(projectId, urlSha256)
 
 Cited URL cached content
 
@@ -592,9 +593,10 @@ public class Example {
         Integer projectId = 56; // Integer | Project ID
         String urlSha256 = "urlSha256_example"; // String | 64-character hex SHA-256 of the cited URL
         try {
-            ApiResponse<Void> response = apiInstance.getCitedUrlContentWithHttpInfo(projectId, urlSha256);
+            ApiResponse<CitedUrlContentResponse> response = apiInstance.getCitedUrlContentWithHttpInfo(projectId, urlSha256);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
+            System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
             System.err.println("Exception when calling SourcesCitationIntelligenceApi#getCitedUrlContent");
             System.err.println("Status code: " + e.getCode());
@@ -616,8 +618,8 @@ public class Example {
 
 ### Return type
 
+ApiResponse<[**CitedUrlContentResponse**](CitedUrlContentResponse.md)>
 
-ApiResponse<Void>
 
 ### Authorization
 
@@ -637,7 +639,7 @@ ApiResponse<Void>
 
 ## getCitedUrlDetail
 
-> void getCitedUrlDetail(projectId, urlSha256, model, collectionId, countryCode, languageCode, prompt, brandKind, from, to, sourceType, sentiment, contentGap, includeSeries)
+> CitedUrlDetailsResponse getCitedUrlDetail(projectId, urlSha256, model, collectionId, countryCode, languageCode, prompt, brandKind, from, to, sourceType, sentiment, contentGap, includeSeries)
 
 Cited URL detail
 
@@ -679,7 +681,8 @@ public class Example {
         String contentGap = "mentioned"; // String | mentioned: the cited page mentions your brand. gap: it mentions a competitor but not your brand. Only pages with usable content whose mention analysis has completed for this project match.
         Boolean includeSeries = false; // Boolean | Adds citation_series. Without it the response is unchanged.
         try {
-            apiInstance.getCitedUrlDetail(projectId, urlSha256, model, collectionId, countryCode, languageCode, prompt, brandKind, from, to, sourceType, sentiment, contentGap, includeSeries);
+            CitedUrlDetailsResponse result = apiInstance.getCitedUrlDetail(projectId, urlSha256, model, collectionId, countryCode, languageCode, prompt, brandKind, from, to, sourceType, sentiment, contentGap, includeSeries);
+            System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling SourcesCitationIntelligenceApi#getCitedUrlDetail");
             System.err.println("Status code: " + e.getCode());
@@ -713,8 +716,8 @@ public class Example {
 
 ### Return type
 
+[**CitedUrlDetailsResponse**](CitedUrlDetailsResponse.md)
 
-null (empty response body)
 
 ### Authorization
 
@@ -734,7 +737,7 @@ null (empty response body)
 
 ## getCitedUrlDetailWithHttpInfo
 
-> ApiResponse<Void> getCitedUrlDetailWithHttpInfo(projectId, urlSha256, model, collectionId, countryCode, languageCode, prompt, brandKind, from, to, sourceType, sentiment, contentGap, includeSeries)
+> ApiResponse<CitedUrlDetailsResponse> getCitedUrlDetailWithHttpInfo(projectId, urlSha256, model, collectionId, countryCode, languageCode, prompt, brandKind, from, to, sourceType, sentiment, contentGap, includeSeries)
 
 Cited URL detail
 
@@ -777,9 +780,10 @@ public class Example {
         String contentGap = "mentioned"; // String | mentioned: the cited page mentions your brand. gap: it mentions a competitor but not your brand. Only pages with usable content whose mention analysis has completed for this project match.
         Boolean includeSeries = false; // Boolean | Adds citation_series. Without it the response is unchanged.
         try {
-            ApiResponse<Void> response = apiInstance.getCitedUrlDetailWithHttpInfo(projectId, urlSha256, model, collectionId, countryCode, languageCode, prompt, brandKind, from, to, sourceType, sentiment, contentGap, includeSeries);
+            ApiResponse<CitedUrlDetailsResponse> response = apiInstance.getCitedUrlDetailWithHttpInfo(projectId, urlSha256, model, collectionId, countryCode, languageCode, prompt, brandKind, from, to, sourceType, sentiment, contentGap, includeSeries);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
+            System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
             System.err.println("Exception when calling SourcesCitationIntelligenceApi#getCitedUrlDetail");
             System.err.println("Status code: " + e.getCode());
@@ -813,8 +817,8 @@ public class Example {
 
 ### Return type
 
+ApiResponse<[**CitedUrlDetailsResponse**](CitedUrlDetailsResponse.md)>
 
-ApiResponse<Void>
 
 ### Authorization
 
@@ -835,7 +839,7 @@ ApiResponse<Void>
 
 ## getMentionsByCitingDomain
 
-> void getMentionsByCitingDomain(projectId, domains, model, collectionId, countryCode, languageCode, prompt, brandKind, from, to)
+> CitingDomainMentionShareResponse getMentionsByCitingDomain(projectId, domains, model, collectionId, countryCode, languageCode, prompt, brandKind, from, to)
 
 Mention share by citing domain
 
@@ -873,7 +877,8 @@ public class Example {
         OffsetDateTime from = OffsetDateTime.now(); // OffsetDateTime | 
         OffsetDateTime to = OffsetDateTime.now(); // OffsetDateTime | End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier.
         try {
-            apiInstance.getMentionsByCitingDomain(projectId, domains, model, collectionId, countryCode, languageCode, prompt, brandKind, from, to);
+            CitingDomainMentionShareResponse result = apiInstance.getMentionsByCitingDomain(projectId, domains, model, collectionId, countryCode, languageCode, prompt, brandKind, from, to);
+            System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling SourcesCitationIntelligenceApi#getMentionsByCitingDomain");
             System.err.println("Status code: " + e.getCode());
@@ -903,8 +908,8 @@ public class Example {
 
 ### Return type
 
+[**CitingDomainMentionShareResponse**](CitingDomainMentionShareResponse.md)
 
-null (empty response body)
 
 ### Authorization
 
@@ -923,7 +928,7 @@ null (empty response body)
 
 ## getMentionsByCitingDomainWithHttpInfo
 
-> ApiResponse<Void> getMentionsByCitingDomainWithHttpInfo(projectId, domains, model, collectionId, countryCode, languageCode, prompt, brandKind, from, to)
+> ApiResponse<CitingDomainMentionShareResponse> getMentionsByCitingDomainWithHttpInfo(projectId, domains, model, collectionId, countryCode, languageCode, prompt, brandKind, from, to)
 
 Mention share by citing domain
 
@@ -962,9 +967,10 @@ public class Example {
         OffsetDateTime from = OffsetDateTime.now(); // OffsetDateTime | 
         OffsetDateTime to = OffsetDateTime.now(); // OffsetDateTime | End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier.
         try {
-            ApiResponse<Void> response = apiInstance.getMentionsByCitingDomainWithHttpInfo(projectId, domains, model, collectionId, countryCode, languageCode, prompt, brandKind, from, to);
+            ApiResponse<CitingDomainMentionShareResponse> response = apiInstance.getMentionsByCitingDomainWithHttpInfo(projectId, domains, model, collectionId, countryCode, languageCode, prompt, brandKind, from, to);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
+            System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
             System.err.println("Exception when calling SourcesCitationIntelligenceApi#getMentionsByCitingDomain");
             System.err.println("Status code: " + e.getCode());
@@ -994,8 +1000,8 @@ public class Example {
 
 ### Return type
 
+ApiResponse<[**CitingDomainMentionShareResponse**](CitingDomainMentionShareResponse.md)>
 
-ApiResponse<Void>
 
 ### Authorization
 
@@ -1225,7 +1231,7 @@ ApiResponse<[**UrlListDetailResponse**](UrlListDetailResponse.md)>
 
 ## listCitationGroups
 
-> void listCitationGroups(projectId, view, page, perPage, order, direction, model, collectionId, countryCode, languageCode, prompt, brandKind, from, to, key, includeSeries, query, sourceType, sentiment, contentGap)
+> CitationGroupsResponse listCitationGroups(projectId, view, page, perPage, order, direction, model, collectionId, countryCode, languageCode, prompt, brandKind, from, to, key, includeSeries, query, sourceType, sentiment, contentGap)
 
 Grouped citation intelligence
 
@@ -1273,7 +1279,8 @@ public class Example {
         String sentiment = "negative"; // String | Keeps the citations of answers with a negative brand sentiment. Needs the Growth plan or above: below it the filter answers 403 ERR_PLAN_REQUIRED.
         String contentGap = "mentioned"; // String | mentioned: the cited page mentions your brand. gap: it mentions a competitor but not your brand. Only pages with usable content whose mention analysis has completed for this project match.
         try {
-            apiInstance.listCitationGroups(projectId, view, page, perPage, order, direction, model, collectionId, countryCode, languageCode, prompt, brandKind, from, to, key, includeSeries, query, sourceType, sentiment, contentGap);
+            CitationGroupsResponse result = apiInstance.listCitationGroups(projectId, view, page, perPage, order, direction, model, collectionId, countryCode, languageCode, prompt, brandKind, from, to, key, includeSeries, query, sourceType, sentiment, contentGap);
+            System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling SourcesCitationIntelligenceApi#listCitationGroups");
             System.err.println("Status code: " + e.getCode());
@@ -1313,8 +1320,8 @@ public class Example {
 
 ### Return type
 
+[**CitationGroupsResponse**](CitationGroupsResponse.md)
 
-null (empty response body)
 
 ### Authorization
 
@@ -1334,7 +1341,7 @@ null (empty response body)
 
 ## listCitationGroupsWithHttpInfo
 
-> ApiResponse<Void> listCitationGroupsWithHttpInfo(projectId, view, page, perPage, order, direction, model, collectionId, countryCode, languageCode, prompt, brandKind, from, to, key, includeSeries, query, sourceType, sentiment, contentGap)
+> ApiResponse<CitationGroupsResponse> listCitationGroupsWithHttpInfo(projectId, view, page, perPage, order, direction, model, collectionId, countryCode, languageCode, prompt, brandKind, from, to, key, includeSeries, query, sourceType, sentiment, contentGap)
 
 Grouped citation intelligence
 
@@ -1383,9 +1390,10 @@ public class Example {
         String sentiment = "negative"; // String | Keeps the citations of answers with a negative brand sentiment. Needs the Growth plan or above: below it the filter answers 403 ERR_PLAN_REQUIRED.
         String contentGap = "mentioned"; // String | mentioned: the cited page mentions your brand. gap: it mentions a competitor but not your brand. Only pages with usable content whose mention analysis has completed for this project match.
         try {
-            ApiResponse<Void> response = apiInstance.listCitationGroupsWithHttpInfo(projectId, view, page, perPage, order, direction, model, collectionId, countryCode, languageCode, prompt, brandKind, from, to, key, includeSeries, query, sourceType, sentiment, contentGap);
+            ApiResponse<CitationGroupsResponse> response = apiInstance.listCitationGroupsWithHttpInfo(projectId, view, page, perPage, order, direction, model, collectionId, countryCode, languageCode, prompt, brandKind, from, to, key, includeSeries, query, sourceType, sentiment, contentGap);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
+            System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
             System.err.println("Exception when calling SourcesCitationIntelligenceApi#listCitationGroups");
             System.err.println("Status code: " + e.getCode());
@@ -1425,8 +1433,8 @@ public class Example {
 
 ### Return type
 
+ApiResponse<[**CitationGroupsResponse**](CitationGroupsResponse.md)>
 
-ApiResponse<Void>
 
 ### Authorization
 
@@ -1447,7 +1455,7 @@ ApiResponse<Void>
 
 ## listCitedUrlOccurrences
 
-> void listCitedUrlOccurrences(projectId, urlSha256, page, perPage, sentiment)
+> CitedUrlOccurrencesResponse listCitedUrlOccurrences(projectId, urlSha256, page, perPage, sentiment)
 
 Cited URL occurrences
 
@@ -1478,7 +1486,8 @@ public class Example {
         Integer perPage = 20; // Integer | 
         String sentiment = "negative"; // String | Keeps the occurrences in answers with a negative brand sentiment. Needs the Growth plan or above: below it the filter answers 403 ERR_PLAN_REQUIRED.
         try {
-            apiInstance.listCitedUrlOccurrences(projectId, urlSha256, page, perPage, sentiment);
+            CitedUrlOccurrencesResponse result = apiInstance.listCitedUrlOccurrences(projectId, urlSha256, page, perPage, sentiment);
+            System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling SourcesCitationIntelligenceApi#listCitedUrlOccurrences");
             System.err.println("Status code: " + e.getCode());
@@ -1503,8 +1512,8 @@ public class Example {
 
 ### Return type
 
+[**CitedUrlOccurrencesResponse**](CitedUrlOccurrencesResponse.md)
 
-null (empty response body)
 
 ### Authorization
 
@@ -1524,7 +1533,7 @@ null (empty response body)
 
 ## listCitedUrlOccurrencesWithHttpInfo
 
-> ApiResponse<Void> listCitedUrlOccurrencesWithHttpInfo(projectId, urlSha256, page, perPage, sentiment)
+> ApiResponse<CitedUrlOccurrencesResponse> listCitedUrlOccurrencesWithHttpInfo(projectId, urlSha256, page, perPage, sentiment)
 
 Cited URL occurrences
 
@@ -1556,9 +1565,10 @@ public class Example {
         Integer perPage = 20; // Integer | 
         String sentiment = "negative"; // String | Keeps the occurrences in answers with a negative brand sentiment. Needs the Growth plan or above: below it the filter answers 403 ERR_PLAN_REQUIRED.
         try {
-            ApiResponse<Void> response = apiInstance.listCitedUrlOccurrencesWithHttpInfo(projectId, urlSha256, page, perPage, sentiment);
+            ApiResponse<CitedUrlOccurrencesResponse> response = apiInstance.listCitedUrlOccurrencesWithHttpInfo(projectId, urlSha256, page, perPage, sentiment);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
+            System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
             System.err.println("Exception when calling SourcesCitationIntelligenceApi#listCitedUrlOccurrences");
             System.err.println("Status code: " + e.getCode());
@@ -1583,8 +1593,8 @@ public class Example {
 
 ### Return type
 
+ApiResponse<[**CitedUrlOccurrencesResponse**](CitedUrlOccurrencesResponse.md)>
 
-ApiResponse<Void>
 
 ### Authorization
 
@@ -1605,7 +1615,7 @@ ApiResponse<Void>
 
 ## listSources
 
-> void listSources(projectId, page, perPage, model, collectionId, countryCode, languageCode, prompt, from, to, sourceType, mentionFilter, competitors, output, promptType, brandKind, range)
+> SourcesResponse listSources(projectId, page, perPage, model, collectionId, countryCode, languageCode, prompt, from, to, sourceType, mentionFilter, competitors, output, promptType, brandKind, range)
 
 List source URLs
 
@@ -1648,7 +1658,8 @@ public class Example {
         String brandKind = "brand"; // String | Filter by brand kind: brand (own brand/products), brand_other (competitors/other brands), non_brand (generic, no brand named). For fair 1:1 brand-vs-competitor comparisons (visibility, share of voice), use non_brand: brand-focused prompts skew results toward the brand they name. The in-app Overview page applies non_brand by default.
         Integer range = 56; // Integer | Number of days to look back (alternative to from/to, which win when both are given). A value that is not a plain positive number returns 422 ERR_INVALID_PARAM, even beside from/to.
         try {
-            apiInstance.listSources(projectId, page, perPage, model, collectionId, countryCode, languageCode, prompt, from, to, sourceType, mentionFilter, competitors, output, promptType, brandKind, range);
+            SourcesResponse result = apiInstance.listSources(projectId, page, perPage, model, collectionId, countryCode, languageCode, prompt, from, to, sourceType, mentionFilter, competitors, output, promptType, brandKind, range);
+            System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling SourcesCitationIntelligenceApi#listSources");
             System.err.println("Status code: " + e.getCode());
@@ -1685,8 +1696,8 @@ public class Example {
 
 ### Return type
 
+[**SourcesResponse**](SourcesResponse.md)
 
-null (empty response body)
 
 ### Authorization
 
@@ -1705,7 +1716,7 @@ null (empty response body)
 
 ## listSourcesWithHttpInfo
 
-> ApiResponse<Void> listSourcesWithHttpInfo(projectId, page, perPage, model, collectionId, countryCode, languageCode, prompt, from, to, sourceType, mentionFilter, competitors, output, promptType, brandKind, range)
+> ApiResponse<SourcesResponse> listSourcesWithHttpInfo(projectId, page, perPage, model, collectionId, countryCode, languageCode, prompt, from, to, sourceType, mentionFilter, competitors, output, promptType, brandKind, range)
 
 List source URLs
 
@@ -1749,9 +1760,10 @@ public class Example {
         String brandKind = "brand"; // String | Filter by brand kind: brand (own brand/products), brand_other (competitors/other brands), non_brand (generic, no brand named). For fair 1:1 brand-vs-competitor comparisons (visibility, share of voice), use non_brand: brand-focused prompts skew results toward the brand they name. The in-app Overview page applies non_brand by default.
         Integer range = 56; // Integer | Number of days to look back (alternative to from/to, which win when both are given). A value that is not a plain positive number returns 422 ERR_INVALID_PARAM, even beside from/to.
         try {
-            ApiResponse<Void> response = apiInstance.listSourcesWithHttpInfo(projectId, page, perPage, model, collectionId, countryCode, languageCode, prompt, from, to, sourceType, mentionFilter, competitors, output, promptType, brandKind, range);
+            ApiResponse<SourcesResponse> response = apiInstance.listSourcesWithHttpInfo(projectId, page, perPage, model, collectionId, countryCode, languageCode, prompt, from, to, sourceType, mentionFilter, competitors, output, promptType, brandKind, range);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
+            System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
             System.err.println("Exception when calling SourcesCitationIntelligenceApi#listSources");
             System.err.println("Status code: " + e.getCode());
@@ -1788,8 +1800,8 @@ public class Example {
 
 ### Return type
 
+ApiResponse<[**SourcesResponse**](SourcesResponse.md)>
 
-ApiResponse<Void>
 
 ### Authorization
 

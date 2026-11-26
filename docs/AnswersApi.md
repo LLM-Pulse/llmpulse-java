@@ -167,7 +167,7 @@ ApiResponse<[**AnswerDetails**](AnswerDetails.md)>
 
 ## listAnswers
 
-> void listAnswers(projectId, model, collectionId, countryCode, languageCode, prompt, promptType, brandKind, mentionFilter, citationFilter, competitors, from, to, page, perPage, query, noResult)
+> AnswersResponse listAnswers(projectId, model, collectionId, countryCode, languageCode, prompt, promptType, brandKind, mentionFilter, citationFilter, competitors, from, to, page, perPage, query, noResult)
 
 List AI responses
 
@@ -212,7 +212,8 @@ public class Example {
         String query = "query_example"; // String | Case-insensitive full-text search inside AI response texts. Switches items to snippet + match_count mode.
         Boolean noResult = true; // Boolean | Filter sentinel non-answers (no answer could be collected after all retries, or the model declined to answer, today only Gemini; excluded from platform metrics). false = only real answers, true = only sentinels, omit = both. Every item carries its own no_result flag, and a sentinel also carries no_result_reason (declined or no_answer).
         try {
-            apiInstance.listAnswers(projectId, model, collectionId, countryCode, languageCode, prompt, promptType, brandKind, mentionFilter, citationFilter, competitors, from, to, page, perPage, query, noResult);
+            AnswersResponse result = apiInstance.listAnswers(projectId, model, collectionId, countryCode, languageCode, prompt, promptType, brandKind, mentionFilter, citationFilter, competitors, from, to, page, perPage, query, noResult);
+            System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling AnswersApi#listAnswers");
             System.err.println("Status code: " + e.getCode());
@@ -249,8 +250,8 @@ public class Example {
 
 ### Return type
 
+[**AnswersResponse**](AnswersResponse.md)
 
-null (empty response body)
 
 ### Authorization
 
@@ -269,7 +270,7 @@ null (empty response body)
 
 ## listAnswersWithHttpInfo
 
-> ApiResponse<Void> listAnswersWithHttpInfo(projectId, model, collectionId, countryCode, languageCode, prompt, promptType, brandKind, mentionFilter, citationFilter, competitors, from, to, page, perPage, query, noResult)
+> ApiResponse<AnswersResponse> listAnswersWithHttpInfo(projectId, model, collectionId, countryCode, languageCode, prompt, promptType, brandKind, mentionFilter, citationFilter, competitors, from, to, page, perPage, query, noResult)
 
 List AI responses
 
@@ -315,9 +316,10 @@ public class Example {
         String query = "query_example"; // String | Case-insensitive full-text search inside AI response texts. Switches items to snippet + match_count mode.
         Boolean noResult = true; // Boolean | Filter sentinel non-answers (no answer could be collected after all retries, or the model declined to answer, today only Gemini; excluded from platform metrics). false = only real answers, true = only sentinels, omit = both. Every item carries its own no_result flag, and a sentinel also carries no_result_reason (declined or no_answer).
         try {
-            ApiResponse<Void> response = apiInstance.listAnswersWithHttpInfo(projectId, model, collectionId, countryCode, languageCode, prompt, promptType, brandKind, mentionFilter, citationFilter, competitors, from, to, page, perPage, query, noResult);
+            ApiResponse<AnswersResponse> response = apiInstance.listAnswersWithHttpInfo(projectId, model, collectionId, countryCode, languageCode, prompt, promptType, brandKind, mentionFilter, citationFilter, competitors, from, to, page, perPage, query, noResult);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
+            System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
             System.err.println("Exception when calling AnswersApi#listAnswers");
             System.err.println("Status code: " + e.getCode());
@@ -354,8 +356,8 @@ public class Example {
 
 ### Return type
 
+ApiResponse<[**AnswersResponse**](AnswersResponse.md)>
 
-ApiResponse<Void>
 
 ### Authorization
 

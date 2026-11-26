@@ -181,7 +181,7 @@ ApiResponse<[**ProjectCreateResponse**](ProjectCreateResponse.md)>
 
 ## createProjectDraft
 
-> void createProjectDraft(createProjectDraftRequest)
+> ProjectDraftResponse createProjectDraft(createProjectDraftRequest)
 
 Start a project draft (wizard step 1)
 
@@ -210,7 +210,8 @@ public class Example {
         ProjectsApi apiInstance = new ProjectsApi(defaultClient);
         CreateProjectDraftRequest createProjectDraftRequest = new CreateProjectDraftRequest(); // CreateProjectDraftRequest | 
         try {
-            apiInstance.createProjectDraft(createProjectDraftRequest);
+            ProjectDraftResponse result = apiInstance.createProjectDraft(createProjectDraftRequest);
+            System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ProjectsApi#createProjectDraft");
             System.err.println("Status code: " + e.getCode());
@@ -231,8 +232,8 @@ public class Example {
 
 ### Return type
 
+[**ProjectDraftResponse**](ProjectDraftResponse.md)
 
-null (empty response body)
 
 ### Authorization
 
@@ -252,7 +253,7 @@ null (empty response body)
 
 ## createProjectDraftWithHttpInfo
 
-> ApiResponse<Void> createProjectDraftWithHttpInfo(createProjectDraftRequest)
+> ApiResponse<ProjectDraftResponse> createProjectDraftWithHttpInfo(createProjectDraftRequest)
 
 Start a project draft (wizard step 1)
 
@@ -282,9 +283,10 @@ public class Example {
         ProjectsApi apiInstance = new ProjectsApi(defaultClient);
         CreateProjectDraftRequest createProjectDraftRequest = new CreateProjectDraftRequest(); // CreateProjectDraftRequest | 
         try {
-            ApiResponse<Void> response = apiInstance.createProjectDraftWithHttpInfo(createProjectDraftRequest);
+            ApiResponse<ProjectDraftResponse> response = apiInstance.createProjectDraftWithHttpInfo(createProjectDraftRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
+            System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
             System.err.println("Exception when calling ProjectsApi#createProjectDraft");
             System.err.println("Status code: " + e.getCode());
@@ -305,8 +307,8 @@ public class Example {
 
 ### Return type
 
+ApiResponse<[**ProjectDraftResponse**](ProjectDraftResponse.md)>
 
-ApiResponse<Void>
 
 ### Authorization
 
@@ -775,7 +777,7 @@ ApiResponse<[**ProjectDetails**](ProjectDetails.md)>
 
 ## getProjectDraft
 
-> void getProjectDraft(id, includeSuggestions)
+> ProjectDraftResponse getProjectDraft(id, includeSuggestions)
 
 Read a project draft
 
@@ -803,7 +805,8 @@ public class Example {
         String id = "id_example"; // String | Draft id (draft_...)
         Boolean includeSuggestions = false; // Boolean | Cache-only: returns suggestions for the current step if already generated, never triggers AI
         try {
-            apiInstance.getProjectDraft(id, includeSuggestions);
+            ProjectDraftResponse result = apiInstance.getProjectDraft(id, includeSuggestions);
+            System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ProjectsApi#getProjectDraft");
             System.err.println("Status code: " + e.getCode());
@@ -825,8 +828,8 @@ public class Example {
 
 ### Return type
 
+[**ProjectDraftResponse**](ProjectDraftResponse.md)
 
-null (empty response body)
 
 ### Authorization
 
@@ -846,7 +849,7 @@ null (empty response body)
 
 ## getProjectDraftWithHttpInfo
 
-> ApiResponse<Void> getProjectDraftWithHttpInfo(id, includeSuggestions)
+> ApiResponse<ProjectDraftResponse> getProjectDraftWithHttpInfo(id, includeSuggestions)
 
 Read a project draft
 
@@ -875,9 +878,10 @@ public class Example {
         String id = "id_example"; // String | Draft id (draft_...)
         Boolean includeSuggestions = false; // Boolean | Cache-only: returns suggestions for the current step if already generated, never triggers AI
         try {
-            ApiResponse<Void> response = apiInstance.getProjectDraftWithHttpInfo(id, includeSuggestions);
+            ApiResponse<ProjectDraftResponse> response = apiInstance.getProjectDraftWithHttpInfo(id, includeSuggestions);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
+            System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
             System.err.println("Exception when calling ProjectsApi#getProjectDraft");
             System.err.println("Status code: " + e.getCode());
@@ -899,8 +903,8 @@ public class Example {
 
 ### Return type
 
+ApiResponse<[**ProjectDraftResponse**](ProjectDraftResponse.md)>
 
-ApiResponse<Void>
 
 ### Authorization
 
@@ -1503,7 +1507,7 @@ ApiResponse<[**ProjectUpdateResponse**](ProjectUpdateResponse.md)>
 
 ## updateProjectDraft
 
-> void updateProjectDraft(id, updateProjectDraftRequest)
+> ProjectDraftResponse updateProjectDraft(id, updateProjectDraftRequest)
 
 Submit a wizard step
 
@@ -1533,7 +1537,8 @@ public class Example {
         String id = "id_example"; // String | 
         UpdateProjectDraftRequest updateProjectDraftRequest = new UpdateProjectDraftRequest(); // UpdateProjectDraftRequest | 
         try {
-            apiInstance.updateProjectDraft(id, updateProjectDraftRequest);
+            ProjectDraftResponse result = apiInstance.updateProjectDraft(id, updateProjectDraftRequest);
+            System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ProjectsApi#updateProjectDraft");
             System.err.println("Status code: " + e.getCode());
@@ -1555,8 +1560,8 @@ public class Example {
 
 ### Return type
 
+[**ProjectDraftResponse**](ProjectDraftResponse.md)
 
-null (empty response body)
 
 ### Authorization
 
@@ -1577,7 +1582,7 @@ null (empty response body)
 
 ## updateProjectDraftWithHttpInfo
 
-> ApiResponse<Void> updateProjectDraftWithHttpInfo(id, updateProjectDraftRequest)
+> ApiResponse<ProjectDraftResponse> updateProjectDraftWithHttpInfo(id, updateProjectDraftRequest)
 
 Submit a wizard step
 
@@ -1608,9 +1613,10 @@ public class Example {
         String id = "id_example"; // String | 
         UpdateProjectDraftRequest updateProjectDraftRequest = new UpdateProjectDraftRequest(); // UpdateProjectDraftRequest | 
         try {
-            ApiResponse<Void> response = apiInstance.updateProjectDraftWithHttpInfo(id, updateProjectDraftRequest);
+            ApiResponse<ProjectDraftResponse> response = apiInstance.updateProjectDraftWithHttpInfo(id, updateProjectDraftRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
+            System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
             System.err.println("Exception when calling ProjectsApi#updateProjectDraft");
             System.err.println("Status code: " + e.getCode());
@@ -1632,8 +1638,8 @@ public class Example {
 
 ### Return type
 
+ApiResponse<[**ProjectDraftResponse**](ProjectDraftResponse.md)>
 
-ApiResponse<Void>
 
 ### Authorization
 

@@ -21,7 +21,7 @@ All URIs are relative to *https://api.llmpulse.ai/api/v1*
 
 ## listAllCitations
 
-> void listAllCitations(projectId, competitors, page, perPage, model, collectionId, prompt, from, to, output, countryCode, languageCode, promptType, brandKind, range)
+> AllCitationsResponse listAllCitations(projectId, competitors, page, perPage, model, collectionId, prompt, from, to, output, countryCode, languageCode, promptType, brandKind, range)
 
 List all citations (brand + competitor)
 
@@ -64,7 +64,8 @@ public class Example {
         String brandKind = "brand"; // String | Filter by brand kind: brand (own brand/products), brand_other (competitors/other brands), non_brand (generic, no brand named). For fair 1:1 brand-vs-competitor comparisons (visibility, share of voice), use non_brand: brand-focused prompts skew results toward the brand they name. The in-app Overview page applies non_brand by default.
         Integer range = 56; // Integer | Number of days to look back (alternative to from/to, which win when both are given). A value that is not a plain positive number returns 422 ERR_INVALID_PARAM, even beside from/to.
         try {
-            apiInstance.listAllCitations(projectId, competitors, page, perPage, model, collectionId, prompt, from, to, output, countryCode, languageCode, promptType, brandKind, range);
+            AllCitationsResponse result = apiInstance.listAllCitations(projectId, competitors, page, perPage, model, collectionId, prompt, from, to, output, countryCode, languageCode, promptType, brandKind, range);
+            System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling MentionsCitationsApi#listAllCitations");
             System.err.println("Status code: " + e.getCode());
@@ -99,8 +100,8 @@ public class Example {
 
 ### Return type
 
+[**AllCitationsResponse**](AllCitationsResponse.md)
 
-null (empty response body)
 
 ### Authorization
 
@@ -109,7 +110,7 @@ null (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -118,7 +119,7 @@ null (empty response body)
 
 ## listAllCitationsWithHttpInfo
 
-> ApiResponse<Void> listAllCitationsWithHttpInfo(projectId, competitors, page, perPage, model, collectionId, prompt, from, to, output, countryCode, languageCode, promptType, brandKind, range)
+> ApiResponse<AllCitationsResponse> listAllCitationsWithHttpInfo(projectId, competitors, page, perPage, model, collectionId, prompt, from, to, output, countryCode, languageCode, promptType, brandKind, range)
 
 List all citations (brand + competitor)
 
@@ -162,9 +163,10 @@ public class Example {
         String brandKind = "brand"; // String | Filter by brand kind: brand (own brand/products), brand_other (competitors/other brands), non_brand (generic, no brand named). For fair 1:1 brand-vs-competitor comparisons (visibility, share of voice), use non_brand: brand-focused prompts skew results toward the brand they name. The in-app Overview page applies non_brand by default.
         Integer range = 56; // Integer | Number of days to look back (alternative to from/to, which win when both are given). A value that is not a plain positive number returns 422 ERR_INVALID_PARAM, even beside from/to.
         try {
-            ApiResponse<Void> response = apiInstance.listAllCitationsWithHttpInfo(projectId, competitors, page, perPage, model, collectionId, prompt, from, to, output, countryCode, languageCode, promptType, brandKind, range);
+            ApiResponse<AllCitationsResponse> response = apiInstance.listAllCitationsWithHttpInfo(projectId, competitors, page, perPage, model, collectionId, prompt, from, to, output, countryCode, languageCode, promptType, brandKind, range);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
+            System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
             System.err.println("Exception when calling MentionsCitationsApi#listAllCitations");
             System.err.println("Status code: " + e.getCode());
@@ -199,8 +201,8 @@ public class Example {
 
 ### Return type
 
+ApiResponse<[**AllCitationsResponse**](AllCitationsResponse.md)>
 
-ApiResponse<Void>
 
 ### Authorization
 
@@ -209,7 +211,7 @@ ApiResponse<Void>
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -219,7 +221,7 @@ ApiResponse<Void>
 
 ## listAllMentions
 
-> void listAllMentions(projectId, competitors, page, perPage, model, collectionId, prompt, from, to, output, countryCode, languageCode, promptType, brandKind, range)
+> AllMentionsResponse listAllMentions(projectId, competitors, page, perPage, model, collectionId, prompt, from, to, output, countryCode, languageCode, promptType, brandKind, range)
 
 List all mentions (brand + competitor)
 
@@ -262,7 +264,8 @@ public class Example {
         String brandKind = "brand"; // String | Filter by brand kind: brand (own brand/products), brand_other (competitors/other brands), non_brand (generic, no brand named). For fair 1:1 brand-vs-competitor comparisons (visibility, share of voice), use non_brand: brand-focused prompts skew results toward the brand they name. The in-app Overview page applies non_brand by default.
         Integer range = 56; // Integer | Number of days to look back (alternative to from/to, which win when both are given). A value that is not a plain positive number returns 422 ERR_INVALID_PARAM, even beside from/to.
         try {
-            apiInstance.listAllMentions(projectId, competitors, page, perPage, model, collectionId, prompt, from, to, output, countryCode, languageCode, promptType, brandKind, range);
+            AllMentionsResponse result = apiInstance.listAllMentions(projectId, competitors, page, perPage, model, collectionId, prompt, from, to, output, countryCode, languageCode, promptType, brandKind, range);
+            System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling MentionsCitationsApi#listAllMentions");
             System.err.println("Status code: " + e.getCode());
@@ -297,8 +300,8 @@ public class Example {
 
 ### Return type
 
+[**AllMentionsResponse**](AllMentionsResponse.md)
 
-null (empty response body)
 
 ### Authorization
 
@@ -307,7 +310,7 @@ null (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -316,7 +319,7 @@ null (empty response body)
 
 ## listAllMentionsWithHttpInfo
 
-> ApiResponse<Void> listAllMentionsWithHttpInfo(projectId, competitors, page, perPage, model, collectionId, prompt, from, to, output, countryCode, languageCode, promptType, brandKind, range)
+> ApiResponse<AllMentionsResponse> listAllMentionsWithHttpInfo(projectId, competitors, page, perPage, model, collectionId, prompt, from, to, output, countryCode, languageCode, promptType, brandKind, range)
 
 List all mentions (brand + competitor)
 
@@ -360,9 +363,10 @@ public class Example {
         String brandKind = "brand"; // String | Filter by brand kind: brand (own brand/products), brand_other (competitors/other brands), non_brand (generic, no brand named). For fair 1:1 brand-vs-competitor comparisons (visibility, share of voice), use non_brand: brand-focused prompts skew results toward the brand they name. The in-app Overview page applies non_brand by default.
         Integer range = 56; // Integer | Number of days to look back (alternative to from/to, which win when both are given). A value that is not a plain positive number returns 422 ERR_INVALID_PARAM, even beside from/to.
         try {
-            ApiResponse<Void> response = apiInstance.listAllMentionsWithHttpInfo(projectId, competitors, page, perPage, model, collectionId, prompt, from, to, output, countryCode, languageCode, promptType, brandKind, range);
+            ApiResponse<AllMentionsResponse> response = apiInstance.listAllMentionsWithHttpInfo(projectId, competitors, page, perPage, model, collectionId, prompt, from, to, output, countryCode, languageCode, promptType, brandKind, range);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
+            System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
             System.err.println("Exception when calling MentionsCitationsApi#listAllMentions");
             System.err.println("Status code: " + e.getCode());
@@ -397,8 +401,8 @@ public class Example {
 
 ### Return type
 
+ApiResponse<[**AllMentionsResponse**](AllMentionsResponse.md)>
 
-ApiResponse<Void>
 
 ### Authorization
 
@@ -407,7 +411,7 @@ ApiResponse<Void>
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -613,7 +617,7 @@ ApiResponse<[**CitationsResponse**](CitationsResponse.md)>
 
 ## listCompetitorCitations
 
-> void listCompetitorCitations(projectId, competitors, page, perPage, model, collectionId, prompt, from, to, output, countryCode, languageCode, promptType, brandKind, range)
+> CompetitorCitationsResponse listCompetitorCitations(projectId, competitors, page, perPage, model, collectionId, prompt, from, to, output, countryCode, languageCode, promptType, brandKind, range)
 
 List competitor citations
 
@@ -656,7 +660,8 @@ public class Example {
         String brandKind = "brand"; // String | Filter by brand kind: brand (own brand/products), brand_other (competitors/other brands), non_brand (generic, no brand named). For fair 1:1 brand-vs-competitor comparisons (visibility, share of voice), use non_brand: brand-focused prompts skew results toward the brand they name. The in-app Overview page applies non_brand by default.
         Integer range = 56; // Integer | Number of days to look back (alternative to from/to, which win when both are given). A value that is not a plain positive number returns 422 ERR_INVALID_PARAM, even beside from/to.
         try {
-            apiInstance.listCompetitorCitations(projectId, competitors, page, perPage, model, collectionId, prompt, from, to, output, countryCode, languageCode, promptType, brandKind, range);
+            CompetitorCitationsResponse result = apiInstance.listCompetitorCitations(projectId, competitors, page, perPage, model, collectionId, prompt, from, to, output, countryCode, languageCode, promptType, brandKind, range);
+            System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling MentionsCitationsApi#listCompetitorCitations");
             System.err.println("Status code: " + e.getCode());
@@ -691,8 +696,8 @@ public class Example {
 
 ### Return type
 
+[**CompetitorCitationsResponse**](CompetitorCitationsResponse.md)
 
-null (empty response body)
 
 ### Authorization
 
@@ -701,7 +706,7 @@ null (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -710,7 +715,7 @@ null (empty response body)
 
 ## listCompetitorCitationsWithHttpInfo
 
-> ApiResponse<Void> listCompetitorCitationsWithHttpInfo(projectId, competitors, page, perPage, model, collectionId, prompt, from, to, output, countryCode, languageCode, promptType, brandKind, range)
+> ApiResponse<CompetitorCitationsResponse> listCompetitorCitationsWithHttpInfo(projectId, competitors, page, perPage, model, collectionId, prompt, from, to, output, countryCode, languageCode, promptType, brandKind, range)
 
 List competitor citations
 
@@ -754,9 +759,10 @@ public class Example {
         String brandKind = "brand"; // String | Filter by brand kind: brand (own brand/products), brand_other (competitors/other brands), non_brand (generic, no brand named). For fair 1:1 brand-vs-competitor comparisons (visibility, share of voice), use non_brand: brand-focused prompts skew results toward the brand they name. The in-app Overview page applies non_brand by default.
         Integer range = 56; // Integer | Number of days to look back (alternative to from/to, which win when both are given). A value that is not a plain positive number returns 422 ERR_INVALID_PARAM, even beside from/to.
         try {
-            ApiResponse<Void> response = apiInstance.listCompetitorCitationsWithHttpInfo(projectId, competitors, page, perPage, model, collectionId, prompt, from, to, output, countryCode, languageCode, promptType, brandKind, range);
+            ApiResponse<CompetitorCitationsResponse> response = apiInstance.listCompetitorCitationsWithHttpInfo(projectId, competitors, page, perPage, model, collectionId, prompt, from, to, output, countryCode, languageCode, promptType, brandKind, range);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
+            System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
             System.err.println("Exception when calling MentionsCitationsApi#listCompetitorCitations");
             System.err.println("Status code: " + e.getCode());
@@ -791,8 +797,8 @@ public class Example {
 
 ### Return type
 
+ApiResponse<[**CompetitorCitationsResponse**](CompetitorCitationsResponse.md)>
 
-ApiResponse<Void>
 
 ### Authorization
 
@@ -801,7 +807,7 @@ ApiResponse<Void>
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |

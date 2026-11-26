@@ -15,7 +15,7 @@ All URIs are relative to *https://api.llmpulse.ai/api/v1*
 
 ## listAds
 
-> void listAds(projectId, page, perPage, view, owned, order, direction, query, model, collectionId, countryCode, languageCode, prompt, promptType, brandKind, range, from, to, output)
+> AdsResponse listAds(projectId, page, perPage, view, owned, order, direction, query, model, collectionId, countryCode, languageCode, prompt, promptType, brandKind, range, from, to, output)
 
 List AI ad placements
 
@@ -62,7 +62,8 @@ public class Example {
         OffsetDateTime to = OffsetDateTime.now(); // OffsetDateTime | End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. Sent without from, the window covers the 30 days that end on it.
         String output = "flat"; // String | Rectangular output for BI tools (Tableau, Excel, Sheets, ELT). Omit for the default nested JSON. 'flat' returns the same metadata plus 'columns' and 'rows'; 'csv' returns those rows as text/csv. Errors are always returned as JSON.
         try {
-            apiInstance.listAds(projectId, page, perPage, view, owned, order, direction, query, model, collectionId, countryCode, languageCode, prompt, promptType, brandKind, range, from, to, output);
+            AdsResponse result = apiInstance.listAds(projectId, page, perPage, view, owned, order, direction, query, model, collectionId, countryCode, languageCode, prompt, promptType, brandKind, range, from, to, output);
+            System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ShoppingAdsApi#listAds");
             System.err.println("Status code: " + e.getCode());
@@ -101,8 +102,8 @@ public class Example {
 
 ### Return type
 
+[**AdsResponse**](AdsResponse.md)
 
-null (empty response body)
 
 ### Authorization
 
@@ -121,7 +122,7 @@ null (empty response body)
 
 ## listAdsWithHttpInfo
 
-> ApiResponse<Void> listAdsWithHttpInfo(projectId, page, perPage, view, owned, order, direction, query, model, collectionId, countryCode, languageCode, prompt, promptType, brandKind, range, from, to, output)
+> ApiResponse<AdsResponse> listAdsWithHttpInfo(projectId, page, perPage, view, owned, order, direction, query, model, collectionId, countryCode, languageCode, prompt, promptType, brandKind, range, from, to, output)
 
 List AI ad placements
 
@@ -169,9 +170,10 @@ public class Example {
         OffsetDateTime to = OffsetDateTime.now(); // OffsetDateTime | End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. Sent without from, the window covers the 30 days that end on it.
         String output = "flat"; // String | Rectangular output for BI tools (Tableau, Excel, Sheets, ELT). Omit for the default nested JSON. 'flat' returns the same metadata plus 'columns' and 'rows'; 'csv' returns those rows as text/csv. Errors are always returned as JSON.
         try {
-            ApiResponse<Void> response = apiInstance.listAdsWithHttpInfo(projectId, page, perPage, view, owned, order, direction, query, model, collectionId, countryCode, languageCode, prompt, promptType, brandKind, range, from, to, output);
+            ApiResponse<AdsResponse> response = apiInstance.listAdsWithHttpInfo(projectId, page, perPage, view, owned, order, direction, query, model, collectionId, countryCode, languageCode, prompt, promptType, brandKind, range, from, to, output);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
+            System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
             System.err.println("Exception when calling ShoppingAdsApi#listAds");
             System.err.println("Status code: " + e.getCode());
@@ -210,8 +212,8 @@ public class Example {
 
 ### Return type
 
+ApiResponse<[**AdsResponse**](AdsResponse.md)>
 
-ApiResponse<Void>
 
 ### Authorization
 
@@ -445,7 +447,7 @@ ApiResponse<[**LocalBusinessesResponse**](LocalBusinessesResponse.md)>
 
 ## listShopping
 
-> void listShopping(projectId, page, perPage, view, owned, order, direction, query, model, collectionId, countryCode, languageCode, prompt, promptType, brandKind, range, from, to, output)
+> ShoppingResponse listShopping(projectId, page, perPage, view, owned, order, direction, query, model, collectionId, countryCode, languageCode, prompt, promptType, brandKind, range, from, to, output)
 
 List shopping results
 
@@ -492,7 +494,8 @@ public class Example {
         OffsetDateTime to = OffsetDateTime.now(); // OffsetDateTime | End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. Sent without from, the window covers the 30 days that end on it.
         String output = "flat"; // String | Rectangular output for BI tools (Tableau, Excel, Sheets, ELT). Omit for the default nested JSON. 'flat' returns the same metadata plus 'columns' and 'rows'; 'csv' returns those rows as text/csv. Errors are always returned as JSON.
         try {
-            apiInstance.listShopping(projectId, page, perPage, view, owned, order, direction, query, model, collectionId, countryCode, languageCode, prompt, promptType, brandKind, range, from, to, output);
+            ShoppingResponse result = apiInstance.listShopping(projectId, page, perPage, view, owned, order, direction, query, model, collectionId, countryCode, languageCode, prompt, promptType, brandKind, range, from, to, output);
+            System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ShoppingAdsApi#listShopping");
             System.err.println("Status code: " + e.getCode());
@@ -531,8 +534,8 @@ public class Example {
 
 ### Return type
 
+[**ShoppingResponse**](ShoppingResponse.md)
 
-null (empty response body)
 
 ### Authorization
 
@@ -551,7 +554,7 @@ null (empty response body)
 
 ## listShoppingWithHttpInfo
 
-> ApiResponse<Void> listShoppingWithHttpInfo(projectId, page, perPage, view, owned, order, direction, query, model, collectionId, countryCode, languageCode, prompt, promptType, brandKind, range, from, to, output)
+> ApiResponse<ShoppingResponse> listShoppingWithHttpInfo(projectId, page, perPage, view, owned, order, direction, query, model, collectionId, countryCode, languageCode, prompt, promptType, brandKind, range, from, to, output)
 
 List shopping results
 
@@ -599,9 +602,10 @@ public class Example {
         OffsetDateTime to = OffsetDateTime.now(); // OffsetDateTime | End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. Sent without from, the window covers the 30 days that end on it.
         String output = "flat"; // String | Rectangular output for BI tools (Tableau, Excel, Sheets, ELT). Omit for the default nested JSON. 'flat' returns the same metadata plus 'columns' and 'rows'; 'csv' returns those rows as text/csv. Errors are always returned as JSON.
         try {
-            ApiResponse<Void> response = apiInstance.listShoppingWithHttpInfo(projectId, page, perPage, view, owned, order, direction, query, model, collectionId, countryCode, languageCode, prompt, promptType, brandKind, range, from, to, output);
+            ApiResponse<ShoppingResponse> response = apiInstance.listShoppingWithHttpInfo(projectId, page, perPage, view, owned, order, direction, query, model, collectionId, countryCode, languageCode, prompt, promptType, brandKind, range, from, to, output);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
+            System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
             System.err.println("Exception when calling ShoppingAdsApi#listShopping");
             System.err.println("Status code: " + e.getCode());
@@ -640,8 +644,8 @@ public class Example {
 
 ### Return type
 
+ApiResponse<[**ShoppingResponse**](ShoppingResponse.md)>
 
-ApiResponse<Void>
 
 ### Authorization
 

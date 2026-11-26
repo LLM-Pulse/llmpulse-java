@@ -319,7 +319,7 @@ ApiResponse<[**CollectionCreateResponse**](CollectionCreateResponse.md)>
 
 ## deleteCollection
 
-> void deleteCollection(projectId, id)
+> CollectionDeleteResponse deleteCollection(projectId, id)
 
 Delete a tag
 
@@ -349,7 +349,8 @@ public class Example {
         Integer projectId = 56; // Integer | Project ID
         Integer id = 56; // Integer | 
         try {
-            apiInstance.deleteCollection(projectId, id);
+            CollectionDeleteResponse result = apiInstance.deleteCollection(projectId, id);
+            System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling CollectionsTagsApi#deleteCollection");
             System.err.println("Status code: " + e.getCode());
@@ -371,8 +372,8 @@ public class Example {
 
 ### Return type
 
+[**CollectionDeleteResponse**](CollectionDeleteResponse.md)
 
-null (empty response body)
 
 ### Authorization
 
@@ -392,7 +393,7 @@ null (empty response body)
 
 ## deleteCollectionWithHttpInfo
 
-> ApiResponse<Void> deleteCollectionWithHttpInfo(projectId, id)
+> ApiResponse<CollectionDeleteResponse> deleteCollectionWithHttpInfo(projectId, id)
 
 Delete a tag
 
@@ -423,9 +424,10 @@ public class Example {
         Integer projectId = 56; // Integer | Project ID
         Integer id = 56; // Integer | 
         try {
-            ApiResponse<Void> response = apiInstance.deleteCollectionWithHttpInfo(projectId, id);
+            ApiResponse<CollectionDeleteResponse> response = apiInstance.deleteCollectionWithHttpInfo(projectId, id);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
+            System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
             System.err.println("Exception when calling CollectionsTagsApi#deleteCollection");
             System.err.println("Status code: " + e.getCode());
@@ -447,8 +449,8 @@ public class Example {
 
 ### Return type
 
+ApiResponse<[**CollectionDeleteResponse**](CollectionDeleteResponse.md)>
 
-ApiResponse<Void>
 
 ### Authorization
 
@@ -905,7 +907,7 @@ ApiResponse<[**PromptTagsRemoveResponse**](PromptTagsRemoveResponse.md)>
 
 ## updateCollection
 
-> void updateCollection(id, updateCollectionRequest)
+> CollectionUpdateResponse updateCollection(id, updateCollectionRequest)
 
 Update a tag
 
@@ -935,7 +937,8 @@ public class Example {
         Integer id = 56; // Integer | 
         UpdateCollectionRequest updateCollectionRequest = new UpdateCollectionRequest(); // UpdateCollectionRequest | 
         try {
-            apiInstance.updateCollection(id, updateCollectionRequest);
+            CollectionUpdateResponse result = apiInstance.updateCollection(id, updateCollectionRequest);
+            System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling CollectionsTagsApi#updateCollection");
             System.err.println("Status code: " + e.getCode());
@@ -957,8 +960,8 @@ public class Example {
 
 ### Return type
 
+[**CollectionUpdateResponse**](CollectionUpdateResponse.md)
 
-null (empty response body)
 
 ### Authorization
 
@@ -979,7 +982,7 @@ null (empty response body)
 
 ## updateCollectionWithHttpInfo
 
-> ApiResponse<Void> updateCollectionWithHttpInfo(id, updateCollectionRequest)
+> ApiResponse<CollectionUpdateResponse> updateCollectionWithHttpInfo(id, updateCollectionRequest)
 
 Update a tag
 
@@ -1010,9 +1013,10 @@ public class Example {
         Integer id = 56; // Integer | 
         UpdateCollectionRequest updateCollectionRequest = new UpdateCollectionRequest(); // UpdateCollectionRequest | 
         try {
-            ApiResponse<Void> response = apiInstance.updateCollectionWithHttpInfo(id, updateCollectionRequest);
+            ApiResponse<CollectionUpdateResponse> response = apiInstance.updateCollectionWithHttpInfo(id, updateCollectionRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
+            System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
             System.err.println("Exception when calling CollectionsTagsApi#updateCollection");
             System.err.println("Status code: " + e.getCode());
@@ -1034,8 +1038,8 @@ public class Example {
 
 ### Return type
 
+ApiResponse<[**CollectionUpdateResponse**](CollectionUpdateResponse.md)>
 
-ApiResponse<Void>
 
 ### Authorization
 

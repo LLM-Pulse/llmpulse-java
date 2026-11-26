@@ -201,7 +201,7 @@ ApiResponse<[**AiModelInsightsSummaryResponse**](AiModelInsightsSummaryResponse.
 
 ## getAiModelPositionDistribution
 
-> void getAiModelPositionDistribution(projectId, range, from, to, granularity, collectionId, countryCode, languageCode, promptType, brandKind, model, brand1, brand2)
+> AiModelPositionDistributionResponse getAiModelPositionDistribution(projectId, range, from, to, granularity, collectionId, countryCode, languageCode, promptType, brandKind, model, brand1, brand2)
 
 Position distribution comparison
 
@@ -240,7 +240,8 @@ public class Example {
         Integer brand1 = 56; // Integer | Competitor ID for the first comparison brand (omit to compare project brand)
         Integer brand2 = 56; // Integer | 
         try {
-            apiInstance.getAiModelPositionDistribution(projectId, range, from, to, granularity, collectionId, countryCode, languageCode, promptType, brandKind, model, brand1, brand2);
+            AiModelPositionDistributionResponse result = apiInstance.getAiModelPositionDistribution(projectId, range, from, to, granularity, collectionId, countryCode, languageCode, promptType, brandKind, model, brand1, brand2);
+            System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling AiModelInsightsApi#getAiModelPositionDistribution");
             System.err.println("Status code: " + e.getCode());
@@ -273,8 +274,8 @@ public class Example {
 
 ### Return type
 
+[**AiModelPositionDistributionResponse**](AiModelPositionDistributionResponse.md)
 
-null (empty response body)
 
 ### Authorization
 
@@ -283,7 +284,7 @@ null (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -292,7 +293,7 @@ null (empty response body)
 
 ## getAiModelPositionDistributionWithHttpInfo
 
-> ApiResponse<Void> getAiModelPositionDistributionWithHttpInfo(projectId, range, from, to, granularity, collectionId, countryCode, languageCode, promptType, brandKind, model, brand1, brand2)
+> ApiResponse<AiModelPositionDistributionResponse> getAiModelPositionDistributionWithHttpInfo(projectId, range, from, to, granularity, collectionId, countryCode, languageCode, promptType, brandKind, model, brand1, brand2)
 
 Position distribution comparison
 
@@ -332,9 +333,10 @@ public class Example {
         Integer brand1 = 56; // Integer | Competitor ID for the first comparison brand (omit to compare project brand)
         Integer brand2 = 56; // Integer | 
         try {
-            ApiResponse<Void> response = apiInstance.getAiModelPositionDistributionWithHttpInfo(projectId, range, from, to, granularity, collectionId, countryCode, languageCode, promptType, brandKind, model, brand1, brand2);
+            ApiResponse<AiModelPositionDistributionResponse> response = apiInstance.getAiModelPositionDistributionWithHttpInfo(projectId, range, from, to, granularity, collectionId, countryCode, languageCode, promptType, brandKind, model, brand1, brand2);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
+            System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
             System.err.println("Exception when calling AiModelInsightsApi#getAiModelPositionDistribution");
             System.err.println("Status code: " + e.getCode());
@@ -367,8 +369,8 @@ public class Example {
 
 ### Return type
 
+ApiResponse<[**AiModelPositionDistributionResponse**](AiModelPositionDistributionResponse.md)>
 
-ApiResponse<Void>
 
 ### Authorization
 
@@ -377,7 +379,7 @@ ApiResponse<Void>
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -387,7 +389,7 @@ ApiResponse<Void>
 
 ## getAiOverviewResults
 
-> void getAiOverviewResults(projectId, range, from, to, granularity, collectionId, countryCode, languageCode, promptType, brandKind, page, perPage)
+> AiOverviewResultsResponse getAiOverviewResults(projectId, range, from, to, granularity, collectionId, countryCode, languageCode, promptType, brandKind, page, perPage)
 
 Google AI Overview result availability
 
@@ -425,7 +427,8 @@ public class Example {
         Integer page = 1; // Integer | 
         Integer perPage = 20; // Integer | 
         try {
-            apiInstance.getAiOverviewResults(projectId, range, from, to, granularity, collectionId, countryCode, languageCode, promptType, brandKind, page, perPage);
+            AiOverviewResultsResponse result = apiInstance.getAiOverviewResults(projectId, range, from, to, granularity, collectionId, countryCode, languageCode, promptType, brandKind, page, perPage);
+            System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling AiModelInsightsApi#getAiOverviewResults");
             System.err.println("Status code: " + e.getCode());
@@ -457,8 +460,8 @@ public class Example {
 
 ### Return type
 
+[**AiOverviewResultsResponse**](AiOverviewResultsResponse.md)
 
-null (empty response body)
 
 ### Authorization
 
@@ -467,7 +470,7 @@ null (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -476,7 +479,7 @@ null (empty response body)
 
 ## getAiOverviewResultsWithHttpInfo
 
-> ApiResponse<Void> getAiOverviewResultsWithHttpInfo(projectId, range, from, to, granularity, collectionId, countryCode, languageCode, promptType, brandKind, page, perPage)
+> ApiResponse<AiOverviewResultsResponse> getAiOverviewResultsWithHttpInfo(projectId, range, from, to, granularity, collectionId, countryCode, languageCode, promptType, brandKind, page, perPage)
 
 Google AI Overview result availability
 
@@ -515,9 +518,10 @@ public class Example {
         Integer page = 1; // Integer | 
         Integer perPage = 20; // Integer | 
         try {
-            ApiResponse<Void> response = apiInstance.getAiOverviewResultsWithHttpInfo(projectId, range, from, to, granularity, collectionId, countryCode, languageCode, promptType, brandKind, page, perPage);
+            ApiResponse<AiOverviewResultsResponse> response = apiInstance.getAiOverviewResultsWithHttpInfo(projectId, range, from, to, granularity, collectionId, countryCode, languageCode, promptType, brandKind, page, perPage);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
+            System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
             System.err.println("Exception when calling AiModelInsightsApi#getAiOverviewResults");
             System.err.println("Status code: " + e.getCode());
@@ -549,8 +553,8 @@ public class Example {
 
 ### Return type
 
+ApiResponse<[**AiOverviewResultsResponse**](AiOverviewResultsResponse.md)>
 
-ApiResponse<Void>
 
 ### Authorization
 
@@ -559,7 +563,7 @@ ApiResponse<Void>
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |

@@ -175,7 +175,7 @@ ApiResponse<[**ReputationReportCreateResponse**](ReputationReportCreateResponse.
 
 ## getReputationReport
 
-> void getReputationReport(id, projectId, page, perPage, model, brand, dimension, output)
+> ReputationReportScoresResponse getReputationReport(id, projectId, page, perPage, model, brand, dimension, output)
 
 Get reputation report scores
 
@@ -211,7 +211,8 @@ public class Example {
         String dimension = "dimension_example"; // String | Restrict to one reputation dimension key
         String output = "flat"; // String | Rectangular output for BI tools (Tableau, Excel, Sheets, ELT). Omit for the default nested JSON. 'flat' returns the same metadata plus 'columns' and 'rows'; 'csv' returns those rows as text/csv. Errors are always returned as JSON.
         try {
-            apiInstance.getReputationReport(id, projectId, page, perPage, model, brand, dimension, output);
+            ReputationReportScoresResponse result = apiInstance.getReputationReport(id, projectId, page, perPage, model, brand, dimension, output);
+            System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ReputationStudiesApi#getReputationReport");
             System.err.println("Status code: " + e.getCode());
@@ -239,8 +240,8 @@ public class Example {
 
 ### Return type
 
+[**ReputationReportScoresResponse**](ReputationReportScoresResponse.md)
 
-null (empty response body)
 
 ### Authorization
 
@@ -260,7 +261,7 @@ null (empty response body)
 
 ## getReputationReportWithHttpInfo
 
-> ApiResponse<Void> getReputationReportWithHttpInfo(id, projectId, page, perPage, model, brand, dimension, output)
+> ApiResponse<ReputationReportScoresResponse> getReputationReportWithHttpInfo(id, projectId, page, perPage, model, brand, dimension, output)
 
 Get reputation report scores
 
@@ -297,9 +298,10 @@ public class Example {
         String dimension = "dimension_example"; // String | Restrict to one reputation dimension key
         String output = "flat"; // String | Rectangular output for BI tools (Tableau, Excel, Sheets, ELT). Omit for the default nested JSON. 'flat' returns the same metadata plus 'columns' and 'rows'; 'csv' returns those rows as text/csv. Errors are always returned as JSON.
         try {
-            ApiResponse<Void> response = apiInstance.getReputationReportWithHttpInfo(id, projectId, page, perPage, model, brand, dimension, output);
+            ApiResponse<ReputationReportScoresResponse> response = apiInstance.getReputationReportWithHttpInfo(id, projectId, page, perPage, model, brand, dimension, output);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
+            System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
             System.err.println("Exception when calling ReputationStudiesApi#getReputationReport");
             System.err.println("Status code: " + e.getCode());
@@ -327,8 +329,8 @@ public class Example {
 
 ### Return type
 
+ApiResponse<[**ReputationReportScoresResponse**](ReputationReportScoresResponse.md)>
 
-ApiResponse<Void>
 
 ### Authorization
 
@@ -349,7 +351,7 @@ ApiResponse<Void>
 
 ## getStudy
 
-> void getStudy(id)
+> StudyResponse getStudy(id)
 
 Get a custom AI study
 
@@ -378,7 +380,8 @@ public class Example {
         ReputationStudiesApi apiInstance = new ReputationStudiesApi(defaultClient);
         Integer id = 56; // Integer | 
         try {
-            apiInstance.getStudy(id);
+            StudyResponse result = apiInstance.getStudy(id);
+            System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ReputationStudiesApi#getStudy");
             System.err.println("Status code: " + e.getCode());
@@ -399,8 +402,8 @@ public class Example {
 
 ### Return type
 
+[**StudyResponse**](StudyResponse.md)
 
-null (empty response body)
 
 ### Authorization
 
@@ -419,7 +422,7 @@ null (empty response body)
 
 ## getStudyWithHttpInfo
 
-> ApiResponse<Void> getStudyWithHttpInfo(id)
+> ApiResponse<StudyResponse> getStudyWithHttpInfo(id)
 
 Get a custom AI study
 
@@ -449,9 +452,10 @@ public class Example {
         ReputationStudiesApi apiInstance = new ReputationStudiesApi(defaultClient);
         Integer id = 56; // Integer | 
         try {
-            ApiResponse<Void> response = apiInstance.getStudyWithHttpInfo(id);
+            ApiResponse<StudyResponse> response = apiInstance.getStudyWithHttpInfo(id);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
+            System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
             System.err.println("Exception when calling ReputationStudiesApi#getStudy");
             System.err.println("Status code: " + e.getCode());
@@ -472,8 +476,8 @@ public class Example {
 
 ### Return type
 
+ApiResponse<[**StudyResponse**](StudyResponse.md)>
 
-ApiResponse<Void>
 
 ### Authorization
 
@@ -493,7 +497,7 @@ ApiResponse<Void>
 
 ## getStudyReport
 
-> void getStudyReport(id, reportId, page, perPage, model, subject, dimension, output)
+> StudyReportScoresResponse getStudyReport(id, reportId, page, perPage, model, subject, dimension, output)
 
 Get custom study report scores
 
@@ -529,7 +533,8 @@ public class Example {
         String dimension = "dimension_example"; // String | Restrict to one dimension key
         String output = "flat"; // String | Rectangular output for BI tools (Tableau, Excel, Sheets, ELT). Omit for the default nested JSON. 'flat' returns the same metadata plus 'columns' and 'rows'; 'csv' returns those rows as text/csv. Errors are always returned as JSON.
         try {
-            apiInstance.getStudyReport(id, reportId, page, perPage, model, subject, dimension, output);
+            StudyReportScoresResponse result = apiInstance.getStudyReport(id, reportId, page, perPage, model, subject, dimension, output);
+            System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ReputationStudiesApi#getStudyReport");
             System.err.println("Status code: " + e.getCode());
@@ -557,8 +562,8 @@ public class Example {
 
 ### Return type
 
+[**StudyReportScoresResponse**](StudyReportScoresResponse.md)
 
-null (empty response body)
 
 ### Authorization
 
@@ -578,7 +583,7 @@ null (empty response body)
 
 ## getStudyReportWithHttpInfo
 
-> ApiResponse<Void> getStudyReportWithHttpInfo(id, reportId, page, perPage, model, subject, dimension, output)
+> ApiResponse<StudyReportScoresResponse> getStudyReportWithHttpInfo(id, reportId, page, perPage, model, subject, dimension, output)
 
 Get custom study report scores
 
@@ -615,9 +620,10 @@ public class Example {
         String dimension = "dimension_example"; // String | Restrict to one dimension key
         String output = "flat"; // String | Rectangular output for BI tools (Tableau, Excel, Sheets, ELT). Omit for the default nested JSON. 'flat' returns the same metadata plus 'columns' and 'rows'; 'csv' returns those rows as text/csv. Errors are always returned as JSON.
         try {
-            ApiResponse<Void> response = apiInstance.getStudyReportWithHttpInfo(id, reportId, page, perPage, model, subject, dimension, output);
+            ApiResponse<StudyReportScoresResponse> response = apiInstance.getStudyReportWithHttpInfo(id, reportId, page, perPage, model, subject, dimension, output);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
+            System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
             System.err.println("Exception when calling ReputationStudiesApi#getStudyReport");
             System.err.println("Status code: " + e.getCode());
@@ -645,8 +651,8 @@ public class Example {
 
 ### Return type
 
+ApiResponse<[**StudyReportScoresResponse**](StudyReportScoresResponse.md)>
 
-ApiResponse<Void>
 
 ### Authorization
 
@@ -667,7 +673,7 @@ ApiResponse<Void>
 
 ## listReputationReports
 
-> void listReputationReports(projectId, page, perPage, output)
+> ReputationReportsResponse listReputationReports(projectId, page, perPage, output)
 
 List reputation reports
 
@@ -699,7 +705,8 @@ public class Example {
         Integer perPage = 20; // Integer | 
         String output = "flat"; // String | Rectangular output for BI tools (Tableau, Excel, Sheets, ELT). Omit for the default nested JSON. 'flat' returns the same metadata plus 'columns' and 'rows'; 'csv' returns those rows as text/csv. Errors are always returned as JSON.
         try {
-            apiInstance.listReputationReports(projectId, page, perPage, output);
+            ReputationReportsResponse result = apiInstance.listReputationReports(projectId, page, perPage, output);
+            System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ReputationStudiesApi#listReputationReports");
             System.err.println("Status code: " + e.getCode());
@@ -723,8 +730,8 @@ public class Example {
 
 ### Return type
 
+[**ReputationReportsResponse**](ReputationReportsResponse.md)
 
-null (empty response body)
 
 ### Authorization
 
@@ -733,7 +740,7 @@ null (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -742,7 +749,7 @@ null (empty response body)
 
 ## listReputationReportsWithHttpInfo
 
-> ApiResponse<Void> listReputationReportsWithHttpInfo(projectId, page, perPage, output)
+> ApiResponse<ReputationReportsResponse> listReputationReportsWithHttpInfo(projectId, page, perPage, output)
 
 List reputation reports
 
@@ -775,9 +782,10 @@ public class Example {
         Integer perPage = 20; // Integer | 
         String output = "flat"; // String | Rectangular output for BI tools (Tableau, Excel, Sheets, ELT). Omit for the default nested JSON. 'flat' returns the same metadata plus 'columns' and 'rows'; 'csv' returns those rows as text/csv. Errors are always returned as JSON.
         try {
-            ApiResponse<Void> response = apiInstance.listReputationReportsWithHttpInfo(projectId, page, perPage, output);
+            ApiResponse<ReputationReportsResponse> response = apiInstance.listReputationReportsWithHttpInfo(projectId, page, perPage, output);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
+            System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
             System.err.println("Exception when calling ReputationStudiesApi#listReputationReports");
             System.err.println("Status code: " + e.getCode());
@@ -801,8 +809,8 @@ public class Example {
 
 ### Return type
 
+ApiResponse<[**ReputationReportsResponse**](ReputationReportsResponse.md)>
 
-ApiResponse<Void>
 
 ### Authorization
 
@@ -811,7 +819,7 @@ ApiResponse<Void>
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -821,7 +829,7 @@ ApiResponse<Void>
 
 ## listStudies
 
-> void listStudies(projectId, status, page, perPage, output)
+> StudiesResponse listStudies(projectId, status, page, perPage, output)
 
 List custom AI studies
 
@@ -854,7 +862,8 @@ public class Example {
         Integer perPage = 20; // Integer | 
         String output = "flat"; // String | Rectangular output for BI tools (Tableau, Excel, Sheets, ELT). Omit for the default nested JSON. 'flat' returns the same metadata plus 'columns' and 'rows'; 'csv' returns those rows as text/csv. Errors are always returned as JSON.
         try {
-            apiInstance.listStudies(projectId, status, page, perPage, output);
+            StudiesResponse result = apiInstance.listStudies(projectId, status, page, perPage, output);
+            System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ReputationStudiesApi#listStudies");
             System.err.println("Status code: " + e.getCode());
@@ -879,8 +888,8 @@ public class Example {
 
 ### Return type
 
+[**StudiesResponse**](StudiesResponse.md)
 
-null (empty response body)
 
 ### Authorization
 
@@ -889,7 +898,7 @@ null (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -898,7 +907,7 @@ null (empty response body)
 
 ## listStudiesWithHttpInfo
 
-> ApiResponse<Void> listStudiesWithHttpInfo(projectId, status, page, perPage, output)
+> ApiResponse<StudiesResponse> listStudiesWithHttpInfo(projectId, status, page, perPage, output)
 
 List custom AI studies
 
@@ -932,9 +941,10 @@ public class Example {
         Integer perPage = 20; // Integer | 
         String output = "flat"; // String | Rectangular output for BI tools (Tableau, Excel, Sheets, ELT). Omit for the default nested JSON. 'flat' returns the same metadata plus 'columns' and 'rows'; 'csv' returns those rows as text/csv. Errors are always returned as JSON.
         try {
-            ApiResponse<Void> response = apiInstance.listStudiesWithHttpInfo(projectId, status, page, perPage, output);
+            ApiResponse<StudiesResponse> response = apiInstance.listStudiesWithHttpInfo(projectId, status, page, perPage, output);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
+            System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
             System.err.println("Exception when calling ReputationStudiesApi#listStudies");
             System.err.println("Status code: " + e.getCode());
@@ -959,8 +969,8 @@ public class Example {
 
 ### Return type
 
+ApiResponse<[**StudiesResponse**](StudiesResponse.md)>
 
-ApiResponse<Void>
 
 ### Authorization
 
@@ -969,7 +979,7 @@ ApiResponse<Void>
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |

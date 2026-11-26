@@ -169,7 +169,7 @@ ApiResponse<[**CompetitorCreateResponse**](CompetitorCreateResponse.md)>
 
 ## deleteCompetitor
 
-> void deleteCompetitor(projectId, id)
+> CompetitorDeleteResponse deleteCompetitor(projectId, id)
 
 Delete a competitor
 
@@ -199,7 +199,8 @@ public class Example {
         Integer projectId = 56; // Integer | Project ID
         Integer id = 56; // Integer | 
         try {
-            apiInstance.deleteCompetitor(projectId, id);
+            CompetitorDeleteResponse result = apiInstance.deleteCompetitor(projectId, id);
+            System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling CompetitorsApi#deleteCompetitor");
             System.err.println("Status code: " + e.getCode());
@@ -221,8 +222,8 @@ public class Example {
 
 ### Return type
 
+[**CompetitorDeleteResponse**](CompetitorDeleteResponse.md)
 
-null (empty response body)
 
 ### Authorization
 
@@ -242,7 +243,7 @@ null (empty response body)
 
 ## deleteCompetitorWithHttpInfo
 
-> ApiResponse<Void> deleteCompetitorWithHttpInfo(projectId, id)
+> ApiResponse<CompetitorDeleteResponse> deleteCompetitorWithHttpInfo(projectId, id)
 
 Delete a competitor
 
@@ -273,9 +274,10 @@ public class Example {
         Integer projectId = 56; // Integer | Project ID
         Integer id = 56; // Integer | 
         try {
-            ApiResponse<Void> response = apiInstance.deleteCompetitorWithHttpInfo(projectId, id);
+            ApiResponse<CompetitorDeleteResponse> response = apiInstance.deleteCompetitorWithHttpInfo(projectId, id);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
+            System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
             System.err.println("Exception when calling CompetitorsApi#deleteCompetitor");
             System.err.println("Status code: " + e.getCode());
@@ -297,8 +299,8 @@ public class Example {
 
 ### Return type
 
+ApiResponse<[**CompetitorDeleteResponse**](CompetitorDeleteResponse.md)>
 
-ApiResponse<Void>
 
 ### Authorization
 
@@ -777,7 +779,7 @@ ApiResponse<[**ListCompetitors200Response**](ListCompetitors200Response.md)>
 
 ## updateCompetitor
 
-> void updateCompetitor(id, updateCompetitorRequest)
+> CompetitorUpdateResponse updateCompetitor(id, updateCompetitorRequest)
 
 Update a competitor
 
@@ -807,7 +809,8 @@ public class Example {
         Integer id = 56; // Integer | 
         UpdateCompetitorRequest updateCompetitorRequest = new UpdateCompetitorRequest(); // UpdateCompetitorRequest | 
         try {
-            apiInstance.updateCompetitor(id, updateCompetitorRequest);
+            CompetitorUpdateResponse result = apiInstance.updateCompetitor(id, updateCompetitorRequest);
+            System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling CompetitorsApi#updateCompetitor");
             System.err.println("Status code: " + e.getCode());
@@ -829,8 +832,8 @@ public class Example {
 
 ### Return type
 
+[**CompetitorUpdateResponse**](CompetitorUpdateResponse.md)
 
-null (empty response body)
 
 ### Authorization
 
@@ -851,7 +854,7 @@ null (empty response body)
 
 ## updateCompetitorWithHttpInfo
 
-> ApiResponse<Void> updateCompetitorWithHttpInfo(id, updateCompetitorRequest)
+> ApiResponse<CompetitorUpdateResponse> updateCompetitorWithHttpInfo(id, updateCompetitorRequest)
 
 Update a competitor
 
@@ -882,9 +885,10 @@ public class Example {
         Integer id = 56; // Integer | 
         UpdateCompetitorRequest updateCompetitorRequest = new UpdateCompetitorRequest(); // UpdateCompetitorRequest | 
         try {
-            ApiResponse<Void> response = apiInstance.updateCompetitorWithHttpInfo(id, updateCompetitorRequest);
+            ApiResponse<CompetitorUpdateResponse> response = apiInstance.updateCompetitorWithHttpInfo(id, updateCompetitorRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
+            System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
             System.err.println("Exception when calling CompetitorsApi#updateCompetitor");
             System.err.println("Status code: " + e.getCode());
@@ -906,8 +910,8 @@ public class Example {
 
 ### Return type
 
+ApiResponse<[**CompetitorUpdateResponse**](CompetitorUpdateResponse.md)>
 
-ApiResponse<Void>
 
 ### Authorization
 

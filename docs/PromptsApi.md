@@ -481,7 +481,7 @@ ApiResponse<[**PromptsCreateResponse**](PromptsCreateResponse.md)>
 
 ## deletePrompt
 
-> void deletePrompt(projectId, id)
+> PromptDeleteResponse deletePrompt(projectId, id)
 
 Delete a prompt
 
@@ -511,7 +511,8 @@ public class Example {
         Integer projectId = 56; // Integer | Project ID
         Integer id = 56; // Integer | 
         try {
-            apiInstance.deletePrompt(projectId, id);
+            PromptDeleteResponse result = apiInstance.deletePrompt(projectId, id);
+            System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling PromptsApi#deletePrompt");
             System.err.println("Status code: " + e.getCode());
@@ -533,8 +534,8 @@ public class Example {
 
 ### Return type
 
+[**PromptDeleteResponse**](PromptDeleteResponse.md)
 
-null (empty response body)
 
 ### Authorization
 
@@ -555,7 +556,7 @@ null (empty response body)
 
 ## deletePromptWithHttpInfo
 
-> ApiResponse<Void> deletePromptWithHttpInfo(projectId, id)
+> ApiResponse<PromptDeleteResponse> deletePromptWithHttpInfo(projectId, id)
 
 Delete a prompt
 
@@ -586,9 +587,10 @@ public class Example {
         Integer projectId = 56; // Integer | Project ID
         Integer id = 56; // Integer | 
         try {
-            ApiResponse<Void> response = apiInstance.deletePromptWithHttpInfo(projectId, id);
+            ApiResponse<PromptDeleteResponse> response = apiInstance.deletePromptWithHttpInfo(projectId, id);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
+            System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
             System.err.println("Exception when calling PromptsApi#deletePrompt");
             System.err.println("Status code: " + e.getCode());
@@ -610,8 +612,8 @@ public class Example {
 
 ### Return type
 
+ApiResponse<[**PromptDeleteResponse**](PromptDeleteResponse.md)>
 
-ApiResponse<Void>
 
 ### Authorization
 
@@ -1325,7 +1327,7 @@ ApiResponse<[**PromptsResponse**](PromptsResponse.md)>
 
 ## listQueryFanOuts
 
-> void listQueryFanOuts(projectId, page, perPage, view, order, direction, query, model, collectionId, countryCode, languageCode, prompt, promptType, brandKind, range, from, to, output)
+> QueryFanOutsResponse listQueryFanOuts(projectId, page, perPage, view, order, direction, query, model, collectionId, countryCode, languageCode, prompt, promptType, brandKind, range, from, to, output)
 
 List query fan-out
 
@@ -1371,7 +1373,8 @@ public class Example {
         OffsetDateTime to = OffsetDateTime.now(); // OffsetDateTime | End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. Sent without from, the window covers the 30 days that end on it.
         String output = "flat"; // String | Rectangular output for BI tools (Tableau, Excel, Sheets, ELT). Omit for the default nested JSON. 'flat' returns the same metadata plus 'columns' and 'rows'; 'csv' returns those rows as text/csv. Errors are always returned as JSON.
         try {
-            apiInstance.listQueryFanOuts(projectId, page, perPage, view, order, direction, query, model, collectionId, countryCode, languageCode, prompt, promptType, brandKind, range, from, to, output);
+            QueryFanOutsResponse result = apiInstance.listQueryFanOuts(projectId, page, perPage, view, order, direction, query, model, collectionId, countryCode, languageCode, prompt, promptType, brandKind, range, from, to, output);
+            System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling PromptsApi#listQueryFanOuts");
             System.err.println("Status code: " + e.getCode());
@@ -1409,8 +1412,8 @@ public class Example {
 
 ### Return type
 
+[**QueryFanOutsResponse**](QueryFanOutsResponse.md)
 
-null (empty response body)
 
 ### Authorization
 
@@ -1429,7 +1432,7 @@ null (empty response body)
 
 ## listQueryFanOutsWithHttpInfo
 
-> ApiResponse<Void> listQueryFanOutsWithHttpInfo(projectId, page, perPage, view, order, direction, query, model, collectionId, countryCode, languageCode, prompt, promptType, brandKind, range, from, to, output)
+> ApiResponse<QueryFanOutsResponse> listQueryFanOutsWithHttpInfo(projectId, page, perPage, view, order, direction, query, model, collectionId, countryCode, languageCode, prompt, promptType, brandKind, range, from, to, output)
 
 List query fan-out
 
@@ -1476,9 +1479,10 @@ public class Example {
         OffsetDateTime to = OffsetDateTime.now(); // OffsetDateTime | End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. Sent without from, the window covers the 30 days that end on it.
         String output = "flat"; // String | Rectangular output for BI tools (Tableau, Excel, Sheets, ELT). Omit for the default nested JSON. 'flat' returns the same metadata plus 'columns' and 'rows'; 'csv' returns those rows as text/csv. Errors are always returned as JSON.
         try {
-            ApiResponse<Void> response = apiInstance.listQueryFanOutsWithHttpInfo(projectId, page, perPage, view, order, direction, query, model, collectionId, countryCode, languageCode, prompt, promptType, brandKind, range, from, to, output);
+            ApiResponse<QueryFanOutsResponse> response = apiInstance.listQueryFanOutsWithHttpInfo(projectId, page, perPage, view, order, direction, query, model, collectionId, countryCode, languageCode, prompt, promptType, brandKind, range, from, to, output);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
+            System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
             System.err.println("Exception when calling PromptsApi#listQueryFanOuts");
             System.err.println("Status code: " + e.getCode());
@@ -1516,8 +1520,8 @@ public class Example {
 
 ### Return type
 
+ApiResponse<[**QueryFanOutsResponse**](QueryFanOutsResponse.md)>
 
-ApiResponse<Void>
 
 ### Authorization
 

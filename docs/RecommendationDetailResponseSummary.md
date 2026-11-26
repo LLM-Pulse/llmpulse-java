@@ -1,6 +1,6 @@
 
 
-# RecommendationSummarySummary
+# RecommendationDetailResponseSummary
 
 Empty until the generation completes
 

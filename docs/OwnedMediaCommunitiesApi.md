@@ -769,7 +769,7 @@ ApiResponse<[**OwnedMediaCitingPromptsResponse**](OwnedMediaCitingPromptsRespons
 
 ## listRedditCitations
 
-> void listRedditCitations(projectId, page, perPage, view, subreddit, author, status, owned, brand, order, direction, model, collectionId, countryCode, languageCode, brandKind, range, from, to, output)
+> RedditResponse listRedditCitations(projectId, page, perPage, view, subreddit, author, status, owned, brand, order, direction, model, collectionId, countryCode, languageCode, brandKind, range, from, to, output)
 
 List cited Reddit content
 
@@ -817,7 +817,8 @@ public class Example {
         OffsetDateTime to = OffsetDateTime.now(); // OffsetDateTime | End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. Sent without from, the window covers the 30 days that end on it.
         String output = "flat"; // String | Rectangular output for BI tools (Tableau, Excel, Sheets, ELT). Omit for the default nested JSON. 'flat' returns the same metadata plus 'columns' and 'rows'; 'csv' returns those rows as text/csv. Errors are always returned as JSON.
         try {
-            apiInstance.listRedditCitations(projectId, page, perPage, view, subreddit, author, status, owned, brand, order, direction, model, collectionId, countryCode, languageCode, brandKind, range, from, to, output);
+            RedditResponse result = apiInstance.listRedditCitations(projectId, page, perPage, view, subreddit, author, status, owned, brand, order, direction, model, collectionId, countryCode, languageCode, brandKind, range, from, to, output);
+            System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling OwnedMediaCommunitiesApi#listRedditCitations");
             System.err.println("Status code: " + e.getCode());
@@ -857,8 +858,8 @@ public class Example {
 
 ### Return type
 
+[**RedditResponse**](RedditResponse.md)
 
-null (empty response body)
 
 ### Authorization
 
@@ -877,7 +878,7 @@ null (empty response body)
 
 ## listRedditCitationsWithHttpInfo
 
-> ApiResponse<Void> listRedditCitationsWithHttpInfo(projectId, page, perPage, view, subreddit, author, status, owned, brand, order, direction, model, collectionId, countryCode, languageCode, brandKind, range, from, to, output)
+> ApiResponse<RedditResponse> listRedditCitationsWithHttpInfo(projectId, page, perPage, view, subreddit, author, status, owned, brand, order, direction, model, collectionId, countryCode, languageCode, brandKind, range, from, to, output)
 
 List cited Reddit content
 
@@ -926,9 +927,10 @@ public class Example {
         OffsetDateTime to = OffsetDateTime.now(); // OffsetDateTime | End of the window. A date-only value such as 2026-09-01 covers that whole day. Pass a full timestamp to end the window earlier. Sent without from, the window covers the 30 days that end on it.
         String output = "flat"; // String | Rectangular output for BI tools (Tableau, Excel, Sheets, ELT). Omit for the default nested JSON. 'flat' returns the same metadata plus 'columns' and 'rows'; 'csv' returns those rows as text/csv. Errors are always returned as JSON.
         try {
-            ApiResponse<Void> response = apiInstance.listRedditCitationsWithHttpInfo(projectId, page, perPage, view, subreddit, author, status, owned, brand, order, direction, model, collectionId, countryCode, languageCode, brandKind, range, from, to, output);
+            ApiResponse<RedditResponse> response = apiInstance.listRedditCitationsWithHttpInfo(projectId, page, perPage, view, subreddit, author, status, owned, brand, order, direction, model, collectionId, countryCode, languageCode, brandKind, range, from, to, output);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
+            System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
             System.err.println("Exception when calling OwnedMediaCommunitiesApi#listRedditCitations");
             System.err.println("Status code: " + e.getCode());
@@ -968,8 +970,8 @@ public class Example {
 
 ### Return type
 
+ApiResponse<[**RedditResponse**](RedditResponse.md)>
 
-ApiResponse<Void>
 
 ### Authorization
 

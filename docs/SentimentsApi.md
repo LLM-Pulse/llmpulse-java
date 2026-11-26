@@ -449,7 +449,7 @@ ApiResponse<[**SentimentTopicsResponse**](SentimentTopicsResponse.md)>
 
 ## listSentimentCategories
 
-> void listSentimentCategories(projectId, output)
+> SentimentCategoriesResponse listSentimentCategories(projectId, output)
 
 List sentiment categories (Growth plan or above)
 
@@ -479,7 +479,8 @@ public class Example {
         Integer projectId = 56; // Integer | Project ID
         String output = "flat"; // String | Rectangular output for BI tools (Tableau, Excel, Sheets, ELT). Omit for the default nested JSON. 'flat' returns the same metadata plus 'columns' and 'rows'; 'csv' returns those rows as text/csv. Errors are always returned as JSON.
         try {
-            apiInstance.listSentimentCategories(projectId, output);
+            SentimentCategoriesResponse result = apiInstance.listSentimentCategories(projectId, output);
+            System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling SentimentsApi#listSentimentCategories");
             System.err.println("Status code: " + e.getCode());
@@ -501,8 +502,8 @@ public class Example {
 
 ### Return type
 
+[**SentimentCategoriesResponse**](SentimentCategoriesResponse.md)
 
-null (empty response body)
 
 ### Authorization
 
@@ -521,7 +522,7 @@ null (empty response body)
 
 ## listSentimentCategoriesWithHttpInfo
 
-> ApiResponse<Void> listSentimentCategoriesWithHttpInfo(projectId, output)
+> ApiResponse<SentimentCategoriesResponse> listSentimentCategoriesWithHttpInfo(projectId, output)
 
 List sentiment categories (Growth plan or above)
 
@@ -552,9 +553,10 @@ public class Example {
         Integer projectId = 56; // Integer | Project ID
         String output = "flat"; // String | Rectangular output for BI tools (Tableau, Excel, Sheets, ELT). Omit for the default nested JSON. 'flat' returns the same metadata plus 'columns' and 'rows'; 'csv' returns those rows as text/csv. Errors are always returned as JSON.
         try {
-            ApiResponse<Void> response = apiInstance.listSentimentCategoriesWithHttpInfo(projectId, output);
+            ApiResponse<SentimentCategoriesResponse> response = apiInstance.listSentimentCategoriesWithHttpInfo(projectId, output);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
+            System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
             System.err.println("Exception when calling SentimentsApi#listSentimentCategories");
             System.err.println("Status code: " + e.getCode());
@@ -576,8 +578,8 @@ public class Example {
 
 ### Return type
 
+ApiResponse<[**SentimentCategoriesResponse**](SentimentCategoriesResponse.md)>
 
-ApiResponse<Void>
 
 ### Authorization
 
