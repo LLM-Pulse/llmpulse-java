@@ -2,7 +2,7 @@
 
 LLM Pulse API
 
-- API version: 1.107.1
+- API version: 1.108.0
 
 - Generator version: 7.24.0
 
@@ -43,7 +43,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>ai.llmpulse</groupId>
   <artifactId>llmpulse-java</artifactId>
-  <version>1.107.1</version>
+  <version>1.108.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -53,7 +53,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "ai.llmpulse:llmpulse-java:1.107.1"
+compile "ai.llmpulse:llmpulse-java:1.108.0"
 ```
 
 ### Others
@@ -66,7 +66,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-- `target/llmpulse-java-1.107.1.jar`
+- `target/llmpulse-java-1.108.0.jar`
 - `target/lib/*.jar`
 
 ## Getting Started
@@ -295,8 +295,6 @@ Class | Method | HTTP request | Description
 *PromptsApi* | [**deletePromptWithHttpInfo**](docs/PromptsApi.md#deletePromptWithHttpInfo) | **DELETE** /prompts/{id} | Delete a prompt
 *PromptsApi* | [**getPromptGeneration**](docs/PromptsApi.md#getPromptGeneration) | **GET** /prompt_generations/{id} | Get a prompt generation run
 *PromptsApi* | [**getPromptGenerationWithHttpInfo**](docs/PromptsApi.md#getPromptGenerationWithHttpInfo) | **GET** /prompt_generations/{id} | Get a prompt generation run
-*PromptsApi* | [**importPeecExport**](docs/PromptsApi.md#importPeecExport) | **POST** /prompts/import_peec_export | Import a Peec AI export
-*PromptsApi* | [**importPeecExportWithHttpInfo**](docs/PromptsApi.md#importPeecExportWithHttpInfo) | **POST** /prompts/import_peec_export | Import a Peec AI export
 *PromptsApi* | [**importPrompts**](docs/PromptsApi.md#importPrompts) | **POST** /prompts/import | Import prompts
 *PromptsApi* | [**importPromptsWithHttpInfo**](docs/PromptsApi.md#importPromptsWithHttpInfo) | **POST** /prompts/import | Import prompts
 *PromptsApi* | [**importPromptsFile**](docs/PromptsApi.md#importPromptsFile) | **POST** /prompts/import_file | Import prompts from a file
@@ -691,7 +689,6 @@ Class | Method | HTTP request | Description
  - [OwnedMediaSummaryResponsePrevious](docs/OwnedMediaSummaryResponsePrevious.md)
  - [OwnedMediaWeek](docs/OwnedMediaWeek.md)
  - [PaginatedEnvelope](docs/PaginatedEnvelope.md)
- - [PeecExportImportResponse](docs/PeecExportImportResponse.md)
  - [Ping200Response](docs/Ping200Response.md)
  - [Project](docs/Project.md)
  - [ProjectCreateRequest](docs/ProjectCreateRequest.md)

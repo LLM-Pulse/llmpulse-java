@@ -272,7 +272,6 @@ docs/OwnedMediaSummaryResponse.md
 docs/OwnedMediaSummaryResponsePrevious.md
 docs/OwnedMediaWeek.md
 docs/PaginatedEnvelope.md
-docs/PeecExportImportResponse.md
 docs/Ping200Response.md
 docs/Project.md
 docs/ProjectCreateRequest.md
@@ -786,7 +785,6 @@ src/main/java/ai/llmpulse/sdk/model/OwnedMediaSummaryResponse.java
 src/main/java/ai/llmpulse/sdk/model/OwnedMediaSummaryResponsePrevious.java
 src/main/java/ai/llmpulse/sdk/model/OwnedMediaWeek.java
 src/main/java/ai/llmpulse/sdk/model/PaginatedEnvelope.java
-src/main/java/ai/llmpulse/sdk/model/PeecExportImportResponse.java
 src/main/java/ai/llmpulse/sdk/model/Ping200Response.java
 src/main/java/ai/llmpulse/sdk/model/Project.java
 src/main/java/ai/llmpulse/sdk/model/ProjectCreateRequest.java
